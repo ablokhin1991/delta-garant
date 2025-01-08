@@ -78,6 +78,7 @@ header nav ul li a:hover {
     border-radius: 0px;
     border: 1px solid #F0473B;
     text-align: center; /* Центрируем текст внутри кнопки */
+    height: 100%;
 }
 
 .hero .btn:hover {
