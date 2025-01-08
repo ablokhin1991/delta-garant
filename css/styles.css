@@ -122,15 +122,15 @@ footer {
     margin-top: 40px;
 }
 
+/* Контейнер для трех столбиков */
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
+/* Индивидуальные столбики */
 footer .footer-left,
 footer .footer-center,
 footer .footer-right {
@@ -150,6 +150,7 @@ footer .footer-right {
     text-align: right;
 }
 
+/* Раздел для нижней части футера */
 footer .footer-bottom {
     margin-top: 20px;
     text-align: center;
@@ -165,4 +166,3 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-
