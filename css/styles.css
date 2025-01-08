@@ -118,8 +118,52 @@ section .btn:hover {
 footer {
     background-color: #333;
     color: #eeeeee;
-    font-size: 0.6em;
-    text-align: center;
     padding: 20px;
+    text-align: center;
     margin-top: 40px;
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-left,
+footer .footer-center,
+footer .footer-right {
+    flex: 1;
+    padding: 10px;
+}
+
+footer .footer-left {
+    text-align: right;
+}
+
+footer .footer-center {
+    text-align: center;
+}
+
+footer .footer-right {
+    text-align: right;
+}
+
+footer .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* Стили для ссылок */
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
