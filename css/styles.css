@@ -55,6 +55,7 @@ header nav ul li a:hover {
     color: #0E214C;
     text-align: left;
     padding: 100px 0;
+    width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
 }
 
 .hero h1 {
@@ -70,11 +71,12 @@ header nav ul li a:hover {
 .hero .btn {
     background-color: transparent; /* Сделает фон прозрачным */
     color: #F0473B;
-    padding: 10px 20px;
+    padding: 12px 30px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 0px;
     border: 1px solid #F0473B;
+    text-align: center; /* Центрируем текст внутри кнопки */
 }
 
 .hero .btn:hover {
