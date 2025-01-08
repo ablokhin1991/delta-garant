@@ -116,8 +116,8 @@ section .btn:hover {
 /* Подвал */
 footer {
     background-color: #333;
-    color: #fff;
-    font-size: 0.5em;
+    color: #eeeeee;
+    font-size: 0.6em;
     text-align: center;
     padding: 20px;
     margin-top: 40px;
