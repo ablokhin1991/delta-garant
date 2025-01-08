@@ -173,3 +173,139 @@ footer a:hover {
     text-decoration: underline;
     color: #F0473B
 }
+
+/* Стили калькулятора */
+
+/* Стиль контента */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #0E214C;
+}
+
+/* Общие стили для текста */
+.field__label-placeholder {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #fff;
+    padding: 0 5px;
+    font-size: 16px;
+    color: #F0473B;
+    font-weight: 400;
+    letter-spacing: 1.55px;
+}
+
+/* Поля ввода */
+.field {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.field__input {
+    width: 100%;
+    padding: 15px 0 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    font-size: 14px;
+    color: #0E214C;
+    font-weight: 300;
+    letter-spacing: 1.55px;
+    height: 30px;
+}
+
+.field__input:focus {
+    border-color: #0E214C;
+    outline: none;
+}
+
+/* Группа параметров */
+.form-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.form-column {
+    flex: 1;
+}
+
+/* Кнопка */
+.btn_primary {
+    display: inline-block;
+    background-color: transparent;
+    color: #F0473B;
+    border: 1px solid #F0473B;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn_primary:hover {
+    background-color: #F0473B;
+    color: #fff;
+    border: 1px solid #F0473B;
+}
+
+/* Результаты */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #CCCCCC;
+    background-color: #EEEEEE;
+    border-radius: 0;
+}
+
+.result__title-wrap h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.offer__percent.amount {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.offer__title-wrap {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.offer__text {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* ДАЛЕЕ СТИЛИ ДЛЯ ОШИБОК ЗАПОЛНЕНИЯ */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.field__input.error {
+    border: 2px solid red;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    font-size: 9px;
+    color: red;
+    margin-top: 5px;
+}
+
+.error-message .error-icon {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.error-message .error-text {
+    font-size: 9px;
+}
