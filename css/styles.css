@@ -118,49 +118,53 @@ section .btn:hover {
 footer {
     background-color: #333;
     color: #eeeeee;
-    padding: 20px;
-    margin-top: 40px;
+    font-size: 0.6em;
+    padding: 20px 10px;
 }
 
-/* Контейнер для трех столбиков */
-.container {
+/* Контейнер для столбиков */
+.footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
-/* Индивидуальные столбики */
-footer .footer-left,
-footer .footer-center,
-footer .footer-right {
+/* Столбики */
+.footer-column {
     flex: 1;
     padding: 10px;
+    box-sizing: border-box;
 }
 
-footer .footer-left {
-    text-align: right;
-    width: 150px;
+/* Логотип */
+.footer-left {
+    text-align: left;
 }
 
-footer .footer-center {
+.footer-logo {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Центрирование текста */
+.footer-center {
     text-align: center;
 }
 
-footer .footer-right {
+.footer-right {
     text-align: right;
 }
 
-/* Раздел для нижней части футера */
-footer .footer-bottom {
+/* Нижний текст */
+.footer-bottom {
+    text-align: center;
     margin-top: 20px;
-    text-align: center;
-    font-size: 0.8em;
 }
 
-/* Стили для ссылок */
+/* Ссылки */
 footer a {
-    color: #fff;
+    color: #eeeeee;
     text-decoration: none;
 }
 
