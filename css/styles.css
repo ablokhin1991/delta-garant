@@ -13,8 +13,8 @@ body {
 
 .container {
     width: 80%;
-    margin: 0 auto;
-    overflow: auto; /*hidden;*/
+    margin: 20 auto;
+    overflow: hidden;
 }
 
 /* Шапка сайта */
