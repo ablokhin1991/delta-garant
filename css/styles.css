@@ -149,11 +149,11 @@ footer {
 
 /* Центрирование текста */
 .footer-center {
-    text-align: center;
+    text-align: left;
 }
 
 .footer-right {
-    text-align: right;
+    text-align: left;
 }
 
 /* Нижний текст */
