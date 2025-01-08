@@ -68,9 +68,9 @@ header nav ul li a:hover {
 }
 
 .hero .btn {
-    background-color: #fff;
+    background-color: transparent;
     color: #F0473B;
-    padding: 10px 20px 10px; /*был 20 px*/
+    padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 0px;
