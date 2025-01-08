@@ -19,8 +19,8 @@ body {
 
 /* Шапка сайта */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
+    color: #0E214C;
     padding: 20px 0;
 }
 
@@ -45,13 +45,13 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #ff9900;
+    color: #F0473B;
 }
 
 /* Главная секция (Hero) */
 .hero {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: #0E214C;
     text-align: center;
     padding: 100px 0;
 }
@@ -67,16 +67,18 @@ header nav ul li a:hover {
 }
 
 .hero .btn {
-    background-color: #ff9900;
-    color: #fff;
+    background-color: #fff;
+    color: #F0473B;
     padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 0px;
+    border: 1px solid #F0473B;
 }
 
 .hero .btn:hover {
-    background-color: #e68900;
+    background-color: #F0473B;
+    color: #fff;
 }
 
 /* Секции About и Calculator */
