@@ -140,6 +140,7 @@ footer .footer-right {
 
 footer .footer-left {
     text-align: right;
+    width: 150px;
 }
 
 footer .footer-center {
