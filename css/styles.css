@@ -68,7 +68,7 @@ header nav ul li a:hover {
 }
 
 .hero .btn {
-    background-color: transparent;
+    background-color: transparent; /* Сделает фон прозрачным */
     color: #F0473B;
     padding: 10px 20px;
     text-decoration: none;
