@@ -59,6 +59,10 @@ header nav ul li a:hover {
     height: 500px;
 }
 
+.hero container {
+    height: 400px;
+}
+
 .hero h1 {
     font-size: 3em;
     margin-bottom: 20px;
