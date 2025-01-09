@@ -27,7 +27,7 @@ header {
 
 header .logo img {
     width: 150px;
-    margin-bottom: 15px; /* Расстояние снизу от логотипа */
+    margin-bottom: 5px; /* Расстояние снизу от логотипа */
 }
 
 .header p {
