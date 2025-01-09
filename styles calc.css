@@ -5,6 +5,18 @@ body {
     padding: 0;
     background-color: #f4f4f4;
   }
+
+  /* Логотип в шапке */
+.header-logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  /* Логотип в подвале */
+  .footer-logo {
+    height: 50px;
+    width: auto;
+  }
   
   /* Контейнер для контента */
   .content {
