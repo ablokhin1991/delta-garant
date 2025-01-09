@@ -35,6 +35,7 @@ header .logo img {
     font-size: 0.6em;
     font-style: italic;
     margin-top: 5px; /* Добавим небольшой отступ сверху */
+    font-family: 'Verdana', sans-serif; /* Убедитесь, что шрифт поддерживает курсив */
 }
 
 header nav ul {
