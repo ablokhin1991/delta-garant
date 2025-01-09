@@ -1,157 +1,172 @@
 /* Основной стиль страницы */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  /* Контейнер для контента */
-  .content {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Формы и поля */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Контейнер для контента */
+.content {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Формы и поля */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Медиазапрос для адаптивности */
+@media (max-width: 768px) {
   .form-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  /* Медиазапрос для адаптивности */
-  @media (max-width: 768px) {
-    .form-row {
-      flex-direction: column;
-    }
-  
-    .form-column {
-      width: 100%; /* Поле занимает всю ширину */
-    }
-  }
-  
-  /* Поля формы */
-  .form-column {
-    width: 48%;
-  }
-  
-  .field {
-    position: relative;
-    margin-bottom: 15px;
-  }
-  
-  .field__input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .field__label-placeholder {
-    position: absolute;
-    top: 0px;
-    left: 10px;
-    font-size: 14px;
-    color: #aaa;
-    pointer-events: none;
-    transition: all 0.3s;
-  }
-  
-  .field__input:focus + .field__label-placeholder,
-  .field__input:not(:focus):valid + .field__label-placeholder {
-    top: -20px;
-    font-size: 12px;
-    color: #007bff;
-  }
-  
-  /* Элементы чекбоксов */
-  .main-block__filters label {
-    font-size: 14px;
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .main-block__btn-wrap {
-    text-align: center;
-  }
-  
-  .btn_primary {
-    padding: 12px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .btn_primary:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Сообщения об ошибке */
-  .error-message {
-    display: none;
-    color: red;
-    font-size: 14px;
-  }
-  
-  .error-icon {
-    margin-right: 5px;
-  }
-  
-  /* Результаты */
-  .result {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .result__title-wrap {
-    margin-bottom: 15px;
-  }
-  
-  .result__offers {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .offer {
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .offer div {
-    margin-bottom: 8px;
-  }
-  
-  /* Стиль для мобильных устройств */
-  @media (max-width: 768px) {
-    .content {
-      width: 90%; /* На мобильных устройствах делаем ширину контента больше */
-    }
-  
-    /* Выстраиваем поля в одну колонку */
-    .form-row {
       flex-direction: column;
       gap: 20px;
-    }
-  
-    .form-column {
-      width: 100%;
-    }
-  
-    .main-block__btn-wrap {
-      margin-top: 20px; /* Добавляем отступ для кнопки */
-    }
   }
-  
+
+  .form-column {
+      width: 100%; /* Поле занимает всю ширину */
+  }
+
+  .content {
+      width: 90%; /* На мобильных устройствах делаем ширину контента больше */
+  }
+
+  /* Уменьшаем размеры заголовков */
+  h1 {
+      font-size: 1.5em; /* Уменьшаем размер заголовка h1 */
+  }
+
+  h2 {
+      font-size: 1.3em; /* Уменьшаем размер заголовка h2 */
+  }
+
+  /* Уменьшаем общий текст */
+  p, span, .field__label-placeholder, .offer__title-wrap, .offer__text {
+      font-size: 0.9em; /* Уменьшаем размер текста */
+  }
+
+  .btn_primary {
+      font-size: 14px; /* Уменьшаем шрифт в кнопках */
+      padding: 8px 16px; /* Уменьшаем размеры кнопок */
+  }
+
+  .field__input {
+      font-size: 14px; /* Уменьшаем шрифт в полях ввода */
+  }
+
+  .field__label-placeholder {
+      font-size: 12px; /* Уменьшаем размер шрифта в лейблах */
+  }
+
+  /* Дополнительные стили для выравнивания элементов */
+  .main-block__btn-wrap {
+      margin-top: 20px; /* Добавляем отступ для кнопки */
+  }
+}
+
+/* Поля формы */
+.form-column {
+  width: 48%;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.field__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.field__label-placeholder {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  font-size: 14px;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.field__input:focus + .field__label-placeholder,
+.field__input:not(:focus):valid + .field__label-placeholder {
+  top: -20px;
+  font-size: 12px;
+  color: #007bff;
+}
+
+/* Элементы чекбоксов */
+.main-block__filters label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.main-block__btn-wrap {
+  text-align: center;
+}
+
+.btn_primary {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn_primary:hover {
+  background-color: #0056b3;
+}
+
+/* Сообщения об ошибке */
+.error-message {
+  display: none;
+  color: red;
+  font-size: 14px;
+}
+
+.error-icon {
+  margin-right: 5px;
+}
+
+/* Результаты */
+.result {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result__title-wrap {
+  margin-bottom: 15px;
+}
+
+.result__offers {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.offer div {
+  margin-bottom: 8px;
+}
