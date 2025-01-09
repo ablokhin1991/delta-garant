@@ -9,6 +9,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     const sum = parseFloat(sumField.value.replace(/\s+/g, "").replace(",", "."));
     const days = parseInt(daysField.value, 10);
   
+    // Проверка на корректность введенных данных
     if (!sum || isNaN(sum) || !days || isNaN(days)) {
       alert("Пожалуйста, заполните все поля корректно.");
       return;
@@ -54,8 +55,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         { procType: "3", guarType: "4", hasAdvance: false, customForm: true, rate: 0.034 },
         { procType: "3", guarType: "4", hasAdvance: false, customForm: false, rate: 0.034 },
         { procType: "4", guarType: "4", hasAdvance: false, customForm: true, rate: 0.04 },
-        { procType: "4", guarType: "4", hasAdvance: false, customForm: false, rate: 0.04 },
-      // Добавьте остальные условия
+        { procType: "4", guarType: "4", hasAdvance: false, customForm: false, rate: 0.04 }
     ];
   
     const condition = alfaBankConditions.find(c => 
@@ -89,5 +89,4 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     `;
   
     resultOutput.style.display = "block";
-  });
-  
+});

@@ -1,0 +1,117 @@
+/* Основной стиль страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* Контейнер для контента */
+  .content {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Формы и поля */
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .form-column {
+    width: 48%;
+  }
+  
+  .field {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .field__input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .field__label-placeholder {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 14px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+  
+  /* Элементы чекбоксов */
+  .main-block__filters label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .main-block__btn-wrap {
+    text-align: center;
+  }
+  
+  .btn_primary {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn_primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Сообщения об ошибке */
+  .error-message {
+    display: none;
+    color: red;
+    font-size: 14px;
+  }
+  
+  .error-icon {
+    margin-right: 5px;
+  }
+  
+  /* Результаты */
+  .result {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result__title-wrap {
+    margin-bottom: 15px;
+  }
+  
+  .result__offers {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .offer {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .offer div {
+    margin-bottom: 8px;
+  }
+  
