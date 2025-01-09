@@ -83,16 +83,18 @@ body {
 
 .field__input {
   width: 100%;
-  padding: 10px;
+  padding: 12px 15px;  /* Увеличиваем padding для улучшенного вида */
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  height: 45px;  /* Увеличиваем высоту поля */
+  box-sizing: border-box; /* Чтобы padding не выходил за пределы поля */
 }
 
 .field__label-placeholder {
   position: absolute;
-  top: 0px;
-  left: 10px;
+  top: 10px;  /* Убираем наезд на поле */
+  left: 15px; /* Немного отодвигаем плейсхолдер от края */
   font-size: 14px;
   color: #aaa;
   pointer-events: none;
@@ -101,7 +103,7 @@ body {
 
 .field__input:focus + .field__label-placeholder,
 .field__input:not(:focus):valid + .field__label-placeholder {
-  top: -20px;
+  top: -18px;
   font-size: 12px;
   color: #007bff;
 }
