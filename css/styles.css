@@ -56,7 +56,7 @@ header nav ul li a:hover {
     text-align: left;
     padding: 100px 0;
     width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
-    height: 500px;
+    height: auto;
 }
 
 .hero h1 {
