@@ -6,7 +6,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     const hasAdvance = document.getElementById("has-advance").checked;
     const customForm = document.getElementById("custom-form").checked;
   
-    const sum = parseFloat(sumField.value.replace(/\s+/g, ""));
+    const sum = parseFloat(sumField.value.replace(/\s+/g, "").replace(",", "."));
     const days = parseInt(daysField.value, 10);
   
     if (!sum || isNaN(sum) || !days || isNaN(days)) {
