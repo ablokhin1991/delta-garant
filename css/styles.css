@@ -197,10 +197,11 @@ footer a:hover {
 /* Общие стили для текста */
 .field__label-placeholder {
     position: absolute;
-    top: 10px;
-    left: 15px; /* Отступ от левого края */
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
     padding: 0 5px;
-    font-size: 14px;
+    font-size: 16px;
     color: #aaa;
     pointer-events: none;
     transition: all 0.3s ease;
@@ -214,17 +215,25 @@ footer a:hover {
 
 .field__input {
     width: 100%;
-    padding: 12px 15px; /* Увеличиваем padding для улучшенного вида */
+    padding: 12px 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    height: 45px; /* Увеличиваем высоту поля */
-    box-sizing: border-box; /* Чтобы padding не выходил за пределы поля */
+    height: 45px;
+    box-sizing: border-box;
 }
 
-.field__input:focus {
+.field__input:focus,
+.field__input:not(:placeholder-shown) {
     border-color: #0E214C;
     outline: none;
+}
+
+.field__input:focus + .field__label-placeholder,
+.field__input:not(:placeholder-shown) + .field__label-placeholder {
+    top: 5px;
+    font-size: 12px;
+    color: #0E214C;
 }
 
 /* Формы и поля */
