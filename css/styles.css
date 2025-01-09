@@ -213,14 +213,12 @@ footer a:hover {
 
 .field__input {
     width: 100%;
-    padding: 12px 15px 5px; /* Добавляем отступ снизу */
+    padding: 10px 15px; /* Отступы: сверху 10px, по бокам 15px */
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     height: 45px;
-    box-sizing: border-box;
-    line-height: 1; /* Уменьшаем высоту строки для корректного выравнивания */
-    vertical-align: bottom; /* Устанавливаем текст внизу */
+    box-sizing: border-box; /* Учитываем отступы внутри высоты поля */
 }
 
 .field__input:focus {
