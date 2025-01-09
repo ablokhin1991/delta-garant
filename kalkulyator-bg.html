@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор банковских гарантий</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="content">
+    <form class="main-block" id="guarantee-calculator">
+      <div class="form-row">
+        <div class="form-column">
+          <div class="field">
+            <input
+              class="field__input"
+              type="text"
+              name="summ"
+              id="guarantee-sum"
+              value="1 000 000"
+              required
+            />
+            <label class="field__label-placeholder">Сумма гарантии (руб)</label>
+          </div>
+          <div id="error-message" class="error-message" style="display:none;">
+            <span class="error-icon">!</span>
+            <span class="error-text">Поле обязательное к заполнению</span>
+          </div>
+        </div>
+
+        <div class="form-column">
+          <div class="field">
+            <input
+              class="field__input"
+              type="number"
+              name="validity"
+              id="guarantee-days"
+              value="365"
+              required
+            />
+            <label class="field__label-placeholder">Срок действия (дни)</label>
+          </div>
+          <div id="error-period-message" class="error-message" style="display:none;">
+            <span class="error-icon">!</span>
+            <span class="error-text">Поле обязательное к заполнению</span>
+          </div>
+        </div>
+
+        <div class="form-column">
+          <div class="field">
+            <select class="field__input" name="proc-type" id="procedure-type">
+              <option value="1" selected>44-ФЗ</option>
+              <option value="2">223-ФЗ</option>
+              <option value="3">615-ПП/185-ФЗ</option>
+              <option value="4">Коммерческий тендер</option>
+            </select>
+            <label class="field__label-placeholder">Тип процедуры</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-column">
+          <div class="field">
+            <select class="field__input" name="guar-type" id="guarantee-type">
+              <option value="1">На участие</option>
+              <option value="2" selected>На исполнение контракта</option>
+              <option value="3">На возврат аванса</option>
+              <option value="4">На гарантийный период</option>
+            </select>
+            <label class="field__label-placeholder">Тип гарантии</label>
+          </div>
+        </div>
+
+        <div class="form-column main-block__filters">
+          <label>
+            <input type="checkbox" id="has-advance" />
+            Наличие аванса
+          </label>
+          <label>
+            <input type="checkbox" id="custom-form" />
+            Гарантия по форме заказчика
+          </label>
+        </div>
+      </div>
+
+      <div class="main-block__btn-wrap">
+        <button type="button" id="calculate-btn" class="btn_primary">
+          Рассчитать стоимость
+        </button>
+      </div>
+    </form>
+
+    <div class="result" id="result-output" style="display: none; margin-top: 20px;">
+      <div class="result__title-wrap">
+        <h2 class="title_lg">Результаты расчета</h2>
+        <span class="text_light" id="result-summary"></span>
+      </div>
+      <div class="result__offers" id="offer-list"></div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
