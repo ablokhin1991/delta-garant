@@ -197,11 +197,9 @@ footer a:hover {
 /* Общие стили для текста */
 .field__label-placeholder {
     position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    padding: 0 5px;
-    font-size: 16px;
+    top: 5px; /* Отступ от верхнего края */
+    left: 15px; /* Отступ от левого края */
+    font-size: 12px; /* Уменьшаем размер текста */
     color: #aaa;
     pointer-events: none;
     transition: all 0.3s ease;
@@ -223,8 +221,7 @@ footer a:hover {
     box-sizing: border-box;
 }
 
-.field__input:focus,
-.field__input:not(:placeholder-shown) {
+.field__input:focus {
     border-color: #0E214C;
     outline: none;
 }
