@@ -34,7 +34,7 @@ header .logo img {
     color: #0E214C;
     font-size: 0.6em;
     font-style: italic;
-    margin-bottom: 15px;
+    margin-top: 5px; /* Добавим небольшой отступ сверху */
 }
 
 header nav ul {
