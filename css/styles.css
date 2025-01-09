@@ -11,6 +11,7 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Контейнер для контента */
 .container {
     width: 80%;
     margin: 20px auto;
@@ -54,7 +55,7 @@ header nav ul li a:hover {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
     color: #0E214C;
     text-align: left;
-    padding: 100px 0;
+    padding: 50px 0;
     width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
     height: auto;
 }
@@ -171,49 +172,46 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-    color: #F0473B
+    color: #F0473B;
 }
 
-/* Стили калькулятора ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••  */
-
+/* Стили калькулятора */
 /* Стиль контента */
 .content {
-    /*Max-width: 1200px;*/
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
-    font-family: 'Roboto', sans-serif;
-    color: #0E214C;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Общие стили для текста */
 .field__label-placeholder {
     position: absolute;
     top: 10px;
-    left: 0px;
-    /*background: #fff;*/
+    left: 15px; /* Отступ от левого края */
     padding: 0 5px;
-    font-size: 16px;
-    color: #F0473B;
-    font-weight: 400;
-    letter-spacing: 1.55px;
+    font-size: 14px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
 /* Поля ввода */
 .field {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .field__input {
     width: 100%;
-    padding: 15px 0 0 10px;
+    padding: 12px 15px; /* Увеличиваем padding для улучшенного вида */
     border: 1px solid #ccc;
-    border-radius: 0;
-    font-size: 14px;
-    color: #0E214C;
-    font-weight: 300;
-    letter-spacing: 1.55px;
-    height: 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 45px; /* Увеличиваем высоту поля */
+    box-sizing: border-box; /* Чтобы padding не выходил за пределы поля */
 }
 
 .field__input:focus {
@@ -221,28 +219,28 @@ footer a:hover {
     outline: none;
 }
 
-/* Группа параметров */
+/* Формы и поля */
 .form-row {
     display: flex;
-    gap: 25px;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 .form-column {
-    flex: 1;
+    width: 48%;
 }
 
 /* Кнопка */
 .btn_primary {
     display: inline-block;
-    background-color: transparent; /* Сделает фон прозрачным */
+    background-color: transparent;
     color: #F0473B;
     padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 0px;
     border: 1px solid #F0473B;
-    text-align: center; /* Центрируем текст внутри кнопки */
+    text-align: center;
     height: 100%;
 }
 
@@ -284,7 +282,7 @@ footer a:hover {
     font-size: 14px;
 }
 
-/* ДАЛЕЕ СТИЛИ ДЛЯ ОШИБОК ЗАПОЛНЕНИЯ */
+/* Стили для ошибок заполнения */
 .input-container {
     position: relative;
     margin-bottom: 20px;
@@ -307,6 +305,90 @@ footer a:hover {
     margin-right: 5px;
 }
 
-.error-message .error-text {
-    font-size: 9px;
+/* Респонсивность - медиазапросы для адаптивности */
+@media (max-width: 768px) {
+    /* Основные стили */
+    body {
+        font-size: 14px;
+    }
+
+    /* Для шапки сайта */
+    header nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 1em;
+    }
+
+    /* Секция Hero */
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .hero .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* Секции About и Calculator */
+    section {
+        padding: 20px 0;
+    }
+
+    section h2 {
+        font-size: 1.3em;
+    }
+
+    section p {
+        font-size: 0.9em;
+    }
+
+    /* Кнопка */
+    .btn_primary {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* Поля формы */
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-column {
+        width: 100%;
+    }
+
+    .field__label-placeholder {
+        font-size: 12px;
+    }
+
+    .field__input {
+        font-size: 14px;
+        height: 40px;
+    }
+
+    .content {
+        width: 90%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    /* Результаты */
+    .result {
+        margin-top: 20px;
+    }
+
+    .result__title-wrap h2 {
+        font-size: 14px;
+    }
 }
