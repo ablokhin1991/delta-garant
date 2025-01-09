@@ -12,6 +12,7 @@
       <div class="form-row">
         <div class="form-column">
           <div class="field">
+            <label class="field__label-placeholder" for="guarantee-sum">Сумма гарантии (руб)</label>
             <input
               class="field__input"
               type="text"
@@ -20,7 +21,6 @@
               value="1 000 000"
               required
             />
-            <label class="field__label-placeholder">Сумма гарантии (руб)</label>
           </div>
           <div id="error-message" class="error-message" style="display:none;">
             <span class="error-icon">!</span>
@@ -30,6 +30,7 @@
 
         <div class="form-column">
           <div class="field">
+            <label class="field__label-placeholder" for="guarantee-days">Срок действия (дни)</label>
             <input
               class="field__input"
               type="number"
@@ -38,7 +39,6 @@
               value="365"
               required
             />
-            <label class="field__label-placeholder">Срок действия (дни)</label>
           </div>
           <div id="error-period-message" class="error-message" style="display:none;">
             <span class="error-icon">!</span>
@@ -48,13 +48,13 @@
 
         <div class="form-column">
           <div class="field">
+            <label class="field__label-placeholder" for="procedure-type">Тип процедуры</label>
             <select class="field__input" name="proc-type" id="procedure-type">
               <option value="1" selected>44-ФЗ</option>
               <option value="2">223-ФЗ</option>
               <option value="3">615-ПП/185-ФЗ</option>
               <option value="4">Коммерческий тендер</option>
             </select>
-            <label class="field__label-placeholder">Тип процедуры</label>
           </div>
         </div>
       </div>
@@ -62,13 +62,13 @@
       <div class="form-row">
         <div class="form-column">
           <div class="field">
+            <label class="field__label-placeholder" for="guarantee-type">Тип гарантии</label>
             <select class="field__input" name="guar-type" id="guarantee-type">
               <option value="1">На участие</option>
               <option value="2" selected>На исполнение контракта</option>
               <option value="3">На возврат аванса</option>
               <option value="4">На гарантийный период</option>
             </select>
-            <label class="field__label-placeholder">Тип гарантии</label>
           </div>
         </div>
 
