@@ -235,14 +235,15 @@ footer a:hover {
 /* Кнопка */
 .btn_primary {
     display: inline-block;
-    background-color: transparent;
+    background-color: transparent; /* Сделает фон прозрачным */
     color: #F0473B;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0px;
     border: 1px solid #F0473B;
-    padding: 12px 20px;
-    font-size: 1.2em;
-    border-radius: 1px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    text-align: center; /* Центрируем текст внутри кнопки */
+    height: 100%;
 }
 
 .btn_primary:hover {
