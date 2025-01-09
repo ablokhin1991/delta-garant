@@ -26,7 +26,7 @@ header {
 
 header .logo img {
     width: 150px;
-    margin-bottom: 20px; /* Расстояние снизу от логотипа */
+    margin-bottom: 0px; /* Расстояние снизу от логотипа */
 }
 
 header nav ul {
