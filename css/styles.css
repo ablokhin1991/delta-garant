@@ -27,7 +27,14 @@ header {
 
 header .logo img {
     width: 150px;
-    margin-bottom: 0px; /* Расстояние снизу от логотипа */
+    margin-bottom: 15px; /* Расстояние снизу от логотипа */
+}
+
+.header p {
+    color: #0E214C;
+    font-size: 0.6em;
+    font-style: italic;
+    margin-bottom: 15px;
 }
 
 header nav ul {
