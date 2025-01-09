@@ -200,7 +200,7 @@ footer a:hover {
     top: 5px; /* Отступ от верхнего края */
     left: 15px; /* Отступ от левого края */
     font-size: 12px; /* Уменьшаем размер текста */
-    color: #aaa;
+    color: #F0473B;
     pointer-events: none;
     transition: all 0.3s ease;
 }
