@@ -298,9 +298,9 @@ footer a:hover {
 .result {
     margin-top: 30px;
     padding: 20px;
-    border: 1px solid #CCCCCC;
-    background-color: #EEEEEE;
-    border-radius: 0;
+    border: 1px solid #f4f4f4;
+    background-color: #f4f4f4;
+    border-radius: 4px;
 }
 
 .result__title-wrap h2 {
