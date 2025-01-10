@@ -257,7 +257,7 @@ footer a:hover {
     align-items: center; /* Центрирование по высоте */
     justify-content: space-between;
     margin-bottom: 0px; /* было 20 */
-    gap: 10px; /* Отступ между колонками */
+    gap: 15px; /* Отступ между колонками */
 }
 
 .form-column {
