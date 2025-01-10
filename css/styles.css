@@ -296,6 +296,27 @@ footer a:hover {
     border: 1px solid #F0473B;
 }
 
+/* Стили для кнопки сброса */
+.btn_secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: #F0473B;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    border: 1px solid #F0473B;
+    text-align: center;
+    height: 60px;
+    margin-left: 10px; /* Расстояние между кнопками */
+}
+
+.btn_secondary:hover {
+    background-color: #F0473B;
+    color: #fff;
+}
+
+
 /* Результаты */
 .result {
     margin-top: 30px;
