@@ -213,12 +213,14 @@ footer a:hover {
 
 .field__input {
     width: 100%;
-    padding: 15px 15px 10px; /* Отступы: сверху 15px, по бокам 15px 10px снизу*/
+    padding: 30px 15px 10px; /* Отступы: сверху 15px, по бокам 15px 10px снизу*/
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    height: 55px;
+    height: 60px;
     box-sizing: border-box; /* Учитываем отступы внутри высоты поля */
+    display: flex;
+    align-items: flex-end; /* Текст внутри поля опускается вниз */
 }
 
 .field__input:focus {
@@ -226,11 +228,23 @@ footer a:hover {
     outline: none;
 }
 
+/* Анимация для плейсхолдера при вводе текста */
 .field__input:focus + .field__label-placeholder,
 .field__input:not(:placeholder-shown) + .field__label-placeholder {
     top: 5px;
     font-size: 12px;
     color: #0E214C;
+}
+
+/* Раскрывающиеся списки (select) */
+.field__input select {
+    width: 100%;
+    padding: 0 15px; /* Отступы для текста */
+    border: none;
+    font-size: 16px;
+    height: 100%; /* Заполняем всю высоту родителя */
+    background: transparent;
+    outline: none;
 }
 
 /* Формы и поля */
@@ -386,7 +400,11 @@ footer a:hover {
 
     .field__input {
         font-size: 14px;
-        height: 50px;
+        height: 55px;
+    }
+
+    .field__input select {
+        font-size: 14px;
     }
 
     .content {
