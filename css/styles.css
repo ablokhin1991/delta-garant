@@ -344,6 +344,20 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
+.offer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.offer__logo {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 15px;
+}
+
 .offer__percent.amount {
     font-weight: 400;
     font-size: 14px;
