@@ -32,9 +32,9 @@ header .logo img {
 
 .header p {
     color: #0E214C;
-    font-size: 0.6em;
+    font-size: 0.4em;
     font-style: italic;
-    margin-top: 5px; /* Добавим небольшой отступ сверху */
+    margin-top: 0px; /* Добавим небольшой отступ сверху */
     font-family: 'Verdana', sans-serif; /* Убедитесь, что шрифт поддерживает курсив */
 }
 
