@@ -382,6 +382,7 @@ footer a:hover {
     .btn_primary {
         font-size: 14px;
         padding: 8px 16px;
+        height: 55px;
     }
 
     /* Поля формы */
