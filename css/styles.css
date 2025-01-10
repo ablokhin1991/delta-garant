@@ -213,11 +213,11 @@ footer a:hover {
 
 .field__input {
     width: 100%;
-    padding: 10px 15px; /* Отступы: сверху 10px, по бокам 15px */
+    padding: 15px 15px 10px; /* Отступы: сверху 15px, по бокам 15px 10px снизу*/
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    height: 45px;
+    height: 55px;
     box-sizing: border-box; /* Учитываем отступы внутри высоты поля */
 }
 
@@ -386,7 +386,7 @@ footer a:hover {
 
     .field__input {
         font-size: 14px;
-        height: 40px;
+        height: 50px;
     }
 
     .content {
