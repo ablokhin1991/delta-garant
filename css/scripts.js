@@ -85,6 +85,22 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
   const resultOutput = document.getElementById("result-output");
   const offerList = document.getElementById("offer-list");
+  const resultLogo = document.querySelector(".result__logo");
+
+    // Привязка логотипа к банку
+    const bankLogos = {
+        "ПАО Альфа-Банк": "/images/banks-logo/alfa-bank.svg"
+        // В дальнейшем добавьте сюда другие банки
+    };
+
+    const bankName = "ПАО Альфа-Банк"; // Для Альфа-Банка
+    const logoUrl = bankLogos[bankName];
+
+    if (logoUrl) {
+        resultLogo.style.backgroundImage = `url(${logoUrl})`;
+    } else {
+        resultLogo.style.backgroundImage = "none";
+    }
 
   offerList.innerHTML = `
     <div class="offer">
