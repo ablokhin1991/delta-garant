@@ -90,3 +90,19 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   
     resultOutput.style.display = "block";
 });
+
+// Получаем элементы
+const resetButton = document.getElementById('reset-btn');
+const resultOutput = document.getElementById('result-output');
+
+// Добавляем событие сброса
+resetButton.addEventListener('click', function () {
+    // Скрываем блок с результатами
+    resultOutput.style.display = 'none';
+
+    // Если нужно, сбрасываем содержимое результата
+    const resultSummary = document.getElementById('result-summary');
+    const offerList = document.getElementById('offer-list');
+    if (resultSummary) resultSummary.innerHTML = '';
+    if (offerList) offerList.innerHTML = '';
+});
