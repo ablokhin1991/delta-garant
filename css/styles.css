@@ -213,14 +213,14 @@ footer a:hover {
 
 .field__input {
     width: 100%;
-    padding: 30px 15px 10px; /* Отступы: сверху 15px, по бокам 15px 10px снизу*/
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     height: 60px;
     box-sizing: border-box; /* Учитываем отступы внутри высоты поля */
     display: flex;
-    align-items: flex-end; /* Текст внутри поля опускается вниз */
+    align-items: center; /* Центрируем элементы по вертикали */
 }
 
 .field__input:focus {
@@ -239,12 +239,15 @@ footer a:hover {
 /* Раскрывающиеся списки (select) */
 .field__input select {
     width: 100%;
-    padding: 0 15px; /* Отступы для текста */
+    padding: 0 5px; /* Отступы для текста */
+    text-align: left; /* Выравниваем текст */
+    background-color: white; /* Приводим фон к стандартному виду */
     border: none;
     font-size: 16px;
     height: 100%; /* Заполняем всю высоту родителя */
     background: transparent;
     outline: none;
+    margin: 0; /* Убираем лишние отступы */
 }
 
 /* Формы и поля */
@@ -257,6 +260,17 @@ footer a:hover {
 .form-column {
     width: 48%;
 }
+
+.main-block__filters label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px; /* Увеличиваем расстояние между чекбоксами */
+}
+
+.main-block__filters input[type="checkbox"] {
+    margin-right: 5px; /* Добавляем небольшой отступ между чекбоксом и текстом */
+}
+
 
 /* Кнопка */
 .btn_primary {
@@ -394,6 +408,10 @@ footer a:hover {
 
     .form-column {
         width: 100%;
+    }
+
+    .field {
+        margin-bottom: 10px; /* Уменьшаем отступ между полями */
     }
 
     .field__label-placeholder {
