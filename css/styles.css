@@ -406,6 +406,7 @@ footer a:hover {
 
     .field__input select {
         font-size: 14px;
+        height: 55px;
     }
 
     .content {
