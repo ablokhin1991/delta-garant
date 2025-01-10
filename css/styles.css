@@ -213,14 +213,14 @@ footer a:hover {
 
 .field__input {
     width: 100%;
-    padding: 15px;
+    padding: 25px 15px 10px; /* Сверху меньше отступ, снизу больше для "текста на дне" */
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     height: 60px;
     box-sizing: border-box; /* Учитываем отступы внутри высоты поля */
     display: flex;
-    align-items: center; /* Центрируем элементы по вертикали */
+    align-items: flex-end; /* Текст опускается вниз */
 }
 
 .field__input:focus {
