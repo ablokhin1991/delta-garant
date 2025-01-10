@@ -253,6 +253,7 @@ footer a:hover {
 /* Формы и поля */
 .form-row {
     display: flex;
+    align-items: center; /* Центрирование по высоте */
     justify-content: space-between;
     margin-bottom: 0px; /* было 20 */
 }
@@ -262,9 +263,10 @@ footer a:hover {
 }
 
 .main-block__filters label {
-    display: inline-flex;
+    display: flex; /* Чтобы текст рядом с чекбоксом выровнялся */
     align-items: center;
     margin-right: 15px; /* Увеличиваем расстояние между чекбоксами */
+    gap: 8px; /* Добавляем небольшой отступ между чекбоксом и текстом */
 }
 
 .main-block__filters input[type="checkbox"] {
