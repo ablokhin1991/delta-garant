@@ -424,6 +424,13 @@ footer a:hover {
         height: 55px;
     }
 
+    /* Кнопка */
+    .btn_secondary {
+        font-size: 14px;
+        padding: 8px 16px;
+        height: 55px;
+    }
+
     /* Поля формы */
     .form-row {
         flex-direction: column;
