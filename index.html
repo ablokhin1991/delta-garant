@@ -1,164 +1,131 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ДЕЛЬТА ГАРАНТ</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор банковских гарантий</title>
+  <!-- <link rel="stylesheet" href="css/styles-calc.css"> -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo/delta-red.svg" alt="Дельта Гарант" />
-                </a>
-            </div>
-            <!-- <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="policy.html">Политика</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </nav>-->
-        </div>
-    </header>
 
+  <!-- Место для шапки -->
+  <div id="header-placeholder"></div>
 
+  <section class="hero">
     <div class="container">
-        <div class="content">
-            <form class="main-block" id="guarantee-calculator">
-                <div class="form-row">
-                    <div class="form-column">
-                        <div class="field">
-                            <input class="field__input" type="text" name="summ" id="guarantee-sum" min="1 000" max="1 000 000 000" value="1 000 000" required />
-                            <label class="field__label-placeholder">Сумма гарантии (руб)</label>
-                        </div>
-                        <div id="error-message" class="error-message" style="display:none;">
-                            <span class="error-icon">!</span>
-                            <span class="error-text">Поле обязательное к заполнению</span>
-                        </div>
-                    </div>
-
-                    <div class="form-column">
-                        <div class="field">
-                            <input class="field__input" type="number" name="validity" id="guarantee-days" min="1" max="365" value="365" required />
-                            <label class="field__label-placeholder">Срок действия (дни)</label>
-                        </div>
-                        <div id="error-period-message" class="error-message" style="display:none;">
-                            <span class="error-icon">!</span>
-                            <span class="error-text">Поле обязательное к заполнению</span>
-                        </div>
-                    </div>
-
-                    <div class="form-column">
-                        <div class="field">
-                            <select class="field__input" name="proc-type" id="procedure-type">
-                                <option value="1" selected>44-ФЗ</option>
-                                <option value="2">223-ФЗ</option>
-                                <option value="3">615-ПП/185-ФЗ</option>
-                                <option value="4">Коммерческий тендер</option>
-                            </select>
-                            <label class="field__label-placeholder">Тип процедуры</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-column">
-                        <div class="field">
-                            <select class="field__input" name="guar-type" id="guarantee-type">
-                                <option value="1">На участие</option>
-                                <option value="2" selected>На исполнение контракта</option>
-                                <option value="3">На возврат аванса</option>
-                                <option value="4">На гарантийный период</option>
-                            </select>
-                            <label class="field__label-placeholder">Тип гарантии</label>
-                        </div>
-                    </div>
-
-                    <div class="form-column main-block__filters">
-                        <label>
-                            <input type="checkbox" id="has-advance" />
-                            Наличие аванса
-                        </label>
-                        <label>
-                            <input type="checkbox" id="custom-form" />
-                            Гарантия по форме заказчика
-                        </label>
-                    </div>
-                </div>
-
-                <div class="main-block__btn-wrap">
-                    <button type="button" id="calculate-btn" class="btn_primary">Рассчитать стоимость</button>
-                </div>
-            </form>
-
-            <div class="result" id="result-output" style="display: none; margin-top: 20px;">
-                <div class="result__title-wrap">
-                    <h2 class="title_lg">Результаты расчета</h2>
-                    <span class="text_light" id="result-summary"></span>
-                </div>
-                <div class="result__offers" id="offer-list"></div>
-                <div class="not_oferta"></div>
-            </div>
-        </div>
+        <h1>Калькулятор банковских гарантий</h1>
+        <p>Поиск и сравнение цен в 3 клика</p>
     </div>
+</section>
 
-
-
-    <section class="hero">
-        <div class="container">
-            <h1>Банковская гарантия</h1>
-            <p>По 44-ФЗ, 223-ФЗ, 185-ФЗ (615-ПП) и коммерческим контрактам</p>
-            <a href="contact.html" class="btn">Оставить заявку</a>
+  <div class="content">
+    <form class="main-block" id="guarantee-calculator">
+      <div class="form-row">
+        <div class="form-column">
+          <div class="field">
+            <label class="field__label-placeholder" for="guarantee-sum">Сумма гарантии (руб)</label>
+            <input
+              class="field__input"
+              type="text"
+              name="summ"
+              id="guarantee-sum"
+              value="1 000 000"
+              required
+            />
+          </div>
+          <div id="error-message" class="error-message" style="display:none;">
+            <span class="error-icon">!</span>
+            <span class="error-text">Поле обязательное к заполнению</span>
+          </div>
         </div>
-    </section>
 
-    <section class="about">
-        <div class="container">
-            <h2>О нас</h2>
-            <p>ДЕЛЬТА ГАРАНТ — это компания, которая предоставляет профессиональные услуги по оформлению банковских гарантий, обеспечивая надежность и скорость выполнения операций.</p>
-            <a href="about.html" class="btn">Подробнее</a>
+        <div class="form-column">
+          <div class="field">
+            <label class="field__label-placeholder" for="guarantee-days">Срок действия (дни)</label>
+            <input
+              class="field__input"
+              type="number"
+              name="validity"
+              id="guarantee-days"
+              value="365"
+              required
+            />
+          </div>
+          <div id="error-period-message" class="error-message" style="display:none;">
+            <span class="error-icon">!</span>
+            <span class="error-text">Поле обязательное к заполнению</span>
+          </div>
         </div>
-    </section>
 
-    <section class="calculator">
-        <div class="container">
-            <h2>Калькулятор стоимости банковской гарантии</h2>
-            <p>Используйте наш калькулятор для расчета стоимости банковской гарантии.</p>
-            <!-- Здесь будет форма калькулятора -->
-            <a href="calculator.html" class="btn">Перейти к калькулятору</a>
+        <div class="form-column">
+          <div class="field">
+            <label class="field__label-placeholder" for="procedure-type">Тип процедуры</label>
+            <select class="field__input" name="proc-type" id="procedure-type">
+              <option value="1" selected>44-ФЗ</option>
+              <option value="2">223-ФЗ</option>
+              <option value="3">615-ПП/185-ФЗ</option>
+              <option value="4">Коммерческий тендер</option>
+            </select>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <div class="container">
-        <footer>
-            <div class="footer-container">
-                <div class="footer-column footer-left">
-                    <img src="images/logo/delta-red.svg" alt="Дельта Гарант" class="footer-logo">
-                </div>
-                <div class="footer-column footer-center">
-                    <p>ООО "ДЕЛЬТА"</p>
-                    <p>ИНН 7727201785 / КПП 772701001</p>
-                    <p>ОГРН 1157746633109</p>
-                    <p>Юр. адрес 117418, г. Москва, ул. Новочерёмушкинская, д. 49, к. 1</p>
-                </div>
-                <div class="footer-column footer-right">
-                    <p>Телефон: <a href="tel:79000000000">+7 (900) 000-00-00</a></p>
-                    <p>Эл. почта: <a href="mailto:info@delta-garant.ru">info@delta-garant.ru</a></p>
-                    <p>Режим работы: с Пн-Пт с 9:00 по 18:00</p>
-                    <p><a href="policy.html">Политика обработки персональных данных</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2015-2025 ДЕЛЬТА ГАРАНТ. Все права защищены.</p>
-            </div>
-        </footer>
+      <div class="form-row">
+        <div class="form-column">
+          <div class="field">
+            <label class="field__label-placeholder" for="guarantee-type">Тип гарантии</label>
+            <select class="field__input" name="guar-type" id="guarantee-type">
+              <option value="1">На участие</option>
+              <option value="2" selected>На исполнение контракта</option>
+              <option value="3">На возврат аванса</option>
+              <option value="4">На гарантийный период</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-column main-block__filters">
+          <label>
+            <input type="checkbox" id="has-advance" />
+            Наличие аванса
+          </label>
+          <label>
+            <input type="checkbox" id="custom-form" />
+            Гарантия по форме заказчика
+          </label>
+        </div>
+      </div>
+
+      <div class="main-block__btn-wrap">
+        <button type="button" id="calculate-btn" class="btn_primary">
+          Рассчитать стоимость
+        </button>
+        <button type="button" id="reset-btn" class="btn_secondary">
+          Сбросить
+      </button>
+      </div>
+    </form>
+
+    <div class="result" id="result-output" style="display: none; margin-top: 20px;">
+      <div class="result__title-wrap">
+        <h2 class="title_lg">Результаты расчета</h2>
+        <span class="text_light" id="result-summary"></span>
+      </div>
+      <div class="result__offers" id="offer-list"></div>
+      <div class="result">
+        <div class="result__logo"></div>
+        <div class="result__offers" id="offer-list"></div>
     </div>
     
-    
-    <script src="js/calculator.js"></script>
+    </div>
+  </div>
+
+  <!-- Место для подвала -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Подключаем скрипт -->
+  <script src="insert-header-footer.js"></script>
+  <script src="css/scripts.js"></script>
 </body>
 </html>
+
