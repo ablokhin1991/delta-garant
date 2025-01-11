@@ -97,11 +97,13 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const results = banks
       .map(bank => {
           if (sum > bank.maxSum || days > bank.maxDays) return null;
+
           const condition = bank.conditions.find(c =>
               c.procType === procType &&
               c.guarType === guarType &&
               c.hasAdvance === hasAdvance &&
-              c.customForm === customForm
+              c.customForm === customForm &&
+              guaranteeSum >= c.minSum && guaranteeSum <= c.maxSum // Обновление проверки диапазона суммы
           );
           if (!condition) return null;
 
