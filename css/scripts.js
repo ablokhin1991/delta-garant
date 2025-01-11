@@ -33,7 +33,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const banks = [
       {
           name: "ПАО Альфа-Банк",
-          logo: "delta-garant/images/banks-logo/alfa-bank.svg",
+          logo: "/images/banks-logo/alfa-bank.svg",
           maxSum: 150000000,
           maxDays: 3652,
           conditions: [
