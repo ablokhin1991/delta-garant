@@ -110,24 +110,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
             { procType: "4", guarType: "2", hasAdvance: false, customForm: true, rate: 0.038, minCost: 5000, maxSum: 50000000 },
             { procType: "4", guarType: "2", hasAdvance: true, customForm: false, rate: 0.038, minCost: 5000, maxSum: 50000000 },
             { procType: "4", guarType: "2", hasAdvance: false, customForm: false, rate: 0.038, minCost: 5000, maxSum: 50000000 }
-            { 
-              procType: "4", 
-              guarType: "1", 
-              hasAdvance: false, 
-              customForm: true, 
-              rate: "min %", 
-              minCost: 5000, 
-              maxSum: 50000000 
-          },
-          { 
-              procType: "4", 
-              guarType: "1", 
-              hasAdvance: false, 
-              customForm: false, 
-              rate: "min %", 
-              minCost: 5000, 
-              maxSum: 50000000 
-          },
         ],
     }
     
