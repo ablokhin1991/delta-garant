@@ -307,3 +307,44 @@ document.getElementById("reset-btn").addEventListener("click", function () {
   document.getElementById("result-output").style.display = "none";
   document.getElementById("offer-list").innerHTML = "";
 });
+
+// Функция для управления состоянием guarType - ВОЗВРАТ АВАНСА ПРОПАДАЕТ ПРИ 44-ФЗ
+function updateGuarTypeAvailability() {
+  // Получаем элементы procType и guarType
+  const procTypeElement = document.querySelector('[name="procType"]');
+  const guarTypeElement = document.querySelector('[name="guarType"]');
+
+  // Проверяем, существует ли элемент
+  if (!procTypeElement || !guarTypeElement) {
+      console.error("Элементы procType или guarType не найдены.");
+      return;
+  }
+
+  // Получаем текущее значение procType
+  const procType = procTypeElement.value;
+
+  // Если procType: "1", делаем guarType: "3" некликабельным
+  if (procType === "1") {
+      // Получаем опцию guarType со значением "3"
+      const guarTypeOption = guarTypeElement.querySelector('option[value="3"]');
+
+      if (guarTypeOption) {
+          // Делаем опцию некликабельной
+          guarTypeOption.disabled = true;
+          guarTypeOption.style.color = "gray"; // Меняем цвет текста
+      }
+  } else {
+      // Если procType не "1", возвращаем guarType: "3" в нормальное состояние
+      const guarTypeOption = guarTypeElement.querySelector('option[value="3"]');
+      if (guarTypeOption) {
+          guarTypeOption.disabled = false;
+          guarTypeOption.style.color = ""; // Восстанавливаем цвет текста
+      }
+  }
+}
+
+// Добавляем обработчик события на изменение значения procType
+document.querySelector('[name="procType"]').addEventListener('change', updateGuarTypeAvailability);
+
+// Вызываем функцию один раз при загрузке страницы для первоначальной проверки
+document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
