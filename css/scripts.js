@@ -297,9 +297,9 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     if (sum > bank.maxSum || days > bank.maxDays) {
       let stopMessage = '';
       if (sum > bank.maxSum) {
-        stopMessage = `Превышена максимальная сумма БГ - maxSum: ${bank.maxSum.toLocaleString()} руб.`;
+        stopMessage = `Превышена максимальная сумма БГ: ${bank.maxSum.toLocaleString()} руб.`;
       } else if (days > bank.maxDays) {
-        stopMessage = `Превышен максимальный срок БГ - maxDays: ${bank.maxDays} дней.`;
+        stopMessage = `Превышен максимальный срок БГ: ${bank.maxDays} дней.`;
       }
   
       return {
