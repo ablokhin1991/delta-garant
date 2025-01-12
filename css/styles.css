@@ -344,11 +344,28 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
+/* Стили для блока результатов */
+.result__offers {
+    display: flex;
+    flex-direction: column; /* Расположить предложения по вертикали */
+    gap: 16px; /* Отступ между блоками */
+  }
+
 .offer {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
+    padding: 16px; /* Отступы внутри каждого блока */
+    border: 1px solid #ccc; /* Рамка вокруг предложения */
+    border-radius: 8px; /* Скругленные углы */
+    background-color: #fff; /* Фон блока */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для выделения блока */
 }
+
+/* Разделительная линия между блоками */
+.offer + .offer {
+    border-top: 1px solid #ccc;
+  }
 
 .offer__logo {
     width: 60px;
@@ -499,6 +516,15 @@ footer a:hover {
     .result {
         margin-top: 20px;
     }
+
+    .offer {
+        flex-direction: column; /* Расположить элементы внутри предложения вертикально */
+        text-align: center; /* Центрировать текст */
+      }
+    
+      .offer__logo {
+        margin-bottom: 12px; /* Отступ снизу для логотипа */
+      }
 
     .result__title-wrap h2 {
         font-size: 14px;
