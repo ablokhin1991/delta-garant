@@ -388,20 +388,21 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   }
 
   const offerList = document.getElementById("offer-list");
-  offerList.innerHTML = finalResults
-    .map(result => `
-      <div class="offer">
-          <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
-          <div>
-              <strong>${result.name}</strong><br>
-              ${result.isStopFactor ? `Стоп-факторы - ${result.rate}` : `Ставка: ${result.rate}%`}<br>
-              ${result.isStopFactor ? '' : `${result.cost.toLocaleString()} ₽`}
-          </div>
-      </div>
-    `)
-    .join("");
+offerList.innerHTML = finalResults
+  .map(result => 
+    `<div class="offer">
+        <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
+        <div class="offer__details">
+            <strong>${result.name}</strong><br>
+            ${result.isStopFactor ? `Стоп-факторы - ${result.rate}` : `Ставка: ${result.rate}%`}<br>
+            ${result.isStopFactor ? '' : `${result.cost.toLocaleString()} ₽`}
+        </div>
+        <button class="btn_primary offer__button">Оформить</button>
+    </div>`
+  )
+  .join("");
 
-  document.getElementById("result-output").style.display = "block";
+document.getElementById("result-output").style.display = "block";
 });
 
 document.getElementById("reset-btn").addEventListener("click", function () {
