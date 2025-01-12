@@ -103,7 +103,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
               c.guarType === guarType &&
               c.hasAdvance === hasAdvance &&
               c.customForm === customForm &&
-              guaranteeSum >= c.minSum && guaranteeSum <= c.maxSum // Обновление проверки диапазона суммы
+              Sum >= c.minSum && Sum <= c.maxSum // Обновление проверки диапазона суммы
           );
           if (!condition) return null;
 
