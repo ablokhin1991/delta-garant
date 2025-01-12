@@ -149,3 +149,21 @@ document.getElementById("reset-btn").addEventListener("click", function () {
   document.getElementById("result-output").style.display = "none";
   document.getElementById("offer-list").innerHTML = "";
 });
+
+// Отладочный вывод в код. Это поможет понять: Совпадают ли введенные параметры с условиями? Какое условие не проходит проверку?
+console.log("Проверяем банк:", bank.name);
+console.log("Сравниваем параметры: procType =", procType, ", guarType =", guarType, ", hasAdvance =", hasAdvance, ", customForm =", customForm);
+console.log("Сумма:", sum, "Дни:", days);
+
+const condition = bank.conditions.find(c => {
+    const matches = (
+        c.procType === procType &&
+        c.guarType === guarType &&
+        c.hasAdvance === hasAdvance &&
+        c.customForm === customForm &&
+        sum >= c.minSum &&
+        sum <= c.maxSum
+    );
+    console.log("Условие:", c, "Совпадает:", matches);
+    return matches;
+});
