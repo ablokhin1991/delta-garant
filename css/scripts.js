@@ -300,7 +300,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   
     // Проверяем maxSum независимо от того, найдено условие или нет
     if (sum > bank.maxSum) {
-        const stopMessage = `Превышена максимальная сумма БГ - maxSum: ${bank.maxSum.toLocaleString()} руб.`;
+        const stopMessage = `Превышена максимальная сумма гарантии - ${bank.maxSum.toLocaleString()} руб.`;
         return {
             name: bank.name,
             logo: bank.logo,
