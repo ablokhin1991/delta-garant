@@ -133,7 +133,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
           <div>
               <strong>${result.name}</strong><br>
               Ставка: ${result.rate}%<br>
-              ${result.cost.toLocaleString()} ₽
+              ${result.cost.toLocaleString()} руб.
           </div>
       </div>
     `)
