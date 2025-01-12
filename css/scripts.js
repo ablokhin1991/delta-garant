@@ -264,19 +264,24 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
   const results = banks.map(bank => {
     // Ищем подходящие условия для банка
-    // Если это банк "Промсвязьбанк" и выбран guarType: 4
+    // Проверяем специальное условие для Промсвязьбанка
+    let adjustedMaxDays = bank.maxDays; // По умолчанию используем базовый maxDays
+    
     if (bank.name === "ПАО Промсвязьбанк" && guarType === "4") {
-      // Проверяем, если срок превышает 1860 дней
-      if (days > 1860) {
-          return {
-              name: bank.name,
-              logo: bank.logo,
-              cost: 'Стоп-факторы',
-              rate: `Превышен максимальный срок гарантии - 1860 дней.`,
-              isStopFactor: true // помечаем как стоп-фактор
-          };
-      }
-  }
+        adjustedMaxDays = 1860; // Для гарантийного периода используем 1860 дней
+    }
+
+    // Проверяем, если срок превышает скорректированный adjustedMaxDays
+    if (days > adjustedMaxDays) {
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: 'Стоп-факторы',
+            rate: `Превышен максимальный срок гарантии - ${adjustedMaxDays} дней.`,
+            isStopFactor: true // Помечаем как стоп-фактор
+        };
+    }
+
     const condition = bank.conditions.find(c =>
       c.procType === procType &&
       c.guarType === guarType &&
@@ -293,22 +298,16 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       "4": "Коммерческий тендер"
     };
   
-    // Проверяем maxSum и maxDays независимо от того, найдено условие или нет
-    if (sum > bank.maxSum || days > bank.maxDays) {
-      let stopMessage = '';
-      if (sum > bank.maxSum) {
-        stopMessage = `Превышена максимальная сумма БГ: ${bank.maxSum.toLocaleString()} руб.`;
-      } else if (days > bank.maxDays) {
-        stopMessage = `Превышен максимальный срок БГ: ${bank.maxDays} дней.`;
-      }
-  
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: 'Стоп-факторы',
-        rate: stopMessage,
-        isStopFactor: true // помечаем как стоп-фактор
-      };
+    // Проверяем maxSum независимо от того, найдено условие или нет
+    if (sum > bank.maxSum) {
+        const stopMessage = `Превышена максимальная сумма БГ - maxSum: ${bank.maxSum.toLocaleString()} руб.`;
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: 'Стоп-факторы',
+            rate: stopMessage,
+            isStopFactor: true // Помечаем как стоп-фактор
+        };
     }
   
     // Если подходящее условие не найдено
