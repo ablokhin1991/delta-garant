@@ -88,8 +88,8 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         maxSum: 200000000,
         maxDays: 1140,
         conditions: [
-            { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05 },
-            { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, maxSum: 999999, rate: 0.035 }
+            { procType: "1", guarType: "2", hasAdvance: true, customForm: true, rate: 0.05 },
+            { procType: "1", guarType: "2", hasAdvance: true, customForm: true, rate: 0.035 }
         ],
     }
     
@@ -115,7 +115,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
           // Отладка условия
           console.log("Найденное условие:", condition);
-          
+
           if (!condition) return null;
 
           const rate = condition.rate;
