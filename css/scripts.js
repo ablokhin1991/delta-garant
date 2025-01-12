@@ -97,58 +97,33 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   ];
 
   const results = banks
-      .map(bank => {
-          if (sum > bank.maxSum || days > bank.maxDays) return null;
-
-          // Отладочные сообщения
-          console.log("Проверяем банк:", bank.name);
-          console.log("Параметры банка:", bank);
-
-          console.log("Параметры для сравнения:");
-          console.log("procType:", procType);
-          console.log("guarType:", guarType);
-          console.log("hasAdvance:", hasAdvance);
-          console.log("customForm:", customForm);
-          console.log("Сумма:", sum);
-          console.log("Дни:", days);
-
-          const condition = bank.conditions.find(c => {
-            const matches = (
+        .map(bank => {
+            if (sum > bank.maxSum || days > bank.maxDays) return null;
+            const condition = bank.conditions.find(c =>
                 c.procType === procType &&
                 c.guarType === guarType &&
                 c.hasAdvance === hasAdvance &&
-                c.customForm === customForm &&
-                sum >= c.minSum &&
-                sum <= c.maxSum
+                c.customForm === customForm
             );
-            console.log("Проверяем условие:", c, "Результат совпадения:", matches);
-            return matches;
-          });
-        
+            if (!condition) return null;
 
-          // Отладка условия
-          console.log("Найденное условие:", condition);
+            const rate = condition.rate;
+            const cost = Math.max((sum * rate * days) / 365, 1000).toFixed(2);
 
-          if (!condition) return null;
+            return {
+                name: bank.name,
+                logo: bank.logo,
+                cost: parseFloat(cost),
+                rate: (rate * 100).toFixed(1),
+            };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.cost - b.cost);
 
-          const rate = condition.rate;
-          const cost = Math.max((sum * rate * days) / 365, 1000).toFixed(2);
-
-          return {
-              name: bank.name,
-              logo: bank.logo,
-              cost: parseFloat(cost),
-              rate: (rate * 100).toFixed(1),
-          };
-
-      })
-      .filter(Boolean)
-      .sort((a, b) => a.cost - b.cost);
-
-  if (results.length === 0) {
-      alert("Условия для выбранных параметров не найдены.");
-      return;
-  }
+    if (results.length === 0) {
+        alert("Условия для выбранных параметров не найдены.");
+        return;
+    }
 
   const offerList = document.getElementById("offer-list");
   offerList.innerHTML = results
