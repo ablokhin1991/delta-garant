@@ -197,8 +197,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }
   ];
 
-  const results = banks
-  .map(bank => {
+  const results = banks.map(bank => {
     // Ищем подходящие условия для банка
     const condition = bank.conditions.find(c =>
       c.procType === procType &&
@@ -207,15 +206,15 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       c.customForm === customForm &&
       sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity)
     );
-
+  
     // Объект с названиями процедур по номерам
     const procedureNames = {
       "1": "44-ФЗ",
       "2": "223-ФЗ",
-      "3": "615-ПП/185-ФЗ",
-      "4": "Коммерческий тендер"
+      "3": "Госзакупки",
+      "4": "Кредитные договоры"
     };
-
+  
     // Проверяем maxSum и maxDays независимо от того, найдено условие или нет
     if (sum > bank.maxSum || days > bank.maxDays) {
       let stopMessage = '';
@@ -224,13 +223,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       } else if (days > bank.maxDays) {
         stopMessage = `Превышен максимальный срок БГ - maxDays: ${bank.maxDays} дней.`;
       }
-
-      // Специальное условие для Промсвязьбанка при procType: "4"
-    if (bank.name === "ПАО Промсвязьбанк" && procType === "4") {
-      cost = Math.max(cost, 5000); // Минимальная стоимость - 5000 руб.
-      console.log(`Применено минимальное ограничение для Промсвязьбанка: ${cost}`);
-    }
-
+  
       return {
         name: bank.name,
         logo: bank.logo,
@@ -239,7 +232,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         isStopFactor: true // помечаем как стоп-фактор
       };
     }
-
+  
     // Если подходящее условие не найдено
     if (!condition) {
       const procedureName = procedureNames[procType] || `Процедура №${procType}`;
@@ -252,19 +245,29 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         isStopFactor: true // помечаем как стоп-фактор
       };
     }
-
+  
     // Если все проверки пройдены, рассчитываем ставку и стоимость
-    const rate = condition.rate;
-    const cost = Math.max((sum * rate * days) / 365, 1000).toFixed(2);
-
+    let rate = condition.rate;
+    let cost = Math.max((sum * rate * days) / 365, 1000);
+  
+    // Лог для проверки данных
+    console.log(`Банк: ${bank.name}, Тип процедуры: ${procType}, Расчетная стоимость: ${cost}`);
+  
+    // Специальное условие для Промсвязьбанка при procType: "4"
+    if (bank.name === "ПАО Промсвязьбанк" && procType === "4") {
+      cost = Math.max(cost, 5000); // Минимальная стоимость - 5000 руб.
+      console.log(`Применено минимальное ограничение для Промсвязьбанка: ${cost}`);
+    }
+  
     return {
       name: bank.name,
       logo: bank.logo,
-      cost: parseFloat(cost),
+      cost: parseFloat(cost.toFixed(2)),
       rate: (rate * 100).toFixed(1),
       isStopFactor: false
     };
   });
+  
 
 
   // Разделяем банки на обычные и с стоп-факторами
