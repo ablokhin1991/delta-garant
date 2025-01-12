@@ -105,7 +105,8 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
               c.guarType === guarType &&
               c.hasAdvance === hasAdvance &&
               c.customForm === customForm &&
-              sum >= c.minSum && sum <= c.maxSum // Обновление проверки диапазона суммы
+              sum >= c.minSum &&
+              sum <= c.maxSum
           );
           if (!condition) return null;
 
