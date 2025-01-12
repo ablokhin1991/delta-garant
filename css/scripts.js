@@ -89,7 +89,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         maxDays: 1140,
         conditions: [
             { procType: "1", guarType: "2", hasAdvance: true, customForm: true, rate: 0.05 },
-            { procType: "1", guarType: "2", hasAdvance: true, customForm: true, rate: 0.035 }
+            { procType: "1", guarType: "2", hasAdvance: true, customForm: false, rate: 0.035 }
         ],
     }
     
