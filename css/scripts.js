@@ -100,6 +100,10 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       .map(bank => {
           if (sum > bank.maxSum || days > bank.maxDays) return null;
 
+          // Отладочные сообщения
+          console.log("Проверяем банк:", bank.name);
+          console.log("Параметры банка:", bank);
+
           const condition = bank.conditions.find(c =>
               c.procType === procType &&
               c.guarType === guarType &&
@@ -108,6 +112,10 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
               sum >= c.minSum &&
               sum <= c.maxSum
           );
+
+          // Отладка условия
+          console.log("Найденное условие:", condition);
+          
           if (!condition) return null;
 
           const rate = condition.rate;
@@ -119,6 +127,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
               cost: parseFloat(cost),
               rate: (rate * 100).toFixed(1),
           };
+
       })
       .filter(Boolean)
       .sort((a, b) => a.cost - b.cost);
@@ -148,22 +157,4 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 document.getElementById("reset-btn").addEventListener("click", function () {
   document.getElementById("result-output").style.display = "none";
   document.getElementById("offer-list").innerHTML = "";
-});
-
-// Отладочный вывод в код. Это поможет понять: Совпадают ли введенные параметры с условиями? Какое условие не проходит проверку?
-console.log("Проверяем банк:", bank.name);
-console.log("Сравниваем параметры: procType =", procType, ", guarType =", guarType, ", hasAdvance =", hasAdvance, ", customForm =", customForm);
-console.log("Сумма:", sum, "Дни:", days);
-
-const condition = bank.conditions.find(c => {
-    const matches = (
-        c.procType === procType &&
-        c.guarType === guarType &&
-        c.hasAdvance === hasAdvance &&
-        c.customForm === customForm &&
-        sum >= c.minSum &&
-        sum <= c.maxSum
-    );
-    console.log("Условие:", c, "Совпадает:", matches);
-    return matches;
 });
