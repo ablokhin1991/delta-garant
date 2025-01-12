@@ -104,14 +104,27 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
           console.log("Проверяем банк:", bank.name);
           console.log("Параметры банка:", bank);
 
-          const condition = bank.conditions.find(c =>
-              c.procType === procType &&
-              c.guarType === guarType &&
-              c.hasAdvance === hasAdvance &&
-              c.customForm === customForm &&
-              sum >= c.minSum &&
-              sum <= c.maxSum
-          );
+          console.log("Параметры для сравнения:");
+          console.log("procType:", procType);
+          console.log("guarType:", guarType);
+          console.log("hasAdvance:", hasAdvance);
+          console.log("customForm:", customForm);
+          console.log("Сумма:", sum);
+          console.log("Дни:", days);
+
+          const condition = bank.conditions.find(c => {
+            const matches = (
+                c.procType === procType &&
+                c.guarType === guarType &&
+                c.hasAdvance === hasAdvance &&
+                c.customForm === customForm &&
+                sum >= c.minSum &&
+                sum <= c.maxSum
+            );
+            console.log("Проверяем условие:", c, "Результат совпадения:", matches);
+            return matches;
+          });
+        
 
           // Отладка условия
           console.log("Найденное условие:", condition);
