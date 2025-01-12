@@ -80,6 +80,14 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity)
       );
 
+       // Объект с названиями процедур по номерам
+      const procedureNames = {
+      "1": "44-ФЗ",
+      "2": "223-ФЗ",
+      "3": "Госзакупки",
+      "4": "Кредитные договоры"
+    };
+
       // Если условия не найдены, добавляем банк в конец с пояснением
       if (!condition) {
         let stopMessage = '';
@@ -88,7 +96,9 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         } else if (days > bank.maxDays) {
           stopMessage = `Превышен максимальный срок БГ - maxDays: ${bank.maxDays} дней.`;
         } else {
-          stopMessage = `Банк не работает с данным типом процедуры - ${procType}`;
+       // Заменяем номер процедуры на название
+        const procedureName = procedureNames[procType] || `Процедура №${procType}`;
+          stopMessage = `Банк не работает с данным типом процедуры - ${procedureName}`;
         }
 
         return {
@@ -99,6 +109,9 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
           isStopFactor: true // помечаем как стоп-фактор
         };
       }
+
+
+      
 
       const rate = condition.rate;
       const cost = Math.max((sum * rate * days) / 365, 1000).toFixed(2);
