@@ -54,30 +54,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         { procType: "4", guarType: "2", hasAdvance: false, customForm: true, rate: 0.04 },
         { procType: "4", guarType: "2", hasAdvance: true, customForm: false, rate: 0.04 },
         { procType: "4", guarType: "2", hasAdvance: false, customForm: false, rate: 0.04 },
-        { procType: "1", guarType: "1", hasAdvance: false, customForm: true, rate: 0.032 },
-        { procType: "1", guarType: "1", hasAdvance: false, customForm: false, rate: 0.032 },
-        { procType: "2", guarType: "1", hasAdvance: false, customForm: true, rate: 0.035 },
-        { procType: "2", guarType: "1", hasAdvance: false, customForm: false, rate: 0.035 },
-        { procType: "3", guarType: "1", hasAdvance: false, customForm: true, rate: 0.035 },
-        { procType: "3", guarType: "1", hasAdvance: false, customForm: false, rate: 0.035 },
-        { procType: "4", guarType: "1", hasAdvance: false, customForm: true, rate: 0.04 },
-        { procType: "4", guarType: "1", hasAdvance: false, customForm: false, rate: 0.04 },
-        { procType: "1", guarType: "3", hasAdvance: false, customForm: true, rate: 0.03 },
-        { procType: "1", guarType: "3", hasAdvance: false, customForm: false, rate: 0.03 },
-        { procType: "2", guarType: "3", hasAdvance: false, customForm: true, rate: 0.034 },
-        { procType: "2", guarType: "3", hasAdvance: false, customForm: false, rate: 0.034 },
-        { procType: "3", guarType: "3", hasAdvance: false, customForm: true, rate: 0.034 },
-        { procType: "3", guarType: "3", hasAdvance: false, customForm: false, rate: 0.034 },
-        { procType: "4", guarType: "3", hasAdvance: false, customForm: true, rate: 0.04 },
-        { procType: "4", guarType: "3", hasAdvance: false, customForm: false, rate: 0.04 },
-        { procType: "1", guarType: "4", hasAdvance: false, customForm: true, rate: 0.03 },
-        { procType: "1", guarType: "4", hasAdvance: false, customForm: false, rate: 0.03 },
-        { procType: "2", guarType: "4", hasAdvance: false, customForm: true, rate: 0.034 },
-        { procType: "2", guarType: "4", hasAdvance: false, customForm: false, rate: 0.034 },
-        { procType: "3", guarType: "4", hasAdvance: false, customForm: true, rate: 0.034 },
-        { procType: "3", guarType: "4", hasAdvance: false, customForm: false, rate: 0.034 },
-        { procType: "4", guarType: "4", hasAdvance: false, customForm: true, rate: 0.04 },
-        { procType: "4", guarType: "4", hasAdvance: false, customForm: false, rate: 0.04 },
       ]
     },
     {
@@ -95,17 +71,34 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
   const results = banks
     .map(bank => {
-      if (sum > bank.maxSum || days > bank.maxDays) return null;
-      
+      // Ищем подходящие условия для банка
       const condition = bank.conditions.find(c =>
         c.procType === procType &&
         c.guarType === guarType &&
         c.hasAdvance === hasAdvance &&
         c.customForm === customForm &&
-        sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity) // Проверка диапазона суммы
+        sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity)
       );
 
-      if (!condition) return null;
+      // Если условия не найдены, добавляем банк в конец с пояснением
+      if (!condition) {
+        let stopMessage = '';
+        if (sum > bank.maxSum) {
+          stopMessage = `Превышена максимальная сумма БГ - maxSum: ${bank.maxSum.toLocaleString()} руб.`;
+        } else if (days > bank.maxDays) {
+          stopMessage = `Превышен максимальный срок БГ - maxDays: ${bank.maxDays} дней.`;
+        } else {
+          stopMessage = `Банк не работает с данным типом процедуры - ${procType}`;
+        }
+
+        return {
+          name: bank.name,
+          logo: bank.logo,
+          cost: 'Стоп-факторы',
+          rate: stopMessage,
+          isStopFactor: true // помечаем как стоп-фактор
+        };
+      }
 
       const rate = condition.rate;
       const cost = Math.max((sum * rate * days) / 365, 1000).toFixed(2);
@@ -115,25 +108,34 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         logo: bank.logo,
         cost: parseFloat(cost),
         rate: (rate * 100).toFixed(1),
+        isStopFactor: false
       };
-    })
-    .filter(Boolean)
-    .sort((a, b) => a.cost - b.cost);
+    });
 
-  if (results.length === 0) {
+  // Разделяем банки на обычные и с стоп-факторами
+  const normalResults = results.filter(r => !r.isStopFactor);
+  const stopFactorResults = results.filter(r => r.isStopFactor);
+
+  // Сортируем обычные результаты по стоимости
+  normalResults.sort((a, b) => a.cost - b.cost);
+
+  // Объединяем обычные и стоп-факторные результаты
+  const finalResults = [...normalResults, ...stopFactorResults];
+
+  if (finalResults.length === 0) {
     alert("Условия для выбранных параметров не найдены.");
     return;
   }
 
   const offerList = document.getElementById("offer-list");
-  offerList.innerHTML = results
+  offerList.innerHTML = finalResults
     .map(result => `
       <div class="offer">
           <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
           <div>
               <strong>${result.name}</strong><br>
-              Ставка: ${result.rate}%<br>
-              ${result.cost.toLocaleString()} руб.
+              ${result.isStopFactor ? `Стоп-факторы - ${result.rate}` : `Ставка: ${result.rate}%`}<br>
+              ${result.isStopFactor ? '' : `${result.cost.toLocaleString()} ₽`}
           </div>
       </div>
     `)
