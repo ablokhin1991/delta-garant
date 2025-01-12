@@ -7,12 +7,14 @@ document.getElementById("guarantee-sum").addEventListener("input", function (e) 
 document.getElementById("guarantee-type").addEventListener("change", function () {
   const guaranteeType = this.value;
   const advanceCheckbox = document.getElementById("has-advance");
-  if (guaranteeType === "1") {
+  
+  if (guaranteeType === "1" || guaranteeType === "3" || guaranteeType === "4") {
       advanceCheckbox.parentElement.style.display = "none";
   } else {
       advanceCheckbox.parentElement.style.display = "block";
   }
 });
+
 
 document.getElementById("calculate-btn").addEventListener("click", function () {
   const sumField = document.getElementById("guarantee-sum");
