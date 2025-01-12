@@ -38,22 +38,22 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       maxSum: 150000000,
       maxDays: 3652,
       conditions: [
-        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, rate: 0.03 },
-        { procType: "1", guarType: "2", hasAdvance: false, customForm: true, rate: 0.03 },
-        { procType: "1", guarType: "2", hasAdvance: true, customForm: false, rate: 0.03 },
-        { procType: "1", guarType: "2", hasAdvance: false, customForm: false, rate: 0.03 },
-        { procType: "2", guarType: "2", hasAdvance: true, customForm: true, rate: 0.034 },
-        { procType: "2", guarType: "2", hasAdvance: false, customForm: true, rate: 0.034 },
-        { procType: "2", guarType: "2", hasAdvance: true, customForm: false, rate: 0.034 },
-        { procType: "2", guarType: "2", hasAdvance: false, customForm: false, rate: 0.034 },
-        { procType: "3", guarType: "2", hasAdvance: true, customForm: true, rate: 0.034 },
-        { procType: "3", guarType: "2", hasAdvance: false, customForm: true, rate: 0.034 },
-        { procType: "3", guarType: "2", hasAdvance: true, customForm: false, rate: 0.034 },
-        { procType: "3", guarType: "2", hasAdvance: false, customForm: false, rate: 0.034 },
-        { procType: "4", guarType: "2", hasAdvance: true, customForm: true, rate: 0.04 },
-        { procType: "4", guarType: "2", hasAdvance: false, customForm: true, rate: 0.04 },
-        { procType: "4", guarType: "2", hasAdvance: true, customForm: false, rate: 0.04 },
-        { procType: "4", guarType: "2", hasAdvance: false, customForm: false, rate: 0.04 },
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
+        { procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.03 },
+        { procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.03 },
+        { procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.034 },
+        { procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.034 },
+        { procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.034 },
+        { procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.034 },
+        { procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.034 },
+        { procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.034 },
+        { procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.034 },
+        { procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.034 },
+        { procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.04 },
+        { procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.04 },
+        { procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.04 },
+        { procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.04 },
       ]
     },
     {
@@ -92,9 +92,9 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       if (!condition) {
         let stopMessage = '';
         if (sum > bank.maxSum) {
-          stopMessage = `Превышена максимальная сумма БГ - maxSum: ${bank.maxSum.toLocaleString()} руб.`;
+          stopMessage = `Превышена максимальная сумма БГ - : ${bank.maxSum.toLocaleString()} руб.`;
         } else if (days > bank.maxDays) {
-          stopMessage = `Превышен максимальный срок БГ - maxDays: ${bank.maxDays} дней.`;
+          stopMessage = `Превышен максимальный срок БГ - : ${bank.maxDays} дней.`;
         } else {
        // Заменяем номер процедуры на название
         const procedureName = procedureNames[procType] || `Процедура №${procType}`;
