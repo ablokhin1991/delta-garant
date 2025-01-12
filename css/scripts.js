@@ -256,7 +256,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     // Специальное условие для Промсвязьбанка при procType: "4"
     if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cost < 5000) {
       cost = 5000; // Устанавливаем минимальную стоимость - 5000 руб.
-      rate = "min %"; // Указываем "min %" вместо расчетной ставки
+      rate = "min "; // Указываем "min %" вместо расчетной ставки
     }
     
   
