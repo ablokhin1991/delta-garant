@@ -211,8 +211,8 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     const procedureNames = {
       "1": "44-ФЗ",
       "2": "223-ФЗ",
-      "3": "Госзакупки",
-      "4": "Кредитные договоры"
+      "3": " 615-ПП/185-ФЗ",
+      "4": "Коммерческий тендер"
     };
   
     // Проверяем maxSum и maxDays независимо от того, найдено условие или нет
@@ -236,7 +236,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     // Если подходящее условие не найдено
     if (!condition) {
       const procedureName = procedureNames[procType] || `Процедура №${procType}`;
-      const stopMessage = `Банк не работает с данным типом процедуры - ${procedureName}`;
+      const stopMessage = `По выбранным парматерам выпуск БГ невозможен с данным типом процедуры - ${procedureName}`;
       return {
         name: bank.name,
         logo: bank.logo,
