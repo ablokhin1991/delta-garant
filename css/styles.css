@@ -380,10 +380,10 @@ footer a:hover {
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для выделения блока */
 }
 
-/* Разделительная линия между блоками */
+/* Разделительная линия между блоками
 .offer + .offer {
     border-top: 1px solid #ccc;
-  }
+  }*/
 
 .offer__logo {
     width: 60px;
