@@ -257,14 +257,13 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     if (bank.name === "ПАО Промсвязьбанк" && procType === "4") {
       cost = Math.max(cost, 5000); // Минимальная стоимость - 5000 руб.
       rate = "min %"; // Указываем "min %" вместо расчетной ставки
-      console.log(`Применено минимальное ограничение для Промсвязьбанка: ${cost}`);
     }
   
     return {
       name: bank.name,
       logo: bank.logo,
       cost: parseFloat(cost.toFixed(2)),
-      rate: (rate * 100).toFixed(1),
+      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1), // Если строка, оставляем как есть
       isStopFactor: false
     };
   });
