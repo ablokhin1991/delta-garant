@@ -151,60 +151,68 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   ];
 
   const results = banks
-    .map(bank => {
-      // Ищем подходящие условия для банка
-      const condition = bank.conditions.find(c =>
-        c.procType === procType &&
-        c.guarType === guarType &&
-        c.hasAdvance === hasAdvance &&
-        c.customForm === customForm &&
-        sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity)
-      );
+  .map(bank => {
+    // Ищем подходящие условия для банка
+    const condition = bank.conditions.find(c =>
+      c.procType === procType &&
+      c.guarType === guarType &&
+      c.hasAdvance === hasAdvance &&
+      c.customForm === customForm &&
+      sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity)
+    );
 
-       // Объект с названиями процедур по номерам
-      const procedureNames = {
+    // Объект с названиями процедур по номерам
+    const procedureNames = {
       "1": "44-ФЗ",
       "2": "223-ФЗ",
-      "3": "Госзакупки",
-      "4": "Кредитные договоры"
+      "3": "615-ПП/185-ФЗ",
+      "4": "Коммерческий тендер"
     };
 
-      // Если условия не найдены, добавляем банк в конец с пояснением
-      if (!condition) {
-        let stopMessage = '';
-        if (sum > bank.maxSum) {
-          stopMessage = `Превышена максимальная сумма БГ: ${bank.maxSum.toLocaleString()} руб.`;
-        } else if (days > bank.maxDays) {
-          stopMessage = `Превышен максимальный срок БГ: ${bank.maxDays} дней.`;
-        } else {
-       // Заменяем номер процедуры на название
-        const procedureName = procedureNames[procType] || `Процедура №${procType}`;
-          stopMessage = `Банк не работает с данным типом процедуры - ${procedureName}`;
-        }
-
-        return {
-          name: bank.name,
-          logo: bank.logo,
-          cost: 'Стоп-факторы',
-          rate: stopMessage,
-          isStopFactor: true // помечаем как стоп-фактор
-        };
+    // Проверяем maxSum и maxDays независимо от того, найдено условие или нет
+    if (sum > bank.maxSum || days > bank.maxDays) {
+      let stopMessage = '';
+      if (sum > bank.maxSum) {
+        stopMessage = `Превышена максимальная сумма БГ - maxSum: ${bank.maxSum.toLocaleString()} руб.`;
+      } else if (days > bank.maxDays) {
+        stopMessage = `Превышен максимальный срок БГ - maxDays: ${bank.maxDays} дней.`;
       }
-
-
-      
-
-      const rate = condition.rate;
-      const cost = Math.max((sum * rate * days) / 365, 1000).toFixed(2);
 
       return {
         name: bank.name,
         logo: bank.logo,
-        cost: parseFloat(cost),
-        rate: (rate * 100).toFixed(1),
-        isStopFactor: false
+        cost: 'Стоп-факторы',
+        rate: stopMessage,
+        isStopFactor: true // помечаем как стоп-фактор
       };
-    });
+    }
+
+    // Если подходящее условие не найдено
+    if (!condition) {
+      const procedureName = procedureNames[procType] || `Процедура №${procType}`;
+      const stopMessage = `Банк не работает с данным типом процедуры - ${procedureName}`;
+      return {
+        name: bank.name,
+        logo: bank.logo,
+        cost: 'Стоп-факторы',
+        rate: stopMessage,
+        isStopFactor: true // помечаем как стоп-фактор
+      };
+    }
+
+    // Если все проверки пройдены, рассчитываем ставку и стоимость
+    const rate = condition.rate;
+    const cost = Math.max((sum * rate * days) / 365, 1000).toFixed(2);
+
+    return {
+      name: bank.name,
+      logo: bank.logo,
+      cost: parseFloat(cost),
+      rate: (rate * 100).toFixed(1),
+      isStopFactor: false
+    };
+  });
+
 
   // Разделяем банки на обычные и с стоп-факторами
   const normalResults = results.filter(r => !r.isStopFactor);
