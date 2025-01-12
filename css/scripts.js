@@ -264,6 +264,19 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
   const results = banks.map(bank => {
     // Ищем подходящие условия для банка
+    // Если это банк "Промсвязьбанк" и выбран guarType: 4
+    if (bank.name === "ПАО Промсвязьбанк" && guarType === "4") {
+      // Проверяем, если срок превышает 1860 дней
+      if (days > 1860) {
+          return {
+              name: bank.name,
+              logo: bank.logo,
+              cost: 'Стоп-факторы',
+              rate: `Превышен максимальный срок гарантии - 1860 дней.`,
+              isStopFactor: true // помечаем как стоп-фактор
+          };
+      }
+  }
     const condition = bank.conditions.find(c =>
       c.procType === procType &&
       c.guarType === guarType &&
