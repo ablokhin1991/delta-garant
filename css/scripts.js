@@ -339,12 +339,12 @@ document.getElementById("reset-btn").addEventListener("click", function () {
 // Функция для управления состоянием guarType - ВОЗВРАТ АВАНСА ПРОПАДАЕТ ПРИ 44-ФЗ
 function updateGuarTypeAvailability() {
   // Получаем элементы procType и guarType
-  const procTypeElement = document.querySelector('[name="procType"]');
-  const guarTypeElement = document.querySelector('[name="guarType"]');
+  const procTypeElement = document.querySelector('#procedure-type'); // Исправил селектор на корректный id
+  const guarTypeElement = document.querySelector('[name="guar-type"]'); // Привязан к name="guar-type"
 
-  // Проверяем, существует ли элемент
+  // Проверяем, существуют ли элементы
   if (!procTypeElement || !guarTypeElement) {
-      console.error("Элементы procType или guarType не найдены.");
+      console.error("Элементы procedure-type или guar-type не найдены.");
       return;
   }
 
@@ -352,19 +352,14 @@ function updateGuarTypeAvailability() {
   const procType = procTypeElement.value;
 
   // Если procType: "1", делаем guarType: "3" некликабельным
-  if (procType === "1") {
-      // Получаем опцию guarType со значением "3"
-      const guarTypeOption = guarTypeElement.querySelector('option[value="3"]');
-
-      if (guarTypeOption) {
+  const guarTypeOption = guarTypeElement.querySelector('option[value="3"]');
+  if (guarTypeOption) {
+      if (procType === "1") {
           // Делаем опцию некликабельной
           guarTypeOption.disabled = true;
           guarTypeOption.style.color = "gray"; // Меняем цвет текста
-      }
-  } else {
-      // Если procType не "1", возвращаем guarType: "3" в нормальное состояние
-      const guarTypeOption = guarTypeElement.querySelector('option[value="3"]');
-      if (guarTypeOption) {
+      } else {
+          // Если procType не "1", возвращаем guarType: "3" в нормальное состояние
           guarTypeOption.disabled = false;
           guarTypeOption.style.color = ""; // Восстанавливаем цвет текста
       }
@@ -372,7 +367,7 @@ function updateGuarTypeAvailability() {
 }
 
 // Добавляем обработчик события на изменение значения procType
-document.querySelector('[name="procType"]').addEventListener('change', updateGuarTypeAvailability);
+document.getElementById('procedure-type').addEventListener('change', updateGuarTypeAvailability);
 
 // Вызываем функцию один раз при загрузке страницы для первоначальной проверки
 document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
