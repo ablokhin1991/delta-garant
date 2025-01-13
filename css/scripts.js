@@ -388,9 +388,11 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     return;
   }
 
-  const offerList = document.getElementById("offer-list");
-  offerList.innerHTML = finalResults
-  .map(result => 
+  // Генерация результатов
+const offerList = document.getElementById("offer-list");
+
+offerList.innerHTML = finalResults
+  .map((result, index) => 
     `<div class="offer">
         <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
         <div class="offer__details">
@@ -406,28 +408,33 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
             Стоп-факторы:<br>${result.rate}
           </div>
         `}
-        ${!result.isStopFactor ? '<button class="btn_primary offer__button" data-index="${index}">Оформить</button>' : ''}
+        ${!result.isStopFactor ? `<button class="btn_primary offer__button" data-index="${index}">Оформить</button>` : ''}
     </div>`
   )
   .join("");
 
- // Показать блок результатов
- document.getElementById("result-output").style.display = "block";
+// Показать блок результатов
+document.getElementById("result-output").style.display = "block";
+
 // Обработчик на родительский элемент
 offerList.addEventListener("click", (event) => {
-  if (event.target.classList.contains("offer__button")) {
-      const button = event.target;
-      const index = parseInt(button.dataset.index, 10); // Преобразуем индекс в число
-      const selectedOffer = finalResults[index]; // Выбираем данные предложения
+    if (event.target.classList.contains("offer__button")) {
+        const button = event.target;
+        const index = parseInt(button.dataset.index, 10); // Преобразуем индекс в число
+        const selectedOffer = finalResults[index]; // Выбираем данные предложения
 
-      if (selectedOffer) {
-          // Передать данные предложения в функцию создания виртуальной страницы
-          openVirtualPage(selectedOffer);
-      } else {
-          console.error("Не удалось найти предложение с указанным индексом.");
-      }
-  }
+        if (selectedOffer) {
+            // Сохраняем выбранное предложение в глобальном контексте для виртуальной страницы
+            window.selectedOffer = selectedOffer;
+
+            // Передать данные предложения в функцию создания виртуальной страницы
+            openVirtualPage(selectedOffer);
+        } else {
+            console.error("Не удалось найти предложение с указанным индексом.");
+        }
+    }
 });
+
 
 });
 

@@ -1,23 +1,6 @@
+// Обработчик загрузки документа
 document.addEventListener("DOMContentLoaded", () => {
-    const submitBtn = document.getElementById('submit-btn');
-
-    // Проверяем наличие кнопки
-    if (submitBtn) {
-        submitBtn.addEventListener("click", () => {
-            // Получаем данные выбранного предложения из контекста
-            const selectedOffer = window.selectedOffer; // Предполагается, что данные передаются сюда
-
-            if (!selectedOffer) {
-                console.error("Не удалось получить данные выбранного предложения.");
-                return;
-            }
-
-            // Создаём виртуальную страницу
-            openVirtualPage(selectedOffer);
-        });
-    } else {
-        console.error("Кнопка оформления (submit-btn) не найдена.");
-    }
+    console.log("virtual-page.js загружен");
 });
 
 /**
@@ -25,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
  * @param {Object} offer - Данные выбранного предложения.
  */
 function openVirtualPage(offer) {
+    if (!offer) {
+        console.error("Данные предложения не переданы.");
+        return;
+    }
+
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
