@@ -405,7 +405,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
             Стоп-факторы:<br>${result.rate}
           </div>
         `}
-        ${!result.isStopFactor ? '<button class="btn_primary offer__button">Оформить</button>' : ''}
+        ${!result.isStopFactor ? '<button class="btn_primary offer__button" id="submit-btn">Оформить</button>' : ''}
     </div>`
   )
   .join("");
@@ -453,10 +453,7 @@ function updateGuarTypeAvailability() {
 document.getElementById('procedure-type').addEventListener('change', updateGuarTypeAvailability);
 
 // Вызываем функцию один раз при загрузке страницы для первоначальной проверки
-document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
-
-// Находим все кнопки "Оформить" - ОФОРМЛЕНИЕ ЗАЯВКИ *************************************************************************************
-document.getElementById("calculator-form").addEventListener("submit", (event) => {
+document.getElementById("submit-btn").addEventListener("click", (event) => {
   event.preventDefault();
 
   // Получение значений полей калькулятора
@@ -479,5 +476,6 @@ document.getElementById("calculator-form").addEventListener("submit", (event) =>
 
   // Переход на страницу заявки с параметрами
   window.location.href = `application.html?${params.toString()}`;
+
 
 });
