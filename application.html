@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заявки</title>
+  <style>
+    /* Простая стилизация */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Оформление заявки</h1>
+  <form id="application-form">
+    <h3>Контактная информация:</h3>
+    <div class="form-group">
+      <label>Контактное лицо (ФИО):</label>
+      <input type="text" name="contact-name" required>
+    </div>
+    <div class="form-group">
+      <label>Электронная почта:</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label>Телефон:</label>
+      <input type="tel" name="phone" required>
+    </div>
+
+    <h3>Выбранные параметры заявки:</h3>
+    <div class="form-group">
+      <label>Банк:</label>
+      <input type="text" name="bank-name" id="bank-name" readonly>
+    </div>
+    <div class="form-group">
+      <label>Сумма гарантии:</label>
+      <input type="text" name="guarantee-sum" id="guarantee-sum" readonly>
+    </div>
+    <div class="form-group">
+      <label>Срок действия (дней):</label>
+      <input type="text" name="guarantee-days" id="guarantee-days" readonly>
+    </div>
+    <div class="form-group">
+      <label>Тип процедуры:</label>
+      <input type="text" name="procedure-type" id="procedure-type" readonly>
+    </div>
+    <div class="form-group">
+      <label>Тип гарантии:</label>
+      <input type="text" name="guarantee-type" id="guarantee-type" readonly>
+    </div>
+    <div class="form-group">
+      <label>Наличие аванса:</label>
+      <input type="text" name="has-advance" id="has-advance" readonly>
+    </div>
+    <div class="form-group">
+      <label>Гарантия по форме заказчика:</label>
+      <input type="text" name="custom-form" id="custom-form" readonly>
+    </div>
+
+    <h3>Загрузите документы:</h3>
+    <div class="form-group">
+      <label>Паспорт:</label>
+      <input type="file" name="passport" required>
+    </div>
+    <div class="form-group">
+      <label>Решение о назначении директора:</label>
+      <input type="file" name="director-decision" required>
+    </div>
+    <div class="form-group">
+      <label>Дополнительные документы:</label>
+      <input type="file" name="additional-documents">
+    </div>
+
+    <button type="submit">Отправить</button>
+  </form>
+
+  <script src="css/application.js"></script>
+</body>
+</html>
