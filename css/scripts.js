@@ -459,7 +459,8 @@ document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
 document.getElementById("submit-btn").addEventListener("click", (event) => {
   event.preventDefault();
 
-  // Получение значений полей калькулятора
+  // Получение значений из калькулятора
+  const bankName = document.querySelector(".text_light").textContent.trim(); // Например, название банка
   const guaranteeSum = document.getElementById("guarantee-sum").value;
   const guaranteeDays = document.getElementById("guarantee-days").value;
   const procedureType = document.getElementById("procedure-type").value;
@@ -467,18 +468,12 @@ document.getElementById("submit-btn").addEventListener("click", (event) => {
   const hasAdvance = document.getElementById("has-advance").checked ? "Да" : "Нет";
   const customForm = document.getElementById("custom-form").checked ? "Да" : "Нет";
 
-  // Формирование строки параметров для URL
-  const params = new URLSearchParams({
-    guaranteeSum,
-    guaranteeDays,
-    procedureType,
-    guaranteeType,
-    hasAdvance,
-    customForm,
-  });
+  // Формируем URL с параметрами
+  const url = `/application-form.html?bankName=${encodeURIComponent(bankName)}&guaranteeSum=${encodeURIComponent(guaranteeSum)}&guaranteeDays=${encodeURIComponent(guaranteeDays)}&procedureType=${encodeURIComponent(procedureType)}&guaranteeType=${encodeURIComponent(guaranteeType)}&hasAdvance=${encodeURIComponent(hasAdvance)}&customForm=${encodeURIComponent(customForm)}`;
 
-  // Переход на страницу заявки с параметрами
-  window.location.href = `application.html?${params.toString()}`;
+  // Перенаправление на страницу заявки
+  window.location.href = url;
+
 
 
 
