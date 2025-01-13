@@ -456,23 +456,20 @@ document.getElementById('procedure-type').addEventListener('change', updateGuarT
 document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
 
 // Находим все кнопки "Оформить" - ОФОРМЛЕНИЕ ЗАЯВКИ *************************************************************************************
-document.getElementById("submit-btn").addEventListener("click", (event) => {
-  event.preventDefault();
+<button class="btn_primary offer__button" id="submit-btn">Submit</button>
 
-  // Получение значений из калькулятора
-  const bankName = document.querySelector(".text_light").textContent.trim(); // Например, название банка
-  const guaranteeSum = document.getElementById("guarantee-sum").value;
-  const guaranteeDays = document.getElementById("guarantee-days").value;
-  const procedureType = document.getElementById("procedure-type").value;
-  const guaranteeType = document.getElementById("guarantee-type").value;
-  const hasAdvance = document.getElementById("has-advance").checked ? "Да" : "Нет";
-  const customForm = document.getElementById("custom-form").checked ? "Да" : "Нет";
+    document.getElementById('submit-btn').addEventListener('click', function() {
+        // Получаем значения параметров из калькулятора
+        const sumField = document.querySelector('input[name="guarantee-sum"]').value;
+        const daysField = document.querySelector('input[name="guarantee-days"]').value;
+        const procType = document.querySelector('input[name="procedure-type"]').value;
+        const guarType = document.querySelector('input[name="guarantee-type"]').value;
 
-  // Формируем URL с параметрами
-  const url = `/application-form.html?bankName=${encodeURIComponent(bankName)}&guaranteeSum=${encodeURIComponent(guaranteeSum)}&guaranteeDays=${encodeURIComponent(guaranteeDays)}&procedureType=${encodeURIComponent(procedureType)}&guaranteeType=${encodeURIComponent(guaranteeType)}&hasAdvance=${encodeURIComponent(hasAdvance)}&customForm=${encodeURIComponent(customForm)}`;
+        // Формируем URL с параметрами
+        const url = `/application-form.html?guarantee-sum=${encodeURIComponent(guarantee-sum)}&validityPeriod=${encodeURIComponent(guarantee-days)}&procedureType=${encodeURIComponent(procedure-type)}&guaranteeType=${encodeURIComponent(guarantee-type)}`;
 
-  // Перенаправление на страницу заявки
-  window.location.href = url;
+        // Перенаправляем пользователя на новую страницу
+        window.location.href = url;
 
 
 
