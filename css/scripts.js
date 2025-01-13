@@ -406,13 +406,25 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
             Стоп-факторы:<br>${result.rate}
           </div>
         `}
-        ${!result.isStopFactor ? '<button class="btn_primary offer__button" id="submit-btn">Оформить</button>' : ''}
+        ${!result.isStopFactor ? '<button class="btn_primary offer__button" data-index="${index}">Оформить</button>' : ''}
     </div>`
   )
   .join("");
 
-
+// Показать блок результатов
 document.getElementById("result-output").style.display = "block";
+
+// Обработчик на родительский элемент
+offerList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("offer__button")) {
+      const button = event.target;
+      const index = button.dataset.index; // Получаем индекс из data-атрибута
+      const selectedOffer = finalResults[index]; // Выбираем данные предложения
+
+      // Передать данные предложения в функцию создания виртуальной страницы
+      openVirtualPage(selectedOffer);
+  }
+
 });
 
 document.getElementById("reset-btn").addEventListener("click", function () {
@@ -480,4 +492,3 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
       resultOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 2000);
 });
-
