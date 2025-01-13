@@ -482,62 +482,30 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 });
 
 // Функция для открытия попапа*******************************************************************************************
-// Функция для открытия попапа
-function openPopup(bankInfo) {
-  console.log('openPopup вызвана', bankInfo); // Печатаем в консоль, чтобы проверить, вызывается ли функция
+// Получаем элементы
+const submitBtn = document.getElementById('submit-btn');
+const popup = document.querySelector('.popup');
+const overlay = document.querySelector('.popup-overlay');
+const closeBtn = document.querySelector('.popup-close-btn');
 
-  // Заполняем информацию о банке и его условиях
-  document.getElementById('popup-bank-name').textContent = bankInfo.name;
-  document.getElementById('popup-guarantee-sum').textContent = bankInfo.sum.toLocaleString() + ' руб';
-  document.getElementById('popup-guarantee-days').textContent = bankInfo.days + ' дней';
-  document.getElementById('popup-proc-type').textContent = bankInfo.procType;
-
+// Обработчик для кнопки "Оформить"
+submitBtn.addEventListener('click', function () {
   // Показываем попап
-  const popup = document.getElementById('popup');
+  overlay.style.display = 'flex';
   popup.style.display = 'block';
-
-  // Делаем затемнение фона
-  document.body.style.overflow = 'hidden'; // Отключаем прокрутку страницы
-}
-
-// Обработчик для кнопок "Оформить"
-document.querySelectorAll('.offer__button').forEach(button => {
-  button.addEventListener('click', function () {
-    const bankInfo = {
-      name: this.closest('.offer').querySelector('.offer__details strong').textContent,
-      sum: this.closest('.offer').querySelector('.offer__rate').textContent.split('руб')[0].trim(),
-      days: document.getElementById('guarantee-days').value,
-      procType: document.getElementById('procedure-type').value
-    };
-    console.log('Банк выбран:', bankInfo); // Печатаем информацию о выбранном банке
-    openPopup(bankInfo);
-  });
 });
 
-// Функция для закрытия попапа
-function closePopup() {
-  console.log('Попап закрыт'); // Печатаем в консоль при закрытии попапа
-  const popup = document.getElementById('popup');
+// Обработчик для кнопки закрытия попапа
+closeBtn.addEventListener('click', function () {
+  // Скрываем попап
+  overlay.style.display = 'none';
   popup.style.display = 'none';
-  document.body.style.overflow = 'auto'; // Включаем прокрутку страницы
-}
-
-// Закрытие попапа при клике по фону
-document.getElementById('popup').addEventListener('click', function (event) {
-  const popup = document.getElementById('popup');
-  if (event.target === popup) {
-    closePopup();
-  }
 });
 
-// Закрытие попапа при клике на кнопку
-const closeButton = document.getElementById('close-popup'); // Привязываем переменную к кнопке
-closeButton.addEventListener('click', closePopup);
-
-// Обработчик для отправки формы попапа
-const popupForm = document.getElementById('popup-form');
-popupForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  alert('Заявка отправлена!');
-  closePopup();
+// Закрытие попапа при клике на затемняющий фон
+overlay.addEventListener('click', function (e) {
+  if (e.target === overlay) {
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+  }
 });
