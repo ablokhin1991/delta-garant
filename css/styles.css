@@ -404,7 +404,8 @@ input[type="checkbox"]:checked::before {
 
 
 .result__title-wrap h2 {
-    font-size: 16px;
+    color: #0E214C;
+    font-size: 14px;
     font-weight: normal;
     margin-bottom: 20px;
 }
@@ -456,12 +457,14 @@ input[type="checkbox"]:checked::before {
   }
 
 .offer__title-wrap {
+    color: #0E214C;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
 .offer__text {
+    color: #0E214C;
     font-weight: 300;
     font-size: 14px;
 }
