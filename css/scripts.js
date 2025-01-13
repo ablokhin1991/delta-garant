@@ -481,31 +481,3 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   }, 2000);
 });
 
-// Функция для открытия попапа*******************************************************************************************
-// Получаем элементы
-const submitBtn = document.getElementById('submit-btn');
-const popup = document.querySelector('.popup');
-const overlay = document.querySelector('.popup-overlay');
-const closeBtn = document.querySelector('.popup-close-btn');
-
-// Обработчик для кнопки "Оформить"
-submitBtn.addEventListener('click', function () {
-  // Показываем попап
-  overlay.style.display = 'flex';
-  popup.style.display = 'block';
-});
-
-// Обработчик для кнопки закрытия попапа
-closeBtn.addEventListener('click', function () {
-  // Скрываем попап
-  overlay.style.display = 'none';
-  popup.style.display = 'none';
-});
-
-// Закрытие попапа при клике на затемняющий фон
-overlay.addEventListener('click', function (e) {
-  if (e.target === overlay) {
-    overlay.style.display = 'none';
-    popup.style.display = 'none';
-  }
-});
