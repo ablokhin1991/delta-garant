@@ -292,10 +292,10 @@ input[type="checkbox"]:checked + label {
 
 /* Стиль галочки (внутри чекбокса) */
 input[type="checkbox"] {
-    appearance: none; /* Убираем стандартный вид чекбокса */
+   /* appearance: none; /* Убираем стандартный вид чекбокса */
     width: 20px;
     height: 20px;
-    border: 2px solid #0E214C; /* Цвет границы */
+    border: 1px solid #0E214C; /* Цвет границы */
     border-radius: 4px; /* Скругленные углы */
     outline: none;
     cursor: pointer;
@@ -311,7 +311,7 @@ input[type="checkbox"]:checked {
 
 /* Галочка внутри чекбокса */
 input[type="checkbox"]:checked::before {
-    content: '✔'; /* Символ галочки */
+    /*content: '✔'; /* Символ галочки */
     color: #fff; /* Цвет галочки */
     font-size: 14px; /* Размер символа */
     position: absolute;
