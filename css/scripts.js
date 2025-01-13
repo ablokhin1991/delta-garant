@@ -491,6 +491,7 @@ function openPopup(bankInfo) {
   document.getElementById('popup-proc-type').textContent = bankInfo.procType;
 
   // Показываем попап
+  const popup = document.getElementById('popup');
   popup.style.display = 'block';
 
   // Делаем затемнение фона
@@ -499,18 +500,21 @@ function openPopup(bankInfo) {
 
 // Функция для закрытия попапа
 function closePopup() {
+  const popup = document.getElementById('popup');
   popup.style.display = 'none';
   document.body.style.overflow = 'auto'; // Включаем прокрутку страницы
 }
 
 // Закрытие попапа при клике по фону
-popup.addEventListener('click', function (event) {
+document.getElementById('popup').addEventListener('click', function (event) {
+  const popup = document.getElementById('popup');
   if (event.target === popup) {
     closePopup();
   }
 });
 
 // Закрытие попапа при клике на кнопку
+const closeButton = document.getElementById('close-popup'); // Привязываем переменную к кнопке
 closeButton.addEventListener('click', closePopup);
 
 // Обработчик для кнопок "Оформить"
