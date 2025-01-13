@@ -369,6 +369,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       isStopFactor: false
     };
   });
+  // ВОТ ДО СЮДА ПОМЕЩЕАЕТСЯ В ОКНО
   
 
 
@@ -481,54 +482,46 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 });
 
 // Функция для открытия попапа*******************************************************************************************
-document.addEventListener("DOMContentLoaded", function () {
-  const popup = document.getElementById('popup');
-  const closeButton = document.getElementById('close-popup');
-  const popupForm = document.getElementById('popup-form');
-  
-  // Функция для открытия попапа
-  function openPopup(bankInfo) {
-    // Заполняем информацию о банке
-    document.getElementById('popup-bank-name').textContent = bankInfo.name;
+// Функция для открытия попапа
+function openPopup(bankInfo) {
+  // Заполняем информацию о банке и его условиях
+  document.getElementById('popup-bank-name').textContent = bankInfo.name;
+  document.getElementById('popup-guarantee-sum').textContent = bankInfo.sum.toLocaleString() + ' руб';
+  document.getElementById('popup-guarantee-days').textContent = bankInfo.days + ' дней';
+  document.getElementById('popup-proc-type').textContent = bankInfo.procType;
 
-    // Показываем попап
-    popup.style.display = 'block';
+  // Показываем попап
+  popup.style.display = 'block';
 
-    // Делаем затемнение фона
-    document.body.style.overflow = 'hidden'; // Отключаем прокрутку страницы
-  }
+  // Делаем затемнение фона
+  document.body.style.overflow = 'hidden'; // Отключаем прокрутку страницы
+}
 
-  // Функция для закрытия попапа
-  function closePopup() {
-    popup.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Включаем прокрутку страницы
-  }
+// Функция для закрытия попапа
+function closePopup() {
+  popup.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Включаем прокрутку страницы
+}
 
-  // Закрытие попапа при клике по фону
-  popup.addEventListener('click', function (event) {
-    if (event.target === popup) {
-      closePopup();
-    }
-  });
-
-  // Закрытие попапа при клике на кнопку
-  closeButton.addEventListener('click', closePopup);
-
-  // Обработчик для кнопок "Оформить"
-  document.querySelectorAll('.offer__button').forEach(button => {
-    button.addEventListener('click', function () {
-      const bankInfo = {
-        name: this.closest('.offer').querySelector('.offer__details strong').textContent,
-        logo: this.closest('.offer').querySelector('.offer__logo').style.backgroundImage,
-      };
-      openPopup(bankInfo);
-    });
-  });
-
-  // Обработчик для отправки формы попапа
-  popupForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Заявка отправлена!');
+// Закрытие попапа при клике по фону
+popup.addEventListener('click', function (event) {
+  if (event.target === popup) {
     closePopup();
+  }
+});
+
+// Закрытие попапа при клике на кнопку
+closeButton.addEventListener('click', closePopup);
+
+// Обработчик для кнопок "Оформить"
+document.querySelectorAll('.offer__button').forEach(button => {
+  button.addEventListener('click', function () {
+    const bankInfo = {
+      name: this.closest('.offer').querySelector('.offer__details strong').textContent,
+      sum: this.closest('.offer').querySelector('.offer__rate').textContent.split('руб')[0].trim(),
+      days: document.getElementById('guarantee-days').value,
+      procType: document.getElementById('procedure-type').value
+    };
+    openPopup(bankInfo);
   });
 });
