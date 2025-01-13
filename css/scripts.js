@@ -397,7 +397,7 @@ offerList.innerHTML = finalResults
             ${result.isStopFactor ? `Стоп-факторы - ${result.rate}` : `Ставка: ${result.rate}%`}<br>
             ${result.isStopFactor ? '' : `${result.cost.toLocaleString()} ₽`}
         </div>
-        <button class="btn_primary offer__button">Оформить</button>
+        ${!result.isStopFactor ? '<button class="btn_primary offer__button">Оформить</button>' : ''}
     </div>`
   )
   .join("");
