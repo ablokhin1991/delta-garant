@@ -413,6 +413,22 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
  // Показать блок результатов
  document.getElementById("result-output").style.display = "block";
+// Обработчик на родительский элемент
+offerList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("offer__button")) {
+      const button = event.target;
+      const index = parseInt(button.dataset.index, 10); // Преобразуем индекс в число
+      const selectedOffer = finalResults[index]; // Выбираем данные предложения
+
+      if (selectedOffer) {
+          // Передать данные предложения в функцию создания виртуальной страницы
+          openVirtualPage(selectedOffer);
+      } else {
+          console.error("Не удалось найти предложение с указанным индексом.");
+      }
+  }
+});
+
 });
 
 document.getElementById("reset-btn").addEventListener("click", function () {
