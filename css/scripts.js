@@ -480,3 +480,55 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   }, 2000);
 });
 
+// Функция для открытия попапа*******************************************************************************************
+function openPopup(bankInfo) {
+  // Заполняем информацию в попап
+  document.getElementById('popup-bank-name').textContent = bankInfo.name;
+  document.getElementById('popup-guarantee-sum').textContent = `${document.getElementById('guarantee-sum').value} руб.`;
+  document.getElementById('popup-guarantee-days').textContent = document.getElementById('guarantee-days').value;
+  document.getElementById('popup-proc-type').textContent = document.getElementById('procedure-type').options[document.getElementById('procedure-type').selectedIndex].text;
+
+  // Показываем попап
+  document.getElementById('popup').style.display = 'flex';
+}
+
+// Закрытие попапа
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+// Закрытие попапа при клике вне формы
+document.getElementById('popup').addEventListener('click', function(event) {
+  if (event.target === document.getElementById('popup')) {
+    closePopup();
+  }
+});
+
+// Кнопка закрытия попапа
+document.getElementById('close-popup').addEventListener('click', closePopup);
+
+// Обработчик для кнопки "Оформить"
+document.querySelectorAll('.offer__button').forEach(button => {
+  button.addEventListener('click', function () {
+    // Извлекаем информацию о банке (это может быть получено из результата расчета)
+    const bankInfo = {
+      name: this.closest('.offer').querySelector('.offer__details strong').textContent,
+      logo: this.closest('.offer').querySelector('.offer__logo').style.backgroundImage,
+    };
+
+    // Открываем попап
+    openPopup(bankInfo);
+  });
+});
+
+// Обработчик для отправки формы
+document.getElementById('popup-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Здесь будет логика отправки формы, например, на ваш сервер или email
+
+  // Для демонстрации просто закрываем попап
+  alert('Заявка отправлена!');
+  closePopup();
+});
+
