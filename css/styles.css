@@ -422,7 +422,7 @@ input[type="checkbox"]:checked::before {
     justify-content: space-between;
     margin-bottom: 10px;
     padding: 10px; /* Отступы внутри каждого блока */
-    border: 1px solid #ccc; /* Рамка вокруг предложения */
+    /*border: 1px solid #ccc; /* Рамка вокруг предложения */
     border-radius: 5px; /* Скругленные углы */
     background-color: #fff; /* Фон блока */
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для выделения блока */
