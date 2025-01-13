@@ -473,7 +473,7 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
       // Скрываем анимацию загрузки и показываем результаты
       loadingSpinner.style.display = 'none';
       resultOutput.style.display = 'block';
-      offerList.innerHTML = '<p>Здесь появятся предложения банков...</p>'; // Пример
+      offerList.innerHTML = finalResults
 
       // Скроллим к блоку с результатами
       resultOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
