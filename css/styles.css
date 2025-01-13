@@ -375,10 +375,11 @@ footer a:hover {
 .offer {
     display: flex;
     align-items: center;
-    /*margin-bottom: 15px;*/
-    padding: 16px; /* Отступы внутри каждого блока */
-    /*border: 1px solid #ccc; /* Рамка вокруг предложения */
-    border-radius: 8px; /* Скругленные углы */
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px; /* Отступы внутри каждого блока */
+    border: 1px solid #ccc; /* Рамка вокруг предложения */
+    border-radius: 5px; /* Скругленные углы */
     background-color: #fff; /* Фон блока */
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для выделения блока */
 }
@@ -389,19 +390,23 @@ footer a:hover {
   }*/
 
 .offer__logo {
-    width: 60px;
-    height: 60px;
-    background-size: cover;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
     background-position: center;
-    margin-right: 15px;
+    background-repeat: no-repeat;
 }
 
-.offer__percent.amount {
-    font-weight: 400;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
+.offer__details {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
+  .offer__rate {
+    text-align: right;
+    margin-right: 20px;
+  }
+  
 .offer__title-wrap {
     font-weight: 400;
     font-size: 14px;

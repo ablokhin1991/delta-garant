@@ -388,19 +388,28 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   }
 
   const offerList = document.getElementById("offer-list");
-offerList.innerHTML = finalResults
+  offerList.innerHTML = finalResults
   .map(result => 
     `<div class="offer">
         <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
         <div class="offer__details">
-            <strong>${result.name}</strong><br>
-            ${result.isStopFactor ? `Стоп-факторы - ${result.rate}` : `Ставка: ${result.rate}%`}<br>
-            ${result.isStopFactor ? '' : `${result.cost.toLocaleString()} ₽`}
+            <strong>${result.name}</strong>
         </div>
+        ${!result.isStopFactor ? `
+          <div class="offer__rate">
+            Ставка: ${result.rate}%<br>
+            ${result.cost.toLocaleString()} ₽
+          </div>
+        ` : `
+          <div class="offer__rate">
+            Стоп-факторы:<br>${result.rate}
+          </div>
+        `}
         ${!result.isStopFactor ? '<button class="btn_primary offer__button">Оформить</button>' : ''}
     </div>`
   )
   .join("");
+
 
 document.getElementById("result-output").style.display = "block";
 });
