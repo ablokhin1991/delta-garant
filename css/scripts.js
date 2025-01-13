@@ -460,15 +460,23 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   const loadingSpinner = document.getElementById('loading-spinner');
   const resultOutput = document.getElementById('result-output');
   const offerList = document.getElementById('offer-list');
-  
+
   // Скрываем результаты и показываем анимацию
   resultOutput.style.display = 'none';
   loadingSpinner.style.display = 'block';
 
+  // Скроллим к блоку с крутилкой
+  loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
   // Симулируем запрос (2 секунды)
   setTimeout(() => {
+      // Скрываем анимацию загрузки и показываем результаты
       loadingSpinner.style.display = 'none';
       resultOutput.style.display = 'block';
       offerList.innerHTML = '<p>Здесь появятся предложения банков...</p>'; // Пример
+
+      // Скроллим к блоку с результатами
+      resultOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 2000);
 });
+
