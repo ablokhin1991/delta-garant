@@ -479,4 +479,5 @@ document.getElementById("calculator-form").addEventListener("submit", (event) =>
 
   // Переход на страницу заявки с параметрами
   window.location.href = `application.html?${params.toString()}`;
+
 });

@@ -2,11 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
   
     // Заполнение значений на странице заявки
-    document.getElementById("guarantee-sum").textContent = params.get("guaranteeSum") || "Не указано";
-    document.getElementById("guarantee-days").textContent = params.get("guaranteeDays") || "Не указано";
-    document.getElementById("procedure-type").textContent = params.get("procedureType") || "Не указано";
-    document.getElementById("guarantee-type").textContent = params.get("guaranteeType") || "Не указано";
-    document.getElementById("has-advance").textContent = params.get("hasAdvance") || "Нет";
-    document.getElementById("custom-form").textContent = params.get("customForm") || "Нет";
-  });
-  
+    document.getElementById("guarantee-sum").value = params.get("guaranteeSum") || "Не указано";
+    document.getElementById("guarantee-days").value = params.get("guaranteeDays") || "Не указано";
+    document.getElementById("procedure-type").value = params.get("procedureType") || "Не указано";
+    document.getElementById("guarantee-type").value = params.get("guaranteeType") || "Не указано";
+
+    // Обработка чекбоксов
+    document.getElementById("has-advance").checked = params.get("hasAdvance") === "Да";
+    document.getElementById("custom-form").checked = params.get("customForm") === "Да";
+});
