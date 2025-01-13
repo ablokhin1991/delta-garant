@@ -214,6 +214,7 @@ footer a:hover {
 
 .field__input {
     width: 100%;
+    color: #0E214C; /* Задаём цвет текста */
     padding: 25px 15px 10px; /* Сверху меньше отступ, снизу больше для "текста на дне" */
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -240,6 +241,7 @@ footer a:hover {
 /* Раскрывающиеся списки (select) */
 .field__input select {
     width: 100%;
+    color: #0E214C; /* Цвет текста в выпадающем списке */
     padding: 0 5px; /* Отступы для текста */
     text-align: left; /* Выравниваем текст */
     background-color: white; /* Приводим фон к стандартному виду */
@@ -400,13 +402,16 @@ footer a:hover {
 .offer__details {
     flex: 1;
     margin-left: 10px;
+    font-family: Verdana, sans-serif; /* Как в блоке параметров */
+    font-size: 14px; /* Пример размера, уточните по требованию */
+    color: #0E214C; /* Цвет текста из блока параметров */
   }
   
   .offer__rate {
     text-align: right;
     margin-right: 20px;
   }
-  
+
 .offer__title-wrap {
     font-weight: 400;
     font-size: 14px;
