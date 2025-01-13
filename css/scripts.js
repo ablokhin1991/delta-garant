@@ -454,3 +454,21 @@ document.getElementById('procedure-type').addEventListener('change', updateGuarT
 
 // Вызываем функцию один раз при загрузке страницы для первоначальной проверки
 document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
+
+// Добавляем крутилку при загрузке
+document.getElementById('calculate-btn').addEventListener('click', function () {
+  const loadingSpinner = document.getElementById('loading-spinner');
+  const resultOutput = document.getElementById('result-output');
+  const offerList = document.getElementById('offer-list');
+  
+  // Скрываем результаты и показываем анимацию
+  resultOutput.style.display = 'none';
+  loadingSpinner.style.display = 'block';
+
+  // Симулируем запрос (2 секунды)
+  setTimeout(() => {
+      loadingSpinner.style.display = 'none';
+      resultOutput.style.display = 'block';
+      offerList.innerHTML = '<p>Здесь появятся предложения банков...</p>'; // Пример
+  }, 2000);
+});
