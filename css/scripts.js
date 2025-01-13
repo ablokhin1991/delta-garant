@@ -453,6 +453,9 @@ function updateGuarTypeAvailability() {
 document.getElementById('procedure-type').addEventListener('change', updateGuarTypeAvailability);
 
 // Вызываем функцию один раз при загрузке страницы для первоначальной проверки
+document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
+
+// Находим все кнопки "Оформить" - ОФОРМЛЕНИЕ ЗАЯВКИ *************************************************************************************
 document.getElementById("submit-btn").addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -476,6 +479,7 @@ document.getElementById("submit-btn").addEventListener("click", (event) => {
 
   // Переход на страницу заявки с параметрами
   window.location.href = `application.html?${params.toString()}`;
+
 
 
 });
