@@ -674,7 +674,7 @@ input[type="checkbox"]:checked::before {
 
 /* Затемняющий фон */
 .popup-overlay {
-    display: none; /* Изначально скрыто */
+    display: flex; /* Изначально скрыто */
     position: fixed;
     top: 0;
     left: 0;
