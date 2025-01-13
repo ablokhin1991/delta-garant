@@ -454,24 +454,3 @@ document.getElementById('procedure-type').addEventListener('change', updateGuarT
 
 // Вызываем функцию один раз при загрузке страницы для первоначальной проверки
 document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
-
-// Находим все кнопки "Оформить" - ОФОРМЛЕНИЕ ЗАЯВКИ *************************************************************************************
-<button class="btn_primary offer__button" id="submit-btn">Submit</button>
-
-    document.getElementById('submit-btn').addEventListener('click', function() {
-        // Получаем значения параметров из калькулятора
-        const sumField = document.querySelector('input[name="guarantee-sum"]').value;
-        const daysField = document.querySelector('input[name="guarantee-days"]').value;
-        const procType = document.querySelector('input[name="procedure-type"]').value;
-        const guarType = document.querySelector('input[name="guarantee-type"]').value;
-
-        // Формируем URL с параметрами
-        const url = `/application-form.html?guarantee-sum=${encodeURIComponent(guarantee-sum)}&validityPeriod=${encodeURIComponent(guarantee-days)}&procedureType=${encodeURIComponent(procedure-type)}&guaranteeType=${encodeURIComponent(guarantee-type)}`;
-
-        // Перенаправляем пользователя на новую страницу
-        window.location.href = url;
-
-
-
-
-});
