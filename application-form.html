@@ -1,40 +1,103 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Заявка на Банковскую Гарантию</title>
-  <script src="css/application.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление банковской гарантии</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1>Оформление заявки</h1>
+    <!-- Место для шапки -->
+  <div id="header-placeholder"></div>
 
-  <h3>Выбранные параметры:</h3>
-  <p>Сумма гарантии: <span id="guarantee-sum"></span></p>
-  <p>Срок действия: <span id="guarantee-days"></span></p>
-  <p>Тип процедуры: <span id="procedure-type"></span></p>
-  <p>Тип гарантии: <span id="guarantee-type"></span></p>
-  <p>Наличие аванса: <span id="has-advance"></span></p>
-  <p>Гарантия по форме заказчика: <span id="custom-form"></span></p>
+        <section class="hero">
+            <h1>Оформление банковской гарантии</h1>
+        </section>
 
-  <form id="application-form">
-    <h3>Контактная информация:</h3>
-    <label>ФИО:</label>
-    <input type="text" name="contact-name" required>
-    <label>Электронная почта:</label>
-    <input type="email" name="email" required>
-    <label>Телефон:</label>
-    <input type="tel" name="phone" required>
+        <div class="content">
+            <!-- Блок выбранного банка -->
+            <div class="result">
+                <div class="result__title-wrap">
+                    <h2 class="title_lg">Выбранный банк</h2>
+                    <span class="text_light">Название выбранного банка</span>
+                </div>
+                <div class="offer">
+                    <div class="result__logo" style="background-image: url('bank-logo.png');"></div>
+                    <div class="offer__details">
+                        <p>Ставка: 3,5%</p>
+                        <p>Срок оформления: 5 дней</p>
+                    </div>
+                </div>
+            </div>
 
-    <h3>Загрузите документы:</h3>
-    <label>Паспорт:</label>
-    <input type="file" name="passport" required>
-    <label>Решение о назначении директора:</label>
-    <input type="file" name="director-decision" required>
-    <label>Дополнительные документы:</label>
-    <input type="file" name="additional-documents">
+            <!-- Форма с некликабельными полями -->
+            <form class="main-block">
+                <div class="form-row">
+                    <div class="form-column">
+                        <div class="field">
+                            <label class="field__label-placeholder">Сумма гарантии (руб)</label>
+                            <input
+                                class="field__input"
+                                type="text"
+                                value="1 000 000"
+                                readonly
+                            />
+                        </div>
+                    </div>
+                    <div class="form-column">
+                        <div class="field">
+                            <label class="field__label-placeholder">Срок действия (дни)</label>
+                            <input
+                                class="field__input"
+                                type="text"
+                                value="365"
+                                readonly
+                            />
+                        </div>
+                    </div>
+                    <div class="form-column">
+                        <div class="field">
+                            <label class="field__label-placeholder">Тип процедуры</label>
+                            <input
+                                class="field__input"
+                                type="text"
+                                value="44-ФЗ"
+                                readonly
+                            />
+                        </div>
+                    </div>
+                </div>
 
-    <button type="submit">Отправить</button>
-  </form>
+                <div class="form-row">
+                    <div class="form-column">
+                        <div class="field">
+                            <label class="field__label-placeholder">Тип гарантии</label>
+                            <input
+                                class="field__input"
+                                type="text"
+                                value="На исполнение контракта"
+                                readonly
+                            />
+                        </div>
+                    </div>
+                    <div class="form-column main-block__filters">
+                        <label>
+                            <input type="checkbox" checked disabled />
+                            Наличие аванса
+                        </label>
+                        <label>
+                            <input type="checkbox" disabled />
+                            Гарантия по форме заказчика
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Место для подвала -->
+        <div id="footer-placeholder"></div>
+    </div>
+    <!-- Подключаем скрипт -->
+  <script src="insert-header-footer.js"></script>
 </body>
 </html>
