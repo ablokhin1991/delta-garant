@@ -452,6 +452,7 @@ input[type="checkbox"]:checked::before {
   .offer__rate {
     text-align: right;
     margin-right: 20px;
+    color: #0E214C;
   }
 
 .offer__title-wrap {
