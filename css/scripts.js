@@ -398,7 +398,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         ${!result.isStopFactor ? `
           <div class="offer__rate">
             Ставка: ${result.rate}%<br>
-            ${result.cost.toLocaleString()} ₽
+            ${result.cost.toLocaleString()} руб.
           </div>
         ` : `
           <div class="offer__rate">
