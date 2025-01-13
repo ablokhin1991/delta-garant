@@ -278,6 +278,11 @@ footer a:hover {
     margin-right: 5px; /* Добавляем небольшой отступ между чекбоксом и текстом */
 }
 
+.main-block__filters input[type="checkbox"]:checked {
+    background-color: #F0473B; /* Цвет галочки */
+    border-color: #F0473B; /* Цвет границы при активной галочке */
+}
+
 
 /* Кнопка */
 .btn_primary {
