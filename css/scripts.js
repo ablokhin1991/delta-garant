@@ -481,6 +481,7 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 });
 
 // Функция для открытия попапа*******************************************************************************************
+// Функция для открытия попапа
 function openPopup(bankInfo) {
   // Заполняем информацию в попап
   document.getElementById('popup-bank-name').textContent = bankInfo.name;
@@ -531,4 +532,3 @@ document.getElementById('popup-form').addEventListener('submit', function (e) {
   alert('Заявка отправлена!');
   closePopup();
 });
-
