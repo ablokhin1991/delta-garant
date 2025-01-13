@@ -492,6 +492,38 @@ input[type="checkbox"]:checked::before {
     margin-right: 5px;
 }
 
+/* СТИЛИ ДЛЯ ФОРМЫ ЗАЯВКИ */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .selected-params p {
+    margin: 10px 0;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  .upload-section {
+    margin-top: 20px;
+  }
+  
+  .upload-button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
 /* Респонсивность - медиазапросы для адаптивности */
 @media (max-width: 768px) {
     /* Основные стили */
@@ -611,4 +643,13 @@ input[type="checkbox"]:checked::before {
     .result__title-wrap h2 {
         font-size: 14px;
     }
+    /* СТИЛИ ДЛЯ ФОРМЫ ЗАЯВКИ*/
+    .form-container {
+        padding: 10px;
+      }
+    
+      .upload-button {
+        width: 100%;
+        text-align: center;
+      }
 }

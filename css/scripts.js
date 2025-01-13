@@ -454,3 +454,23 @@ document.getElementById('procedure-type').addEventListener('change', updateGuarT
 
 // Вызываем функцию один раз при загрузке страницы для первоначальной проверки
 document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
+
+// Находим все кнопки "Оформить" - ОФОРМЛЕНИЕ ЗАЯВКИ *************************************************************************************
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("offer__button")) {
+    const offerElement = event.target.closest(".offer");
+    const bankName = offerElement.querySelector("strong").innerText;
+    const guaranteeSum = document.querySelector("#guarantee-sum").value;
+    const guaranteeDays = document.querySelector("#guarantee-days").value;
+    const procedureType = document.querySelector("#procedure-type").value;
+    const guaranteeType = document.querySelector("#guarantee-type").value;
+    const hasAdvance = document.querySelector("#has-advance").checked ? "yes" : "no";
+    const customForm = document.querySelector("#custom-form").checked ? "yes" : "no";
+
+    // Формируем URL с параметрами
+    const url = `/application-form.html?bankName=${encodeURIComponent(bankName)}&guaranteeSum=${guaranteeSum}&guaranteeDays=${guaranteeDays}&procedureType=${procedureType}&guaranteeType=${guaranteeType}&hasAdvance=${hasAdvance}&customForm=${customForm}`;
+
+    // Перенаправляем пользователя
+    window.location.href = url;
+  }
+});

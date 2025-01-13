@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заявки</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Оформление банковской гарантии</h1>
+    <p>Вы выбрали:</p>
+    <div class="selected-params">
+      <p><strong>Банк:</strong> <span id="bank-name"></span></p>
+      <p><strong>Сумма гарантии:</strong> <span id="guarantee-sum"></span> ₽</p>
+      <p><strong>Срок действия (дней):</strong> <span id="guarantee-days"></span></p>
+      <p><strong>Тип процедуры:</strong> <span id="procedure-type"></span></p>
+      <p><strong>Тип гарантии:</strong> <span id="guarantee-type"></span></p>
+      <p><strong>Наличие аванса:</strong> <span id="has-advance"></span></p>
+      <p><strong>Гарантия по форме заказчика:</strong> <span id="custom-form"></span></p>
+    </div>
+    
+    <h2>Заполните заявку:</h2>
+    <form id="application-form">
+      <div>
+        <label>Контактное лицо (ФИО):</label>
+        <input type="text" name="contact-name" required>
+      </div>
+      <div>
+        <label>Электронная почта:</label>
+        <input type="email" name="email" required>
+      </div>
+      <div>
+        <label>Телефон:</label>
+        <input type="tel" name="phone" required>
+      </div>
+      <button type="submit" class="btn_primary">Отправить</button>
+    </form>
+
+    <h2>Загрузите документы:</h2>
+    <div class="upload-section">
+      <h3>Правоустанавливающие документы:</h3>
+      <button class="upload-button">Паспорт физических лиц</button>
+      <button class="upload-button">Решение о назначении директора</button>
+      <button class="upload-button">Договор аренды</button>
+      <button class="upload-button">Устав организации</button>
+      <button class="upload-button">Карточка с реквизитами компании</button>
+
+      <h3>Финансовые документы:</h3>
+      <button class="upload-button">Формы 1 и 2 (квартал)</button>
+      <button class="upload-button">Формы 1 и 2 (год)</button>
+
+      <h3>Документы для банковской гарантии:</h3>
+      <button class="upload-button">Контракт</button>
+      <button class="upload-button">Тендерная документация</button>
+
+      <h3>Дополнительные документы:</h3>
+      <button class="upload-button">Загрузить</button>
+    </div>
+  </div>
+  <script src="CSS/application.js"></script>
+</body>
+</html>
