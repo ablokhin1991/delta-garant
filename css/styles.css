@@ -278,9 +278,45 @@ footer a:hover {
     margin-right: 5px; /* Добавляем небольшой отступ между чекбоксом и текстом */
 }
 
-.main-block__filters input[type="checkbox"]:checked {
+/* Изменение цвета текста рядом с чекбоксом */
+input[type="checkbox"] + label {
+    color: #0E214C; /* Цвет текста */
+    font-family: Verdana, sans-serif; /* Шрифт */
+    font-size: 14px; /* Размер шрифта */
+}
+
+/* Состояние фокуса/активации чекбокса */
+input[type="checkbox"]:checked + label {
+    color: #F0473B; /* Цвет текста при активной галочке */
+}
+
+/* Стиль галочки (внутри чекбокса) */
+input[type="checkbox"] {
+    appearance: none; /* Убираем стандартный вид чекбокса */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0E214C; /* Цвет границы */
+    border-radius: 4px; /* Скругленные углы */
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: #fff; /* Фон */
+}
+
+/* Цвет заливки при активации */
+input[type="checkbox"]:checked {
     background-color: #F0473B; /* Цвет галочки */
     border-color: #F0473B; /* Цвет границы при активной галочке */
+}
+
+/* Галочка внутри чекбокса */
+input[type="checkbox"]:checked::before {
+    content: '✔'; /* Символ галочки */
+    color: #fff; /* Цвет галочки */
+    font-size: 14px; /* Размер символа */
+    position: absolute;
+    left: 4px; /* Сдвиг влево */
+    top: 1px; /* Сдвиг вниз */
 }
 
 
@@ -539,10 +575,6 @@ footer a:hover {
         font-size: 14px;
         color: #0E214C;
         height: 55px;
-    }
-
-    .main-block__filters label {
-        color: #0E214C; /* Цвет текста чекбоксов */
     }
 
     .content {
