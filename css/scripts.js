@@ -456,21 +456,27 @@ document.getElementById('procedure-type').addEventListener('change', updateGuarT
 document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
 
 // Находим все кнопки "Оформить" - ОФОРМЛЕНИЕ ЗАЯВКИ *************************************************************************************
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("offer__button")) {
-    const offerElement = event.target.closest(".offer");
-    const bankName = offerElement.querySelector("strong").innerText;
-    const guaranteeSum = document.querySelector("#guarantee-sum").value;
-    const guaranteeDays = document.querySelector("#guarantee-days").value;
-    const procedureType = document.querySelector("#procedure-type").value;
-    const guaranteeType = document.querySelector("#guarantee-type").value;
-    const hasAdvance = document.querySelector("#has-advance").checked ? "yes" : "no";
-    const customForm = document.querySelector("#custom-form").checked ? "yes" : "no";
+document.getElementById("calculator-form").addEventListener("submit", (event) => {
+  event.preventDefault();
 
-    // Формируем URL с параметрами
-    const url = `/delta-garant/application-form.html?bankName=${encodeURIComponent(bankName)}&guaranteeSum=${guaranteeSum}&guaranteeDays=${guaranteeDays}&procedureType=${procedureType}&guaranteeType=${guaranteeType}&hasAdvance=${hasAdvance}&customForm=${customForm}`;
+  // Получение значений полей калькулятора
+  const guaranteeSum = document.getElementById("guarantee-sum").value;
+  const guaranteeDays = document.getElementById("guarantee-days").value;
+  const procedureType = document.getElementById("procedure-type").value;
+  const guaranteeType = document.getElementById("guarantee-type").value;
+  const hasAdvance = document.getElementById("has-advance").checked ? "Да" : "Нет";
+  const customForm = document.getElementById("custom-form").checked ? "Да" : "Нет";
 
-    // Перенаправляем пользователя
-    window.location.href = url;
-  }
+  // Формирование строки параметров для URL
+  const params = new URLSearchParams({
+    guaranteeSum,
+    guaranteeDays,
+    procedureType,
+    guaranteeType,
+    hasAdvance,
+    customForm,
+  });
+
+  // Переход на страницу заявки с параметрами
+  window.location.href = `application.html?${params.toString()}`;
 });
