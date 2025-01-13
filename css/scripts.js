@@ -411,8 +411,9 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   )
   .join("");
 
-// Показать блок результатов
-document.getElementById("result-output").style.display = "block";
+ // Показать блок результатов
+ document.getElementById("result-output").style.display = "block";
+});
 
 // Обработчик на родительский элемент
 offerList.addEventListener("click", (event) => {
@@ -424,7 +425,6 @@ offerList.addEventListener("click", (event) => {
       // Передать данные предложения в функцию создания виртуальной страницы
       openVirtualPage(selectedOffer);
   }
-
 });
 
 document.getElementById("reset-btn").addEventListener("click", function () {
