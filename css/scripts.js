@@ -468,7 +468,7 @@ document.addEventListener("click", (event) => {
     const customForm = document.querySelector("#custom-form").checked ? "yes" : "no";
 
     // Формируем URL с параметрами
-    const url = `/application-form.html?bankName=${encodeURIComponent(bankName)}&guaranteeSum=${guaranteeSum}&guaranteeDays=${guaranteeDays}&procedureType=${procedureType}&guaranteeType=${guaranteeType}&hasAdvance=${hasAdvance}&customForm=${customForm}`;
+    const url = `/delta-garant/application-form.html?bankName=${encodeURIComponent(bankName)}&guaranteeSum=${guaranteeSum}&guaranteeDays=${guaranteeDays}&procedureType=${procedureType}&guaranteeType=${guaranteeType}&hasAdvance=${hasAdvance}&customForm=${customForm}`;
 
     // Перенаправляем пользователя
     window.location.href = url;
