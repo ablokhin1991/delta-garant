@@ -17,10 +17,15 @@ function openVirtualPage(offer, selectedParams) {
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
-    // Удаляем пробелы из суммы и преобразуем в число
-    const rawSum = selectedParams.sum.toString().replace(/[^\d]/g, ""); // Удаляем все символы, кроме цифр
-    const sum = parseFloat(rawSum);
-    const formattedSum = isNaN(sum) ? "Данные недоступны" : `${sum.toLocaleString("ru-RU")} руб.`;
+    // Удаляем пробелы и преобразуем сумму в число с учетом всех символов
+    const rawSum = selectedParams.sum
+        .toString()
+        .replace(/\s+/g, "") // Удаляем пробелы
+        .replace(/[^\d,.]/g, ""); // Удаляем все символы, кроме цифр, запятых и точек
+    const sum = parseFloat(rawSum.replace(",", ".")); // Преобразуем строку в число
+    const formattedSum = isNaN(sum) 
+        ? "Данные недоступны" 
+        : sum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб.";
 
     // Генерируем HTML для виртуальной страницы
     const virtualPageHTML = `
