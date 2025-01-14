@@ -27,7 +27,7 @@ function openVirtualPage(offer, selectedParams) {
                 </div>
             </section>
 
-            <div class="result">
+            <div class="content">
                 <div class="offer">
                     <div class="offer__logo" style="background-image: url('${offer.logo}');"></div>
                     <div class="offer__details">
@@ -39,42 +39,55 @@ function openVirtualPage(offer, selectedParams) {
             </div>
 
             <div class="content">
+                <h2>Выбранные параметры</h2>
                 <div class="form-row">
                     <div class="form-column">
                         <p><strong>Сумма гарантии:</strong> ${selectedParams.sum.toLocaleString()} руб.</p>
-                    </div>
-                    <div class="form-column">
                         <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-column">
-                        <p><strong>Тип процедуры:</strong> ${selectedParams.procType}</p>
-                    </div>
-                    <div class="form-column">
-                        <p><strong>Тип гарантии:</strong> ${selectedParams.guarType}</p>
+                        <p><strong>Тип процедуры:</strong> ${getProcedureTypeName(selectedParams.procType)}</p>
+                        <p><strong>Тип гарантии:</strong> ${getGuaranteeTypeName(selectedParams.guarType)}</p>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-column">
                         <p><strong>Наличие аванса:</strong> ${selectedParams.hasAdvance ? "Да" : "Нет"}</p>
-                    </div>
-                    <div class="form-column">
                         <p><strong>Гарантия по форме заказчика:</strong> ${selectedParams.customForm ? "Да" : "Нет"}</p>
                     </div>
                 </div>
             </div>
 
-            <div class="document-upload">
+            <div class="content">
+                <h2>Контактные данные</h2>
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="full-name">ФИО</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Введите ваше ФИО">
+                    </div>
+                    <div class="form-column">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Введите ваш email">
+                    </div>
+                    <div class="form-column">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон">
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
                 <h2>Загрузите ваши документы (не обязательно, но ускорит процесс оформления)</h2>
                 ${generateDocumentFields()}
             </div>
 
-            <button class="btn_primary" id="submit-button">Отправить</button>
-            <label class="agreement">
-                <input type="checkbox" id="agreement" name="agreement" required>
-                Я согласен с политикой обработки персональных данных
-            </label>
+            <div class="content">
+                <button class="btn_primary" id="submit-button">Отправить</button>
+                <label class="agreement">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    Я согласен с политикой обработки персональных данных
+                </label>
+            </div>
         </div>
     `;
 
@@ -118,4 +131,30 @@ function generateDocumentFields() {
     `
         )
         .join("");
+}
+
+/**
+ * Функция для получения названия типа процедуры.
+ */
+function getProcedureTypeName(procType) {
+    const procedureTypes = {
+        "1": "44-ФЗ",
+        "2": "223-ФЗ",
+        "3": "615-ПП/185-ФЗ",
+        "4": "Коммерческий тендер",
+    };
+    return procedureTypes[procType] || "Неизвестный тип";
+}
+
+/**
+ * Функция для получения названия типа гарантии.
+ */
+function getGuaranteeTypeName(guarType) {
+    const guaranteeTypes = {
+        "1": "На участие",
+        "2": "На исполнение контракта",
+        "3": "На возврат аванса",
+        "4": "На гарантийный период",
+    };
+    return guaranteeTypes[guarType] || "Неизвестный тип";
 }
