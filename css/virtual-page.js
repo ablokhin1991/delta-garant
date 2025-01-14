@@ -17,9 +17,9 @@ function openVirtualPage(offer, selectedParams) {
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
-    // Корректная обработка суммы
+        // Удаляем пробелы и корректно обрабатываем сумму
     const rawSum = String(selectedParams.sum)
-        // Удаляем только символы, кроме цифр, точек и запятых
+        .replace(/[\s\u00A0]+/g, "") // Удаляем все пробелы, включая неразрывные
         .replace(/[^\d.,]/g, ""); // Удаляем все символы, кроме цифр, точек и запятых
 
     // Заменяем запятые на точки (если они есть) и преобразуем строку в число
@@ -53,7 +53,7 @@ function openVirtualPage(offer, selectedParams) {
                 <h2>Выбранные параметры</h2>
                 <div class="form-row">
                     <div class="form-column">
-                        <p><strong>Сумма гарантии:</strong> ${formattedSum}</p>
+                        <p>Сумма гарантии: ${numericSum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб."}</p>
                         <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
                     </div>
                     <div class="form-column">
