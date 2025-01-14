@@ -195,10 +195,23 @@ footer a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.content-vp {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .content-vp:not(:last-of-type) {
     margin-bottom: 20px;
 }
 
+.content-vp h2 {
+    font-size: 16px;
+    color: #0E214C;
+}
 
 .content h2 {
     font-size: 16px;
@@ -644,6 +657,10 @@ input[type="checkbox"]:checked::before {
     }
 
     .content {
+        width: 90%;
+    }
+
+    .content-vp {
         width: 90%;
     }
 
