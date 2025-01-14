@@ -39,15 +39,6 @@ function openVirtualPage(offer, selectedParams) {
                     background-color: #f4f4f4;
                 }
 
-                .virtual-page {
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 20px;
-                    background-color: #fff;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    border-radius: 8px;
-                }
-
                 .hero {
                     background-color: #f4f4f4;
                     color: #0E214C;
