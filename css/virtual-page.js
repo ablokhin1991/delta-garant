@@ -17,6 +17,10 @@ function openVirtualPage(offer, selectedParams) {
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
+    // Проверяем и преобразуем сумму гарантии
+    const sum = parseFloat(selectedParams.sum);
+    const formattedSum = isNaN(sum) ? "Данные недоступны" : `${sum.toLocaleString()} руб.`;
+
     // Генерируем HTML для виртуальной страницы
     const virtualPageHTML = `
         <div class="virtual-page">
@@ -42,7 +46,7 @@ function openVirtualPage(offer, selectedParams) {
                 <h2>Выбранные параметры</h2>
                 <div class="form-row">
                     <div class="form-column">
-                        <p><strong>Сумма гарантии:</strong> ${selectedParams.sum.toLocaleString()} руб.</p>
+                        <p><strong>Сумма гарантии:</strong> ${formattedSum}</p>
                         <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
                     </div>
                     <div class="form-column">
