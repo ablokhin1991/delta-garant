@@ -18,9 +18,9 @@ function openVirtualPage(offer, selectedParams) {
     const originalPage = document.body.innerHTML;
 
     // Удаляем пробелы из суммы и преобразуем в число
-    const rawSum = selectedParams.sum.toString().replace(/\s+/g, ""); // Удаляем пробелы
+    const rawSum = selectedParams.sum.toString().replace(/[^\d]/g, ""); // Удаляем все символы, кроме цифр
     const sum = parseFloat(rawSum);
-    const formattedSum = isNaN(sum) ? "Данные недоступны" : `${sum.toLocaleString()} руб.`;
+    const formattedSum = isNaN(sum) ? "Данные недоступны" : `${sum.toLocaleString("ru-RU")} руб.`;
 
     // Генерируем HTML для виртуальной страницы
     const virtualPageHTML = `
