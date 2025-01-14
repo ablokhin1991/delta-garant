@@ -17,90 +17,85 @@ function openVirtualPage(offer, selectedParams) {
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
-        // Удаляем пробелы и корректно обрабатываем сумму
-    const rawSum = String(selectedParams.sum)
-        .replace(/[\s\u00A0]+/g, "") // Удаляем все пробелы, включая неразрывные
-        .replace(/[^\d.,]/g, ""); // Удаляем все символы, кроме цифр, точек и запятых
 
     // Заменяем запятые на точки (если они есть) и преобразуем строку в число
-    const numericSum = parseFloat(rawSum.replace(",", "."));
+    const numericSum = parseFloat(selectedParams.sum.replace(",", "."));
     const formattedSum = isNaN(numericSum)
         ? "Данные недоступны"
         : numericSum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб.";
 
     // Генерируем HTML для виртуальной страницы
-    const virtualPageHTML = 
-        `<div class="virtual-page">
-            <section class="hero">
-                <div class="container">
+    const virtualPageHTML =
+        <div className="virtual-page">
+            <section className="hero">
+                <div className="container">
                     <h1>Оформление банковской гарантии</h1>
                     <p>Подтвердите свои данные для продолжения</p>
                 </div>
             </section>
 
-            <div class="content">
-                <div class="offer">
-                    <div class="offer__logo" style="background-image: url('${offer.logo}');"></div>
-                    <div class="offer__details">
-                        <p class="offer__title-wrap"><strong>${offer.name}</strong></p>
-                        <p class="offer__text">Ставка: ${offer.rate}%</p>
-                        <p class="offer__text">Стоимость: ${offer.cost.toLocaleString()} руб.</p>
+            <div className="content">
+                <div className="offer">
+                    <div className="offer__logo" style={{ backgroundImage: `url('${offer.logo}')` }}></div>
+                    <div className="offer__details">
+                        <p className="offer__title-wrap"><strong>{offer.name}</strong></p>
+                        <p className="offer__text">Ставка: {offer.rate}%</p>
+                        <p className="offer__text">Стоимость: {offer.cost.toLocaleString()} руб.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="content">
+            <div className="content">
                 <h2>Выбранные параметры</h2>
-                <div class="form-row">
-                    <div class="form-column">
-                        <p>Сумма гарантии: ${numericSum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб."}</p>
-                        <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
+                <div className="form-row">
+                    <div className="form-column">
+                        <p><strong>Сумма гарантии:</strong> {formattedSum}</p>
+                        <p><strong>Срок действия:</strong> {selectedParams.days} дней</p>
                     </div>
-                    <div class="form-column">
-                        <p><strong>Тип процедуры:</strong> ${getProcedureTypeName(selectedParams.procType)}</p>
-                        <p><strong>Тип гарантии:</strong> ${getGuaranteeTypeName(selectedParams.guarType)}</p>
+                    <div className="form-column">
+                        <p><strong>Тип процедуры:</strong> {getProcedureTypeName(selectedParams.procType)}</p>
+                        <p><strong>Тип гарантии:</strong> {getGuaranteeTypeName(selectedParams.guarType)}</p>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-column">
-                        <p><strong>Наличие аванса:</strong> ${selectedParams.hasAdvance ? "Да" : "Нет"}</p>
-                        <p><strong>Гарантия по форме заказчика:</strong> ${selectedParams.customForm ? "Да" : "Нет"}</p>
+                <div className="form-row">
+                    <div className="form-column">
+                        <p><strong>Наличие аванса:</strong> {selectedParams.hasAdvance ? "Да" : "Нет"}</p>
+                        <p><strong>Гарантия по форме заказчика:</strong> {selectedParams.customForm ? "Да" : "Нет"}</p>
                     </div>
                 </div>
             </div>
 
-            <div class="content">
+            <div className="content">
                 <h2>Контактные данные</h2>
-                <div class="form-row">
-                    <div class="form-column">
-                        <label for="full-name">ФИО</label>
-                        <input type="text" id="full-name" name="full-name" placeholder="Введите ваше ФИО">
+                <div className="form-row">
+                    <div className="form-column">
+                        <label htmlFor="full-name">ФИО</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Введите ваше ФИО" />
                     </div>
-                    <div class="form-column">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Введите ваш email">
+                    <div className="form-column">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Введите ваш email" />
                     </div>
-                    <div class="form-column">
-                        <label for="phone">Телефон</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон">
+                    <div className="form-column">
+                        <label htmlFor="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" />
                     </div>
                 </div>
             </div>
 
-            <div class="content">
+            <div className="content">
                 <h2>Загрузите ваши документы (не обязательно, но ускорит процесс оформления)</h2>
-                ${generateDocumentFields()}
+                {generateDocumentFields()}
             </div>
 
-            <div class="content">
-                <button class="btn_primary" id="submit-button">Отправить</button>
-                <label class="agreement">
-                    <input type="checkbox" id="agreement" name="agreement" required>
+            <div className="content">
+                <button className="btn_primary" id="submit-button">Отправить</button>
+                <label className="agreement">
+                    <input type="checkbox" id="agreement" name="agreement" required />
                     Я согласен с политикой обработки персональных данных
                 </label>
             </div>
-        </div>
-    `;
+        </div>;
 
     // Заменяем содержимое страницы
     document.body.innerHTML = virtualPageHTML;
@@ -132,13 +127,13 @@ function generateDocumentFields() {
 
     return documents
         .map(
-            (doc) => 
-        `<div class="upload-row">
-            <div class="upload-icon"></div>
-            <p class="upload-name">${doc.name}</p>
-            <button class="btn_primary" onclick="document.getElementById('${doc.id}').click()">Выбрать файл</button>
-            <input type="file" id="${doc.id}" name="${doc.id}" style="display: none;">
-        </div>`
+            (doc) =>
+                <div className="upload-row">
+                    <div className="upload-icon"></div>
+                    <p className="upload-name">{doc.name}</p>
+                    <button className="btn_primary" onClick={() => document.getElementById(doc.id).click()}>Выбрать файл</button>
+                    <input type="file" id={doc.id} name={doc.id} style={{ display: "none" }} />
+                </div>
         )
         .join("");
 }
