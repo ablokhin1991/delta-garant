@@ -18,9 +18,8 @@ function openVirtualPage(offer, selectedParams) {
     const originalPage = document.body.innerHTML;
 
     // Удаляем пробелы и корректно обрабатываем сумму
-    const rawSum = selectedParams.sum
-        .toString()
-        .replace(/\s+/g, "") // Удаляем пробелы
+    const rawSum = String(selectedParams.sum)
+        .replace(/[\s\u00A0]+/g, "") // Удаляем все пробелы, включая неразрывные
         .replace(/[^\d.,]/g, ""); // Удаляем все символы, кроме цифр, точек и запятых
 
     // Заменяем запятые на точки (если они есть) и преобразуем строку в число
@@ -39,7 +38,7 @@ function openVirtualPage(offer, selectedParams) {
                 </div>
             </section>
 
-                        <div class="content">
+            <div class="content">
                 <div class="offer">
                     <div class="offer__logo" style="background-image: url('${offer.logo}');"></div>
                     <div class="offer__details">
