@@ -418,22 +418,40 @@ document.getElementById("result-output").style.display = "block";
 
 // Обработчик на родительский элемент
 offerList.addEventListener("click", (event) => {
-    if (event.target.classList.contains("offer__button")) {
-        const button = event.target;
-        const index = parseInt(button.dataset.index, 10); // Преобразуем индекс в число
-        const selectedOffer = finalResults[index]; // Выбираем данные предложения
+  if (event.target.classList.contains("offer__button")) {
+      const button = event.target;
+      const index = parseInt(button.dataset.index, 10); // Преобразуем индекс в число
+      const selectedOffer = finalResults[index]; // Выбираем данные предложения
 
-        if (selectedOffer) {
-            // Сохраняем выбранное предложение в глобальном контексте для виртуальной страницы
-            window.selectedOffer = selectedOffer;
+      if (selectedOffer) {
+          // Сохраняем выбранное предложение в глобальном контексте для виртуальной страницы
+          window.selectedOffer = selectedOffer;
 
-            // Передать данные предложения в функцию создания виртуальной страницы
-            openVirtualPage(selectedOffer);
-        } else {
-            console.error("Не удалось найти предложение с указанным индексом.");
-        }
-    }
+          // Собираем параметры, введённые пользователем
+          const sumField = document.getElementById("guarantee-sum").value;
+          const daysField = document.getElementById("guarantee-days").value;
+          const procType = document.getElementById("procedure-type").value;
+          const guarType = document.getElementById("guarantee-type").value;
+          const hasAdvance = document.getElementById("has-advance").checked;
+          const customForm = document.getElementById("custom-form").checked;
+
+          const selectedParams = {
+              sum: parseFloat(sumField),
+              days: parseInt(daysField, 10),
+              procType,
+              guarType,
+              hasAdvance,
+              customForm,
+          };
+
+          // Передать данные предложения и параметры в функцию создания виртуальной страницы
+          openVirtualPage(selectedOffer, selectedParams);
+      } else {
+          console.error("Не удалось найти предложение с указанным индексом.");
+      }
+  }
 });
+
 
 
 });
