@@ -54,17 +54,17 @@ function openVirtualPage(offer, selectedParams) {
                     <div class="form-row">
                         <div class="form-column">
                             <p>Сумма гарантии: ${formattedSum}</p>
-                            <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
+                            <p>Срок действия: ${selectedParams.days} дней</p>
                         </div>
                         <div class="form-column">
-                            <p><strong>Тип процедуры:</strong> ${getProcedureTypeName(selectedParams.procType)}</p>
-                            <p><strong>Тип гарантии:</strong> ${getGuaranteeTypeName(selectedParams.guarType)}</p>
+                            <p>Тип процедуры: ${getProcedureTypeName(selectedParams.procType)}</p>
+                            <p>Тип гарантии: ${getGuaranteeTypeName(selectedParams.guarType)}</p>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-column">
-                            <p><strong>Наличие аванса:</strong> ${selectedParams.hasAdvance ? "Да" : "Нет"}</p>
-                            <p><strong>Гарантия по форме заказчика:</strong> ${selectedParams.customForm ? "Да" : "Нет"}</p>
+                            <p>Наличие аванса: ${selectedParams.hasAdvance ? "Да" : "Нет"}</p>
+                            <p>Гарантия по форме заказчика: ${selectedParams.customForm ? "Да" : "Нет"}</p>
                         </div>
                     </div>
                 </div>
