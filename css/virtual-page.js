@@ -1,6 +1,7 @@
 // Обработчик загрузки документа
 document.addEventListener("DOMContentLoaded", () => {
     console.log("virtual-page.js загружен");
+    console.log("Selected parameters received:", selectedParams);
 });
 
 /**
