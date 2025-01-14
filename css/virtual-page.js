@@ -146,7 +146,7 @@ function openVirtualPage(offer, selectedParams) {
                         ${generateDocumentFields()}
                     </div>
 
-                    <div class="content-vp">
+                    <div class="content-vp-btn-chek">
                         <button class="btn_primary" id="submit-button">Отправить</button>
                         <label class="agreement">
                             <input type="checkbox" id="agreement" name="agreement" required>
