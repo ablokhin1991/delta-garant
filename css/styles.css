@@ -571,14 +571,11 @@ input[type="checkbox"]:checked::before {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
 .content-vp:not(:last-of-type) {
     margin-bottom: 20px;
-}
-
-.content-vp:last-of-type {
-    margin-bottom: 40px;
 }
 
 .content-vp h2 {
