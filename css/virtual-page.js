@@ -17,21 +17,12 @@ function openVirtualPage(offer, selectedParams) {
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
-    // Обрабатываем сумму гарантии, не удаляя пробелы вместо этого используем чистую строку
+    // Используем исходную строку суммы без изменения формата
     const rawSum = String(selectedParams.sum);
     console.log("Raw sum received:", rawSum);
 
-    // Удаляем символы, но сохраняем пробелы.
-    const cleanedSum = rawSum
-        .replace(/[^\d\s]/g, "") // Удаляем все символы, кроме цифр и пробелов
-
-    // Заменяем пробелы и запятые, чтобы преобразовать строку в число
-    const sumArray = cleanedSum.trim().split(/\s+/).join('').replace(',', '.');
-    const numericSum = parseFloat(sumArray);
-
-    const formattedSum = isNaN(numericSum)
-        ? "Данные недоступны"
-        : numericSum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб.";
+    // Проверяем формат суммы (удаляем только лишние символы, оставляя пробелы)
+    const formattedSum = rawSum.replace(/[^\d\s]/g, "").trim() + " руб.";
 
     console.log("Formatted sum:", formattedSum);
 
