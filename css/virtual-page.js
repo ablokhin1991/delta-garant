@@ -14,13 +14,12 @@ function openVirtualPage(offer, selectedParams) {
         return;
     }
 
-    // Используем исходную строку суммы без изменения формата
+    // Обрабатываем сумму, полученную из `scripts.js`, без удаления пробелов
     const rawSum = String(selectedParams.sum);
     console.log("Raw sum received:", rawSum);
 
-    // Проверяем формат суммы (удаляем только лишние символы, оставляя пробелы)
+    // Удаляем недопустимые символы (если есть), оставляя пробелы
     const formattedSum = rawSum.replace(/[^\d\s]/g, "").trim() + " руб.";
-
     console.log("Formatted sum:", formattedSum);
 
     // Генерируем HTML для виртуальной страницы
