@@ -507,7 +507,7 @@ input[type="checkbox"]:checked::before {
     margin-right: 5px;
 }
 
-.virtual-page {
+/*.virtual-page {
     padding: 20px;
     width: 80%;
     margin: 0 auto;
@@ -515,7 +515,7 @@ input[type="checkbox"]:checked::before {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-}
+}*/
 
 .document-upload {
     margin-top: 20px;
