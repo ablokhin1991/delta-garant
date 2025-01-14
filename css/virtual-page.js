@@ -17,9 +17,12 @@ function openVirtualPage(offer, selectedParams) {
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
-    // Проверяем и преобразуем сумму гарантии
-    const sum = parseFloat(selectedParams.sum);
-    const formattedSum = isNaN(sum) ? "Данные недоступны" : `${sum.toLocaleString()} руб.`;
+// Удаляем пробелы из суммы и преобразуем в число
+const rawSum = selectedParams.sum.replace(/\s+/g, ""); // Удаляем пробелы
+const sum = parseFloat(rawSum);
+const formattedSum = isNaN(sum) ? "Данные недоступны" : `${sum.toLocaleString()} руб.`;
+
+
 
     // Генерируем HTML для виртуальной страницы
     const virtualPageHTML = `
@@ -30,17 +33,6 @@ function openVirtualPage(offer, selectedParams) {
                     <p>Подтвердите свои данные для продолжения</p>
                 </div>
             </section>
-
-            <div class="content">
-                <div class="offer">
-                    <div class="offer__logo" style="background-image: url('${offer.logo}');"></div>
-                    <div class="offer__details">
-                        <p class="offer__title-wrap"><strong>${offer.name}</strong></p>
-                        <p class="offer__text">Ставка: ${offer.rate}%</p>
-                        <p class="offer__text">Стоимость: ${offer.cost.toLocaleString()} руб.</p>
-                    </div>
-                </div>
-            </div>
 
             <div class="content">
                 <h2>Выбранные параметры</h2>
@@ -61,6 +53,7 @@ function openVirtualPage(offer, selectedParams) {
                     </div>
                 </div>
             </div>
+        </div>
 
             <div class="content">
                 <h2>Контактные данные</h2>
