@@ -138,17 +138,18 @@ function openVirtualPage(offer, selectedParams) {
                     <div class="content-vp">
                         <h2>Контактные данные</h2>
                         <div class="form-row">
-                            <div class="form-column">
-                                <label for="full-name">ФИО</label>
-                                <input type="text" id="full-name" name="full-name" placeholder="Введите ваше ФИО">
-                        
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Введите ваш email">
-                            
-                                <label for="phone">Телефон</label>
-                                <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон">
+                            <div class="form-column styled-column">
+                              <label class="styled-label" for="full-name">ФИО</label>
+                              <input class="styled-input" type="text" id="full-name" name="full-name" placeholder="Введите ваше ФИО">
+
+                              <label class="styled-label" for="email">Email</label>
+                              <input class="styled-input" type="email" id="email" name="email" placeholder="Введите ваш email">
+
+                              <label class="styled-label" for="phone">Телефон</label>
+                              <input class="styled-input" type="tel" id="phone" name="phone" placeholder="Введите ваш телефон">
                             </div>
                         </div>
+
                     </div>
 
                     <div class="content-vp">

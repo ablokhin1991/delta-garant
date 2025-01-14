@@ -551,7 +551,7 @@ input[type="checkbox"]:checked::before {
     margin: 0 10px;
 }
 
-/* Стили виртуальной страницы */
+/* Стили виртуальной страницы************************************************************************************************ */
 .content-vp {
     width: 80%;
     margin: 0 auto;
@@ -596,6 +596,26 @@ input[type="checkbox"]:checked::before {
 
 .agreement input {
     margin-right: 0; /* Убираем отступ справа у чекбокса */
+}
+
+.styled-column {
+    display: flex; /* Включаем flexbox */
+    flex-direction: column; /* Элементы выстраиваются в столбик */
+    gap: 10px; /* Отступы между элементами */
+}
+
+.styled-label {
+    font-size: 14px; /* Размер текста */
+    font-weight: bold; /* Жирное начертание */
+    margin-bottom: 5px; /* Отступ от метки к полю */
+}
+
+.styled-input {
+    padding: 8px; /* Внутренние отступы */
+    font-size: 14px; /* Размер текста */
+    border: 1px solid #ccc; /* Границы */
+    border-radius: 4px; /* Закругленные углы */
+    box-sizing: border-box; /* Корректный расчет ширины */
 }
 
 /* Респонсивность - медиазапросы для адаптивности */
