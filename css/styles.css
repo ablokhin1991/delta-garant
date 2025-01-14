@@ -564,7 +564,7 @@ input[type="checkbox"]:checked::before {
 .content-vp-btn-chek {
     display: flex;
     flex-direction: column; /* Размещаем элементы по вертикали */
-    align-items: flex-end; /* Выравниваем элементы по правому краю */
+    align-items: flex-start; /* Выравниваем элементы по правому краю */
     width: 80%;
     margin: 0 auto;
     padding: 20px;
