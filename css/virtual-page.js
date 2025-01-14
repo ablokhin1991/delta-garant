@@ -19,11 +19,13 @@ function openVirtualPage(offer, selectedParams) {
 
     // Удаляем пробелы и корректно обрабатываем сумму
     const rawSum = String(selectedParams.sum)
-        .replace(/[\s\u00A0]+/g, "") // Удаляем все пробелы, включая неразрывные
-        .replace(/[^\d.,]/g, ""); // Удаляем все символы, кроме цифр, точек и запятых
+        .replace(/[^\d.,\s]/g, ""); // Удаляем все символы, кроме цифр, точек, запятых и пробелов
+
+    // Форматируем исходную сумму с пробелами
+    const formattedRawSum = rawSum.replace(/\s+/g, " ").trim();
 
     // Заменяем запятые на точки (если они есть) и преобразуем строку в число
-    const numericSum = parseFloat(rawSum.replace(",", "."));
+    const numericSum = parseFloat(rawSum.replace(/\s+/g, "").replace(",", "."));
     const formattedSum = isNaN(numericSum)
         ? "Данные недоступны"
         : numericSum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб.";
@@ -53,7 +55,7 @@ function openVirtualPage(offer, selectedParams) {
                 <h2>Выбранные параметры</h2>
                 <div class="form-row">
                     <div class="form-column">
-                        <p><strong>Сумма гарантии:</strong> ${formattedSum}</p>
+                        <p><strong>Сумма гарантии:</strong> ${formattedRawSum}</p>
                         <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
                     </div>
                     <div class="form-column">
