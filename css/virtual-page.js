@@ -107,6 +107,8 @@ function openVirtualPage(offer, selectedParams) {
                         <div class="form-row">
                             <div class="upload-row">
                                 <p>Сумма гарантии: ${formattedSum}</p>
+                            </div>
+                            <div class="upload-row">
                                 <p>Срок действия: ${selectedParams.days} дней</p>
                             </div>
                             <div class="form-column">
