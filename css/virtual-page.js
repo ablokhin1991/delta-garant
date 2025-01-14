@@ -14,9 +14,6 @@ function openVirtualPage(offer, selectedParams) {
         return;
     }
 
-    // Сохраняем текущую страницу в переменной
-    const originalPage = document.body.innerHTML;
-
     // Используем исходную строку суммы без изменения формата
     const rawSum = String(selectedParams.sum);
     console.log("Raw sum received:", rawSum);
@@ -27,92 +24,99 @@ function openVirtualPage(offer, selectedParams) {
     console.log("Formatted sum:", formattedSum);
 
     // Генерируем HTML для виртуальной страницы
-    const virtualPageHTML = 
-        `<div class="virtual-page">
-            <section class="hero">
-                <div class="container">
-                    <h1>Оформление банковской гарантии</h1>
-                    <p>Подтвердите свои данные для продолжения</p>
-                </div>
-            </section>
-
-            <div class="content">
-                <div class="offer">
-                    <div class="offer__logo" style="background-image: url('${offer.logo}');"></div>
-                    <div class="offer__details">
-                        <p class="offer__title-wrap"><strong>${offer.name}</strong></p>
-                        <p class="offer__text">Ставка: ${offer.rate}%</p>
-                        <p class="offer__text">Стоимость: ${offer.cost.toLocaleString()} руб.</p>
+    const virtualPageHTML = `
+        <html>
+        <head>
+            <title>Оформление банковской гарантии</title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+            <div class="virtual-page">
+                <section class="hero">
+                    <div class="container">
+                        <h1>Оформление банковской гарантии</h1>
+                        <p>Подтвердите свои данные для продолжения</p>
                     </div>
-                </div>
-            </div>
+                </section>
 
-            <div class="content">
-                <h2>Выбранные параметры</h2>
-                <div class="form-row">
-                    <div class="form-column">
-                        <p>Сумма гарантии: ${formattedSum}</p>
-                        <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
-                    </div>
-                    <div class="form-column">
-                        <p><strong>Тип процедуры:</strong> ${getProcedureTypeName(selectedParams.procType)}</p>
-                        <p><strong>Тип гарантии:</strong> ${getGuaranteeTypeName(selectedParams.guarType)}</p>
+                <div class="content">
+                    <div class="offer">
+                        <div class="offer__logo" style="background-image: url('${offer.logo}');"></div>
+                        <div class="offer__details">
+                            <p class="offer__title-wrap"><strong>${offer.name}</strong></p>
+                            <p class="offer__text">Ставка: ${offer.rate}%</p>
+                            <p class="offer__text">Стоимость: ${offer.cost.toLocaleString()} руб.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-column">
-                        <p><strong>Наличие аванса:</strong> ${selectedParams.hasAdvance ? "Да" : "Нет"}</p>
-                        <p><strong>Гарантия по форме заказчика:</strong> ${selectedParams.customForm ? "Да" : "Нет"}</p>
+
+                <div class="content">
+                    <h2>Выбранные параметры</h2>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <p>Сумма гарантии: ${formattedSum}</p>
+                            <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
+                        </div>
+                        <div class="form-column">
+                            <p><strong>Тип процедуры:</strong> ${getProcedureTypeName(selectedParams.procType)}</p>
+                            <p><strong>Тип гарантии:</strong> ${getGuaranteeTypeName(selectedParams.guarType)}</p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <p><strong>Наличие аванса:</strong> ${selectedParams.hasAdvance ? "Да" : "Нет"}</p>
+                            <p><strong>Гарантия по форме заказчика:</strong> ${selectedParams.customForm ? "Да" : "Нет"}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="content">
-                <h2>Контактные данные</h2>
-                <div class="form-row">
-                    <div class="form-column">
-                        <label for="full-name">ФИО</label>
-                        <input type="text" id="full-name" name="full-name" placeholder="Введите ваше ФИО">
-                    </div>
-                    <div class="form-column">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Введите ваш email">
-                    </div>
-                    <div class="form-column">
-                        <label for="phone">Телефон</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон">
+                <div class="content">
+                    <h2>Контактные данные</h2>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="full-name">ФИО</label>
+                            <input type="text" id="full-name" name="full-name" placeholder="Введите ваше ФИО">
+                        </div>
+                        <div class="form-column">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Введите ваш email">
+                        </div>
+                        <div class="form-column">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="content">
-                <h2>Загрузите ваши документы (не обязательно, но ускорит процесс оформления)</h2>
-                ${generateDocumentFields()}
-            </div>
+                <div class="content">
+                    <h2>Загрузите ваши документы (не обязательно, но ускорит процесс оформления)</h2>
+                    ${generateDocumentFields()}
+                </div>
 
-            <div class="content">
-                <button class="btn_primary" id="submit-button">Отправить</button>
-                <label class="agreement">
-                    <input type="checkbox" id="agreement" name="agreement" required>
-                    Я согласен с политикой обработки персональных данных
-                </label>
+                <div class="content">
+                    <button class="btn_primary" id="submit-button">Отправить</button>
+                    <label class="agreement">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        Я согласен с политикой обработки персональных данных
+                    </label>
+                </div>
             </div>
-        </div>
+        </body>
+        </html>
     `;
 
-    // Заменяем содержимое страницы
-    document.body.innerHTML = virtualPageHTML;
+    // Открытие новой вкладки
+    const newWindow = window.open();
+    if (newWindow) {
+        newWindow.document.open();
+        newWindow.document.write(virtualPageHTML);
+        newWindow.document.close();
+    } else {
+        alert("Не удалось открыть новую вкладку. Пожалуйста, отключите блокировщик всплывающих окон.");
+    }
 
-    // Обработчик отправки формы
-    const submitButton = document.getElementById("submit-button");
-    submitButton.addEventListener("click", () => {
-        if (!document.getElementById("agreement").checked) {
-            alert("Вы должны согласиться с политикой обработки персональных данных.");
-            return;
-        }
-        alert("Форма успешно отправлена!");
-        document.body.innerHTML = originalPage; // Возвращаем исходное содержимое
-    });
+    // Перезагрузка текущей страницы
+    location.reload();
 }
 
 /**
