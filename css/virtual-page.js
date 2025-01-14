@@ -105,29 +105,31 @@ function openVirtualPage(offer, selectedParams) {
                     <div class="content-vp">
                         <h2>Выбранные параметры</h2>
                         <div class="form-row">
+                         
                             <div class="form-column">
-                            <div class="upload-row">
-                                <p>Сумма гарантии: ${formattedSum}</p>
-                            </div>
-                            <div class="upload-row">
-                                <p>Срок действия: ${selectedParams.days} дней</p>
-                            </div>
-                        </div>
-                            <div class="form-column">
-                            <div class="upload-row">
-                                <p>Тип процедуры: ${getProcedureTypeName(selectedParams.procType)}</p>
+                                <div class="upload-row">
+                                 <p>Сумма гарантии: ${formattedSum}</p>
                                 </div>
-                            <div class="upload-row">
-                                <p>Тип гарантии: ${getGuaranteeTypeName(selectedParams.guarType)}</p>
+                                <div class="upload-row">
+                                 <p>Срок действия: ${selectedParams.days} дней</p>
                                 </div>
                             </div>
-                        </div>
+                            
                             <div class="form-column">
-                            <div class="upload-row">
-                                <p>Наличие аванса: ${selectedParams.hasAdvance ? "Да" : "Нет"}</p>
+                                <div class="upload-row">
+                                 <p>Тип процедуры: ${getProcedureTypeName(selectedParams.procType)}</p>
                                 </div>
-                            <div class="upload-row">
-                                <p>Гарантия по форме заказчика: ${selectedParams.customForm ? "Да" : "Нет"}</p>
+                                <div class="upload-row">
+                                 <p>Тип гарантии: ${getGuaranteeTypeName(selectedParams.guarType)}</p>
+                                </div>
+                            </div>
+
+                            <div class="form-column">
+                                <div class="upload-row">
+                                 <p>Наличие аванса: ${selectedParams.hasAdvance ? "Да" : "Нет"}</p>
+                                </div>
+                                <div class="upload-row">
+                                 <p>Гарантия по форме заказчика: ${selectedParams.customForm ? "Да" : "Нет"}</p>
                                 </div>
                             </div>
                         </div>
