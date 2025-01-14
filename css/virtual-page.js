@@ -122,10 +122,13 @@ function openVirtualPage(offer, selectedParams) {
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
                             <div class="form-column">
+                            <div class="upload-row">
                                 <p>Наличие аванса: ${selectedParams.hasAdvance ? "Да" : "Нет"}</p>
+                                </div>
+                            <div class="upload-row">
                                 <p>Гарантия по форме заказчика: ${selectedParams.customForm ? "Да" : "Нет"}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
