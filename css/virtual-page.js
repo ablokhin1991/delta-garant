@@ -17,15 +17,20 @@ function openVirtualPage(offer, selectedParams) {
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
-    // Используем исходную сумму из selectedParams.sum
-    const rawSum = String(selectedParams.sum);
+    // Корректная обработка суммы
+    const rawSum = String(selectedParams.sum)
+        // Удаляем только символы, кроме цифр, точек и запятых
+        .replace(/[^\d.,]/g, ""); // Удаляем все символы, кроме цифр, точек и запятых
 
-    // Проверяем корректность формата исходной суммы
-    const formattedSum = rawSum.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    // Заменяем запятые на точки (если они есть) и преобразуем строку в число
+    const numericSum = parseFloat(rawSum.replace(",", "."));
+    const formattedSum = isNaN(numericSum)
+        ? "Данные недоступны"
+        : numericSum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб.";
 
     // Генерируем HTML для виртуальной страницы
-    const virtualPageHTML = `
-        <div class="virtual-page">
+    const virtualPageHTML = 
+        `<div class="virtual-page">
             <section class="hero">
                 <div class="container">
                     <h1>Оформление банковской гарантии</h1>
@@ -48,7 +53,7 @@ function openVirtualPage(offer, selectedParams) {
                 <h2>Выбранные параметры</h2>
                 <div class="form-row">
                     <div class="form-column">
-                        <p><strong>Сумма гарантии:</strong> ${formattedSum} руб.</p>
+                        <p><strong>Сумма гарантии:</strong> ${formattedSum}</p>
                         <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
                     </div>
                     <div class="form-column">
@@ -127,14 +132,13 @@ function generateDocumentFields() {
 
     return documents
         .map(
-            (doc) => `
-        <div class="upload-row">
+            (doc) => 
+        `<div class="upload-row">
             <div class="upload-icon"></div>
             <p class="upload-name">${doc.name}</p>
             <button class="btn_primary" onclick="document.getElementById('${doc.id}').click()">Выбрать файл</button>
             <input type="file" id="${doc.id}" name="${doc.id}" style="display: none;">
-        </div>
-    `
+        </div>`
         )
         .join("");
 }
