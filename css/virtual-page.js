@@ -182,8 +182,6 @@ function generateDocumentFields() {
             (doc) => 
         `<div class="upload-row">
             <div class="upload-icon"></div>
-            <img src="images/icons/doc.svg" alt="Document Icon">
-            </div>
             <p class="upload-name">${doc.name}</p>
             <button class="btn_primary" onclick="document.getElementById('${doc.id}').click()">Выбрать файл</button>
             <input type="file" id="${doc.id}" name="${doc.id}" style="display: none;">
