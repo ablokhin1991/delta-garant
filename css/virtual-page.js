@@ -91,7 +91,7 @@ function openVirtualPage(offer, selectedParams) {
                         </div>
                     </section>
 
-                    <div class="content">
+                    <div class="content-vp">
                         <div class="offer">
                             <div class="offer__logo" style="background-image: url('${offer.logo}');"></div>
                             <div class="offer__details">
@@ -102,7 +102,7 @@ function openVirtualPage(offer, selectedParams) {
                         </div>
                     </div>
 
-                    <div class="content">
+                    <div class="content-vp">
                         <h2>Выбранные параметры</h2>
                         <div class="form-row">
                             <div class="form-column">
@@ -122,7 +122,7 @@ function openVirtualPage(offer, selectedParams) {
                         </div>
                     </div>
 
-                    <div class="content">
+                    <div class="content-vp">
                         <h2>Контактные данные</h2>
                         <div class="form-row">
                             <div class="form-column">
@@ -140,12 +140,12 @@ function openVirtualPage(offer, selectedParams) {
                         </div>
                     </div>
 
-                    <div class="content">
+                    <div class="content-vp">
                         <h2>Загрузите ваши документы (не обязательно, но ускорит процесс оформления)</h2>
                         ${generateDocumentFields()}
                     </div>
 
-                    <div class="content">
+                    <div class="content-vp">
                         <button class="btn_primary" id="submit-button">Отправить</button>
                         <label class="agreement">
                             <input type="checkbox" id="agreement" name="agreement" required>
