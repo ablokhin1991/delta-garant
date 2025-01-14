@@ -17,15 +17,17 @@ function openVirtualPage(offer, selectedParams) {
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
-    // Удаляем пробелы и преобразуем сумму в число с учетом всех символов
+    // Удаляем пробелы и корректно обрабатываем сумму
     const rawSum = selectedParams.sum
         .toString()
         .replace(/\s+/g, "") // Удаляем пробелы
-        .replace(/[^\d,.]/g, ""); // Удаляем все символы, кроме цифр, запятых и точек
-    const sum = parseFloat(rawSum.replace(",", ".")); // Преобразуем строку в число
-    const formattedSum = isNaN(sum) 
-        ? "Данные недоступны" 
-        : sum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб.";
+        .replace(/[^\d.,]/g, ""); // Удаляем все символы, кроме цифр, точек и запятых
+
+    // Заменяем запятые на точки (если они есть) и преобразуем строку в число
+    const numericSum = parseFloat(rawSum.replace(",", "."));
+    const formattedSum = isNaN(numericSum)
+        ? "Данные недоступны"
+        : numericSum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб.";
 
     // Генерируем HTML для виртуальной страницы
     const virtualPageHTML = `
@@ -36,6 +38,17 @@ function openVirtualPage(offer, selectedParams) {
                     <p>Подтвердите свои данные для продолжения</p>
                 </div>
             </section>
+
+                        <div class="content">
+                <div class="offer">
+                    <div class="offer__logo" style="background-image: url('${offer.logo}');"></div>
+                    <div class="offer__details">
+                        <p class="offer__title-wrap"><strong>${offer.name}</strong></p>
+                        <p class="offer__text">Ставка: ${offer.rate}%</p>
+                        <p class="offer__text">Стоимость: ${offer.cost.toLocaleString()} руб.</p>
+                    </div>
+                </div>
+            </div>
 
             <div class="content">
                 <h2>Выбранные параметры</h2>
