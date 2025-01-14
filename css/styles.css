@@ -539,16 +539,13 @@ input[type="checkbox"]:checked::before {
 }
 
 .upload-icon {
-    width: 30px;
-    height: 30px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 10px; /* Отступ между иконкой и текстом */
 }
 
 .upload-icon img {
     width: 30px;  /* Размер иконки */
     height: 30px;
+    object-fit: contain; /* Чтобы иконка не растягивалась */
 }
 
 .upload-name {
