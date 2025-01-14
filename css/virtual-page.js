@@ -226,3 +226,27 @@ function getGuaranteeTypeName(guarType) {
     };
     return guaranteeTypes[guarType] || "Неизвестный тип";
 }
+
+/* Добавление автомаски для телефона*/
+document.addEventListener('DOMContentLoaded', () => {
+        const phoneInput = document.getElementById('phone');
+        Inputmask({ 
+            mask: "+7 (999) 999-99-99",
+            showMaskOnHover: false
+        }).mask(phoneInput);
+    });
+    document.getElementById('phone').addEventListener('blur', function() {
+    const phoneValue = this.value;
+    const phoneRegex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+    if (!phoneRegex.test(phoneValue)) {
+        alert('Введите корректный номер телефона!');
+    }
+});
+
+document.getElementById('phone').addEventListener('blur', function() {
+    const phoneValue = this.value;
+    const phoneRegex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+    if (!phoneRegex.test(phoneValue)) {
+        alert('Введите корректный номер телефона!');
+    }
+});
