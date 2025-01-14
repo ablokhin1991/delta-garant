@@ -200,6 +200,11 @@ footer a:hover {
     color: #0E214C;
 }
 
+.form-row-politika {
+    font-size: 14px;
+    color: #0E214C;
+}
+
 /* Общие стили для текста */
 .field__label-placeholder {
     position: absolute;
