@@ -578,6 +578,13 @@ input[type="checkbox"]:checked::before {
 .content-vp h2 {
     font-size: 16px;
     color: #0E214C;
+    margin-bottom: 20px;
+}
+
+.content-vp p {
+    font-size: 16px;
+    color: #0E214C;
+    margin-bottom: 20px;
 }
 
 .agreement {
