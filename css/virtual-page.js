@@ -17,18 +17,11 @@ function openVirtualPage(offer, selectedParams) {
     // Сохраняем текущую страницу в переменной
     const originalPage = document.body.innerHTML;
 
-    // Удаляем пробелы и корректно обрабатываем сумму
-    const rawSum = String(selectedParams.sum)
-        .replace(/[^\d.,\s]/g, ""); // Удаляем все символы, кроме цифр, точек, запятых и пробелов
+    // Используем исходную сумму из selectedParams.sum
+    const rawSum = String(selectedParams.sum);
 
-    // Форматируем исходную сумму с пробелами
-    const formattedRawSum = rawSum.replace(/\s+/g, " ").trim();
-
-    // Заменяем запятые на точки (если они есть) и преобразуем строку в число
-    const numericSum = parseFloat(rawSum.replace(/\s+/g, "").replace(",", "."));
-    const formattedSum = isNaN(numericSum)
-        ? "Данные недоступны"
-        : numericSum.toLocaleString("ru-RU", { style: "decimal", maximumFractionDigits: 2 }) + " руб.";
+    // Проверяем корректность формата исходной суммы
+    const formattedSum = rawSum.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
     // Генерируем HTML для виртуальной страницы
     const virtualPageHTML = `
@@ -55,7 +48,7 @@ function openVirtualPage(offer, selectedParams) {
                 <h2>Выбранные параметры</h2>
                 <div class="form-row">
                     <div class="form-column">
-                        <p><strong>Сумма гарантии:</strong> ${formattedRawSum}</p>
+                        <p><strong>Сумма гарантии:</strong> ${formattedSum} руб.</p>
                         <p><strong>Срок действия:</strong> ${selectedParams.days} дней</p>
                     </div>
                     <div class="form-column">
