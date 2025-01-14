@@ -28,7 +28,7 @@ function openVirtualPage(offer, selectedParams) {
         <html>
         <head>
             <title>Оформление банковской гарантии</title>
-            <link rel="stylesheet" href="styles.css">
+            <link rel="stylesheet" href="css/styles.css">
         </head>
         <body>
             <div class="virtual-page">
