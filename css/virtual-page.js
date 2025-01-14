@@ -112,8 +112,12 @@ function openVirtualPage(offer, selectedParams) {
                                 <p>Срок действия: ${selectedParams.days} дней</p>
                             </div>
                             <div class="form-column">
+                            <div class="upload-row">
                                 <p>Тип процедуры: ${getProcedureTypeName(selectedParams.procType)}</p>
+                                </div>
+                            <div class="upload-row">
                                 <p>Тип гарантии: ${getGuaranteeTypeName(selectedParams.guarType)}</p>
+                                </div>
                             </div>
                         </div>
                         <div class="form-row">
