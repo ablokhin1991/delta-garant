@@ -92,7 +92,7 @@ function openVirtualPage(offer, selectedParams) {
                     </section>
 
                     <div class="content">
-                        <h2>Выбранные параметры</h2>
+                        <h2>Выбранный банк</h2>
                         <div class="offer">
                             <div class="offer__logo" style="background-image: url('${offer.logo}');"></div>
                             <div class="offer__details">
