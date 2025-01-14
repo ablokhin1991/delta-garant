@@ -27,7 +27,7 @@ function openVirtualPage(offer, selectedParams) {
     const virtualPageHTML = `
         <html>
         <head>
-            <title>Оформление банковской гарантии</title>
+            <title>Виртуальная страница</title>
             <link rel="stylesheet" href="styles.css">
         </head>
         <body>
