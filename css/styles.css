@@ -546,6 +546,11 @@ input[type="checkbox"]:checked::before {
     margin-right: 10px;
 }
 
+.upload-icon img {
+    width: 30px;  /* Размер иконки */
+    height: 30px;
+}
+
 .upload-name {
     flex: 1;
     margin: 0 10px;
