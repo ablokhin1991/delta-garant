@@ -141,12 +141,10 @@ function openVirtualPage(offer, selectedParams) {
                             <div class="form-column">
                                 <label for="full-name">ФИО</label>
                                 <input type="text" id="full-name" name="full-name" placeholder="Введите ваше ФИО">
-                            </div>
-                            <div class="form-column">
+                        
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" placeholder="Введите ваш email">
-                            </div>
-                            <div class="form-column">
+                            
                                 <label for="phone">Телефон</label>
                                 <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон">
                             </div>
