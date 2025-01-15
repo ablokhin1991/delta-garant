@@ -283,7 +283,18 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         { procType: "4", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 50000000, rate: 0.039 },
         { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 50000000, rate: 0.039 },
       ]
-    }
+    },
+
+    {
+      name: "АО Газпромбанк",
+      logo: "/delta-garant/images/banks-logo/gpb.svg",
+      maxSum: 200000000,
+      maxDays: 1140,
+      conditions: [
+        // На исполнение
+        { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 50000000, rate: 0.039 },
+      ]
+    }  
   ];
 
   const results = banks.map(bank => {
