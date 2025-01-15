@@ -462,6 +462,7 @@ input[type="checkbox"]:checked::before {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    margin-right: 20px; /* Увеличение отступа между лого и названием банка */
 }
 
 .offer__details {
