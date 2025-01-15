@@ -288,8 +288,8 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "АО Газпромбанк",
       logo: "/delta-garant/images/banks-logo/gpb.svg",
-      maxSum: 200000000,
-      maxDays: 1140,
+      maxSum: 150000000,
+      maxDays: 1860,
       conditions: [
         // На исполнение
         { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 50000000, rate: 0.039 },
@@ -370,6 +370,13 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       cost = 5000; // Устанавливаем минимальную стоимость - 5000 руб.
       rate = "min "; // Указываем "min %" вместо расчетной ставки
     }
+
+    // Специальное условие для АО Газпромбанк
+    if (bank.name === "АО Газпромбанк" && cost < 1999) {
+      cost = 1999; // Устанавливаем минимальную стоимость - 1999 руб.
+      rate = "min "; // Указываем "min %" вместо расчетной ставки
+    }
+
     
   
     return {
