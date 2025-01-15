@@ -369,6 +369,10 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cost < 5000) {
       cost = 5000; // Устанавливаем минимальную стоимость - 5000 руб.
       rate = "min "; // Указываем "min %" вместо расчетной ставки
+    } else if (bank.name === "ПАО Промсвязьбанк" && cost < 1000) {
+    // Специальное условие для минимального тарифа
+      cost = 1000; // Устанавливаем минимальную стоимость - 1000 руб.
+      rate = "min "; // Указываем "min %" вместо расчетной ставки
     }
 
     // Специальное условие для АО Газпромбанк
@@ -376,9 +380,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       cost = 1999; // Устанавливаем минимальную стоимость - 1999 руб.
       rate = "min "; // Указываем "min %" вместо расчетной ставки
     }
-
-    
-  
+ 
     return {
       name: bank.name,
       logo: bank.logo,
