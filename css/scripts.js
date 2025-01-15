@@ -292,7 +292,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       maxDays: 1860,
       conditions: [
         // На исполнение
-        { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 50000000, rate: 0.039 },
+        { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000, maxSum: 50000000, rate: 0.039 },
       ]
     }  
   ];
