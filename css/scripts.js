@@ -369,8 +369,8 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cost < 5000) {
       cost = 5000; // Минимальная стоимость для procType === "4"
       rate = "min "; // Устанавливаем "min %" для этого случая
-  } else if (bank.name === "ПАО Промсвязьбанк" && cost < 1999) {
-      cost = 1999; // Минимальная стоимость для других случаев
+  } else if (bank.name === "ПАО Промсвязьбанк" && cost < 1000) {
+      cost = 1000; // Минимальная стоимость для других случаев
       rate = "min "; // Устанавливаем "min %" для этого случая
   }
   
