@@ -356,7 +356,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     // Проверяем, была ли использована минимальная стоимость
     if (calculatedCost < condition.minCost) {
       cost = condition.minCost;
-      rate = "min"; // Меняем ставку на "Min", если сработал minCost
+      rate = "min "; // Меняем ставку на "Min", если сработал minCost
     } else {
       cost = calculatedCost;
     }
