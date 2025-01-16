@@ -388,25 +388,25 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     console.log(`Банк: ${bank.name}, Тип процедуры: ${procType}, Расчетная стоимость: ${cost}`);
   
     // Проверяем специальное условие для Промсвязьбанка с procType: "4"
-    console.log("Bank:", bank.name, "ProcType:", procType, "Cost before:", cost);
+    // Проверяем специальное условие для Промсвязьбанка с procType: "4"
 if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cost < 5000) {
-    console.log("Condition 1 will execute");
-    cost = 5000;
-    rate = "min ";
-    console.log("Condition 1: Cost set to", cost, "Rate set to", rate);
+  cost = 5000; // Минимальная стоимость для procType === "4"
+  rate = "min "; // Устанавливаем "min %"
+  console.log("Condition 1: Cost set to", cost, "Rate set to", rate);
 } 
 
+// Отдельное условие для всех остальных случаев, кроме procType: "4"
 if (bank.name === "ПАО Промсвязьбанк" && procType !== "4" && cost < 1000) {
-    console.log("Condition 2 will execute");
-    cost = 1000;
-    rate = "min ";
-    console.log("Condition 2: Cost set to", cost, "Rate set to", rate);
+  cost = 1000; // Минимальная стоимость для других случаев
+  rate = "min "; // Устанавливаем "min %"
+  console.log("Condition 2: Cost set to", cost, "Rate set to", rate);
 }
 
-  
-  
-  
+// Финальная диагностика
+console.log("Final values - Cost:", cost, "Rate:", rate);
 
+
+  
 
     // Специальное условие для АО Газпромбанк
     if (bank.name === "АО Газпромбанк" && cost < 1999) {
