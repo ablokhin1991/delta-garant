@@ -388,21 +388,21 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     console.log(`Банк: ${bank.name}, Тип процедуры: ${procType}, Расчетная стоимость: ${cost}`);
   
     // Проверяем специальное условие для Промсвязьбанка с procType: "4"
-    if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cost < 5000) {
-      cost = 5000; // Минимальная стоимость для procType === "4"
-      rate = "min "; // Устанавливаем "min %"
-      console.log("Condition 1: Cost set to", cost, "Rate set to", rate);
-      console.log("Bank:", bank.name, "ProcType:", procType, "Cost before:", cost);
+    console.log("Bank:", bank.name, "ProcType:", procType, "Cost before:", cost);
+if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cost < 5000) {
+    console.log("Condition 1 will execute");
+    cost = 5000;
+    rate = "min ";
+    console.log("Condition 1: Cost set to", cost, "Rate set to", rate);
+} 
 
-  } 
-  // Второе условие для всех остальных случаев
-  if (bank.name === "ПАО Промсвязьбанк" && cost < 1000) {
-      cost = 1000; // Минимальная стоимость для остальных случаев
-      rate = "min "; // Устанавливаем "min %"
-      console.log("Condition 2: Cost set to", cost, "Rate set to", rate);
-      console.log("Bank:", bank.name, "ProcType:", procType, "Cost before:", cost);
+if (bank.name === "ПАО Промсвязьбанк" && procType !== "4" && cost < 1000) {
+    console.log("Condition 2 will execute");
+    cost = 1000;
+    rate = "min ";
+    console.log("Condition 2: Cost set to", cost, "Rate set to", rate);
+}
 
-  }
   
   
   
