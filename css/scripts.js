@@ -288,7 +288,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "АО Газпромбанк",
       logo: "/delta-garant/images/banks-logo/gpb.svg",
-      maxSum: 150000000,
+      maxSum: 100000000000,
       maxDays: 1860,
       conditions: [
         // На исполнение
