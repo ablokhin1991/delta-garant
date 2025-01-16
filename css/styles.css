@@ -447,6 +447,14 @@ input[type="checkbox"]:checked::before {
     gap: 16px; /* Отступ между блоками */
   }
 
+  .offer__separator {
+    width: 2px;            /* Толщина линии */
+    height: 50px;          /* Длина линии */
+    background-color: #E2E8F0; /* Цвет линии */
+    margin-right: 20px;    /* Расстояние между линией и offer__rate */
+  }
+  
+
 .offer {
     display: flex;
     align-items: center;

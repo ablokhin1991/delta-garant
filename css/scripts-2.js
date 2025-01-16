@@ -437,6 +437,7 @@ offerList.innerHTML = finalResults
         <div class="offer__details">
             <strong>${result.name}</strong>
         </div>
+        <div class="offer__separator"></div> <!-- Разделительная линия -->
         ${!result.isStopFactor ? `  
           <div class="offer__rate">
             Ставка: ${result.rate}%<br>
@@ -448,7 +449,7 @@ offerList.innerHTML = finalResults
           </div>
         `}
         <div class="offer__buttons">
-          ${!result.isStopFactor ? `
+          ${!result.isStopFactor ? `  
             <button class="btn_primary offer__button" data-index="${index}">Оформить</button>
           ` : ''}
         </div>
