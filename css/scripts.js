@@ -388,26 +388,8 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   
     // Общий расчет
     let rate = condition.rate;
-    let cost;
+    let cost = Math.max((sum * rate * days) / 365, 1000);
 
-// Проверка для ПАО Промсвязьбанк
-if (bank.name === "ПАО Промсвязьбанк") {
-    if (procType === 4) {
-        // Если procType = 4, минимальная стоимость < 5000
-        cost = Math.max((sum * rate * days) / 365, 5000);
-        rate = "min";  // Применяем минимальную стоимость
-    } else if (procType === 1 || procType === 2 || procType === 3) {
-        // Если procType = 1, 2, 3, минимальная стоимость < 1000
-        cost = Math.max((sum * rate * days) / 365, 1000);
-        rate = "min";  // Применяем минимальную стоимость
-    }
-} else {
-    // Для других банков или если банк не ПАО Промсвязьбанк
-    cost = Math.max((sum * rate * days) / 365, 1000);
-}
-
-// Выводим результат
-console.log(`Расчет ставки: ${rate}, Стоимость: ${cost}`);
 
 
 
