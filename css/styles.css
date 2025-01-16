@@ -647,7 +647,7 @@ input[type="checkbox"]:checked::before {
 
     /* Секция Hero */
     .hero {
-        padding-top: 30px; /* Уменьшаем отступ сверху до 30px на мобильных устройствах */
+        padding-top: 10px; /* Уменьшаем отступ сверху до 30px на мобильных устройствах */
     }
 
 
