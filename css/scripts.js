@@ -388,15 +388,12 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     console.log(`Банк: ${bank.name}, Тип процедуры: ${procType}, Расчетная стоимость: ${cost}`);
   
     // Проверяем специальное условие для Промсвязьбанка с procType: "4"
-    // Условие для procType: "4"
+    // Проверяем специальное условие для Промсвязьбанка с procType: "4"
 if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cost < 5000) {
   cost = 5000;
   rate = "min ";
   console.log("Condition 1 applied - Cost set to 5000, Rate set to 'min '");
-} 
-
-// Условие для procType: "1", "2", "3"
-if (
+} else if (
   bank.name === "ПАО Промсвязьбанк" &&
   (procType === "1" || procType === "2" || procType === "3") &&
   cost < 1000
@@ -404,8 +401,13 @@ if (
   cost = 1000;
   rate = "min ";
   console.log("Condition 2 applied - Cost set to 1000, Rate set to 'min '");
+} else {
+  console.log("No conditions matched - Cost and Rate unchanged.");
 }
-console.log("Final values - Cost:", cost, "Rate:", rate);
+
+// Финальная проверка
+console.log("Final values - Bank:", bank.name, "ProcType:", procType, "Cost:", cost, "Rate:", rate);
+
 
 
 
