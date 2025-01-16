@@ -450,7 +450,6 @@ offerList.innerHTML = finalResults
         <div class="offer__buttons">
           ${!result.isStopFactor ? `
             <button class="btn_primary offer__button" data-index="${index}">Оформить</button>
-            <button class="btn_secondary offer__button btn_request" data-index="${index}" onclick="window.location.href='ссылка_для_заявки';">Заявка в 1 клик</button>
           ` : ''}
         </div>
     </div>`
