@@ -321,8 +321,8 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         { procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: 10000000000, rate: 0.0465 },
         { procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 10000000000, rate: 0.0465 },
         // На гарантийный период
-        { procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, maxDays: 1200 },
-        { procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1000, maxDays: 1500 },
+        { procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, maxDays: 1200 },
+        { procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1000, maxDays: 1500 },
       ]
     }  
   ];
