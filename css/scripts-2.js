@@ -495,10 +495,32 @@ offerList.addEventListener("click", (event) => {
 
 });
 
+// Скрываем кнопку сброса по умолчанию
+document.getElementById("reset-btn").style.display = "none";
+
+// Слушаем клик на кнопке "Рассчитать"
+document.getElementById("calculate-btn").addEventListener("click", function () {
+  // Показать кнопку сброса
+  document.getElementById("reset-btn").style.display = "inline-block";
+  
+  // Здесь добавьте код расчета, если нужно
+  // Пример: document.getElementById("result-output").style.display = "block";
+  // document.getElementById("offer-list").innerHTML = "<div>Результаты расчета</div>";
+});
+
+// Слушаем клик на кнопке "Сбросить"
 document.getElementById("reset-btn").addEventListener("click", function () {
   document.getElementById("result-output").style.display = "none";
   document.getElementById("offer-list").innerHTML = "";
+  
+  // Скрыть кнопку сброса снова
+  document.getElementById("reset-btn").style.display = "none";
 });
+
+// document.getElementById("reset-btn").addEventListener("click", function () {
+ //  document.getElementById("result-output").style.display = "none";
+ //  document.getElementById("offer-list").innerHTML = "";
+// });
 
 // Функция для управления состоянием guarType - ВОЗВРАТ АВАНСА ПРОПАДАЕТ ПРИ 44-ФЗ
 function updateGuarTypeAvailability() {
