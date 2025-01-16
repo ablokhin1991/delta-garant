@@ -755,6 +755,7 @@ input[type="checkbox"]:checked::before {
     
       .offer__logo {
         margin-bottom: 12px; /* Отступ снизу для логотипа */
+        margin-left: 10px;   /* Отступ слева */
       }
       .offer__button {
         margin: 12px auto 0; /* Центрируем кнопку */
