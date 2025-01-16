@@ -68,6 +68,8 @@ header nav ul li a:hover {
     padding: 50px 0;
     width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
     height: auto;
+    margin-bottom: -30px; /* Отрицательный отступ, чтобы блок Hero "наезжал" на следующий */
+    z-index: 1; /* Для того чтобы блок Hero был поверх блока Content */
 }
 
 .hero h1 {
