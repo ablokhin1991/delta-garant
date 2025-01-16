@@ -290,8 +290,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "АО Газпромбанк",
       logo: "/delta-garant/images/banks-logo/gpb.svg",
-      maxSum: 100000000000,
-      maxDays: 1860,
       conditions: [
         // На исполнение
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
