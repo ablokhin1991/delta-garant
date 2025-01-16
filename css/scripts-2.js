@@ -347,82 +347,68 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }
   
     // Находим подходящее условие для расчета
-    const results = banks.map(bank => {
-      // Проверяем, превышает ли срок общий максимум для банка
-      if (days > bank.maxDays) {
-        return {
-          name: bank.name,
-          logo: bank.logo,
-          cost: "Стоп-факторы",
-          rate: `Превышен максимальный срок гарантии - ${bank.maxDays} дней.`,
-          isStopFactor: true
-        };
-      }
-    
-      // Находим подходящее условие для расчета
-      const condition = bank.conditions.find(c =>
-        c.procType === procType &&
-        c.guarType === guarType &&
-        c.hasAdvance === hasAdvance &&
-        c.customForm === customForm &&
-        sum >= (c.minSum || 0) && sum <= (c.ruleMaxSum || Infinity)
-      );
-    
-      // Если условие не найдено
-      if (!condition) {
-        return {
-          name: bank.name,
-          logo: bank.logo,
-          cost: "Стоп-факторы",
-          rate: "Не найдено подходящее предложение",
-          isStopFactor: true
-        };
-      }
-    
-      // Проверяем, превышает ли сумма максимум по условию
-      if (sum > condition.ruleMaxSum) {
-        return {
-          name: bank.name,
-          logo: bank.logo,
-          cost: "Стоп-факторы",
-          rate: `Превышена максимальная сумма гарантии - ${condition.ruleMaxSum.toLocaleString()} руб.`,
-          isStopFactor: true
-        };
-      }
-    
-      // Проверяем, превышает ли срок максимум по условию
-      if (days > condition.ruleMaxDays) {
-        return {
-          name: bank.name,
-          logo: bank.logo,
-          cost: "Стоп-факторы",
-          rate: `Превышен максимальный срок гарантии - ${condition.ruleMaxDays} дней.`,
-          isStopFactor: true
-        };
-      }
-    
-      // Расчет стоимости
-      let rate = condition.rate;
-      let calculatedCost = (sum * rate * days) / 365;
-      let cost;
-    
-      // Проверяем, была ли использована минимальная стоимость
-      if (calculatedCost < condition.minCost) {
-        cost = condition.minCost;
-        rate = "Min"; // Меняем ставку на "Min", если сработал minCost
-      } else {
-        cost = calculatedCost;
-      }
-    
+    const condition = bank.conditions.find(c =>
+      c.procType === procType &&
+      c.guarType === guarType &&
+      c.hasAdvance === hasAdvance &&
+      c.customForm === customForm &&
+      sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity)
+    );
+  
+    // Если условие не найдено
+    if (!condition) {
       return {
         name: bank.name,
         logo: bank.logo,
-        cost: parseFloat(cost.toFixed(2)),
-        rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
-        isStopFactor: false
+        cost: "Стоп-факторы",
+        rate: "Не найдено подходящее предложение",
+        isStopFactor: true
       };
-    });
-    
+    }
+  
+    // Проверяем, превышает ли сумма максимум по условию
+    if (sum > condition.maxSum) {
+      return {
+        name: bank.name,
+        logo: bank.logo,
+        cost: "Стоп-факторы",
+        rate: `Превышена максимальная сумма гарантии - ${condition.maxSum.toLocaleString()} руб.`,
+        isStopFactor: true
+      };
+    }
+  
+    // Проверяем, превышает ли срок максимум по условию
+    if (days > condition.ruleMaxDays) {
+      return {
+        name: bank.name,
+        logo: bank.logo,
+        cost: "Стоп-факторы",
+        rate: `Превышен максимальный срок гарантии - ${condition.ruleMaxDays} дней.`,
+        isStopFactor: true
+      };
+    }
+  
+    // Расчет стоимости
+    let rate = condition.rate;
+    let calculatedCost = (sum * rate * days) / 365;
+    let cost;
+  
+    // Проверяем, была ли использована минимальная стоимость
+    if (calculatedCost < condition.minCost) {
+      cost = condition.minCost;
+      rate = "Min"; // Меняем ставку на "Min", если сработал minCost
+    } else {
+      cost = calculatedCost;
+    }
+  
+    return {
+      name: bank.name,
+      logo: bank.logo,
+      cost: parseFloat(cost.toFixed(2)),
+      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
+      isStopFactor: false
+    };
+  });
   
   
   
