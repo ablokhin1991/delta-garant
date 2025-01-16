@@ -761,6 +761,10 @@ input[type="checkbox"]:checked::before {
         flex-direction: column; /* Расположить элементы внутри предложения вертикально */
         text-align: center; /* Центрировать текст */
       }
+
+      .offer__separator {
+        display: none; /* Скрыть разделитель на мобильных экранах */
+      }
     
       .offer__logo {
         margin-bottom: 12px; /* Отступ снизу для логотипа */
