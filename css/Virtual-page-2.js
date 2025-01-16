@@ -138,3 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return types[guarType] || "Неизвестный тип";
     }
 });
+
+
+
+
+
+
+

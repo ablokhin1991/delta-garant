@@ -384,16 +384,30 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     // Общий расчет
     let rate = condition.rate;
     let cost = Math.max((sum * rate * days) / 365, 1000);
+
     // Лог для проверки данных
     console.log(`Банк: ${bank.name}, Тип процедуры: ${procType}, Расчетная стоимость: ${cost}`);
 
-
-
-
-
-
-
-
+    // Специальное условие для ПАО Промсвязьбанк
+    switch (bank.name) {
+      case "ПАО Промсвязьбанк":
+          if (procType === 4) {
+              cost = Math.max((sum * rate * days) / 365, 5000);
+              rate = "min";
+          } else if (procType === 1 || procType === 2 || procType === 3) {
+              cost = Math.max((sum * rate * days) / 365, 1000);
+              rate = "min";
+          }
+          break;
+      case "Другой банк":
+          // Добавить расчеты для другого банка
+          break;
+      default:
+          cost = Math.max((sum * rate * days) / 365, 1000);
+          break;
+  }
+  
+  console.log(`Расчет ставки: ${rate}, Стоимость: ${cost}`);
   
 
     // Специальное условие для АО Газпромбанк
