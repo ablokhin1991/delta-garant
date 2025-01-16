@@ -197,6 +197,8 @@ footer a:hover {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Чтобы блок контента был под Hero */
+    z-index: 0; /* Это гарантирует, что блок Content будет под Hero */
 }
 
 
