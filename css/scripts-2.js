@@ -84,7 +84,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       name: "ПАО Промсвязьбанк",
       logo: "/delta-garant/images/banks-logo/psb.svg",
       maxSum: 200000000,
-      maxDays: 1140,
       conditions: [
         // На исполнение
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
