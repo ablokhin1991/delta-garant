@@ -32,7 +32,7 @@ header .logo img {
 }
 
 .header p {
-    color: #0E214C;
+    color: #1E3A8A;
     font-size: 0.4em;
     font-style: italic;
     margin-top: 0px; /* Добавим небольшой отступ сверху */
@@ -50,7 +50,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #0E214C;
+    color: #1E3A8A;
     text-decoration: none;
     font-weight: bold;
 }
@@ -133,7 +133,7 @@ section .btn:hover {
 /* Подвал */
 footer {
     background-color: #f4f4f4;
-    color: #0E214C;
+    color: #1E3A8A;
     font-size: 0.6em;
     padding: 20px 10px;
 }
@@ -179,7 +179,7 @@ footer {
 
 /* Ссылки */
 footer a {
-    color: #0E214C;
+    color: #1E3A8A;
     text-decoration: none;
 }
 
@@ -205,12 +205,12 @@ footer a:hover {
 
 .content h2 {
     font-size: 16px;
-    color: #0E214C;
+    color: #1E3A8A;
 }
 
 .form-row-politika {
     font-size: 14px;
-    color: #0E214C;
+    color: #1E3A8A;
 }
 
 /* Общие стили для текста */
@@ -245,7 +245,7 @@ footer a:hover {
 }
 
 .field__input:focus {
-    border-color: #0E214C;
+    border-color: #1E3A8A;
     outline: none;
 }
 
@@ -254,13 +254,13 @@ footer a:hover {
 .field__input:not(:placeholder-shown) + .field__label-placeholder {
     top: 5px;
     font-size: 12px;
-    color: #0E214C;
+    color: #1E3A8A;
 }
 
 /* Раскрывающиеся списки (select) */
 .field__input select {
     width: 100%;
-    color: #0E214C; /* Цвет текста в выпадающем списке */
+    color: #1E3A8A; /* Цвет текста в выпадающем списке */
     padding: 0 5px; /* Отступы для текста */
     text-align: left; /* Выравниваем текст */
     background-color: white; /* Приводим фон к стандартному виду */
@@ -286,7 +286,7 @@ footer a:hover {
 }
 
 .main-block__filters label {
-    color: #0E214C; /* Цвет текста чекбоксов */
+    color: #1E3A8A; /* Цвет текста чекбоксов */
     display: flex; /* Чтобы текст рядом с чекбоксом выровнялся */
     align-items: center;
     margin-right: 15px; /* Увеличиваем расстояние между чекбоксами */
@@ -299,7 +299,7 @@ footer a:hover {
 
 /* Изменение цвета текста рядом с чекбоксом */
 input[type="checkbox"] + label {
-    color: #0E214C; /* Цвет текста */
+    color: #1E3A8A; /* Цвет текста */
     font-family: Verdana, sans-serif; /* Шрифт */
     font-size: 14px; /* Размер шрифта */
 }
@@ -314,7 +314,7 @@ input[type="checkbox"] {
    /* appearance: none; /* Убираем стандартный вид чекбокса */
     width: 20px;
     height: 20px;
-    border: 1px solid #0E214C; /* Цвет границы */
+    border: 1px solid #1E3A8A; /* Цвет границы */
     border-radius: 4px; /* Скругленные углы */
     outline: none;
     cursor: pointer;
@@ -434,7 +434,7 @@ input[type="checkbox"]:checked::before {
 
 
 .result__title-wrap h2 {
-    color: #0E214C;
+    color: #1E3A8A;
     font-size: 14px;
     font-weight: normal;
     margin-bottom: 20px;
@@ -478,17 +478,17 @@ input[type="checkbox"]:checked::before {
     margin-left: 10px;
     font-family: Verdana, sans-serif; /* Как в блоке параметров */
     font-size: 14px; /* Пример размера, уточните по требованию */
-    color: #0E214C; /* Цвет текста из блока параметров */
+    color: #333333; /* Цвет текста из блока параметров */
   }
   
   .offer__rate {
     text-align: right;
     margin-right: 20px;
-    color: #0E214C;
+    color: #333333;
   }
 
 .offer__title-wrap {
-    color: #0E214C;
+    color: #1E3A8A;
     font-weight: 400;
     font-size: 16px;
     margin-bottom: 10px;
