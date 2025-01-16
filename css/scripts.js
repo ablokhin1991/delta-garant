@@ -389,14 +389,17 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   
     // Проверяем специальное условие для Промсвязьбанка с procType: "4"
     if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cost < 5000) {
-      cost = 5000;
-      rate = "min ";
+      cost = 5000; // Минимальная стоимость для procType === "4"
+      rate = "min "; // Устанавливаем "min %"
       console.log("Condition 1: Cost set to", cost, "Rate set to", rate);
-  } else if (bank.name === "ПАО Промсвязьбанк" && cost < 1000) {
-      cost = 1000;
-      rate = "min ";
+  } 
+  // Второе условие для всех остальных случаев
+  if (bank.name === "ПАО Промсвязьбанк" && cost < 1000) {
+      cost = 1000; // Минимальная стоимость для остальных случаев
+      rate = "min "; // Устанавливаем "min %"
       console.log("Condition 2: Cost set to", cost, "Rate set to", rate);
   }
+  
   
   
 
