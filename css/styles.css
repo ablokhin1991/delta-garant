@@ -189,6 +189,7 @@ footer a:hover {
 /* Стиль контента */
 .content {
     width: 80%;
+    margin-top: 20px;
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
