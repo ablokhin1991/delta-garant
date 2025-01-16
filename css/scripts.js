@@ -316,10 +316,11 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         { procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: 1000000000, rate: 0.0465 },
         { procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: 1000000000, rate: 0.0465 },
         // На возврат аванса
-        { procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: 100000000, rate: 0.038 },
-        { procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 100000000, rate: 0.038 },
-        { procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.0465 },
-        { procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465 },
+        { procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: 10000000000, rate: 0.038 },
+        { procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 10000000000, rate: 0.038 },
+        { procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: 10000000000, rate: 0.0465 },
+        { procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 10000000000, rate: 0.0465 },
+        // На гарантийный период
 
       ]
     }  
