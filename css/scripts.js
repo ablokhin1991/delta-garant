@@ -387,27 +387,32 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     // Лог для проверки данных
     console.log(`Банк: ${bank.name}, Тип процедуры: ${procType}, Расчетная стоимость: ${cost}`);
   
-    // Проверяем специальное условие для Промсвязьбанка с procType: "4"
-    // Проверяем специальное условие для Промсвязьбанка с procType: "4"
-if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cost < 5000) {
-  cost = 5000;
-  rate = "min ";
-  console.log("Condition 1 applied - Cost set to 5000, Rate set to 'min '");
-} else if (
-  bank.name === "ПАО Промсвязьбанк" &&
-  (procType === "1" || procType === "2" || procType === "3" || procType !== "1" && procType !== "2" && procType !== "3") &&
-  cost < 1000
-) {
-  cost = 1000;
-  rate = "min ";
-  console.log("Condition 2 applied - Cost set to 1000, Rate set to 'min '");
-} else {
-  console.log("No conditions matched - Cost and Rate unchanged.");
-}
-
-// Финальная проверка
-console.log("Final values - Bank:", bank.name, "ProcType:", procType, "Cost:", cost, "Rate:", rate);
-
+    // Проверяем специальное условие для Промсвязьбанка с procType: "4" (GEMINI)
+    function calculateCost(bank, procType, cost) {
+      if (!bank || !procType || typeof cost !== 'number') {
+        throw new Error("Invalid input parameters");
+      }
+    
+      if (bank.name === "ПАО Промсвязьбанк") {
+        return calculatePromsvyazbankCost(procType, cost);
+      }
+      // Обработка других банков здесь...
+      return { cost, rate: "min " }; // Или другое значение по умолчанию
+    }
+    
+    function calculatePromsvyazbankCost(procType, cost) {
+      switch (procType) {
+        case "4":
+          return cost < 5000 ? { cost: 5000, rate: "min " } : { cost, rate: "min " };
+        case "1":
+        case "2":
+        case "3":
+          return cost < 1000 ? { cost: 1000, rate: "min " } : { cost, rate: "min " };
+        default:
+          return { cost, rate: "min " };
+      }
+    }
+  
 
 
 
