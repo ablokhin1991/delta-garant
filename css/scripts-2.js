@@ -430,9 +430,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 // Генерация результатов
 const offerList = document.getElementById("offer-list");
 
-// Генерация результатов
-const offerList = document.getElementById("offer-list");
-
 offerList.innerHTML = finalResults
   .map((result, index) => 
     `<div class="offer">
