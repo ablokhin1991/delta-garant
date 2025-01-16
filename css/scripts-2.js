@@ -367,7 +367,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         name: bank.name,
         logo: bank.logo,
         cost: "Стоп-факторы",
-        rate: `Превышен максимальный срок гарантии для условия - ${condition.ruleMaxDays} дней.`,
+        rate: `Превышен максимальный срок гарантии - ${condition.ruleMaxDays} дней.`,
         isStopFactor: true
       };
     }
