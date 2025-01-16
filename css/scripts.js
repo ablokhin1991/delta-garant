@@ -346,26 +346,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         };
     }
 
-    // Проверяем специальное условие для Газпромбанка
-    let adjustedMaxSum = bank.maxSum; // По умолчанию используем базовый maxDays
-    
-    if (bank.name === "АО Газпромбанк" && procType === 1 || procType === 2 || procType === 3) {
-        adjustedMaxSum = 150000000; // Общая сумма 150 000 000
-    }
-
-    // Проверяем, если сумма превышает скорректированный adjustedMaxSum
-    if (sum > adjustedMaxSum) {
-        return {
-            name: bank.name,
-            logo: bank.logo,
-            cost: 'Стоп-факторы',
-            rate: `Превышена максимальная сумма гарантии - ${adjustedMaxSum} руб.`,
-            isStopFactor: true // Помечаем как стоп-фактор
-        };
-    }
-
-    
-
     const condition = bank.conditions.find(c =>
       c.procType === procType &&
       c.guarType === guarType &&
@@ -416,23 +396,21 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     console.log(`Банк: ${bank.name}, Тип процедуры: ${procType}, Расчетная стоимость: ${cost}`);
 
     // Специальное условие для ПАО Промсвязьбанк
-    switch (bank.name) {
-      case "ПАО Промсвязьбанк":
-          if (procType === 4) {
-              cost = Math.max((sum * rate * days) / 365, 5000);
-              rate = "min";
-          } else if (procType === 1 || procType === 2 || procType === 3) {
-              cost = Math.max((sum * rate * days) / 365, 1000);
-              rate = "min";
-          }
-          break;
-      case "Другой банк":
-          // Добавить расчеты для другого банка
-          break;
-      default:
-          cost = Math.max((sum * rate * days) / 365, 1000);
-          break;
+// Специальные условия для ПАО Промсвязьбанк
+if (bank.name === "ПАО Промсвязьбанк") {
+  // Первое условие: минимальная стоимость 1000 руб., если cost < 1000
+  if (cost < 1000) {
+      cost = 1000; // Устанавливаем минимальную стоимость - 1000 руб.
+      rate = "min "; // Указываем "min %" вместо расчетной ставки
   }
+  
+  // Второе условие: если procType = 4, минимальная стоимость 5000 руб.
+  if (procType === 4 && cost < 5000) {
+      cost = 5000; // Устанавливаем минимальную стоимость - 5000 руб.
+      rate = "min "; // Указываем "min %" вместо расчетной ставки
+  }
+}
+
   
   console.log(`Расчет ставки: ${rate}, Стоимость: ${cost}`);
   
