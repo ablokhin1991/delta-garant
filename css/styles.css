@@ -351,7 +351,7 @@ input[type="checkbox"]:checked::before {
 .btn_primary:hover {
     background-color: #F0473B;
     color: #fff;
-    border: 1px solid #F0473B;
+    border: 2px solid #F0473B;
 }
 
 /* Стили для кнопки оформления */
