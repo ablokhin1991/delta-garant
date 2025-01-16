@@ -321,31 +321,13 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         { procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: 10000000000, rate: 0.0465 },
         { procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 10000000000, rate: 0.0465 },
         // На гарантийный период
-
+        { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999 },
+        { procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.03, minCost: 1000 }
       ]
     }  
   ];
 
   const results = banks.map(bank => {
-    // Ищем подходящие условия для банка
-    // Проверяем специальное условие для Промсвязьбанка
-    let adjustedMaxDays = bank.maxDays; // По умолчанию используем базовый maxDays
-    
-    if (bank.name === "ПАО Промсвязьбанк" && guarType === "4") {
-        adjustedMaxDays = 1860; // Для гарантийного периода используем 1860 дней
-    }
-
-    // Проверяем, если срок превышает скорректированный adjustedMaxDays
-    if (days > adjustedMaxDays) {
-        return {
-            name: bank.name,
-            logo: bank.logo,
-            cost: 'Стоп-факторы',
-            rate: `Превышен максимальный срок гарантии - ${adjustedMaxDays} дней.`,
-            isStopFactor: true // Помечаем как стоп-фактор
-        };
-    }
-
     const condition = bank.conditions.find(c =>
       c.procType === procType &&
       c.guarType === guarType &&
@@ -354,75 +336,29 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity)
     );
   
-    // Объект с названиями процедур по номерам
-    const procedureNames = {
-      "1": "44-ФЗ",
-      "2": "223-ФЗ",
-      "3": " 615-ПП/185-ФЗ",
-      "4": "Коммерческий тендер"
-    };
-  
-    // Проверяем maxSum независимо от того, найдено условие или нет
-    if (sum > bank.maxSum) {
-        const stopMessage = `Превышена максимальная сумма гарантии - ${bank.maxSum.toLocaleString()} руб.`;
-        return {
-            name: bank.name,
-            logo: bank.logo,
-            cost: 'Стоп-факторы',
-            rate: stopMessage,
-            isStopFactor: true // Помечаем как стоп-фактор
-        };
-    }
-  
-    // Если подходящее условие не найдено
     if (!condition) {
-      const procedureName = procedureNames[procType] || `Процедура №${procType}`;
-      const stopMessage = `По выбранным парматерам выпуск БГ невозможен с данным типом процедуры - ${procedureName}`;
       return {
         name: bank.name,
         logo: bank.logo,
-        cost: 'Стоп-факторы',
-        rate: stopMessage,
-        isStopFactor: true // помечаем как стоп-фактор
+        cost: "Стоп-факторы",
+        rate: "Не найдено подходящее условие",
+        isStopFactor: true
       };
     }
   
-    // Если все проверки пройдены, рассчитываем ставку и стоимость
-    // Общий расчет
+    // Расчет с учетом минимальной стоимости
     let rate = condition.rate;
-    let cost = Math.max((sum * rate * days) / 365, 1000);
-
-    // Лог для проверки данных
-    console.log(`Банк: ${bank.name}, Тип процедуры: ${procType}, Расчетная стоимость: ${cost}`);
-
-    // Специальное условие для ПАО Промсвязьбанк неееееееееееееееееееееееееееееееееееееееееееееееееееееееееееее
-// Специальные условия для ПАО Промсвязьбанк
-if (bank.name === "ПАО Промсвязьбанк") {
-  if (procType === 4 && cost < 5000) {
-      cost = 5000; // Устанавливаем минимальную стоимость - 5000 руб.
-      rate = "min "; // Указываем "min %" вместо расчетной ставки
-  }
-}
-
+    let cost = Math.max((sum * rate * days) / 365, condition.minCost || 0);
   
-  console.log(`Расчет ставки: ${rate}, Стоимость: ${cost}`);
-  
-
-    // Специальное условие для АО Газпромбанк
-    if (bank.name === "АО Газпромбанк" && cost < 1999) {
-      cost = 1999; // Устанавливаем минимальную стоимость - 1999 руб.
-      rate = "min "; // Указываем "min %" вместо расчетной ставки
-    }
- 
     return {
       name: bank.name,
       logo: bank.logo,
       cost: parseFloat(cost.toFixed(2)),
-      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1), // Если строка, оставляем как есть
+      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
       isStopFactor: false
     };
   });
-  // ВОТ ДО СЮДА ПОМЕЩЕАЕТСЯ В ОКНО
+  
   
 
 
