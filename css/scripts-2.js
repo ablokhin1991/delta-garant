@@ -321,15 +321,25 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         { procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: 10000000000, rate: 0.0465 },
         { procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 10000000000, rate: 0.0465 },
         // На гарантийный период
-        { procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999 },
-        { procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.03, minCost: 1000 },
-        { procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1500 },
-        { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.03, minCost: 1200 },
+        { procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, maxDays: 1200 },
+        { procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1000, maxDays: 1500 },
       ]
     }  
   ];
 
   const results = banks.map(bank => {
+    // Проверяем, превышает ли срок общий максимум для банка
+    if (days > bank.maxDays) {
+      return {
+        name: bank.name,
+        logo: bank.logo,
+        cost: "Стоп-факторы",
+        rate: `Превышен максимальный срок гарантии - ${bank.maxDays} дней.`,
+        isStopFactor: true
+      };
+    }
+  
+    // Находим подходящее условие для расчета
     const condition = bank.conditions.find(c =>
       c.procType === procType &&
       c.guarType === guarType &&
@@ -348,6 +358,17 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       };
     }
   
+    // Проверяем, превышает ли срок максимум по правилу
+    if (days > condition.maxDays) {
+      return {
+        name: bank.name,
+        logo: bank.logo,
+        cost: "Стоп-факторы",
+        rate: `Превышен максимальный срок гарантии - ${condition.maxDays} дней.`,
+        isStopFactor: true
+      };
+    }
+  
     // Расчет стоимости
     let rate = condition.rate;
     let calculatedCost = (sum * rate * days) / 365;
@@ -356,7 +377,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     // Проверяем, была ли использована минимальная стоимость
     if (calculatedCost < condition.minCost) {
       cost = condition.minCost;
-      rate = "min "; // Меняем ставку на "Min", если сработал minCost
+      rate = "Min"; // Меняем ставку на "Min", если сработал minCost
     } else {
       cost = calculatedCost;
     }
@@ -365,7 +386,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       name: bank.name,
       logo: bank.logo,
       cost: parseFloat(cost.toFixed(2)),
-      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1), // Если строка, оставляем как есть
+      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
       isStopFactor: false
     };
   });
