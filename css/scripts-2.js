@@ -86,201 +86,202 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       maxSum: 200000000,
       conditions: [
         // На исполнение
-        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, maxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, maxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, ruleMaxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, ruleMaxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
                    
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "1", hasAdvance: false, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
                    
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 10000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
-{ procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 10000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "3", guarType: "3", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 10000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 10000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1140 },
                    
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 30000000, maxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 100000, maxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 500000, maxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, maxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, maxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 29999999, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 30000000, ruleMaxSum: 200000000, rate: 0.028, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.045, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 999999, rate: 0.035, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.032, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 10000000, rate: 0.03, minCost: 1000, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 999999, rate: 0.05, minCost: 5000, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 5000, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 50000000, rate: 0.039, minCost: 5000, ruleMaxDays: 1860 },
+
 
 
 
@@ -292,43 +293,42 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       logo: "/delta-garant/images/banks-logo/gpb.svg",
       conditions: [
         // На исполнение
-        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
-          // На участие         
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },                  
-{ procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
-          // На возврат аванса         
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },  
-{ procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
-          // На гарантийный период   
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, maxSum: 999999, rate: 0.04, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: 999999, rate: 0.04, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, maxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },          
-{ procType: "4", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
-{ procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
+                   
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: Infinity, rate: 0.0345, minCost: 1999, ruleMaxDays: 1860 },         
+{ procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
+                   
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: Infinity, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: Infinity, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },               
+{ procType: "4", guarType: "3", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: Infinity, rate: 0.0465, minCost: 1999, ruleMaxDays: 1860 },
+                   
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "1", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 999999, rate: 0.04, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 999999, rate: 0.04, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+{ procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+
 
       ]
     }  
@@ -347,68 +347,82 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }
   
     // Находим подходящее условие для расчета
-    const condition = bank.conditions.find(c =>
-      c.procType === procType &&
-      c.guarType === guarType &&
-      c.hasAdvance === hasAdvance &&
-      c.customForm === customForm &&
-      sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity)
-    );
-  
-    // Если условие не найдено
-    if (!condition) {
+    const results = banks.map(bank => {
+      // Проверяем, превышает ли срок общий максимум для банка
+      if (days > bank.maxDays) {
+        return {
+          name: bank.name,
+          logo: bank.logo,
+          cost: "Стоп-факторы",
+          rate: `Превышен максимальный срок гарантии - ${bank.maxDays} дней.`,
+          isStopFactor: true
+        };
+      }
+    
+      // Находим подходящее условие для расчета
+      const condition = bank.conditions.find(c =>
+        c.procType === procType &&
+        c.guarType === guarType &&
+        c.hasAdvance === hasAdvance &&
+        c.customForm === customForm &&
+        sum >= (c.minSum || 0) && sum <= (c.ruleMaxSum || Infinity)
+      );
+    
+      // Если условие не найдено
+      if (!condition) {
+        return {
+          name: bank.name,
+          logo: bank.logo,
+          cost: "Стоп-факторы",
+          rate: "Не найдено подходящее предложение",
+          isStopFactor: true
+        };
+      }
+    
+      // Проверяем, превышает ли сумма максимум по условию
+      if (sum > condition.ruleMaxSum) {
+        return {
+          name: bank.name,
+          logo: bank.logo,
+          cost: "Стоп-факторы",
+          rate: `Превышена максимальная сумма гарантии - ${condition.ruleMaxSum.toLocaleString()} руб.`,
+          isStopFactor: true
+        };
+      }
+    
+      // Проверяем, превышает ли срок максимум по условию
+      if (days > condition.ruleMaxDays) {
+        return {
+          name: bank.name,
+          logo: bank.logo,
+          cost: "Стоп-факторы",
+          rate: `Превышен максимальный срок гарантии - ${condition.ruleMaxDays} дней.`,
+          isStopFactor: true
+        };
+      }
+    
+      // Расчет стоимости
+      let rate = condition.rate;
+      let calculatedCost = (sum * rate * days) / 365;
+      let cost;
+    
+      // Проверяем, была ли использована минимальная стоимость
+      if (calculatedCost < condition.minCost) {
+        cost = condition.minCost;
+        rate = "Min"; // Меняем ставку на "Min", если сработал minCost
+      } else {
+        cost = calculatedCost;
+      }
+    
       return {
         name: bank.name,
         logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: "Не найдено подходящее предложение",
-        isStopFactor: true
+        cost: parseFloat(cost.toFixed(2)),
+        rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
+        isStopFactor: false
       };
-    }
-  
-    // Проверяем, превышает ли сумма максимум по условию
-    if (sum > condition.maxSum) {
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: `Превышена максимальная сумма гарантии - ${condition.maxSum.toLocaleString()} руб.`,
-        isStopFactor: true
-      };
-    }
-  
-    // Проверяем, превышает ли срок максимум по условию
-    if (days > condition.ruleMaxDays) {
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: `Превышен максимальный срок гарантии - ${condition.ruleMaxDays} дней.`,
-        isStopFactor: true
-      };
-    }
-  
-    // Расчет стоимости
-    let rate = condition.rate;
-    let calculatedCost = (sum * rate * days) / 365;
-    let cost;
-  
-    // Проверяем, была ли использована минимальная стоимость
-    if (calculatedCost < condition.minCost) {
-      cost = condition.minCost;
-      rate = "Min"; // Меняем ставку на "Min", если сработал minCost
-    } else {
-      cost = calculatedCost;
-    }
-  
-    return {
-      name: bank.name,
-      logo: bank.logo,
-      cost: parseFloat(cost.toFixed(2)),
-      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
-      isStopFactor: false
-    };
-  });
+    });
+    
   
   
   
