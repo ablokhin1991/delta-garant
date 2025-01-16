@@ -366,6 +366,17 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       };
     }
   
+    // Проверяем, превышает ли сумма максимум по условию
+    if (sum > condition.maxSum) {
+      return {
+        name: bank.name,
+        logo: bank.logo,
+        cost: "Стоп-факторы",
+        rate: `Превышена максимальная сумма гарантии - ${condition.maxSum.toLocaleString()} руб.`,
+        isStopFactor: true
+      };
+    }
+  
     // Проверяем, превышает ли срок максимум по условию
     if (days > condition.ruleMaxDays) {
       return {
