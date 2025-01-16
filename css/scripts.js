@@ -381,39 +381,34 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }
   
     // Если все проверки пройдены, рассчитываем ставку и стоимость
-    let rate = condition.rate;
-    let cost = Math.max((sum * rate * days) / 365, 1000);
+/*************************************************************************************************************** */
   
     // Лог для проверки данных
     console.log(`Банк: ${bank.name}, Тип процедуры: ${procType}, Расчетная стоимость: ${cost}`);
   
-    // Проверяем специальное условие для Промсвязьбанка с procType: "4" (GEMINI)
-    function calculateCost(bank, procType, cost) {
-      if (!bank || !procType || typeof cost !== 'number' || isNaN(cost) || cost <= 0) {
-        throw new Error("Invalid input parameters.  Cost must be a positive number.");
-      }
-    
-      if (bank.name === "ПАО Промсвязьбанк") {
-        return calculatePromsvyazbankCost(procType, cost);
-      } else {
-        //Обработка других банков -  здесь можно добавить логику для других банков, если нужно
-        return { cost, rate: "min " };
-      }
+    // Общий расчет
+    let rate = condition.rate;
+    let cost;
+
+// Проверка для ПАО Промсвязьбанк
+if (bank.name === "ПАО Промсвязьбанк") {
+    if (procType === 4) {
+        // Если procType = 4, минимальная стоимость < 5000
+        cost = Math.max((sum * rate * days) / 365, 5000);
+        rate = "min";  // Применяем минимальную стоимость
+    } else if (procType === 1 || procType === 2 || procType === 3) {
+        // Если procType = 1, 2, 3, минимальная стоимость < 1000
+        cost = Math.max((sum * rate * days) / 365, 1000);
+        rate = "min";  // Применяем минимальную стоимость
     }
-    
-    function calculatePromsvyazbankCost(procType, cost) {
-      switch (procType) {
-        case "4":
-          return { cost: Math.max(cost, 5000), rate: "min " }; // Используем Math.max для корректного определения стоимости
-        case "1":
-        case "2":
-        case "3":
-          return { cost: Math.max(cost, 1000), rate: "min " }; // Используем Math.max для корректного определения стоимости
-        default:
-          return { cost, rate: "min " }; //Обработка неизвестных procType
-      }
-    }
-  
+} else {
+    // Для других банков или если банк не ПАО Промсвязьбанк
+    cost = Math.max((sum * rate * days) / 365, 1000);
+}
+
+// Выводим результат
+console.log(`Расчет ставки: ${rate}, Стоимость: ${cost}`);
+
 
 
 
