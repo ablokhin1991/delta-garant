@@ -292,7 +292,29 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       maxDays: 1860,
       conditions: [
         // На исполнение
-        { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000, maxSum: 50000000, rate: 0.039 },
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 1000000000, rate: 0.0345 },
+        { procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 1000000000, rate: 0.0345 },
+        { procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 1000000000, rate: 0.0345 },
+        { procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 1000000000, rate: 0.0345 },
+        { procType: "3", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "3", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "3", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "3", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 1000000000, rate: 0.0465 },
+        { procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 1000000000, rate: 0.0465 },
+        { procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, maxSum: 1000000000, rate: 0.0465 },
+        { procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, maxSum: 1000000000, rate: 0.0465 },
+        // На участие
+        { procType: "1", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "1", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: 150000000, rate: 0.038 },
+        { procType: "2", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: 1000000000, rate: 0.0345 },
+        { procType: "2", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: 1000000000, rate: 0.0345 },
+        { procType: "4", guarType: "1", hasAdvance: false, customForm: true, minSum: 0, maxSum: 1000000000, rate: 0.0465 },
+        { procType: "4", guarType: "1", hasAdvance: false, customForm: false, minSum: 0, maxSum: 1000000000, rate: 0.0465 },
       ]
     }  
   ];
