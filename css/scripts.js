@@ -346,6 +346,26 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         };
     }
 
+    // Проверяем специальное условие для Газпромбанка
+    let adjustedMaxSum = bank.maxSum; // По умолчанию используем базовый maxDays
+    
+    if (bank.name === "АО Газпромбанк" && procType === 1 || procType === 2 || procType === 3) {
+        adjustedMaxSum = 150000000; // Общая сумма 150 000 000
+    }
+
+    // Проверяем, если сумма превышает скорректированный adjustedMaxSum
+    if (Sum > adjustedMaxSum) {
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: 'Стоп-факторы',
+            rate: `Превышена максимальная сумма гарантии - ${adjustedMaxSum} руб.`,
+            isStopFactor: true // Помечаем как стоп-фактор
+        };
+    }
+
+    
+
     const condition = bank.conditions.find(c =>
       c.procType === procType &&
       c.guarType === guarType &&
