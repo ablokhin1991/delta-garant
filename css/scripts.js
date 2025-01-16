@@ -354,7 +354,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }
 
     // Проверяем, если сумма превышает скорректированный adjustedMaxSum
-    if (Sum > adjustedMaxSum) {
+    if (sum > adjustedMaxSum) {
         return {
             name: bank.name,
             logo: bank.logo,
