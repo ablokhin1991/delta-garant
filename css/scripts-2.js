@@ -35,8 +35,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "ПАО Альфа-Банк",
       logo: "/delta-garant/images/banks-logo/alfa-bank.svg",
-      maxSum: 150000000,
-      maxDays: 3652,
       conditions: [
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
         { procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
@@ -83,7 +81,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "ПАО Промсвязьбанк",
       logo: "/delta-garant/images/banks-logo/psb.svg",
-      maxSum: 200000000,
       conditions: [
         // На исполнение
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
@@ -352,7 +349,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       c.guarType === guarType &&
       c.hasAdvance === hasAdvance &&
       c.customForm === customForm &&
-      sum >= (c.minSum || 0) && sum <= (c.maxSum || Infinity)
+      sum >= (c.minSum || 0) && sum <= (c.ruleMaxSum || Infinity)
     );
   
     // Если условие не найдено
@@ -361,18 +358,18 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         name: bank.name,
         logo: bank.logo,
         cost: "Стоп-факторы",
-        rate: "Не найдено подходящее предложение",
+        rate: "Не найдено подходящее условие",
         isStopFactor: true
       };
     }
   
     // Проверяем, превышает ли сумма максимум по условию
-    if (sum > condition.maxSum) {
+    if (sum > condition.ruleMaxSum) {
       return {
         name: bank.name,
         logo: bank.logo,
         cost: "Стоп-факторы",
-        rate: `Превышена максимальная сумма гарантии - ${condition.maxSum.toLocaleString()} руб.`,
+        rate: `Превышена максимальная сумма гарантии - ${condition.ruleMaxSum.toLocaleString()} руб.`,
         isStopFactor: true
       };
     }
@@ -409,6 +406,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       isStopFactor: false
     };
   });
+  
   
   
   
