@@ -348,18 +348,28 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       };
     }
   
-    // Расчет с учетом минимальной стоимости
+    // Расчет стоимости
     let rate = condition.rate;
-    let cost = Math.max((sum * rate * days) / 365, condition.minCost || 0);
+    let calculatedCost = (sum * rate * days) / 365;
+    let cost;
+  
+    // Проверяем, была ли использована минимальная стоимость
+    if (calculatedCost < condition.minCost) {
+      cost = condition.minCost;
+      rate = "min"; // Меняем ставку на "Min", если сработал minCost
+    } else {
+      cost = calculatedCost;
+    }
   
     return {
       name: bank.name,
       logo: bank.logo,
       cost: parseFloat(cost.toFixed(2)),
-      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
+      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1), // Если строка, оставляем как есть
       isStopFactor: false
     };
   });
+  
   
   
 
