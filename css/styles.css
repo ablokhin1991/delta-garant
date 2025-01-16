@@ -342,7 +342,7 @@ input[type="checkbox"]:checked::before {
 /* Кнопка */
 .btn_primary {
     display: inline-block;
-    background-color: #152961;
+    background-color: #1E3A8A;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -356,7 +356,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .btn_primary:hover {
-    background-color: #3b64d4;
+    background-color: #284db5;
     color: #fff;
     /*border: 2px solid #F0473B;*/
 }
