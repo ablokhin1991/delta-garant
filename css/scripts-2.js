@@ -363,7 +363,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         name: bank.name,
         logo: bank.logo,
         cost: "Стоп-факторы",
-        rate: "Не найдено подходящее условие",
+        rate: "Не найдено подходящее предложение",
         isStopFactor: true
       };
     }
