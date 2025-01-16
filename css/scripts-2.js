@@ -322,7 +322,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         { procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: 10000000000, rate: 0.0465 },
         // На гарантийный период
         { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.0465, minCost: 1999 },
-        { procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.03, minCost: 1000 }
+        { procType: "4", guarType: "3", hasAdvance: false, customForm: false, minSum: 0, maxSum: Infinity, rate: 0.03, minCost: 1000 },
       ]
     }  
   ];
