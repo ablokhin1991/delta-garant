@@ -61,7 +61,8 @@ header nav ul li a:hover {
 
 /* Главная секция (Hero) */
 .hero {
-    background-color: linear-gradient(to bottom, #1E3A8A, #0c1736);
+    background-color: #1E3A8A ;
+    background: linear-gradient(to bottom, #1E3A8A, #0c1736);
     color: #FFFFFF;
     text-align: left;
     padding: 50px 0;
