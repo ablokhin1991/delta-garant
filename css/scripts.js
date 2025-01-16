@@ -396,7 +396,7 @@ if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cos
 } 
 
 // Отдельное условие для всех остальных случаев, кроме procType: "4"
-if (bank.name === "ПАО Промсвязьбанк" && procType !== "4" && cost < 1000) {
+if (bank.name === "ПАО Промсвязьбанк" && cost < 1000) {
   cost = 1000; // Минимальная стоимость для других случаев
   rate = "min "; // Устанавливаем "min %"
   console.log("Condition 2: Cost set to", cost, "Rate set to", rate);
