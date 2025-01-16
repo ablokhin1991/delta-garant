@@ -392,12 +392,16 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       cost = 5000; // Минимальная стоимость для procType === "4"
       rate = "min "; // Устанавливаем "min %"
       console.log("Condition 1: Cost set to", cost, "Rate set to", rate);
+      console.log("Bank:", bank.name, "ProcType:", procType, "Cost before:", cost);
+
   } 
   // Второе условие для всех остальных случаев
   if (bank.name === "ПАО Промсвязьбанк" && cost < 1000) {
       cost = 1000; // Минимальная стоимость для остальных случаев
       rate = "min "; // Устанавливаем "min %"
       console.log("Condition 2: Cost set to", cost, "Rate set to", rate);
+      console.log("Bank:", bank.name, "ProcType:", procType, "Cost before:", cost);
+
   }
   
   
