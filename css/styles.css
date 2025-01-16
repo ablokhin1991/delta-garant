@@ -75,6 +75,7 @@ header nav ul li a:hover {
 }
 
 .hero p {
+    color: #3B82F6;
     font-size: 1.2em;
     margin-bottom: 20px;
 }
@@ -190,7 +191,7 @@ footer a:hover {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
