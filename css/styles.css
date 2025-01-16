@@ -235,7 +235,7 @@ footer a:hover {
     width: 100%;
     color: #333333; /* Задаём цвет текста */
     padding: 25px 15px 10px; /* Сверху меньше отступ, снизу больше для "текста на дне" */
-    border: 1px solid #E2E8F0;
+    border: 2px solid #E2E8F0;
     border-radius: 4px;
     font-size: 16px;
     height: 70px;
