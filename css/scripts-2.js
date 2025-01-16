@@ -427,7 +427,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     return;
   }
 
-  // Генерация результатов
+// Генерация результатов
 const offerList = document.getElementById("offer-list");
 
 offerList.innerHTML = finalResults
@@ -437,20 +437,26 @@ offerList.innerHTML = finalResults
         <div class="offer__details">
             <strong>${result.name}</strong>
         </div>
-        ${!result.isStopFactor ? `
+        ${!result.isStopFactor ? `  
           <div class="offer__rate">
             Ставка: ${result.rate}%<br>
             ${result.cost.toLocaleString()} руб.
           </div>
-        ` : `
+        ` : `  
           <div class="offer__rate">
             Стоп-факторы:<br>${result.rate}
           </div>
         `}
-        ${!result.isStopFactor ? `<button class="btn_primary offer__button" data-index="${index}">Оформить</button>` : ''}
+        <div class="offer__buttons">
+          ${!result.isStopFactor ? `
+            <button class="btn_primary offer__button" data-index="${index}">Оформить</button>
+            <button class="btn_secondary offer__button" data-index="${index}">Заявка в 1 клик</button>
+          ` : ''}
+        </div>
     </div>`
   )
   .join("");
+
 
 // Показать блок результатов
 document.getElementById("result-output").style.display = "block";
