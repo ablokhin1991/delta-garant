@@ -20,7 +20,7 @@ body {
 
 /* Шапка сайта */
 header {
-    background-color: #3B82F6;
+    background-color: #1E3A8A ;
     color: #F3F4F6;
     padding: 10px 0;
     margin: 0px;
@@ -61,7 +61,7 @@ header nav ul li a:hover {
 
 /* Главная секция (Hero) */
 .hero {
-    background-color: #3B82F6;
+    background-color: #1E3A8A ;
     color: #FFFFFF;
     text-align: left;
     padding: 50px 0;
@@ -338,7 +338,7 @@ input[type="checkbox"]:checked::before {
 /* Кнопка */
 .btn_primary {
     display: inline-block;
-    background-color: #3B82F6;
+    background-color: #1E3A8A;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -352,7 +352,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .btn_primary:hover {
-    background-color: #2563EB;
+    background-color: #3b64d4;
     color: #fff;
     /*border: 2px solid #F0473B;*/
 }
