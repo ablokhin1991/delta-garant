@@ -331,6 +331,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }  
   ];
 
+  // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
   const results = banks.map(bank => {
     console.log("Проверяем банк:", bank.name);
     console.log("Параметры для поиска условия:", { procType, guarType, hasAdvance, customForm, sum });
@@ -346,12 +347,13 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       };
     }
   
-    // Находим подходящее условие, игнорируя проверку суммы
+    // Находим подходящее условие, учитывая диапазоны `minSum` и `ruleMaxSum`
     const condition = bank.conditions.find(c =>
       c.procType === procType &&
       c.guarType === guarType &&
       c.hasAdvance === hasAdvance &&
-      c.customForm === customForm
+      c.customForm === customForm &&
+      sum >= (c.minSum || 0) && sum <= (c.ruleMaxSum || Infinity)
     );
   
     if (!condition) {
@@ -366,27 +368,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }
   
     console.log("Найденное условие:", condition);
-  
-    // Проверяем, превышает ли сумма минимум и максимум по условию
-    if (sum < (condition.minSum || 0)) {
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: `Сумма меньше минимально допустимой - ${condition.minSum.toLocaleString()} руб.`,
-        isStopFactor: true
-      };
-    }
-  
-    if (sum > (condition.ruleMaxSum || Infinity)) {
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: `Превышена максимальная сумма гарантии - ${condition.ruleMaxSum.toLocaleString()} руб.`,
-        isStopFactor: true
-      };
-    }
   
     // Проверяем, превышает ли срок максимум по условию
     if (days > condition.ruleMaxDays) {
@@ -421,6 +402,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     };
   });
   
+// ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
   
   
   
