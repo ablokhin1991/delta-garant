@@ -334,7 +334,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const results = banks.map(bank => {
     console.log("Проверяем банк:", bank.name);
     console.log("Параметры для поиска условия:", { procType, guarType, hasAdvance, customForm, sum });
-    console.log("Условия банка:", bank.conditions);
   
     // Проверяем, превышает ли срок общий максимум для банка
     if (days > bank.maxDays) {
@@ -347,23 +346,14 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       };
     }
   
-    // Находим подходящее условие для расчета
-    const condition = bank.conditions.find(c => {
-      const matches = 
-        c.procType === procType &&
-        c.guarType === guarType &&
-        c.hasAdvance === hasAdvance &&
-        c.customForm === customForm &&
-        sum >= (c.minSum || 0) &&
-        sum <= (c.ruleMaxSum || Infinity);
+    // Находим подходящее условие, игнорируя проверку суммы
+    const condition = bank.conditions.find(c =>
+      c.procType === procType &&
+      c.guarType === guarType &&
+      c.hasAdvance === hasAdvance &&
+      c.customForm === customForm
+    );
   
-      if (!matches) {
-        console.log("Условие не совпало:", c);
-      }
-      return matches;
-    });
-  
-    // Если условие не найдено
     if (!condition) {
       console.error("Не найдено подходящее условие. Проверьте параметры фильтрации.");
       return {
@@ -377,13 +367,34 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   
     console.log("Найденное условие:", condition);
   
-    // Проверяем, превышает ли сумма максимум по условию
-    if (sum > condition.ruleMaxSum) {
+    // Проверяем, превышает ли сумма минимум и максимум по условию
+    if (sum < (condition.minSum || 0)) {
+      return {
+        name: bank.name,
+        logo: bank.logo,
+        cost: "Стоп-факторы",
+        rate: `Сумма меньше минимально допустимой - ${condition.minSum.toLocaleString()} руб.`,
+        isStopFactor: true
+      };
+    }
+  
+    if (sum > (condition.ruleMaxSum || Infinity)) {
       return {
         name: bank.name,
         logo: bank.logo,
         cost: "Стоп-факторы",
         rate: `Превышена максимальная сумма гарантии - ${condition.ruleMaxSum.toLocaleString()} руб.`,
+        isStopFactor: true
+      };
+    }
+  
+    // Проверяем, превышает ли срок максимум по условию
+    if (days > condition.ruleMaxDays) {
+      return {
+        name: bank.name,
+        logo: bank.logo,
+        cost: "Стоп-факторы",
+        rate: `Превышен максимальный срок гарантии - ${condition.ruleMaxDays} дней.`,
         isStopFactor: true
       };
     }
@@ -396,7 +407,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     // Проверяем, была ли использована минимальная стоимость
     if (calculatedCost < condition.minCost) {
       cost = condition.minCost;
-      rate = "Min";
+      rate = "Min"; // Меняем ставку на "Min", если сработал minCost
     } else {
       cost = calculatedCost;
     }
@@ -409,6 +420,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       isStopFactor: false
     };
   });
+  
   
   
   
