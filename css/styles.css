@@ -65,7 +65,7 @@ header nav ul li a:hover {
     background: linear-gradient(to bottom, #152961, #1E3A8A);
     color: #FFFFFF;
     text-align: left;
-    padding: 50px 0 100px 0; /* Отступ сверху 50px, снизу 80px */
+    padding: 30px 0 100px 0; /* Отступ сверху 50px, снизу 80px */
     width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
     height: auto;
     margin-bottom: -80px; /* Отрицательный отступ, чтобы блок Hero "наезжал" на следующий */
