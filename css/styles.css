@@ -340,7 +340,7 @@ input[type="checkbox"]:checked::before {
 /* Кнопка */
 .btn_primary {
     display: inline-block;
-    background-color: #1E3A8A;
+    background-color: #152961;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
