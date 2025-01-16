@@ -221,15 +221,16 @@ footer a:hover {
 
 /* Поля ввода */
 .field {
+    background-color: #ffffff;
     position: relative;
     margin-bottom: 15px;
 }
 
 .field__input {
     width: 100%;
-    color: #0E214C; /* Задаём цвет текста */
+    color: #333333; /* Задаём цвет текста */
     padding: 25px 15px 10px; /* Сверху меньше отступ, снизу больше для "текста на дне" */
-    border: 1px solid #ccc;
+    border: 1px solid #E2E8F0;
     border-radius: 4px;
     font-size: 16px;
     height: 70px;
