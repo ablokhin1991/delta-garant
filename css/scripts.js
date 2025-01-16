@@ -395,7 +395,7 @@ if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cos
   console.log("Condition 1 applied - Cost set to 5000, Rate set to 'min '");
 } else if (
   bank.name === "ПАО Промсвязьбанк" &&
-  (procType === "1" || procType === "2" || procType === "3") &&
+  (procType === "1" || procType === "2" || procType === "3" || procType !== "1" && procType !== "2" && procType !== "3") &&
   cost < 1000
 ) {
   cost = 1000;
@@ -407,6 +407,7 @@ if (bank.name === "ПАО Промсвязьбанк" && procType === "4" && cos
 
 // Финальная проверка
 console.log("Final values - Bank:", bank.name, "ProcType:", procType, "Cost:", cost, "Rate:", rate);
+
 
 
 
