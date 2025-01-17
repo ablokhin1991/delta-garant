@@ -826,10 +826,12 @@ input[type="checkbox"]:checked::before {
       .offer__button {
         display: flex;
         justify-content: center;
+        margin: 0; /* Убираем любые внешние отступы */
+        padding: 0; /* Убираем внутренние отступы */
+        text-align: center; /* Центрируем содержимое */
         align-items: center;
         width: 90%;
         height: 55px;
-        margin-top: 10px;
         justify-items: center; /* Центрируем элементы по горизонтали */
         /*justify-items: stretch; /* Центрируем элементы по горизонтали */
       }
