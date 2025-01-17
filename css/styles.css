@@ -830,8 +830,9 @@ input[type="checkbox"]:checked::before {
         align-items: center;
         width: 90%;
         height: 55px;
-        /*justify-items: center; /* Центрируем элементы по горизонтали */
-        justify-items: stretch; /* Центрируем элементы по горизонтали */
+        margin-top: 10px;
+        justify-items: center; /* Центрируем элементы по горизонтали */
+        /*justify-items: stretch; /* Центрируем элементы по горизонтали */
       }
     
       .offer__separator {
