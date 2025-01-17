@@ -441,13 +441,14 @@ offerList.innerHTML = finalResults
         <div class="offer__details">
             <strong>${result.name}</strong>
         </div>
-        <div class="offer__personal-data" style="margin-top: 20px; color: #333333; font-weight: normal; text-align: right;">
-            ${
-              result.data 
-                ? result.data.split('\n').map(line => `<div>${line}</div>`).join('')
-                : '<div>Данные отсутствуют</div>'
-            }
-        </div>
+        <div class="offer__personal-data" style="margin-top: 20px; color: #E2E8F0; font-weight: normal; text-align: left; display: flex; align-items: center;">
+    ${
+      result.data 
+        ? result.data.split('\n').map(line => `<div>${line}</div>`).join('')
+        : '<div>Данные отсутствуют</div>'
+    }
+</div>
+
         <div class="offer__separator"></div> <!-- Разделительная линия -->
         ${!result.isStopFactor ? `  
           <div class="offer__rate">
