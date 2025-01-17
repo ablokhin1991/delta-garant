@@ -494,7 +494,7 @@ input[type="checkbox"]:checked::before {
   }
 
   .offer__personal-data {
-    color: #E2E8F0;
+    color: #b61aff;
     font-weight: normal;
     text-align: left;
     display: flex;
