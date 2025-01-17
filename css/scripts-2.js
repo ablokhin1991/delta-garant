@@ -436,20 +436,18 @@ const offerList = document.getElementById("offer-list");
 
 offerList.innerHTML = finalResults
   .map((result, index) => 
-    `<div class="offer">
+    `<div class="offer" style="display: flex; flex-direction: row; align-items: center;">
         <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
-        <div class="offer__details">
+        <div class="offer__details" style="flex: 1;">
             <strong>${result.name}</strong>
         </div>
-        <div class="offer__personal-data" style="color: #E2E8F0; font-weight: normal; text-align: left; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+        <div class="offer__personal-data" style="color: #E2E8F0; font-weight: normal; text-align: left; display: flex; flex-direction: column; justify-content: center; margin-left: 20px;">
                ${
                 result.data 
-                ? result.data.split('\n').map(line => `<div>${line}</div>`).join('')
+                ? result.data.split('\n').map(line => `<div>${line}</div>`).join('') 
                 : '<div>Данные отсутствуют</div>'
               }
         </div>
-
-
         <div class="offer__separator"></div> <!-- Разделительная линия -->
         ${!result.isStopFactor ? `  
           <div class="offer__rate">
@@ -469,6 +467,7 @@ offerList.innerHTML = finalResults
     </div>`
   )
   .join("");
+
 
 
 
