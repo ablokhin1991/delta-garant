@@ -803,6 +803,7 @@ input[type="checkbox"]:checked::before {
     
       .offer__logo {
         margin-bottom: 12px; /* Добавляем отступ снизу */
+        margin-top: 12px; /* Добавляем отступ снизу */
         justify-self: center; /* Центрируем логотип */
       }
     
