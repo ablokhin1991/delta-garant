@@ -16,9 +16,6 @@ body {
     width: 80%;
     margin: 20px auto;
     overflow: visible;
-    display: flex; /* Устанавливаем flexbox *//***********************************************************/
-    justify-content: space-between; /* Разделяем логотип и электронную почту */
-    align-items: center; /* Центрируем элементы по высоте */
 }
 
 /* Шапка сайта */
