@@ -35,7 +35,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "ПАО Альфа-Банк",
       logo: "/delta-garant/images/banks-logo/alfa-bank.svg",
-      data: 'Преимущество 1\nПреимущество 2\nПреимущество 3',
+      data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',  
       conditions: [
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
         { procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
@@ -82,7 +82,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "ПАО Промсвязьбанк",
       logo: "/delta-garant/images/banks-logo/psb.svg",
-      data: 'Преимущество 1\nПреимущество 2\nПреимущество 3',
+      data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
       conditions: [
         // На исполнение
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.05, minCost: 1000, ruleMaxDays: 1140 },
@@ -290,7 +290,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "АО Газпромбанк",
       logo: "/delta-garant/images/banks-logo/gpb.svg",
-      data: 'Преимущество 1\nПреимущество 2\nПреимущество 3',
+      data: 'Решение от 1-2 дня\nБез поручительства\nБез открытия расчетного счета',
       conditions: [
         // На исполнение
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
