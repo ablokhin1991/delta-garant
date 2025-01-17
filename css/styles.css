@@ -464,7 +464,7 @@ input[type="checkbox"]:checked::before {
   .offer {
     display: grid;
     grid-template-columns: auto 300px 500px 2px auto 200px; /* Задаем 6 столбцов */
-    grid-template-rows: 1fr; /* Один ряд */
+    grid-template-rows: auto; /* Один ряд */
     gap: 20px; /* Отступы между ячейками */
     align-items: center; /* Центрирование по высоте всех элементов */
     padding: 10px;
