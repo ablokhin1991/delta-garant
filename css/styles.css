@@ -16,6 +16,9 @@ body {
     width: 80%;
     margin: 20px auto;
     overflow: visible;
+    display: flex; /* Устанавливаем flexbox *//***********************************************************/
+    justify-content: space-between; /* Разделяем логотип и электронную почту */
+    align-items: center; /* Центрируем элементы по высоте */
 }
 
 /* Шапка сайта */
@@ -62,8 +65,11 @@ header nav ul li a:hover {
 /* Электронная почта */
 .header-email {
     display: flex;
-    align-items: center; /* Центрирование текста и иконки по вертикали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    justify-content: flex-end; /* Выравнивание по правому краю */
     gap: 10px; /* Отступ между иконкой и текстом */
+    text-align: right; /* Выравнивание текста справа */
+    width: auto; /* Убираем лишнюю ширину, если она есть */
 }
 
 .email-link {
