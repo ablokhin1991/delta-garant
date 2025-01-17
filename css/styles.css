@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
 }
@@ -503,7 +503,7 @@ input[type="checkbox"]:checked::before {
 
 .offer__personal-data {
     grid-column: 3; /* Третья ячейка */
-    color: #9db1cc;
+    color: #333333;
     font-weight: 200;
     font-size: 14px;
     text-align: left;
