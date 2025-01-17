@@ -436,12 +436,12 @@ const offerList = document.getElementById("offer-list");
 
 offerList.innerHTML = finalResults
   .map((result, index) => 
-    `<div class="offer" style="display: flex; flex-direction: row; align-items: center;">
+    `<div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
         <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
         <div class="offer__details" style="flex: 1;">
             <strong>${result.name}</strong>
         </div>
-        <div class="offer__personal-data" style="color:rgb(131, 131, 131); font-weight: normal; text-align: left; display: flex; flex-direction: column; justify-content: center; margin-left: 20px;">
+        <div class="offer__personal-data" style="color:rgb(255, 21, 0); font-weight: normal; text-align: left; display: flex; flex-direction: column; justify-content: center; margin-left: 20px;">
                ${
                 result.data 
                 ? result.data.split('\n').map(line => `<div>${line}</div>`).join('') 
@@ -467,6 +467,7 @@ offerList.innerHTML = finalResults
     </div>`
   )
   .join("");
+
 
 
 
