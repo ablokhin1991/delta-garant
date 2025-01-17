@@ -407,7 +407,8 @@ input[type="checkbox"]:checked::before {
     margin-top: 30px;
     padding: 20px;
     /*border: 1px solid #f4f4f4;*/
-    background-color: #F3F4F6;
+    border: 2px solid #E2E8F0;
+    background-color: #fff;
     border-radius: 4px;
 }
 
@@ -463,7 +464,7 @@ input[type="checkbox"]:checked::before {
     padding: 10px; /* Отступы внутри каждого блока */
     /*border: 1px solid #ccc; /* Рамка вокруг предложения */
     border-radius: 5px; /* Скругленные углы */
-    background-color: #fff; /* Фон блока */
+    background-color: #E2E8F0; /* Фон блока */
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для выделения блока */
 }
 
