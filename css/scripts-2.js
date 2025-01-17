@@ -468,7 +468,35 @@ offerList.innerHTML = finalResults
   )
   .join("");
 
+// Добавляем стили к блоку вывода результатов "offer" для мобильных устройств
+// Функция для переключения стилей в зависимости от ширины экрана
+function applyResponsiveStyles() {
+  const isMobile = window.innerWidth <= 768;
 
+  // Найти все элементы с классом offer
+  const offers = document.querySelectorAll('.offer');
+  
+  offers.forEach(offer => {
+    if (isMobile) {
+      offer.style.flexDirection = 'column'; // Вертикальное выравнивание
+      offer.style.justifyContent = 'center'; // Центровка по горизонтали
+      offer.style.alignItems = 'center'; // Центровка по вертикали
+      offer.style.gap = '16px'; // Отступы между элементами
+    } else {
+      offer.style.flexDirection = 'row'; // Горизонтальное выравнивание
+      offer.style.justifyContent = 'space-between'; // Распределение пространства
+      offer.style.alignItems = 'center'; // Выравнивание по вертикали
+    }
+  });
+}
+
+// Применить стили при загрузке страницы
+window.addEventListener('load', applyResponsiveStyles);
+
+// Применить стили при изменении размера окна
+window.addEventListener('resize', applyResponsiveStyles);
+
+// Конец кода стилей - - - - - - - - - - - - - - - - - - - - - - -  
 
 
 
