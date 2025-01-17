@@ -782,34 +782,42 @@ input[type="checkbox"]:checked::before {
     }
 
     .offer {
-        grid-template-columns: 1fr; /* Столбцы становятся одномерными на мобильных устройствах */
-        grid-template-rows: auto auto auto auto auto auto; /* Строки для каждого элемента */
-        gap: 10px; /* Меньшие отступы */
+        display: grid;
+        grid-template-columns: 1fr; /* Все элементы располагаются в одном столбце */
+        grid-template-rows: auto auto auto auto auto; /* Каждая строка под свой элемент */
+        gap: 16px; /* Отступы между строками */
+        justify-items: center; /* Центрируем элементы по горизонтали */
     }
 
-    .offer__logo, 
+    .offer__details {
+        text-align: center; /* Центрируем текст */
+        margin: 0 auto; /* Центрируем весь блок */
+        width: 90%; /* Ограничиваем ширину для мобильных */
+    }
+
+    /*.offer__logo, 
     .offer__details, 
     .offer__personal-data, 
     .offer__separator, 
     .offer__rate, 
     .offer__button {
         grid-column: 1; /* Все элементы становятся на один столбец */
-        justify-self: center; /* Центрируем по горизонтали */
+       /* justify-self: center; /* Центрируем по горизонтали */
+    
+
+    .offer__rate {
+        text-align: center; /* Центрируем текст */
+        margin: 0 auto; /* Центрируем весь блок */
     }
 
-    .offer__rate, .offer__button {
-        text-align: center; /* Выравнивание текста по центру для мобильных устройств */
-    }
-
-      .offer__personal-data {
-        position: static; /* Убираем абсолютное позиционирование */
-        margin-top: 10px; /* Отступ сверху */
-        text-align: center; /* Выравнивание по центру */
-        width: 100%; /* Занимает всю ширину родителя */
+    .offer__personal-data {
+        text-align: center; /* Центрируем текст */
+        margin: 0 auto; /* Центрируем весь блок */
+        width: 90%; /* Ограничиваем ширину */
         white-space: normal; /* Разрешаем перенос строк */
     }
 
-      .offer__separator {
+    .offer__separator {
         display: none; /* Скрыть разделитель на мобильных экранах */
       }
 
@@ -819,16 +827,20 @@ input[type="checkbox"]:checked::before {
     }
 
     
-      .offer__logo {
-        margin-bottom: 12px; /* Отступ снизу для логотипа */
-      }
-      .offer__button {
+    .offer__logo {
+        margin-bottom: 12px; /* Отступ снизу */
+        justify-self: center; /* Центрируем по горизонтали */
+    }
+
+    .offer__button {
+        text-align: center; /* Центрируем текст */
         margin: 12px auto 0; /* Центрируем кнопку */
-        margin-top: 10px; /* Отступ сверху для кнопки */
-        width: 90%; /* Увеличиваем ширину кнопки на мобильных */
-        height: 55px;
-        text-align: center; /* Выравнивание кнопки по центру */
-      }
+        width: 90%; /* Кнопка занимает почти всю ширину */
+        height: 55px; /* Фиксированная высота кнопки */
+        display: flex; /* Для центрирования текста внутри кнопки */
+        justify-content: center; /* Центрируем текст по горизонтали */
+        align-items: center; /* Центрируем текст по вертикали */
+    }
 
     .result__title-wrap h2 {
         font-size: 14px;
