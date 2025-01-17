@@ -784,58 +784,59 @@ input[type="checkbox"]:checked::before {
     }
 
     .offer {
-        flex-direction: column; /* Расположить элементы внутри предложения вертикально */
-        text-align: center; /* Центрировать текст */
-    }
-
-    .offer__details {
-        text-align: center; /* Центрируем текст */
-        margin: 0 auto; /* Центрируем весь блок */
-        width: 90%; /* Ограничиваем ширину для мобильных */
-    }
-
-    /*.offer__logo,
-    .offer__details,
-    .offer__rate,
-    .offer__personal-data,
-    .offer__button {
-        grid-column: 1; /* Все элементы в один столбец */
-    /*}*/
-    
-
-    .offer__rate {
-        margin: 0 auto;
-        width: 90%;
-    }
-
-    .offer__personal-data {
-        width: 90%;
-        margin: 0 auto;
-        white-space: nowrap; /* Разрешаем перенос текста если вылазиет за границы контейнера */
-    }
-
-    .offer__separator {
-        display: none; /* Скрыть разделитель на мобильных экранах */
+        display: grid;
+        grid-template-columns: 1fr; /* Все элементы выстраиваются в один столбец */
+        grid-template-rows: repeat(5, auto); /* Каждая строка автоматически подстраивается по высоте */
+        gap: 16px; /* Отступы между строками */
+        justify-items: center; /* Центрируем элементы по горизонтали */
+        text-align: center; /* Центрируем текст внутри элементов */
       }
-
-      .offer__rate {
-        text-align: center; /* Центрируем ставку */
-        margin-right: 0; /* Убираем правый отступ */
-    }
-
     
-    .offer__logo {
-        margin-bottom: 12px; /* Отступ снизу */
-        justify-self: center; /* Центрируем по горизонтали */
-    }
-
-    .offer__button {
-        width: 90%; /* Широкая кнопка */
-        height: 55px;
+      .offer__logo,
+      .offer__details,
+      .offer__rate,
+      .offer__personal-data,
+      .offer__button {
+        grid-column: 1; /* Все элементы в одном столбце */
+        width: 90%; /* Ограничиваем ширину для мобильных */
+      }
+    
+      .offer__logo {
+        margin-bottom: 12px; /* Добавляем отступ снизу */
+        justify-self: center; /* Центрируем логотип */
+      }
+    
+      .offer__details {
+        text-align: center;
+        margin: 0 auto; /* Центрируем текст */
+      }
+    
+      .offer__personal-data {
+        width: 90%;
+        margin: 0 auto; /* Центрируем текстовые данные */
+        white-space: normal; /* Позволяем перенос строк */
+      }
+    
+      .offer__button {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+        width: 90%;
+        height: 55px;
+        margin-top: 10px;
+      }
+    
+      .offer__separator {
+        display: none; /* Скрываем разделитель */
+      }
+
+    
+    
+
+    
+
+    
+    
 
     .result__title-wrap h2 {
         font-size: 14px;
