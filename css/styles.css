@@ -498,7 +498,7 @@ input[type="checkbox"]:checked::before {
     color: #333333;
     white-space: nowrap;
     overflow: hidden;
-    width: 500px;
+    width: 300px;
 }
 
 .offer__personal-data {
