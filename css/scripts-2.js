@@ -439,7 +439,11 @@ offerList.innerHTML = finalResults
             <strong>${result.name}</strong>
         </div>
         <div class="offer__personal-data" style="margin-top: 20px; color: #333333; font-weight: normal; text-align: right;">
-            ${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}
+            ${
+              result.data 
+                ? result.data.split('\n').map(line => `<div>${line}</div>`).join('')
+                : '<div>Данные отсутствуют</div>'
+            }
         </div>
         <div class="offer__separator"></div> <!-- Разделительная линия -->
         ${!result.isStopFactor ? `  
@@ -460,6 +464,7 @@ offerList.innerHTML = finalResults
     </div>`
   )
   .join("");
+
 
 
 
