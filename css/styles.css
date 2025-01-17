@@ -814,6 +814,7 @@ input[type="checkbox"]:checked::before {
         width: 90%;
         margin: 0 auto;
         white-space: pre-wrap; /* Разрешаем перенос текста если вылазиет за границы контейнера */
+        display: none;
     }
 
     .offer__separator {
