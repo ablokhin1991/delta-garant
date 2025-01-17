@@ -799,6 +799,7 @@ input[type="checkbox"]:checked::before {
     
       .offer__personal-data {
         width: 90%;
+        text-align: center;
         margin: 0 auto; /* Центрируем текстовые данные */
         white-space: normal; /* Позволяем перенос строк */
       }
