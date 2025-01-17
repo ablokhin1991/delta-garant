@@ -492,11 +492,12 @@ input[type="checkbox"]:checked::before {
     font-size: 14px; /* Пример размера, уточните по требованию */
     color: #333333; /* Цвет текста из блока параметров */
     white-space: nowrap; /* Отключаем перенос строк, чтобы элемент занимал только нужное пространство */
-    flex-shrink: 0; /* Запрещаем сжать этот элемент */
+    flex-shrink: 0; /* Этот элемент не будет сжиматься */
+    width: auto; /* Даем элементу его естественную ширину */
   }
 
   .offer__personal-data {
-    color: #00ff51e9;
+    color: #c20198e9;
     font-weight: normal;
     text-align: left;
     display: flex;
@@ -506,6 +507,7 @@ input[type="checkbox"]:checked::before {
     top: 0;
     right: 20px; /* Отступ от правого края */
     white-space: nowrap;
+    width: auto; /* Ширина только под контент */
 }
   
   .offer__rate {
