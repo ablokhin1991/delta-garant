@@ -59,6 +59,37 @@ header nav ul li a:hover {
     color: #F0473B;
 }
 
+/* Электронная почта */
+.header-email {
+    display: flex;
+    align-items: center; /* Центрирование текста и иконки по вертикали */
+    gap: 10px; /* Отступ между иконкой и текстом */
+}
+
+.email-link {
+    display: flex;
+    align-items: center; /* Центрируем содержимое */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 16px; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    color: #333; /* Основной цвет текста */
+    transition: color 0.3s ease; /* Плавный переход цвета при наведении */
+}
+
+.email-link:hover {
+    color: #F0473B; /* Цвет текста при наведении */
+}
+
+.email-icon {
+    width: 20px; /* Ширина иконки */
+    height: 20px; /* Высота иконки */
+    transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+.email-link:hover .email-icon {
+    transform: scale(1.2); /* Увеличиваем иконку при наведении */
+}
+
 /* Главная секция (Hero) */
 .hero {
     background-color: #1E3A8A ;
@@ -825,6 +856,20 @@ input[type="checkbox"]:checked::before {
     .result__title-wrap h2 {
         font-size: 14px;
     }
+
+    .header-email {
+        margin-top: 10px; /* Отступ сверху для почты */
+    }
+
+    .email-link {
+        font-size: 14px; /* Уменьшаем текст на мобильных */
+    }
+
+    .email-icon {
+        width: 16px; /* Уменьшаем иконку на мобильных */
+        height: 16px;
+    }
+
 
 }
 
