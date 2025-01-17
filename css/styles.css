@@ -814,7 +814,7 @@ input[type="checkbox"]:checked::before {
     .offer__personal-data {
         width: 90%;
         margin: 0 auto;
-        white-space: pre-wrap; /* Разрешаем перенос текста если вылазиет за границы контейнера */
+        white-space: nowrap; /* Разрешаем перенос текста если вылазиет за границы контейнера */
     }
 
     .offer__separator {
