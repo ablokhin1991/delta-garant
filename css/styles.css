@@ -72,7 +72,7 @@ header nav ul li a:hover {
     text-decoration: none; /* Убираем подчеркивание */
     font-size: 16px; /* Размер текста */
     font-weight: bold; /* Жирный текст */
-    color: #333; /* Основной цвет текста */
+    color: #fff; /* Основной цвет текста */
     transition: color 0.3s ease; /* Плавный переход цвета при наведении */
 }
 
@@ -81,8 +81,8 @@ header nav ul li a:hover {
 }
 
 .email-icon {
-    width: 20px; /* Ширина иконки */
-    height: 20px; /* Высота иконки */
+    width: 15px; /* Ширина иконки */
+    height: 15px; /* Высота иконки */
     transition: transform 0.3s ease; /* Анимация при наведении */
 }
 
