@@ -35,7 +35,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "ПАО Альфа-Банк",
       logo: "/delta-garant/images/banks-logo/alfa-bank.svg",
-      data: "Преимущество 1\nПреимущество 2\nПреимущество 3"
+      data: "Преимущество 1\nПреимущество 2\nПреимущество 3",
       conditions: [
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
         { procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
