@@ -436,9 +436,9 @@ const offerList = document.getElementById("offer-list");
 
 offerList.innerHTML = finalResults
   .map((result, index) => 
-    `<div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+    `<div class="offer">
         <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
-        <div class="offer__details" style="flex: 1;">
+        <div class="offer__details">
             <strong>${result.name}</strong>
         </div>
         <div class="offer__personal-data">
