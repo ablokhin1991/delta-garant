@@ -142,9 +142,10 @@ footer {
 /* Контейнер для столбиков */
 .footer-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Убедитесь, что элементы выстраиваются в столбик */
+    justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: wrap;
+    gap: 20px; /* Добавим отступы между столбиками */
 }
 
 /* Столбики */
