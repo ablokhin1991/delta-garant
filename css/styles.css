@@ -467,7 +467,6 @@ input[type="checkbox"]:checked::before {
     background-color: #f4f4f4; /* Фон блока */
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для выделения блока */
     position: relative; /* Это нужно для правильного позиционирования потомков */
-    flex-wrap: wrap; /* Добавляем оборачивание элементов на малых экранах */
 }
 
 /* Разделительная линия между блоками
@@ -501,10 +500,9 @@ input[type="checkbox"]:checked::before {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute; /* Абсолютное позиционирование на больших экранах */
+    position: absolute; /* Позиционирование справа на больших экранах */
     top: 0;
-    right: 20px;
-    width: auto;
+    right: 20px; /* Отступ от правого края */
     white-space: nowrap;
 }
   
@@ -785,8 +783,7 @@ input[type="checkbox"]:checked::before {
         margin-top: 10px; /* Отступ сверху */
         text-align: center; /* Выравнивание по центру */
         width: 100%; /* Занимает всю ширину родителя */
-        margin-left: 0; /* Убираем отступ слева */
-        margin-right: 0; /* Убираем отступ справа */
+        white-space: normal; /* Разрешаем перенос строк */
     }
 
       .offer__separator {
