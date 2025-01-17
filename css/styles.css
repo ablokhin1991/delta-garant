@@ -363,11 +363,12 @@ input[type="checkbox"]:checked::before {
 
 /* Стили для кнопки оформления */
 .offer__button {
-    margin-left: auto; /* Отодвигаем кнопку вправо */
+    grid-column: 6; /* Шестая ячейка */
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
     background-color: transparent;
     color: #F0473B;
-    padding: 10px 20px;
-    text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
     border: 1px solid #F0473B;
@@ -449,24 +450,22 @@ input[type="checkbox"]:checked::before {
   }
 
   .offer__separator {
-    width: 2px;            /* Толщина линии */
-    height: 50px;          /* Длина линии */
-    background-color: #E2E8F0; /* Цвет линии */
-    margin-right: 20px;    /* Расстояние между линией и offer__rate */
-  }
+    grid-column: 4; /* Четвертая ячейка */
+    background-color: #ccc;
+    height: 2px;
+}
   
 
-.offer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding: 10px; /* Отступы внутри каждого блока */
-    /*border: 1px solid #ccc; /* Рамка вокруг предложения */
-    border-radius: 5px; /* Скругленные углы */
-    background-color: #f4f4f4; /* Фон блока */
-    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для выделения блока */
-    position: relative; /* Это нужно для правильного позиционирования потомков */
+  .offer {
+    display: grid;
+    grid-template-columns: auto 400px 400px 2px auto auto; /* Задаем 6 столбцов */
+    grid-template-rows: 1fr; /* Один ряд */
+    gap: 20px; /* Отступы между ячейками */
+    align-items: center; /* Центрирование по высоте всех элементов */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    position: relative;
 }
 
 /* Разделительная линия между блоками
@@ -474,47 +473,45 @@ input[type="checkbox"]:checked::before {
     border-top: 1px solid #ccc;
   }*/
 
-.offer__logo {
-    width: 50px;
-    height: 50px;
+  .offer__logo {
+    grid-column: 1; /* Первая ячейка */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    margin-right: 20px; /* Увеличение отступа между лого и названием банка */
-    margin-left: 20px;   /* Отступ слева */
+    width: 50px;
+    height: 50px;
 }
 
 .offer__details {
-    /*flex: 1;*/
-    margin-left: 10px;
-    font-weight: 300; /* Обычная жирность */
-    font-family: Verdana, sans-serif; /* Как в блоке параметров */
-    font-size: 14px; /* Пример размера, уточните по требованию */
-    color: #333333; /* Цвет текста из блока параметров */
-    white-space: nowrap; /* Отключаем перенос строк, чтобы элемент занимал только нужное пространство */
-    flex-shrink: 0; /* Этот элемент не будет сжиматься */
-    width: auto; /* Даем элементу его естественную ширину */
-  }
+    grid-column: 2; /* Вторая ячейка */
+    font-weight: 300;
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
-  .offer__personal-data {
-    color: #c20198e9;
+.offer__personal-data {
+    grid-column: 3; /* Третья ячейка */
+    color: #E2E8F0;
     font-weight: normal;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute; /* Позиционирование справа на больших экранах */
-    top: 0;
-    right: 20px; /* Отступ от правого края */
+    width: 400px;
     white-space: nowrap;
-    width: auto; /* Ширина только под контент */
 }
   
-  .offer__rate {
+.offer__rate {
+    grid-column: 5; /* Пятая ячейка */
     text-align: right;
-    margin-right: 20px;
     color: #333333;
-  }
+}
 
 .offer__title-wrap {
     color: #1E3A8A;
@@ -777,10 +774,24 @@ input[type="checkbox"]:checked::before {
     }
 
     .offer {
-        flex-direction: column; /* Расположить элементы внутри предложения вертикально */
-        text-align: center; /* Центрировать текст */
-        justify-content: flex-start;
-      }
+        grid-template-columns: 1fr; /* Столбцы становятся одномерными на мобильных устройствах */
+        grid-template-rows: auto auto auto auto auto auto; /* Строки для каждого элемента */
+        gap: 10px; /* Меньшие отступы */
+    }
+
+    .offer__logo, 
+    .offer__details, 
+    .offer__personal-data, 
+    .offer__separator, 
+    .offer__rate, 
+    .offer__button {
+        grid-column: 1; /* Все элементы становятся на один столбец */
+        justify-self: center; /* Центрируем по горизонтали */
+    }
+
+    .offer__rate, .offer__button {
+        text-align: center; /* Выравнивание текста по центру для мобильных устройств */
+    }
 
       .offer__personal-data {
         position: static; /* Убираем абсолютное позиционирование */
