@@ -796,26 +796,24 @@ input[type="checkbox"]:checked::before {
         width: 90%; /* Ограничиваем ширину для мобильных */
     }
 
-    /*.offer__logo, 
-    .offer__details, 
-    .offer__personal-data, 
-    .offer__separator, 
-    .offer__rate, 
+    .offer__logo,
+    .offer__details,
+    .offer__rate,
+    .offer__personal-data,
     .offer__button {
-        grid-column: 1; /* Все элементы становятся на один столбец */
-       /* justify-self: center; /* Центрируем по горизонтали */
+        grid-column: 1; /* Все элементы в один столбец */
+    }
     
 
     .offer__rate {
-        text-align: center; /* Центрируем текст */
-        margin: 0 auto; /* Центрируем весь блок */
+        margin: 0 auto;
+        width: 90%;
     }
 
     .offer__personal-data {
-        text-align: center; /* Центрируем текст */
-        margin: 0 auto; /* Центрируем весь блок */
-        width: 90%; /* Ограничиваем ширину */
-        white-space: normal; /* Разрешаем перенос строк */
+        width: 90%;
+        margin: 0 auto;
+        white-space: pre-wrap; /* Разрешаем перенос текста если вылазиет за границы контейнера */
     }
 
     .offer__separator {
@@ -834,13 +832,11 @@ input[type="checkbox"]:checked::before {
     }
 
     .offer__button {
-        text-align: center; /* Центрируем текст */
-        margin: 12px auto 0; /* Центрируем кнопку */
-        width: 90%; /* Кнопка занимает почти всю ширину */
-        height: 55px; /* Фиксированная высота кнопки */
-        display: flex; /* Для центрирования текста внутри кнопки */
-        justify-content: center; /* Центрируем текст по горизонтали */
-        align-items: center; /* Центрируем текст по вертикали */
+        width: 90%; /* Широкая кнопка */
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .result__title-wrap h2 {
