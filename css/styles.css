@@ -782,7 +782,7 @@ input[type="checkbox"]:checked::before {
     }
 
     .offer {
-        display: grid;
+        display: flex;
         flex-direction: column;
         grid-template-columns: 1fr; /* Все элементы располагаются в одном столбце */
         grid-template-rows: auto auto auto auto auto; /* Каждая строка под свой элемент */
