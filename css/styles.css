@@ -784,8 +784,8 @@ input[type="checkbox"]:checked::before {
     .offer {
         display: flex;
         flex-direction: column;
-        grid-template-columns: 1fr; /* Все элементы располагаются в одном столбце */
-        grid-template-rows: auto auto auto auto auto; /* Каждая строка под свой элемент */
+        /*grid-template-columns: 1fr; /* Все элементы располагаются в одном столбце */
+        /*grid-template-rows: auto auto auto auto auto; /* Каждая строка под свой элемент */
         gap: 16px; /* Отступы между строками */
         justify-items: center; /* Центрируем элементы по горизонтали */
         text-align: center; /* Выравниваем текст внутри */
