@@ -491,10 +491,12 @@ input[type="checkbox"]:checked::before {
     font-family: Verdana, sans-serif; /* Как в блоке параметров */
     font-size: 14px; /* Пример размера, уточните по требованию */
     color: #333333; /* Цвет текста из блока параметров */
+    white-space: nowrap; /* Отключаем перенос строк, чтобы элемент занимал только нужное пространство */
+    flex-shrink: 0; /* Запрещаем сжать этот элемент */
   }
 
   .offer__personal-data {
-    color: #b61aff;
+    color: #cae000e9;
     font-weight: normal;
     text-align: left;
     display: flex;
