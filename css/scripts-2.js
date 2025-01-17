@@ -399,6 +399,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     return {
       name: bank.name,
       logo: bank.logo,
+      data: bank.data,
       cost: parseFloat(cost.toFixed(2)),
       rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
       isStopFactor: false
