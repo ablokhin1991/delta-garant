@@ -503,7 +503,8 @@ input[type="checkbox"]:checked::before {
 .offer__personal-data {
     grid-column: 3; /* Третья ячейка */
     color: #284db5;
-    font-weight: normal;
+    font-weight: light;
+    font-size: 14px;
     text-align: left;
     display: flex;
     flex-direction: column;
