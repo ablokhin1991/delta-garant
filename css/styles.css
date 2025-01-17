@@ -597,6 +597,8 @@ input[type="checkbox"]:checked::before {
 
 /* Стили виртуальной страницы************************************************************************************************ */
 .content-vp {
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы по вертикали */
     width: 80%;
     margin: 0 auto;
     padding: 20px;
