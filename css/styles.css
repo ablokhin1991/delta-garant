@@ -463,8 +463,9 @@ input[type="checkbox"]:checked::before {
     margin-bottom: 10px;
     padding: 10px; /* Отступы внутри каждого блока */
     /*border: 1px solid #ccc; /* Рамка вокруг предложения */
+    border: 2px solid #E2E8F0;
     border-radius: 5px; /* Скругленные углы */
-    background-color: #E2E8F0; /* Фон блока */
+    background-color: #FFF; /* Фон блока */
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для выделения блока */
 }
 
