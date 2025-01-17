@@ -516,7 +516,7 @@ offerList.addEventListener("click", (event) => {
 
 
 });
-
+// КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА
 // Скрываем кнопку сброса по умолчанию
 document.getElementById("reset-btn").style.display = "none";
 
@@ -524,7 +524,7 @@ document.getElementById("reset-btn").style.display = "none";
 document.getElementById("calculate-btn").addEventListener("click", function () {
   // Показать кнопку сброса
   document.getElementById("reset-btn").style.display = "inline-block";
-  
+
   // Здесь добавьте код расчета, если нужно
   // Пример: document.getElementById("result-output").style.display = "block";
   // document.getElementById("offer-list").innerHTML = "<div>Результаты расчета</div>";
@@ -532,17 +532,29 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
 // Слушаем клик на кнопке "Сбросить"
 document.getElementById("reset-btn").addEventListener("click", function () {
+  // Скрыть результаты и очистить список предложений
   document.getElementById("result-output").style.display = "none";
   document.getElementById("offer-list").innerHTML = "";
-  
+
   // Скрыть кнопку сброса снова
   document.getElementById("reset-btn").style.display = "none";
+
+  // Сброс значений формы к значениям по умолчанию
+  const form = document.getElementById("guarantee-calculator");
+  form.reset();
+
+  // Установить дефолтные значения вручную, если они заданы через HTML (value, selected)
+  document.getElementById("guarantee-sum").value = "1 000 000";
+  document.getElementById("guarantee-days").value = "365";
+  document.getElementById("procedure-type").value = "1"; // 44-ФЗ
+  document.getElementById("guarantee-type").value = "2"; // На исполнение контракта
+
+  // Убедитесь, что чекбоксы сняты
+  document.getElementById("has-advance").checked = false;
+  document.getElementById("custom-form").checked = false;
 });
 
-// document.getElementById("reset-btn").addEventListener("click", function () {
- //  document.getElementById("result-output").style.display = "none";
- //  document.getElementById("offer-list").innerHTML = "";
-// });
+// КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА
 
 // Функция для управления состоянием guarType - ВОЗВРАТ АВАНСА ПРОПАДАЕТ ПРИ 44-ФЗ
 function updateGuarTypeAvailability() {
