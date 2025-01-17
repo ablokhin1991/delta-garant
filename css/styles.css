@@ -831,7 +831,8 @@ input[type="checkbox"]:checked::before {
         width: 90%;
         height: 55px;
         margin-top: 10px;
-        justify-items: center; /* Центрируем элементы по горизонтали */
+        /*justify-items: center; /* Центрируем элементы по горизонтали */
+        justify-items: stretch; /* Центрируем элементы по горизонтали */
       }
     
       .offer__separator {
