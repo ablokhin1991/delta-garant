@@ -364,9 +364,10 @@ input[type="checkbox"]:checked::before {
 /* Стили для кнопки оформления */
 .offer__button {
     grid-column: 6; /* Шестая ячейка */
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
+    display: flex; /* Используем Flexbox */
+    justify-content: center; /* Горизонтальное выравнивание текста */
+    align-items: center; /* Вертикальное выравнивание текста */
+    text-align: center; /* На случай многострочного текста */
     background-color: transparent;
     color: #F0473B;
     font-weight: bold;
@@ -374,8 +375,10 @@ input[type="checkbox"]:checked::before {
     border: 1px solid #F0473B;
     cursor: pointer;
     height: 70px;
+    width: auto; /* Можно добавить ширину, если требуется */
     margin-right: 20px;
-  }
+    padding: 0 10px; /* Внутренние отступы для удобства */
+}
   
   .offer__button:hover {
     background-color: #F0473B;
@@ -505,7 +508,7 @@ input[type="checkbox"]:checked::before {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 400px;
+    width: 300px;
     white-space: nowrap;
 }
   
