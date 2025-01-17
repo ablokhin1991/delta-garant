@@ -441,7 +441,7 @@ offerList.innerHTML = finalResults
         <div class="offer__details">
             <strong>${result.name}</strong>
         </div>
-        <div class="offer__personal-data" style="margin-top: 20px; color: #E2E8F0; font-weight: normal; text-align: left; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+        <div class="offer__personal-data" style="color: #E2E8F0; font-weight: normal; text-align: left; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
                ${
                 result.data 
                 ? result.data.split('\n').map(line => `<div>${line}</div>`).join('')
