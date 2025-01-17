@@ -375,7 +375,7 @@ input[type="checkbox"]:checked::before {
     border: 1px solid #F0473B;
     cursor: pointer;
     height: 70px;
-    width: auto; /* Можно добавить ширину, если требуется */
+    width: 200; /* Можно добавить ширину, если требуется */
     margin-right: 20px;
     padding: 0 10px; /* Внутренние отступы для удобства */
 }
