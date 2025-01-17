@@ -466,6 +466,8 @@ input[type="checkbox"]:checked::before {
     border-radius: 5px; /* Скругленные углы */
     background-color: #f4f4f4; /* Фон блока */
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для выделения блока */
+    position: relative; /* Это нужно для правильного позиционирования потомков */
+    flex-wrap: wrap; /* Добавляем оборачивание элементов на малых экранах */
 }
 
 /* Разделительная линия между блоками
@@ -491,6 +493,20 @@ input[type="checkbox"]:checked::before {
     font-size: 14px; /* Пример размера, уточните по требованию */
     color: #333333; /* Цвет текста из блока параметров */
   }
+
+  .offer__personal-data {
+    color: #E2E8F0;
+    font-weight: normal;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute; /* Абсолютное позиционирование на больших экранах */
+    top: 0;
+    right: 20px;
+    width: auto;
+    white-space: nowrap;
+}
   
   .offer__rate {
     text-align: right;
@@ -761,19 +777,37 @@ input[type="checkbox"]:checked::before {
     .offer {
         flex-direction: column; /* Расположить элементы внутри предложения вертикально */
         text-align: center; /* Центрировать текст */
+        justify-content: flex-start;
       }
+
+      .offer__personal-data {
+        position: static; /* Убираем абсолютное позиционирование */
+        margin-top: 10px; /* Отступ сверху */
+        text-align: center; /* Выравнивание по центру */
+        width: 100%; /* Занимает всю ширину родителя */
+        margin-left: 0; /* Убираем отступ слева */
+        margin-right: 0; /* Убираем отступ справа */
+    }
 
       .offer__separator {
         display: none; /* Скрыть разделитель на мобильных экранах */
       }
+
+      .offer__rate {
+        text-align: center; /* Центрируем ставку */
+        margin-right: 0; /* Убираем правый отступ */
+    }
+
     
       .offer__logo {
         margin-bottom: 12px; /* Отступ снизу для логотипа */
       }
       .offer__button {
         margin: 12px auto 0; /* Центрируем кнопку */
+        margin-top: 10px; /* Отступ сверху для кнопки */
         width: 90%; /* Увеличиваем ширину кнопки на мобильных */
         height: 55px;
+        text-align: center; /* Выравнивание кнопки по центру */
       }
 
     .result__title-wrap h2 {
@@ -781,6 +815,14 @@ input[type="checkbox"]:checked::before {
     }
 
 }
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .offer__personal-data {
+        font-size: 12px; /* Уменьшаем шрифт на маленьких экранах */
+    }
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
