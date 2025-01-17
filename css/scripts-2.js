@@ -35,6 +35,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     {
       name: "ПАО Альфа-Банк",
       logo: "/delta-garant/images/banks-logo/alfa-bank.svg",
+      data: "Преимущество 1\nПреимущество 2\nПреимущество 3"
       conditions: [
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
         { procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, maxSum: 150000000, rate: 0.03 },
@@ -437,6 +438,9 @@ offerList.innerHTML = finalResults
         <div class="offer__details">
             <strong>${result.name}</strong>
         </div>
+        <div class="offer__personal-data" style="margin-top: 20px; color: #333333; font-weight: normal; text-align: right;">
+            ${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}
+        </div>
         <div class="offer__separator"></div> <!-- Разделительная линия -->
         ${!result.isStopFactor ? `  
           <div class="offer__rate">
@@ -456,6 +460,7 @@ offerList.innerHTML = finalResults
     </div>`
   )
   .join("");
+
 
 
 
