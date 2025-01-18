@@ -334,7 +334,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     },
 
     {
-      name: "ПАО «Московский Кредитный Банк»",
+      name: "ПАО Московский Кредитный Банк",
       logo: "/delta-garant/images/banks-logo/mkb.svg",
       data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
       conditions: [
@@ -610,7 +610,16 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 { procType: "4", guarType: "4", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.06, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
 { procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.06, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
         ]
-    } 
+    },
+
+    {
+      name: "АО Ингосстрах Банк",
+      logo: "/delta-garant/images/banks-logo/mkb.svg",
+      data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
+      conditions: [ 
+       
+      ]
+    },
   ];
 
   // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
