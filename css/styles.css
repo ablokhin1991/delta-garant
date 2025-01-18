@@ -373,8 +373,12 @@ input[type="checkbox"]:checked::before {
     width: 100%; /* Ширина кнопки */
     margin-right: 20px;
     padding: 0 10px;
-    box-shadow: /*0 0 0 2px #fff, */
-                0 6px 6px rgba(0, 0, 0, 0.5) inset; /* Чуть глубже вырез */
+    /* Внутренняя тень со всех сторон */
+    box-shadow: 
+        inset 0 4px 6px rgba(0, 0, 0, 0.5), /* Верх */
+        inset 0 -4px 6px rgba(0, 0, 0, 0.5), /* Низ */
+        inset 4px 0 6px rgba(0, 0, 0, 0.5), /* Лево */
+        inset -4px 0 6px rgba(0, 0, 0, 0.5); /* Право */
 }
 
 /* Hover (при наведении) */
