@@ -722,13 +722,16 @@ offerList.innerHTML = finalResults
         </div> -->
         <div class="offer__separator"></div> <!-- Разделительная линия -->
         ${!result.isStopFactor ? `  
-          <div class="offer__rate">
+
+          <div class="offer__rate" style="display: block;">
             <!-- Ставка: ${result.rate}%<br> -->
             ${result.cost.toLocaleString()} руб.<br>
           </div>
-          <div class="offer__rate" style="font-size: 14px; font-weight: 300;">  
+
+          <div class="offer__rate" style="font-size: 14px; font-weight: 300; display: block;">  
             ${result.rate}% годовых<br>
           </div>
+
         ` : `  
           <div class="offer__rate">
             Стоп-факторы:<br>${result.rate}
