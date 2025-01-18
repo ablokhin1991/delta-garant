@@ -526,7 +526,6 @@ input[type="checkbox"]:checked::before {
     grid-column: 5; /* Пятая ячейка */
     display: block; /* Принудительно блочное размещение в столбик */
     text-align: right;
-    font-weight: 300;
     color: #333333;
 }
 
