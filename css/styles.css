@@ -694,11 +694,11 @@ input[type="checkbox"]:checked::before {
     }
 
     /* Кнопка */
-    .btn_primary {
+    /*.btn_primary {
         font-size: 14px;
         padding: 8px 16px;
         height: 55px;
-    }
+    }*/
 
     /* Кнопка */
     .btn_secondary {
