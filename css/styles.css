@@ -392,7 +392,7 @@ input[type="checkbox"]:checked::before {
 /* Эффект нажатия */
 .offer__button:active {
     transform: /*translateY(2px)*/ scale(0.98); /* Смещение вниз и уменьшение */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Уменьшаем тень для утопленного эффекта */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset; /* Уменьшаем тень для утопленного эффекта */
     background-color: #284db5; /* Темнее фон */
 }
 
