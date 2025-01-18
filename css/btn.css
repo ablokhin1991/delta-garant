@@ -110,7 +110,7 @@
 .btn_primary {
     text-transform: uppercase; /* Текст большими буквами */
     text-decoration: none;
-    font-weight: 700; /* Жирность текста */
+    font-weight: bold; /* Жирность текста */
     border: 0;
     position: relative;
     letter-spacing: 0.15em; /* Расстояние между буквами */
@@ -118,13 +118,13 @@
     padding: 1rem 2.5rem; /* Внутренние отступы */
     background: transparent;
     outline: none;
-    font-size: 28px; /* Размер текста */
-    color: #111111; /* Цвет текста */
+    font-size: 16px; /* Размер текста */
+    color: #333; /* Цвет текста */
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
     border-radius: 8px; /* Скруглённые углы */
 }
 
-.btn_primary::after,
+.btn_primary::after,s
 .btn_primary::before {
     content: "";
     position: absolute;
