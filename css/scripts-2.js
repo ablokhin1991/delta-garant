@@ -614,7 +614,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
     {
       name: "АО Ингосстрах Банк",
-      logo: "/delta-garant/images/banks-logo/mkb.svg",
+      logo: "/delta-garant/images/banks-logo/igs.svg",
       data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
       conditions: [ 
        
