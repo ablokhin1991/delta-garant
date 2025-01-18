@@ -115,11 +115,13 @@ header nav ul li a:hover {
 }
 
 .hero h1 {
+    font-family: 'Roboto', sans-serif;
     font-size: 2em;
     margin-bottom: 20px;
 }
 
 .hero p {
+    font-family: 'Roboto', sans-serif;
     color: #fff;
     font-size: 1.2em;
     font-weight: light;
