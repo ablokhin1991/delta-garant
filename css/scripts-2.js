@@ -605,15 +605,11 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 { procType: "2", guarType: "4", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.037, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
 { procType: "2", guarType: "4", hasAdvance: true, customForm: false, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.037, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
 { procType: "2", guarType: "4", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.037, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
-
-
-
-
-
-
-,
+{ procType: "4", guarType: "4", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.06, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
+{ procType: "4", guarType: "4", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.06, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
+{ procType: "4", guarType: "4", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.06, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
+{ procType: "4", guarType: "4", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.06, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
         ]
-
     } 
   ];
 
