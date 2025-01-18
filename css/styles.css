@@ -359,38 +359,40 @@ input[type="checkbox"]:checked::before {
 
 
 /* Кнопка оформления */
-.offer__button {
+/*.offer__button {
     grid-column: 6; /* Шестая ячейка */
-    display: flex;
-    justify-content: center; /* Горизонтальное выравнивание текста */
-    align-items: center; /* Вертикальное выравнивание текста */
-    text-align: center;
+   /* display: flex;
+    /*justify-content: center; /* Горизонтальное выравнивание текста */
+   /* align-items: center; /* Вертикальное выравнивание текста */
+   /* text-align: center;
     background: #f4f6fd; /* Нежный серо-синий цвет кнопки */
-    border: 2px solid #b0b8c8; /* Тонкая рамка в тон кнопке */
-    box-shadow: 
+   /* border: 2px solid #b0b8c8; /* Тонкая рамка в тон кнопке */
+   /* box-shadow: 
         0px 2px 0 rgb(219, 228, 247), /* Верхняя выпуклая тень */
-        2px 4px 6px rgba(0, 0, 0, 0.1); /* Глубокая мягкая тень */
-    font-weight: bold;
+   /*     2px 4px 6px rgba(0, 0, 0, 0.1); /* Глубокая мягкая тень */
+   /* font-weight: bold;
     letter-spacing: 1px;
     border-radius: 8px; /* Скруглённые углы */
-    cursor: pointer;
+    /*cursor: pointer;
     height: 40px;
     width: 150px; /* Ширина кнопки */
-    padding: 0 10px; /* Внутренние отступы */
-    color: #333; /* Тёмно-серый цвет текста */
-    transition: all 150ms linear; /* Плавные изменения */
-}
+    /*padding: 0 10px; /* Внутренние отступы */
+   /* color: #333; /* Тёмно-серый цвет текста */
+   /* transition: all 150ms linear; /* Плавные изменения */
+/*}
 
-.offer__button:hover {
+/*.offer__button:hover {
     background: #f4f6fd; /* Чуть более насыщенный цвет при наведении */
-    border: 2px solid #8f96a7; /* Рамка становится чуть заметнее */
-    box-shadow:    
+   /* border: 2px solid #8f96a7; /* Рамка становится чуть заметнее */
+   /* box-shadow:    
         1px 1px 2px rgba(255, 255, 255, .3), /* Светлый верхний блик */
-        0px 1px 3px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
-    color: #2c3445; /* Более насыщенный цвет текста */
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1); /* Лёгкая тень текста */
-    transition: all 250ms linear; /* Плавный переход */
-}
+   /*     0px 1px 3px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+   /* color: #2c3445; /* Более насыщенный цвет текста */
+   /* text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1); /* Лёгкая тень текста */
+   /* transition: all 250ms linear; /* Плавный переход */
+/*}*/
+
+
 
 
 
@@ -480,6 +482,7 @@ input[type="checkbox"]:checked::before {
     background-color: #f4f6fd;
     position: relative;
 }
+
 
 /* Hover (при наведении) */
 .offer:hover {
