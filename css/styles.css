@@ -13,8 +13,23 @@ body {
 }
 
 /* Заголовки */
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, a {
     font-family: 'Roboto', sans-serif;
+}
+
+/* Заголовки */
+h1 {
+    font-weight: 700; /* Bold */
+}
+
+/* Обычный текст */
+p {
+    font-weight: 300; /* Light */
+}
+
+/* Обычный текст и ссылки */
+a {
+    font-weight: 300; /* Light */
 }
 
 /* Контейнер для контента */
