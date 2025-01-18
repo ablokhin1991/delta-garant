@@ -498,7 +498,7 @@ input[type="checkbox"]:checked::before {
     align-items: center; /* Центрирование по высоте всех элементов */
     padding: 10px;
     border-radius: 5px;
-    background-color: #e8ebf3;
+    background-color: #f4f6fd;
     position: relative;
 }
 
