@@ -456,7 +456,7 @@ offerList.innerHTML = finalResults
                ${
                 result.data 
                 ? result.data.split('\n').map(line => `<div>${line}</div>`).join('') 
-                : '<div>Данные отсутствуют</div>'
+                : ' '
               }
         </div>
         <div class="offer__separator"></div> <!-- Разделительная линия -->
