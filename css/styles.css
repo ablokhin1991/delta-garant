@@ -360,41 +360,42 @@ input[type="checkbox"]:checked::before {
 /* Кнопка оформления */
 .offer__button {
     grid-column: 6; /* Шестая ячейка */
-    display: flex; /* Используем Flexbox */
+    display: flex;
     justify-content: center; /* Горизонтальное выравнивание текста */
     align-items: center; /* Вертикальное выравнивание текста */
-    text-align: center; /* На случай многострочного текста */
-    background-color: #4caf50; /* Основной цвет кнопки */
-    color: #fff; /* Цвет текста */
+    text-align: center;
+    background-color: #f0f0f0; /* Цвет кнопки совпадает с фоном */
+    color: #333; /* Цвет текста */
     font-weight: bold;
     border-radius: 8px; /* Скруглённые углы */
     cursor: pointer;
     height: 70px;
-    width: 100%; /* Можно добавить ширину, если требуется */
+    width: 100%; /* Ширина кнопки */
     margin-right: 20px;
-    padding: 0 10px; /* Внутренние отступы для удобства */
-    
-    /* Внешний вырез */
-    box-shadow: 0 0 0 2px #fff, /* Белый обвод */
-                0 6px 10px rgba(0, 0, 0, 0.15); /* Лёгкая тень */
-    transition: all 0.2s ease; /* Плавный переход */
+    padding: 0 10px;
+
+    /* Вырез вокруг кнопки */
+    box-shadow: 0 0 0 2px #fff, /* Белая линия выреза */
+                0 2px 4px rgba(0, 0, 0, 0.1) inset; /* Внутренний вырез */
     border: none; /* Убираем стандартную рамку */
+    transition: all 0.2s ease; /* Плавный переход эффектов */
 }
 
 /* Hover (при наведении) */
 .offer__button:hover {
-    background-color: #5ab75e; /* Светлее при наведении */
+    background-color: #e6e6e6; /* Лёгкое изменение цвета кнопки */
     box-shadow: 0 0 0 2px #fff, 
-                0 8px 12px rgba(0, 0, 0, 0.2); /* Тень усиливается */
+                0 4px 6px rgba(0, 0, 0, 0.2) inset; /* Чуть глубже вырез */
 }
 
 /* Active (при нажатии) */
 .offer__button:active {
-    background-color: #3b873e; /* Более тёмный цвет при нажатии */
+    background-color: #d9d9d9; /* Кнопка становится немного темнее */
     box-shadow: 0 0 0 2px #fff, 
-                0 4px 6px rgba(0, 0, 0, 0.15) inset; /* Внутренняя тень */
-    transform: translateY(2px); /* Сдвиг вниз для эффекта продавливания */
+                0 2px 4px rgba(0, 0, 0, 0.2); /* Тень остаётся */
+    transform: translateY(2px); /* Визуальное проваливание */
 }
+
 
 
 /* Стили для кнопки сброса */
