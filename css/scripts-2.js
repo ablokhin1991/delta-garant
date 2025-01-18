@@ -371,10 +371,10 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 { procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
 { procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
 { procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 1000000, ruleMaxSum: 4999999, rate: 0.04, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.042, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.042, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
-{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.042, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
-{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.042, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.037, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.037, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.037, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 5000000, ruleMaxSum: 150000000, rate: 0.037, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
 
 
 ,
