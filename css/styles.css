@@ -376,7 +376,7 @@ input[type="checkbox"]:checked::before {
     height: 70px;
     width: 100%; /* Ширина кнопки */
     padding: 0 10px; /* Внутренние отступы */
-    color: #3a455a; /* Тёмно-серый цвет текста */
+    color: #fff; /* Тёмно-серый цвет текста */
     transition: all 150ms linear; /* Плавные изменения */
 }
 
