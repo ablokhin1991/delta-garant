@@ -339,7 +339,23 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
       conditions: [
         // На исполнение
-        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.08, minCost: 990, ruleMinDays: 0, ruleMaxDays: 179 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.08, minCost: 990, ruleMinDays: 0, ruleMaxDays: 179 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.08, minCost: 990, ruleMinDays: 0, ruleMaxDays: 179 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.08, minCost: 990, ruleMinDays: 0, ruleMaxDays: 179 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.07, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.07, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.07, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.07, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.07, minCost: 990, ruleMinDays: 0, ruleMaxDays: 179 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.07, minCost: 990, ruleMinDays: 0, ruleMaxDays: 179 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.07, minCost: 990, ruleMinDays: 0, ruleMaxDays: 179 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.07, minCost: 990, ruleMinDays: 0, ruleMaxDays: 179 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.06, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 499999, rate: 0.06, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.06, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 499999, rate: 0.06, minCost: 990, ruleMinDays: 180, ruleMaxDays: 1930 },
+,
         ]
 
     } 
@@ -349,73 +365,76 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const results = banks.map(bank => {
     console.log("Проверяем банк:", bank.name);
     console.log("Параметры для поиска условия:", { procType, guarType, hasAdvance, customForm, sum });
-  
+
     // Проверяем, превышает ли срок общий максимум для банка
     if (days > bank.maxDays) {
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: `Превышен максимальный срок гарантии - ${bank.maxDays} дней.`,
-        isStopFactor: true
-      };
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: "Стоп-факторы",
+            rate: `Превышен максимальный срок гарантии - ${bank.maxDays} дней.`,
+            isStopFactor: true
+        };
     }
-  
-    // Находим подходящее условие, учитывая диапазоны `minSum` и `ruleMaxSum`
+
+    // Находим подходящее условие, учитывая диапазоны `minSum`, `ruleMaxSum`, и, если есть, `ruleMinDays`
     const condition = bank.conditions.find(c =>
-      c.procType === procType &&
-      c.guarType === guarType &&
-      c.hasAdvance === hasAdvance &&
-      c.customForm === customForm &&
-      sum >= (c.minSum || 0) && sum <= (c.ruleMaxSum || Infinity)
+        c.procType === procType &&
+        c.guarType === guarType &&
+        c.hasAdvance === hasAdvance &&
+        c.customForm === customForm &&
+        sum >= (c.minSum || 0) &&
+        sum <= (c.ruleMaxSum || Infinity) &&
+        (!c.ruleMinDays || days >= c.ruleMinDays) // Проверка ruleMinDays, если она существует
     );
-  
+
     if (!condition) {
-      console.error("Не найдено подходящее условие. Проверьте параметры фильтрации.");
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: "Не найдено подходящее условие",
-        isStopFactor: true
-      };
+        console.error("Не найдено подходящее условие. Проверьте параметры фильтрации.");
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: "Стоп-факторы",
+            rate: "Не найдено подходящее условие",
+            isStopFactor: true
+        };
     }
-  
+
     console.log("Найденное условие:", condition);
-  
+
     // Проверяем, превышает ли срок максимум по условию
     if (days > condition.ruleMaxDays) {
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: `Превышен максимальный срок гарантии по выбранным параметрам - ${condition.ruleMaxDays} дней.`,
-        isStopFactor: true
-      };
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: "Стоп-факторы",
+            rate: `Превышен максимальный срок гарантии по выбранным параметрам - ${condition.ruleMaxDays} дней.`,
+            isStopFactor: true
+        };
     }
-  
+
     // Расчет стоимости
     let rate = condition.rate;
     let calculatedCost = (sum * rate * days) / 365;
     let cost;
-  
+
     // Проверяем, была ли использована минимальная стоимость
     if (calculatedCost < condition.minCost) {
-      cost = condition.minCost;
-      rate = "Min"; // Меняем ставку на "Min", если сработал minCost
+        cost = condition.minCost;
+        rate = "Min"; // Меняем ставку на "Min", если сработал minCost
     } else {
-      cost = calculatedCost;
+        cost = calculatedCost;
     }
-  
+
     return {
-      name: bank.name,
-      logo: bank.logo,
-      data: bank.data,
-      cost: parseFloat(cost.toFixed(2)),
-      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
-      isStopFactor: false
+        name: bank.name,
+        logo: bank.logo,
+        data: bank.data,
+        cost: parseFloat(cost.toFixed(2)),
+        rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
+        isStopFactor: false
     };
-  });
+});
+
   
 // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
   
