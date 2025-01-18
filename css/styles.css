@@ -371,7 +371,7 @@ input[type="checkbox"]:checked::before {
     top: 10%;
     left: 5%;
     width: 90%;
-    height: 10%;
+    height: 30%;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     z-index: 1;
