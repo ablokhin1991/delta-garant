@@ -451,7 +451,7 @@ input[type="checkbox"]:checked::before {
 
   .offer {
     display: grid;
-    grid-template-columns: auto 300px 500px 2px auto 200px; /* Задаем 6 столбцов */
+    grid-template-columns: auto 400px 400px 2px auto 200px; /* Задаем 6 столбцов */
     grid-template-rows: auto; /* Один ряд */
     gap: 20px; /* Отступы между ячейками */
     align-items: center; /* Центрирование по высоте всех элементов */
@@ -481,7 +481,7 @@ input[type="checkbox"]:checked::before {
 
 .offer__details {
     grid-column: 2; /* Вторая ячейка */
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     color: #333333;
     white-space: nowrap;
@@ -492,7 +492,7 @@ input[type="checkbox"]:checked::before {
 .offer__personal-data {
     grid-column: 3; /* Третья ячейка */
     color: #333333;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     text-align: left;
     display: flex;
