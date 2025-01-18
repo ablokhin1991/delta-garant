@@ -365,7 +365,7 @@ input[type="checkbox"]:checked::before {
 }
 
 /* Блики */
-.btn_primary::before {
+/*.btn_primary::before {
     content: '';
     position: absolute;
     top: 10%;
@@ -376,7 +376,7 @@ input[type="checkbox"]:checked::before {
     border-radius: 10px;
     z-index: 1;
     pointer-events: none; /* Чтобы блики не мешали нажатию */
-}
+/*}*/
 
 
 /* Стили для кнопки оформления */
