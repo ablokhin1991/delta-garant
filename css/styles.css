@@ -391,30 +391,45 @@ input[type="checkbox"]:checked::before {
 
 
 
-/* Стили для кнопки оформления */
+/* Кнопка оформления */
 .offer__button {
     grid-column: 6; /* Шестая ячейка */
     display: flex; /* Используем Flexbox */
     justify-content: center; /* Горизонтальное выравнивание текста */
     align-items: center; /* Вертикальное выравнивание текста */
     text-align: center; /* На случай многострочного текста */
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #4caf50; /* Основной цвет кнопки */
+    color: #fff; /* Цвет текста */
     font-weight: bold;
-    border-radius: 8px;
-    /*border: 1px solid #F0473B;*/
+    border-radius: 8px; /* Скруглённые углы */
     cursor: pointer;
     height: 70px;
     width: 100%; /* Можно добавить ширину, если требуется */
     margin-right: 20px;
     padding: 0 10px; /* Внутренние отступы для удобства */
+    
+    /* Внешний вырез */
+    box-shadow: 0 0 0 2px #fff, /* Белый обвод */
+                0 6px 10px rgba(0, 0, 0, 0.15); /* Лёгкая тень */
+    transition: all 0.2s ease; /* Плавный переход */
+    border: none; /* Убираем стандартную рамку */
 }
-  
-  .offer__button:hover {
-    background-color: #5ab75e;
-    border-color: #fff;
-    /*border: 1px solid #F0473B;*/
-  }
+
+/* Hover (при наведении) */
+.offer__button:hover {
+    background-color: #5ab75e; /* Светлее при наведении */
+    box-shadow: 0 0 0 2px #fff, 
+                0 8px 12px rgba(0, 0, 0, 0.2); /* Тень усиливается */
+}
+
+/* Active (при нажатии) */
+.offer__button:active {
+    background-color: #3b873e; /* Более тёмный цвет при нажатии */
+    box-shadow: 0 0 0 2px #fff, 
+                0 4px 6px rgba(0, 0, 0, 0.15) inset; /* Внутренняя тень */
+    transform: translateY(2px); /* Сдвиг вниз для эффекта продавливания */
+}
+
 
 /* Стили для кнопки сброса */
 .btn_secondary {
