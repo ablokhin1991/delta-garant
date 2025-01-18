@@ -81,7 +81,7 @@ header nav ul li a:hover {
     align-items: center; /* Центрируем содержимое */
     text-decoration: none; /* Убираем подчеркивание */
     font-size: 16px; /* Размер текста */
-    font-weight: light; /* Жирность текста */
+    font-weight: 300; /* Жирность текста */
     color: #fff; /* Основной цвет текста */
     transition: color 0.3s ease; /* Плавный переход цвета при наведении */
 }
