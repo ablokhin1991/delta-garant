@@ -724,7 +724,7 @@ offerList.innerHTML = finalResults
         ${!result.isStopFactor ? `  
           <div class="offer__rate">
             <!-- Ставка: ${result.rate}%<br> -->
-            ${result.cost.toLocaleString()} руб.
+            ${result.cost.toLocaleString()} руб.<br>
             ${result.rate}% годовых<br>
           </div>
         ` : `  
