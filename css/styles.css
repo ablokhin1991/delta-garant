@@ -470,7 +470,7 @@ input[type="checkbox"]:checked::before {
 
   .offer {
     display: grid;
-    grid-template-columns: auto 400px 200px 2px auto 300px; /* Задаем 6 столбцов */
+    grid-template-columns: auto 400px 200px 2px auto 400px; /* Задаем 6 столбцов */
     grid-template-rows: auto; /* Один ряд */
     gap: 20px; /* Отступы между ячейками */
     align-items: center; /* Центрирование по высоте всех элементов */
