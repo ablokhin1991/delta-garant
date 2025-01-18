@@ -725,6 +725,8 @@ offerList.innerHTML = finalResults
           <div class="offer__rate">
             <!-- Ставка: ${result.rate}%<br> -->
             ${result.cost.toLocaleString()} руб.<br>
+          </div>
+          <div class="offer__rate" style="font-size: 14px; font-weight: 300;">  
             ${result.rate}% годовых<br>
           </div>
         ` : `  
