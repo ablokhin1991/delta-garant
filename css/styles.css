@@ -33,6 +33,8 @@ header {
 
 header .logo img {
     width: 150px;
+    display: block; /* Убирает inline отступы */
+    margin: 0; /* Сбрасывает отступы */
 }
 
 .header p {
