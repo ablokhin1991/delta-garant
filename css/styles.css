@@ -365,7 +365,7 @@ input[type="checkbox"]:checked::before {
     align-items: center; /* Вертикальное выравнивание текста */
     text-align: center;
     background-color: #284db5; /* Цвет кнопки совпадает с фоном */
-    color: #333; /* Цвет текста */
+    color: #fff; /* Цвет текста */
     font-weight: bold;
     border-radius: 8px; /* Скруглённые углы */
     cursor: pointer;
