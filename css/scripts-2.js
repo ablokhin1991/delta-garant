@@ -428,23 +428,10 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
   const results = banks.map(bank => {
     console.log("Проверяем банк:", bank.name);
-    console.log("Параметры для поиска условия:", { procType, guarType, hasAdvance, customForm, sum, days });
 
-    // Проверяем, превышает ли срок общий максимум для банка
-    if (days > bank.maxDays) {
-        return {
-            name: bank.name,
-            logo: bank.logo,
-            cost: "Стоп-факторы",
-            rate: `Превышен максимальный срок гарантии - ${bank.maxDays} дней.`,
-            isStopFactor: true
-        };
-    }
-
-    // Находим подходящее условие
-    const condition = bank.conditions.find(c => {
-        // Проверяем основные параметры
-        const matchesBaseConditions =
+    // Фильтруем условия банка, которые соответствуют заданным параметрам
+    const matchingConditions = bank.conditions.filter(c => {
+        const isBaseMatch =
             c.procType === procType &&
             c.guarType === guarType &&
             c.hasAdvance === hasAdvance &&
@@ -452,47 +439,43 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
             sum >= (c.minSum || 0) &&
             sum <= (c.ruleMaxSum || Infinity);
 
-        // Проверяем дополнительные параметры, если они заданы
-        const matchesRuleMinDays = typeof c.ruleMinDays === "undefined" || days >= c.ruleMinDays;
-        const matchesRuleMaxDays = typeof c.ruleMaxDays === "undefined" || days <= c.ruleMaxDays;
+        const isDaysMatch =
+            (typeof c.ruleMinDays === "undefined" || days >= c.ruleMinDays) &&
+            days <= (c.ruleMaxDays || Infinity);
 
-        // Условие считается подходящим, если все проверки пройдены
-        return matchesBaseConditions && matchesRuleMinDays && matchesRuleMaxDays;
+        return isBaseMatch && isDaysMatch;
     });
 
-    // Если подходящее условие не найдено
-    if (!condition) {
-        console.error("Не найдено подходящее условие. Проверьте параметры фильтрации.");
+    // Если подходящих условий нет, добавляем банк в стоп-факторы
+    if (matchingConditions.length === 0) {
+        console.error(`Не найдено подходящих условий для банка ${bank.name}`);
         return {
             name: bank.name,
             logo: bank.logo,
             cost: "Стоп-факторы",
-            rate: "Не найдено подходящее условие",
+            rate: "Нет подходящих условий",
             isStopFactor: true
         };
     }
 
-    console.log("Найденное условие:", condition);
+    // Выбираем лучшее условие (например, с минимальной ставкой)
+    const bestCondition = matchingConditions.reduce((best, current) => {
+        return current.rate < best.rate ? current : best;
+    });
 
-    // Расчет стоимости
-    let rate = condition.rate;
-    let calculatedCost = (sum * rate * days) / 365;
-    let cost;
+    console.log("Выбранное условие:", bestCondition);
 
-    // Проверяем, была ли использована минимальная стоимость
-    if (calculatedCost < condition.minCost) {
-        cost = condition.minCost;
-        rate = "Min"; // Меняем ставку на "Min", если сработал minCost
-    } else {
-        cost = calculatedCost;
-    }
+    // Расчёт стоимости
+    const rate = bestCondition.rate;
+    const calculatedCost = (sum * rate * days) / 365;
+    const cost = Math.max(calculatedCost, bestCondition.minCost);
 
     return {
         name: bank.name,
         logo: bank.logo,
         data: bank.data,
         cost: parseFloat(cost.toFixed(2)),
-        rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
+        rate: `${(rate * 100).toFixed(2)}%`,
         isStopFactor: false
     };
 });
