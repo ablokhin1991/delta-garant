@@ -379,13 +379,6 @@ input[type="checkbox"]:checked::before {
 
 /* Hover (при наведении) */
 .offer__button:hover {
-    background-color: #284db5; /* Лёгкое изменение цвета кнопки */
-    box-shadow: /*0 0 0 2px #fff, */
-                0 6px 6px rgba(0, 0, 0, 0.5) inset; /* Чуть глубже вырез */
-}
-
-/* Эффект нажатия */
-.offer__button:active {
     transform: scale(0.98); /* Смещение вниз и уменьшение */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset; /* Уменьшаем тень для утопленного эффекта */
     background-color: #284db5; /* Темнее фон */
