@@ -357,73 +357,72 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const results = banks.map(bank => {
     console.log("Проверяем банк:", bank.name);
     console.log("Параметры для поиска условия:", { procType, guarType, hasAdvance, customForm, sum });
-  
+
     // Проверяем, превышает ли срок общий максимум для банка
     if (days > bank.maxDays) {
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: `Превышен максимальный срок гарантии - ${bank.maxDays} дней.`,
-        isStopFactor: true
-      };
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: "Стоп-факторы",
+            rate: `Превышен максимальный срок гарантии - ${bank.maxDays} дней.`,
+            isStopFactor: true
+        };
     }
-  
-    // Находим подходящее условие, учитывая диапазоны `minSum` и `ruleMaxSum`
-    const condition = bank.conditions.find(c =>
-      c.procType === procType &&
-      c.guarType === guarType &&
-      c.hasAdvance === hasAdvance &&
-      c.customForm === customForm &&
-      sum >= (c.minSum || 0) && sum <= (c.ruleMaxSum || Infinity)
+
+    // Фильтруем подходящие условия
+    const matchingConditions = bank.conditions.filter(c =>
+        c.procType === procType &&
+        c.guarType === guarType &&
+        c.hasAdvance === hasAdvance &&
+        c.customForm === customForm &&
+        sum >= (c.minSum || 0) &&
+        sum <= (c.ruleMaxSum || Infinity) &&
+        days <= (c.ruleMaxDays || Infinity)
     );
-  
-    if (!condition) {
-      console.error("Не найдено подходящее условие. Проверьте параметры фильтрации.");
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: "Не найдено подходящее условие",
-        isStopFactor: true
-      };
+
+    if (matchingConditions.length === 0) {
+        console.error("Не найдено подходящее условие. Проверьте параметры фильтрации.");
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: "Стоп-факторы",
+            rate: "Не найдено подходящее условие",
+            isStopFactor: true
+        };
     }
-  
-    console.log("Найденное условие:", condition);
-  
-    // Проверяем, превышает ли срок максимум по условию
-    if (days > condition.ruleMaxDays) {
-      return {
-        name: bank.name,
-        logo: bank.logo,
-        cost: "Стоп-факторы",
-        rate: `Превышен максимальный срок гарантии по выбранным параметрам - ${condition.ruleMaxDays} дней.`,
-        isStopFactor: true
-      };
-    }
-  
+
+    console.log("Найденные подходящие условия:", matchingConditions);
+
+    // Выбираем наиболее подходящее условие (с максимальным ruleMaxDays)
+    const bestCondition = matchingConditions.reduce((prev, current) =>
+        prev.ruleMaxDays >= current.ruleMaxDays ? prev : current
+    );
+
+    console.log("Выбранное лучшее условие:", bestCondition);
+
     // Расчет стоимости
-    let rate = condition.rate;
+    let rate = bestCondition.rate;
     let calculatedCost = (sum * rate * days) / 365;
     let cost;
-  
+
     // Проверяем, была ли использована минимальная стоимость
-    if (calculatedCost < condition.minCost) {
-      cost = condition.minCost;
-      rate = "Min"; // Меняем ставку на "Min", если сработал minCost
+    if (calculatedCost < bestCondition.minCost) {
+        cost = bestCondition.minCost;
+        rate = "Min"; // Меняем ставку на "Min", если сработал minCost
     } else {
-      cost = calculatedCost;
+        cost = calculatedCost;
     }
-  
+
     return {
-      name: bank.name,
-      logo: bank.logo,
-      data: bank.data,
-      cost: parseFloat(cost.toFixed(2)),
-      rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
-      isStopFactor: false
+        name: bank.name,
+        logo: bank.logo,
+        data: bank.data,
+        cost: parseFloat(cost.toFixed(2)),
+        rate: typeof rate === "string" ? rate : (rate * 100).toFixed(1),
+        isStopFactor: false
     };
-  });
+});
+
   
 // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
   
