@@ -672,7 +672,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         logo: bank.logo,
         data: bank.data,
         cost: parseFloat(cost.toFixed(2)),
-        rate: `${(rate * 100).toFixed(2)}%`,
+        rate: `${(rate * 100).toFixed(2)}`,
         isStopFactor: false
     };
 });
