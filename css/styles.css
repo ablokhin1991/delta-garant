@@ -386,7 +386,7 @@ input[type="checkbox"]:checked::before {
 .offer__button:hover {
     background-color: #284db5; /* Лёгкое изменение цвета кнопки */
     box-shadow: /*0 0 0 2px #fff, */
-                0 4px 6px rgba(0, 0, 0, 0.5) inset; /* Чуть глубже вырез */
+                0 6px 6px rgba(0, 0, 0, 0.5) inset; /* Чуть глубже вырез */
 }
 
 /* Active (при нажатии) */
