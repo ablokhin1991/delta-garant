@@ -329,6 +329,7 @@ input[type="checkbox"]:checked::before {
 
 
 /* Кнопка */
+/* Кнопка */
 .btn_primary {
     display: inline-block;
     background-color: #1E3A8A; /* Основной цвет кнопки */
@@ -339,44 +340,47 @@ input[type="checkbox"]:checked::before {
     border-radius: 10px; /* Скругление углов */
     text-align: center;
     cursor: pointer;
-    height: 70px;
-    transition: all 0.3s ease;
-
-    /* Тени для выпуклого эффекта */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 
-                0 -4px 6px rgba(255, 255, 255, 0.2) inset;
-    border: none; /* Убираем рамку */
-    position: relative; /* Для добавления бликов */
+    position: relative; /* Для позиционирования вспышки */
+    overflow: hidden; /* Обрезаем блёстки, выходящие за границы */
+    transition: background-color 0.3s ease;
 }
 
-/* При наведении */
+/* Эффект при наведении */
 .btn_primary:hover {
-    background-color: #284db5; /* Более светлый цвет при наведении */
-    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3),
-                0 -5px 7px rgba(255, 255, 255, 0.3) inset;
+    background-color: #284db5;
 }
 
-/* Активное состояние (нажатие) */
-.btn_primary:active {
-    background-color: #152d6e; /* Цвет при нажатии */
-    box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.4),
-                0 -1px 2px rgba(255, 255, 255, 0.1);
-    transform: translateY(2px); /* Лёгкое смещение вниз */
-}
-
-/* Блики */
-/*.btn_primary::before {
+/* Вспышка при нажатии */
+.btn_primary:active::after {
     content: '';
     position: absolute;
-    top: 10%;
-    left: 5%;
-    width: 90%;
-    height: 30%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    z-index: 1;
-    pointer-events: none; /* Чтобы блики не мешали нажатию */
-/*}*/
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Ширина вспышки */
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%) scale(0); /* Начальная позиция вспышки */
+    animation: sparkle 0.5s ease-out forwards; /* Анимация вспышки */
+    pointer-events: none; /* Чтобы вспышка не блокировала нажатия */
+    border-radius: 50%;
+}
+
+/* Анимация вспышки */
+@keyframes sparkle {
+    0% {
+        transform: translate(-50%, -50%) scale(0); /* Исходный размер */
+        opacity: 1;
+    }
+    80% {
+        transform: translate(-50%, -50%) scale(1); /* Увеличение */
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5); /* Завершающее расширение */
+        opacity: 0; /* Исчезновение */
+    }
+}
+
 
 
 /* Стили для кнопки оформления */
