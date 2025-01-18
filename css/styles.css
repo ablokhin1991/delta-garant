@@ -343,6 +343,7 @@ input[type="checkbox"]:checked::before {
     position: relative; /* Для позиционирования вспышки */
     overflow: hidden; /* Обрезаем блёстки, выходящие за границы */
     transition: background-color 0.3s ease;
+    height: 70px;
 }
 
 /* Эффект при наведении */
