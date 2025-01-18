@@ -193,8 +193,6 @@ footer a:hover {
     z-index: 0; /* Это гарантирует, что блок Content будет под Hero */
 }
 
-
-
 .content h2 {
     font-size: 16px;
     color: #1E3A8A;
@@ -657,23 +655,11 @@ input[type="checkbox"]:checked::before {
         font-size: 14px;
     }
 
-    /* Для шапки сайта */
-    header nav ul li {
-        display: block;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    header nav ul li a {
-        font-size: 1em;
-    }
-
     /* Секция Hero */
     .hero {
         padding-top: 10px; /* Уменьшаем отступ сверху до 30px на мобильных устройствах */
         margin-bottom: -50px; /* Отрицательный отступ, чтобы блок Hero "наезжал" на следующий */
     }
-
 
     .hero h1 {
         font-size: 1.5em;
@@ -681,24 +667,6 @@ input[type="checkbox"]:checked::before {
 
     .hero p {
         font-size: 1.1em;
-    }
-
-    .hero .btn {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    /* Секции About и Calculator */
-    section {
-        padding: 20px 0;
-    }
-
-    section h2 {
-        font-size: 1.3em;
-    }
-
-    section p {
-        font-size: 0.9em;
     }
 
     /* Кнопка */
