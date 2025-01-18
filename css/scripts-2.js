@@ -415,7 +415,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 { procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.06, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
 { procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.06, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
 { procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 150000000, rate: 0.06, minCost: 990, ruleMinDays: 0, ruleMaxDays: 1930 },
-
+        // На участие
 
 
 
@@ -441,7 +441,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         };
     }
 
-    // Находим подходящее условие
+    // Находим подходящее условие, учитывая все параметры, включая ruleMinDays только у банков, где оно есть
     const condition = bank.conditions.find(c =>
         c.procType === procType &&
         c.guarType === guarType &&
@@ -449,7 +449,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         c.customForm === customForm &&
         sum >= (c.minSum || 0) &&
         sum <= (c.ruleMaxSum || Infinity) &&
-        (!c.ruleMinDays || days >= c.ruleMinDays) && // Проверка ruleMinDays, если существует
+        (typeof c.ruleMinDays === "undefined" || days >= c.ruleMinDays) && // Проверка ruleMinDays только если оно задано
         days <= (c.ruleMaxDays || Infinity) // Проверка ruleMaxDays
     );
 
@@ -466,6 +466,17 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }
 
     console.log("Найденное условие:", condition);
+
+    // Проверяем, превышает ли срок максимум по условию
+    if (days > condition.ruleMaxDays) {
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: "Стоп-факторы",
+            rate: `Превышен максимальный срок гарантии по выбранным параметрам - ${condition.ruleMaxDays} дней.`,
+            isStopFactor: true
+        };
+    }
 
     // Расчет стоимости
     let rate = condition.rate;
@@ -489,6 +500,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         isStopFactor: false
     };
 });
+
 
 
   
