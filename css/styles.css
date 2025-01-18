@@ -364,11 +364,11 @@ input[type="checkbox"]:checked::before {
     justify-content: center; /* Горизонтальное выравнивание текста */
     align-items: center; /* Вертикальное выравнивание текста */
     text-align: center;
-    background: #e24a44; /* Цвет кнопки (аналог $red в примере) */
-    border: 1px solid #b63835; /* Тёмный оттенок для рамки */
+    background: #d0d7e5; /* Нежный серо-синий цвет кнопки */
+    border: 1px solid #b0b8c8; /* Тонкая рамка в тон кнопке */
     box-shadow: 
-        0px 2px 0 #912e2b, /* Верхняя выпуклая тень */
-        2px 4px 6px #d43d38; /* Глубокая тень */
+        0px 2px 0 #a5afc1, /* Верхняя выпуклая тень */
+        2px 4px 6px rgba(0, 0, 0, 0.1); /* Глубокая мягкая тень */
     font-weight: 900;
     letter-spacing: 1px;
     border-radius: 8px; /* Скруглённые углы */
@@ -376,20 +376,21 @@ input[type="checkbox"]:checked::before {
     height: 70px;
     width: 100%; /* Ширина кнопки */
     padding: 0 10px; /* Внутренние отступы */
-    color: #fff; /* Белый текст */
+    color: #3a455a; /* Тёмно-серый цвет текста */
     transition: all 150ms linear; /* Плавные изменения */
 }
 
 .offer__button:hover {
-    background: #b63835; /* Тёмный красный при наведении */
-    border: 1px solid rgba(0, 0, 0, .05); /* Лёгкая прозрачность рамки */
+    background: #b4bccd; /* Чуть более насыщенный цвет при наведении */
+    border: 1px solid #8f96a7; /* Рамка становится чуть заметнее */
     box-shadow: 
-        1px 1px 2px rgba(255, 255, 255, .2), /* Светлый верхний блик */
-        0px 1px 3px #862a27; /* Уменьшенная тень */
-    color: #f3c4c4; /* Светлый оттенок текста */
-    text-shadow: -1px -1px 0 #802725; /* Тень текста */
+        1px 1px 2px rgba(255, 255, 255, .3), /* Светлый верхний блик */
+        0px 1px 3px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+    color: #2c3445; /* Более насыщенный цвет текста */
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1); /* Лёгкая тень текста */
     transition: all 250ms linear; /* Плавный переход */
 }
+
 
 
 
