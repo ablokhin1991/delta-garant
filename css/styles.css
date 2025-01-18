@@ -19,6 +19,11 @@ body {
 }
 
 /* Шапка сайта */
+header .container {
+    display: flex; /* Выравнивание элементов в одну строку */
+    justify-content: space-between; /* Разместить элементы по краям */
+    align-items: center; /* Вертикальное выравнивание по центру */
+}
 header {
     background-color: #152961 ;
     color: #F3F4F6;
