@@ -723,7 +723,7 @@ offerList.innerHTML = finalResults
         <div class="offer__separator"></div> <!-- Разделительная линия -->
         ${!result.isStopFactor ? `  
           <div class="offer__rate">
-            Ставка: ${result.rate}%<br>
+            <!-- Ставка: ${result.rate}%<br> -->
             ${result.cost.toLocaleString()} руб.
             ${result.rate}% годовых<br>
           </div>
