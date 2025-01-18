@@ -92,6 +92,7 @@ header nav ul li a:hover {
     width: 15px; /* Ширина иконки */
     height: 15px; /* Высота иконки */
     transition: transform 0.3s ease; /* Анимация при наведении */
+    margin-right: 10px; /* Отступ между иконкой и текстом */
 }
 
 .email-link:hover .email-icon {
