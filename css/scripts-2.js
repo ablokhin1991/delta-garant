@@ -339,7 +339,15 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
       conditions: [
         // На исполнение
-        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.08, minCost: 990, ruleMaxDays: 180 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.08, minCost: 990, ruleMaxDays: 180 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.08, minCost: 990, ruleMaxDays: 180 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.08, minCost: 990, ruleMaxDays: 180 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.07, minCost: 990, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 0, ruleMaxSum: 99999, rate: 0.07, minCost: 990, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.07, minCost: 990, ruleMaxDays: 1930 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 0, ruleMaxSum: 99999, rate: 0.07, minCost: 990, ruleMaxDays: 1930 },
+,
         ]
 
     } 
