@@ -367,7 +367,7 @@ input[type="checkbox"]:checked::before {
     background: #fff; /* Нежный серо-синий цвет кнопки */
     border: 1px solid #b0b8c8; /* Тонкая рамка в тон кнопке */
     box-shadow: 
-        0px 4px 0 #ced7ea, /* Верхняя выпуклая тень */
+        0px 3px 0 #ced7ea, /* Верхняя выпуклая тень */
         2px 4px 6px rgba(0, 0, 0, 0.1); /* Глубокая мягкая тень */
     font-weight: bold;
     letter-spacing: 1px;
