@@ -79,7 +79,6 @@ header .logo img {
     align-items: center; /* Центрируем содержимое */
     text-decoration: none; /* Убираем подчеркивание */
     font-size: 16px; /* Размер текста */
-    font-weight: 300; /* Жирность текста */
     color: #fff; /* Основной цвет текста */
     transition: color 0.3s ease; /* Плавный переход цвета при наведении */
 }
@@ -120,55 +119,7 @@ header .logo img {
 .hero p {
     color: #fff;
     font-size: 1.2em;
-    font-weight: 300;
     margin-bottom: 20px;
-}
-
-.hero .btn {
-    display: inline-block;
-    background-color: transparent; /* Сделает фон прозрачным */
-    color: #F0473B;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 0px;
-    border: 1px solid #F0473B;
-    text-align: center; /* Центрируем текст внутри кнопки */
-    height: 100%;
-}
-
-.hero .btn:hover {
-    background-color: #F0473B;
-    color: #fff;
-}
-
-/* Секции About и Calculator */
-section {
-    padding: 42px 0;
-    background-color: #fff;
-}
-
-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-section p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
-section .btn {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-section .btn:hover {
-    background-color: #555;
 }
 
 /* Подвал */
@@ -176,7 +127,6 @@ footer {
     background-color: #f4f4f4;
     color: #333333;
     font-size: 0.6em;
-    font-weight: 300;
     padding: 20px 10px;
 }
 
