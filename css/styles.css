@@ -375,11 +375,11 @@ input[type="checkbox"]:checked::before {
     margin-right: 20px;
     padding: 0 10px;
 
-    /* Вырез вокруг кнопки */
-    box-shadow: 0 0 0 2px #fff, /* Белая линия выреза */
-                0 2px 4px rgba(0, 0, 0, 0.5) inset; /* Внутренний вырез */
-    border: none; /* Убираем стандартную рамку */
-    transition: all 0.2s ease; /* Плавный переход эффектов */
+   /* Вырез вокруг кнопки */
+    /*box-shadow: 0 0 0 2px #fff, /* Белая линия выреза */
+           /*     0 2px 4px rgba(0, 0, 0, 0.5) inset; /* Внутренний вырез */
+    /*border: none; /* Убираем стандартную рамку */
+    /*transition: all 0.2s ease; /* Плавный переход эффектов */
 }
 
 /* Hover (при наведении) */
