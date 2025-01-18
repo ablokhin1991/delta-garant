@@ -379,11 +379,18 @@ input[type="checkbox"]:checked::before {
         inset 0 -4px 6px rgba(0, 0, 0, 0.5), /* Низ */
         inset 4px 0 6px rgba(0, 0, 0, 0.5), /* Лево */
         inset -4px 0 6px rgba(0, 0, 0, 0.5); /* Право */
+        /* Плавный переход */
+    transition: box-shadow 0.3s ease;
 }
 
 /* Hover (при наведении) */
 .offer__button:hover {
-    
+    /* Тень становится глубже */
+    box-shadow: 
+        inset 0 6px 8px rgba(0, 0, 0, 0.6), /* Верх */
+        inset 0 -6px 8px rgba(0, 0, 0, 0.6), /* Низ */
+        inset 6px 0 8px rgba(0, 0, 0, 0.6), /* Лево */
+        inset -6px 0 8px rgba(0, 0, 0, 0.6); /* Право */
 }
 
 /* Эффект нажатия */
