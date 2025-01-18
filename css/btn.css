@@ -86,19 +86,19 @@
   transition: transform 34ms;
 }
 
-/*.button-82-pushable:hover .button-82-shadow {
+.button-82-pushable:hover .button-82-shadow {
   transform: translateY(4px);
   transition:
     transform
     250ms
     cubic-bezier(.3, .7, .4, 1.5);
-}*/
+}
 
 .button-82-pushable:active .button-82-shadow {
   transform: translateY(1px);
   transition: transform 34ms;
 }
 
-.button-82-pushable:focus:not(:focus-visible) {
+/*.button-82-pushable:focus:not(:focus-visible) {
   outline: none;
-}
+}*/
