@@ -331,7 +331,18 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
 
       ]
-    }  
+    },
+
+    {
+      name: "ПАО «Московский Кредитный Банк»",
+      logo: "/delta-garant/images/banks-logo/mkb.svg",
+      data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
+      conditions: [
+        // На исполнение
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 0, ruleMaxSum: 150000000, rate: 0.038, minCost: 1999, ruleMaxDays: 1860 },
+        ]
+
+    } 
   ];
 
   // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
