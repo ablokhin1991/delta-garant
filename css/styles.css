@@ -405,7 +405,7 @@ input[type="checkbox"]:checked::before {
     /*border: 1px solid #F0473B;*/
     cursor: pointer;
     height: 70px;
-    width: 200; /* Можно добавить ширину, если требуется */
+    width: 100%; /* Можно добавить ширину, если требуется */
     margin-right: 20px;
     padding: 0 10px; /* Внутренние отступы для удобства */
 }
@@ -492,7 +492,7 @@ input[type="checkbox"]:checked::before {
 
   .offer {
     display: grid;
-    grid-template-columns: auto 400px 400px 2px auto 200px; /* Задаем 6 столбцов */
+    grid-template-columns: auto 400px 200px 2px auto 300px; /* Задаем 6 столбцов */
     grid-template-rows: auto; /* Один ряд */
     gap: 20px; /* Отступы между ячейками */
     align-items: center; /* Центрирование по высоте всех элементов */
