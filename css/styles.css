@@ -329,7 +329,6 @@ input[type="checkbox"]:checked::before {
 
 
 /* Кнопка */
-/* Кнопка */
 .btn_primary {
     display: inline-block;
     background-color: #1E3A8A; /* Основной цвет кнопки */
@@ -337,50 +336,57 @@ input[type="checkbox"]:checked::before {
     padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 10px; /* Скругление углов */
+    border-radius: 10px; /* Скругленные углы */
     text-align: center;
     cursor: pointer;
-    position: relative; /* Для позиционирования вспышки */
-    overflow: hidden; /* Обрезаем блёстки, выходящие за границы */
-    transition: background-color 0.3s ease;
-    height: 70px;
+    position: relative; /* Для размещения блика */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), /* Тень для выпуклости */
+                0 -4px 6px rgba(255, 255, 255, 0.2) inset; /* Внутренний блик */
+    overflow: hidden; /* Чтобы элементы не выходили за границы кнопки */
 }
 
 /* Эффект при наведении */
 .btn_primary:hover {
     background-color: #284db5;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 
+                0 -6px 8px rgba(255, 255, 255, 0.3) inset;
 }
 
-/* Вспышка при нажатии */
-.btn_primary:active::after {
+/* Активное состояние (нажатие) */
+.btn_primary:active {
+    background-color: #152d6e;
+    box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.4),
+                0 -1px 2px rgba(255, 255, 255, 0.1);
+    transform: translateY(2px); /* Лёгкое смещение вниз */
+}
+
+/* Блик на уголке */
+.btn_primary::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%; /* Ширина вспышки */
-    height: 300%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
-    transform: translate(-50%, -50%) scale(0); /* Начальная позиция вспышки */
-    animation: sparkle 0.5s ease-out forwards; /* Анимация вспышки */
-    pointer-events: none; /* Чтобы вспышка не блокировала нажатия */
-    border-radius: 50%;
+    top: -10%; /* Чуть выше кнопки */
+    right: -10%; /* Чуть правее кнопки */
+    width: 120%; /* Покрытие части кнопки */
+    height: 120%; /* Покрытие части кнопки */
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0) 70%
+    );
+    border-radius: 50%; /* Круглый блик */
+    transform: rotate(-45deg); /* Угол блика */
+    z-index: 1; /* Поверх кнопки */
+    pointer-events: none; /* Чтобы блик не мешал кликам */
+    transition: all 0.3s ease;
 }
 
-/* Анимация вспышки */
-@keyframes sparkle {
-    0% {
-        transform: translate(-50%, -50%) scale(0); /* Исходный размер */
-        opacity: 1;
-    }
-    80% {
-        transform: translate(-50%, -50%) scale(1); /* Увеличение */
-        opacity: 0.7;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.5); /* Завершающее расширение */
-        opacity: 0; /* Исчезновение */
-    }
+/* Эффект при наведении на кнопку */
+.btn_primary:hover::before {
+    opacity: 0.7; /* Более заметный блик */
+    transform: rotate(-30deg); /* Лёгкое движение */
 }
+
 
 
 
