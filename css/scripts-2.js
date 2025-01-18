@@ -364,7 +364,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
   const results = banks.map(bank => {
     console.log("Проверяем банк:", bank.name);
-    console.log("Параметры для поиска условия:", { procType, guarType, hasAdvance, customForm, sum });
+    console.log("Параметры для поиска условия:", { procType, guarType, hasAdvance, customForm, sum, days });
 
     // Проверяем, превышает ли срок общий максимум для банка
     if (days > bank.maxDays) {
@@ -377,7 +377,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         };
     }
 
-    // Находим подходящее условие, учитывая диапазоны `minSum`, `ruleMaxSum`, и, если есть, `ruleMinDays`
+    // Находим подходящее условие
     const condition = bank.conditions.find(c =>
         c.procType === procType &&
         c.guarType === guarType &&
@@ -385,9 +385,11 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         c.customForm === customForm &&
         sum >= (c.minSum || 0) &&
         sum <= (c.ruleMaxSum || Infinity) &&
-        (!c.ruleMinDays || days >= c.ruleMinDays) // Проверка ruleMinDays, если она существует
+        (!c.ruleMinDays || days >= c.ruleMinDays) && // Проверка ruleMinDays, если существует
+        days <= (c.ruleMaxDays || Infinity) // Проверка ruleMaxDays
     );
 
+    // Если подходящее условие не найдено
     if (!condition) {
         console.error("Не найдено подходящее условие. Проверьте параметры фильтрации.");
         return {
@@ -400,17 +402,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }
 
     console.log("Найденное условие:", condition);
-
-    // Проверяем, превышает ли срок максимум по условию
-    if (days > condition.ruleMaxDays) {
-        return {
-            name: bank.name,
-            logo: bank.logo,
-            cost: "Стоп-факторы",
-            rate: `Превышен максимальный срок гарантии по выбранным параметрам - ${condition.ruleMaxDays} дней.`,
-            isStopFactor: true
-        };
-    }
 
     // Расчет стоимости
     let rate = condition.rate;
@@ -434,6 +425,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         isStopFactor: false
     };
 });
+
 
   
 // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
