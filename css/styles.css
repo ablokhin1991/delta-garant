@@ -383,14 +383,14 @@ input[type="checkbox"]:checked::before {
 
 /* Hover (при наведении) */
 .offer__button:hover {
-    background-color: #1E3A8A; /* Лёгкое изменение цвета кнопки */
+    background-color: #284db5; /* Лёгкое изменение цвета кнопки */
     box-shadow: /*0 0 0 2px #fff, */
                 0 4px 6px rgba(0, 0, 0, 0.2) inset; /* Чуть глубже вырез */
 }
 
 /* Active (при нажатии) */
 .offer__button:active {
-    background-color: #1b357c; /* Кнопка становится немного темнее */
+    background-color: #284db5; /* Кнопка становится немного темнее */
     box-shadow:/* 0 0 0 2px #fff, */
                 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень остаётся */
     transform: translateY(2px); /* Визуальное проваливание */
