@@ -481,6 +481,7 @@ input[type="checkbox"]:checked::before {
     border-radius: 5px;
     background-color: #f4f6fd;
     position: relative;
+    transition: all 0.3s ease;
 }
 
 
