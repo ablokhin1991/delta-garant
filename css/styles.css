@@ -398,7 +398,7 @@ input[type="checkbox"]:checked::before {
     justify-content: center; /* Горизонтальное выравнивание текста */
     align-items: center; /* Вертикальное выравнивание текста */
     text-align: center; /* На случай многострочного текста */
-    background-color: #0ad15a;
+    background-color: #4caf50;
     color: #fff;
     font-weight: bold;
     border-radius: 4px;
@@ -411,7 +411,7 @@ input[type="checkbox"]:checked::before {
 }
   
   .offer__button:hover {
-    background-color: #1df272;
+    background-color: #5ab75e;
     border-color: #fff;
     /*border: 1px solid #F0473B;*/
   }
