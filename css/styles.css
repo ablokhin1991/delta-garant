@@ -330,30 +330,30 @@ input[type="checkbox"]:checked::before {
 
 
 /* Кнопка */
-/*.btn_primary {
+.btn_primary {
     display: inline-block;
     background-color: #1E3A8A; /* Основной цвет кнопки */
-    /*color: #fff; /* Цвет текста */
-    /*padding: 10px 20px;
+    color: #fff; /* Цвет текста */
+    padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px; /* Скругленные углы */
-    /*text-align: center;
-    /*cursor: pointer;
+    text-align: center;
+    cursor: pointer;
     position: relative; /* Для размещения блика */
-    /*transition: all 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), /* Тень для выпуклости */
-                /*0 -4px 6px rgba(255, 255, 255, 0.2) inset; /* Внутренний блик */
-    /*overflow: hidden; /* Чтобы элементы не выходили за границы кнопки */
-   /*height: 70px;
+                0 -4px 6px rgba(255, 255, 255, 0.2) inset; /* Внутренний блик */
+   overflow: hidden; /* Чтобы элементы не выходили за границы кнопки */
+   height: 70px;
 }
 
 /* Эффект при наведении */
-/*.btn_primary:hover {
+.btn_primary:hover {
     background-color: #284db5;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 
                 0 -6px 8px rgba(255, 255, 255, 0.3) inset;
-}*/
+}
 
 
 
@@ -694,11 +694,11 @@ input[type="checkbox"]:checked::before {
     }
 
     /* Кнопка */
-    /*.btn_primary {
+    .btn_primary {
         font-size: 14px;
         padding: 8px 16px;
         height: 55px;
-    }*/
+    }
 
     /* Кнопка */
     .btn_secondary {
