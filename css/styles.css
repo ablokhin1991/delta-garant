@@ -377,7 +377,7 @@ input[type="checkbox"]:checked::before {
 
     /* Вырез вокруг кнопки */
     box-shadow: 0 0 0 2px #fff, /* Белая линия выреза */
-                0 2px 4px rgba(0, 0, 0, 0.1) inset; /* Внутренний вырез */
+                0 2px 4px rgba(0, 0, 0, 0.5) inset; /* Внутренний вырез */
     border: none; /* Убираем стандартную рамку */
     transition: all 0.2s ease; /* Плавный переход эффектов */
 }
