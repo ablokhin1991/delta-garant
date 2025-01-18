@@ -713,13 +713,13 @@ offerList.innerHTML = finalResults
         <div class="offer__details" style="flex: 1;">
             <strong>${result.name}</strong>
         </div>
-        <div class="offer__personal-data">
+        <!-- <div class="offer__personal-data">
                ${
                 result.data 
                 ? result.data.split('\n').map(line => `<div>${line}</div>`).join('') 
                 : ' '
               }
-        </div>
+        </div> -->
         <div class="offer__separator"></div> <!-- Разделительная линия -->
         ${!result.isStopFactor ? `  
           <div class="offer__rate">
