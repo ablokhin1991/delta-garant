@@ -33,7 +33,6 @@ header {
 
 header .logo img {
     width: 150px;
-    align-items: center; /* Вертикальное выравнивание по центру */
 }
 
 .header p {
