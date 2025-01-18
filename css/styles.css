@@ -35,7 +35,6 @@ header .logo img {
     width: 150px;
     display: block; /* Убирает inline отступы */
     margin: 0; /* Сбрасывает отступы */
-    vertical-align: middle;
 }
 
 .header p {
