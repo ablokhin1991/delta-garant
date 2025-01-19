@@ -846,5 +846,12 @@ input[type="checkbox"]:checked::before {
     gap: 15px;
   }
   
-
+  /* Стиль для кнопки */
+  button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+ 
   
