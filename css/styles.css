@@ -192,11 +192,6 @@ footer a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative; /* Чтобы блок контента был под Hero */
     z-index: 0; /* Это гарантирует, что блок Content будет под Hero */
-    /*Тестовый стиль вогнутости*/
-    border-radius: 16px; /* Скруглённые углы */
-    box-shadow: 
-    inset 5px 5px 10px rgba(255, 255, 255, 0.7), /* Внутренний светлый блик */
-    inset -5px -5px 10px rgba(0, 0, 0, 0.15); /* Внутренний тёмный блик */
 }
 
 .content h2 {
