@@ -1,15 +1,7 @@
 /* кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • */
 /* Общий сброс */
 /* Контейнер для кнопок */
-.offer__buttons {
-    width: 100vw;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: #f4f6fd; /* Фон контейнера */
-  }
+
   
   /* Основной стиль кнопки */
   .offer__button {
