@@ -5,7 +5,7 @@
   
   /* Основной стиль кнопки */
   .offer__button {
-    width: 300px;
+    width: 150px;
     height: 60px;
     background: #f4f6fd; /* Фон кнопки */
     position: relative;
