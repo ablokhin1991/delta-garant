@@ -656,6 +656,13 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         
       ]
     },
+    {
+      name: "ПАО Банк Санкт-Петербург",
+      logo: "/delta-garant/images/banks-logo/bspb",
+      data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
+      conditions: [ 
+      ] 
+    },
   ];
 
   // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
