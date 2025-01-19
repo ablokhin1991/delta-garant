@@ -114,7 +114,8 @@
   
   /* Эффект при наведении */
   .btn_primary:hover {
-    opacity: 0.8; /* Лёгкая прозрачность */
+    /*opacity: 0.8; /* Лёгкая прозрачность */
+    background: #284db5; /* Фон кнопки */
     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 6px 6px 10px rgba(0, 0, 0, 0.2);
     color: #fff; /* Основной цвет текста */
@@ -123,6 +124,7 @@
   /* Эффект при нажатии */
   .btn_primary:active {
     opacity: 1; /* Полная видимость */
+    background: #284db5; /* Фон кнопки */
     box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
                 inset 8px 8px 16px rgba(0, 0, 0, 0.1);
     color: #fff; /* Меняем цвет текста при нажатии */
