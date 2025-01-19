@@ -9,7 +9,6 @@
     height: 60px;
     background: #f4f6fd; /* Фон кнопки */
     position: relative;
-    margin-bottom: 25px;
     border-radius: 16px; /* Скруглённые углы */
     text-align: center;
     cursor: pointer;
