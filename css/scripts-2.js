@@ -742,13 +742,7 @@ offerList.innerHTML = finalResults
             <button class="btn_primary offer__button" data-index="${index}">Оформить</button>
           ` : ''}
         </div>
-        <button class="button-82-pushable" role="button">
-  <span class="button-82-shadow"></span>
-  <span class="button-82-edge"></span>
-  <span class="button-82-front text">
-    Оформить
-  </span>
-</button>
+        
     </div>`
   )
   .join("");
