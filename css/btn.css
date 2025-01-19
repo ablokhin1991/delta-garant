@@ -6,12 +6,11 @@
   
   /* Основной стиль кнопки */
   .offer__button {
-    font-size: 1rem; /* Размер текста */
+    /*font-size: 1rem; /* Размер текста */
     border: none;
     background-color: #f4f6fd; /* Основной фон кнопки */
     color: #333; /* Цвет текста */
     font-weight: bold; /* Жирность текста */
-    text-transform: uppercase; /* Текст заглавными буквами */
     letter-spacing: 0.05em; /* Межбуквенное расстояние */
     padding: 0.75em 1.5em; /* Внутренние отступы */
     border-radius: 8px; /* Скруглённые углы */
