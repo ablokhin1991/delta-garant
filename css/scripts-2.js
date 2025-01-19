@@ -739,7 +739,7 @@ offerList.innerHTML = finalResults
         `}
         <div class="offer__buttons">
           ${!result.isStopFactor ? `  
-            <button class="btn_primary offer__button" data-index="${index}">Оформить</button>
+            <button class="offer__button" data-index="${index}">Оформить</button>
           ` : ''}
         </div>
         
