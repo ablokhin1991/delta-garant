@@ -48,15 +48,7 @@
   }
 /* кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • */
 
-:root {
-    --bg: #f4f6fd;
-    --text: #333;
-    --light-blue: #edf2fa;
-    --blue: #dce7f7;
-    --dark-blue: #b5c8e3;
-    --blue-border: #92a9c9;
-    --blue-shadow: #cbdaf0;
-  }
+
   
   * {
     box-sizing: border-box;
