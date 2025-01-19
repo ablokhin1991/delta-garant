@@ -3,7 +3,7 @@
 /* Контейнер для кнопок */
 .offer__buttons {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
