@@ -193,7 +193,6 @@ footer a:hover {
     position: relative; /* Чтобы блок контента был под Hero */
     z-index: 0; /* Это гарантирует, что блок Content будет под Hero */
     /*Тестовый стиль вогнутости*/
-    background: linear-gradient(145deg, #f2f4f8, #d9dce2); /* Лёгкий градиент для объёма */
     border-radius: 16px; /* Скруглённые углы */
     box-shadow: 
     inset -5px -5px 10px rgba(255, 255, 255, 0.7), /* Внутренний светлый блик */
