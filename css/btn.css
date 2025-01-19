@@ -14,8 +14,8 @@
     cursor: pointer;
     transition: all 0.1s ease-in-out; /* Плавный переход для эффектов */
     font-family: "Roboto", sans-serif; /* Используемый шрифт */
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: bold;
     color: #284db5; /* Основной цвет текста */
   
     /* Тени для объёмного эффекта */
