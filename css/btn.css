@@ -1,18 +1,20 @@
 /* кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • */
 /* Общий сброс */
-body {
+/* Контейнер для кнопок */
+.offer__buttons {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #f4f6fd; /* Ваш фон */
+    background: #f4f6fd; /* Фон контейнера */
   }
   
+  /* Основной стиль кнопки */
   .offer__button {
-    width: 300px; /* Ширина кнопки */
-    height: 60px; /* Высота кнопки */
+    width: 300px;
+    height: 60px;
     background: #f4f6fd; /* Фон кнопки */
     position: relative;
     margin-bottom: 25px;
@@ -21,8 +23,8 @@ body {
     cursor: pointer;
     transition: all 0.1s ease-in-out; /* Плавный переход для эффектов */
     font-family: "Roboto", sans-serif; /* Используемый шрифт */
-    font-size: 16px; /* Размер текста */
-    font-weight: 600; /* Полужирный текст */
+    font-size: 16px;
+    font-weight: 600;
     color: #6f6cde; /* Основной цвет текста */
   
     /* Тени для объёмного эффекта */
@@ -45,13 +47,14 @@ body {
     color: #79e3b6; /* Меняем цвет текста при нажатии */
   }
   
-  /* Неактивное состояние (если необходимо) */
+  /* Неактивное состояние */
   .offer__button.disabled {
     opacity: 0.5; /* Прозрачность для неактивной кнопки */
     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 6px 6px 10px rgba(0, 0, 0, 0.2);
     pointer-events: none; /* Отключаем интерактивность */
   }
+  
   
 /* кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • */
 
