@@ -398,7 +398,7 @@ input[type="checkbox"]:checked::before {
 
 
 /* Стили для кнопки сброса */
-.btn_secondary {
+/*.btn_secondary {
     display: inline-block;
     background-color: #F87171;
     color: #fff;
@@ -407,15 +407,15 @@ input[type="checkbox"]:checked::before {
     font-weight: bold;
     border-radius: 8px;
     /*border: 1px solid #969696;*/
-    text-align: center;
-    height: 70px;
+   /* text-align: center;
+   /* height: 70px;
     margin-left: 10px; /* Расстояние между кнопками */
-}
+/*}*/
 
-.btn_secondary:hover {
+/*.btn_secondary:hover {
     background-color: #EF4444;
     color: #fff;
-}
+}*/
 
 
 /* Результаты */
