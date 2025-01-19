@@ -661,6 +661,19 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       logo: "/delta-garant/images/banks-logo/bspb",
       data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
       conditions: [ 
+        { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "1", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: true, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: true, customForm: false, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "2", guarType: "2", hasAdvance: false, customForm: false, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: true, minSum: 500000, ruleMaxSum: 150000000, rate: 0.038, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: true, minSum: 500000, ruleMaxSum: 150000000, rate: 0.038, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: true, customForm: false, minSum: 500000, ruleMaxSum: 150000000, rate: 0.038, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+{ procType: "4", guarType: "2", hasAdvance: false, customForm: false, minSum: 500000, ruleMaxSum: 150000000, rate: 0.038, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
+
       ] 
     },
   ];
