@@ -1,50 +1,57 @@
 /* кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • */
 /* Общий сброс */
-* {
-    box-sizing: border-box;
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #f4f6fd; /* Ваш фон */
   }
   
-  /* Основной стиль кнопки */
-.offer__button {
-    /*font-size: 1rem; /* Размер текста */
-    border: none;
-    background-color: #f4f6fd; /* Основной фон кнопки */
-    color: #333; /* Цвет текста */
-    font-weight: bold; /* Жирность текста */
-    letter-spacing: 0.05em; /* Межбуквенное расстояние */
-    padding: 0.75em 1.5em; /* Внутренние отступы */
-    border-radius: 8px; /* Скруглённые углы */
-    cursor: pointer;
+  .offer__button {
+    width: 300px; /* Ширина кнопки */
+    height: 60px; /* Высота кнопки */
+    background: #f4f6fd; /* Фон кнопки */
     position: relative;
-    z-index: 1;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для эффектов */
-    
-/* Тень для 3D-эффекта */
-   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), /* Основная тень */
-                inset 0px 1px 2px rgba(255, 255, 255, 0.6); /* Внутренний блик */
-}
+    margin-bottom: 25px;
+    border-radius: 16px; /* Скруглённые углы */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out; /* Плавный переход для эффектов */
+    font-family: "Roboto", sans-serif; /* Используемый шрифт */
+    font-size: 16px; /* Размер текста */
+    font-weight: 600; /* Полужирный текст */
+    color: #6f6cde; /* Основной цвет текста */
   
-/* Hover (при наведении) */
-.offer__button:hover {
-    transform: translateY(-4px); /* Поднятие кнопки */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15), /* Увеличенная тень */
-                inset 0px 1px 2px rgba(255, 255, 255, 0.7); /* Усиленный блик */
-    background-color: #284db5; /* Лёгкое затемнение фона */
-    color: #fff; /* Цвет текста */
-}
-  
-/* Active (при нажатии) */
-.offer__button:active {
-    transform: translateY(2px); /* Утопление кнопки */
-   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), /* Сжатая тень */
-                inset 0px 1px 2px rgba(255, 255, 255, 0.5); /* Блик */
-   background-color: #1E3A8A; /* Более тёмный фон */
-   color: #fff; /* Цвет текста */
-}
-  
-/* Снятие фокуса */
-.offer__button:focus {
-    outline: none;
+    /* Тени для объёмного эффекта */
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+                6px 6px 10px rgba(0, 0, 0, 0.2);
   }
+  
+  /* Эффект при наведении */
+  .offer__button:hover {
+    opacity: 0.8; /* Лёгкая прозрачность */
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+                6px 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Эффект при нажатии */
+  .offer__button:active {
+    opacity: 1; /* Полная видимость */
+    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+                inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+    color: #79e3b6; /* Меняем цвет текста при нажатии */
+  }
+  
+  /* Неактивное состояние (если необходимо) */
+  .offer__button.disabled {
+    opacity: 0.5; /* Прозрачность для неактивной кнопки */
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+                6px 6px 10px rgba(0, 0, 0, 0.2);
+    pointer-events: none; /* Отключаем интерактивность */
+  }
+  
 /* кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • */
 
