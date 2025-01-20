@@ -982,7 +982,7 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     // Проверяем, что элемент существует
     if (offerList) {
         const rect = offerList.getBoundingClientRect();
-        const scrollY = rect.top + window.pageYOffset;
+        const scrollY = rect.top + window.scrollY;
 
         // Прокручиваем страницу вручную
         window.scrollTo({ top: scrollY, behavior: 'smooth' });
