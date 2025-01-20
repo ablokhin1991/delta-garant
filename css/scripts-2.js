@@ -760,47 +760,48 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   }
 
 // Генерация результатов
-offerList.innerHTML = `
-  <div class="scroll-anchor"></div> <!-- Невидимый якорный элемент -->
-  ${finalResults
-    .map(
-      (result, index) => `
-        <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
-            <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
-            <div class="offer__details" style="flex: 1;">
-                <strong>${result.name}</strong>
-            </div>
-            <div class="offer__separator"></div>
-            ${
-              !result.isStopFactor
-                ? `
-              <div class="offer__rate" style="display: block;">
-                ${result.cost.toLocaleString()} руб.<br>
-              </div>
-              <div class="offer__rate" style="font-weight: 300; display: block;">  
-                ${result.rate}% годовых<br>
-              </div>
-            `
-                : `
-              <div class="offer__rate">
-                Стоп-факторы:<br>${result.rate}
-              </div>
-            `
-            }
-            <div class="offer__buttons">
-              ${
-                !result.isStopFactor
-                  ? `<button class="offer__button" data-index="${index}">Оформить</button>`
-                  : ""
-              }
-            </div>
+const offerList = document.getElementById("offer-list");
+
+offerList.innerHTML = finalResults
+  .map((result, index) => 
+    `<div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+        <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
+        <div class="offer__details" style="flex: 1;">
+            <strong>${result.name}</strong>
         </div>
-      `
-    )
-    .join("")}
-`;
+        <!-- <div class="offer__personal-data">
+               ${
+                result.data 
+                ? result.data.split('\n').map(line => `<div>${line}</div>`).join('') 
+                : ' '
+              }
+        </div> -->
+        <div class="offer__separator"></div> <!-- Разделительная линия -->
+        ${!result.isStopFactor ? `  
 
+          <div class="offer__rate" style="display: block;">
+            <!-- Ставка: ${result.rate}%<br> -->
+            ${result.cost.toLocaleString()} руб.<br>
+          </div>
 
+          <div class="offer__rate" style="font-weight: 300; display: block;">  
+            ${result.rate}% годовых<br>
+          </div>
+
+        ` : `  
+          <div class="offer__rate">
+            Стоп-факторы:<br>${result.rate}
+          </div>
+        `}
+        <div class="offer__buttons">
+          ${!result.isStopFactor ? `  
+            <button class="offer__button" data-index="${index}">Оформить</button>
+          ` : ''}
+        </div>
+        
+    </div>`
+  )
+  .join("");
 
 // Добавляем стили к блоку вывода результатов "offer" для мобильных устройств
 // Функция для переключения стилей в зависимости от ширины экрана
@@ -956,33 +957,31 @@ document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
 
 
 
-// КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
+// КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 // Добавляем крутилку при загрузке
-document.getElementById("calculate-btn").addEventListener("click", function () {
-  const loadingSpinner = document.getElementById("loading-spinner");
-  const resultOutput = document.getElementById("result-output");
-  const offerList = document.getElementById("offer-list");
-  const scrollAnchor = document.querySelector(".scroll-anchor");
+document.getElementById('calculate-btn').addEventListener('click', function () {
+  const loadingSpinner = document.getElementById('loading-spinner');
+  const resultOutput = document.getElementById('result-output');
+  const offerList = document.getElementById('offer-list');
 
   // Скрываем результаты и показываем анимацию
-  resultOutput.style.display = "none";
-  loadingSpinner.style.display = "block";
+  resultOutput.style.display = 'none';
+  loadingSpinner.style.display = 'block';
 
   // Скроллим к блоку с крутилкой
-  loadingSpinner.scrollIntoView({ behavior: "smooth", block: "center" });
+  loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   // Симулируем запрос (2 секунды)
   setTimeout(() => {
-    // Скрываем анимацию загрузки и показываем результаты
-    loadingSpinner.style.display = "none";
-    resultOutput.style.display = "block";
-    offerList.innerHTML = finalResults;
+      // Скрываем анимацию загрузки и показываем результаты
+      loadingSpinner.style.display = 'none';
+      resultOutput.style.display = 'block';
+      offerList.innerHTML = finalResults
 
-    // Плавный скролл к якорю
-    scrollAnchor.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Скроллим к блоку с результатами
+      resultOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 2000);
 });
-
 
 
 
