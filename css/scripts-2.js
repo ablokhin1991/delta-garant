@@ -979,9 +979,16 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
       resultOutput.style.display = 'block';
       offerList.innerHTML = finalResults
 
+      // Проверим, что offerList существует и доступен
+    console.log(offerList);
+    console.log('offerList is visible:', offerList.offsetWidth > 0 && offerList.offsetHeight > 0);
+
       // Скроллим к блоку с результатами
+      // Убедимся, что DOM обновился перед скроллом
+    setTimeout(() => {
       offerList.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 2000);
+  }, 100); // Небольшая задержка, чтобы DOM успел обновиться
+}, 2000);
 });
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 
