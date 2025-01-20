@@ -658,7 +658,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     },
     {
       name: "ПАО Банк Санкт-Петербург",
-      logo: "/delta-garant/images/banks-logo/bspb",
+      logo: "/delta-garant/images/banks-logo/bspb.svg",
       data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
       conditions: [ 
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
