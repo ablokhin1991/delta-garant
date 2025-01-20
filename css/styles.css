@@ -484,6 +484,21 @@ input[type="checkbox"]:checked::before {
     transition: all 0.3s ease;
 }
 
+.offer-mobile {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    justify-content: center; /* Центровка по горизонтали */
+    align-items: center; /* Центровка по вертикали */
+    gap: 16px; /* Отступы между элементами */
+}
+
+.offer-desktop {
+    display: flex;
+    flex-direction: row; /* Горизонтальное выравнивание */
+    justify-content: space-between; /* Распределение пространства */
+    align-items: center; /* Выравнивание по вертикали */
+}
+
 
 /* Hover (при наведении) */
 .offer:hover {

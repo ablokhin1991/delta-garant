@@ -833,7 +833,26 @@ offerList.innerHTML = finalResults
 //window.addEventListener('resize', applyResponsiveStyles);
 
 // Конец кода стилей - - - - - - - - - - - - - - - - - - - - - - -  
+function applyResponsiveStyles() {
+  const isMobile = window.innerWidth <= 768;
 
+  document.querySelectorAll('.offer').forEach(offer => {
+      if (isMobile) {
+          offer.classList.add('offer-mobile');
+          offer.classList.remove('offer-desktop');
+      } else {
+          offer.classList.add('offer-desktop');
+          offer.classList.remove('offer-mobile');
+      }
+  });
+}
+
+// Применить стили при загрузке страницы
+window.addEventListener('load', applyResponsiveStyles);
+
+// Применить стили при изменении размера окна
+window.addEventListener('resize', applyResponsiveStyles);
+// Конец кода стилей - - - - - - - - - - - - - - - - - - - - - - -  
 
 
 
