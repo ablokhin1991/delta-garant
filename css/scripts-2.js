@@ -974,19 +974,23 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
   // Симулируем запрос (2 секунды)
   setTimeout(() => {
-      // Скрываем анимацию загрузки и показываем результаты
-      loadingSpinner.style.display = 'none';
-      resultOutput.style.display = 'block';
-      offerList.innerHTML = finalResults
+    // Скрываем анимацию загрузки и показываем результаты
+    loadingSpinner.style.display = 'none';
+    resultOutput.style.display = 'block';
+    offerList.innerHTML = finalResults;
 
-     // Проверка на видимость
-     if (offerList.offsetHeight > 0 && offerList.offsetWidth > 0) {
-      console.log('offerList видим');
-      offerList.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } else {
-      console.error('offerList не видим или его родитель скрывает его');
-  }
+    // Проверяем, что элемент существует
+    if (offerList) {
+        const rect = offerList.getBoundingClientRect();
+        const scrollY = rect.top + window.pageYOffset;
+
+        // Прокручиваем страницу вручную
+        window.scrollTo({ top: scrollY, behavior: 'smooth' });
+    } else {
+        console.error('offerList не найден');
+    }
 }, 2000);
+
 });
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 
