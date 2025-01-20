@@ -988,11 +988,11 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 
 
-// Эффект постепенного показа результатов
-function showResultsWithAnimation() {
+// Функция для показа результатов с анимацией
+function showResultsWithAnimationAndScroll() {
   const offers = document.querySelectorAll("#offer-list .offer"); // Все элементы с классом .offer
   const interval = 200; // Интервал между появлениями (в миллисекундах)
-  
+
   offers.forEach((offer, index) => {
     // Сначала скрываем все элементы
     offer.style.opacity = 0;
@@ -1003,6 +1003,13 @@ function showResultsWithAnimation() {
     setTimeout(() => {
       offer.style.opacity = 1;
       offer.style.transform = "translateY(0)";
+
+      // В конце анимации последнего элемента — плавный скролл к результатам
+      if (index === offers.length - 1) {
+        setTimeout(() => {
+          offers[0].scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 600); // Задержка на завершение последней анимации
+      }
     }, index * interval); // Каждому элементу свой интервал
   });
 }
@@ -1017,6 +1024,9 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   resultOutput.style.display = "none";
   loadingSpinner.style.display = "block";
 
+  // Скроллим к блоку с крутилкой
+  loadingSpinner.scrollIntoView({ behavior: "smooth", block: "center" });
+
   // Симулируем запрос (2 секунды)
   setTimeout(() => {
     // Скрываем анимацию загрузки и показываем результаты
@@ -1024,10 +1034,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     resultOutput.style.display = "block";
     offerList.innerHTML = finalResults;
 
-    // Применяем анимацию появления
-    showResultsWithAnimation();
-
-    // Скроллим к блоку с результатами
-    resultOutput.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Применяем анимацию появления и скролл
+    showResultsWithAnimationAndScroll();
   }, 2000);
 });
