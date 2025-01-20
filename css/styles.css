@@ -777,8 +777,11 @@ input[type="checkbox"]:checked::before {
       }
     
       .offer__details {
+        grid-column: 1 / -1; /* Занимает всю ширину контейнера */
         text-align: center;
         margin: 0 auto; /* Центрируем текст */
+        justify-self: center; /* Центрируем элемент внутри сетки */
+        width: auto; /* Ширина подстраивается под содержимое */
       }
 
       .offer__rate {
