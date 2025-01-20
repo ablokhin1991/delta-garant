@@ -771,6 +771,13 @@ input[type="checkbox"]:checked::before {
     .result {
         margin-top: 20px;
     }
+
+    .offer {
+        display: flex; /* Переключаемся на flexbox для мобильных */
+        flex-direction: column; /* Элементы идут в столбик */
+        align-items: center;
+        gap: 20px;
+    }
     
       .offer__logo {
         justify-items: center; /* Центрируем элементы по горизонтали */
