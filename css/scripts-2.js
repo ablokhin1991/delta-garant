@@ -1008,7 +1008,13 @@ function observeResultAndScroll() {
         resultOutput.style.display === 'block' // Проверяем, стал ли элемент видимым
       ) {
         // Скроллим к якорю
-        scrollAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => {
+          scrollAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          // Альтернативный метод скроллинга, если scrollIntoView не работает
+          const scrollY = scrollAnchor.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({ top: scrollY, behavior: 'smooth' });
+        }, 50); // Небольшая задержка перед выполнением скролла
         observer.disconnect(); // Отключаем наблюдатель после срабатывания
         break;
       }
@@ -1021,8 +1027,3 @@ function observeResultAndScroll() {
 
 // Вызов функции
 observeResultAndScroll();
-
-
-
-
-
