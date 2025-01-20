@@ -960,38 +960,32 @@ document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
 
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 // Добавляем крутилку при загрузке
-document.getElementById('calculate-btn').addEventListener('click', function () {
-  const loadingSpinner = document.getElementById('loading-spinner');
-  const resultOutput = document.getElementById('result-output');
-  const offerList = document.getElementById('offer-list');
+document.getElementById("calculate-btn").addEventListener("click", function () {
+  const loadingSpinner = document.getElementById("loading-spinner");
+  const resultOutput = document.getElementById("result-output");
+  const offerList = document.getElementById("offer-list");
 
-  // Скрываем результаты и показываем анимацию
-  resultOutput.style.display = 'none';
-  loadingSpinner.style.display = 'block';
+  // Показываем крутилку и скрываем результаты
+  resultOutput.style.display = "none";
+  loadingSpinner.style.display = "block";
+  loadingSpinner.scrollIntoView({ behavior: "smooth", block: "center" });
 
-  // Скроллим к блоку с крутилкой
-  loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-  // Симулируем запрос (2 секунды)
+  // Симулируем загрузку
   setTimeout(() => {
-    // Скрываем анимацию загрузки и показываем результаты
-    loadingSpinner.style.display = 'none';
-    resultOutput.style.display = 'block';
-    offerList.innerHTML = finalResults;
+      loadingSpinner.style.display = "none";
+      resultOutput.style.display = "block";
 
-    // Проверяем, что элемент существует
-    if (offerList) {
-        const rect = offerList.getBoundingClientRect();
-        const scrollY = rect.top + window.scrollY;
-
-        // Прокручиваем страницу вручную
-        window.scrollTo({ top: scrollY, behavior: 'smooth' });
-    } else {
-        console.error('offerList не найден');
-    }
-}, 2000);
-
+      // Убедитесь, что DOM обновился перед прокруткой
+      setTimeout(() => {
+          if (offerList && offerList.offsetHeight > 0) {
+              offerList.scrollIntoView({ behavior: "smooth", block: "start" });
+          } else {
+              console.error("offerList не найден или не видим.");
+          }
+      }, 100); // Задержка для завершения перерисовки DOM
+  }, 2000);
 });
+
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 
 
