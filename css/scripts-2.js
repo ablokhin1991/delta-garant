@@ -981,6 +981,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
               offerList.scrollIntoView({ behavior: "smooth", block: "start" });
           } else {
               console.error("offerList не найден или не видим.");
+              console.log("offerList найден.");
           }
       }, 100); // Задержка для завершения перерисовки DOM
   }, 2000);
