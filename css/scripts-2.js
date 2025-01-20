@@ -832,7 +832,8 @@ offerList.innerHTML = finalResults
 // Применить стили при изменении размера окна
 //window.addEventListener('resize', applyResponsiveStyles);
 
-// Конец кода стилей - - - - - - - - - - - - - - - - - - - - - - -  
+// Конец кода стилей - - - - - - - - - - - - - - - - - - - - - - - 
+document.addEventListener('DOMContentLoaded', applyResponsiveStyles); 
 function applyResponsiveStyles() {
   const isMobile = window.innerWidth <= 768;
 
