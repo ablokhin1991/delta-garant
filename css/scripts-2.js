@@ -982,7 +982,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
               const scrollY = window.scrollY || window.pageYOffset;
 
               // Рассчитываем смещение
-              const offset = window.innerWidth <= 768 ? 70 : 150; // 70px для мобильных, 150px для десктопов
+              const offset = window.innerWidth <= 768 ? 70 : 100; // 70px для мобильных, 150px для десктопов
               const targetPosition = rect.top + scrollY - offset;
 
               // Прокручиваем с кастомной скоростью
