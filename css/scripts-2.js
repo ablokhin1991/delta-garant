@@ -987,6 +987,8 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 
 function observeResultAndScroll() {
+  console.log('Скроллим к:', scrollAnchor);
+
   const scrollAnchor = document.querySelector('.scroll-anchor'); // Элемент для скролла
   const resultOutput = document.querySelector('.result'); // Элемент с результатами
 
