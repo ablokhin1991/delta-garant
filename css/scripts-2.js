@@ -764,7 +764,8 @@ const offerList = document.getElementById("offer-list");
 
 offerList.innerHTML = finalResults
   .map((result, index) => 
-    `<div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+    `<div class="scroll-anchor"></div>
+     <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
         <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
         <div class="offer__details" style="flex: 1;">
             <strong>${result.name}</strong>
@@ -982,9 +983,40 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
       resultOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 2000);
 });
+// КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 
 
+function observeResultAndScroll() {
+  const scrollAnchor = document.querySelector('.scroll-anchor'); // Элемент для скролла
+  const resultOutput = document.querySelector('.result-output'); // Элемент с результатами
 
+  if (!resultOutput || !scrollAnchor) {
+    console.error('Элемент result-output или scroll-anchor не найден.');
+    return;
+  }
+
+  // Используем MutationObserver для отслеживания изменений
+  const observer = new MutationObserver((mutationsList) => {
+    for (const mutation of mutationsList) {
+      if (
+        mutation.type === 'attributes' &&
+        mutation.attributeName === 'style' &&
+        resultOutput.style.display === 'block' // Проверяем, стал ли элемент видимым
+      ) {
+        // Скроллим к якорю
+        scrollAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        observer.disconnect(); // Отключаем наблюдатель после срабатывания
+        break;
+      }
+    }
+  });
+
+  // Наблюдаем за изменением атрибутов
+  observer.observe(resultOutput, { attributes: true });
+}
+
+// Вызов функции
+observeResultAndScroll();
 
 
 
