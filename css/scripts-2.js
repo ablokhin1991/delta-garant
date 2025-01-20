@@ -980,58 +980,9 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
       offerList.innerHTML = finalResults
 
       // Скроллим к блоку с результатами
-      resultOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      offerList.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 2000);
 });
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 
 
-function observeResultAndScroll() {
-  const scrollAnchor = document.querySelector('.scroll-anchor');
-  const resultOutput = document.querySelector('.result');
-
-  if (!resultOutput) {
-    console.error('Элемент result не найден.');
-    return;
-  }
-  if (!scrollAnchor) {
-    console.error('Элемент scroll-anchor не найден.');
-    return;
-  }
-
-  console.log('Скроллим к:', scrollAnchor);
-
-  // Используем MutationObserver для отслеживания изменений
-  const observer = new MutationObserver((mutationsList) => {
-    for (const mutation of mutationsList) {
-      if (
-        mutation.type === 'attributes' &&
-        mutation.attributeName === 'style'
-      ) {
-        console.log('Изменения в стиле обнаружены:', resultOutput.style.display);
-
-        if (resultOutput.style.display === 'block') {
-          console.log('Элемент видим. Скроллим...');
-
-          setTimeout(() => {
-            // Пробуем scrollIntoView
-            scrollAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-            // Если scrollIntoView не работает, скроллим вручную
-            const scrollY = scrollAnchor.getBoundingClientRect().top + window.pageYOffset;
-            window.scrollTo({ top: scrollY, behavior: 'smooth' });
-          }, 150); // Небольшая задержка перед выполнением скролла
-
-          observer.disconnect(); // Отключаем наблюдатель после срабатывания
-          break;
-        }
-      }
-    }
-  });
-
-  // Наблюдаем за изменением атрибутов
-  observer.observe(resultOutput, { attributes: true });
-}
-
-// Вызов функции
-observeResultAndScroll();
