@@ -959,30 +959,28 @@ document.addEventListener('DOMContentLoaded', updateGuarTypeAvailability);
 
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 // Добавляем крутилку при загрузке
-document.getElementById('calculate-btn').addEventListener('click', function () {
-  const loadingSpinner = document.getElementById('loading-spinner');
-  const resultOutput = document.getElementById('result-output');
-  const offerList = document.getElementById('offer-list');
+document.getElementById("calculate-btn").addEventListener("click", function () {
+  const loadingSpinner = document.getElementById("loading-spinner");
+  const resultOutput = document.getElementById("result-output");
+  const offerList = document.getElementById("offer-list");
+  const scrollAnchor = document.querySelector(".scroll-anchor");
 
   // Скрываем результаты и показываем анимацию
-  resultOutput.style.display = 'none';
-  loadingSpinner.style.display = 'block';
+  resultOutput.style.display = "none";
+  loadingSpinner.style.display = "block";
 
   // Скроллим к блоку с крутилкой
-  loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  loadingSpinner.scrollIntoView({ behavior: "smooth", block: "center" });
 
   // Симулируем запрос (2 секунды)
   setTimeout(() => {
     // Скрываем анимацию загрузки и показываем результаты
-    loadingSpinner.style.display = 'none';
-    resultOutput.style.display = 'block';
+    loadingSpinner.style.display = "none";
+    resultOutput.style.display = "block";
     offerList.innerHTML = finalResults;
 
-    // Даем браузеру время на перерисовку
-    setTimeout(() => {
-      // Скроллим к блоку с результатами
-      resultOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 50); // Небольшая задержка перед скроллом
+    // Скроллим к невидимому якорному элементу
+    scrollAnchor.scrollIntoView({ behavior: "smooth", block: "start" });
   }, 2000);
 });
 
