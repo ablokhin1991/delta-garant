@@ -764,7 +764,7 @@ const offerList = document.getElementById("offer-list");
 
 offerList.innerHTML = finalResults
   .map((result, index) => 
-    `<div class="scroll-anchor"></div>
+    `
      <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
         <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
         <div class="offer__details" style="flex: 1;">
