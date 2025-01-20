@@ -762,46 +762,46 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 // Генерация результатов
 const offerList = document.getElementById("offer-list");
 
-offerList.innerHTML = finalResults
-  .map((result, index) => 
-    `<div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
-        <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
-        <div class="offer__details" style="flex: 1;">
-            <strong>${result.name}</strong>
-        </div>
-        <!-- <div class="offer__personal-data">
-               ${
-                result.data 
-                ? result.data.split('\n').map(line => `<div>${line}</div>`).join('') 
-                : ' '
+offerList.innerHTML = `
+  <div class="scroll-anchor"></div> <!-- Невидимый якорный элемент -->
+  ${finalResults
+    .map(
+      (result, index) => `
+        <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+            <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
+            <div class="offer__details" style="flex: 1;">
+                <strong>${result.name}</strong>
+            </div>
+            <div class="offer__separator"></div> <!-- Разделительная линия -->
+            ${
+              !result.isStopFactor
+                ? `
+              <div class="offer__rate" style="display: block;">
+                ${result.cost.toLocaleString()} руб.<br>
+              </div>
+              <div class="offer__rate" style="font-weight: 300; display: block;">  
+                ${result.rate}% годовых<br>
+              </div>
+            `
+                : `
+              <div class="offer__rate">
+                Стоп-факторы:<br>${result.rate}
+              </div>
+            `
+            }
+            <div class="offer__buttons">
+              ${
+                !result.isStopFactor
+                  ? `<button class="offer__button" data-index="${index}">Оформить</button>`
+                  : ""
               }
-        </div> -->
-        <div class="offer__separator"></div> <!-- Разделительная линия -->
-        ${!result.isStopFactor ? `  
-
-          <div class="offer__rate" style="display: block;">
-            <!-- Ставка: ${result.rate}%<br> -->
-            ${result.cost.toLocaleString()} руб.<br>
-          </div>
-
-          <div class="offer__rate" style="font-weight: 300; display: block;">  
-            ${result.rate}% годовых<br>
-          </div>
-
-        ` : `  
-          <div class="offer__rate">
-            Стоп-факторы:<br>${result.rate}
-          </div>
-        `}
-        <div class="offer__buttons">
-          ${!result.isStopFactor ? `  
-            <button class="offer__button" data-index="${index}">Оформить</button>
-          ` : ''}
+            </div>
         </div>
-        
-    </div>`
-  )
-  .join("");
+      `
+    )
+    .join("")}
+`;
+
 
 // Добавляем стили к блоку вывода результатов "offer" для мобильных устройств
 // Функция для переключения стилей в зависимости от ширины экрана

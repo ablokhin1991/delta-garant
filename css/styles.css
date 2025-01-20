@@ -502,6 +502,13 @@ input[type="checkbox"]:checked::before {
     height: 50px;
 }
   
+.scroll-anchor {
+    height: 0; /* Без высоты */
+    overflow: hidden; /* Скрываем содержимое */
+    margin: 0; /* Без отступов */
+    padding: 0; /* Без внутренних отступов */
+  }
+  
 
 .offer__details {
     grid-column: 2; /* Вторая ячейка */
