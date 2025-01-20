@@ -988,10 +988,14 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 function observeResultAndScroll() {
   const scrollAnchor = document.querySelector('.scroll-anchor'); // Элемент для скролла
-  const resultOutput = document.querySelector('.result-output'); // Элемент с результатами
+  const resultOutput = document.querySelector('.result'); // Элемент с результатами
 
-  if (!resultOutput || !scrollAnchor) {
-    console.error('Элемент result-output или scroll-anchor не найден.');
+  if (!resultOutput) {
+    console.error('Элемент result не найден.');
+    return;
+  }
+  if (!scrollAnchor) {
+    console.error('Элемент scroll-anchor не найден.');
     return;
   }
 
