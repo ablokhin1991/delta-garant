@@ -978,14 +978,25 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       // Убедитесь, что DOM обновился перед прокруткой
       setTimeout(() => {
           if (offerList && offerList.offsetHeight > 0) {
-              offerList.scrollIntoView({ behavior: "smooth", block: "start" });
+              const rect = offerList.getBoundingClientRect();
+              const scrollY = window.scrollY || window.pageYOffset;
+
+              // Рассчитываем смещение
+              const offset = window.innerWidth <= 768 ? 100 : 200; // 100px для мобильных, 200px для десктопов
+              const targetPosition = rect.top + scrollY - offset;
+
+              // Прокручиваем с кастомной скоростью
+              window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth", // Используем плавный скроллинг
+              });
           } else {
               console.error("offerList не найден или не видим.");
-              console.log("offerList найден.");
           }
       }, 100); // Задержка для завершения перерисовки DOM
   }, 2000);
 });
+
 
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 
