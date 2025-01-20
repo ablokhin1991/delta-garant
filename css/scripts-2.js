@@ -987,8 +987,6 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 
 function observeResultAndScroll() {
-  console.log('Скроллим к:', scrollAnchor);
-
   const scrollAnchor = document.querySelector('.scroll-anchor'); // Элемент для скролла
   const resultOutput = document.querySelector('.result'); // Элемент с результатами
 
@@ -1000,6 +998,8 @@ function observeResultAndScroll() {
     console.error('Элемент scroll-anchor не найден.');
     return;
   }
+
+  console.log('Скроллим к:', scrollAnchor); // Перемещаем логирование после объявления переменной
 
   // Используем MutationObserver для отслеживания изменений
   const observer = new MutationObserver((mutationsList) => {
