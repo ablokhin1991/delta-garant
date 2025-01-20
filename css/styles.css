@@ -779,6 +779,14 @@ input[type="checkbox"]:checked::before {
         gap: 20px;
     }
     
+    .offer__logo,
+    .offer__details,
+    .offer__rate,
+    .offer__buttons {
+        width: 100%; /* Убедитесь, что элементы растягиваются */
+        text-align: center;
+    }
+    
       .offer__logo {
         justify-items: center; /* Центрируем элементы по горизонтали */
       }
