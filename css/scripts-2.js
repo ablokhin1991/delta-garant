@@ -658,7 +658,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     },
     {
       name: "ПАО Банк Санкт-Петербург",
-      logo: "/delta-garant/images/banks-logo/bspb",
+      logo: "/delta-garant/images/banks-logo/bspb.svg",
       data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
       conditions: [ 
         { procType: "1", guarType: "2", hasAdvance: true, customForm: true, minSum: 100000, ruleMaxSum: 50000000, rate: 0.032, minCost: 1500, ruleMinDays: 0, ruleMaxDays: 1140 },
@@ -977,5 +977,57 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
       // Скроллим к блоку с результатами
       resultOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 2000);
+});
+
+
+
+
+
+
+
+
+
+// Эффект постепенного показа результатов
+function showResultsWithAnimation() {
+  const offers = document.querySelectorAll("#offer-list .offer"); // Все элементы с классом .offer
+  const interval = 200; // Интервал между появлениями (в миллисекундах)
+  
+  offers.forEach((offer, index) => {
+    // Сначала скрываем все элементы
+    offer.style.opacity = 0;
+    offer.style.transform = "translateY(20px)";
+    offer.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+    // Устанавливаем таймер для плавного появления
+    setTimeout(() => {
+      offer.style.opacity = 1;
+      offer.style.transform = "translateY(0)";
+    }, index * interval); // Каждому элементу свой интервал
+  });
+}
+
+// Обновляем обработчик для кнопки "Рассчитать"
+document.getElementById("calculate-btn").addEventListener("click", function () {
+  const loadingSpinner = document.getElementById("loading-spinner");
+  const resultOutput = document.getElementById("result-output");
+  const offerList = document.getElementById("offer-list");
+
+  // Скрываем результаты и показываем анимацию
+  resultOutput.style.display = "none";
+  loadingSpinner.style.display = "block";
+
+  // Симулируем запрос (2 секунды)
+  setTimeout(() => {
+    // Скрываем анимацию загрузки и показываем результаты
+    loadingSpinner.style.display = "none";
+    resultOutput.style.display = "block";
+    offerList.innerHTML = finalResults;
+
+    // Применяем анимацию появления
+    showResultsWithAnimation();
+
+    // Скроллим к блоку с результатами
+    resultOutput.scrollIntoView({ behavior: "smooth", block: "start" });
   }, 2000);
 });
