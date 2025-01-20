@@ -503,11 +503,12 @@ input[type="checkbox"]:checked::before {
 }
   
 .scroll-anchor {
-    height: 0; /* Без высоты */
-    overflow: hidden; /* Скрываем содержимое */
-    margin: 0; /* Без отступов */
-    padding: 0; /* Без внутренних отступов */
+    height: 1px; /* Минимальная видимая высота */
+    visibility: hidden; /* Оставляем элемент скрытым */
+    margin: 0;
+    padding: 0;
   }
+  
   
 
 .offer__details {

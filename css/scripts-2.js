@@ -760,8 +760,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   }
 
 // Генерация результатов
-const offerList = document.getElementById("offer-list");
-
 offerList.innerHTML = `
   <div class="scroll-anchor"></div> <!-- Невидимый якорный элемент -->
   ${finalResults
@@ -772,7 +770,7 @@ offerList.innerHTML = `
             <div class="offer__details" style="flex: 1;">
                 <strong>${result.name}</strong>
             </div>
-            <div class="offer__separator"></div> <!-- Разделительная линия -->
+            <div class="offer__separator"></div>
             ${
               !result.isStopFactor
                 ? `
@@ -801,6 +799,7 @@ offerList.innerHTML = `
     )
     .join("")}
 `;
+
 
 
 // Добавляем стили к блоку вывода результатов "offer" для мобильных устройств
@@ -979,7 +978,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     resultOutput.style.display = "block";
     offerList.innerHTML = finalResults;
 
-    // Скроллим к невидимому якорному элементу
+    // Плавный скролл к якорю
     scrollAnchor.scrollIntoView({ behavior: "smooth", block: "start" });
   }, 2000);
 });
