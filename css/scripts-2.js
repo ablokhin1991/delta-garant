@@ -963,7 +963,6 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   const loadingSpinner = document.getElementById('loading-spinner');
   const resultOutput = document.getElementById('result-output');
   const offerList = document.getElementById('offer-list');
-  const resultTitleWrap = document.querySelector('.result__title-wrap'); // Элемент для скролла
 
   // Скрываем результаты и показываем анимацию
   resultOutput.style.display = 'none';
@@ -979,10 +978,11 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     resultOutput.style.display = 'block';
     offerList.innerHTML = finalResults;
 
-    // Плавный скролл к "result__title-wrap"
-    if (resultTitleWrap) {
-      resultTitleWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    // Даем браузеру время на перерисовку
+    setTimeout(() => {
+      // Скроллим к блоку с результатами
+      resultOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50); // Небольшая задержка перед скроллом
   }, 2000);
 });
 
