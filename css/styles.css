@@ -502,6 +502,12 @@ input[type="checkbox"]:checked::before {
     height: 50px;
 }
 
+#offer-list .offer {
+    opacity: 0; /* По умолчанию скрыто */
+    transform: translateY(20px); /* Слегка смещено вниз */
+  }
+  
+
 .offer__details {
     grid-column: 2; /* Вторая ячейка */
     font-weight: 400;
