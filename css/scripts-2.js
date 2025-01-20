@@ -1014,7 +1014,7 @@ function observeResultAndScroll() {
           // Альтернативный метод скроллинга, если scrollIntoView не работает
           const scrollY = scrollAnchor.getBoundingClientRect().top + window.pageYOffset;
           window.scrollTo({ top: scrollY, behavior: 'smooth' });
-        }, 50); // Небольшая задержка перед выполнением скролла
+        }, 150); // Небольшая задержка перед выполнением скролла
         observer.disconnect(); // Отключаем наблюдатель после срабатывания
         break;
       }
