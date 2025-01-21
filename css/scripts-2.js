@@ -1020,4 +1020,12 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 
-
+// треугольник
+document.addEventListener("DOMContentLoaded", () => {
+  const triangle = document.querySelector(".triangle");
+  if (triangle) {
+      setTimeout(() => {
+          triangle.classList.add("assembled");
+      }, 500); // Задержка перед началом анимации
+  }
+});
