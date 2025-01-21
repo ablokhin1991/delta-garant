@@ -739,7 +739,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
             name: bank.name,
             logo: bank.logo,
             cost: "Стоп-факторы",
-            rate: "Нет подходящих условий",
+            rate: "Нет подходящих предложений",
             isStopFactor: true
         };
     }
