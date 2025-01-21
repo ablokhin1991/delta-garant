@@ -709,14 +709,14 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
       ] 
     },
-    {
-      name: "АО КБ Руснарбанк",
-      logo: "/delta-garant/images/banks-logo/rnb.svg",
-      data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
-      conditions: [ 
+   // {
+     // name: "АО КБ Руснарбанк",
+      //logo: "/delta-garant/images/banks-logo/rnb.svg",
+     // data: 'Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета',
+      //conditions: [ 
 
-      ]
-    },
+     // ]
+   // },
   ];
 
   // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
