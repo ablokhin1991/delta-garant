@@ -490,7 +490,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .offer:hover {
-    transform: scale(1.2); /* Увеличение на 20% */
+    transform: scale(0.2); /* Увеличение на 20% */
 }
 
 
