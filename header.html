@@ -1,69 +1,44 @@
 <head>
-    <!-- Стандартный favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дельта Гарант</title>
 
-    <!-- Для браузеров с поддержкой формата PNG -->
+    <!-- Фавиконки -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
-    <!-- Для устройств Android -->
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-
-    <!-- Для устройств Apple -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- Общий манифест (опционально, для PWA) -->
     <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Стили -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Дельта Гарант</title> <!-- Замените текст на нужный заголовок -->
-    <style>
-        @media (max-width: 768px) {
-            .offer {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-        
-            .offer__details {
-                text-align: center;
-                width: auto;
-                margin: 0 auto;
-            }
-        
-            .offer__separator {
-                display: none;
-            }
-        }
-        </style> 
-</head>
-<header>
-    <div class="container">
-        <div class="logo">
-            <!-- Контейнер для частей треугольника -->
-            <div class="triangle">
-                <img src="images/logo/Verh.svg" alt="Верхняя часть" class="triangle__part triangle__verh" />
-                <img src="images/logo/Levo.svg" alt="Левая часть" class="triangle__part triangle__levo" />
-                <img src="images/logo/Pravo.svg" alt="Правая часть" class="triangle__part triangle__pravo" />
-            </div>
-            <a href="index.html">
-                <img src="images/logo/delta-red.svg" alt="Дельта Гарант" /> 
-            </a>
-            <!-- <p>с вами с 2015 г.</p>  Это будет просто текст без ссылки -->
-        </div>
-
-        <!-- Электронная почта -->
-        <div class="header-email">
-            <a href="mailto:info@delta-garant.ru" class="email-link">
-                <img src="https://ablokhin1991.github.io/delta-garant/images/icons/mail.svg" alt="Почта" class="email-icon" />
-                info@delta-garant.ru
-            </a>
-        </div>
-
-    </div>
-    <!-- Подключение шрифтов через JS -->
+    <!-- Скрипты -->
     <script src="css/fonts.js" defer></script>
     <script src="css/scripts-2.js" defer></script>
-</header>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="triangle">
+                    <img src="images/logo/Verh.svg" alt="Верхняя часть" class="triangle__part triangle__verh" />
+                    <img src="images/logo/Levo.svg" alt="Левая часть" class="triangle__part triangle__levo" />
+                    <img src="images/logo/Pravo.svg" alt="Правая часть" class="triangle__part triangle__pravo" />
+                </div>
+                <a href="index.html">
+                    <img src="images/logo/delta-red.svg" alt="Дельта Гарант" />
+                </a>
+            </div>
+
+            <div class="header-email">
+                <a href="mailto:info@delta-garant.ru" class="email-link">
+                    <img src="https://ablokhin1991.github.io/delta-garant/images/icons/mail.svg" alt="Почта" class="email-icon" />
+                    info@delta-garant.ru
+                </a>
+            </div>
+        </div>
+    </header>
+</body>
