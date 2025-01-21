@@ -1,0 +1,25 @@
+{
+    "name": "Web Development Workspace",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:18-bullseye",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "dbaeumer.vscode-eslint",        // ESLint для проверки JS
+          "esbenp.prettier-vscode",        // Prettier для форматирования
+          "ritwickdey.LiveServer",         // Live Server для предпросмотра
+          "csstools.postcss"               // PostCSS для работы с CSS
+        ]
+      }
+    },
+    "settings": {
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "files.autoSave": "afterDelay"
+    },
+    "postCreateCommand": "npm install",
+    "forwardPorts": [3000],                // Проброс порта для Live Server
+    "features": {
+      "node": "latest"                    // Установить последнюю версию Node.js
+    }
+  }
+  
