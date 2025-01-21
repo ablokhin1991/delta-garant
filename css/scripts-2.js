@@ -1027,5 +1027,8 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
           triangle.classList.add("assembled");
       }, 500); // Задержка перед началом анимации
+  } else {
+      console.error("Элемент .triangle не найден.");
   }
 });
+
