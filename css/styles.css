@@ -512,6 +512,7 @@ input[type="checkbox"]:checked::before {
     justify-content: center;
     align-items: center;
     border: 2px solid #E2E8F0;
+    border-radius: 4px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
