@@ -1024,9 +1024,11 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", () => {
   const triangle = document.querySelector(".triangle");
   if (triangle) {
+      console.log("Запуск анимации...");
       setTimeout(() => {
           triangle.classList.add("assembled");
-      }, 500); // Задержка перед началом анимации
+          console.log("Класс assembled добавлен.");
+      }, 500); // Задержка перед анимацией
   } else {
       console.error("Элемент .triangle не найден.");
   }
