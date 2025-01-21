@@ -98,52 +98,6 @@ header .logo img {
     transform: scale(1.2); /* Увеличиваем иконку при наведении */
 }
 
-/* Контейнер треугольника */
-.triangle {
-    position: relative;
-    width: 50px; /* Общая ширина треугольника */
-    height: 50px;
-    margin-right: 10px; /* Отступ от текста логотипа */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Общие стили для частей треугольника */
-.triangle__part {
-    position: absolute;
-    opacity: 0; /* Скрываем части до начала анимации */
-    transform: scale(0.5); /* Уменьшаем начальный размер */
-    transition: transform 1s ease-out, opacity 1s ease-out;
-}
-
-/* Верхняя часть */
-.triangle__verh {
-    top: -30px;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.5); /* Смещение наверх */
-}
-
-/* Левая часть */
-.triangle__levo {
-    bottom: 0;
-    left: -25px;
-    transform: translate(-50%, 50%) scale(0.5); /* Смещение налево */
-}
-
-/* Правая часть */
-.triangle__pravo {
-    bottom: 0;
-    right: -25px;
-    transform: translate(50%, 50%) scale(0.5); /* Смещение направо */
-}
-
-/* Сборка треугольника */
-.triangle.assembled .triangle__part {
-    opacity: 1;
-    transform: translate(0, 0) scale(1); /* Центрируем и увеличиваем размер */
-}
-
 
 /* Главная секция (Hero) */
 .hero {

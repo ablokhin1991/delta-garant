@@ -1020,17 +1020,3 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 
-// треугольник
-document.addEventListener("DOMContentLoaded", () => {
-  const triangle = document.querySelector(".triangle");
-  if (triangle) {
-      console.log("Запуск анимации...");
-      setTimeout(() => {
-          triangle.classList.add("assembled");
-          console.log("Класс assembled добавлен.");
-      }, 500); // Задержка перед анимацией
-  } else {
-      console.error("Элемент .triangle не найден.");
-  }
-});
-
