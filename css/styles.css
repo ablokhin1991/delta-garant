@@ -429,14 +429,6 @@ input[type="checkbox"]:checked::before {
     border-radius: 4px;
 }
 
-.result {
-    transition: transform 0.3s ease; /* Плавная анимация */
-}
-
-.result:hover {
-    transform: scale(1.2); /* Увеличение на 20% */
-}
-
 .spinner {
     border: 4px solid #f3f3f3;
     border-top: 4px solid #F0473B;
@@ -492,6 +484,15 @@ input[type="checkbox"]:checked::before {
     position: relative;
     transition: all 0.3s ease;
 }
+
+.offer {
+    transition: transform 0.3s ease; /* Плавная анимация */
+}
+
+.offer:hover {
+    transform: scale(1.2); /* Увеличение на 20% */
+}
+
 
 .offer-mobile {
     display: flex;
