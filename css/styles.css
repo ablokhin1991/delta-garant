@@ -216,9 +216,9 @@ footer a:hover {
     transition: all 0.3s ease;
 }
 
-/* Когда поле ввода фокусируется, метка меняет цвет */
-.field__input:focus + .field__label-placeholder {
-    color: #1E3A8A; /* Меняем цвет текста метки */
+/* Когда родительский контейнер .field получает фокус (focus-within), меняем цвет метки */
+.field:focus-within .field__label-placeholder {
+    color: #1E3A8A;
 }
 
 /* Поля ввода */
