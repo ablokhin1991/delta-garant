@@ -37,11 +37,11 @@ document.getElementById("guarantee-type").addEventListener("change", function ()
 function updateGuarTypeAvailability() {
   // Получаем элементы procType и guarType
   const procTypeElement = document.querySelector('#procedure-type'); // Исправил селектор на корректный id
-  const guarTypeElement = document.querySelector('[name="guar-type"]'); // Привязан к name="guar-type"
+  const guarTypeElement = document.querySelector('[name="guarantee-type"]'); // Привязан к name="guar-type"
 
   // Проверяем, существуют ли элементы
   if (!procTypeElement || !guarTypeElement) {
-      console.error("Элементы procedure-type или guar-type не найдены.");
+      console.error("Элементы procedure-type или guarantee-type не найдены.");
       return;
   }
 
