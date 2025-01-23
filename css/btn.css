@@ -26,6 +26,7 @@
   /* Эффект при наведении */
   .offer__button:hover {
     background: #1E3A8A; /* Фон кнопки */
+    color: #fff; /* Основной цвет текста */
     opacity: 0.8; /* Лёгкая прозрачность */
     /*box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 /*6px 6px 10px rgba(0, 0, 0, 0.2);
@@ -35,6 +36,7 @@
   /* Эффект при нажатии */
   .offer__button:active {
     background: #284db5; /* Фон кнопки */
+    color: #fff; /* Основной цвет текста */
     opacity: 1; /* Полная видимость */
     box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
                 inset 8px 8px 16px rgba(0, 0, 0, 0.1);
