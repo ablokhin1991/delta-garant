@@ -216,9 +216,11 @@ footer a:hover {
     transition: all 0.3s ease;
 }
 
-.field__label-placeholder:focus {
-    color: #1E3A8A;  
+/* Когда поле ввода фокусируется, метка меняет цвет */
+.field__input:focus + .field__label-placeholder {
+    color: #1E3A8A; /* Меняем цвет текста метки */
 }
+
 /* Поля ввода */
 .field {
     background-color: #ffffff;
@@ -242,22 +244,6 @@ footer a:hover {
 .field__input:focus {
     border-color: #1E3A8A;
     outline: none;
-}
-
-/* Анимация для плейсхолдера при вводе текста */
-/*.field__input:focus + .field__label-placeholder,
-/*.field__input:not(:placeholder-shown) + .field__label-placeholder {
-   /* top: 5px;
-   /* font-size: 12px;
-   /* color: #1E3A8A;
-}*/
-
-/* Анимация метки при фокусе на поле ввода */
-.field__input:focus + .field__label-placeholder,
-.field__input:not(:placeholder-shown) + .field__label-placeholder {
-  top: 5px;
-  font-size: 12px;
-  color: #1E3A8A;
 }
 
 /* Раскрывающиеся списки (select) */
