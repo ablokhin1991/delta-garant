@@ -21,7 +21,7 @@ document.getElementById("guarantee-sum").addEventListener("input", function (e) 
   e.target.value = formattedValue;
 });
 
-// Функция сокрытия возврата аванса
+// Функция сокрытия чекбокса наличия аванса
 document.getElementById("guarantee-type").addEventListener("change", function () {
   const guaranteeType = this.value;
   const advanceCheckbox = document.getElementById("has-advance");
@@ -32,6 +32,36 @@ document.getElementById("guarantee-type").addEventListener("change", function ()
     advanceCheckbox.parentElement.style.display = "block";
   }
 });
+
+// Функция сокрытия возврата аванса
+function updateGuarTypeAvailability() {
+  // Получаем элементы procType и guarType
+  const procTypeElement = document.querySelector('#procedure-type'); // Исправил селектор на корректный id
+  const guarTypeElement = document.querySelector('[name="guar-type"]'); // Привязан к name="guar-type"
+
+  // Проверяем, существуют ли элементы
+  if (!procTypeElement || !guarTypeElement) {
+      console.error("Элементы procedure-type или guar-type не найдены.");
+      return;
+  }
+
+  // Получаем текущее значение procType
+  const procType = procTypeElement.value;
+
+  // Если procType: "1", делаем guarType: "3" некликабельным
+  const guarTypeOption = guarTypeElement.querySelector('option[value="3"]');
+  if (guarTypeOption) {
+      if (procType === "1") {
+          // Делаем опцию некликабельной
+          guarTypeOption.disabled = true;
+          guarTypeOption.style.color = "gray"; // Меняем цвет текста
+      } else {
+          // Если procType не "1", возвращаем guarType: "3" в нормальное состояние
+          guarTypeOption.disabled = false;
+          guarTypeOption.style.color = ""; // Восстанавливаем цвет текста
+      }
+  }
+}
 
 // Функция расчёта предложений на основе параметров
 async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, days) {
