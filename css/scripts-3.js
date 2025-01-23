@@ -207,11 +207,11 @@ function displayResults(results) {
 }
 
 // Функция сокрытия сепаратора при стоп-факторах
-results.forEach(result => {
-  // Для каждого результата проверяем, является ли он "стоп-фактором"
-  const separatorElement = document.querySelector(".offer__separator");
-  
-  if (separatorElement) {
-    toggleSeparatorVisibility(result.isStopFactor, separatorElement);
+function toggleSeparatorVisibility(isStopFactor, separatorElement) {
+  if (isStopFactor) {
+    separatorElement.style.display = "none"; // Скрыть разделитель
+  } else {
+    separatorElement.style.display = ""; // Показать разделитель (восстановить стандартное значение)
   }
-});
+}
+
