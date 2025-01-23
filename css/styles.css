@@ -290,38 +290,42 @@ footer a:hover {
     gap: 8px; /* Добавляем небольшой отступ между чекбоксом и текстом */
   }
   
-  /* Стиль чекбоксов */
+  /* Скрываем стандартный чекбокс и добавляем свой псевдоэлемент */
   .main-block__filters input[type="checkbox"] {
-    margin-right: 5px; /* Добавляем небольшой отступ между чекбоксом и текстом */
+    display: none; /* Скрываем стандартный чекбокс */
+  }
+  
+  /* Стили для кастомного чекбокса */
+  .main-block__filters label::before {
+    content: '';
+    display: inline-block;
     width: 20px;
     height: 20px;
     border: 2px solid #1E3A8A; /* Цвет границы по умолчанию */
     border-radius: 4px; /* Скругленные углы */
-    outline: none;
-    cursor: pointer;
-    position: relative;
-    background-color: #fff; /* Цвет фона чекбокса по умолчанию */
-    transition: background-color 0.3s, border-color 0.3s; /* Плавные изменения фона и границы */
+    background-color: #fff; /* Цвет фона */
+    margin-right: 10px; /* Отступ между чекбоксом и текстом */
+    transition: background-color 0.3s, border-color 0.3s; /* Плавные переходы */
   }
   
-  /* Цвет фона и границы чекбокса при активации (когда галочка появляется) */
-  .main-block__filters input[type="checkbox"]:checked {
+  /* Цвет фона и границы при активации чекбокса */
+  .main-block__filters input[type="checkbox"]:checked + label::before {
     background-color: #F0473B; /* Цвет фона активного чекбокса */
     border-color: #F0473B; /* Цвет границы активного чекбокса */
   }
   
-  /* Изменение цвета текста рядом с чекбоксом */
+  /* Стилизация текста при активации */
   .main-block__filters input[type="checkbox"]:checked + label {
     color: #F0473B; /* Цвет текста при активной галочке */
     font-weight: 500; /* Увеличиваем жирность текста при активной галочке */
   }
   
-  /* Состояние фокуса чекбокса (когда пользователь кликает на чекбокс) */
-  .main-block__filters input[type="checkbox"]:focus {
+  /* Состояние фокуса чекбокса */
+  .main-block__filters input[type="checkbox"]:focus + label::before {
     border-color: #1E3A8A; /* Цвет границы при фокусе */
     outline: none; /* Убираем стандартный outline */
   }
-  
+   
 
 /* Кнопка */
 /*.btn_primary {
