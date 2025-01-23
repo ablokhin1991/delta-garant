@@ -1,5 +1,6 @@
 // Функция симуляции загрузки (крутилка)
 document.getElementById("calculate-btn").addEventListener("click", function () {
+    console.log("lsf.js загружен");
     const loadingSpinner = document.getElementById("loading-spinner");
     const resultOutput = document.getElementById("result-output");
     const offerList = document.getElementById("offer-list");
