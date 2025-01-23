@@ -21,6 +21,18 @@ document.getElementById("guarantee-sum").addEventListener("input", function (e) 
   e.target.value = formattedValue;
 });
 
+// Функция сокрытия возврата аванса
+document.getElementById("guarantee-type").addEventListener("change", function () {
+  const guaranteeType = this.value;
+  const advanceCheckbox = document.getElementById("has-advance");
+
+  if (guaranteeType === "1" || guaranteeType === "3" || guaranteeType === "4") {
+    advanceCheckbox.parentElement.style.display = "none";
+  } else {
+    advanceCheckbox.parentElement.style.display = "block";
+  }
+});
+
 // Функция расчёта предложений на основе параметров
 async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, days) {
   const banks = await fetchBankData();
