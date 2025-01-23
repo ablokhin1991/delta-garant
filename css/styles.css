@@ -369,7 +369,7 @@ footer a:hover {
 }
 
 .offer:hover {
-    transform: scale(1.02); /* Увеличение на 20% */
+    transform: scale(1.01); /* Увеличение на 20% */
 }
 
 
