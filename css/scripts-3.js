@@ -14,6 +14,13 @@ async function fetchBankData() {
   }
 }
 
+// Функция форматирования суммы гарантии с пробелами
+document.getElementById("guarantee-sum").addEventListener("input", function (e) {
+  const rawValue = e.target.value.replace(/\s+/g, "").replace(/[^\d,.]/g, "");
+  const formattedValue = rawValue.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  e.target.value = formattedValue;
+});
+
 // Функция расчёта предложений на основе параметров
 async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, days) {
   const banks = await fetchBankData();
