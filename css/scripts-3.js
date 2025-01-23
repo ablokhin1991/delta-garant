@@ -1,125 +1,127 @@
-// Функция для загрузки JSON-данных
-async function loadBankData() {
+// Функция загрузки данных банков из файла banks-data.json
+async function fetchBankData() {
   try {
-    const response = await fetch('data/banks-data.json'); // Замените путь на корректный
+    const response = await fetch('data/banks-data.json'); // Укажите корректный путь к JSON
     if (!response.ok) {
       throw new Error(`Ошибка загрузки данных банков: ${response.statusText}`);
     }
-    return await response.json();
+    const banks = await response.json();
+    console.log('Данные банков успешно загружены:', banks);
+    return banks;
   } catch (error) {
     console.error('Ошибка загрузки данных банков:', error);
     return [];
   }
 }
 
+document.getElementById("guarantee-sum").addEventListener("input", function (e) {
+  const rawValue = e.target.value.replace(/\s+/g, "").replace(/[^\d,.]/g, "");
+  const formattedValue = rawValue.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  e.target.value = formattedValue;
+});
 
-// Функция для инициализации калькулятора
-async function initCalculator() {
-  const banks = await loadBankData();
+document.getElementById("guarantee-type").addEventListener("change", function () {
+  const guaranteeType = this.value;
+  const advanceCheckbox = document.getElementById("has-advance");
 
-  if (!banks || banks.length === 0) {
-    console.error('Данные банков не загружены или пусты.');
+  if (guaranteeType === "1" || guaranteeType === "3" || guaranteeType === "4") {
+    advanceCheckbox.parentElement.style.display = "none";
+  } else {
+    advanceCheckbox.parentElement.style.display = "block";
+  }
+});
+
+document.getElementById("calculate-btn").addEventListener("click", function () {
+  const sumField = document.getElementById("guarantee-sum");
+  const daysField = document.getElementById("guarantee-days");
+  const procType = document.getElementById("procedure-type").value;
+  const guarType = document.getElementById("guarantee-type").value;
+  const hasAdvance = document.getElementById("has-advance").checked;
+  const customForm = document.getElementById("custom-form").checked;
+
+  const sum = parseFloat(sumField.value.replace(/\s+/g, "").replace(",", "."));
+  const days = parseInt(daysField.value, 10);
+
+  if (!sum || isNaN(sum) || !days || isNaN(days)) {
+    alert("Пожалуйста, заполните все поля корректно.");
     return;
   }
-  console.log('Данные банков:', banks);
 
-  // Привязка событий
-  bindInputFormatting();
-  bindGuaranteeTypeChange();
-  bindCalculateButton(banks);
-  bindResetButton();
-  applyResponsiveStyles();
-}
 
-// Функция для форматирования ввода суммы
-function bindInputFormatting() {
-  document.getElementById("guarantee-sum").addEventListener("input", function (e) {
-    const rawValue = e.target.value.replace(/\s+/g, "").replace(/[^\d,.]/g, "");
-    const formattedValue = rawValue.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    e.target.value = formattedValue;
-  });
-};
+  // ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
+  const results = banks.map(bank => {
+    console.log("Проверяем банк:", bank.name);
 
-// Функция для форматирования ввода суммы
-function bindInputFormatting() {
-  document.getElementById("guarantee-sum").addEventListener("input", function (e) {
-    const rawValue = e.target.value.replace(/\s+/g, "").replace(/[^\d,.]/g, "");
-    const formattedValue = rawValue.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    e.target.value = formattedValue;
-  });
-}
+    // Фильтруем условия банка, которые соответствуют заданным параметрам
+    const matchingConditions = bank.conditions.filter(c => {
+        const isBaseMatch =
+            c.procType === procType &&
+            c.guarType === guarType &&
+            c.hasAdvance === hasAdvance &&
+            c.customForm === customForm &&
+            sum >= (c.minSum || 0) &&
+            sum <= (c.ruleMaxSum || Infinity);
 
-// Функция для обработки клика на кнопке "Рассчитать"
-function bindCalculateButton(banks) {
-  document.getElementById("calculate-btn").addEventListener("click", async function () {
-    const sumField = document.getElementById("guarantee-sum");
-    const daysField = document.getElementById("guarantee-days");
-    const procType = document.getElementById("procedure-type").value;
-    const guarType = document.getElementById("guarantee-type").value;
-    const hasAdvance = document.getElementById("has-advance").checked;
-    const customForm = document.getElementById("custom-form").checked;
+        const isDaysMatch =
+            (typeof c.ruleMinDays === "undefined" || days >= c.ruleMinDays) &&
+            days <= (c.ruleMaxDays || Infinity);
 
-    const sum = parseFloat(sumField.value.replace(/\s+/g, "").replace(",", "."));
-    const days = parseInt(daysField.value, 10);
+        return isBaseMatch && isDaysMatch;
+    });
 
-    if (!sum || isNaN(sum) || !days || isNaN(days)) {
-      alert("Пожалуйста, заполните все поля корректно.");
-      return;
+    // Если подходящих условий нет, добавляем банк в стоп-факторы
+    if (matchingConditions.length === 0) {
+        console.error(`Не найдено подходящих условий для банка ${bank.name}`);
+        return {
+            name: bank.name,
+            logo: bank.logo,
+            cost: "Стоп-факторы",
+            rate: "Нет подходящих предложений",
+            isStopFactor: true
+        };
     }
 
-    const results = banks.map(bank => {
-      const matchingConditions = bank.conditions.filter(c => {
-        return (
-          c.procType === procType &&
-          c.guarType === guarType &&
-          c.hasAdvance === hasAdvance &&
-          c.customForm === customForm &&
-          sum >= (c.minSum || 0) &&
-          sum <= (c.ruleMaxSum || Infinity) &&
-          days <= (c.ruleMaxDays || Infinity)
-        );
-      });
+    // Выбираем лучшее условие (например, с минимальной ставкой)
+    const bestCondition = matchingConditions.reduce((best, current) => {
+        return current.rate < best.rate ? current : best;
+    });
 
-      if (matchingConditions.length === 0) {
-        return {
-          name: bank.name,
-          logo: bank.logo,
-          cost: "Стоп-факторы",
-          rate: "Нет подходящих предложений",
-          isStopFactor: true
-        };
-      }
+    console.log("Выбранное условие:", bestCondition);
 
-      const bestCondition = matchingConditions.reduce((best, current) =>
-        current.rate < best.rate ? current : best
-      );
+    // Расчёт стоимости
+    const rate = bestCondition.rate;
+    const calculatedCost = (sum * rate * days) / 365;
+    const cost = Math.max(calculatedCost, bestCondition.minCost);
 
-      const rate = bestCondition.rate;
-      const calculatedCost = (sum * rate * days) / 365;
-      const cost = Math.max(calculatedCost, bestCondition.minCost);
-
-      return {
+    return {
         name: bank.name,
         logo: bank.logo,
         data: bank.data,
         cost: parseFloat(cost.toFixed(2)),
         rate: `${(rate * 100).toFixed(2)}`,
         isStopFactor: false
-      };
-    });
+    };
+});
 
-    displayResults(results);
-  });
-}
+  
+// ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА • ГЛАВНЫЙ КОД РАСЧЕТА
+  
+  
+  
+  
+  
+  
+  
 
-// Функция для отображения результатов
-function displayResults(results) {
-  const offerList = document.getElementById("offer-list");
+
+  // Разделяем банки на обычные и с стоп-факторами
   const normalResults = results.filter(r => !r.isStopFactor);
   const stopFactorResults = results.filter(r => r.isStopFactor);
 
+  // Сортируем обычные результаты по стоимости
   normalResults.sort((a, b) => a.cost - b.cost);
 
+  // Объединяем обычные и стоп-факторные результаты
   const finalResults = [...normalResults, ...stopFactorResults];
 
   if (finalResults.length === 0) {
@@ -127,34 +129,104 @@ function displayResults(results) {
     return;
   }
 
-  offerList.innerHTML = finalResults
-    .map((result, index) =>
-      `
-        <div class="offer">
-          <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
-          <div class="offer__details"><strong>${result.name}</strong></div>
-          ${
-            !result.isStopFactor
-              ? `<div class="offer__rate">${result.cost.toLocaleString()} руб.</div>
-                 <div class="offer__rate">${result.rate}% годовых</div>`
-              : `<div class="offer__rate">Стоп-факторы: ${result.rate}</div>`
-          }
+// Генерация результатов
+const offerList = document.getElementById("offer-list");
+
+offerList.innerHTML = finalResults
+  .map((result, index) => 
+    `
+     <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+        <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
+        <div class="offer__details" style="flex: 1;">
+            <strong>${result.name}</strong>
         </div>
-      `
-    )
-    .join("");
-}
+        <!-- <div class="offer__personal-data">
+               ${
+                result.data 
+                ? result.data.split('\n').map(line => `<div>${line}</div>`).join('') 
+                : ' '
+              }
+        </div> -->
+        <div class="offer__separator"></div> <!-- Разделительная линия -->
+        ${!result.isStopFactor ? `  
 
-// Функция для применения стилей адаптации
+          <div class="offer__rate" style="display: block;">
+            <!-- Ставка: ${result.rate}%<br> -->
+            ${result.cost.toLocaleString()} руб.<br>
+          </div>
+
+          <div class="offer__rate" style="font-weight: 300; display: block;">  
+            ${result.rate}% годовых<br>
+          </div>
+
+        ` : `  
+          <div class="offer__rate">
+            Стоп-факторы:<br>${result.rate}
+          </div>
+        `}
+        <div class="offer__buttons">
+          ${!result.isStopFactor ? `  
+            <button class="offer__button" data-index="${index}">Оформить</button>
+          ` : ''}
+        </div>
+        
+    </div>`
+  )
+  .join("");
+
+// Добавляем стили к блоку вывода результатов "offer" для мобильных устройств
+// Функция для переключения стилей в зависимости от ширины экрана
+//function applyResponsiveStyles() {
+//  const isMobile = window.innerWidth <= 768;
+
+  // Найти все элементы с классом offer
+//  const offers = document.querySelectorAll('.offer');
+  
+//  offers.forEach(offer => {
+//    if (isMobile) {
+//      offer.style.flexDirection = 'column'; // Вертикальное выравнивание
+//      offer.style.justifyContent = 'center'; // Центровка по горизонтали
+//      offer.style.alignItems = 'center'; // Центровка по вертикали
+//      offer.style.gap = '16px'; // Отступы между элементами
+//    } else {
+//      offer.style.flexDirection = 'row'; // Горизонтальное выравнивание
+//      offer.style.justifyContent = 'space-between'; // Распределение пространства
+//      offer.style.alignItems = 'center'; // Выравнивание по вертикали
+//    }
+//  });
+//}
+
+// Применить стили при загрузке страницы
+//window.addEventListener('load', applyResponsiveStyles);
+
+// Применить стили при изменении размера окна
+//window.addEventListener('resize', applyResponsiveStyles);
+
+// Конец кода стилей - - - - - - - - - - - - - - - - - - - - - - - 
+document.addEventListener('DOMContentLoaded', applyResponsiveStyles); 
 function applyResponsiveStyles() {
-  window.addEventListener("resize", function () {
-    const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768;
 
-    document.querySelectorAll(".offer").forEach(offer => {
-      offer.style.flexDirection = isMobile ? "column" : "row";
-    });
+  document.querySelectorAll('.offer').forEach(offer => {
+      if (isMobile) {
+          offer.classList.add('offer-mobile');
+          offer.classList.remove('offer-desktop');
+      } else {
+          offer.classList.add('offer-desktop');
+          offer.classList.remove('offer-mobile');
+      }
   });
 }
+
+// Применить стили при загрузке страницы
+window.addEventListener('load', applyResponsiveStyles);
+
+// Применить стили при изменении размера окна
+window.addEventListener('resize', applyResponsiveStyles);
+// Конец кода стилей - - - - - - - - - - - - - - - - - - - - - - -  
+
+
+
 
 // Показать блок результатов
 document.getElementById("result-output").style.display = "block";
@@ -196,25 +268,47 @@ offerList.addEventListener("click", (event) => {
 });
 
 
-// Функция для обработки кнопки сброса
-function bindResetButton() {
-  document.getElementById("reset-btn").addEventListener("click", function () {
-    document.getElementById("result-output").style.display = "none";
-    document.getElementById("offer-list").innerHTML = "";
-    document.getElementById("reset-btn").style.display = "none";
 
-    const form = document.getElementById("guarantee-calculator");
-    form.reset();
+});
+// КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА
+// Скрываем кнопку сброса по умолчанию
+document.getElementById("reset-btn").style.display = "none";
 
-    document.getElementById("guarantee-sum").value = "1 000 000";
-    document.getElementById("guarantee-days").value = "365";
-    document.getElementById("procedure-type").value = "1";
-    document.getElementById("guarantee-type").value = "2";
-    document.getElementById("has-advance").checked = false;
-    document.getElementById("custom-form").checked = false;
-  });
-}
+// Слушаем клик на кнопке "Рассчитать"
+document.getElementById("calculate-btn").addEventListener("click", function () {
+  // Показать кнопку сброса
+  document.getElementById("reset-btn").style.display = "inline-block";
 
+  // Здесь добавьте код расчета, если нужно
+  // Пример: document.getElementById("result-output").style.display = "block";
+  // document.getElementById("offer-list").innerHTML = "<div>Результаты расчета</div>";
+});
+
+// Слушаем клик на кнопке "Сбросить"
+document.getElementById("reset-btn").addEventListener("click", function () {
+  // Скрыть результаты и очистить список предложений
+  document.getElementById("result-output").style.display = "none";
+  document.getElementById("offer-list").innerHTML = "";
+
+  // Скрыть кнопку сброса снова
+  document.getElementById("reset-btn").style.display = "none";
+
+  // Сброс значений формы к значениям по умолчанию
+  const form = document.getElementById("guarantee-calculator");
+  form.reset();
+
+  // Установить дефолтные значения вручную, если они заданы через HTML (value, selected)
+  document.getElementById("guarantee-sum").value = "1 000 000";
+  document.getElementById("guarantee-days").value = "365";
+  document.getElementById("procedure-type").value = "1"; // 44-ФЗ
+  document.getElementById("guarantee-type").value = "2"; // На исполнение контракта
+
+  // Убедитесь, что чекбоксы сняты
+  document.getElementById("has-advance").checked = false;
+  document.getElementById("custom-form").checked = false;
+});
+
+// КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА • КНОПКА СБРОСА
 
 // Функция для управления состоянием guarType - ВОЗВРАТ АВАНСА ПРОПАДАЕТ ПРИ 44-ФЗ
 function updateGuarTypeAvailability() {
@@ -296,5 +390,3 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
 // КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • КРУТИЛКА • 
 
-// Запуск калькулятора
-document.addEventListener("DOMContentLoaded", initCalculator);
