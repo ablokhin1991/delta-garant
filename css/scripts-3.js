@@ -1,7 +1,7 @@
 // Функция для загрузки JSON-данных
 async function loadBankData() {
   try {
-    const response = await fetch('/data/banks-data.json'); // Замените путь, если JSON-файл находится в другой папке
+    const response = await fetch('data/banks-data.json'); // Замените путь, если JSON-файл находится в другой папке
     if (!response.ok) {
       throw new Error('Ошибка загрузки данных банков');
     }
