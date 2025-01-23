@@ -1,3 +1,19 @@
+// Функция загрузки данных банков из файла banks-data.json
+async function fetchBankData() {
+  try {
+    const response = await fetch('data/banks-data.json'); // Укажите корректный путь к JSON
+    if (!response.ok) {
+      throw new Error(`Ошибка загрузки данных банков: ${response.statusText}`);
+    }
+    const banks = await response.json();
+    console.log('Данные банков успешно загружены:', banks);
+    return banks;
+  } catch (error) {
+    console.error('Ошибка загрузки данных банков:', error);
+    return [];
+  }
+}
+
 document.getElementById("guarantee-sum").addEventListener("input", function (e) {
   const rawValue = e.target.value.replace(/\s+/g, "").replace(/[^\d,.]/g, "");
   const formattedValue = rawValue.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
