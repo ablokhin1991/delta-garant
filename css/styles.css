@@ -245,11 +245,19 @@ footer a:hover {
 }
 
 /* Анимация для плейсхолдера при вводе текста */
+/*.field__input:focus + .field__label-placeholder,
+/*.field__input:not(:placeholder-shown) + .field__label-placeholder {
+   /* top: 5px;
+   /* font-size: 12px;
+   /* color: #1E3A8A;
+}*/
+
+/* Анимация метки при фокусе на поле ввода */
 .field__input:focus + .field__label-placeholder,
 .field__input:not(:placeholder-shown) + .field__label-placeholder {
-    top: 5px;
-    font-size: 12px;
-    color: #1E3A8A;
+  top: 5px;
+  font-size: 12px;
+  color: #1E3A8A;
 }
 
 /* Раскрывающиеся списки (select) */
