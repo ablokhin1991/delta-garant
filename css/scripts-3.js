@@ -206,3 +206,12 @@ function displayResults(results) {
   //resultOutput.style.display = "block"; // Делаем раздел с результатами видимым//
 }
 
+// Функция сокрытия сепаратора при стоп-факторах
+results.forEach(result => {
+  // Для каждого результата проверяем, является ли он "стоп-фактором"
+  const separatorElement = document.querySelector(".offer__separator");
+  
+  if (separatorElement) {
+    toggleSeparatorVisibility(result.isStopFactor, separatorElement);
+  }
+});
