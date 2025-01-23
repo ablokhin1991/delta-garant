@@ -247,6 +247,11 @@ footer a:hover {
     outline: none;
 }
 
+.field__input:hover {
+    border-color: #1E3A8A;
+    outline: none;
+}
+
 /* Раскрывающиеся списки (select) */
 .field__input select {
     width: 100%;
