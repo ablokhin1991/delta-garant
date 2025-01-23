@@ -16,7 +16,6 @@ async function fetchBankData() {
 
 // Функция расчёта предложений на основе параметров
 async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, days) {
-  // Загружаем данные банков
   const banks = await fetchBankData();
 
   if (banks.length === 0) {
@@ -24,11 +23,7 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
     return [];
   }
 
-  // Проводим расчёт
   const results = banks.map(bank => {
-    console.log("Проверяем банк:", bank.name);
-
-    // Фильтруем условия банка
     const matchingConditions = bank.conditions.filter(c => {
       const isBaseMatch =
         c.procType === procType &&
@@ -45,9 +40,7 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
       return isBaseMatch && isDaysMatch;
     });
 
-    // Если подходящих условий нет
     if (matchingConditions.length === 0) {
-      console.error(`Не найдено подходящих условий для банка ${bank.name}`);
       return {
         name: bank.name,
         logo: bank.logo,
@@ -57,14 +50,10 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
       };
     }
 
-    // Выбираем лучшее условие (например, с минимальной ставкой)
     const bestCondition = matchingConditions.reduce((best, current) =>
       current.rate < best.rate ? current : best
     );
 
-    console.log("Выбранное условие:", bestCondition);
-
-    // Расчёт стоимости
     const rate = bestCondition.rate;
     const calculatedCost = (sum * rate * days) / 365;
     const cost = Math.max(calculatedCost, bestCondition.minCost);
@@ -79,10 +68,10 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
     };
   });
 
-  console.log("Результаты расчёта:", results);
   return results;
 }
 
+// Обработчик кнопки "Рассчитать"
 document.getElementById("calculate-btn").addEventListener("click", async function () {
   const procType = document.getElementById("procedure-type").value;
   const guarType = document.getElementById("guarantee-type").value;
@@ -102,26 +91,43 @@ document.getElementById("calculate-btn").addEventListener("click", async functio
 
   const results = await calculateOffers(procType, guarType, hasAdvance, customForm, sum, days);
 
-  // Здесь вы можете отобразить результаты
-  console.log("Итоговые предложения:", results);
+  if (results.length === 0) {
+    alert("Подходящие предложения не найдены.");
+    return;
+  }
+
+  displayResults(results); // Отображаем результаты
 });
 
-const offerList = document.getElementById("offer-list");
-offerList.innerHTML = results
-  .map(result =>
-    `
-      <div class="offer">
-        <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
-        <div class="offer__details">
-          <strong>${result.name}</strong>
+// Функция отображения результатов
+function displayResults(results) {
+  const offerList = document.getElementById("offer-list");
+  const resultOutput = document.getElementById("result-output");
+
+  if (!offerList || !resultOutput) {
+    console.error("Элементы для отображения результатов не найдены.");
+    return;
+  }
+
+  offerList.innerHTML = results
+    .map(result =>
+      `
+        <div class="offer">
+          <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
+          <div class="offer__details">
+            <strong>${result.name}</strong>
+          </div>
+          ${
+            !result.isStopFactor
+              ? `<div class="offer__rate">${result.cost.toLocaleString()} руб.</div>
+                 <div class="offer__rate">${result.rate}% годовых</div>`
+              : `<div class="offer__rate">Стоп-факторы: ${result.rate}</div>`
+          }
         </div>
-        ${
-          !result.isStopFactor
-            ? `<div class="offer__rate">${result.cost.toLocaleString()} руб.</div>
-               <div class="offer__rate">${result.rate}% годовых</div>`
-            : `<div class="offer__rate">Стоп-факторы: ${result.rate}</div>`
-        }
-      </div>
-    `
-  )
-  .join("");
+      `
+    )
+    .join("");
+
+  resultOutput.style.display = "block"; // Делаем раздел с результатами видимым
+}
+
