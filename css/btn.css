@@ -27,9 +27,9 @@
   .offer__button:hover {
     background: #1E3A8A; /* Фон кнопки */
     opacity: 0.8; /* Лёгкая прозрачность */
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-                6px 6px 10px rgba(0, 0, 0, 0.2);
-    color: #fff; /* Основной цвет текста */
+    /*box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+                /*6px 6px 10px rgba(0, 0, 0, 0.2);
+    /*color: #fff; /* Основной цвет текста */
   }
   
   /* Эффект при нажатии */
