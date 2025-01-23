@@ -16,7 +16,7 @@
     font-family: "Roboto", sans-serif; /* Используемый шрифт */
     font-size: 14px;
     font-weight: bold;
-    color: #fff; /* Основной цвет текста */
+    color: #333; /* Основной цвет текста */
   
     /* Тени для объёмного эффекта */
     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
@@ -25,18 +25,20 @@
   
   /* Эффект при наведении */
   .offer__button:hover {
+    background: #1E3A8A; /* Фон кнопки */
     opacity: 0.8; /* Лёгкая прозрачность */
     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 6px 6px 10px rgba(0, 0, 0, 0.2);
-    color: #284db5; /* Основной цвет текста */
+    color: #fff; /* Основной цвет текста */
   }
   
   /* Эффект при нажатии */
   .offer__button:active {
+    background: #284db5; /* Фон кнопки */
     opacity: 1; /* Полная видимость */
     box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
                 inset 8px 8px 16px rgba(0, 0, 0, 0.1);
-    color: #3662dc; /* Меняем цвет текста при нажатии */
+    color: #fff; /* Меняем цвет текста при нажатии */
   }
   
   /* Неактивное состояние */
