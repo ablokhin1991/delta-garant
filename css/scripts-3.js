@@ -33,36 +33,42 @@ document.getElementById("guarantee-type").addEventListener("change", function ()
   }
 });
 
-// Функция сокрытия возврата аванса
-document.getElementById("procedure-type").addEventListener("change", updateGuarTypeAvailability);
- function updateGuarTypeAvailability() {
+// Функция сокрытия опции возврата аванса
+function updateGuarTypeAvailability() {
   // Получаем элементы procType и guarType
-  const procTypeElement = document.querySelector('#procedure-type'); // Исправил селектор на корректный id
-  const guarTypeElement = document.querySelector('[name="guar-type"]'); // Привязан к name="guar-type"
+  const procTypeElement = document.getElementById('procedure-type'); // Поле с типом процедуры
+  const guarTypeElement = document.querySelector('[name="guar-type"]'); // Поле с типом гарантии
 
   // Проверяем, существуют ли элементы
   if (!procTypeElement || !guarTypeElement) {
-      console.error("Элементы procedure-type или guar-type не найдены.");
-      return;
+    console.error("Элементы 'procedure-type' или 'guar-type' не найдены в DOM.");
+    return;
   }
 
   // Получаем текущее значение procType
   const procType = procTypeElement.value;
 
-  // Если procType: "1", делаем guarType: "3" некликабельным
+  // Получаем опцию guarType с value="3"
   const guarTypeOption = guarTypeElement.querySelector('option[value="3"]');
-  if (guarTypeOption) {
-      if (procType === "1") {
-          // Делаем опцию некликабельной
-          guarTypeOption.disabled = true;
-          guarTypeOption.style.color = "gray"; // Меняем цвет текста
-      } else {
-          // Если procType не "1", возвращаем guarType: "3" в нормальное состояние
-          guarTypeOption.disabled = false;
-          guarTypeOption.style.color = ""; // Восстанавливаем цвет текста
-      }
+  if (!guarTypeOption) {
+    console.error("Опция с value='3' в элементе 'guar-type' не найдена.");
+    return;
+  }
+
+  // Проверяем значение procType и скрываем/отключаем опцию guarType
+  if (procType === "1") {
+    guarTypeOption.disabled = true; // Делаем опцию некликабельной
+    guarTypeOption.style.color = "gray"; // Меняем цвет текста для визуального эффекта
+  } else {
+    guarTypeOption.disabled = false; // Возвращаем опцию в активное состояние
+    guarTypeOption.style.color = ""; // Убираем стилизацию
   }
 }
+
+// Привязка функции к событиям
+document.getElementById("procedure-type").addEventListener("change", updateGuarTypeAvailability); // Обновляем при изменении
+window.addEventListener("DOMContentLoaded", updateGuarTypeAvailability); // Применяем на начальной загрузке
+
 
 // Функция расчёта предложений на основе параметров
 async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, days) {
