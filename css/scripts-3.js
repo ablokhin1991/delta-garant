@@ -34,7 +34,8 @@ document.getElementById("guarantee-type").addEventListener("change", function ()
 });
 
 // Функция сокрытия возврата аванса
-function updateGuarTypeAvailability() {
+document.getElementById("procedure-type").addEventListener("change", updateGuarTypeAvailability);
+ function updateGuarTypeAvailability() {
   // Получаем элементы procType и guarType
   const procTypeElement = document.querySelector('#procedure-type'); // Исправил селектор на корректный id
   const guarTypeElement = document.querySelector('[name="guar-type"]'); // Привязан к name="guar-type"
