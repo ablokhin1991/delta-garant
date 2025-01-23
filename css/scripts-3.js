@@ -128,7 +128,7 @@ function displayResults(results) {
     )
     .join("");
 
-  resultOutput.style.display = "block"; // Делаем раздел с результатами видимым
+  //resultOutput.style.display = "block"; // Делаем раздел с результатами видимым//
 }
 
 // Функция симуляции загрузки (крутилка)
