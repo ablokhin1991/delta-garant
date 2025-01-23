@@ -216,6 +216,9 @@ footer a:hover {
     transition: all 0.3s ease;
 }
 
+.field__label-placeholder:focus {
+    color: #1E3A8A;  
+}
 /* Поля ввода */
 .field {
     background-color: #ffffff;
