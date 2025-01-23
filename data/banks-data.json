@@ -1,0 +1,50 @@
+[
+    {
+      "name": "ПАО Альфа-Банк",
+      "logo": "/delta-garant/images/banks-logo/alfa-bank.svg",
+      "data": "Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета",
+      "conditions": [
+        {
+          "procType": "1",
+          "guarType": "2",
+          "hasAdvance": true,
+          "customForm": true,
+          "minSum": 0,
+          "ruleMaxSum": 150000000,
+          "rate": 0.03,
+          "minCost": 1000,
+          "ruleMaxDays": 3652
+        },
+        {
+          "procType": "1",
+          "guarType": "2",
+          "hasAdvance": false,
+          "customForm": true,
+          "minSum": 0,
+          "ruleMaxSum": 150000000,
+          "rate": 0.03,
+          "minCost": 1000,
+          "ruleMaxDays": 3652
+        }
+      ]
+    },
+    {
+      "name": "ПАО Промсвязьбанк",
+      "logo": "/delta-garant/images/banks-logo/psb.svg",
+      "data": "Решение от 1 дня\nБез поручительства\nБез открытия расчетного счета",
+      "conditions": [
+        {
+          "procType": "1",
+          "guarType": "2",
+          "hasAdvance": true,
+          "customForm": true,
+          "minSum": 0,
+          "ruleMaxSum": 99999,
+          "rate": 0.05,
+          "minCost": 1000,
+          "ruleMaxDays": 1140
+        }
+      ]
+    }
+  ]
+  
