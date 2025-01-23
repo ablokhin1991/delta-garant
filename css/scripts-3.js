@@ -207,12 +207,5 @@ function displayResults(results) {
 }
 
 // Функция сокрытия сепаратора при стоп-факторах
-function toggleSeparatorVisibility(isStopFactor, separatorElement) {
-  const separatorElement = document.querySelector(".offer__separator");
-  if (isStopFactor) {
-    separatorElement.style.display = "none"; // Скрыть разделитель
-  } else {
-    separatorElement.style.display = ""; // Показать разделитель (восстановить стандартное значение)
-  }
-}
+
 
