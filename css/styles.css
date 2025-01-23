@@ -280,7 +280,48 @@ footer a:hover {
     width: 48%;
 }
 
- 
+.main-block__filters label {
+    color: #333333; /* Цвет текста чекбоксов */
+    font-size: 16px;
+    font-weight: 200;
+    display: flex; /* Чтобы текст рядом с чекбоксом выровнялся */
+    align-items: center;
+    margin-right: 15px; /* Увеличиваем расстояние между чекбоксами */
+    gap: 8px; /* Добавляем небольшой отступ между чекбоксом и текстом */
+  }
+  
+  /* Стиль чекбоксов */
+  .main-block__filters input[type="checkbox"] {
+    margin-right: 5px; /* Добавляем небольшой отступ между чекбоксом и текстом */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1E3A8A; /* Цвет границы по умолчанию */
+    border-radius: 4px; /* Скругленные углы */
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: #fff; /* Цвет фона чекбокса по умолчанию */
+    transition: background-color 0.3s, border-color 0.3s; /* Плавные изменения фона и границы */
+  }
+  
+  /* Цвет фона и границы чекбокса при активации (когда галочка появляется) */
+  .main-block__filters input[type="checkbox"]:checked {
+    background-color: #F0473B; /* Цвет фона активного чекбокса */
+    border-color: #F0473B; /* Цвет границы активного чекбокса */
+  }
+  
+  /* Изменение цвета текста рядом с чекбоксом */
+  .main-block__filters input[type="checkbox"]:checked + label {
+    color: #F0473B; /* Цвет текста при активной галочке */
+    font-weight: 500; /* Увеличиваем жирность текста при активной галочке */
+  }
+  
+  /* Состояние фокуса чекбокса (когда пользователь кликает на чекбокс) */
+  .main-block__filters input[type="checkbox"]:focus {
+    border-color: #1E3A8A; /* Цвет границы при фокусе */
+    outline: none; /* Убираем стандартный outline */
+  }
+  
 
 /* Кнопка */
 /*.btn_primary {
