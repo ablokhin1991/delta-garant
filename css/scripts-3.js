@@ -187,7 +187,7 @@ function displayResults(results) {
                   <div style="font-size: 14px; font-weight: 300; color: #555;">${result.rate}% годовых</div>
                 </div>
                 <div class="offer__buttons" style="margin-left: 15px;">
-                  <button class="offer__button" data-index="${index}" style="padding: 5px 10px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
+                  <button class="offer__button" data-index="${index}" style="padding: 5px 10px;">
                     Оформить
                   </button>
                 </div>
