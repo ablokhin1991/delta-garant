@@ -1,7 +1,7 @@
 // Функция загрузки данных банков из файла banks-data.json
 async function fetchBankData() {
   try {
-    const response = await fetch('data/banks-data.json'); // Укажите корректный путь к JSON
+    const response = await fetch('/data/banks-data.json'); // Укажите корректный путь к JSON
     if (!response.ok) {
       throw new Error(`Ошибка загрузки данных банков: ${response.statusText}`);
     }
