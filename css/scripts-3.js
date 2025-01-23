@@ -169,7 +169,7 @@ function displayResults(results) {
     .map((result, index) => 
       `
         <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd;">
-          <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${result.logo}'); background-size: cover; background-position: center;"></div>
+          <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-left: 20px;"></div>
           <div class="offer__details" style="flex: 1; padding: 0 15px;">
             <strong>${result.name}</strong>
             ${
@@ -186,7 +186,7 @@ function displayResults(results) {
                   <div style="font-size: 16px; font-weight: bold;">${result.cost.toLocaleString()} руб.</div>
                   <div style="font-size: 14px; font-weight: 300; color: #555;">${result.rate}% годовых</div>
                 </div>
-                <div class="offer__buttons" style="margin-left: 15px;">
+                <div class="offer__buttons" style="margin-left: 15px; margin-right: 20px;">
                   <button class="offer__button" data-index="${index}" style="padding: 5px 10px;">
                     Оформить
                   </button>
