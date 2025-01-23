@@ -207,5 +207,14 @@ function displayResults(results) {
 }
 
 // Функция сокрытия сепаратора при стоп-факторах
+function hideSeparatorIfStopFactor(isStopFactor, offerElement) {
+  // Ищем элемент разделителя внутри текущего предложения
+  const separatorElement = offerElement.querySelector(".offer__separator");
+  
+  // Если разделитель найден, скрываем его при срабатывании стоп-фактора
+  if (separatorElement) {
+    separatorElement.style.display = isStopFactor ? "none" : ""; // Скрыть или показать
+  }
+}
 
 
