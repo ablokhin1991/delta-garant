@@ -1,4 +1,3 @@
-
     // Функция для получения параметров из URL
     function getQueryParams() {
         const params = {};
