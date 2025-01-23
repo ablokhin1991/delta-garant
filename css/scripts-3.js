@@ -82,3 +82,46 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
   console.log("Результаты расчёта:", results);
   return results;
 }
+
+document.getElementById("calculate-btn").addEventListener("click", async function () {
+  const procType = document.getElementById("procedure-type").value;
+  const guarType = document.getElementById("guarantee-type").value;
+  const hasAdvance = document.getElementById("has-advance").checked;
+  const customForm = document.getElementById("custom-form").checked;
+
+  const sumField = document.getElementById("guarantee-sum").value;
+  const daysField = document.getElementById("guarantee-days").value;
+
+  const sum = parseFloat(sumField.replace(/\s+/g, "").replace(",", "."));
+  const days = parseInt(daysField, 10);
+
+  if (!sum || isNaN(sum) || !days || isNaN(days)) {
+    alert("Пожалуйста, заполните все поля корректно.");
+    return;
+  }
+
+  const results = await calculateOffers(procType, guarType, hasAdvance, customForm, sum, days);
+
+  // Здесь вы можете отобразить результаты
+  console.log("Итоговые предложения:", results);
+});
+
+const offerList = document.getElementById("offer-list");
+offerList.innerHTML = results
+  .map(result =>
+    `
+      <div class="offer">
+        <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
+        <div class="offer__details">
+          <strong>${result.name}</strong>
+        </div>
+        ${
+          !result.isStopFactor
+            ? `<div class="offer__rate">${result.cost.toLocaleString()} руб.</div>
+               <div class="offer__rate">${result.rate}% годовых</div>`
+            : `<div class="offer__rate">Стоп-факторы: ${result.rate}</div>`
+        }
+      </div>
+    `
+  )
+  .join("");
