@@ -137,6 +137,15 @@
         { "procType": "2", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 1000000, "ruleMaxSum": 150000000, "rate": 0.038, "minCost": 1999, "ruleMaxDays": 1860 }
  
       ]
+    },
+    {
+      "name": "АО Ингосстрах Банк",
+      "logo": "/delta-garant/images/banks-logo/igs.svg",
+      "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
+      "conditions": [
+        
+ 
+      ]
     }
 
   ]
