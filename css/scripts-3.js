@@ -181,7 +181,7 @@ function displayResults(results) {
           <div class="offer__separator" style="flex-shrink: 0; width: 1px; height: 50px; background: #ddd; margin: 0 15px; ${result.isStopFactor ? 'display: none;' : ''}"></div>
           ${
             !result.isStopFactor
-              ? `
+              ? ` 
                 <div class="offer__rate" style="text-align: right;">
                   <div style="font-size: 16px; font-weight: bold;">${result.cost.toLocaleString()} руб.</div>
                   <div style="font-size: 12px; font-weight: 300; color: #555;">${result.rate}% годовых</div>
@@ -192,19 +192,21 @@ function displayResults(results) {
                   </button>
                 </div>
               `
-              : `
+              : ` 
                 <div class="offer__rate" style="font-size: 14px; font-weight: 300; text-align: right; color: #555; margin-right: 20px;">
-                Стоп-факторы: <br>${result.rate}
+                  Стоп-факторы: <br>${result.rate}
                 </div>
               `
           }
         </div>
+        <!-- Добавляем текст отказа от ответственности -->
+        <div style="font-size: 12px; font-weight: 300; color: #555; text-align: left; padding: 10px 20px 10px 20px;">
+          Данный расчет является предварительным и не является публичной офертой. Все приведенные данные носят информационный характер и могут отличаться от окончательных условий. Для получения точной информации и консультации, пожалуйста, обратитесь к специалисту. Администрация сайта не несет ответственности за возможные неточности в расчетах.
+        </div>
       `
     )
     .join("");
-
-  // Делаем раздел с результатами видимым
-  //resultOutput.style.display = "block";//
 }
+
 
 
