@@ -184,7 +184,7 @@ function displayResults(results) {
               ? `
                 <div class="offer__rate" style="text-align: right;">
                   <div style="font-size: 16px; font-weight: bold;">${result.cost.toLocaleString()} руб.</div>
-                  <div style="font-size: 14px; font-weight: 300; color: #555;">${result.rate}% годовых</div>
+                  <div style="font-size: 12px; font-weight: 300; color: #555;">${result.rate}% годовых</div>
                 </div>
                 <div class="offer__buttons" style="margin-left: 15px; margin-right: 20px;">
                   <button class="offer__button" data-index="${index}" style="padding: 5px 10px;">
