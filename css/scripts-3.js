@@ -71,6 +71,7 @@ window.addEventListener("DOMContentLoaded", updateGuarTypeAvailability); // Пр
 
 
 // Функция расчёта предложений на основе параметров
+// Функция расчёта предложений на основе параметров
 async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, days) {
   const banks = await fetchBankData();
 
@@ -112,20 +113,28 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
 
     const rate = bestCondition.rate;
     const calculatedCost = (sum * rate * days) / 365;
-    const cost = Math.max(calculatedCost, bestCondition.minCost);
+    let cost = calculatedCost;
+
+    // Если расчетная стоимость меньше минимальной стоимости, применяем минимальную стоимость
+    let rateDisplay = `${(rate * 100).toFixed(2)}`; // Ставка по умолчанию в процентах
+    if (calculatedCost < bestCondition.minCost) {
+      cost = bestCondition.minCost; // Устанавливаем минимальную стоимость
+      rateDisplay = "min"; // Ставка заменяется на "min"
+    }
 
     return {
       name: bank.name,
       logo: bank.logo,
       data: bank.data,
-      cost: parseFloat(cost.toFixed(2)),
-      rate: `${(rate * 100).toFixed(2)}`,
+      cost: parseFloat(cost.toFixed(2)), // Округляем до двух знаков
+      rate: rateDisplay, // Отображаем либо "min", либо процент
       isStopFactor: false
     };
   });
 
   return results;
 }
+
 
 // Обработчик кнопки "Рассчитать"
 document.getElementById("calculate-btn").addEventListener("click", async function () {
