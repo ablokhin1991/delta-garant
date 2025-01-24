@@ -193,7 +193,7 @@ function displayResults(results) {
                 </div>
               `
               : `
-                <div class="offer__rate" style="text-align: right; color: #d9534f; margin-right: 20px;">
+                <div class="offer__rate" style="font-size: 14px; font-weight: 300; text-align: right; color: #d9534f; margin-right: 20px;">
                   Стоп-факторы:<br>${result.rate}
                 </div>
               `
