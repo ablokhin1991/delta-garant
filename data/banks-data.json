@@ -180,6 +180,14 @@
         { "procType": "4", "guarType": "4", "hasAdvance": true, "customForm": false, "minSum": 0, "ruleMaxSum": 35000000, "rate": 0.07, "minCost": 1000, "ruleMinDays": 0, "ruleMaxDays": 2220 },
         { "procType": "4", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 35000000, "rate": 0.07, "minCost": 1000, "ruleMinDays": 0, "ruleMaxDays": 2220 } 
       ]
+    },
+    {
+      "name": "ПАО Московский Кредитный Банк",
+      "logo": "/delta-garant/images/banks-logo/mkb.svg",
+      "data": "Решение за 1 день\nБез поручительства\nБез открытия расчетного счета",
+      "conditions": [
+        
+      ]
     }
 
   ]
