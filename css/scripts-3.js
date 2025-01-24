@@ -100,7 +100,7 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
       return {
         name: bank.name,
         logo: bank.logo,
-        //cost: "Стоп-факторы",//
+        cost: "Стоп-факторы",
         rate: "Нет подходящих предложений",
         isStopFactor: true
       };
@@ -194,7 +194,7 @@ function displayResults(results) {
               `
               : `
                 <div class="offer__rate" style="font-size: 14px; font-weight: 300; text-align: right; color: #d9534f; margin-right: 20px;">
-                  Стоп-факторы:<br>${result.rate}
+                 <!-- Стоп-факторы: --> <br>${result.rate}
                 </div>
               `
           }
