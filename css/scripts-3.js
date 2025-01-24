@@ -178,7 +178,7 @@ function displayResults(results) {
                 : ''
             }
           </div>
-          <div class="offer__separator" style="flex-shrink: 0; width: 1px; height: 50px; background: #ddd; margin: 0 15px;"></div>
+          <div class="offer__separator" style="flex-shrink: 0; width: 1px; height: 50px; background: #ddd; margin: 0 15px; ${result.isStopFactor ? 'display: none;' : ''}"></div>
           ${
             !result.isStopFactor
               ? `
@@ -203,24 +203,8 @@ function displayResults(results) {
     )
     .join("");
 
-  //resultOutput.style.display = "block"; // Делаем раздел с результатами видимым//
+  // Делаем раздел с результатами видимым
+  //resultOutput.style.display = "block";//
 }
-
-// Функция сокрытия сепаратора при стоп-факторах
-// Функция для управления отображением элемента div с классом "offer__separator"
-function toggleOfferSeparator(isStopFactor) {
-  // Находим все элементы с классом "offer__separator"
-  const separators = document.querySelectorAll('.offer__separator');
-
-  // Перебираем найденные элементы и изменяем их стиль
-  separators.forEach(separator => {
-      separator.style.display = isStopFactor ? 'none' : '';
-  });
-}
-
-// Пример использования:
-// toggleOfferSeparator(true);  // Скрыть элементы
-// toggleOfferSeparator(false); // Показать элементы
-
 
 
