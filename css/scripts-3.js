@@ -174,7 +174,7 @@ function displayResults(results) {
             <strong>${result.name}</strong>
             ${
               result.data 
-                ? `<div class="offer__personal-data" style="font-size: 12px; color: #555;">${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}</div>` 
+                ? `<div class="offer__personal-data" style="font-size: 12px; font-weight: 300; color: #555;">${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}</div>` 
                 : ''
             }
           </div>
