@@ -114,19 +114,12 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
     const calculatedCost = (sum * rate * days) / 365;
     const cost = Math.max(calculatedCost, bestCondition.minCost);
 
-    // Проверка условия "minCost"
-    if (calculatedCost <= bestCondition.minCost) {
-      cost = bestCondition.minCost; // Устанавливаем минимальную стоимость
-      rate = "min"; // Изменяем текст ставки на "min"
-    }
-
-
     return {
       name: bank.name,
       logo: bank.logo,
       data: bank.data,
       cost: parseFloat(cost.toFixed(2)),
-      rate: typeof rate === "number" ? `${(rate * 100).toFixed(2)}` : rate,
+      rate: `${(rate * 100).toFixed(2)}`,
       isStopFactor: false
     };
   });
