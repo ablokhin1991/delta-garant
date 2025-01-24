@@ -119,7 +119,7 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
     let rateDisplay = `${(rate * 100).toFixed(2)}`; // Ставка по умолчанию в процентах
     if (calculatedCost < bestCondition.minCost) {
       cost = bestCondition.minCost; // Устанавливаем минимальную стоимость
-      rateDisplay = "min"; // Ставка заменяется на "min"
+      rateDisplay = "min "; // Ставка заменяется на "min"
     }
 
     return {
