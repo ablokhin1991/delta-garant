@@ -100,7 +100,7 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
       return {
         name: bank.name,
         logo: bank.logo,
-        cost: "Стоп-факторы",
+        //cost: "Стоп-факторы",//
         rate: "Нет подходящих предложений",
         isStopFactor: true
       };
