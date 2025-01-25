@@ -234,9 +234,5 @@ normalResults.sort((a, b) => a.cost - b.cost);
 // Объединяем обычные и стоп-факторные результаты
 const finalResults = [...normalResults, ...stopFactorResults];
 
-if (finalResults.length === 0) {
-  alert("Условия для выбранных параметров не найдены.");
-  return;
-}
 
 
