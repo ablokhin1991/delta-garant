@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
       clonedOffer.className = "popup-offer";
   
       // Перемещение кнопки "Оформить" вниз popup
-      const button = clonedOffer.querySelector(".offer__button");
-      button.textContent = "Отправить заявку";
-      button.style.marginTop = "20px";
+      //const button = clonedOffer.querySelector(".offer__button");
+      //button.textContent = "Отправить заявку";
+      //button.style.marginTop = "20px";
   
       // Создание формы для контактов
       const contactForm = document.createElement("form");
