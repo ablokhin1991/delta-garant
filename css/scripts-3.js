@@ -1,5 +1,4 @@
-// Подключение функций из checks.js
-import { checkRuleMaxSum, checkRuleMaxDays, checkMinSum, checkProcType } from 'css/checks.js';
+
 
 // Функция загрузки данных банков из файла banks-data.json
 async function fetchBankData() {
