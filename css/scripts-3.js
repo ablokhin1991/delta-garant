@@ -224,15 +224,7 @@ function displayResults(results) {
   offerList.insertAdjacentHTML('beforeend', disclaimerText);
 }
 
-// Разделяем банки на обычные и с стоп-факторами
-const normalResults = results.filter(r => !r.isStopFactor);
-const stopFactorResults = results.filter(r => r.isStopFactor);
 
-// Сортируем обычные результаты по стоимости
-normalResults.sort((a, b) => a.cost - b.cost);
-
-// Объединяем обычные и стоп-факторные результаты
-const finalResults = [...normalResults, ...stopFactorResults];
 
 
 
