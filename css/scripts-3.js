@@ -160,7 +160,7 @@ document.getElementById("calculate-btn").addEventListener("click", async functio
     alert("Подходящие предложения не найдены.");
     return;
   }
-
+  const sortedResults = sortOffers(results); // Сортировка оферов
   displayResults(results); // Отображаем результаты
 });
 
@@ -224,6 +224,21 @@ function displayResults(results) {
   offerList.insertAdjacentHTML('beforeend', disclaimerText);
 }
 
+// Функция сортировки оферов
+function sortOffers(offers) {
+  return offers.sort((a, b) => {
+    if (a.isStopFactor && !b.isStopFactor) {
+      return 1; // Переместить офер со стоп-фактором вниз
+    }
+    if (!a.isStopFactor && b.isStopFactor) {
+      return -1; // Переместить офер без стоп-фактора вверх
+    }
+    if (a.isStopFactor && b.isStopFactor) {
+      return 0; // Два стоп-фактора остаются на месте
+    }
+    return a.cost - b.cost; // Сравнение по стоимости
+  });
+}
 
 
 
