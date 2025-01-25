@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const offer = document.getElementById("offer");
-  const offerButton = document.getElementById("offer-button");
+  const offer = document.querySelector(".offer__buttons"); // Используем правильный селектор
+  const offerButton = document.querySelector(".offer__button"); // Для кнопки используем класс
+
+  if (!offer || !offerButton) {
+    console.error("Элемент с классом .offer__buttons или .offer__button не найден!");
+    return;
+  }
 
   offerButton.addEventListener("click", function () {
     // Расширяем блок Offer
