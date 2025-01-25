@@ -1,4 +1,5 @@
-
+// Подключаем функции из checks.js
+import { checkRuleMaxSum, checkRuleMaxDays, checkMinSum, checkProcType } from './checks.js';
 
 // Функция загрузки данных банков из файла banks-data.json
 async function fetchBankData() {
@@ -14,6 +15,36 @@ async function fetchBankData() {
       console.error('Ошибка загрузки данных банков:', error);
       return [];
   }
+}
+
+// Функция выполнения проверок для каждого банка
+async function performChecks(sum, days, procType) {
+  const banks = await fetchBankData(); // Загружаем данные банков
+
+  banks.forEach(bank => {
+    // Применяем все проверки для каждого банка
+    let result;
+
+    result = checkRuleMaxSum(bank, sum);
+    if (result) {
+      console.log(result); // Выводим результат проверки на консоль
+    }
+
+    result = checkRuleMaxDays(bank, days);
+    if (result) {
+      console.log(result);
+    }
+
+    result = checkMinSum(bank, sum);
+    if (result) {
+      console.log(result);
+    }
+
+    result = checkProcType(bank, procType);
+    if (result) {
+      console.log(result);
+    }
+  });
 }
 
 // Функция форматирования суммы гарантии с пробелами
