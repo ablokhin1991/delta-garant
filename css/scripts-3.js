@@ -126,6 +126,7 @@ async function calculateOffers(procType, guarType, hasAdvance, customForm, sum, 
       name: bank.name,
       logo: bank.logo,
       data: bank.data,
+      rating: bank.rating || 0, // Добавляем rating
       cost: parseFloat(cost.toFixed(2)), // Округляем до двух знаков
       rate: rateDisplay, // Отображаем либо "min", либо процент
       isStopFactor: false
