@@ -181,6 +181,10 @@ function displayResults(results) {
     const rating = Number(result.rating) || 0; // Убедимся, что это число
     console.log(`Банк: ${result.name}, Рейтинг: ${rating}`); // Отладка
     return `
+    <button id="sort-rating-btn" style="margin: 10px 20px; padding: 5px 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; font-size: 14px;">
+  Сортировать по сложности
+</button>
+
       <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd;">
         <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-left: 20px;"></div>
         <div class="offer__details" style="flex: 1; padding: 0 15px;">
@@ -251,6 +255,27 @@ function sortOffers(offers) {
   });
 }
 
+let isFilteredByRating = false; // Флаг для проверки, активен ли фильтр
+
+// Функция для фильтрации предложений по рейтингу
+function filterOffersByRating(results, rating) {
+  return results.filter(result => result.rating >= rating);
+}
+
+// Обработчик кнопки сортировки
+document.getElementById("sort-rating-btn").addEventListener("click", function () {
+  // При первом клике активируем фильтрацию по рейтингу от 1 до 5
+  if (!isFilteredByRating) {
+    // Фильтруем все предложения, оставляем только те, у которых рейтинг >= 1
+    const filteredResults = results.filter(result => result.rating > 0);
+    displayResults(filteredResults); // Отображаем отфильтрованные результаты
+    isFilteredByRating = true; // Включаем флаг фильтрации
+  } else {
+    // При втором клике сбрасываем фильтрацию
+    displayResults(results); // Отображаем все результаты без фильтрации
+    isFilteredByRating = false; // Отключаем флаг фильтрации
+  }
+});
 
 
 
