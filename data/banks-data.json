@@ -812,6 +812,14 @@
         { "procType": "3", "guarType": "4", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 5000000, "rate": 0.028, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 1095 },
         { "procType": "3", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 5000000, "rate": 0.028, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 1095 }
       ]
+    },
+    {
+      "name": "ПАО Сбербанк России",
+      "logo": "/delta-garant/images/banks-logo/sber.svg",
+      "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
+      "conditions": [
+        
+      ]
     }
 
   ]
