@@ -781,6 +781,14 @@
         { "procType": "4", "guarType": "4", "hasAdvance": false, "customForm": true, "minSum": 10000000, "ruleMaxSum": 50000000, "rate": 0.051, "minCost": 2500, "ruleMinDays": 0, "ruleMaxDays": 2191 },
         { "procType": "4", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 10000000, "ruleMaxSum": 50000000, "rate": 0.051, "minCost": 2500, "ruleMinDays": 0, "ruleMaxDays": 2191 }
       ]
+    },
+    {
+      "name": "ПАО МТС-Банк",
+      "logo": "/delta-garant/images/banks-logo/mts.svg",
+      "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
+      "conditions": [
+        
+      ]
     }
 
   ]
