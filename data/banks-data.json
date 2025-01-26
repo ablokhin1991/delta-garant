@@ -2,7 +2,7 @@
     {
       "name": "ПАО Альфа-Банк",
       "logo": "/delta-garant/images/banks-logo/alfa-bank.svg",
-      "data": "Решение за 1 день\nБез поручительства\nБез открытия расчетного счета",
+      "data": "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с", //"Решение за 1 день\nБез поручительства\nБез открытия расчетного счета",
       "rating": 1,
       "conditions": [
         {"procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 150000000, "rate": 0.03,  "minCost": 1000, "ruleMaxDays": 3652},
@@ -51,7 +51,7 @@
     {
       "name": "ПАО Банк Санкт-Петербург",
       "logo": "/delta-garant/images/banks-logo/bspb.svg",
-      "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
       "rating": 4,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 100000, "ruleMaxSum": 50000000, "rate": 0.032, "minCost": 1500, "ruleMinDays": 0, "ruleMaxDays": 1140 },
@@ -103,7 +103,7 @@
     {
       "name": "АО Газпромбанк",
       "logo": "/delta-garant/images/banks-logo/gpb.svg",
-      "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
       "rating": 4,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 150000000, "rate": 0.038, "minCost": 1999, "ruleMaxDays": 1860 },
@@ -144,7 +144,7 @@
     {
       "name": "АО Ингосстрах Банк",
       "logo": "/delta-garant/images/banks-logo/igs.svg",
-      "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
       "rating": 3,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 35000000, "rate": 0.033, "minCost": 1000, "ruleMinDays": 0, "ruleMaxDays": 1890 },
@@ -188,7 +188,7 @@
     {
       "name": "ПАО Московский Кредитный Банк",
       "logo": "/delta-garant/images/banks-logo/mkb.svg",
-      "data": "Решение за 1 день\nБез поручительства\nБез открытия расчетного счета",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
       "rating": 2,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 99999, "rate": 0.08, "minCost": 990, "ruleMinDays": 0, "ruleMaxDays": 179 },
@@ -464,7 +464,7 @@
     {
       "name": "ПАО Промсвязьбанк",
       "logo": "/delta-garant/images/banks-logo/psb.svg",
-      "data": "Решение за 1 день\nБез поручительства\nБез открытия расчетного счета",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
       "rating": 1,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 99999, "rate": 0.05, "minCost": 1000, "ruleMaxDays": 1140 },
@@ -664,7 +664,7 @@
     {
       "name": "ПАО Банк Уралсиб",
       "logo": "/delta-garant/images/banks-logo/uralsib.svg",
-      "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
       "rating": 2,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 999999, "rate": 0.046, "minCost": 1500, "ruleMinDays": 5, "ruleMaxDays": 1910 },
@@ -792,7 +792,7 @@
     {
       "name": "ПАО МТС-Банк",
       "logo": "/delta-garant/images/banks-logo/mts.svg",
-      "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
       "rating": 2,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.024, "minCost": 1000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
@@ -824,7 +824,7 @@
     {
       "name": "ПАО Сбербанк России",
       "logo": "/delta-garant/images/banks-logo/sber.svg",
-      "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
       "rating": 4,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 100000000, "rate": 0.035, "minCost": 2500, "ruleMinDays": 5, "ruleMaxDays": 1860 },
