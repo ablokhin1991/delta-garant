@@ -787,7 +787,30 @@
       "logo": "/delta-garant/images/banks-logo/mts.svg",
       "data": "Решение за 1-2 дня\nБез поручительства\nБез открытия расчетного счета",
       "conditions": [
-        
+        { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.024, "minCost": 1000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.023, "minCost": 1000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": false, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.024, "minCost": 1000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.023, "minCost": 1000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "2", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.024, "minCost": 1000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "2", "guarType": "2", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.023, "minCost": 1000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "2", "guarType": "2", "hasAdvance": true, "customForm": false, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.024, "minCost": 1000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "2", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.023, "minCost": 1000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "3", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.03, "minCost": 6000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "3", "guarType": "2", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.03, "minCost": 6000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "3", "guarType": "2", "hasAdvance": true, "customForm": false, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.03, "minCost": 6000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "3", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 50000000, "rate": 0.03, "minCost": 6000, "ruleMinDays": 5, "ruleMaxDays": 1095 },
+        { "procType": "1", "guarType": "1", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 15000000, "rate": 0.022, "minCost": 990, "ruleMinDays": 0, "ruleMaxDays": 120 },
+        { "procType": "1", "guarType": "1", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 15000000, "rate": 0.022, "minCost": 990, "ruleMinDays": 0, "ruleMaxDays": 120 },
+        { "procType": "2", "guarType": "1", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 15000000, "rate": 0.022, "minCost": 990, "ruleMinDays": 0, "ruleMaxDays": 150 },
+        { "procType": "2", "guarType": "1", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 15000000, "rate": 0.022, "minCost": 990, "ruleMinDays": 0, "ruleMaxDays": 150 },
+        { "procType": "3", "guarType": "1", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 15000000, "rate": 0.022, "minCost": 990, "ruleMinDays": 0, "ruleMaxDays": 150 },
+        { "procType": "3", "guarType": "1", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 15000000, "rate": 0.022, "minCost": 990, "ruleMinDays": 0, "ruleMaxDays": 150 },
+        { "procType": "1", "guarType": "4", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 5000000, "rate": 0.028, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 1095 },
+        { "procType": "1", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 5000000, "rate": 0.028, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 1095 },
+        { "procType": "2", "guarType": "4", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 5000000, "rate": 0.028, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 1095 },
+        { "procType": "2", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 5000000, "rate": 0.028, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 1095 },
+        { "procType": "3", "guarType": "4", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 5000000, "rate": 0.028, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 1095 },
+        { "procType": "3", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 5000000, "rate": 0.028, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 1095 }
       ]
     }
 
