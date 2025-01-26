@@ -178,6 +178,7 @@ function displayResults(results) {
   // Вставляем все результаты в блок offer-list
   offerList.innerHTML = results
   .map((result, index) => {
+    const ratingColors = ["#FF0000", "#FF7F00", "#FFFF00", "#7FFF00", "#00FF00"]; // Массив цветов для каждого уровня рейтинга
     const rating = Number(result.rating) || 0; // Убедимся, что это число
     console.log(`Банк: ${result.name}, Рейтинг: ${rating}`); // Отладка
     return `
@@ -193,7 +194,7 @@ function displayResults(results) {
                     <span>Сложность оформления:</span>
                     <div class="offer__rating" style="display: flex; gap: 5px; margin-top: 5px;">
                       ${Array(5).fill(0).map((_, i) => 
-                        `<div style="width: 10px; height: 10px; border-radius: 50%; background-color: ${i < rating ? '#555' : '#e3e3e3'};"></div>`
+                        `<div style="width: 10px; height: 10px; border-radius: 50%; background-color: ${i < rating ? ratingColors[i] : '#e3e3e3'};"></div>`
                       ).join('')}
                     </div>
                   </div>
