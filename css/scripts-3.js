@@ -175,43 +175,60 @@ function displayResults(results) {
   }
 
   // Вставляем все результаты в блок offer-list
-  offerList.innerHTML = results
-    .map((result, index) => 
-      `
-        <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd;">
-          <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-left: 20px;"></div>
-          <div class="offer__details" style="flex: 1; padding: 0 15px;">
-            <strong>${result.name}</strong>
-            ${
-              result.data 
-                ? `<div class="offer__personal-data" style="font-size: 12px; font-weight: 300; color: #555;">${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}</div>` 
-                : ''
-            }
+  // Вставляем все результаты в блок offer-list
+offerList.innerHTML = results
+.map((result, index) => {
+  // Извлекаем текстовую часть и сложность оформления
+  const [textData, complexityString] = result.data.split("\n");
+  const complexity = parseInt(complexityString || "0", 10); // Преобразуем сложность в число
+  const maxCircles = 5; // Максимум 5 шариков
+
+  // Генерируем шарики для отображения сложности оформления
+  const circles = Array.from({ length: maxCircles }, (_, i) => {
+    const fillColor = i < complexity ? "#555" : "#e3e3e3"; // Заполненный или серый
+    return `<div style="width: 12px; height: 12px; border-radius: 50%; background: ${fillColor}; margin: 0 2px;"></div>`;
+  }).join("");
+
+  return `
+    <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd;">
+      <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-left: 20px;"></div>
+      <div class="offer__details" style="flex: 1; padding: 0 15px;">
+        <strong>${result.name}</strong>
+        <div class="offer__personal-data" style="margin-top: 5px;">
+          <div style="font-size: 12px; font-weight: 300; color: #555; margin-bottom: 5px;">
+            ${textData}
           </div>
-          <div class="offer__separator" style="flex-shrink: 0; width: 1px; height: 50px; background: #ddd; margin: 0 15px; ${result.isStopFactor ? 'display: none;' : ''}"></div>
-          ${
-            !result.isStopFactor
-              ? ` 
-                <div class="offer__rate" style="text-align: right;">
-                  <div style="font-size: 16px; font-weight: bold;">${result.cost.toLocaleString()} руб.</div>
-                  <div style="font-size: 12px; font-weight: 300; color: #555;">${result.rate}% годовых</div>
-                </div>
-                <div class="offer__buttons" style="margin-left: 15px; margin-right: 20px;">
-                  <button class="offer__button" data-index="${index}" style="padding: 5px 10px;">
-                    Оформить
-                  </button>
-                </div>
-              `
-              : ` 
-                <div class="offer__rate" style="font-size: 14px; font-weight: 300; text-align: right; color: #555; margin-right: 20px;">
-                  Стоп-факторы: <br>${result.rate}
-                </div>
-              `
-          }
+          <div style="display: flex; align-items: center;">
+            <span style="font-size: 12px; font-weight: 300; color: #555; margin-right: 10px;">Сложность оформления:</span>
+            <div style="display: flex;">${circles}</div>
+          </div>
         </div>
-      `
-    )
-    .join("");
+      </div>
+      <div class="offer__separator" style="flex-shrink: 0; width: 1px; height: 50px; background: #ddd; margin: 0 15px; ${result.isStopFactor ? 'display: none;' : ''}"></div>
+      ${
+        !result.isStopFactor
+          ? ` 
+            <div class="offer__rate" style="text-align: right;">
+              <div style="font-size: 16px; font-weight: bold;">${result.cost.toLocaleString()} руб.</div>
+              <div style="font-size: 12px; font-weight: 300; color: #555;">${result.rate}% годовых</div>
+            </div>
+            <div class="offer__buttons" style="margin-left: 15px; margin-right: 20px;">
+              <button class="offer__button" data-index="${index}" style="padding: 5px 10px;">
+                Оформить
+              </button>
+            </div>
+          `
+          : ` 
+            <div class="offer__rate" style="font-size: 14px; font-weight: 300; text-align: right; color: #555; margin-right: 20px;">
+              Стоп-факторы: <br>${result.rate}
+            </div>
+          `
+      }
+    </div>
+  `;
+})
+.join("");
+
 
   // Добавляем текст отказа от ответственности внизу блока offer-list
   const disclaimerText = `
