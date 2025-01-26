@@ -872,7 +872,7 @@
     {
       "name": "АО КБ ЛOKO-Банк",
       "logo": "/delta-garant/images/banks-logo/loko.svg",
-      "data": "Решение за 1-2 дня\n",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
       "rating": 3,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 40000000, "rate": 0.022, "minCost": 6500, "ruleMinDays": 0, "ruleMaxDays": 1825 },
