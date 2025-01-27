@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Получаем элемент overlay из корня документа
   const overlay = document.querySelector(".offer__overlay");
 
   document.body.addEventListener("click", (event) => {
@@ -19,8 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showPopupEffect(offerElement, overlay) {
-  overlay.classList.add("offer__overlay--active"); // Показать затемнение
+  overlay.classList.add("offer__overlay--active"); // Активируем затемнение
 
+  // Сохраняем начальные стили offer
   const offerRect = offerElement.getBoundingClientRect();
   offerElement.dataset.originalStyles = JSON.stringify({
     position: offerElement.style.position || "",
@@ -34,15 +36,17 @@ function showPopupEffect(offerElement, overlay) {
     borderRadius: offerElement.style.borderRadius || "",
   });
 
+  // Устанавливаем offer в фиксированное положение
   offerElement.style.position = "fixed";
   offerElement.style.top = `${offerRect.top}px`;
   offerElement.style.left = `${offerRect.left}px`;
   offerElement.style.width = `${offerRect.width}px`;
   offerElement.style.height = `${offerRect.height}px`;
-  offerElement.style.zIndex = "2";
+  offerElement.style.zIndex = "1000"; // Над затемнением
   offerElement.style.transition = "all 0.4s ease-in-out";
   offerElement.classList.add("offer--active");
 
+  // Анимация увеличения и центрирования
   setTimeout(() => {
     offerElement.style.transform = "translate(-50%, -50%) scale(1.2)";
     offerElement.style.top = "50%";
@@ -53,6 +57,7 @@ function showPopupEffect(offerElement, overlay) {
     offerElement.style.borderRadius = "10px";
   }, 0);
 
+  // Добавляем кнопку закрытия
   const closeButton = document.createElement("button");
   closeButton.textContent = "Закрыть";
   closeButton.classList.add("offer__close");
@@ -74,11 +79,13 @@ function showPopupEffect(offerElement, overlay) {
 function hidePopupEffect(offerElement, overlay) {
   overlay.classList.remove("offer__overlay--active"); // Скрыть затемнение
 
+  // Восстанавливаем начальные стили offer
   const originalStyles = JSON.parse(offerElement.dataset.originalStyles);
   Object.keys(originalStyles).forEach((key) => {
     offerElement.style[key] = originalStyles[key];
   });
 
+  // Удаляем временные стили
   offerElement.style.boxShadow = "";
   offerElement.style.transform = "";
   offerElement.style.borderRadius = "";
@@ -86,6 +93,7 @@ function hidePopupEffect(offerElement, overlay) {
 
   offerElement.classList.remove("offer--active");
 
+  // Удаляем кнопку закрытия
   setTimeout(() => {
     const closeButton = offerElement.querySelector(".offer__close");
     if (closeButton) closeButton.remove();
