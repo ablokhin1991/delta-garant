@@ -379,14 +379,6 @@ footer a:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     transition: all 0.4s ease-in-out;
-    margin-bottom: 0; /* Убираем влияние на остальную сетку */
-}
-
-/* Оффер в списке, когда активен другой */
-.offer:not(.offer--active) {
-    transition: all 0.5s ease-in-out;
-    opacity: 0.5; /* Ослабляем видимость остальных офферов */
-    transform: translateY(10px); /* Легкий сдвиг вниз */
 }
 
 .offer__overlay {
@@ -417,13 +409,6 @@ footer a:hover {
     font-size: 14px;
     z-index: 1002; /* Кнопка всегда поверх offer */
   }
-
-  /* Список офферов */
-#offer-list {
-    transition: all 0.5s ease-in-out; /* Плавное изменение размеров */
-}
-
-
 
 .offer-mobile {
     display: flex;
