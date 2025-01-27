@@ -1,34 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Добавляем обработчики ко всем кнопкам "Оформить"
+  // Обработка клика на кнопке "Оформить"
   document.body.addEventListener("click", (event) => {
     if (event.target.classList.contains("offer__button")) {
-      const offerElement = event.target.closest(".offer"); // Находим родительский offer
-
+      const offerElement = event.target.closest(".offer");
       if (offerElement) {
-        showPopup(offerElement);
+        expandOffer(offerElement);
       }
     }
 
-    // Обработчик закрытия popup
-    if (event.target.classList.contains("offer-popup__close")) {
-      const popup = document.querySelector(".offer-popup");
-      if (popup) {
-        closePopup(popup);
+    // Обработка закрытия popup
+    if (event.target.classList.contains("offer__close")) {
+      const offerElement = event.target.closest(".offer");
+      if (offerElement) {
+        collapseOffer(offerElement);
       }
     }
   });
 });
 
-// Функция для отображения popup
-function showPopup(offerElement) {
-  // Создаем копию offer
-  const offerClone = offerElement.cloneNode(true);
-  offerClone.classList.add("offer-popup");
+// Функция для "всплытия" offer
+function expandOffer(offerElement) {
+  const offerRect = offerElement.getBoundingClientRect();
+
+  // Сохраняем исходные данные (для возврата)
+  offerElement.dataset.originalTop = `${offerRect.top}px`;
+  offerElement.dataset.originalLeft = `${offerRect.left}px`;
+  offerElement.dataset.originalWidth = `${offerRect.width}px`;
+  offerElement.dataset.originalHeight = `${offerRect.height}px`;
+
+  // Устанавливаем абсолютное позиционирование
+  offerElement.style.position = "absolute";
+  offerElement.style.top = `${offerRect.top}px`;
+  offerElement.style.left = `${offerRect.left}px`;
+  offerElement.style.width = `${offerRect.width}px`;
+  offerElement.style.height = `${offerRect.height}px`;
+  offerElement.style.zIndex = 1000;
+  offerElement.style.transition = "all 0.3s ease-in-out";
+  offerElement.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
+
+  // Анимация "всплытия"
+  setTimeout(() => {
+    offerElement.style.top = "50%";
+    offerElement.style.left = "50%";
+    offerElement.style.transform = "translate(-50%, -50%)";
+    offerElement.style.width = "80%";
+    offerElement.style.height = "auto";
+    offerElement.style.backgroundColor = "#fff";
+    offerElement.style.borderRadius = "10px";
+    offerElement.style.padding = "20px";
+  }, 0);
 
   // Добавляем кнопку закрытия
   const closeButton = document.createElement("button");
   closeButton.textContent = "Закрыть";
-  closeButton.classList.add("offer-popup__close");
+  closeButton.classList.add("offer__close");
   closeButton.style.cssText = `
     position: absolute;
     top: 10px;
@@ -41,30 +66,11 @@ function showPopup(offerElement) {
     cursor: pointer;
     font-size: 14px;
   `;
-  offerClone.appendChild(closeButton);
-
-  // Стили для popup
-  offerClone.style.cssText = `
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
-    z-index: 1000;
-    width: 80%;
-    max-width: 500px;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 20px;
-    animation: popupShow 0.3s ease forwards;
-  `;
-
-  // Добавляем popup в body
-  document.body.appendChild(offerClone);
+  offerElement.appendChild(closeButton);
 
   // Затемняющий фон
   const overlay = document.createElement("div");
-  overlay.classList.add("offer-popup__overlay");
+  overlay.classList.add("offer__overlay");
   overlay.style.cssText = `
     position: fixed;
     top: 0;
@@ -73,22 +79,31 @@ function showPopup(offerElement) {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    animation: fadeIn 0.3s ease forwards;
   `;
   document.body.appendChild(overlay);
 }
 
-// Функция для закрытия popup
-function closePopup(popup) {
-  const overlay = document.querySelector(".offer-popup__overlay");
+// Функция для возврата offer на место
+function collapseOffer(offerElement) {
+  const overlay = document.querySelector(".offer__overlay");
 
-  // Анимация закрытия
-  popup.style.animation = "popupHide 0.3s ease forwards";
-  if (overlay) overlay.style.animation = "fadeOut 0.3s ease forwards";
+  // Возвращаем элемент на место
+  offerElement.style.top = offerElement.dataset.originalTop;
+  offerElement.style.left = offerElement.dataset.originalLeft;
+  offerElement.style.width = offerElement.dataset.originalWidth;
+  offerElement.style.height = offerElement.dataset.originalHeight;
+  offerElement.style.transform = "none";
+  offerElement.style.zIndex = "";
+  offerElement.style.transition = "all 0.3s ease-in-out";
+  offerElement.style.boxShadow = "none";
+  offerElement.style.borderRadius = "0";
+  offerElement.style.padding = "10px";
 
-  // Удаление элементов после завершения анимации
+  // Удаляем затемнение и кнопку после анимации
   setTimeout(() => {
-    popup.remove();
     if (overlay) overlay.remove();
+    const closeButton = offerElement.querySelector(".offer__close");
+    if (closeButton) closeButton.remove();
+    offerElement.style.position = ""; // Сбрасываем стиль
   }, 300);
 }
