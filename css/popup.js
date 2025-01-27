@@ -116,4 +116,19 @@ function createOverlay() {
   return overlay;
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.addEventListener("click", (event) => {
+    if (event.target.classList.contains("offer__button")) {
+      const overlay = document.querySelector(".offer__overlay");
+      if (overlay) {
+        overlay.classList.add("offer__overlay--active");
+      }
+    }
+
+    if (event.target.classList.contains("offer__overlay")) {
+      const overlay = event.target;
+      overlay.classList.remove("offer__overlay--active");
+    }
+  });
+});
 

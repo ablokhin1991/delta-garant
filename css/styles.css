@@ -389,6 +389,9 @@ footer a:hover {
     display: none; /* Изначально скрыто */
   }
 
+  .offer__overlay.offer__overlay--active {
+    display: block; /* Показывается только при активации */
+  }
 
   .offer__overlay--active {
     display: block; /* Отображаем при активации */
