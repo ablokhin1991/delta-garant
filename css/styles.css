@@ -761,11 +761,11 @@ footer a:hover {
   }
   
  
-/*.offer {
+ .offer {
     transition: all 0.5s ease-in-out; /* Плавные переходы */
- /* }*/
+ }
   
-/*  .offer__overlay {
+.offer__overlay {
     animation: fadeIn 0.3s ease-in-out;
   }
   
@@ -785,9 +785,9 @@ footer a:hover {
     to {
       opacity: 0;
     }
-  }*/
+  }
   
-.offer--active {
+/*.offer--active {
     z-index: 1001;
     position: fixed;
     top: 50%;
@@ -807,7 +807,7 @@ footer a:hover {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000; /* Под offer */
-    pointer-events: auto;
+    /*pointer-events: auto;
 }
   .offer__close {
     position: absolute;
