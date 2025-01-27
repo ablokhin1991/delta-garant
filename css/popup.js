@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
         showPopupEffect(offerElement);
       }
     }
-
     // Закрытие всплытия
     if (event.target.classList.contains("offer__close") || event.target.classList.contains("offer__overlay")) {
       const offerElement = document.querySelector(".offer--active");
@@ -47,19 +46,9 @@ function showPopupEffect(offerElement) {
   offerElement.style.height = `${offerRect.height}px`;
   offerElement.style.zIndex = "1001";
   offerElement.style.transition = "all 0.5s ease";
-  offerElement.classList.add("offer--active");
 
-  // Добавляем анимацию увеличения
-  setTimeout(() => {
-    offerElement.style.transform = "translate(-50%, -50%) scale(1.1)";
-    offerElement.style.top = "50%";
-    offerElement.style.left = "50%";
-    offerElement.style.width = "80%";
-    offerElement.style.height = "auto";
-    offerElement.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
-    offerElement.style.borderRadius = "10px";
-    offerElement.style.padding = "20px";
-  }, 0);
+  // Добавляем класс активности
+  offerElement.classList.add("offer--active");
 
   // Добавляем кнопку закрытия
   const closeButton = document.createElement("button");
@@ -89,6 +78,7 @@ function hidePopupEffect(offerElement) {
     offerElement.style[key] = originalStyles[key];
   });
 
+  // Удаляем класс активности
   offerElement.classList.remove("offer--active");
 
   // Удаляем затемнение и кнопку
