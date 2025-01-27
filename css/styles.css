@@ -765,3 +765,46 @@ footer a:hover {
   }
   
  
+/* Анимация появления popup */
+@keyframes popupShow {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  /* Анимация скрытия popup */
+  @keyframes popupHide {
+    from {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+  }
+  
+  /* Анимация затемняющего фона */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
