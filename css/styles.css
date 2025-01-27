@@ -765,39 +765,3 @@ footer a:hover {
   }
   
  
-/* Стили для всплывающего состояния */
-.offer.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 600px;
-    z-index: 1000;
-    background: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    overflow: auto;
-  }
-
-  /* Кнопка закрытия */
-  .close-popup {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  /* Анимация всплытия */
-  .offer.popup.show {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-
-  .offer.popup {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0;
-  }
