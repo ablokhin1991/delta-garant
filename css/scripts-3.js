@@ -161,6 +161,7 @@ document.getElementById("calculate-btn").addEventListener("click", async functio
     alert("Подходящие предложения не найдены.");
     return;
   }
+  console.log('Results after calculation:', results); // Проверка результатов после расчета
   const sortedResults = sortOffers(results); // Сортировка оферов
   displayResults(results); // Отображаем результаты
 });

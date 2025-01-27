@@ -12,12 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Offer button clicked.');
 
       const index = event.target.getAttribute('data-index');
+      console.log('Clicked button index:', index);
+
+      // Проверяем, что индекс существует и является числом
+      if (index === null || index === undefined || isNaN(index)) {
+        console.error('Invalid index:', index);
+        return;
+      }
+
       const result = results[index];
 
       if (!result) {
         console.error('Result not found for index:', index);
         return;
       }
+
+      console.log('Selected result:', result);
 
       // Заполняем информацию о банке в popup
       const popupBankInfo = document.getElementById('popup-bank-info');
