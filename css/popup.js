@@ -4,9 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ваши данные банков
   ];
 
+  console.log('Popup script loaded.');
+
+  // Проверка наличия кнопок "Оформить"
+  const offerButtons = document.querySelectorAll('.offer__button');
+  if (offerButtons.length === 0) {
+    console.error('No offer buttons found.');
+  } else {
+    console.log(`Found ${offerButtons.length} offer buttons.`);
+  }
+
   // Добавляем обработчики событий для кнопок "Оформить"
-  document.querySelectorAll('.offer__button').forEach(button => {
+  offerButtons.forEach(button => {
     button.addEventListener('click', async function() {
+      console.log('Offer button clicked.');
+
       const index = this.getAttribute('data-index');
       const result = results[index];
 
@@ -33,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const popup = document.getElementById('popup');
       if (popup) {
         popup.style.display = 'block';
-        
+
         // Пример добавления класса для анимации
         const buttonInsidePopup = document.querySelector('#popup-content .offer__button');
         if (buttonInsidePopup) {
