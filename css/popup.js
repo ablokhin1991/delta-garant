@@ -1,25 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Получаем элемент overlay из корня документа
   const overlay = document.querySelector(".offer__overlay");
+  const offerList = document.getElementById("offer-list");
 
   document.body.addEventListener("click", (event) => {
     if (event.target.classList.contains("offer__button")) {
       const offerElement = event.target.closest(".offer");
       if (offerElement) {
-        showPopupEffect(offerElement, overlay);
+        showPopupEffect(offerElement, overlay, offerList);
       }
     }
 
     if (event.target.classList.contains("offer__close") || event.target.classList.contains("offer__overlay")) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
-        hidePopupEffect(activeOffer, overlay);
+        hidePopupEffect(activeOffer, overlay, offerList);
       }
     }
   });
 });
 
-function showPopupEffect(offerElement, overlay) {
+function showPopupEffect(offerElement, overlay, offerList) {
   overlay.classList.add("offer__overlay--active"); // Активируем затемнение
 
   // Сохраняем начальные стили offer
@@ -55,28 +55,16 @@ function showPopupEffect(offerElement, overlay) {
     offerElement.style.height = "auto";
     offerElement.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
     offerElement.style.borderRadius = "10px";
+
+    // Плавно сжимаем пустое пространство под оффер-листом
+    offerList.style.marginBottom = "0";
   }, 0);
 
-  // Добавляем кнопку закрытия
-  const closeButton = document.createElement("button");
-  closeButton.textContent = "Закрыть";
-  closeButton.classList.add("offer__close");
-  closeButton.style.cssText = `
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 14px;
-  `;
-  offerElement.appendChild(closeButton);
+  // Убираем влияние оффера на остальной список
+  offerList.classList.add("offer-list--adjust");
 }
 
-function hidePopupEffect(offerElement, overlay) {
+function hidePopupEffect(offerElement, overlay, offerList) {
   overlay.classList.remove("offer__overlay--active"); // Скрыть затемнение
 
   // Восстанавливаем начальные стили offer
@@ -93,8 +81,14 @@ function hidePopupEffect(offerElement, overlay) {
 
   offerElement.classList.remove("offer--active");
 
-  // Удаляем кнопку закрытия
+  // Возвращаем плавное освобождение пространства под оффер-листом
   setTimeout(() => {
+    offerList.style.marginBottom = "20px";
+
+    // Убираем класс корректировки списка
+    offerList.classList.remove("offer-list--adjust");
+
+    // Удаляем кнопку закрытия
     const closeButton = offerElement.querySelector(".offer__close");
     if (closeButton) closeButton.remove();
   }, 400);
