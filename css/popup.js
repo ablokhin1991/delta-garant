@@ -6,20 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   console.log('Popup script loaded.');
 
-  // Проверка наличия кнопок "Оформить"
-  const offerButtons = document.querySelectorAll('.offer__button');
-  if (offerButtons.length === 0) {
-    console.error('No offer buttons found.');
-  } else {
-    console.log(`Found ${offerButtons.length} offer buttons.`);
-  }
-
-  // Добавляем обработчики событий для кнопок "Оформить"
-  offerButtons.forEach(button => {
-    button.addEventListener('click', async function() {
+  // Делегирование события для кнопок "Оформить"
+  document.getElementById('offer-list').addEventListener('click', async function(event) {
+    if (event.target && event.target.classList.contains('offer__button')) {
       console.log('Offer button clicked.');
 
-      const index = this.getAttribute('data-index');
+      const index = event.target.getAttribute('data-index');
       const result = results[index];
 
       if (!result) {
@@ -56,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         console.error('Popup element not found!');
       }
-    });
+    }
   });
 
   // Закрываем popup при нажатии на крестик
