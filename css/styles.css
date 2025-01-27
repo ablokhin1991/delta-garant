@@ -364,7 +364,7 @@ footer a:hover {
     background-color: #f4f6fd;
     position: relative;
     transition: all 0.3s ease;
-    z-index: 0; /* Начальный слой */
+    z-index: 2; /* Начальный слой */
 }
 
 .offer:hover {
@@ -388,7 +388,7 @@ footer a:hover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 999; /* Затемнение выше обычного контента */
+    z-index: 500; /* Затемнение выше обычного контента */
     display: none; /* Изначально скрыто */
   }
 
