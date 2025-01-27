@@ -23,10 +23,12 @@ function showPopupEffect(offerElement) {
   document.body.appendChild(overlay);
 
   const offerRect = offerElement.getBoundingClientRect();
+  const scrollTop = window.scrollY; // Учитываем вертикальный скроллинг
+  const scrollLeft = window.scrollX; // Учитываем горизонтальный скроллинг
 
   // Сохраняем начальные размеры и позицию
-  offerElement.dataset.originalTop = `${offerRect.top}px`;
-  offerElement.dataset.originalLeft = `${offerRect.left}px`;
+  offerElement.dataset.originalTop = `${offerRect.top + scrollTop}px`;
+  offerElement.dataset.originalLeft = `${offerRect.left + scrollLeft}px`;
   offerElement.dataset.originalWidth = `${offerRect.width}px`;
   offerElement.dataset.originalHeight = `${offerRect.height}px`;
 
@@ -106,7 +108,7 @@ function createOverlay() {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    pointer-events: none; /* Чтобы не блокировать клики по "offer" */
+    pointer-events: none; /* Не блокируем клики */
   `;
   return overlay;
 }
