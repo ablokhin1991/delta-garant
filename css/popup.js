@@ -19,22 +19,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showPopupEffect(offerElement) {
+  // Создаем затемнение фона
   const overlay = createOverlay();
   document.body.appendChild(overlay);
 
+  // Получаем текущие размеры и позиции offer
   const offerRect = offerElement.getBoundingClientRect();
   const scrollTop = window.scrollY; // Учитываем вертикальный скроллинг
   const scrollLeft = window.scrollX; // Учитываем горизонтальный скроллинг
 
-  // Сохраняем начальные размеры и позицию
+  // Сохраняем начальные стили offer
   offerElement.dataset.originalPosition = offerElement.style.position || "";
   offerElement.dataset.originalTop = offerElement.style.top || "";
   offerElement.dataset.originalLeft = offerElement.style.left || "";
   offerElement.dataset.originalWidth = offerElement.style.width || "";
   offerElement.dataset.originalHeight = offerElement.style.height || "";
   offerElement.dataset.originalZIndex = offerElement.style.zIndex || "";
+  offerElement.dataset.originalTransform = offerElement.style.transform || "";
 
-  // Устанавливаем начальное положение
+  // Устанавливаем начальное фиксированное положение
   offerElement.style.position = "fixed";
   offerElement.style.top = `${offerRect.top + scrollTop}px`;
   offerElement.style.left = `${offerRect.left + scrollLeft}px`;
@@ -45,7 +48,7 @@ function showPopupEffect(offerElement) {
 
   // Добавляем эффект увеличения
   setTimeout(() => {
-    offerElement.style.transform = "translate(-50%, -50%) scale(1.1)";
+    offerElement.style.transform = "translate(-50%, -50%) scale(1.2)";
     offerElement.style.top = "50%";
     offerElement.style.left = "50%";
     offerElement.style.width = "80%";
@@ -78,8 +81,8 @@ function showPopupEffect(offerElement) {
 function hidePopupEffect(offerElement) {
   const overlay = document.querySelector(".offer__overlay");
 
-  // Возвращаем элемент в исходное положение
-  offerElement.style.transform = "none";
+  // Возвращаем offer в начальное состояние
+  offerElement.style.transform = offerElement.dataset.originalTransform;
   offerElement.style.position = offerElement.dataset.originalPosition;
   offerElement.style.top = offerElement.dataset.originalTop;
   offerElement.style.left = offerElement.dataset.originalLeft;
@@ -110,7 +113,7 @@ function createOverlay() {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000; /* Под offer */
-    pointer-events: auto; /* Теперь блокируем клики */
+    pointer-events: auto;
   `;
   overlay.addEventListener("click", () => {
     const activeOffer = document.querySelector(".offer[style*='z-index: 1001']");
