@@ -363,12 +363,43 @@ footer a:hover {
     background-color: #f4f6fd;
     position: relative;
     transition: all 0.3s ease;
+    z-index: 0; /* Начальный слой */
 }
 
 .offer:hover {
     transform: scale(1.01); /* Увеличение на 20% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
 }
 
+.offer--active {
+    z-index: 1001; /* Поверх overlay */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Глубокая тень для всплывшего элемента */
+}
+
+.offer__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Под offer--active */
+    animation: fadeIn 0.3s ease-in-out; /* Анимация появления затемнения */
+  }
+
+  .offer__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 1002; /* Кнопка всегда поверх offer */
+  }
 
 .offer-mobile {
     display: flex;
@@ -383,12 +414,6 @@ footer a:hover {
     flex-direction: row; /* Горизонтальное выравнивание */
     justify-content: space-between; /* Распределение пространства */
     align-items: center; /* Выравнивание по вертикали */
-}
-
-
-/* Hover (при наведении) */
-.offer:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
 }
 
   .offer__logo {
@@ -759,15 +784,7 @@ footer a:hover {
     border: none;
     cursor: pointer;
   }
-  
- 
- .offer {
-    transition: all 0.5s ease-in-out; /* Плавные переходы */
- }
-  
-.offer__overlay {
-    animation: fadeIn 0.3s ease-in-out;
-  }
+
   
   @keyframes fadeIn {
     from {
@@ -787,37 +804,23 @@ footer a:hover {
     }
   }
   
-/*.offer--active {
-    z-index: 1001;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.1);
-    width: 80%;
-    height: auto;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    padding: 20px;
-}
-.offer__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Под offer */
-    /*pointer-events: auto;
-}
-  .offer__close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 14px;
-}
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Анимация исчезновения */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
