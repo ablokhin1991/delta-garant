@@ -127,11 +127,3 @@ document.addEventListener('DOMContentLoaded', function() {
     console.error('Application form not found!');
   }
 });
-
-const index = this.getAttribute('data-index');
-const result = results[index];
-if (!result) {
-  console.error('Result not found for index:', index);
-  return;
-}
-console.log('Selected result:', result);
