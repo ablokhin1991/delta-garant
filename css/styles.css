@@ -340,6 +340,7 @@ footer a:hover {
 
 /* Стили для блока результатов */
 .result__offers {
+    position: relative; /* Для контекста позиционирования */
     display: flex;
     flex-direction: column; /* Расположить предложения по вертикали */
     gap: 16px; /* Отступ между блоками */
@@ -372,9 +373,10 @@ footer a:hover {
 }
 
 .offer--active {
-    transform: scale(1.2); /* Увеличиваем оффер */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Добавляем тень */
-    z-index: 3; /* Выше затемнения */
+    position: relative; /* Относительно своего родителя */
+    z-index: 2; /* Выше overlay */
+    transform: scale(1.2); /* Анимация увеличения */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .offer__overlay {
@@ -384,8 +386,7 @@ footer a:hover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 10; /* Затемнение выше обычного контента */
-    animation: fadeIn 0.3s ease-in-out; /* Анимация появления затемнения */
+    z-index: 1; /* Затемнение выше обычного контента */
     display: none; /* Изначально скрыто */
   }
 
