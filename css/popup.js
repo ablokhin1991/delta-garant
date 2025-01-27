@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Обработчик для клика на кнопку "Оформить"
+  // Обработчик для кнопки "Оформить"
   document.body.addEventListener("click", (event) => {
     if (event.target.classList.contains("offer__button")) {
       const offerElement = event.target.closest(".offer");
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Закрытие popup
+    // Закрытие всплытия
     if (event.target.classList.contains("offer__close")) {
       const offerElement = event.target.closest(".offer");
       if (offerElement) {
@@ -18,26 +18,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Функция для анимации "всплытия"
 function showPopupEffect(offerElement) {
+  const overlay = createOverlay();
+  document.body.appendChild(overlay);
+
   const offerRect = offerElement.getBoundingClientRect();
 
-  // Сохраняем начальное положение
+  // Сохраняем начальные размеры и позицию
   offerElement.dataset.originalTop = `${offerRect.top}px`;
   offerElement.dataset.originalLeft = `${offerRect.left}px`;
   offerElement.dataset.originalWidth = `${offerRect.width}px`;
   offerElement.dataset.originalHeight = `${offerRect.height}px`;
 
-  // Устанавливаем начальные стили
-  offerElement.style.position = "absolute";
+  // Устанавливаем начальное положение
+  offerElement.style.position = "fixed";
   offerElement.style.top = `${offerRect.top}px`;
   offerElement.style.left = `${offerRect.left}px`;
   offerElement.style.width = `${offerRect.width}px`;
   offerElement.style.height = `${offerRect.height}px`;
   offerElement.style.zIndex = "1000";
-  offerElement.style.transition = "all 0.5s ease-in-out";
+  offerElement.style.transition = "all 0.5s ease";
 
-  // Анимация "всплытия"
+  // Добавляем эффект увеличения
   setTimeout(() => {
     offerElement.style.transform = "translate(-50%, -50%) scale(1.1)";
     offerElement.style.top = "50%";
@@ -50,7 +52,7 @@ function showPopupEffect(offerElement) {
     offerElement.style.padding = "20px";
   }, 0);
 
-  // Добавляем кнопку закрытия
+  // Кнопка закрытия
   const closeButton = document.createElement("button");
   closeButton.textContent = "Закрыть";
   closeButton.classList.add("offer__close");
@@ -67,34 +69,19 @@ function showPopupEffect(offerElement) {
     font-size: 14px;
   `;
   offerElement.appendChild(closeButton);
-
-  // Затемняющий фон
-  const overlay = document.createElement("div");
-  overlay.classList.add("offer__overlay");
-  overlay.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  `;
-  document.body.appendChild(overlay);
 }
 
-// Функция для возврата в исходное положение
 function hidePopupEffect(offerElement) {
   const overlay = document.querySelector(".offer__overlay");
 
-  // Возвращаем исходные размеры и позицию
+  // Возвращаем элемент в исходное положение
   offerElement.style.transform = "none";
   offerElement.style.top = offerElement.dataset.originalTop;
   offerElement.style.left = offerElement.dataset.originalLeft;
   offerElement.style.width = offerElement.dataset.originalWidth;
   offerElement.style.height = offerElement.dataset.originalHeight;
   offerElement.style.zIndex = "";
-  offerElement.style.transition = "all 0.5s ease-in-out";
+  offerElement.style.transition = "all 0.5s ease";
   offerElement.style.boxShadow = "none";
   offerElement.style.borderRadius = "0";
   offerElement.style.padding = "10px";
@@ -106,4 +93,20 @@ function hidePopupEffect(offerElement) {
     if (closeButton) closeButton.remove();
     offerElement.style.position = ""; // Сбрасываем стиль
   }, 500);
+}
+
+function createOverlay() {
+  const overlay = document.createElement("div");
+  overlay.classList.add("offer__overlay");
+  overlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    pointer-events: none; /* Чтобы не блокировать клики по "offer" */
+  `;
+  return overlay;
 }

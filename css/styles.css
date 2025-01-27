@@ -365,10 +365,6 @@ footer a:hover {
     transition: all 0.3s ease;
 }
 
-.offer {
-    transition: transform 0.3s ease; /* Плавная анимация */
-}
-
 .offer:hover {
     transform: scale(1.01); /* Увеличение на 20% */
 }
@@ -766,7 +762,7 @@ footer a:hover {
   
  
   .offer {
-    transition: all 0.5s ease-in-out; /* Плавные переходы для всех изменений */
+    transition: all 0.5s ease-in-out; /* Плавные переходы */
   }
   
   .offer__overlay {
@@ -790,5 +786,4 @@ footer a:hover {
       opacity: 0;
     }
   }
-  
   
