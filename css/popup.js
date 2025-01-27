@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Убедитесь, что результаты уже загружены и хранятся в переменной results
-  const results = [
-    // Ваши данные банков
-  ];
-
   console.log('Popup script loaded.');
 
   // Делегирование события для кнопок "Оформить"
@@ -11,32 +6,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (event.target && event.target.classList.contains('offer__button')) {
       console.log('Offer button clicked.');
 
-      const index = event.target.getAttribute('data-index');
-      console.log('Clicked button index:', index);
+      const bankName = event.target.getAttribute('data-name');
+      const bankLogo = event.target.getAttribute('data-logo');
+      const bankCost = event.target.getAttribute('data-cost');
+      const bankRate = event.target.getAttribute('data-rate');
 
-      // Проверяем, что индекс существует и является числом
-      if (index === null || index === undefined || isNaN(index)) {
-        console.error('Invalid index:', index);
+      if (!bankName || !bankLogo || !bankCost || !bankRate) {
+        console.error('Missing bank data.');
         return;
       }
 
-      const result = results[index];
-
-      if (!result) {
-        console.error('Result not found for index:', index);
-        return;
-      }
-
-      console.log('Selected result:', result);
+      console.log('Selected bank:', { name: bankName, logo: bankLogo, cost: bankCost, rate: bankRate });
 
       // Заполняем информацию о банке в popup
       const popupBankInfo = document.getElementById('popup-bank-info');
       if (popupBankInfo) {
         popupBankInfo.innerHTML = `
-          <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-bottom: 10px;"></div>
-          <strong>${result.name}</strong>
-          <div>Стоимость: ${result.cost.toLocaleString()} руб.</div>
-          <div>Ставка: ${result.rate}% годовых</div>
+          <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${bankLogo}'); background-size: cover; background-position: center; margin-bottom: 10px;"></div>
+          <strong>${bankName}</strong>
+          <div>Стоимость: ${bankCost.toLocaleString()} руб.</div>
+          <div>Ставка: ${bankRate}% годовых</div>
         `;
       } else {
         console.error('Popup bank info element not found!');
@@ -47,14 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const popup = document.getElementById('popup');
       if (popup) {
         popup.style.display = 'block';
-
-        // Пример добавления класса для анимации
-        const buttonInsidePopup = document.querySelector('#popup-content .offer__button');
-        if (buttonInsidePopup) {
-          buttonInsidePopup.classList.add('move-down');
-        } else {
-          console.error('Button inside popup not found!');
-        }
       } else {
         console.error('Popup element not found!');
       }
@@ -97,9 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
         name: formData.get('name'),
         phone: formData.get('phone'),
         email: formData.get('email'),
-        bankName: results[document.querySelector('#popup-content .offer__button').getAttribute('data-index')].name,
-        cost: results[document.querySelector('#popup-content .offer__button').getAttribute('data-index')].cost,
-        rate: results[document.querySelector('#popup-content .offer__button').getAttribute('data-index')].rate
+        bankName: bankName,
+        cost: bankCost,
+        rate: bankRate
       };
 
       try {
