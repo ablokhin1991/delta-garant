@@ -41,7 +41,7 @@ function showPopupEffect(offerElement) {
   offerElement.style.left = `${offerRect.left}px`;
   offerElement.style.width = `${offerRect.width}px`;
   offerElement.style.height = `${offerRect.height}px`;
-  offerElement.style.zIndex = "1001";
+  offerElement.style.zIndex = "1001"; // Выше, чем затемнение
   offerElement.style.transition = "all 0.4s ease-in-out";
   offerElement.classList.add("offer--active");
 
@@ -110,7 +110,7 @@ function createOverlay() {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    z-index: 1000; /* Фон находится под offer */
   `;
   return overlay;
 }
