@@ -31,6 +31,8 @@ function showPopupEffect(offerElement) {
     height: offerElement.style.height || "",
     zIndex: offerElement.style.zIndex || "",
     transform: offerElement.style.transform || "",
+    boxShadow: offerElement.style.boxShadow || "",
+    borderRadius: offerElement.style.borderRadius || "",
   });
 
   // Устанавливаем offer в фиксированное положение
@@ -81,6 +83,12 @@ function hidePopupEffect(offerElement) {
   Object.keys(originalStyles).forEach((key) => {
     offerElement.style[key] = originalStyles[key];
   });
+
+  // Удаляем временные стили (boxShadow, transform, borderRadius)
+  offerElement.style.boxShadow = "";
+  offerElement.style.transform = "";
+  offerElement.style.borderRadius = "";
+  offerElement.style.transition = "all 0.4s ease-in-out";
 
   offerElement.classList.remove("offer--active");
 
