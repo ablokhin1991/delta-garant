@@ -116,24 +116,4 @@ function createOverlay() {
   return overlay;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Получаем элемент overlay с существующей страницы
-  const overlay = document.querySelector(".offer__overlay");
-
-  // Обработчик кликов по странице
-  document.body.addEventListener("click", (event) => {
-    // Если клик на кнопке "offer__button"
-    if (event.target.classList.contains("offer__button")) {
-      if (overlay) {
-        overlay.classList.add("offer__overlay--active"); // Активируем затемнение
-      }
-    }
-
-    // Если клик на overlay (для закрытия затемнения)
-    if (event.target === overlay) {
-      overlay.classList.remove("offer__overlay--active"); // Снимаем затемнение
-    }
-  });
-});
-
 
