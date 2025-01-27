@@ -372,19 +372,24 @@ footer a:hover {
 }
 
 .offer--active {
-    z-index: 1001; /* Поверх overlay */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Глубокая тень для всплывшего элемента */
+    transform: scale(1.2); /* Увеличиваем оффер */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+    z-index: 3; /* Выше затемнения */
 }
 
 .offer__overlay {
-    position: fixed;
+    position: absolute; /* Абсолютное позиционирование внутри .content */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Под offer--active */
+    z-index: 1; /* Затемнение выше обычного контента */
     animation: fadeIn 0.3s ease-in-out; /* Анимация появления затемнения */
+  }
+
+  .offer__overlay--active {
+    display: block; /* Отображаем при активации */
   }
 
   .offer__close {
@@ -710,6 +715,13 @@ footer a:hover {
       border-radius: 8px; /* Скругленные углы */
       align-items: flex-start; /* Выравнивание содержимого по левому краю */
     }
+
+    /* Всплывающий оффер */
+    .offer {
+      position: relative; /* Относительно .content */
+      z-index: 2; /* Выше затемнения */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавное всплытие */
+    }
   
     .offer__logo {
       width: 80px;
@@ -803,7 +815,7 @@ footer a:hover {
       opacity: 0;
     }
   }
-  
+
 /* Анимация появления */
 @keyframes fadeIn {
     from {
