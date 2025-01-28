@@ -181,6 +181,9 @@ function displayResults(results) {
   const validOffersCount = results.filter(result => !result.isStopFactor).length; // Считаем только валидные предложения
   resultCount.textContent = `Найдено ${validOffersCount} предложений`;
 
+  // Массив цветов для шариков рейтинга
+  const ratingColors = ["#00FF00", "#7FFF00", "#FFFF00", "#FF7F00", "#FF0000"];
+
   // Остальная часть функции остается без изменений
   offerList.innerHTML = results
     .map((result, index) => {
@@ -198,7 +201,9 @@ function displayResults(results) {
                       <span>Сложность оформления:</span>
                       <div class="offer__rating" style="display: flex; gap: 5px; margin-top: 5px;">
                         ${Array(5).fill(0).map((_, i) => 
-                          `<div style="width: 10px; height: 10px; border-radius: 50%; background-color: ${i < rating ? '#9c9c9c' : '#e3e3e3'};"></div>`
+                          `<div style="width: 10px; height: 10px; border-radius: 50%; background-color: ${
+                            i < rating ? ratingColors[i] : '#e3e3e3' // Используем цвет из массива для активных шариков
+                          };"></div>`
                         ).join('')}
                       </div>
                     </div>
@@ -227,6 +232,7 @@ function displayResults(results) {
         </div>`;
     })
     .join("");
+
 
   // Добавляем текст отказа от ответственности внизу блока offer-list
   const disclaimerText = `
