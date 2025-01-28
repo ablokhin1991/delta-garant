@@ -994,6 +994,15 @@
         { "procType": "4", "guarType": "4", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.06, "minCost": 5000, "ruleMinDays": 0, "ruleMaxDays": 2000 },
         { "procType": "4", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.06, "minCost": 5000, "ruleMinDays": 0, "ruleMaxDays": 2000 }
       ]
+    },
+    {
+      "name": "Росбанк филиал АО Т-Банк",
+      "logo": "/delta-garant/images/banks-logo/rosb.svg",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
+      "rating": 3,
+      "conditions": [
+        
+      ]
     }
 
   ]
