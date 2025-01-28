@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showPopupEffect(offerElement, overlay, offerList) {
-  overlay.classList.add("offer__overlay--active"); // Активируем затемнение
 
   // Сохраняем начальные стили offer
   const offerRect = offerElement.getBoundingClientRect();
@@ -62,6 +61,7 @@ function showPopupEffect(offerElement, overlay, offerList) {
 
   // Убираем влияние оффера на остальной список
   offerList.classList.add("offer-list--adjust");
+  overlay.classList.add("offer__overlay--active"); // Активируем затемнение
 }
 
 function hidePopupEffect(offerElement, overlay, offerList) {
