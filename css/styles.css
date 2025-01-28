@@ -414,24 +414,13 @@ footer a:hover {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999; /* Затемнение под всплывающим блоком */
     display: none; /* Скрыто по умолчанию */
+    transition: all 0.4s ease-in-out;
   }
 
   .offer__overlay--active {
     display: block; /* Показываем затемнение */
   }
   
-  .offer--active {
-    z-index: 1000; /* Всплывающий блок над затемнением */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
-    width: 80%;
-    height: auto;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    transition: all 0.4s ease-in-out;
-  }
 
 .offer-mobile {
     display: flex;
