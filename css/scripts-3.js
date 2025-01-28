@@ -190,7 +190,7 @@ function displayResults(results) {
             result.data 
               ? `<div class="offer__personal-data" style="font-size: 12px; font-weight: 300; color: #555;">
                   ${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}
-                  <div style="margin-top: 5px;">
+                  <div style="margin-top: 0px;">
                     <span>Сложность оформления:</span>
                     <div class="offer__rating" style="display: flex; gap: 5px; margin-top: 5px;">
                       ${Array(5).fill(0).map((_, i) => 
