@@ -182,7 +182,7 @@ function displayResults(results) {
   resultCount.textContent = `Найдено ${validOffersCount} предложений`;
 
   // Массив цветов для шариков рейтинга
-  const ratingColors = ["#00FF00", "#7FFF00", "#FFFF00", "#FF7F00", "#FF0000"];
+  const ratingColors = ["#32eb00", "#b9f02d", "#e6e600", "#f57a00", "#e60000"];
 
   // Остальная часть функции остается без изменений
   offerList.innerHTML = results
