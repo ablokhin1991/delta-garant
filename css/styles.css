@@ -416,6 +416,10 @@ footer a:hover {
     display: none; /* Скрыто по умолчанию */
     transition: all 0.4s ease-in-out;
   }
+
+  .offer__overlay--active {
+    display: block; /* Показываем затемнение */
+  }
   
 
 .offer-mobile {
