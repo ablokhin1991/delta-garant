@@ -1074,6 +1074,15 @@
         { "procType": "4", "guarType": "1", "hasAdvance": false, "customForm": true, "minSum": 1000000, "ruleMaxSum": 70000000, "rate": 0.043, "minCost": 1600, "ruleMinDays": 0, "ruleMaxDays": 1185 },
         { "procType": "4", "guarType": "1", "hasAdvance": false, "customForm": false, "minSum": 1000000, "ruleMaxSum": 70000000, "rate": 0.043, "minCost": 1600, "ruleMinDays": 0, "ruleMaxDays": 1185 }
       ]
+    },
+    {
+      "name": "ПАО Банк Левобережный",
+      "logo": "/delta-garant/images/banks-logo/lvb.svg",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
+      "rating": 3,
+      "conditions": [
+        
+      ]
     }
 
   ]
