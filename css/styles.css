@@ -861,7 +861,12 @@ footer a:hover {
       gap: 5px; /* Уменьшаем расстояние между элементами */
     }
   
-    .result__count {
-      margin-top: 5px; /* Добавляем отступ сверху для текста */
+    .title_lg {
+        margin-bottom: 10px;
     }
+
+    .result__count {
+        margin-top: 5px; /* Добавляем отступ сверху для текста */
+      }
+    
   }
