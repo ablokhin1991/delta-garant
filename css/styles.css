@@ -346,7 +346,7 @@ footer a:hover {
   
   .result__count {
     color: gray;
-    font-size: 14px;
+    font-size: 13px;
     white-space: nowrap; /* Запрещаем перенос текста на новую строку */
     margin-bottom: 20px;
   }
