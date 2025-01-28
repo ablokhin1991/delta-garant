@@ -181,11 +181,10 @@ function displayResults(results) {
   const validOffersCount = results.filter(result => !result.isStopFactor).length; // Считаем только валидные предложения
   resultCount.textContent = `Найдено ${validOffersCount} предложений`;
 
-  // Вставляем все результаты в блок offer-list
+  // Остальная часть функции остается без изменений
   offerList.innerHTML = results
     .map((result, index) => {
-      const rating = Number(result.rating) || 0; // Убедимся, что это число
-      console.log(`Банк: ${result.name}, Рейтинг: ${rating}`); // Отладка
+      const rating = Number(result.rating) || 0;
       return `
         <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd;">
           <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-left: 20px;"></div>
@@ -236,7 +235,6 @@ function displayResults(results) {
     </div>
   `;
 
-  // Добавляем текст отказа от ответственности в конец offer-list
   offerList.insertAdjacentHTML('beforeend', disclaimerText);
 }
 

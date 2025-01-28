@@ -338,10 +338,15 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
-#result-count {
-    font-size: 14px;
+.result__header {
+    display: flex;
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    gap: 10px; /* Расстояние между заголовком и текстом */
+}
+  
+  .result__count {
     color: gray;
-    margin-left: 10px;
+    font-size: 14px;
 }
 
 /* Стили для блока результатов */
@@ -846,3 +851,15 @@ footer a:hover {
     }
   }
   
+  /* Стили для мобильной версии */
+@media (max-width: 768px) {
+    .result__header {
+      flex-direction: column; /* Элементы выстраиваются в столбик */
+      align-items: flex-start; /* Выравниваем по левому краю */
+      gap: 5px; /* Уменьшаем расстояние между элементами */
+    }
+  
+    .result__count {
+      margin-top: 5px; /* Добавляем отступ сверху для текста */
+    }
+}

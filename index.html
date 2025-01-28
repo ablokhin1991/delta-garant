@@ -114,14 +114,16 @@
       <p>Ищем лучшие условия банков для вас…</p>
   </div>
 
-    <div class="result" id="result-output" style="display: none; margin-top: 20px;">
-      <div class="result__title-wrap">
+  <div class="result" id="result-output" style="display: none; margin-top: 20px;">
+    <div class="result__title-wrap">
+      <div class="result__header"> <!-- Новый контейнер для заголовка и количества -->
         <h2 class="title_lg">Результаты расчета</h2>
-        <span class="text_light" id="result-summary"></span>
-        <span class="text_light" id="result-count" style="color: gray; margin-left: 10px;"></span>
+        <span class="text_light result__count" id="result-count"></span> <!-- Новый элемент -->
       </div>
-      <div class="result__offers" id="offer-list"></div>
+      <span class="text_light" id="result-summary"></span>
     </div>
+    <div class="result__offers" id="offer-list"></div>
+  </div>
   
 
   <!-- Место для подвала -->
