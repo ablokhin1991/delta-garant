@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showPopupEffect(offerElement, overlay, offerList) {
+  overlay.classList.add("offer__overlay--active"); // Активируем затемнение
 
   // Сохраняем начальные стили offer
   const offerRect = offerElement.getBoundingClientRect();
@@ -61,28 +62,33 @@ function showPopupEffect(offerElement, overlay, offerList) {
 
   // Убираем влияние оффера на остальной список
   offerList.classList.add("offer-list--adjust");
-  overlay.classList.add("offer__overlay--active"); // Активируем затемнение
 }
 
 function hidePopupEffect(offerElement, overlay, offerList) {
   overlay.classList.remove("offer__overlay--active"); // Скрыть затемнение
 
-  // Восстанавливаем начальные стили offer
-  const originalStyles = JSON.parse(offerElement.dataset.originalStyles);
-  Object.keys(originalStyles).forEach((key) => {
-    offerElement.style[key] = originalStyles[key];
-  });
+  // Анимация уменьшения и возвращения на место
+  offerElement.style.transform = "translate(-50%, -50%) scale(0.8)"; // Уменьшаем блок
+  offerElement.style.opacity = "0"; // Плавно скрываем блок
 
-  // Удаляем временные стили
-  offerElement.style.boxShadow = "";
-  offerElement.style.transform = "";
-  offerElement.style.borderRadius = "";
-  offerElement.style.transition = "all 0.4s ease-in-out";
-
-  offerElement.classList.remove("offer--active");
-
-  // Возвращаем плавное освобождение пространства под оффер-листом
+  // Ждём завершения анимации
   setTimeout(() => {
+    // Восстанавливаем начальные стили offer
+    const originalStyles = JSON.parse(offerElement.dataset.originalStyles);
+    Object.keys(originalStyles).forEach((key) => {
+      offerElement.style[key] = originalStyles[key];
+    });
+
+    // Удаляем временные стили
+    offerElement.style.boxShadow = "";
+    offerElement.style.transform = "";
+    offerElement.style.borderRadius = "";
+    offerElement.style.opacity = ""; // Возвращаем прозрачность
+    offerElement.style.transition = "all 0.4s ease-in-out";
+
+    offerElement.classList.remove("offer--active");
+
+    // Возвращаем плавное освобождение пространства под оффер-листом
     offerList.style.marginBottom = "20px";
 
     // Убираем класс корректировки списка
@@ -91,5 +97,5 @@ function hidePopupEffect(offerElement, overlay, offerList) {
     // Удаляем кнопку закрытия
     const closeButton = offerElement.querySelector(".offer__close");
     if (closeButton) closeButton.remove();
-  }, 400);
+  }, 400); // Время анимации
 }
