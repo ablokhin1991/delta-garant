@@ -348,6 +348,7 @@ footer a:hover {
     color: gray;
     font-size: 14px;
     white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+    margin-bottom: 20px;
   }
 
 /* Стили для блока результатов */
