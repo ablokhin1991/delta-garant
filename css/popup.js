@@ -23,20 +23,14 @@ function showPopupEffect(offerElement, overlay, offerList) {
   overlay.classList.add("offer__overlay--active"); // Активируем затемнение
 
   const offerRect = offerElement.getBoundingClientRect();
-  offerElement.dataset.originalStyles = JSON.stringify({
-    position: offerElement.style.position || "",
-    top: offerElement.style.top || "",
-    left: offerElement.style.left || "",
-    width: offerElement.style.width || "",
-    height: offerElement.style.height || "",
-    zIndex: offerElement.style.zIndex || "",
-    transform: offerElement.style.transform || "",
-    boxShadow: offerElement.style.boxShadow || "",
-    borderRadius: offerElement.style.borderRadius || "",
-    marginBottom: offerElement.style.marginBottom || "",
+  offerElement.dataset.originalPosition = JSON.stringify({
+    top: offerRect.top + window.scrollY, // Сохраняем абсолютные координаты
+    left: offerRect.left,
+    width: offerRect.width,
+    height: offerRect.height
   });
 
-  // Устанавливаем offer в фиксированное положение
+  // Устанавливаем fixed-позицию
   offerElement.style.position = "fixed";
   offerElement.style.top = `${offerRect.top}px`;
   offerElement.style.left = `${offerRect.left}px`;
@@ -46,7 +40,7 @@ function showPopupEffect(offerElement, overlay, offerList) {
   offerElement.style.transition = "all 0.4s ease-in-out";
   offerElement.classList.add("offer--active");
 
-  // Анимация увеличения и центрирования
+  // Всплытие оффера
   setTimeout(() => {
     offerElement.style.transform = "translate(-50%, -50%) scale(1.2)";
     offerElement.style.top = "50%";
@@ -57,40 +51,42 @@ function showPopupEffect(offerElement, overlay, offerList) {
     offerElement.style.borderRadius = "10px";
   }, 0);
 
-  // Плавно сжимаем пустое пространство под оффер-листом
-  offerList.style.marginBottom = "0";
+  // Оставшиеся офферы сдвигаются вниз
   offerList.classList.add("offer-list--adjust");
 }
 
 function hidePopupEffect(offerElement, overlay, offerList) {
-  overlay.classList.remove("offer__overlay--active"); // Скрыть затемнение
+  overlay.classList.remove("offer__overlay--active"); // Скрываем затемнение
 
-  const originalStyles = JSON.parse(offerElement.dataset.originalStyles);
+  const originalPosition = JSON.parse(offerElement.dataset.originalPosition);
 
-  // Анимация возвращения на место (плавное опускание)
+  // Плавно опускаем offer обратно
   offerElement.style.transform = "translate(0, 0) scale(1)";
-  offerElement.style.top = `${originalStyles.top}`;
-  offerElement.style.left = `${originalStyles.left}`;
-  offerElement.style.width = `${originalStyles.width}`;
-  offerElement.style.height = `${originalStyles.height}`;
-  offerElement.style.boxShadow = originalStyles.boxShadow;
-  offerElement.style.borderRadius = originalStyles.borderRadius;
-  offerElement.style.transition = "all 0.4s ease-in-out";
-
-  // Остальные офферы медленно освобождают место
-  offerList.style.marginBottom = "20px";
-  offerList.classList.remove("offer-list--adjust");
+  offerElement.style.top = `${originalPosition.top}px`;
+  offerElement.style.left = `${originalPosition.left}px`;
+  offerElement.style.width = `${originalPosition.width}px`;
+  offerElement.style.height = `${originalPosition.height}px`;
+  offerElement.style.transition = "all 0.5s ease-in-out"; // Более плавная анимация
 
   setTimeout(() => {
-    // Возвращаем исходные стили
-    Object.keys(originalStyles).forEach((key) => {
-      offerElement.style[key] = originalStyles[key];
-    });
-
     offerElement.classList.remove("offer--active");
+
+    // Возвращаем offer в обычное состояние
+    offerElement.style.position = "";
+    offerElement.style.top = "";
+    offerElement.style.left = "";
+    offerElement.style.width = "";
+    offerElement.style.height = "";
+    offerElement.style.zIndex = "";
+    offerElement.style.boxShadow = "";
+    offerElement.style.borderRadius = "";
+    offerElement.style.transition = "";
+
+    // Оставшиеся офферы возвращаются на место
+    offerList.classList.remove("offer-list--adjust");
 
     // Удаляем кнопку закрытия
     const closeButton = offerElement.querySelector(".offer__close");
     if (closeButton) closeButton.remove();
-  }, 400);
+  }, 500);
 }
