@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Закрытие оффера (крестик или overlay)
-    const closeButton = event.target.closest(".offer__close");
-    const isOverlay = event.target === overlay; // Клик точно на overlay, а не его дочерних элементах
-
-    if (closeButton || isOverlay) {
+    if (
+      event.target.closest(".offer__close") || // Клик на крестик или его дочерние элементы
+      event.target === overlay // Клик точно на overlay (не на его дочерних элементах)
+    ) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
         hidePopupEffect(activeOffer, overlay, offerList);
-        return; // Предотвращаем дальнейшую обработку
+        event.stopPropagation(); // Блокируем всплытие
       }
     }
   });
