@@ -12,10 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Закрытие оффера (крестик или overlay)
-    if (
-      event.target.classList.contains("offer__close") ||
-      event.target.classList.contains("offer__overlay--active")
-    ) {
+    if (event.target.classList.contains("offer__close") || event.target === overlay) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
         hidePopupEffect(activeOffer, overlay, offerList);
@@ -26,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function showPopupEffect(offerElement, overlay, offerList) {
   overlay.classList.add("offer__overlay--active");
-  document.body.style.overflow = "hidden"; // Отключаем скролл фона
 
   const offerRect = offerElement.getBoundingClientRect();
   offerElement.dataset.originalPosition = JSON.stringify({
@@ -87,6 +83,10 @@ function showPopupEffect(offerElement, overlay, offerList) {
     offerElement.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
     offerElement.style.borderRadius = "10px";
     offerElement.style.zIndex = "1001"; // Поверх оверлея
+
+    const form = offerElement.querySelector(".offer__form");
+    form.style.opacity = "1";
+    form.style.maxHeight = "300px";
   }, 100);
 
   offerList.classList.add("offer-list--adjust");
@@ -94,7 +94,6 @@ function showPopupEffect(offerElement, overlay, offerList) {
 
 function hidePopupEffect(offerElement, overlay, offerList) {
   overlay.classList.remove("offer__overlay--active");
-  document.body.style.overflow = ""; // Включаем скролл фона обратно
 
   const originalPosition = JSON.parse(offerElement.dataset.originalPosition);
 
