@@ -27,6 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.querySelector(".offer__overlay").addEventListener("click", () => {
+  console.log("Overlay clicked!");
+});
+
 function showPopupEffect(offerElement, overlay, offerList) {
   overlay.classList.add("offer__overlay--active");
 
