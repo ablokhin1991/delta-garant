@@ -25,7 +25,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Затемнение под всплывающим блоком */
+    z-index: 999; /* Должен быть НИЖЕ чем у offer (1000/1001) */
     display: none; /* Скрыто по умолчанию */
     transition: all 0.4s ease-in-out;
     pointer-events: none; /* По умолчанию клики сквозь overlay */

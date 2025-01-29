@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Отдельный обработчик для закрытия
   document.body.addEventListener("click", (event) => {
     const closeTrigger = event.target.closest(".offer__close") || 
-                        (event.target === overlay && overlay.classList.contains("offer__overlay--active"));
+                    (event.target === overlay && overlay.classList.contains("offer__overlay--active"));
 
     if (closeTrigger) {
       const activeOffer = document.querySelector(".offer--active");
@@ -102,12 +102,12 @@ function showPopupEffect(offerElement, overlay, offerList) {
 }
 
 function hidePopupEffect(offerElement, overlay, offerList) {
-  overlay.classList.remove("offer__overlay--active");
+  //overlay.classList.remove("offer__overlay--active");
 
   const originalPosition = JSON.parse(offerElement.dataset.originalPosition);
+  const form = offerElement.querySelector(".offer__form");
 
   // Плавное скрытие формы
-  const form = offerElement.querySelector(".offer__form");
   if (form) {
     form.style.opacity = "0";
     form.style.maxHeight = "0";
@@ -123,6 +123,7 @@ function hidePopupEffect(offerElement, overlay, offerList) {
     offerElement.style.transition = "all 0.5s ease-in-out";
 
     setTimeout(() => {
+      overlay.classList.remove("offer__overlay--active");
       offerElement.classList.remove("offer--active");
 
       // Возвращаем кнопку "Оформить"
