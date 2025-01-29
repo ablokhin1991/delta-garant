@@ -67,24 +67,24 @@ function showPopupEffect(offerElement, overlay, offerList) {
 function hidePopupEffect(offerElement, overlay, offerList) {
   overlay.classList.remove("offer__overlay--active"); // Скрыть затемнение
 
-  // Анимация уменьшения и возвращения на место
-  offerElement.style.transform = "translate(-50%, -50%) scale(0.8)"; // Уменьшаем блок
-  offerElement.style.opacity = "0"; // Плавно скрываем блок
+  // Восстанавливаем начальные координаты блока
+  const originalStyles = JSON.parse(offerElement.dataset.originalStyles);
+
+  // Анимация возвращения на место
+  offerElement.style.transform = "none"; // Убираем масштабирование
+  offerElement.style.top = `${originalStyles.top}`;
+  offerElement.style.left = `${originalStyles.left}`;
+  offerElement.style.width = `${originalStyles.width}`;
+  offerElement.style.height = `${originalStyles.height}`;
+  offerElement.style.boxShadow = originalStyles.boxShadow;
+  offerElement.style.borderRadius = originalStyles.borderRadius;
 
   // Ждём завершения анимации
   setTimeout(() => {
-    // Восстанавливаем начальные стили offer
-    const originalStyles = JSON.parse(offerElement.dataset.originalStyles);
+    // Возвращаем исходные стили
     Object.keys(originalStyles).forEach((key) => {
       offerElement.style[key] = originalStyles[key];
     });
-
-    // Удаляем временные стили
-    offerElement.style.boxShadow = "";
-    offerElement.style.transform = "";
-    offerElement.style.borderRadius = "";
-    offerElement.style.opacity = ""; // Возвращаем прозрачность
-    offerElement.style.transition = "all 0.4s ease-in-out";
 
     offerElement.classList.remove("offer--active");
 
