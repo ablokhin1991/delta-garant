@@ -30,6 +30,18 @@ function showPopupEffect(offerElement, overlay, offerList) {
     height: offerRect.height
   });
 
+  // Удаляем кнопку "Оформить"
+  const offerButton = offerElement.querySelector(".offer__button");
+  if (offerButton) {
+    offerButton.style.display = "none";
+  }
+
+  // Добавляем крестик закрытия
+  const closeButton = document.createElement("button");
+  closeButton.classList.add("offer__close");
+  closeButton.innerHTML = "✖";
+  offerElement.appendChild(closeButton);
+
   // Создаем форму
   const formHtml = `
     <div class="offer__form">
@@ -44,7 +56,6 @@ function showPopupEffect(offerElement, overlay, offerList) {
       <button class="offer__submit">Отправить</button>
     </div>`;
 
-  // Добавляем форму в конец оффера
   offerElement.insertAdjacentHTML("beforeend", formHtml);
 
   // Устанавливаем фиксированное положение
@@ -63,11 +74,10 @@ function showPopupEffect(offerElement, overlay, offerList) {
     offerElement.style.top = "50%";
     offerElement.style.left = "50%";
     offerElement.style.width = "80%";
-    offerElement.style.height = "500px"; // Увеличиваем высоту
+    offerElement.style.height = "500px";
     offerElement.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
     offerElement.style.borderRadius = "10px";
 
-    // Делаем форму видимой
     const form = offerElement.querySelector(".offer__form");
     form.style.opacity = "1";
     form.style.maxHeight = "300px";
@@ -88,7 +98,6 @@ function hidePopupEffect(offerElement, overlay, offerList) {
     form.style.maxHeight = "0";
   }
 
-  // Плавное опускание обратно
   setTimeout(() => {
     offerElement.style.transform = "translate(0, 0) scale(1)";
     offerElement.style.top = `${originalPosition.top}px`;
@@ -99,6 +108,16 @@ function hidePopupEffect(offerElement, overlay, offerList) {
 
     setTimeout(() => {
       offerElement.classList.remove("offer--active");
+
+      // Возвращаем кнопку "Оформить"
+      const offerButton = offerElement.querySelector(".offer__button");
+      if (offerButton) {
+        offerButton.style.display = "block";
+      }
+
+      // Удаляем крестик закрытия
+      const closeButton = offerElement.querySelector(".offer__close");
+      if (closeButton) closeButton.remove();
 
       // Удаляем форму
       if (form) form.remove();
@@ -114,10 +133,6 @@ function hidePopupEffect(offerElement, overlay, offerList) {
       offerElement.style.transition = "";
 
       offerList.classList.remove("offer-list--adjust");
-
-      const closeButton = offerElement.querySelector(".offer__close");
-      if (closeButton) closeButton.remove();
     }, 400);
   }, 200);
 }
-
