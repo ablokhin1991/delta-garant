@@ -92,29 +92,29 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", function () {
   const phoneInput = document.querySelector("#phone");
 
-  // Подключение intl-tel-input (код страны)
+  // Инициализация intl-tel-input
   const iti = window.intlTelInput(phoneInput, {
       initialCountry: "ru", // Россия по умолчанию
-      preferredCountries: ["ru", "by", "kz"], // Список популярных стран
-      separateDialCode: true, // Код страны отображается отдельно
+      preferredCountries: ["ru", "ua", "by", "kz"], // Популярные страны
+      separateDialCode: true, // Отдельное отображение кода страны
       utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
   });
 
-  // Подключение Inputmask (маска для номера)
+  // Маска для телефона (например, (999) 999-99-99)
   Inputmask({
-      mask: "999 999 99 99", // Маска телефона *** *** ** **
-      showMaskOnHover: false, // Не показывать маску при наведении
-      showMaskOnFocus: true,  // Показывать маску при фокусе
-      placeholder: "_",       // Символ подстановки
-      clearMaskOnLostFocus: false // Маска остаётся, даже если пользователь ушёл с поля
+      mask: "(999) 999-99-99",
+      showMaskOnHover: false,
+      showMaskOnFocus: true,
+      placeholder: "_",
+      clearMaskOnLostFocus: false
   }).mask(phoneInput);
 
   // Валидация перед отправкой формы
   document.querySelector(".popup__form").addEventListener("submit", function (e) {
-      if (!iti.isValidNumber() || phoneInput.value.replace(/\D/g, "").length !== 10) {
+      const rawNumber = phoneInput.inputmask.unmaskedvalue(); // Чистый номер без маски
+      if (rawNumber.length !== 10 || !iti.isValidNumber()) {
           alert("Введите корректный номер телефона!");
           e.preventDefault();
       }
   });
 });
-
