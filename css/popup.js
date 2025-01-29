@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const offerList = document.getElementById("offer-list");
 
   document.body.addEventListener("click", (event) => {
+    // Открытие оффера
     if (event.target.classList.contains("offer__button")) {
       const offerElement = event.target.closest(".offer");
       if (offerElement) {
@@ -10,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    if (event.target.classList.contains("offer__close") || event.target.classList.contains("offer__overlay")) {
+    // Закрытие оффера (крестик или overlay)
+    if (event.target.classList.contains("offer__close") || event.target === overlay) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
         hidePopupEffect(activeOffer, overlay, offerList);
@@ -36,27 +38,31 @@ function showPopupEffect(offerElement, overlay, offerList) {
     offerButton.style.display = "none";
   }
 
-  // Добавляем крестик закрытия
-  const closeButton = document.createElement("button");
-  closeButton.classList.add("offer__close");
-  closeButton.innerHTML = "✖";
-  offerElement.appendChild(closeButton);
+  // Добавляем крестик закрытия (если его нет)
+  let closeButton = offerElement.querySelector(".offer__close");
+  if (!closeButton) {
+    closeButton = document.createElement("button");
+    closeButton.classList.add("offer__close");
+    closeButton.innerHTML = "✖";
+    offerElement.appendChild(closeButton);
+  }
 
-  // Создаем форму
-  const formHtml = `
-    <div class="offer__form">
-      <h4>Отправить заявку</h4>
-      <input type="text" placeholder="ФИО" class="offer__input">
-      <input type="tel" placeholder="Телефон" class="offer__input">
-      <input type="email" placeholder="Электронная почта" class="offer__input">
-      <label class="offer__checkbox-label">
-        <input type="checkbox" class="offer__checkbox">
-        Согласен с политикой обработки персональных данных
-      </label>
-      <button class="offer__submit">Отправить</button>
-    </div>`;
-
-  offerElement.insertAdjacentHTML("beforeend", formHtml);
+  // Создаем форму (если ее нет)
+  if (!offerElement.querySelector(".offer__form")) {
+    const formHtml = `
+      <div class="offer__form">
+        <h4>Отправить заявку</h4>
+        <input type="text" placeholder="ФИО" class="offer__input">
+        <input type="tel" placeholder="Телефон" class="offer__input">
+        <input type="email" placeholder="Электронная почта" class="offer__input">
+        <label class="offer__checkbox-label">
+          <input type="checkbox" class="offer__checkbox">
+          Согласен с политикой обработки персональных данных
+        </label>
+        <button class="offer__submit">Отправить</button>
+      </div>`;
+    offerElement.insertAdjacentHTML("beforeend", formHtml);
+  }
 
   // Определяем ширину в зависимости от устройства
   let contentWidth = document.querySelector(".content").offsetWidth;
