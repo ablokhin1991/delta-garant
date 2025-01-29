@@ -12,11 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Закрытие оффера (крестик или overlay)
-    if (event.target.classList.contains("offer__close") || event.target === overlay) {
+    if (
+      event.target.classList.contains("offer__close") || 
+      event.target.classList.contains("offer__overlay--active")
+    ) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
         hidePopupEffect(activeOffer, overlay, offerList);
       }
+    }
+  });
+
+  // Позволяет закрывать оффер по клику на overlay (если оффер активен)
+  overlay.addEventListener("click", () => {
+    const activeOffer = document.querySelector(".offer--active");
+    if (activeOffer) {
+      hidePopupEffect(activeOffer, overlay, offerList);
     }
   });
 });
@@ -143,3 +154,4 @@ function hidePopupEffect(offerElement, overlay, offerList) {
     }, 400);
   }, 200);
 }
+
