@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.addEventListener("click", (event) => {
     // Открытие оффера
-    if (event.target.classList.contains("offer__button")) {
+    if (event.target.closest(".offer__button")) {
       const offerElement = event.target.closest(".offer");
       if (offerElement) {
         showPopupEffect(offerElement, overlay, offerList);
@@ -12,24 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Закрытие оффера (крестик или overlay)
-    if (
-      event.target.closest(".offer__close") || 
-      event.target.closest(".offer__overlay--active")
-    ) {
-      const activeOffer = document.querySelector(".offer--active");
-      if (activeOffer) {
-        hidePopupEffect(activeOffer, overlay, offerList);
-      }
-    }
-  });
+    const closeButton = event.target.closest(".offer__close");
+    const isOverlay = event.target === overlay; // Клик точно на overlay, а не его дочерних элементах
 
-  // Закрытие по клику на overlay
-  overlay.addEventListener("click", (event) => {
-    event.stopPropagation(); // Предотвращаем всплытие
-    if (overlay.classList.contains("offer__overlay--active")) {
+    if (closeButton || isOverlay) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
         hidePopupEffect(activeOffer, overlay, offerList);
+        return; // Предотвращаем дальнейшую обработку
       }
     }
   });
@@ -37,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Остальной код функций showPopupEffect и hidePopupEffect остается без изменений
 
+//*************************************************************************************************************************
 function showPopupEffect(offerElement, overlay, offerList) {
   overlay.classList.add("offer__overlay--active");
 
