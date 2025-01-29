@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.querySelector(".offer__overlay").addEventListener("click", () => {
+document.querySelector(".offer__overlay").addEventListener("click", () => { // Если после клика сообщение не появляется, overlay не получает клики.
   console.log("Overlay clicked!");
 });
 
