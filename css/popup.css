@@ -1,0 +1,143 @@
+.offer--active {
+    z-index: 1000; /* Всплывающий блок над затемнением */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    width: 80%;
+    height: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+    opacity: 1; /* Плавное появление */
+  }
+
+  .offer--closing {
+    transform: translate(-50%, -50%) scale(0.8); /* Уменьшаем блок */
+    opacity: 0; /* Плавно скрываем блок */
+    transition: all 0.4s ease-in-out;
+  }
+
+.offer__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Затемнение под всплывающим блоком */
+    display: none; /* Скрыто по умолчанию */
+    transition: all 0.4s ease-in-out;
+  }
+
+  .offer__overlay--active {
+    display: block; /* Показываем затемнение */
+  }
+  
+  /* Форма заявки */
+.offer__form {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    padding: 20px;
+  }
+  
+  /* Поля формы */
+  .offer__input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Чекбокс */
+  .offer__checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .offer__checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Кнопка отправки */
+  .offer__submit {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .offer__submit:hover {
+    background-color: #0056b3;
+  }
+
+  /* Стили для крестика закрытия */
+.offer__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ff4d4d;
+    transition: color 0.3s ease;
+  }
+  
+  .offer__close:hover {
+    color: #b30000;
+  }
+
+  /* 📌 ОФФЕР НА МОБИЛЬНЫХ 📌 */
+@media (max-width: 768px) {
+    /* Всплывающий оффер */
+    .offer--active {
+        width: 90% !important; /* Делаем ширину оффера 90% экрана */
+        max-height: 90vh; /* Ограничиваем максимальную высоту */
+        overflow-y: auto; /* Включаем прокрутку внутри, если контент большой */
+        transform: translate(-50%, -50%) scale(1); /* Убираем сильное увеличение */
+        padding: 20px; /* Добавляем отступы внутри */
+    }
+
+    /* Форма внутри оффера */
+    .offer__form {
+        width: 100%; /* Форма на всю ширину */
+        max-height: 100%; /* Ограничиваем высоту */
+        padding: 15px;
+    }
+
+    /* Поля ввода в форме */
+    .offer__input {
+        width: 100%; /* Поля на всю ширину */
+        font-size: 16px; /* Увеличиваем текст */
+        padding: 10px;
+    }
+
+    /* Чекбокс */
+    .offer__checkbox-label {
+        font-size: 14px; /* Уменьшаем шрифт чекбокса */
+    }
+
+    /* Кнопка отправки */
+    .offer__submit {
+        width: 100%; /* Растягиваем кнопку на всю ширину */
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* Крестик закрытия */
+    .offer__close {
+        font-size: 24px; /* Делаем крестик крупнее для удобного нажатия */
+        top: 15px; /* Немного опускаем */
+        right: 15px;
+    }
+}

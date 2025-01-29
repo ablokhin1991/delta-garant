@@ -58,25 +58,18 @@ function showPopupEffect(offerElement, overlay, offerList) {
 
   offerElement.insertAdjacentHTML("beforeend", formHtml);
 
-  // Устанавливаем фиксированное положение
-  offerElement.style.position = "fixed";
-  offerElement.style.top = `${offerRect.top}px`;
-  offerElement.style.left = `${offerRect.left}px`;
-  offerElement.style.width = `${offerRect.width}px`;
-  offerElement.style.height = `${offerRect.height}px`;
-  offerElement.style.zIndex = "1000";
-  offerElement.style.transition = "all 0.4s ease-in-out";
-  offerElement.classList.add("offer--active");
-
-  // Получаем ширину основного контейнера .content
-  const contentWidth = document.querySelector(".content").offsetWidth;
+  // Определяем ширину в зависимости от устройства
+  let contentWidth = document.querySelector(".content").offsetWidth;
+  if (window.innerWidth <= 768) {
+    contentWidth = window.innerWidth * 0.9; // 90% экрана на мобильных
+  }
 
   // Всплытие оффера + появление формы
   setTimeout(() => {
     offerElement.style.transform = "translate(-50%, -50%) scale(1.1)";
     offerElement.style.top = "50%";
     offerElement.style.left = "50%";
-    offerElement.style.width = `${contentWidth}px`; // Устанавливаем ширину как у .content
+    offerElement.style.width = `${contentWidth}px`;
     offerElement.style.height = "500px";
     offerElement.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
     offerElement.style.borderRadius = "10px";
@@ -88,6 +81,7 @@ function showPopupEffect(offerElement, overlay, offerList) {
 
   offerList.classList.add("offer-list--adjust");
 }
+
 
 function hidePopupEffect(offerElement, overlay, offerList) {
   overlay.classList.remove("offer__overlay--active");
