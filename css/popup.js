@@ -3,23 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const offerList = document.getElementById("offer-list");
 
   document.body.addEventListener("click", (event) => {
-    // Открытие оффера
-    if (event.target.closest(".offer__button")) {
+    if (event.target.classList.contains("offer__button")) {
       const offerElement = event.target.closest(".offer");
       if (offerElement) {
         showPopupEffect(offerElement, overlay, offerList);
       }
     }
 
-    // Закрытие оффера (крестик или overlay)
-    if (
-      event.target.closest(".offer__close") || // Клик на крестик или его дочерние элементы
-      event.target === overlay // Клик точно на overlay (не на его дочерних элементах)
-    ) {
+    if (event.target.classList.contains("offer__close") || event.target.classList.contains("offer__overlay")) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
         hidePopupEffect(activeOffer, overlay, offerList);
-        event.stopPropagation(); // Блокируем всплытие
       }
     }
   });
