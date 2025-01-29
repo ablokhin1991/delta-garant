@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".offer__overlay");
   const offerList = document.getElementById("offer-list");
 
-  // Обработчик открытия
+  // Открытие оффера
   document.body.addEventListener("click", (event) => {
     if (event.target.closest(".offer__button")) {
       const offerElement = event.target.closest(".offer");
@@ -12,26 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Обработчик закрытия (фаза capture)
+  // Закрытие оффера (крестик или overlay)
   document.body.addEventListener("click", (event) => {
-    const isCloseButton = event.target.closest(".offer__close");
-    const isOverlay = event.target.closest(".offer__overlay"); // Используем closest
+    const isCloseButton = event.target.classList.contains("offer__close");
+    const isOverlayClick = event.target === overlay && overlay.classList.contains("offer__overlay--active");
 
-    if ((isCloseButton || isOverlay) && overlay.classList.contains("offer__overlay--active")) {
+    if (isCloseButton || isOverlayClick) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
-        // Блокируем клики на оффер во время анимации
-        activeOffer.style.pointerEvents = "none";
-        overlay.style.pointerEvents = "none";
-
         hidePopupEffect(activeOffer, overlay, offerList);
-        event.stopImmediatePropagation();
+        event.stopPropagation(); // Останавливаем всплытие клика
       }
     }
-  }, true);
+  });
 });
 
-//*************************************************************************************************************************
 function showPopupEffect(offerElement, overlay, offerList) {
   overlay.classList.add("offer__overlay--active");
 
@@ -104,9 +99,12 @@ function showPopupEffect(offerElement, overlay, offerList) {
 }
 
 function hidePopupEffect(offerElement, overlay, offerList) {
+  overlay.classList.remove("offer__overlay--active");
+
   const originalPosition = JSON.parse(offerElement.dataset.originalPosition);
   const form = offerElement.querySelector(".offer__form");
 
+  // Плавное скрытие формы
   if (form) {
     form.style.opacity = "0";
     form.style.maxHeight = "0";
@@ -122,11 +120,6 @@ function hidePopupEffect(offerElement, overlay, offerList) {
     offerElement.style.transition = "all 0.5s ease-in-out";
 
     setTimeout(() => {
-      // Восстанавливаем pointer-events
-      offerElement.style.pointerEvents = "auto";
-      overlay.style.pointerEvents = "auto";
-
-      overlay.classList.remove("offer__overlay--active");
       offerElement.classList.remove("offer--active");
 
       // Возвращаем кнопку "Оформить"
@@ -135,15 +128,24 @@ function hidePopupEffect(offerElement, overlay, offerList) {
         offerButton.style.display = "block";
       }
 
-      // Удаляем крестик и форму
+      // Удаляем крестик закрытия
       const closeButton = offerElement.querySelector(".offer__close");
       if (closeButton) closeButton.remove();
+
+      // Удаляем форму
       if (form) form.remove();
 
-      // Сброс стилей
       offerElement.style.position = "";
+      offerElement.style.top = "";
+      offerElement.style.left = "";
+      offerElement.style.width = "";
+      offerElement.style.height = "";
       offerElement.style.zIndex = "";
-      // ... остальные сбросы стилей
+      offerElement.style.boxShadow = "";
+      offerElement.style.borderRadius = "";
+      offerElement.style.transition = "";
+
+      offerList.classList.remove("offer-list--adjust");
     }, 400);
   }, 200);
 }
