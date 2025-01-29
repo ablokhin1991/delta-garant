@@ -1,155 +1,88 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.querySelector(".offer__overlay");
-  const offerList = document.getElementById("offer-list");
+  const body = document.body;
 
-  // Открытие оффера
-  document.body.addEventListener("click", (event) => {
-    if (event.target.closest(".offer__button")) {
-      const offerElement = event.target.closest(".offer");
-      if (offerElement) {
-        showPopupEffect(offerElement, overlay, offerList);
-      }
-    }
-  });
+  // Создаём popup и overlay
+  const popupOverlay = document.createElement("div");
+  popupOverlay.classList.add("popup__overlay");
 
-  // Закрытие оффера (крестик или overlay)
-  document.body.addEventListener("click", (event) => {
-    const isCloseButton = event.target.classList.contains("offer__close");
-    const isOverlayClick = event.target === overlay && overlay.classList.contains("offer__overlay--active");
+  const popup = document.createElement("div");
+  popup.classList.add("popup");
 
-    if (isCloseButton || isOverlayClick) {
-      const activeOffer = document.querySelector(".offer--active");
-      if (activeOffer) {
-        hidePopupEffect(activeOffer, overlay, offerList);
-        event.stopPropagation(); // Останавливаем всплытие клика
-      }
-    }
-  });
-});
-
-document.querySelector(".offer__overlay").addEventListener("click", () => { // Если после клика сообщение не появляется, overlay не получает клики.
-  console.log("Overlay clicked!");
-});
-
-function showPopupEffect(offerElement, overlay, offerList) {
-  overlay.classList.add("offer__overlay--active");
-
-  const offerRect = offerElement.getBoundingClientRect();
-  offerElement.dataset.originalPosition = JSON.stringify({
-    top: offerRect.top + window.scrollY,
-    left: offerRect.left,
-    width: offerRect.width,
-    height: offerRect.height
-  });
-
-  // Удаляем кнопку "Оформить"
-  const offerButton = offerElement.querySelector(".offer__button");
-  if (offerButton) {
-    offerButton.style.display = "none";
-  }
-
-  // Добавляем крестик закрытия (если его нет)
-  let closeButton = offerElement.querySelector(".offer__close");
-  if (!closeButton) {
-    closeButton = document.createElement("button");
-    closeButton.classList.add("offer__close");
-    closeButton.innerHTML = "✖";
-    offerElement.appendChild(closeButton);
-  }
-
-  // Создаем форму (если ее нет)
-  if (!offerElement.querySelector(".offer__form")) {
-    const formHtml = `
-      <div class="offer__form">
-        <h4>Отправить заявку</h4>
-        <input type="text" placeholder="ФИО" class="offer__input">
-        <input type="tel" placeholder="Телефон" class="offer__input">
-        <input type="email" placeholder="Электронная почта" class="offer__input">
-        <label class="offer__checkbox-label">
-          <input type="checkbox" class="offer__checkbox">
+  popup.innerHTML = `
+    <button class="popup__close">✖</button>
+    <h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
+    <div class="popup__content">
+      <div class="popup__offer">
+        <div class="popup__logo"></div>
+        <div class="popup__details"></div>
+        <div class="popup__personal-data"></div>
+        <div class="popup__rating"></div>
+        <div class="popup__separator"></div>
+        <div class="popup__rate"></div>
+      </div>
+      <form class="popup__form">
+        <input type="text" placeholder="ФИО" class="popup__input" required>
+        <input type="email" placeholder="Электронная почта" class="popup__input" required>
+        <input type="tel" placeholder="Телефон" class="popup__input phone-mask" required>
+        <label class="popup__checkbox-label">
+          <input type="checkbox" class="popup__checkbox" required>
           Согласен с политикой обработки персональных данных
         </label>
-        <button class="offer__submit">Отправить</button>
-      </div>`;
-    offerElement.insertAdjacentHTML("beforeend", formHtml);
+        <button type="submit" class="popup__submit">Отправить заявку</button>
+      </form>
+    </div>
+  `;
+
+  body.appendChild(popupOverlay);
+  body.appendChild(popup);
+
+  // Функция открытия popup с передачей данных
+  function openPopup(offerElement) {
+    const logo = offerElement.querySelector(".offer__logo").style.backgroundImage;
+    const details = offerElement.querySelector(".offer__details").innerHTML;
+    const personalData = offerElement.querySelector(".offer__personal-data")?.innerHTML || "";
+    const rating = offerElement.querySelector(".offer__rating")?.innerHTML || "";
+    const rate = offerElement.querySelector(".offer__rate").innerHTML;
+
+    popup.querySelector(".popup__logo").style.backgroundImage = logo;
+    popup.querySelector(".popup__details").innerHTML = details;
+    popup.querySelector(".popup__personal-data").innerHTML = personalData;
+    popup.querySelector(".popup__rating").innerHTML = rating;
+    popup.querySelector(".popup__rate").innerHTML = rate;
+
+    popupOverlay.classList.add("popup__overlay--active");
+    popup.classList.add("popup--active");
+    body.style.overflow = "hidden"; // Отключаем скролл фона
   }
 
-  // Определяем ширину в зависимости от устройства
-  let contentWidth = document.querySelector(".content").offsetWidth;
-  if (window.innerWidth <= 768) {
-    contentWidth = window.innerWidth * 0.9; // 90% экрана на мобильных
+  // Функция закрытия popup
+  function closePopup() {
+    popupOverlay.classList.remove("popup__overlay--active");
+    popup.classList.remove("popup--active");
+    body.style.overflow = ""; // Включаем скролл фона обратно
   }
 
-  // Всплытие оффера + появление формы
-  setTimeout(() => {
-    offerElement.style.position = "fixed";
-    offerElement.style.top = "50%";
-    offerElement.style.left = "50%";
-    offerElement.style.width = `${contentWidth}px`;
-    offerElement.style.height = "auto";
-    offerElement.style.maxHeight = "90vh";
-    offerElement.style.overflowY = "auto";
-    offerElement.style.transform = "translate(-50%, -50%) scale(1)";
-    offerElement.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
-    offerElement.style.borderRadius = "10px";
-    offerElement.style.zIndex = "1001"; // Поверх оверлея
-
-    const form = offerElement.querySelector(".offer__form");
-    form.style.opacity = "1";
-    form.style.maxHeight = "300px";
-  }, 100);
-
-  offerList.classList.add("offer-list--adjust");
-}
-
-function hidePopupEffect(offerElement, overlay, offerList) {
-  overlay.classList.remove("offer__overlay--active");
-
-  const originalPosition = JSON.parse(offerElement.dataset.originalPosition);
-  const form = offerElement.querySelector(".offer__form");
-
-  // Плавное скрытие формы
-  if (form) {
-    form.style.opacity = "0";
-    form.style.maxHeight = "0";
-  }
-
-  setTimeout(() => {
-    offerElement.style.transform = "translate(0, 0) scale(1)";
-    offerElement.style.position = "absolute";
-    offerElement.style.top = `${originalPosition.top}px`;
-    offerElement.style.left = `${originalPosition.left}px`;
-    offerElement.style.width = `${originalPosition.width}px`;
-    offerElement.style.height = `${originalPosition.height}px`;
-    offerElement.style.transition = "all 0.5s ease-in-out";
-
-    setTimeout(() => {
-      offerElement.classList.remove("offer--active");
-
-      // Возвращаем кнопку "Оформить"
-      const offerButton = offerElement.querySelector(".offer__button");
-      if (offerButton) {
-        offerButton.style.display = "block";
+  // Слушаем клик по кнопке "Оформить" в офферах
+  document.body.addEventListener("click", (event) => {
+    if (event.target.classList.contains("offer__button")) {
+      const offerElement = event.target.closest(".offer");
+      if (offerElement) {
+        openPopup(offerElement);
       }
+    }
+  });
 
-      // Удаляем крестик закрытия
-      const closeButton = offerElement.querySelector(".offer__close");
-      if (closeButton) closeButton.remove();
+  // Закрытие popup по клику на крестик или overlay
+  document.body.addEventListener("click", (event) => {
+    if (event.target.classList.contains("popup__close") || event.target.classList.contains("popup__overlay")) {
+      closePopup();
+    }
+  });
 
-      // Удаляем форму
-      if (form) form.remove();
-
-      offerElement.style.position = "";
-      offerElement.style.top = "";
-      offerElement.style.left = "";
-      offerElement.style.width = "";
-      offerElement.style.height = "";
-      offerElement.style.zIndex = "";
-      offerElement.style.boxShadow = "";
-      offerElement.style.borderRadius = "";
-      offerElement.style.transition = "";
-
-      offerList.classList.remove("offer-list--adjust");
-    }, 400);
-  }, 200);
-}
+  // Маска для телефона (автоформат)
+  document.addEventListener("input", (event) => {
+    if (event.target.classList.contains("phone-mask")) {
+      event.target.value = event.target.value.replace(/[^0-9+]/g, "");
+    }
+  });
+});
