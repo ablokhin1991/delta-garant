@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Закрытие оффера (крестик или overlay)
     if (
-      event.target.classList.contains("offer__close") || 
-      event.target.classList.contains("offer__overlay--active")
+      event.target.closest(".offer__close") || 
+      event.target.closest(".offer__overlay--active")
     ) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
@@ -23,14 +23,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Позволяет закрывать оффер по клику на overlay (если оффер активен)
-  overlay.addEventListener("click", () => {
-    const activeOffer = document.querySelector(".offer--active");
-    if (activeOffer) {
-      hidePopupEffect(activeOffer, overlay, offerList);
+  // Закрытие по клику на overlay
+  overlay.addEventListener("click", (event) => {
+    event.stopPropagation(); // Предотвращаем всплытие
+    if (overlay.classList.contains("offer__overlay--active")) {
+      const activeOffer = document.querySelector(".offer--active");
+      if (activeOffer) {
+        hidePopupEffect(activeOffer, overlay, offerList);
+      }
     }
   });
 });
+
+// Остальной код функций showPopupEffect и hidePopupEffect остается без изменений
 
 function showPopupEffect(offerElement, overlay, offerList) {
   overlay.classList.add("offer__overlay--active");
