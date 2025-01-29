@@ -2,21 +2,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".offer__overlay");
   const offerList = document.getElementById("offer-list");
 
+  // Обработчик для открытия
   document.body.addEventListener("click", (event) => {
-    if (event.target.classList.contains("offer__button")) {
+    if (event.target.closest(".offer__button")) {
       const offerElement = event.target.closest(".offer");
       if (offerElement) {
         showPopupEffect(offerElement, overlay, offerList);
       }
     }
+  });
 
-    if (event.target.classList.contains("offer__close") || event.target.classList.contains("offer__overlay")) {
+  // Отдельный обработчик для закрытия
+  document.body.addEventListener("click", (event) => {
+    const closeTrigger = event.target.closest(".offer__close") || 
+                        (event.target === overlay && overlay.classList.contains("offer__overlay--active"));
+
+    if (closeTrigger) {
       const activeOffer = document.querySelector(".offer--active");
       if (activeOffer) {
         hidePopupEffect(activeOffer, overlay, offerList);
+        event.stopImmediatePropagation(); // Блокируем другие обработчики
       }
     }
-  });
+  }, true); // Используем фазу capture для приоритета
 });
 
 // Остальной код функций showPopupEffect и hidePopupEffect остается без изменений

@@ -28,10 +28,12 @@
     z-index: 1000; /* Затемнение под всплывающим блоком */
     display: none; /* Скрыто по умолчанию */
     transition: all 0.4s ease-in-out;
+    pointer-events: none; /* По умолчанию клики сквозь overlay */
   }
 
   .offer__overlay--active {
     display: block; /* Показываем затемнение */
+    pointer-events: auto; /* Клики работают только когда активен */
   }
   
   /* Форма заявки */
