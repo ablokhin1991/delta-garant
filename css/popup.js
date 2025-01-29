@@ -1,3 +1,24 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.querySelector(".offer__overlay");
+  const offerList = document.getElementById("offer-list");
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.classList.contains("offer__button")) {
+      const offerElement = event.target.closest(".offer");
+      if (offerElement) {
+        showPopupEffect(offerElement, overlay, offerList);
+      }
+    }
+
+    if (event.target.classList.contains("offer__close") || event.target.classList.contains("offer__overlay")) {
+      const activeOffer = document.querySelector(".offer--active");
+      if (activeOffer) {
+        hidePopupEffect(activeOffer, overlay, offerList);
+      }
+    }
+  });
+});
+
 function showPopupEffect(offerElement, overlay, offerList) {
   overlay.classList.add("offer__overlay--active"); // Активируем затемнение
 
@@ -13,7 +34,6 @@ function showPopupEffect(offerElement, overlay, offerList) {
     transform: offerElement.style.transform || "",
     boxShadow: offerElement.style.boxShadow || "",
     borderRadius: offerElement.style.borderRadius || "",
-    marginBottom: offerElement.style.marginBottom || "",
   });
 
   // Устанавливаем offer в фиксированное положение
@@ -35,10 +55,10 @@ function showPopupEffect(offerElement, overlay, offerList) {
     offerElement.style.height = "auto";
     offerElement.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
     offerElement.style.borderRadius = "10px";
-  }, 0);
 
-  // Плавно сжимаем пустое пространство под оффер-листом
-  offerList.style.marginBottom = "0";
+    // Плавно сжимаем пустое пространство под оффер-листом
+    offerList.style.marginBottom = "0";
+  }, 0);
 
   // Убираем влияние оффера на остальной список
   offerList.classList.add("offer-list--adjust");
@@ -47,24 +67,24 @@ function showPopupEffect(offerElement, overlay, offerList) {
 function hidePopupEffect(offerElement, overlay, offerList) {
   overlay.classList.remove("offer__overlay--active"); // Скрыть затемнение
 
-  // Восстанавливаем начальные стили offer
-  const originalStyles = JSON.parse(offerElement.dataset.originalStyles);
-
   // Анимация уменьшения и возвращения на место
-  offerElement.style.transform = "none"; // Убираем масштабирование
-  offerElement.style.top = `${originalStyles.top}`;
-  offerElement.style.left = `${originalStyles.left}`;
-  offerElement.style.width = `${originalStyles.width}`;
-  offerElement.style.height = `${originalStyles.height}`;
-  offerElement.style.boxShadow = originalStyles.boxShadow;
-  offerElement.style.borderRadius = originalStyles.borderRadius;
+  offerElement.style.transform = "translate(-50%, -50%) scale(0.8)"; // Уменьшаем блок
+  offerElement.style.opacity = "0"; // Плавно скрываем блок
 
   // Ждём завершения анимации
   setTimeout(() => {
-    // Возвращаем исходные стили
+    // Восстанавливаем начальные стили offer
+    const originalStyles = JSON.parse(offerElement.dataset.originalStyles);
     Object.keys(originalStyles).forEach((key) => {
       offerElement.style[key] = originalStyles[key];
     });
+
+    // Удаляем временные стили
+    offerElement.style.boxShadow = "";
+    offerElement.style.transform = "";
+    offerElement.style.borderRadius = "";
+    offerElement.style.opacity = ""; // Возвращаем прозрачность
+    offerElement.style.transition = "all 0.4s ease-in-out";
 
     offerElement.classList.remove("offer--active");
 
