@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <input type="text" placeholder="ФИО" class="popup__input" required>
         <input type="email" placeholder="Электронная почта" class="popup__input" required>
         <input type="tel" placeholder="Телефон" class="popup__input phone-mask" required>
+        <input type="tel" id="phone" class="popup__input" placeholder="Введите номер">
         <label class="popup__checkbox-label">
           <input type="checkbox" class="popup__checkbox" required>
           Согласен с политикой обработки персональных данных
@@ -84,5 +85,24 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.target.classList.contains("phone-mask")) {
       event.target.value = event.target.value.replace(/[^0-9+]/g, "");
     }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneInput = document.querySelector("#phone");
+
+  const iti = window.intlTelInput(phoneInput, {
+      initialCountry: "ru", // Россия по умолчанию
+      preferredCountries: ["ru", "ua", "by", "kz"], // Список популярных стран
+      separateDialCode: true, // Выделяем код страны отдельно
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+  });
+
+  // Валидация перед отправкой формы
+  document.querySelector(".popup__form").addEventListener("submit", function (e) {
+      if (!iti.isValidNumber()) {
+          alert("Введите корректный номер телефона!");
+          e.preventDefault();
+      }
   });
 });
