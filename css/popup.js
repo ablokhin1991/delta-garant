@@ -23,8 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <form class="popup__form">
         <input type="text" placeholder="ФИО" class="popup__input" required>
         <input type="email" placeholder="Электронная почта" class="popup__input" required>
-        <input type="tel" placeholder="Телефон" class="popup__input phone-mask" required>
-        <input type="tel" id="phone" class="popup__input" placeholder="Введите номер">
+        <input type="tel" id="phone" class="popup__input" placeholder="Введите номер" required>
         <label class="popup__checkbox-label">
           <input type="checkbox" class="popup__checkbox" required>
           Согласен с политикой обработки персональных данных
