@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="popup__logo"></div>
         <div class="popup__details"></div>
         <div class="popup__personal-data"></div>
+        <div class="popup__rating"></div>
         <div class="popup__separator"></div>
         <div class="popup__rate"></div>
       </div>
