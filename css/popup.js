@@ -30,6 +30,23 @@ function showPopupEffect(offerElement, overlay, offerList) {
     height: offerRect.height
   });
 
+  // Создаем форму
+  const formHtml = `
+    <div class="offer__form">
+      <h4>Отправить заявку</h4>
+      <input type="text" placeholder="ФИО" class="offer__input">
+      <input type="tel" placeholder="Телефон" class="offer__input">
+      <input type="email" placeholder="Электронная почта" class="offer__input">
+      <label class="offer__checkbox-label">
+        <input type="checkbox" class="offer__checkbox">
+        Согласен с политикой обработки персональных данных
+      </label>
+      <button class="offer__submit">Отправить</button>
+    </div>`;
+
+  // Добавляем форму в конец оффера
+  offerElement.insertAdjacentHTML("beforeend", formHtml);
+
   // Устанавливаем фиксированное положение
   offerElement.style.position = "fixed";
   offerElement.style.top = `${offerRect.top}px`;
@@ -40,7 +57,7 @@ function showPopupEffect(offerElement, overlay, offerList) {
   offerElement.style.transition = "all 0.4s ease-in-out";
   offerElement.classList.add("offer--active");
 
-  // Всплытие оффера
+  // Всплытие оффера + появление формы
   setTimeout(() => {
     offerElement.style.transform = "translate(-50%, -50%) scale(1.2)";
     offerElement.style.top = "50%";
@@ -49,7 +66,12 @@ function showPopupEffect(offerElement, overlay, offerList) {
     offerElement.style.height = "500px"; // Увеличиваем высоту
     offerElement.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
     offerElement.style.borderRadius = "10px";
-  }, 0);
+
+    // Делаем форму видимой
+    const form = offerElement.querySelector(".offer__form");
+    form.style.opacity = "1";
+    form.style.maxHeight = "300px";
+  }, 100);
 
   offerList.classList.add("offer-list--adjust");
 }
@@ -59,30 +81,43 @@ function hidePopupEffect(offerElement, overlay, offerList) {
 
   const originalPosition = JSON.parse(offerElement.dataset.originalPosition);
 
+  // Плавное скрытие формы
+  const form = offerElement.querySelector(".offer__form");
+  if (form) {
+    form.style.opacity = "0";
+    form.style.maxHeight = "0";
+  }
+
   // Плавное опускание обратно
-  offerElement.style.transform = "translate(0, 0) scale(1)";
-  offerElement.style.top = `${originalPosition.top}px`;
-  offerElement.style.left = `${originalPosition.left}px`;
-  offerElement.style.width = `${originalPosition.width}px`;
-  offerElement.style.height = `${originalPosition.height}px`;
-  offerElement.style.transition = "all 0.5s ease-in-out";
-
   setTimeout(() => {
-    offerElement.classList.remove("offer--active");
+    offerElement.style.transform = "translate(0, 0) scale(1)";
+    offerElement.style.top = `${originalPosition.top}px`;
+    offerElement.style.left = `${originalPosition.left}px`;
+    offerElement.style.width = `${originalPosition.width}px`;
+    offerElement.style.height = `${originalPosition.height}px`;
+    offerElement.style.transition = "all 0.5s ease-in-out";
 
-    offerElement.style.position = "";
-    offerElement.style.top = "";
-    offerElement.style.left = "";
-    offerElement.style.width = "";
-    offerElement.style.height = "";
-    offerElement.style.zIndex = "";
-    offerElement.style.boxShadow = "";
-    offerElement.style.borderRadius = "";
-    offerElement.style.transition = "";
+    setTimeout(() => {
+      offerElement.classList.remove("offer--active");
 
-    offerList.classList.remove("offer-list--adjust");
+      // Удаляем форму
+      if (form) form.remove();
 
-    const closeButton = offerElement.querySelector(".offer__close");
-    if (closeButton) closeButton.remove();
-  }, 500);
+      offerElement.style.position = "";
+      offerElement.style.top = "";
+      offerElement.style.left = "";
+      offerElement.style.width = "";
+      offerElement.style.height = "";
+      offerElement.style.zIndex = "";
+      offerElement.style.boxShadow = "";
+      offerElement.style.borderRadius = "";
+      offerElement.style.transition = "";
+
+      offerList.classList.remove("offer-list--adjust");
+
+      const closeButton = offerElement.querySelector(".offer__close");
+      if (closeButton) closeButton.remove();
+    }, 400);
+  }, 200);
 }
+
