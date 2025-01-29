@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Подключение intl-tel-input (код страны)
   const iti = window.intlTelInput(phoneInput, {
       initialCountry: "ru", // Россия по умолчанию
-      preferredCountries: ["ru", "ua", "by", "kz"], // Список популярных стран
+      preferredCountries: ["ru", "by", "kz"], // Список популярных стран
       separateDialCode: true, // Код страны отображается отдельно
       utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
   });
