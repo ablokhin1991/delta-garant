@@ -714,6 +714,20 @@ footer a:hover {
       width: 100%; /* Растягиваем элементы на всю ширину */
       text-align: left; /* Выравнивание текста по левому краю */
     }
+    
+    /* 📌 5. Ставка (процент + цена) */
+    .offer__rate {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .offer__details {
+        flex: 1;
+        text-align: left;
+        padding-left: 10px;
+    }
   
     .offer__title-wrap {
       font-size: 18px; /* Увеличиваем размер шрифта для заголовка */
@@ -749,6 +763,8 @@ footer a:hover {
 /* Для очень маленьких экранов */
 @media (max-width: 480px) {
     .offer__personal-data {
+        width: 100%;
+        text-align: left;
         font-size: 12px; /* Уменьшаем шрифт на маленьких экранах */
     }
 }
