@@ -68,12 +68,15 @@ function showPopupEffect(offerElement, overlay, offerList) {
   offerElement.style.transition = "all 0.4s ease-in-out";
   offerElement.classList.add("offer--active");
 
+  // Получаем ширину основного контейнера .content
+  const contentWidth = document.querySelector(".content").offsetWidth;
+
   // Всплытие оффера + появление формы
   setTimeout(() => {
-    offerElement.style.transform = "translate(-50%, -50%) scale(1.2)";
+    offerElement.style.transform = "translate(-50%, -50%) scale(1.1)";
     offerElement.style.top = "50%";
     offerElement.style.left = "50%";
-    offerElement.style.width = "80%";
+    offerElement.style.width = `${contentWidth}px`; // Устанавливаем ширину как у .content
     offerElement.style.height = "500px";
     offerElement.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
     offerElement.style.borderRadius = "10px";
