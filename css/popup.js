@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <form class="popup__form">
         <input type="text" placeholder="ФИО" class="popup__input" required>
         <input type="email" 
-       placeholder="example@domain.ru" 
+       placeholder="name@email.ru" 
        class="popup__input" 
        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
        title="Введите email в формате: имя@домен.зона" 
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// В JavaScript добавляем обработчики:
+// Обработчик формы Email:
 document.addEventListener("DOMContentLoaded", function () {
     // ... предыдущий код для телефона ...
 
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     emailInput.addEventListener('blur', function() {
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailPattern.test(this.value)) {
-            this.setCustomValidity('Введите email в формате: имя@домен.зона');
+            this.setCustomValidity('Введите email в формате: name@email.ru');
         } else {
             this.setCustomValidity('');
         }
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Проверка email
         const emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value);
         if (!emailValid) {
-            alert('Введите корректный email в формате: имя@домен.зона');
+            alert('Введите корректный email в формате: name@email.ru');
             e.preventDefault();
         }
     });
