@@ -81,6 +81,7 @@
 
 /* Логотип */
 .popup__logo {
+  grid-column: 1; /* Первая ячейка */
   display: flex;
   align-items: center;
   justify-content: left;
@@ -89,6 +90,7 @@
 }
 
 .popup__details {
+  grid-column: 2; /* вторая ячейка */
   display: flex;
   align-items: center;
   justify-content: left;
@@ -99,6 +101,7 @@
 }
 
 .popup__rate {
+  grid-column: 3; /* Третья ячейка */
   display: flex;
   align-items: center;
   justify-content: right;
