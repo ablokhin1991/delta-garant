@@ -86,9 +86,11 @@
 /* Логотип */
 .popup__logo {
   grid-column: 1; /* Первая ячейка */
-  display: flex;
+  justify-self: start; /* Прижимаем к левому краю ячейки */
+  margin-right: -20px; /* Компенсируем общий gap справа */
+  /*display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -102,7 +104,9 @@
 
 .popup__details {
   grid-column: 2; /* вторая ячейка */
-  display: flex;
+  justify-self: start; /* Прижимаем к левому краю ячейки */
+  margin-right: -20px; /* Компенсируем общий gap справа */
+  /*display: flex;
   align-items: center;
   justify-content: left;
   width: 100%;
@@ -115,6 +119,7 @@
 
 .popup__separator {
   grid-column: 3; /* Третья ячейка */
+  margin: 0 -10px; /* Компенсируем половину gap с обеих сторон */
   background-color: #ccc;
   height: 1px;
   height: 90%; /* Заполняет высоту строки */
@@ -123,7 +128,8 @@
 
 .popup__rate {
   grid-column: 4; /* Чеьвертая ячейка */
-  display: flex;
+  justify-self: end; /* Прижимаем к правому краю ячейки */
+  /*display: flex;
   flex-direction: column;
   align-items: flex-end; /* Прижимает текст вправо */
   text-align: right;
