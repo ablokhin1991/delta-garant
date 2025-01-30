@@ -72,7 +72,8 @@
   grid-template-columns: auto auto 2px auto; /* Разделение на 3 отсека */
   grid-template-rows: 1fr; /* Одна строка */
   align-items: center;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
+  justify-items: start; /* Выравнивание элементов по левому краю ячеек */
   width: 50%; /* Оставляем 50% пространства */
   min-height: 80px; /* Предотвращаем сжатие контента */
   background: #f4f6fd;
