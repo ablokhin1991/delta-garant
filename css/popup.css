@@ -105,6 +105,7 @@
   overflow: hidden; /* Предотвращаем переполнение */
   white-space: nowrap; /* Запрещаем перенос текста */
   text-align: left;
+  font-size: 14px;
 }
 
 .popup__separator {
