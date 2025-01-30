@@ -49,9 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const personalData = offerElement.querySelector(".offer__personal-data")?.innerHTML || "";
     const rate = offerElement.querySelector(".offer__rate").innerHTML;
 
+    // Очищаем details от лишних элементов
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = details;
+    tempDiv.querySelector('.offer__personal-data')?.remove(); // Удаляем лишний элемент
+    
     popup.querySelector(".popup__logo").style.backgroundImage = logo;
-    popup.querySelector(".popup__details").innerHTML = details;
-    popup.querySelector(".popup__personal-data").innerHTML = personalData;
+    popup.querySelector(".popup__details").innerHTML = tempDiv.innerHTML; // Очищенные details
+    popup.querySelector(".popup__personal-data").innerHTML = personalData; // Отдельный блок
     popup.querySelector(".popup__rate").innerHTML = rate;
 
     popupOverlay.classList.add("popup__overlay--active");
