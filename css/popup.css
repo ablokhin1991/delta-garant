@@ -76,6 +76,9 @@
   gap: 10px;
   flex: 1;
   gap: 20px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 /* Логотип */
