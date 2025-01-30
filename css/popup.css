@@ -68,12 +68,10 @@
 
 /* Левая колонка с данными оффера */
 .popup__offer {
-  display: flex;
-  flex-direction: row; /* Все элементы в строку */
-  flex-wrap: nowrap; /* Позволяет элементам переноситься */
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 20% 60% 20%; /* Разделение на 3 отсека */
+  align-items: center;
   min-width: 50%;
-  gap: 10px;
   flex: 1;
   gap: 20px;
   background: #f4f6fd;
@@ -83,17 +81,30 @@
 
 /* Логотип */
 .popup__logo {
-  width: 30px;
-  height: 30px;
-  background-size: contain;
-  background-position: left;
-  align-items: left;
-  background-repeat: no-repeat;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .popup__details {
-  align-items: left;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.popup__rate {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 /* Данные оффера */
