@@ -101,7 +101,6 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  padding-left: 20px;
   width: 100%;
   overflow: hidden; /* Предотвращаем переполнение */
   white-space: nowrap; /* Запрещаем перенос текста */
