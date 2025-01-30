@@ -35,6 +35,13 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+/* Дочерние элементы оффера */
+.popup__offer > * {
+  flex: 1;
+  min-width: calc(33.33% - 10px); /* Делаем элементы равными (треть контента) */
+  text-align: center;
+}
+
 .popup--active {
   opacity: 1;
   visibility: visible;
@@ -155,10 +162,16 @@
     align-items: center;
   }
 
-  .popup__offer,
-  .popup__form {
-    width: 100%;
+  .popup__offer {
+    flex-direction: column; /* На мобильных элементы выстраиваются в колонку */
+    align-items: center;
   }
+
+  .popup__offer > * {
+    min-width: 100%; /* Все элементы занимают всю ширину */
+  }
+
+
 }
 
 
