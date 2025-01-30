@@ -69,7 +69,11 @@
 /* Левая колонка с данными оффера */
 .popup__offer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Все элементы в строку */
+  flex-wrap: wrap; /* Позволяет элементам переноситься */
+  justify-content: space-between;
+  min-width: 50%;
+  gap: 10px;
   flex: 1;
   gap: 10px;
 }
