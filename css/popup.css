@@ -61,15 +61,16 @@
 /* Контейнер с контентом оффера и формы */
 .popup__content {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /* Позволяет элементам переноситься */
   gap: 20px;
-  align-items: flex-start;
+  justify-content: space-between; /* Равномерное распределение */
 }
 
 /* Левая колонка с данными оффера */
 .popup__offer {
   display: flex;
   flex-direction: column;
+  min-width: 50%;
   flex: 1;
   gap: 10px;
 }
@@ -99,6 +100,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 50%;
   gap: 10px;
   background: #f8f9fa;
   padding: 15px;
@@ -141,6 +143,11 @@
   .popup {
     width: 90%;
     max-width: 100%;
+  }
+
+  .popup__offer,
+  .popup__form {
+    min-width: 100%;
   }
 
   .popup__content {
