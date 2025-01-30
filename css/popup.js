@@ -90,31 +90,45 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const phoneInput = document.querySelector("#phone");
+    const phoneInput = document.querySelector("#phone");
 
-  // Инициализация intl-tel-input
-  const iti = window.intlTelInput(phoneInput, {
-      initialCountry: "ru", // Россия по умолчанию
-      preferredCountries: ["ru", "by", "kz"], // Популярные страны
-      separateDialCode: true, // Отдельное отображение кода страны
-      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-  });
+    // Инициализация intl-tel-input
+    const iti = window.intlTelInput(phoneInput, {
+        initialCountry: "ru", // Россия по умолчанию
+        preferredCountries: ["ru", "ua", "by", "kz"], // Популярные страны
+        separateDialCode: true, // Отдельное отображение кода страны
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
 
-  // Маска для телефона (например, (999) 999-99-99)
-  Inputmask({
-      mask: "(999) 999-99-99",
-      showMaskOnHover: false,
-      showMaskOnFocus: true,
-      placeholder: "_",
-      clearMaskOnLostFocus: false
-  }).mask(phoneInput);
+    // Убираем старый placeholder и добавляем новый
+    phoneInput.setAttribute("placeholder", "(999) 999-99-99");
 
-  // Валидация перед отправкой формы
-  document.querySelector(".popup__form").addEventListener("submit", function (e) {
-      const rawNumber = phoneInput.inputmask.unmaskedvalue(); // Чистый номер без маски
-      if (rawNumber.length !== 10 || !iti.isValidNumber()) {
-          alert("Введите корректный номер телефона!");
-          e.preventDefault();
-      }
-  });
+    // Маска для номера телефона
+    Inputmask({
+        mask: "(999) 999-99-99",
+        showMaskOnHover: false,
+        showMaskOnFocus: true,
+        placeholder: "_",
+        clearMaskOnLostFocus: false,
+        onBeforePaste: function (pastedValue) {
+            return pastedValue.replace(/\D/g, ""); // Убираем всё, кроме цифр
+        }
+    }).mask(phoneInput);
+
+    // Валидация перед отправкой формы
+    document.querySelector(".popup__form").addEventListener("submit", function (e) {
+        const rawNumber = phoneInput.inputmask.unmaskedvalue(); // Очищенный номер (только цифры)
+        
+        if (rawNumber.length !== 10 || !iti.isValidNumber()) {
+            alert("Введите корректный номер телефона!");
+            e.preventDefault();
+        }
+    });
+
+    // Блокируем ввод букв
+    phoneInput.addEventListener("keypress", function (e) {
+        if (!/[0-9]/.test(e.key)) {
+            e.preventDefault();
+        }
+    });
 });
