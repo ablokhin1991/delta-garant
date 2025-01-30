@@ -69,7 +69,7 @@
 /* Левая колонка с данными оффера */
 .popup__offer {
   display: grid;
-  grid-template-columns: 20% 60% 20%; /* Разделение на 3 отсека */
+  grid-template-columns: auto 60% 20%; /* Разделение на 3 отсека */
   grid-template-rows: 1fr; /* Одна строка */
   align-items: center;
   justify-content: space-between;
@@ -111,8 +111,7 @@
 .popup__rate {
   grid-column: 3; /* Третья ячейка */
   display: flex;
-  flex-direction: column;  /* Размещение содержимого в столбик */
-  align-items: flex-end;   /* Выравнивание содержимого по правому краю */
+  display: block;  /* Элемент в столбик */
   text-align: right;
   width: 100%;
   white-space: nowrap; /* Запрещаем перенос текста */
