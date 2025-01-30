@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function openPopup(offerElement) {
     const logo = offerElement.querySelector(".offer__logo").style.backgroundImage;
     const details = offerElement.querySelector(".offer__details").innerHTML;
-    const personalData = offerElement.querySelector(".offer__personal-data")?.innerHTML || "";
+    const personalData = offerElement.querySelector(".offer__personal-data")?.innerHTML; //|| ""//;
     const rate = offerElement.querySelector(".offer__rate").innerHTML;
 
     popup.querySelector(".popup__logo").style.backgroundImage = logo;
