@@ -86,7 +86,8 @@
   align-items: center;
   justify-content: left;
   padding-left: 20px;
-  width: 100%;
+  width: 40px;
+  height: 40px;
 }
 
 .popup__details {
