@@ -113,6 +113,7 @@
   align-items: flex-end;   /* Выравнивание содержимого по правому краю */
   text-align: right;
   width: 100%;
+  white-space: nowrap; /* Запрещаем перенос текста */
 }
 
 /* Данные оффера */
