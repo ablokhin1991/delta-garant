@@ -80,7 +80,7 @@
   padding: 15px;
   border-radius: 10px;
   box-sizing: border-box;
-  column-gap: 20px; /* Устанавливаем фиксированный gap между элементами */
+  column-gap: 0px; /* Устанавливаем фиксированный gap между элементами */
 }
 
 /* Логотип */
@@ -128,7 +128,7 @@
   align-items: flex-end; /* Прижимает текст вправо */
   text-align: right;
   white-space: nowrap; /* Запрещаем перенос текста */
-  margin: 0; /* Убираем отступы */
+  /*margin: 0; /* Убираем отступы */
 }
 
 /* Форма */
