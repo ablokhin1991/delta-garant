@@ -112,6 +112,7 @@
   grid-column: 3; /* Третья ячейка */
   background-color: #ccc;
   height: 2px;
+  align-items: center;
 }
 
 .popup__rate {
