@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Инициализация intl-tel-input
     const iti = window.intlTelInput(phoneInput, {
         initialCountry: "ru",
-        preferredCountries: ["ru", "ua", "by", "kz"],
+        preferredCountries: ["ru", "by", "kz"],
         separateDialCode: true,
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
         autoPlaceholder: "off",
