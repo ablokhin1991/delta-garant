@@ -70,6 +70,7 @@
 .popup__offer {
   display: grid;
   grid-template-columns: 20% 60% 20%; /* Разделение на 3 отсека */
+  grid-template-rows: 1fr; /* Одна строка */
   align-items: center;
   justify-content: space-between;
   width: 50%; /* Оставляем 50% пространства */
