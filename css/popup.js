@@ -96,58 +96,70 @@ document.addEventListener("DOMContentLoaded", function () {
     // Инициализация intl-tel-input
     const iti = window.intlTelInput(phoneInput, {
         initialCountry: "ru",
-        preferredCountries: ["ru", "by", "kz"],
+        preferredCountries: ["ru", "ua", "by", "kz"],
         separateDialCode: true,
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        autoPlaceholder: "off",
-        nationalMode: false
+        autoPlaceholder: "off"
     });
 
-    // Кастомный плейсхолдер для России
-    phoneInput.setAttribute("placeholder", "(999) 999-99-99");
+    // Установка начального плейсхолдера
+    phoneInput.placeholder = "(999) 999-99-99";
 
-    // Обновление маски при смене страны
+    // Обработчик смены страны
     phoneInput.addEventListener("countrychange", function() {
-        if (iti.getSelectedCountryData().iso2 === "ru") {
-            phoneInput.setAttribute("placeholder", "(999) 999-99-99");
-        } else {
-            phoneInput.setAttribute("placeholder", "Введите номер телефона");
-        }
+        const countryCode = iti.getSelectedCountryData().iso2;
+        phoneInput.placeholder = countryCode === "ru" 
+            ? "(999) 999-99-99" 
+            : "Введите номер телефона";
     });
 
-    // Блокировка нечисловых символов
+    // Блокировка нецифровых символов
     phoneInput.addEventListener("keypress", function(e) {
         if (!/\d/.test(e.key)) e.preventDefault();
     });
 
-    // Валидация при отправке формы
-    form.addEventListener("submit", function(e) {
+    // Обработчик ввода с маской для России
+    phoneInput.addEventListener("input", function(e) {
         const countryCode = iti.getSelectedCountryData().iso2;
-        const fullNumber = iti.getNumber();
+        let value = this.value.replace(/\D/g, "");
         
-        // Специальная проверка для России
         if (countryCode === "ru") {
-            const cleanNumber = fullNumber.replace(/\D/g, "");
-            if (cleanNumber.length !== 11 || !cleanNumber.startsWith("7")) {
-                alert("Российский номер должен начинаться с +7 и содержать 10 цифр!");
-                e.preventDefault();
-                return;
+            // Убираем код страны 7 из обработки
+            value = value.substring(0, 10);
+            
+            let formattedValue = "";
+            if (value.length > 0) {
+                formattedValue = "(" + value.substring(0, 3);
+                if (value.length >= 4) {
+                    formattedValue += ") " + value.substring(3, 6);
+                }
+                if (value.length >= 7) {
+                    formattedValue += "-" + value.substring(6, 8);
+                }
+                if (value.length >= 9) {
+                    formattedValue += "-" + value.substring(8, 10);
+                }
             }
-        }
-        
-        if (!iti.isValidNumber()) {
-            alert("Введите корректный номер телефона для выбранной страны!");
-            e.preventDefault();
+            this.value = formattedValue;
         }
     });
 
-    // Автоматическое форматирование для России
-    phoneInput.addEventListener("input", function() {
-        if (iti.getSelectedCountryData().iso2 === "ru") {
-            let value = this.value.replace(/\D/g, "").substring(1);
-            value = value.substring(0, 10);
-            const match = value.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-            this.value = !match[2] ? match[1] : `(${match[1]}) ${match[2]}${match[3] ? `-${match[3]}` : ""}`;
+    // Валидация при отправке
+    form.addEventListener("submit", function(e) {
+        const countryCode = iti.getSelectedCountryData().iso2;
+        const cleanNumber = phoneInput.value.replace(/\D/g, "");
+        const isValid = iti.isValidNumber();
+        
+        if (countryCode === "ru") {
+            if (cleanNumber.length !== 10 || !isValid) {
+                alert("Для России требуется 10 цифр после +7");
+                e.preventDefault();
+            }
+        } else {
+            if (!isValid) {
+                alert("Введите корректный номер для выбранной страны");
+                e.preventDefault();
+            }
         }
-    }, false);
+    });
 });
