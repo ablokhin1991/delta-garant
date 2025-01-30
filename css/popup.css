@@ -121,8 +121,7 @@
 .popup__details,
 .popup__personal-data,
 .popup__rating,
-.popup__separator,
-.popup__rate {
+.popup__separator {
   text-align: left;
   font-size: 12px;
   flex-wrap: nowrap; /* Позволяет элементам переноситься */
