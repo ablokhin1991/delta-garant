@@ -72,6 +72,13 @@
   align-items: flex-start;
 }
 
+.popup__offer__title__content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
 /* Левая колонка с данными оффера */
 .popup__offer {
   display: grid;

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   popup.innerHTML = `
     <button class="popup__close">✖</button>
-    <h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
+    <h2 class="popup__title">Заявка на оформление банковской гарантии</h2></div>
     <div class="popup__content">
       <div class="popup__offer__title__content">
       <h2 class="popup__offer__title">Выбранные параметры</h2>
@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <button type="submit" class="popup__submit">Отправить заявку</button>
       </form>
-      </div>
     </div>
   `;
 
