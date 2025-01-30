@@ -99,6 +99,7 @@
 .popup__rate {
   text-align: left;
   font-size: 12px;
+  flex-wrap: nowrap; /* Позволяет элементам переноситься */
 }
 
 /* Форма */
