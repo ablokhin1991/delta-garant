@@ -72,8 +72,8 @@
   grid-template-columns: auto 30% 2px auto; /* 4 столбца: два с auto, один 2px (разделитель), и один auto */
   grid-template-rows: 1fr; /* Одна строка */
   align-items: center;
-  /*justify-content: space-between;*/
-  justify-content: start; /* Равномерное распределение по горизонтали */
+  justify-content: space-between;
+  /*justify-content: start; /* Равномерное распределение по горизонтали */
   width: 50%; /* Оставляем 50% пространства */
   min-height: 80px; /* Предотвращаем сжатие контента */
   background: #f4f6fd;
