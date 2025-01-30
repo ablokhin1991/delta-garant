@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="popup__logo"></div>
         <div class="popup__details"></div>
         <div class="popup__personal-data"></div>
-        <div class="popup__rating"></div>
         <div class="popup__separator"></div>
         <div class="popup__rate"></div>
       </div>
@@ -48,13 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const logo = offerElement.querySelector(".offer__logo").style.backgroundImage;
     const details = offerElement.querySelector(".offer__details").innerHTML;
     const personalData = offerElement.querySelector(".offer__personal-data")?.innerHTML || "";
-    const rating = offerElement.querySelector(".offer__rating")?.innerHTML || "";
     const rate = offerElement.querySelector(".offer__rate").innerHTML;
 
     popup.querySelector(".popup__logo").style.backgroundImage = logo;
     popup.querySelector(".popup__details").innerHTML = details;
     popup.querySelector(".popup__personal-data").innerHTML = personalData;
-    popup.querySelector(".popup__rating").innerHTML = rating;
     popup.querySelector(".popup__rate").innerHTML = rate;
 
     popupOverlay.classList.add("popup__overlay--active");
