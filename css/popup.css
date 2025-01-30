@@ -69,7 +69,7 @@
 /* Левая колонка с данными оффера */
 .popup__offer {
   display: grid;
-  grid-template-columns: auto 60% 20%; /* Разделение на 3 отсека */
+  grid-template-columns: auto 60% 2px 20%; /* Разделение на 3 отсека */
   grid-template-rows: 1fr; /* Одна строка */
   align-items: center;
   justify-content: space-between;
@@ -108,8 +108,14 @@
   text-align: left;
 }
 
-.popup__rate {
+.popup__separator {
   grid-column: 3; /* Третья ячейка */
+  background-color: #ccc;
+  height: 2px;
+}
+
+.popup__rate {
+  grid-column: 4; /* Чеьвертая ячейка */
   display: flex;
   flex-direction: column;
   text-align: right;
