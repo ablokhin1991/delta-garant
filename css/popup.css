@@ -110,7 +110,7 @@
 
 .popup__rate {
   grid-column: 3; /* Третья ячейка */
-  display: flex;
+  /*display: flex;*/
   display: block;  /* Элемент в столбик */
   text-align: right;
   width: 100%;
