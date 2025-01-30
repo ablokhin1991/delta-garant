@@ -69,7 +69,7 @@
 /* Левая колонка с данными оффера */
 .popup__offer {
   display: grid;
-  grid-template-columns: auto 30% 2px auto; /* Разделение на 3 отсека */
+  grid-template-columns: auto 30% 30% auto; /* Разделение на 4 отсека */
   grid-template-rows: 1fr; /* Одна строка */
   align-items: center;
   justify-content: space-between;
@@ -78,7 +78,6 @@
   background: #f4f6fd;
   padding: 15px;
   border-radius: 10px;
-  gap: 0; /* Убираем промежутки между ячейками */
 }
 
 /* Логотип */
