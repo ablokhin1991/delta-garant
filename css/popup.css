@@ -87,8 +87,13 @@
   height: 30px;
   background-size: contain;
   background-position: left;
+  align-items: left;
   background-repeat: no-repeat;
   margin: 0 auto;
+}
+
+.popup__details {
+  align-items: left;
 }
 
 /* Данные оффера */
