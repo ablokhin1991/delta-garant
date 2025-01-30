@@ -116,8 +116,8 @@
 .popup__separator {
   grid-column: 3; /* Третья ячейка */
   background-color: #ccc;
-  height: 2px;
-  height: 80%; /* Заполняет высоту строки */
+  height: 1px;
+  height: 90%; /* Заполняет высоту строки */
   /*margin: 0; /* Убираем отступы */
 }
 
@@ -128,7 +128,7 @@
   align-items: flex-end; /* Прижимает текст вправо */
   text-align: right;
   white-space: nowrap; /* Запрещаем перенос текста */
-  /*margin: 0; /* Убираем отступы */
+  margin: 0; /* Убираем отступы */
 }
 
 /* Форма */
