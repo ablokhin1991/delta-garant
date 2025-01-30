@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
     <div class="popup__content">
       <div class="popup__offer">
+        <h2 class="popup__offer__title">Выбранные параметры</h2>
         <div class="popup__logo"></div>
         <div class="popup__details"></div>
         <div class="popup__separator"></div>
