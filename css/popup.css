@@ -35,13 +35,6 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Дочерние элементы оффера */
-.popup__offer > * {
-  flex: 1;
-  min-width: calc(33.33% - 10px); /* Делаем элементы равными (треть контента) */
-  text-align: center;
-}
-
 .popup--active {
   opacity: 1;
   visibility: visible;
@@ -68,16 +61,15 @@
 /* Контейнер с контентом оффера и формы */
 .popup__content {
   display: flex;
-  flex-wrap: wrap; /* Позволяет элементам переноситься */
+  flex-direction: row;
   gap: 20px;
-  justify-content: space-between; /* Равномерное распределение */
+  align-items: flex-start;
 }
 
 /* Левая колонка с данными оффера */
 .popup__offer {
   display: flex;
   flex-direction: column;
-  min-width: 50%;
   flex: 1;
   gap: 10px;
 }
@@ -107,7 +99,6 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-width: 50%;
   gap: 10px;
   background: #f8f9fa;
   padding: 15px;
@@ -152,26 +143,15 @@
     max-width: 100%;
   }
 
-  .popup__offer,
-  .popup__form {
-    min-width: 100%;
-  }
-
   .popup__content {
     flex-direction: column;
     align-items: center;
   }
 
-  .popup__offer {
-    flex-direction: column; /* На мобильных элементы выстраиваются в колонку */
-    align-items: center;
+  .popup__offer,
+  .popup__form {
+    width: 100%;
   }
-
-  .popup__offer > * {
-    min-width: 100%; /* Все элементы занимают всю ширину */
-  }
-
-
 }
 
 
