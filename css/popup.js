@@ -22,7 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <form class="popup__form">
         <input type="text" placeholder="ФИО" class="popup__input" required>
-        <input type="email" placeholder="Электронная почта" class="popup__input" required>
+        <input type="email" 
+       placeholder="example@domain.ru" 
+       class="popup__input" 
+       pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+       title="Введите email в формате: имя@домен.зона" 
+       required>
         <input type="tel" id="phone" class="popup__input" placeholder="Введите номер" required>
         <label class="popup__checkbox-label">
             <input type="checkbox" class="popup__checkbox" checked required>
@@ -160,6 +165,48 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Введите корректный номер для выбранной страны");
                 e.preventDefault();
             }
+        }
+    });
+});
+
+// В JavaScript добавляем обработчики:
+document.addEventListener("DOMContentLoaded", function () {
+    // ... предыдущий код для телефона ...
+
+    // Добавляем валидацию для email
+    const emailInput = document.querySelector('input[type="email"]');
+    
+    // Маска при вводе
+    emailInput.addEventListener('input', function(e) {
+        let value = this.value.toLowerCase();
+        
+        // Автозамена доменных зон
+        value = value.replace(/@([a-z]+)\.(com|ru|net)$/, (match, domain, zone) => {
+            return `@${domain}.${zone}`;
+        });
+        
+        this.value = value;
+    });
+
+    // Кастомная валидация
+    emailInput.addEventListener('blur', function() {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(this.value)) {
+            this.setCustomValidity('Введите email в формате: имя@домен.зона');
+        } else {
+            this.setCustomValidity('');
+        }
+    });
+
+    // В обработчике отправки формы добавляем проверку:
+    form.addEventListener("submit", function(e) {
+        // ... предыдущие проверки телефона ...
+        
+        // Проверка email
+        const emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value);
+        if (!emailValid) {
+            alert('Введите корректный email в формате: имя@домен.зона');
+            e.preventDefault();
         }
     });
 });
