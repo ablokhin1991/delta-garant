@@ -70,7 +70,7 @@
 .popup__offer {
   display: flex;
   flex-direction: row; /* Все элементы в строку */
-  flex-wrap: wrap; /* Позволяет элементам переноситься */
+  flex-wrap: nowrap; /* Позволяет элементам переноситься */
   justify-content: space-between;
   min-width: 50%;
   gap: 10px;
