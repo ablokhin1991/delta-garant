@@ -73,7 +73,7 @@
   align-items: center;
   justify-content: space-between;
   width: 50%; /* Оставляем 50% пространства */
-  min-height: 80px; /* Предотвращаем сжатие контента */
+  min-height: auto; /* Предотвращаем сжатие контента */
   background: #f4f6fd;
   padding: 15px;
   border-radius: 10px;
