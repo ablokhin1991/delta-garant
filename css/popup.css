@@ -78,6 +78,7 @@
   background: #f4f6fd;
   padding: 15px;
   border-radius: 10px;
+  gap: 0; /* Убираем промежутки между ячейками */
 }
 
 /* Логотип */
