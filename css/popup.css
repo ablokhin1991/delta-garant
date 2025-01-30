@@ -73,7 +73,7 @@
   align-items: center;
   justify-content: space-between;
   width: 50%; /* Оставляем 50% пространства */
-  min-height: auto; /* Предотвращаем сжатие контента */
+  min-height: 80px; /* Предотвращаем сжатие контента */
   background: #f4f6fd;
   padding: 15px;
   border-radius: 10px;
@@ -109,10 +109,8 @@
 .popup__rate {
   grid-column: 3; /* Третья ячейка */
   display: flex;
-  align-items: center;
-  justify-content: right;
-  padding-right: 20px;
-  display: block; /* Принудительно блочное размещение в столбик */
+  flex-direction: column;  /* Размещение содержимого в столбик */
+  align-items: flex-end;   /* Выравнивание содержимого по правому краю */
   text-align: right;
   width: 100%;
 }
