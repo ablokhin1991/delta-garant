@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="popup__offer">
         <div class="popup__logo"></div>
         <div class="popup__details"></div>
-        <div class="popup__personal-data"></div>
         <div class="popup__separator"></div>
         <div class="popup__rate"></div>
       </div>
@@ -46,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function openPopup(offerElement) {
     const logo = offerElement.querySelector(".offer__logo").style.backgroundImage;
     const details = offerElement.querySelector(".offer__details").innerHTML;
-    const personalData = offerElement.querySelector(".offer__personal-data")?.innerHTML || "";
     const rate = offerElement.querySelector(".offer__rate").innerHTML;
 
     // Очищаем details от лишних элементов
@@ -56,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     popup.querySelector(".popup__logo").style.backgroundImage = logo;
     popup.querySelector(".popup__details").innerHTML = tempDiv.innerHTML; // Очищенные details
-    popup.querySelector(".popup__personal-data").innerHTML = personalData; // Отдельный блок
     popup.querySelector(".popup__rate").innerHTML = rate;
 
     popupOverlay.classList.add("popup__overlay--active");
