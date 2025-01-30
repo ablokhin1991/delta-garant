@@ -91,44 +91,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const phoneInput = document.querySelector("#phone");
+    const form = document.querySelector(".popup__form");
 
-    // Инициализация intl-tel-input
+    // Инициализация intl-tel-input с нужными настройками
     const iti = window.intlTelInput(phoneInput, {
-        initialCountry: "ru", // Россия по умолчанию
-        preferredCountries: ["ru", "by", "kz"], // Популярные страны
-        separateDialCode: true, // Отдельное отображение кода страны
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        initialCountry: "ru",
+        preferredCountries: ["ru"], // Только Россия
+        allowDropdown: false, // Запрещаем выбор страны
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        customPlaceholder: () => "(999) 999-99-99" // Кастомный плейсхолдер
     });
 
-    // Убираем старый placeholder и добавляем новый
-    phoneInput.setAttribute("placeholder", "(999) 999-99-99");
-
-    // Маска для номера телефона
-    Inputmask({
-        mask: "(999) 999-99-99",
-        showMaskOnHover: false,
-        showMaskOnFocus: true,
-        placeholder: "_",
-        clearMaskOnLostFocus: false,
-        onBeforePaste: function (pastedValue) {
-            return pastedValue.replace(/\D/g, ""); // Убираем всё, кроме цифр
-        }
-    }).mask(phoneInput);
-
-    // Валидация перед отправкой формы
-    document.querySelector(".popup__form").addEventListener("submit", function (e) {
-        const rawNumber = phoneInput.inputmask.unmaskedvalue(); // Очищенный номер (только цифры)
-        
-        if (rawNumber.length !== 10 || !iti.isValidNumber()) {
-            alert("Введите корректный номер телефона!");
-            e.preventDefault();
-        }
-    });
-
-    // Блокируем ввод букв
+    // Блокировка нечисловых символов
     phoneInput.addEventListener("keypress", function (e) {
-        if (!/[0-9]/.test(e.key)) {
+        if (!/\d/.test(e.key)) e.preventDefault();
+    });
+
+    // Валидация при отправке формы
+    form.addEventListener("submit", function (e) {
+        const fullNumber = iti.getNumber();
+        
+        if (!iti.isValidNumber() || !/^\+7\d{10}$/.test(fullNumber)) {
+            alert("Введите корректный российский номер (+7 XXX XXX-XX-XX)!");
             e.preventDefault();
         }
     });
+
+    // Автоматическая коррекция ввода
+    phoneInput.addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, "").slice(0, 10); // Только 10 цифр
+        const match = this.value.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        this.value = !match[2] ? match[1] : `(${match[1]}) ${match[2]}${match[3] ? `-${match[3]}` : ""}`;
+    }, false);
 });
