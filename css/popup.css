@@ -159,6 +159,14 @@
   font-size: 14px;
 }
 
+.popup__checkbox input[type="checkbox"] {
+  accent-color: #1E3A8A; /* Изменяем цвет активного состояния чекбокса */
+}
+
+.popup__checkbox input[type="checkbox"]:hover {
+  accent-color: #284db5; /* Изменяем цвет активного состояния чекбокса */
+}
+
 /* Кнопка отправки */
 .popup__submit {
   background: #007bff;
