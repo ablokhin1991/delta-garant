@@ -129,6 +129,7 @@
       width: 70px !important;
       height: 70px !important;
       margin: 0 auto 10px !important;
+      margin-top: 10px /*Отступ сверху*/
     }
   
     .offer__details {
@@ -157,6 +158,7 @@
       margin: 0 auto !important;
       width: 100% !important;
       text-align: center !important;
+      margin-bottom: 10px; /* Отступ снизу */
     }
     
     .offer__rating {
