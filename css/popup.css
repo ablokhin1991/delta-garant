@@ -183,32 +183,35 @@
 
   .popup__offer {
     display: flex;
-    flex-direction: column; /* Элементы располагаются в столбик */
-    align-items: flex-start;
-    gap: 20px; /* Отступы между элементами */
+    flex-direction: column; /* Все элементы в столбик */
+    align-items: stretch; /* Растягиваем элементы по ширине */
+    width: 100%; /* Делаем ширину такой же, как у popup__form */
   }
 
+  /* 1️⃣ Логотип и детали выстраиваем в строку */
   .popup__logo,
   .popup__details {
     display: flex;
-    flex-direction: row; /* Логотип и детали в одной строке */
+    flex-direction: row;
     align-items: center;
-    gap: 20px; /* Расстояние между логотипом и деталями */
+    gap: 20px;
   }
 
-  .popup__rate {
-    display: flex;
-    flex-direction: row; /* Отменяем column, теперь в строку */
-    align-items: center;
-  }
-
-
-
+  /* 2️⃣ Разделитель делаем горизонтальным */
   .popup__separator {
-    width: 100%; /* Горизонтальная линия на всю ширину */
+    width: 100%;
     height: 1px;
     background-color: #ccc;
-    align-self: center; /* Размещаем по центру по высоте */
+    margin: 10px 0;
+  }
+
+  /* 3️⃣ Рейтинг и прочие элементы тоже в строку */
+  .popup__rate {
+    display: flex;
+    flex-direction: row; /* В строку */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
   }
 
   .popup__content {
