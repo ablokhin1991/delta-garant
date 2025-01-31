@@ -9,20 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
   popup.classList.add("popup");
 
   popup.innerHTML = `
-    <button class="popup__close">✖</button>
+ <button class="popup__close">✖</button>
 <h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
 <div class="popup__content">
-  
+
+  <h2 class="popup__offer-title">Выбранный банк</h2>
   <div class="popup__offer">
-    <h2 class="popup__offer-title">Выбранный банк</h2>
     <div class="popup__logo"></div>
     <div class="popup__details"></div>
     <div class="popup__separator"></div>
     <div class="popup__rate"></div>
   </div>
 
+  <h2 class="popup__form-title">Заполните данные</h2>
   <form class="popup__form">
-    <h2 class="popup__form-title">Заполните данные</h2>
     <input type="text" placeholder="ФИО" class="popup__input" required>
     <input type="email" 
       placeholder="Электронная почта" 
@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </form>
 
 </div>
+
 
   `;
 
