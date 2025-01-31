@@ -238,11 +238,11 @@
 }
 
 
-.popup__link {
+/*.popup__link {
   color: #007bff; /* Синий цвет ссылки */
-  text-decoration: none; /* Убираем подчеркивание */
-}
+  /*text-decoration: none; /* Убираем подчеркивание */
+/*}*/
 
-.popup__link:hover {
+/*.popup__link:hover {
   text-decoration: underline; /* Подчеркивание при наведении */
-}
+/*}*/
