@@ -256,44 +256,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const form = document.querySelector(".popup__form");
 
-  // Функция для плавного возврата в исходное состояние
-  function resetFormScale() {
-      // Для плавности анимации добавляем класс
-      body.classList.add("reset-scale");
-      
-      // Убираем класс через время, чтобы анимация успела закончиться
-      setTimeout(() => {
-          body.classList.remove("reset-scale");
-      }, 300);  // Время должно соответствовать длительности анимации
+  // Функция для сброса масштабирования страницы
+  function resetScale() {
+      // Для этого нам нужно вернуть масштаб страницы в норму
+      document.body.style.transform = "scale(1)";
+      document.body.style.transition = "transform 0.3s ease-in-out"; // Плавный переход
   }
 
-  // Функция для скрытия клавиатуры и возврата формы в нормальное состояние
+  // Функция для скрытия клавиатуры и возврата в нормальное состояние
   function closeKeyboard() {
-      document.activeElement.blur(); // Снимаем фокус с поля ввода, тем самым скрывая клавиатуру
-      resetFormScale(); // Плавно возвращаем экран в исходное состояние
+      document.activeElement.blur(); // Снимаем фокус с поля ввода, тем самым скрываем клавиатуру
+      resetScale(); // Сбрасываем масштаб
   }
 
-  // Обработчик для кнопки "Готово" (или по отправке формы)
+  // Слушаем событие отправки формы
   form.addEventListener("submit", function (e) {
-      e.preventDefault();  // Предотвращаем отправку формы для демонстрации
+      e.preventDefault(); // Останавливаем отправку формы для демонстрации
 
-      // Плавно скрываем клавиатуру и возвращаем экран в исходное состояние
+      // После отправки формы скрываем клавиатуру и сбрасываем масштаб
       closeKeyboard();
 
-      // Здесь можно добавить дальнейшую обработку отправки данных
-      // Например, отправку формы через AJAX или обычное действие
+      // Далее ты можешь отправить данные формы через AJAX или обычным способом
   });
 
-  // CSS для плавного возвращения масштаба
-  const style = document.createElement("style");
-  style.innerHTML = `
-      body {
-          transition: transform 0.3s ease-in-out; /* плавный переход */
-      }
-
-      .reset-scale {
-          transform: scale(1); /* возвращаем в нормальный размер */
-      }
-  `;
-  document.head.appendChild(style);
+  // Для предотвращения масштабирования страницы при фокусировке на поле ввода
+  const metaTag = document.querySelector('meta[name="viewport"]');
+  if (metaTag) {
+      metaTag.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+  }
 });
