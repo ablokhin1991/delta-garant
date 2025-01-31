@@ -74,12 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Формируем HTML для параметров
   const parametersHTML = `
-    <div class="popup__parameter"><span>Сумма гарантии:</span> ${document.getElementById("guarantee-sum").value}</div>
+    <div class="popup__parameter"><span>Сумма гарантии:</span> ${document.getElementById("guarantee-sum").value} руб.</div>
     <div class="popup__parameter"><span>Срок действия:</span> ${document.getElementById("guarantee-days").value} дн.</div>
     <div class="popup__parameter"><span>Тип процедуры:</span> ${getSelectedText("procedure-type")}</div>
     <div class="popup__parameter"><span>Тип гарантии:</span> ${getSelectedText("guarantee-type")}</div>
     <div class="popup__parameter"><span>Наличие аванса:</span> ${document.getElementById("has-advance").checked ? "Да" : "Нет"}</div>
-    <div class="popup__parameter"><span>Индивидуальные условия:</span> ${document.getElementById("custom-form").checked ? "Да" : "Нет"}</div>
+    <div class="popup__parameter"><span>Гарантия по форме заказчика:</span> ${document.getElementById("custom-form").checked ? "Да" : "Нет"}</div>
   `;
 
   popup.querySelector(".popup__parameters").innerHTML = parametersHTML;
