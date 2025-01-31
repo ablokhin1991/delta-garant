@@ -181,6 +181,25 @@
     /*max-width: 100%;*/
   }
 
+  .popup__offer {
+    grid-template-columns: 1fr; /* Одна колонка */
+    gap: 10px; /* Уменьшите gap для мобилок */
+  }
+
+  /* Сбросите ненужные grid-настройки дочерних элементов */
+  .popup__logo,
+  .popup__details,
+  .popup__separator,
+  .popup__rate {
+    grid-column: auto !important;
+    width: 100%;
+  }
+
+  .popup__separator {
+    height: 1px; /* Горизонтальная линия вместо вертикальной */
+    width: 100%;
+  }
+
   .popup__content {
     flex-direction: column;
     align-items: center;
