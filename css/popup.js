@@ -10,32 +10,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   popup.innerHTML = `
     <button class="popup__close">✖</button>
-    <h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
-    <div class="popup__content">
-      <div class="popup__offer">
-        <div class="popup__logo"></div>
-        <div class="popup__details"></div>
-        <div class="popup__separator"></div>
-        <div class="popup__rate"></div>
-      </div>
-      <form class="popup__form">
-        <input type="text" placeholder="ФИО" class="popup__input" required>
-        <input type="email" 
-       placeholder="Электронная почта" 
-       class="popup__input" 
-       pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
-       title="Введите email в формате: name@email.ru" 
-       required>
-        <input type="tel" id="phone" class="popup__input" placeholder="Введите номер" required>
-        <label class="popup__checkbox-label">
-            <input type="checkbox" class="popup__checkbox" checked required>
-              Согласен с <a href="policy.html" target="_blank" class="popup__link">политикой обработки персональных данных</a>
-        </label>
+<h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
+<div class="popup__content">
+  
+  <div class="popup__offer">
+    <h2 class="popup__offer-title">Выбранный банк</h2>
+    <div class="popup__logo"></div>
+    <div class="popup__details"></div>
+    <div class="popup__separator"></div>
+    <div class="popup__rate"></div>
+  </div>
 
+  <form class="popup__form">
+    <h2 class="popup__form-title">Заполните данные</h2>
+    <input type="text" placeholder="ФИО" class="popup__input" required>
+    <input type="email" 
+      placeholder="Электронная почта" 
+      class="popup__input" 
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+      title="Введите email в формате: name@email.ru" 
+      required>
+    <input type="tel" id="phone" class="popup__input" placeholder="Введите номер" required>
+    <label class="popup__checkbox-label">
+      <input type="checkbox" class="popup__checkbox" checked required>
+      Согласен с <a href="policy.html" target="_blank" class="popup__link">политикой обработки персональных данных</a>
+    </label>
+    <button type="submit" class="popup__submit">Отправить заявку</button>
+  </form>
 
-        <button type="submit" class="popup__submit">Отправить заявку</button>
-      </form>
-    </div>
+</div>
+
   `;
 
   body.appendChild(popupOverlay);
