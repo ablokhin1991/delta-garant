@@ -1,0 +1,177 @@
+/* Стили для блока результатов */
+.result__offers {
+    position: relative; /* Для контекста позиционирования */
+    display: flex;
+    flex-direction: column; /* Расположить предложения по вертикали */
+    gap: 16px; /* Отступ между блоками */
+  }
+
+  .offer__separator {
+    grid-column: 4; /* Четвертая ячейка */
+    background-color: #ccc;
+    height: 2px;
+}
+  
+
+  .offer {
+    display: grid;
+    grid-template-columns: auto 300px 200px 2px auto 400px; /* Задаем 6 столбцов */
+    grid-template-rows: auto; /* Один ряд */
+    gap: 20px; /* Отступы между ячейками */
+    align-items: center; /* Центрирование по высоте всех элементов */
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f4f6fd;
+    position: relative;
+    transition: all 0.3s ease;
+    z-index: 2; /* Начальный слой */
+}
+
+.offer:hover {
+    transform: scale(1.01); /* Увеличение на 20% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+}
+
+.offer-mobile {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    justify-content: center; /* Центровка по горизонтали */
+    align-items: center; /* Центровка по вертикали */
+    gap: 16px; /* Отступы между элементами */
+}
+
+.offer-desktop {
+    display: flex;
+    flex-direction: row; /* Горизонтальное выравнивание */
+    justify-content: space-between; /* Распределение пространства */
+    align-items: center; /* Выравнивание по вертикали */
+}
+
+  .offer__logo {
+    grid-column: 1; /* Первая ячейка */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.15), 
+            6px -6px 10px rgba(255, 255, 255, 0.8);
+
+
+}
+
+.offer__details {
+    grid-column: 2; /* Вторая ячейка */
+    font-weight: 400;
+    font-size: 14px;
+    color: #333333;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 300px;
+}
+
+.offer__personal-data {
+    grid-column: 3; /* Третья ячейка */
+    color: #333333;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    white-space: nowrap;
+}
+  
+.offer__rate {
+    grid-column: 5; /* Пятая ячейка */
+    display: block; /* Принудительно блочное размещение в столбик */
+    text-align: right;
+    color: #333333;
+}
+
+.offer__title-wrap {
+    color: #1E3A8A;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.offer__text {
+    color: #0E214C;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .result__offers {
+      gap: 12px; /* Немного уменьшить отступы между карточками */
+    }
+  
+    .offer {
+      display: flex;
+      flex-direction: column; /* Располагаем карточки вертикально */
+      gap: 16px; /* Отступы между элементами внутри карточки */
+      padding: 16px;
+      background-color: #ffffff; /* Убедимся, что фон карточек хорошо читается */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для мобильных */
+      border-radius: 8px; /* Скругленные углы */
+      align-items: flex-start; /* Выравнивание содержимого по левому краю */
+    }
+
+    /* Всплывающий оффер */
+    .offer {
+      position: relative; /* Относительно .content */
+      z-index: 2; /* Выше затемнения */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавное всплытие */
+    }
+  
+    .offer__logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 12px; /* Отступ снизу для мобильной версии */
+    }
+  
+    .offer__details,
+    .offer__personal-data,
+    .offer__rate {
+      width: 100%; /* Растягиваем элементы на всю ширину */
+      text-align: left; /* Выравнивание текста по левому краю */
+    }
+    
+    /* 📌 5. Ставка (процент + цена) */
+    .offer__rate {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .offer__details {
+        flex: 1;
+        text-align: left;
+        padding-left: 10px;
+    }
+  
+    .offer__title-wrap {
+      font-size: 18px; /* Увеличиваем размер шрифта для заголовка */
+      margin-bottom: 8px; /* Добавляем отступ снизу */
+    }
+  
+    .offer__text {
+      font-size: 14px; /* Уменьшаем текст для компактного вида */
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .offer__personal-data {
+        width: 100%;
+        text-align: left;
+        font-size: 12px; /* Уменьшаем шрифт на маленьких экранах */
+    }
+}
