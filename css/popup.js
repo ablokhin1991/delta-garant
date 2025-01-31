@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="popup__content">
 
   <div class="popup__section">
+  <!-- Добавляем параметры ВНУТРИ существующей секции -->
+    <h2 class="popup__offer-title">Выбранные параметры</h2>
+    <div class="popup__parameters"></div>
     <h2 class="popup__offer-title">Выбранный банк</h2>
     <div class="popup__offer">
       <div class="popup__logo"></div>
@@ -53,6 +56,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Функция открытия popup с передачей данных
   function openPopup(offerElement) {
+
+    // Получаем значения параметров
+  const getSelectedText = (id) => {
+    const select = document.getElementById(id);
+    return select.options[select.selectedIndex].text;
+  };
+
+  const parameters = {
+    "Сумма гарантии": document.getElementById("guarantee-sum").value,
+    "Срок действия": document.getElementById("guarantee-days").value + " дн.",
+    "Тип процедуры": getSelectedText("procedure-type"),
+    "Тип гарантии": getSelectedText("guarantee-type"),
+    "Наличие аванса": document.getElementById("has-advance").checked ? "Да" : "Нет",
+    "Индивидуальные условия": document.getElementById("custom-form").checked ? "Да" : "Нет"
+  };
+
+  // Формируем HTML для параметров
+  const parametersHTML = `
+    <div class="popup__parameter"><span>Сумма гарантии:</span> ${document.getElementById("guarantee-sum").value}</div>
+    <div class="popup__parameter"><span>Срок действия:</span> ${document.getElementById("guarantee-days").value} дн.</div>
+    <div class="popup__parameter"><span>Тип процедуры:</span> ${getSelectedText("procedure-type")}</div>
+    <div class="popup__parameter"><span>Тип гарантии:</span> ${getSelectedText("guarantee-type")}</div>
+    <div class="popup__parameter"><span>Наличие аванса:</span> ${document.getElementById("has-advance").checked ? "Да" : "Нет"}</div>
+    <div class="popup__parameter"><span>Индивидуальные условия:</span> ${document.getElementById("custom-form").checked ? "Да" : "Нет"}</div>
+  `;
+
+  popup.querySelector(".popup__parameters").innerHTML = parametersHTML;
+
     const logo = offerElement.querySelector(".offer__logo").style.backgroundImage;
     const details = offerElement.querySelector(".offer__details").innerHTML;
     const rate = offerElement.querySelector(".offer__rate").innerHTML;

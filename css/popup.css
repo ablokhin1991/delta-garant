@@ -272,3 +272,25 @@
   text-decoration: underline;
   color: #F0473B;
 }
+/* Стили для выбранных параметров -(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-*/
+.popup__parameters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 15px;
+  background: #f4f6fd;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px; /* Отступ перед следующим блоком */
+}
+
+/* Добавим адаптивность для вложенных элементов */
+@media (max-width: 768px) {
+  .popup__parameters {
+    grid-template-columns: 1fr;
+  }
+  
+  .popup__section .popup__offer-title:first-child {
+    margin-top: 0; /* Убираем двойной отступ */
+  }
+}
