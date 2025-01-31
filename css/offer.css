@@ -14,8 +14,8 @@
   
 
   .offer {
-    display: flex;
-    flex-wrap: nowrap;
+    /*display: flex;*/
+    /*flex-wrap: nowrap;*/
     position: relative;
 
     /*display: grid;
@@ -30,6 +30,10 @@
     /*transition: all 0.3s ease;*/
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимируем только нужные свойства */
     z-index: 2; /* Начальный слой */
+
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос элементов */
+    min-width: 0; /* Позволяет дочерним элементам уменьшаться */
 }
 
 .offer:hover {
@@ -71,18 +75,18 @@
 }
 
 .offer__details {
-    grid-column: 2; /* Вторая ячейка */
+    /*grid-column: 2; /* Вторая ячейка */
     font-weight: 400;
     font-size: 14px;
     color: #333333;
     /*white-space: nowrap;*/
     /*overflow: hidden;*/
-    width: 300px;
+    /*width: 300px;*/
+    max-width: 300px; /* Чтобы не растягивался слишком сильно */
+    width: 100%; /* Занимает всю доступную ширину */
     overflow-wrap: break-word; /* Перенос длинных слов */
     word-wrap: break-word; /* Альтернативный способ переноса */
     white-space: normal; /* Позволяет перенос строк */
-    flex: 1; /* Заполняет доступное пространство */
-    min-width: 0; /* Решает проблему, когда flex-элемент не хочет уменьшаться */
 }
 
 .offer__personal-data {
@@ -129,6 +133,7 @@
     }
   
     .offer {
+      flex-wrap: wrap !important;
       flex-direction: column !important;
       align-items: stretch !important;
       padding: 15px 20px !important;
@@ -144,10 +149,12 @@
   
     .offer__details {
       width: 100% !important;
+      max-width: 100% !important;
       padding: 0 !important;
       text-align: center !important;
       order: 1 !important;
       flex-wrap: wrap !important; /* Разрешаем перенос элементов */
+      word-break: break-word !important;
     }
     .offer__separator {
       width: 90% !important;
