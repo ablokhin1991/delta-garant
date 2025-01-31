@@ -213,6 +213,7 @@
   .popup__separator {
     height: 1px; /* Горизонтальная линия вместо вертикальной */
     width: 100%;
+    display: none; /* Скрываем разделитель на мобилках */
   }
 
   .popup__content {
