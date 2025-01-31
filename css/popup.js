@@ -252,3 +252,48 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //***************************************************************************************/
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body;
+  const form = document.querySelector(".popup__form");
+
+  // Функция для плавного возврата в исходное состояние
+  function resetFormScale() {
+      // Для плавности анимации добавляем класс
+      body.classList.add("reset-scale");
+      
+      // Убираем класс через время, чтобы анимация успела закончиться
+      setTimeout(() => {
+          body.classList.remove("reset-scale");
+      }, 300);  // Время должно соответствовать длительности анимации
+  }
+
+  // Функция для скрытия клавиатуры и возврата формы в нормальное состояние
+  function closeKeyboard() {
+      document.activeElement.blur(); // Снимаем фокус с поля ввода, тем самым скрывая клавиатуру
+      resetFormScale(); // Плавно возвращаем экран в исходное состояние
+  }
+
+  // Обработчик для кнопки "Готово" (или по отправке формы)
+  form.addEventListener("submit", function (e) {
+      e.preventDefault();  // Предотвращаем отправку формы для демонстрации
+
+      // Плавно скрываем клавиатуру и возвращаем экран в исходное состояние
+      closeKeyboard();
+
+      // Здесь можно добавить дальнейшую обработку отправки данных
+      // Например, отправку формы через AJAX или обычное действие
+  });
+
+  // CSS для плавного возвращения масштаба
+  const style = document.createElement("style");
+  style.innerHTML = `
+      body {
+          transition: transform 0.3s ease-in-out; /* плавный переход */
+      }
+
+      .reset-scale {
+          transform: scale(1); /* возвращаем в нормальный размер */
+      }
+  `;
+  document.head.appendChild(style);
+});
