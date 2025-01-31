@@ -79,7 +79,7 @@
   background: #f4f6fd;
   padding: 15px;
   border-radius: 10px;
-  /*box-sizing: border-box;*/
+  box-sizing: border-box; /* Учитывает padding в общей ширине */
   gap: 20px; /* Устанавливаем фиксированный gap между элементами */
 }
 
