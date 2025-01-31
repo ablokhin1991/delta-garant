@@ -178,7 +178,7 @@
 @media (max-width: 768px) {
   .popup {
     width: 90%;
-    /*max-width: 100%;*/
+    max-width: 100%;
   }
 
   .popup__offer {
