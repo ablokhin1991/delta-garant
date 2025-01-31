@@ -40,6 +40,20 @@
   visibility: visible;
 }
 
+.popup__section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.popup__offer-title,
+.popup__form-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
 /* Кнопка закрытия */
 .popup__close {
   position: absolute;
