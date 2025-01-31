@@ -183,43 +183,39 @@
 
   .popup__offer {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    padding: 15px;
+    flex-direction: column; /* Все элементы в столбик */
+    align-items: stretch; /* Растягиваем элементы по ширине */
+    width: 100%; /* Делаем ширину такой же, как у popup__form */
   }
 
-  /* Принудительно выстраиваем лого и детали в одну строку */
+  /* 1️⃣ Логотип и детали выстраиваем в строку */
   .popup__logo,
   .popup__details {
-    display: inline-block !important; /* Перебиваем другие стили */
-    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%; /* Чтобы детали не переносились */
   }
 
   .popup__logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-    float: left; /* Старый метод для обтекания */
+    flex-shrink: 0; /* Запрещаем сжатие */
   }
 
-  .popup__details {
-    width: calc(100% - 70px); /* 50px + 20px отступа */
-    overflow: hidden; /* Фикс для float */
-  }
-
-  /* Очистка обтекания перед разделителем */
+  /* 2️⃣ Разделитель делаем горизонтальным */
   .popup__separator {
-    clear: both;
     width: 100%;
     height: 1px;
-    background: #ccc;
-    margin: 15px 0;
+    background-color: #ccc;
+    margin: 10px 0;
   }
 
-  /* Рейтинг в строку */
+  /* 3️⃣ Рейтинг и прочие элементы тоже в строку */
   .popup__rate {
     display: flex;
+    flex-direction: row; /* В строку */
+    align-items: center;
+    justify-content: flex-start;
     gap: 20px;
   }
 
