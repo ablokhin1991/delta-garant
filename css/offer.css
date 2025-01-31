@@ -81,6 +81,8 @@
     overflow-wrap: break-word; /* Перенос длинных слов */
     word-wrap: break-word; /* Альтернативный способ переноса */
     white-space: normal; /* Позволяет перенос строк */
+    flex: 1; /* Заполняет доступное пространство */
+    min-width: 0; /* Решает проблему, когда flex-элемент не хочет уменьшаться */
 }
 
 .offer__personal-data {
@@ -145,6 +147,7 @@
       padding: 0 !important;
       text-align: center !important;
       order: 1 !important;
+      flex-wrap: wrap !important; /* Разрешаем перенос элементов */
     }
     .offer__separator {
       width: 90% !important;
