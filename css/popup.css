@@ -275,23 +275,50 @@
 }
 /* Стили для выбранных параметров -(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-*/
 .popup__parameters {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   padding: 15px;
   background: #f4f6fd;
   border-radius: 5px;
   width: 100%;
-  margin-bottom: 20px; /* Отступ перед следующим блоком */
+  margin-bottom: 20px;
 }
 
-/* Добавим адаптивность для вложенных элементов */
+.popup__parameter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  color: #333333;
+}
+
+.popup__parameter-label {
+  font-weight: 300;
+  flex: 1;
+  text-align: left;
+}
+
+.popup__parameter-value {
+  font-weight: 300;
+  flex: 1;
+  text-align: right;
+  padding-left: 10px;
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
-  .popup__parameters {
-    grid-template-columns: 1fr;
+  .popup__parameter {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .popup__parameter-value {
+    text-align: left;
+    padding-left: 0;
   }
   
   .popup__section .popup__offer-title:first-child {
-    margin-top: 0; /* Убираем двойной отступ */
+    margin-top: 0;
   }
 }
