@@ -95,6 +95,8 @@
     overflow: hidden; /* Предотвращает выход элементов за пределы */
     word-break: break-word; /* Перенос длинных слов */
     box-sizing: border-box; /* Учитывает padding в общей ширине */
+    border-radius: 5px;
+    background-color: #f4f6fd;
 }
 
 /* Логотип */
