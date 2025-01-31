@@ -195,6 +195,18 @@
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    width: 100%; /* Чтобы детали не переносились */
+  }
+
+  .popup__logo {
+    flex-shrink: 0; /* Запрещаем сжатие */
+  }
+
+  .popup__details {
+    flex-grow: 1; /* Занимает оставшееся пространство */
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Обрезка текста, если не помещается */
   }
 
   /* 2️⃣ Разделитель делаем горизонтальным */
