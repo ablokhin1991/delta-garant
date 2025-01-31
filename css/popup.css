@@ -84,18 +84,17 @@
 /* Левая колонка с данными оффера */
 .popup__offer {
   display: grid;
-  /*grid-template-columns: auto auto 2px auto; /* Гибкие колонки */
-  grid-template-columns: auto 200px 2px auto; /* Задаем 6 столбцов */
-  grid-template-rows: 1fr; /* Одна строка */
-  align-items: center;
-  /*justify-content: space-between;
-  width: 50%; /* Оставляем 50% пространства */
-  min-height: 80px; /* Предотвращаем сжатие контента */
-  background: #f4f6fd;
-  padding: 15px;
-  border-radius: 10px;
-  box-sizing: border-box; /* Учитывает padding в общей ширине */
-  gap: 20px; /* Устанавливаем фиксированный gap между элементами */
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    padding: 10px;
+    width: 100%;
+    min-width: 0; /* Позволяет уменьшаться, не ломая макет */
+    max-width: 100%; /* Запрещает выход за границы */
+    overflow: hidden; /* Предотвращает выход элементов за пределы */
+    word-break: break-word; /* Перенос длинных слов */
+    box-sizing: border-box; /* Учитывает padding в общей ширине */
 }
 
 /* Логотип */
@@ -215,12 +214,7 @@
   }
 
   .popup__offer {
-    display: grid;
     grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 10px;
-    text-align: left;
-    padding: 10px;
     width: 100%;
   }
 
