@@ -183,40 +183,34 @@
 
   .popup__offer {
     display: flex;
-    flex-direction: column; /* Все элементы в столбик */
-    align-items: stretch; /* Растягиваем элементы по ширине */
-    width: 100%; /* Делаем ширину такой же, как у popup__form */
-  }
-
-  /* 1️⃣ Логотип и детали выстраиваем в строку */
-  .popup__logo,
-  .popup__details {
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    width: 100%; /* Чтобы детали не переносились */
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
   }
 
   .popup__logo {
-    flex-shrink: 0; /* Запрещаем сжатие */
+    width: 40px;
+    height: 40px;
   }
 
-  /* 2️⃣ Разделитель делаем горизонтальным */
+  .popup__details {
+    text-align: center;
+    font-size: 12px;
+    white-space: normal;
+  }
+
   .popup__separator {
-    width: 100%;
+    width: 80%;
     height: 1px;
     background-color: #ccc;
-    margin: 10px 0;
+    margin: 5px 0;
   }
 
-  /* 3️⃣ Рейтинг и прочие элементы тоже в строку */
   .popup__rate {
-    display: flex;
-    flex-direction: row; /* В строку */
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
+    text-align: center;
+    font-size: 14px;
   }
 
   .popup__content {
