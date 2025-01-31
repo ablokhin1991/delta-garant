@@ -183,7 +183,7 @@
 
   .popup__offer {
     display: flex;
-    flex-direction: column; /* Все элементы в столбик */
+    flex-direction: column; /* Все элементы идут в столбик */
     align-items: stretch; /* Растягиваем элементы по ширине */
     width: 100%; /* Делаем ширину такой же, как у popup__form */
   }
@@ -192,10 +192,10 @@
   .popup__logo,
   .popup__details {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* В строку */
     align-items: center;
     gap: 20px;
-    width: 100%; /* Чтобы детали не переносились */
+    width: 100%; /* Растягиваем на всю ширину */
   }
 
   .popup__logo {
