@@ -78,23 +78,7 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
-  /*align-items: flex-start;*/
-  align-items: stretch; /* Важно для выравнивания высоты */
-}
-
-/* Левая колонка (параметры + банк) */
-.popup__section:first-child {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Правая колонка (форма) */
-.popup__section:last-child {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  align-items: flex-start;
 }
 
 /* Левая колонка с данными оффера */
@@ -172,7 +156,6 @@
   background: #f4f6fd;
   padding: 15px;
   border-radius: 10px;
-  height: 100%;
 }
 
 /* Поля формы */
@@ -199,12 +182,6 @@
 
 .popup__checkbox {
   accent-color: #284db5; /* Изменяем цвет активного состояния чекбокса */
-}
-
-/* Группа с кнопкой и чекбоксом */
-.popup__form > .popup__checkbox-label,
-.popup__form > .popup__submit {
-  margin-top: auto; /* Прижимаем к низу */
 }
 
 /* Кнопка отправки */
@@ -236,7 +213,7 @@
   .popup__content {
     flex-direction: column;
     gap: 15px;
-    /*align-items: center;*/
+    align-items: center;
   }
 
   .popup__offer {
@@ -272,15 +249,6 @@
   .popup__content {
     flex-direction: column;
     align-items: center;
-  }
-
-  .popup__form {
-    height: auto;
-  }
-
-  .popup__form > .popup__checkbox-label,
-  .popup__form > .popup__submit {
-    margin-top: 15px;
   }
 
   
