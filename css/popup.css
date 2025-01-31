@@ -17,6 +17,10 @@
   visibility: visible;
 }
 
+body.popup-open {
+  overflow: hidden;
+}
+
 /* Основной popup */
 .popup {
   position: fixed;
@@ -33,6 +37,10 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  /*Для скролла*/
+  max-height: 80vh; /* Ограничиваем высоту попапа */
+  overflow-y: auto; /* Разрешаем вертикальную прокрутку внутри попапа */
+  padding-right: 20px; /* Для компенсации полосы прокрутки */
 }
 
 .popup--active {
