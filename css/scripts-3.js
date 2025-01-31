@@ -183,38 +183,50 @@ function displayResults(results) {
 
   // Остальная часть функции остается без изменений
   offerList.innerHTML = results
-  .map((result, index) => {
-    return `
-    <div class="offer">
-      <div class="offer__logo" style="background-image: url('${result.logo}')"></div>
-      <div class="offer__details">
-        <strong>${result.name}</strong>
-        ${result.data ? `
-          <div class="offer__personal-data">
-            ${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}
-            <div class="offer__rating">
-              ${Array(5).fill(0).map((_, i) => 
-                `<div class="rating-dot${i < rating ? ' active' : ''}"></div>`
-              ).join('')}
-            </div>
-          </div>` : ''}
-      </div>
-      ${!result.isStopFactor ? `
-        <div class="offer__separator"></div>
-        <div class="offer__rate">
-          <div class="rate-price">${result.cost.toLocaleString()} руб.</div>
-          <div class="rate-percent">${result.rate}% годовых</div>
-        </div>
-        <div class="offer__buttons">
-          <button class="offer__button" data-index="${index}">Оформить</button>
-        </div>` 
-        : `
-        <div class="offer__stop-factor">
-          Стоп-факторы: <br>${result.rate}
-        </div>`}
-    </div>`;
-  })
-  .join("");
+    .map((result, index) => {
+      const rating = Number(result.rating) || 0;
+      return `
+        <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd;">
+          <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-left: 20px;"></div>
+          <div class="offer__details" style="flex: 1; padding: 0 15px;">
+            <strong>${result.name}</strong>
+            ${
+              result.data 
+                ? `<div class="offer__personal-data" style="font-size: 12px; font-weight: 300; color: #555;">
+                    ${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}
+                    <div style="margin-top: 0px;">
+                      <span>Сложность оформления:</span>
+                      <div class="offer__rating" style="display: flex; gap: 5px; margin-top: 5px;">
+                        ${Array(5).fill(0).map((_, i) => 
+                          `<div style="width: 10px; height: 10px; border-radius: 50%; background-color: ${i < rating ? '#9c9c9c' : '#e3e3e3'};"></div>`
+                        ).join('')}
+                      </div>
+                    </div>
+                  </div>` 
+                : ''
+            }
+          </div>
+          <div class="offer__separator" style="flex-shrink: 0; width: 1px; height: 50px; background: #ddd; margin: 0 15px; ${result.isStopFactor ? 'display: none;' : ''}"></div>
+          ${
+            !result.isStopFactor
+              ?  
+                `<div class="offer__rate" style="text-align: right;">
+                  <div style="font-size: 16px; font-weight: bold;">${result.cost.toLocaleString()} руб.</div>
+                  <div style="font-size: 12px; font-weight: 300; color: #555;">${result.rate}% годовых</div>
+                </div>
+                <div class="offer__buttons" style="margin-left: 15px; margin-right: 20px;">
+                  <button class="offer__button" data-index="${index}" style="padding: 5px 10px;">
+                    Оформить
+                  </button>
+                </div>`
+              :  
+                `<div class="offer__rate" style="font-size: 14px; font-weight: 300; text-align: right; color: #555; margin-right: 20px;">
+                  Стоп-факторы: <br>${result.rate}
+                </div>`
+          }
+        </div>`;
+    })
+    .join("");
 
   // Добавляем текст отказа от ответственности внизу блока offer-list
   const disclaimerText = `
