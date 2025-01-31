@@ -194,8 +194,8 @@
     display: flex;
     flex-direction: row; /* В строку */
     align-items: center;
+    justify-content: flex-start;
     gap: 20px;
-    width: 100%; /* Растягиваем на всю ширину */
   }
 
   .popup__logo {
