@@ -276,7 +276,7 @@
 .popup__parameters {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 5px;
   padding: 15px;
   background: #f4f6fd;
   border-radius: 5px;
