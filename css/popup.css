@@ -181,12 +181,17 @@
     max-width: 100%;
   }
 
-  .popup__offer {
-    display: flex;
+  .popup__content {
     flex-direction: column;
+    gap: 15px;
+  }
+
+  .popup__offer {
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    text-align: center;
     gap: 10px;
+    text-align: left;
     padding: 10px;
   }
 
@@ -196,22 +201,24 @@
   }
 
   .popup__details {
-    text-align: center;
+    text-align: left;
     font-size: 12px;
-    white-space: normal;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .popup__separator {
-    width: 80%;
+    width: 100%;
     height: 1px;
     background-color: #ccc;
-    margin: 5px 0;
+    margin: 10px 0;
   }
 
   .popup__rate {
     text-align: center;
     font-size: 14px;
   }
+
 
   .popup__content {
     flex-direction: column;
