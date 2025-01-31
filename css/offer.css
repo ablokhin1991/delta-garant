@@ -75,10 +75,12 @@
     font-weight: 400;
     font-size: 14px;
     color: #333333;
-    white-space: nowrap;
-    overflow: hidden;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
     width: 300px;
-    overflow-wrap: break-word; /* Новый способ */
+    overflow-wrap: break-word; /* Перенос длинных слов */
+    word-wrap: break-word; /* Альтернативный способ переноса */
+    white-space: normal; /* Позволяет перенос строк */
 }
 
 .offer__personal-data {
@@ -143,9 +145,6 @@
       padding: 0 !important;
       text-align: center !important;
       order: 1 !important;
-      word-wrap: break-word; /* Перенос длинных слов */
-      overflow-wrap: break-word; /* Альтернативный способ переноса */
-      white-space: normal; /* Разрешает перенос строк */
     }
     .offer__separator {
       width: 90% !important;
