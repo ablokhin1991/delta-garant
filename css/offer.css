@@ -116,27 +116,10 @@
 }
 
 @media (max-width: 975px) and (min-width: 769px) {
-  .offer__details {
-      width: auto; /* Автоматическая ширина */
-      max-width: 40%; /* Ограничим максимальную ширину */
-      white-space: normal; /* Разрешаем перенос текста */
-      overflow: visible; /* Отключаем скрытие лишнего */
-  }
-
-  .offer__personal-data {
-      width: auto;
-      max-width: 50%; /* Немного больше места для описания */
-      white-space: normal;
-      overflow: visible;
-  }
-
-  .offer {
-      flex-wrap: wrap; /* Позволяет перенос элементов */
-  }
-}
+  
 
 
-@media (max-width: 768px) {
+@media (max-width: 975px)/*768px)*/ {
     .result__offers {
       gap: 12px; /* Немного уменьшить отступы между карточками */
     }
