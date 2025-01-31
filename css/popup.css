@@ -217,7 +217,6 @@
   }
 
   .popup__rate {
-    text-align: center;
     text-align: right;
     font-size: 14px;
   }
@@ -240,6 +239,9 @@
 
 .popup__link {
   color: #1E3A8A;
+  text-align: left;
+  font-size: 14px;
+  Font-weight: 300;
   text-decoration: none;
 }
 
