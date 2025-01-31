@@ -33,7 +33,8 @@
 }
 
 .offer:hover {
-    transform: scale(1.01); /* Увеличение на 20% */
+    /*transform: scale(1.01); /* Увеличение на 20% */
+    transform: translate(0, -5px); /* Легкий сдвиг вместо масштабирования */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
 }
 
