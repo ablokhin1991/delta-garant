@@ -186,10 +186,10 @@
     align-items: center;
   }
 
-  /*.popup__offer,
+  .popup__offer,
   .popup__form {
     width: 100%;
-  }*/
+  }
 }
 
 
