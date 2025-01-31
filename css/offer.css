@@ -76,6 +76,7 @@
     white-space: nowrap;
     overflow: hidden;
     width: 300px;
+    overflow-wrap: break-word; /* Новый способ */
 }
 
 .offer__personal-data {
@@ -89,6 +90,7 @@
     justify-content: center;
     width: 500px;
     white-space: nowrap;
+    overflow: hidden; /* Скрывает все, что выходит за пределы контейнера */
 }
   
 .offer__rate {
@@ -134,7 +136,6 @@
       padding: 0 !important;
       text-align: center !important;
       order: 1 !important;
-      overflow-wrap: break-word; /* Новый способ */
     }
     .offer__separator {
       width: 90% !important;
