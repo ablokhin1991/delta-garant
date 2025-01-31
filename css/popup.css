@@ -285,10 +285,15 @@
   margin-bottom: 20px;
 }
 
-.popup__parameter {
+.popup__parameters {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  font-size: 14px;
+  color: #333333;
+}
+
+.popup__parameters span {
   font-size: 14px;
   color: #333333;
 }
