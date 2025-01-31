@@ -201,16 +201,17 @@
     white-space: normal; /* Разрешаем перенос текста */
   }
 
-  .popup__separator {
-    display: none; /* Скрываем разделитель на мобилках */
-  }
-
   /* Сбросите ненужные grid-настройки дочерних элементов */
   .popup__logo,
   .popup__details,
   .popup__separator,
   .popup__rate {
     grid-column: auto !important;
+    width: 100%;
+  }
+
+  .popup__separator {
+    height: 1px; /* Горизонтальная линия вместо вертикальной */
     width: 100%;
   }
 
