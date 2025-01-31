@@ -13,14 +13,18 @@
 }
   
 
-.offer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
+  .offer {
+    display: grid;
+    grid-template-columns: auto 300px 200px 2px auto 400px; /* Задаем 6 столбцов */
+    grid-template-rows: auto; /* Один ряд */
+    gap: 20px; /* Отступы между ячейками */
+    align-items: center; /* Центрирование по высоте всех элементов */
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f4f6fd;
     position: relative;
+    transition: all 0.3s ease;
+    z-index: 2; /* Начальный слой */
 }
 
 .offer:hover {
@@ -48,13 +52,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     border-radius: 5px;
     width: 50px;
     height: 50px;
     box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.15), 
             6px -6px 10px rgba(255, 255, 255, 0.8);
+
+
 }
 
 .offer__details {
@@ -100,88 +107,63 @@
     font-size: 14px;
 }
 
-.offer__rating {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .rating-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #e3e3e3;
-  }
-  
-  .rating-dot.active {
-    background-color: #9c9c9c;
-  }
-  
-  .rate-price {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .rate-percent {
-    font-size: 12px;
-    color: #555;
-  }
-  
-  .offer__stop-factor {
-    font-size: 14px;
-    color: #555;
-    text-align: center;
-    padding: 15px 0;
-  }
-
 @media (max-width: 768px) {
     .result__offers {
       gap: 12px; /* Немного уменьшить отступы между карточками */
     }
   
     .offer {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 20px;
-        gap: 15px;
+      display: flex;
+      flex-direction: column; /* Располагаем карточки вертикально */
+      gap: 16px; /* Отступы между элементами внутри карточки */
+      padding: 16px;
+      background-color: #ffffff; /* Убедимся, что фон карточек хорошо читается */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для мобильных */
+      border-radius: 8px; /* Скругленные углы */
+      align-items: flex-start; /* Выравнивание содержимого по левому краю */
+    }
+
+    /* Всплывающий оффер */
+    .offer {
+      position: relative; /* Относительно .content */
+      z-index: 2; /* Выше затемнения */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавное всплытие */
     }
   
     .offer__logo {
-        width: 80px !important;
-        height: 80px !important;
-        margin: 0 auto 15px !important;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 12px; /* Отступ снизу для мобильной версии */
     }
-    .offer__details {
-        width: 100% !important;
-        padding: 0 !important;
-        text-align: center !important;
-    }
-    
-      .offer__personal-data {
-        width: 100% !important;
-        text-align: center !important;
-        margin: 10px 0;
+  
+    .offer__details,
+    .offer__personal-data,
+    .offer__rate {
+      width: 100%; /* Растягиваем элементы на всю ширину */
+      text-align: left; /* Выравнивание текста по левому краю */
     }
     
-      .offer__separator {
-        width: 90% !important;
-        height: 1px !important;
-        margin: 15px auto !important;
-        background: #ddd;
-    }
-    
-      .offer__rate {
-        text-align: center !important;
-        width: 100% !important;
-        margin: 10px 0;
-    }
-    
-      .offer__buttons {
-        margin: 0 auto !important;
-        width: 100%;
+    /* 📌 5. Ставка (процент + цена) */
+    .offer__rate {
         text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .offer__details {
+        flex: 1;
+        text-align: left;
+        padding-left: 10px;
+    }
+  
+    .offer__title-wrap {
+      font-size: 18px; /* Увеличиваем размер шрифта для заголовка */
+      margin-bottom: 8px; /* Добавляем отступ снизу */
+    }
+  
+    .offer__text {
+      font-size: 14px; /* Уменьшаем текст для компактного вида */
     }
 }
 
