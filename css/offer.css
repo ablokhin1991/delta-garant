@@ -130,6 +130,7 @@
     }
   
     .offer__details {
+      overflow-wrap: break-word; /* Новый способ */
       width: 100% !important;
       padding: 0 !important;
       text-align: center !important;
@@ -162,6 +163,7 @@
       margin-top: 8px !important;
     }
     .offer__personal-data {
+      overflow-wrap: break-word; /* Новый способ */
       width: 100% !important;
       text-align: center !important;
       order: 2 !important;
