@@ -250,3 +250,43 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body;
+  const form = document.querySelector(".popup__form");
+
+  // Функция для плавного возврата на первоначальный размер
+  function resetFormScale() {
+      // Для плавности анимации добавляем класс
+      body.classList.add("reset-scale");
+      
+      // Убираем класс через время, чтобы анимация успела закончиться
+      setTimeout(() => {
+          body.classList.remove("reset-scale");
+      }, 300);  // Время должно соответствовать длительности анимации
+  }
+
+  // Добавляем слушатель на кнопку "Готово" (или на событие формы)
+  form.addEventListener("submit", function (e) {
+      // Останавливаем отправку формы, чтобы продемонстрировать эффект
+      e.preventDefault();
+      
+      // Здесь можно обработать отправку данных
+
+      // Плавно возвращаем страницу в исходное состояние
+      resetFormScale();
+  });
+
+  // CSS для плавного возвращения масштаба
+  const style = document.createElement("style");
+  style.innerHTML = `
+      body {
+          transition: transform 0.3s ease-in-out; /* плавный переход */
+      }
+
+      .reset-scale {
+          transform: scale(1); /* возвращаем в нормальный размер */
+      }
+  `;
+  document.head.appendChild(style);
+});
