@@ -182,45 +182,48 @@
   }
 
   .popup__offer {
-    width: 100%;
-    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Все элементы идут в столбик */
+    align-items: stretch; /* Растягиваем элементы по ширине */
+    width: 100%; /* Делаем ширину такой же, как у popup__form */
   }
 
-  /* Строка с логотипом и деталями */
+  /* 1️⃣ Логотип и детали выстраиваем в строку */
   .popup__logo,
   .popup__details {
-    display: inline-block; /* Старый добрый способ */
-    vertical-align: middle; /* Выравнивание по вертикали */
-    max-width: 100%;
+    display: flex;
+    flex-direction: row; /* В строку */
+    align-items: center;
+    gap: 20px;
+    width: 100%; /* Растягиваем на всю ширину */
   }
 
   .popup__logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px; /* Аналог gap */
+    flex-shrink: 0; /* Запрещаем сжатие */
   }
 
   .popup__details {
-    width: calc(100% - 70px); /* 50px лого + 20px margin */
+    flex-grow: 1; /* Занимает оставшееся пространство */
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Обрезка текста, если не помещается */
   }
 
-  /* Горизонтальный разделитель */
+  /* 2️⃣ Разделитель делаем горизонтальным */
   .popup__separator {
     width: 100%;
     height: 1px;
-    background: #ccc;
-    margin: 15px 0;
-    clear: both; /* Сброс обтекания */
+    background-color: #ccc;
+    margin: 10px 0;
   }
 
-  /* Блок с рейтингом */
+  /* 3️⃣ Рейтинг и прочие элементы тоже в строку */
   .popup__rate {
-    width: 100%;
-  }
-
-  .popup__rate > * {
-    display: inline-block;
-    margin-right: 20px;
+    display: flex;
+    flex-direction: row; /* В строку */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
   }
 
   .popup__content {
