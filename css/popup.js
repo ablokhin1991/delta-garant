@@ -258,30 +258,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Функция для сброса масштабирования страницы
   function resetScale() {
-      // Для этого нам нужно вернуть масштаб страницы в норму
+      // Возвращаем страницы масштаб в 1
       document.body.style.transform = "scale(1)";
       document.body.style.transition = "transform 0.3s ease-in-out"; // Плавный переход
   }
 
-  // Функция для скрытия клавиатуры и возврата в нормальное состояние
+  // Функция для закрытия клавиатуры
   function closeKeyboard() {
-      document.activeElement.blur(); // Снимаем фокус с поля ввода, тем самым скрываем клавиатуру
+      document.activeElement.blur(); // Убираем фокус с поля ввода, закрываем клавиатуру
       resetScale(); // Сбрасываем масштаб
   }
 
   // Слушаем событие отправки формы
   form.addEventListener("submit", function (e) {
-      e.preventDefault(); // Останавливаем отправку формы для демонстрации
+      e.preventDefault(); // Останавливаем отправку формы, чтобы показать эффект
 
-      // После отправки формы скрываем клавиатуру и сбрасываем масштаб
+      // После отправки формы закрываем клавиатуру и сбрасываем масштаб
       closeKeyboard();
 
-      // Далее ты можешь отправить данные формы через AJAX или обычным способом
+      // Дополнительно: тут ты можешь отправить форму через AJAX или по стандарту
   });
 
-  // Для предотвращения масштабирования страницы при фокусировке на поле ввода
+  // Запрещаем масштабирование страницы при фокусировке на поле ввода
   const metaTag = document.querySelector('meta[name="viewport"]');
   if (metaTag) {
+      // Устанавливаем фиксированное масштабирование на мобильных устройствах
       metaTag.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
   }
+
+  // Слушаем событие, когда фокус на поле ввода (клавиатура появляется)
+  window.addEventListener('focusin', function () {
+      document.body.style.transform = "scale(1)"; // Это сбрасывает любые трансформации
+  });
 });
