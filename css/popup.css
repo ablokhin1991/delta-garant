@@ -182,38 +182,33 @@
   }
 
   .popup__offer {
-    display: flex !important; /* Переопределяем grid на flex */
-    flex-wrap: nowrap; /* Гарантируем одну строку */
-    gap: 15px;
-    align-items: center;
-    padding: 12px; /* Уменьшаем padding для компактности */
+    display: flex;
+    flex-direction: column; /* Элементы располагаются в столбик */
+    align-items: flex-start;
+    gap: 20px; /* Отступы между элементами */
   }
 
-  .popup__logo {
-    width: 40px !important; /* Фиксированная ширина лого */
-    height: 40px !important;
-    flex-shrink: 0; /* Запрещаем сжатие */
-  }
-
-  .popup__details {
-    flex: 1; /* Занимает всё доступное пространство */
-    min-width: auto; /* Фикс для переполнения текста */
-    white-space: normal; /* Разрешаем перенос текста */
-  }
-
-  /* Сбросите ненужные grid-настройки дочерних элементов */
   .popup__logo,
-  .popup__details,
-  .popup__separator,
-  .popup__rate {
-    grid-column: auto !important;
-    width: 100%;
+  .popup__details {
+    display: flex;
+    flex-direction: row; /* Логотип и детали в одной строке */
+    align-items: center;
+    gap: 20px; /* Расстояние между логотипом и деталями */
   }
+
+  .popup__rate {
+    display: flex;
+    flex-direction: row; /* Отменяем column, теперь в строку */
+    align-items: center;
+  }
+
+
 
   .popup__separator {
-    height: 1px; /* Горизонтальная линия вместо вертикальной */
-    width: 100%;
-    display: none; /* Скрываем разделитель на мобилках */
+    width: 100%; /* Горизонтальная линия на всю ширину */
+    height: 1px;
+    background-color: #ccc;
+    align-self: center; /* Размещаем по центру по высоте */
   }
 
   .popup__content {
@@ -221,10 +216,7 @@
     align-items: center;
   }
 
-  .popup__offer,
-  .popup__form {
-    width: 100%;
-  }
+  
 }
 
 
