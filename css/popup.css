@@ -204,6 +204,10 @@
     max-width: 100%;
   }
 
+  .popup__section {
+    width: 100%;
+  }
+
   .popup__content {
     flex-direction: column;
     gap: 15px;
