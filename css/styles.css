@@ -492,10 +492,6 @@ header .logo img {
         margin-right: 0; /* Можно оставить этот стиль, если нужно выравнивать чекбокс по правому краю */
     }
 
-    .footer-container {
-        flex-direction: column;
-    }
-
     /* Результаты */
     .result {
         margin-top: 20px;
