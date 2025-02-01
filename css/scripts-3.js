@@ -278,7 +278,7 @@ function addChevrons(banksData) {
 
   // 🟢 Первый оффер получает "Самый выгодный"
   const firstOffer = offers[0];
-  addChevron(firstOffer, "images/icons/samvig.svg", "Самый выгодный");
+  addChevron(firstOffer, "images/icons/samvig1.svg", "Самый выгодный");
 
   // 🟢 Ищем банки с rating: 1 и добавляем "Быстро и удобно"
   offers.forEach(offer => {
