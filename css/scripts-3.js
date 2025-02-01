@@ -260,10 +260,16 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => { // Ждем загрузки офферов
       fetch("data/banks-data.json")
         .then(response => response.json())
-        .then(banksData => addChevrons(banksData))
+        .then(banksData => {
+          addChevrons(banksData);
+          updateChevronPositions(); // Первоначальное обновление позиций
+        })
         .catch(error => console.error("Ошибка загрузки banks-data.json:", error));
     }, 2100); // Даем время на рендеринг офферов
   });
+  
+  // Обновляем позиции шевронов при изменении размеров окна
+  window.addEventListener("resize", updateChevronPositions);
 });
 
 function addChevrons(banksData) {
@@ -285,7 +291,7 @@ function addChevrons(banksData) {
 }
 
 function addChevron(offerElement, iconPath, altText) {
-  const separator = offerElement.querySelector(".offer__separator"); 
+  const separator = offerElement.querySelector(".offer__separator");
   if (!separator) {
     console.warn("⚠️ Не найден .offer__separator в:", offerElement);
     return;
@@ -298,11 +304,33 @@ function addChevron(offerElement, iconPath, altText) {
   chevronImg.alt = altText;
   chevronImg.classList.add("chevron-overlay");
 
-  // Добавляем шеврон перед .offer__separator
+  // Вставляем шеврон перед separator
   separator.parentElement.insertBefore(chevronImg, separator);
 
-  // Устанавливаем позиционирование
+  // Обеспечиваем, чтобы offerElement был позиционирован относительно
+  offerElement.style.position = "relative";
+
+  // Устанавливаем начальную позицию шеврона
+  updateChevronPosition(chevronImg, separator, offerElement);
+}
+
+function updateChevronPosition(chevronImg, separator, offerElement) {
+  const separatorRect = separator.getBoundingClientRect();
+  const offerRect = offerElement.getBoundingClientRect();
+  // Рассчитываем смещение separator относительно offerElement
+  const leftOffset = separatorRect.left - offerRect.left;
   chevronImg.style.position = "absolute";
-  chevronImg.style.top = "0"; // Выровнять по верхнему краю
-  chevronImg.style.left = `${separator.offsetLeft}px`; // Выровнять по левому краю separator
+  chevronImg.style.top = "0"; // Прижимаем по верхнему краю offerElement
+  chevronImg.style.left = `${leftOffset}px`;
+}
+
+function updateChevronPositions() {
+  document.querySelectorAll(".chevron-overlay").forEach(chevron => {
+    // Предполагаем, что следующий sibling является separator
+    const separator = chevron.nextElementSibling;
+    if (separator && separator.classList.contains("offer__separator")) {
+      const offerElement = chevron.parentElement;
+      updateChevronPosition(chevron, separator, offerElement);
+    }
+  });
 }
