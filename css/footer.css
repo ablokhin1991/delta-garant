@@ -46,9 +46,7 @@ footer {
     text-align: left;
 }
 
-.footer-center p {
-    margin: 5px 0; /* Отступы между пунктами меню */
-}
+
 
 .footer-right {
     text-align: right;
