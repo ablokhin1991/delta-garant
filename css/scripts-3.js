@@ -256,38 +256,19 @@ function sortOffers(offers) {
 
 // Новый скрипт для добавления шевронов без изменения основного кода
 document.addEventListener("DOMContentLoaded", () => {
-  let banksData = [];
-
-  // Загружаем JSON с банками при загрузке страницы
-  fetch("data/banks-data.json")
-    .then(response => response.json())
-    .then(data => {
-      console.log("✅ Данные из JSON загружены:", data);
-      banksData = data;
-    })
-    .catch(error => console.error("❌ Ошибка загрузки JSON:", error));
-
-  // Ждем нажатия кнопки "Рассчитать"
   document.getElementById("calculate-btn").addEventListener("click", function () {
-    console.log("🟢 Кнопка 'Рассчитать' нажата, ждем загрузку офферов...");
-
-    // Ждем, пока офферы появятся в DOM (через setTimeout)
-    setTimeout(() => {
-      console.log("🔄 Проверяем наличие офферов...");
-      addChevrons(banksData);
-    }, 2200); // Чуть больше, чем setTimeout в lsf.js (2000ms), чтобы точно дождаться рендера
+    setTimeout(() => { // Ждем загрузки офферов
+      fetch("data/banks-data.json")
+        .then(response => response.json())
+        .then(banksData => addChevrons(banksData))
+        .catch(error => console.error("Ошибка загрузки banks-data.json:", error));
+    }, 2100); // Даем время на рендеринг офферов
   });
 });
 
 function addChevrons(banksData) {
   const offers = document.querySelectorAll(".offer");
-  if (offers.length === 0) {
-    console.warn("⚠️ Нет элементов .offer, повторная проверка через 500 мс...");
-    setTimeout(() => addChevrons(banksData), 500); // Повторяем проверку через 500 мс
-    return;
-  }
-
-  console.log(`✅ Найдено ${offers.length} офферов, добавляем шевроны...`);
+  if (offers.length === 0) return;
 
   // 🟢 Первый оффер получает "Самый выгодный"
   const firstOffer = offers[0];
@@ -296,11 +277,6 @@ function addChevrons(banksData) {
   // 🟢 Ищем банки с rating: 1 и добавляем "Быстро и удобно"
   offers.forEach(offer => {
     const bankName = offer.querySelector("strong")?.textContent.trim();
-    if (!bankName) {
-      console.warn("⚠️ Не найдено имя банка в оффере:", offer);
-      return;
-    }
-
     const bankData = banksData.find(bank => bank.name === bankName);
     if (bankData && bankData.rating === 1) {
       addChevron(offer, "images/icons/bistrud.svg", "Быстро и удобно");
@@ -309,36 +285,22 @@ function addChevrons(banksData) {
 }
 
 function addChevron(offerElement, iconPath, altText) {
-  const priceElement = offerElement.querySelector(".offer__price") || 
-                       offerElement.querySelector(".offer__amount") ||
-                       offerElement.querySelector(".offer__separator");
-
+  const priceElement = offerElement.querySelector(".offer__separator"); // Укажи правильный класс цены
   if (!priceElement) {
-    console.warn("⚠️ Не найден элемент цены в:", offerElement);
+    console.warn("⚠️ Не найден элемент с ценой в:", offerElement);
     return;
   }
 
-  console.log(`✅ Добавляем ${altText} (${iconPath}) в`, priceElement);
+  console.log(`✅ Добавляем шеврон ${altText} в`, priceElement);
 
   const chevronImg = document.createElement("img");
   chevronImg.src = iconPath;
   chevronImg.alt = altText;
   chevronImg.classList.add("chevron");
 
-  priceElement.parentElement.appendChild(chevronImg);
-}
+  // Добавляем шеврон перед ценой
+  priceElement.parentElement.style.position = "relative"; // Родителю даем позицию
+  chevronImg.classList.add("chevron-overlay"); // Новый стиль для позиционирования
 
-// 🟢 Добавь в CSS:
-const style = document.createElement("style");
-style.innerHTML = `
-  .chevron {
-    width: 50px;
-    height: auto;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-    position: relative;
-    z-index: 1000;
-  }
-`;
-document.head.appendChild(style);
+  priceElement.parentElement.insertBefore(chevronImg, priceElement);
+}

@@ -119,6 +119,16 @@
     font-size: 14px;
 }
 
+.chevron-overlay {
+  position: absolute;
+  top: -10px; /* Регулируй, чтобы сдвинуть вверх */
+  left: 0;
+  width: 80px; /* Подгони под размер */
+  height: auto;
+  z-index: 10;
+}
+
+
 /*@media (max-width: 975px) and (min-width: 769px) {*/
   
 
