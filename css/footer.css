@@ -6,14 +6,6 @@
     box-sizing: border-box;
 }
 
-/* Контейнер для контента */
-.container-footer {
-    background-color: #F0473B;
-    width: 80%;
-    margin: 20px auto;
-    overflow: visible;
-}
-
 footer {
     background-color: #f4f4f4;
     color: #333333;
