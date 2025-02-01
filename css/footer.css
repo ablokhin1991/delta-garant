@@ -54,6 +54,7 @@ footer {
 
 /* Нижний текст */
 .footer-bottom {
+    color: #c3c3c3;
     text-align: center;
     margin-top: 20px;
     width: 100%; /* Чтобы не выходил за пределы контейнера */
