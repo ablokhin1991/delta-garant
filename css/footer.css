@@ -43,7 +43,7 @@ footer {
 
 /* Центрирование текста */
 .footer-center {
-    text-align: right;
+    text-align: left;
 }
 
 .footer-center p {
