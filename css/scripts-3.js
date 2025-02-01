@@ -254,6 +254,8 @@ function sortOffers(offers) {
   });
 }
 
+
+ы
 // Новый скрипт для добавления шевронов без изменения основного кода
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("calculate-btn").addEventListener("click", function () {
@@ -278,6 +280,7 @@ function addChevrons(banksData) {
 
   // 🟢 Первый оффер получает "Самый выгодный"
   const firstOffer = offers[0];
+  // Здесь для примера используется samvig1.svg — можно менять по необходимости
   addChevron(firstOffer, "images/icons/samvig1.svg", "Самый выгодный");
 
   // 🟢 Ищем банки с rating: 1 и добавляем "Быстро и удобно"
@@ -291,7 +294,7 @@ function addChevrons(banksData) {
 }
 
 function addChevron(offerElement, iconPath, altText) {
-  const separator = offerElement.querySelector(".offer__separator"); 
+  const separator = offerElement.querySelector(".offer__separator");
   if (!separator) {
     console.warn("⚠️ Не найден .offer__separator в:", offerElement);
     return;
@@ -310,7 +313,7 @@ function addChevron(offerElement, iconPath, altText) {
   // Обеспечиваем, чтобы offerElement был позиционирован относительно
   offerElement.style.position = "relative";
 
-  // Устанавливаем начальную позицию шеврона
+  // Устанавливаем начальную позицию шеврона с учетом количества уже добавленных шевронов
   updateChevronPosition(chevronImg, separator, offerElement);
 }
 
@@ -319,20 +322,39 @@ function updateChevronPosition(chevronImg, separator, offerElement) {
   const offerRect = offerElement.getBoundingClientRect();
   // Смещение separator относительно offerElement
   const leftOffset = separatorRect.left - offerRect.left;
+  
   chevronImg.style.position = "absolute";
-  chevronImg.style.top = "-6px"; // Прижимаем по верхнему краю offerElement /////////////////////////////////////////
+  // Смещаем вверх на нужное количество пикселей (например, -6px, можно изменить на "-4.17px" или другое значение)
+  chevronImg.style.top = "-6px";  
   chevronImg.style.left = `${leftOffset}px`;
-  // Смещаем шеврон влево на его полную ширину, чтобы его правая сторона совпала с левым краем separator
-  chevronImg.style.transform = "translateX(-100%)";
+  
+  // Если в этом offer уже есть другие шевроны, смещаем текущий левее на их ширину.
+  // Предполагаем фиксированную ширину шеврона 80px (см. CSS).
+  const chevrons = Array.from(offerElement.querySelectorAll(".chevron-overlay"));
+  const index = chevrons.indexOf(chevronImg);
+  
+  // Сдвигаем каждый последующий шеврон левее: 
+  // для первого chevron (index==0) сдвиг = -100% (его правая сторона прижата к separator)
+  // для второго (index==1) сдвиг = -100% - 80px, для третьего = -100% - 160px и т.д.
+  chevronImg.style.transform = `translateX(calc(-100% - ${index * 80}px))`;
 }
 
 function updateChevronPositions() {
-  document.querySelectorAll(".chevron-overlay").forEach(chevron => {
-    // Предполагаем, что следующий sibling является separator
-    const separator = chevron.nextElementSibling;
-    if (separator && separator.classList.contains("offer__separator")) {
-      const offerElement = chevron.parentElement;
-      updateChevronPosition(chevron, separator, offerElement);
-    }
-  });
+  // Если ширина экрана меньше 975px, скрываем все шевроны
+  if (window.innerWidth < 975) {
+    document.querySelectorAll(".chevron-overlay").forEach(chevron => {
+      chevron.style.display = "none";
+    });
+    return;
+  } else {
+    document.querySelectorAll(".chevron-overlay").forEach(chevron => {
+      chevron.style.display = "";
+      // Предполагаем, что следующий sibling является separator
+      const separator = chevron.nextElementSibling;
+      if (separator && separator.classList.contains("offer__separator")) {
+        const offerElement = chevron.parentElement;
+        updateChevronPosition(chevron, separator, offerElement);
+      }
+    });
+  }
 }
