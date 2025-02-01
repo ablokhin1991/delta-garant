@@ -12,10 +12,6 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-
-    width: 80%;
-    margin: 20px auto 0 auto; /* 20px сверху, авто отступы слева и справа, 0 снизу */
-    padding: 20px;
 }
 
 /* Столбики */
