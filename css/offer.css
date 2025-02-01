@@ -121,7 +121,7 @@
 
 .chevron-overlay {
   /*position: absolute;*/
-  top: -10px; /* Регулируй, чтобы сдвинуть вверх */
+  /*top: -10px; /* Регулируй, чтобы сдвинуть вверх */
   /*left: 0;*/
   width: 120px; /* Подгони под размер */
   height: auto;
