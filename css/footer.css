@@ -38,11 +38,16 @@ footer {
 .footer-logo {
     max-width: auto;
     height: 20px;
+    margin-bottom: 10px; /* Отступ между логотипом и текстом */
 }
 
 /* Центрирование текста */
 .footer-center {
-    text-align: center;
+    text-align: left;
+}
+
+.footer-center p {
+    margin: 5px 0; /* Отступы между пунктами меню */
 }
 
 .footer-right {
@@ -75,6 +80,10 @@ footer a:hover {
 
     .footer-column {
         width: 100%;
+        text-align: center; /* Центрируем текст в мобильной версии */
+    }
+
+    .footer-right {
         text-align: center; /* Центрируем текст в мобильной версии */
     }
 }
