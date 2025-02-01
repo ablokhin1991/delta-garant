@@ -256,21 +256,38 @@ function sortOffers(offers) {
 
 // Новый скрипт для добавления шевронов без изменения основного кода
 document.addEventListener("DOMContentLoaded", () => {
+  let banksData = [];
+
+  // Загружаем JSON с банками при загрузке страницы
   fetch("data/banks-data.json")
     .then(response => response.json())
-    .then(banksData => {
-      console.log("✅ Данные из JSON:", banksData);
-      addChevrons(banksData);
+    .then(data => {
+      console.log("✅ Данные из JSON загружены:", data);
+      banksData = data;
     })
     .catch(error => console.error("❌ Ошибка загрузки JSON:", error));
+
+  // Ждем нажатия кнопки "Рассчитать"
+  document.getElementById("calculate-btn").addEventListener("click", function () {
+    console.log("🟢 Кнопка 'Рассчитать' нажата, ждем загрузку офферов...");
+
+    // Ждем, пока офферы появятся в DOM (через setTimeout)
+    setTimeout(() => {
+      console.log("🔄 Проверяем наличие офферов...");
+      addChevrons(banksData);
+    }, 2200); // Чуть больше, чем setTimeout в lsf.js (2000ms), чтобы точно дождаться рендера
+  });
 });
 
 function addChevrons(banksData) {
-  const offers = document.querySelectorAll("offer");
+  const offers = document.querySelectorAll(".offer");
   if (offers.length === 0) {
-    console.warn("⚠️ Нет элементов с классом offer");
+    console.warn("⚠️ Нет элементов .offer, повторная проверка через 500 мс...");
+    setTimeout(() => addChevrons(banksData), 500); // Повторяем проверку через 500 мс
     return;
   }
+
+  console.log(`✅ Найдено ${offers.length} офферов, добавляем шевроны...`);
 
   // 🟢 Первый оффер получает "Самый выгодный"
   const firstOffer = offers[0];
@@ -292,10 +309,9 @@ function addChevrons(banksData) {
 }
 
 function addChevron(offerElement, iconPath, altText) {
-  // 🔍 Попробуем разные элементы для цены
-  let priceElement = offerElement.querySelector(".offer__rate") || 
-                     offerElement.querySelector(".offer__details") ||
-                     offerElement.querySelector("offer__separator"); // Проверь правильный класс!
+  const priceElement = offerElement.querySelector(".offer__price") || 
+                       offerElement.querySelector(".offer__amount") ||
+                       offerElement.querySelector(".offer__separator");
 
   if (!priceElement) {
     console.warn("⚠️ Не найден элемент цены в:", offerElement);
@@ -326,5 +342,3 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
-
-
