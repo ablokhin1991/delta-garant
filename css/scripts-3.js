@@ -258,6 +258,8 @@ function sortOffers(offers) {
 document.addEventListener("DOMContentLoaded", () => {
   fetch("data/banks-data.json")
     .then(response => response.json())
+    .then(data => console.log("✅ Данные из JSON:", data))
+    .catch(error => console.error("❌ Ошибка загрузки JSON:", error))
     .then(banksData => {
       addChevrons(banksData);
     })
