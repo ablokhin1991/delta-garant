@@ -15,9 +15,9 @@ footer {
 
 /* Контейнер для столбиков */
 .footer-container {
-    width: 80%;
+    /*width: 80%;
     margin: 20px auto 0 auto; /* Совпадает с .content */
-    padding: 20px;
+    /*padding: 20px;*/
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
