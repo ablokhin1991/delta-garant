@@ -291,7 +291,7 @@ function addChevrons(banksData) {
 }
 
 function addChevron(offerElement, iconPath, altText) {
-  const separator = offerElement.querySelector(".offer__separator");
+  const separator = offerElement.querySelector(".offer__separator"); 
   if (!separator) {
     console.warn("⚠️ Не найден .offer__separator в:", offerElement);
     return;
@@ -317,11 +317,13 @@ function addChevron(offerElement, iconPath, altText) {
 function updateChevronPosition(chevronImg, separator, offerElement) {
   const separatorRect = separator.getBoundingClientRect();
   const offerRect = offerElement.getBoundingClientRect();
-  // Рассчитываем смещение separator относительно offerElement
+  // Смещение separator относительно offerElement
   const leftOffset = separatorRect.left - offerRect.left;
   chevronImg.style.position = "absolute";
   chevronImg.style.top = "0"; // Прижимаем по верхнему краю offerElement
   chevronImg.style.left = `${leftOffset}px`;
+  // Смещаем шеврон влево на его полную ширину, чтобы его правая сторона совпала с левым краем separator
+  chevronImg.style.transform = "translateX(-100%)";
 }
 
 function updateChevronPositions() {
