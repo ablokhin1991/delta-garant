@@ -255,27 +255,43 @@ function sortOffers(offers) {
 }
 
 // Новый скрипт для добавления шевронов без изменения основного кода
-function addChevrons() {
-  document.querySelectorAll(".offer").forEach(offer => {
-    const priceElement = offer.querySelector(".offer__rate");
+// Новый скрипт для добавления шевронов
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("banks-data.json")
+    .then(response => response.json())
+    .then(banksData => {
+      addChevrons(banksData);
+    })
+    .catch(error => console.error("Ошибка загрузки banks-data.json:", error));
+});
+
+function addChevrons(banksData) {
+  const offers = document.querySelectorAll(".offer");
+  if (offers.length === 0) return;
+  
+  // Добавляем "Самый выгодный" к первому офферу
+  const firstOffer = offers[0];
+  addChevron(firstOffer, "images/icons/samvig.svg", "Самый выгодный");
+
+  // Добавляем "Быстро и удобно" для банков с рейтингом 1
+  offers.forEach(offer => {
     const bankName = offer.querySelector("strong").textContent.trim();
-    const cost = parseInt(priceElement.textContent.replace(/\D/g, ""), 10);
-    
-    const bestOffer = document.querySelector(".offer:first-child");
-    const isBest = bestOffer && bestOffer.contains(offer);
-    const isFast = bankName.includes("ЛОКО-Банк"); // Замените на реальное условие
-    
-    let labelsHTML = "";
-    if (isBest) labelsHTML += '<img src="images/icons/samvig.svg" alt="Самый выгодный" class="chevron">';
-    if (isFast) labelsHTML += '<img src="images/icons/bistrud.svg" alt="Быстро и удобно" class="chevron">';
-    
-    if (labelsHTML) {
-      const labelsContainer = document.createElement("div");
-      labelsContainer.classList.add("chevron-container");
-      labelsContainer.innerHTML = labelsHTML;
-      priceElement.appendChild(labelsContainer);
+    const bankData = banksData.find(bank => bank.name === bankName);
+    if (bankData && bankData.rating === 1) {
+      addChevron(offer, "images/icons/bistrud.svg", "Быстро и удобно");
     }
   });
 }
 
-document.addEventListener("DOMContentLoaded", addChevrons);
+function addChevron(offerElement, iconPath, altText) {
+  const priceElement = offerElement.querySelector(".offer__rate");
+  if (!priceElement) return;
+  
+  const chevronImg = document.createElement("img");
+  chevronImg.src = iconPath;
+  chevronImg.alt = altText;
+  chevronImg.classList.add("chevron");
+  
+  priceElement.appendChild(chevronImg);
+}
+
