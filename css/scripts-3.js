@@ -285,24 +285,17 @@ function addChevrons(banksData) {
 }
 
 function addChevron(offerElement, iconPath, altText) {
-  const separator = offerElement.querySelector(".offer__separator"); 
+  const separator = offerElement.querySelector(".offer__separator");
   if (!separator) {
     console.warn("⚠️ Не найден .offer__separator в:", offerElement);
     return;
   }
-
-  console.log(`✅ Добавляем шеврон ${altText} перед .offer__separator`);
 
   const chevronImg = document.createElement("img");
   chevronImg.src = iconPath;
   chevronImg.alt = altText;
   chevronImg.classList.add("chevron-overlay");
 
-  // Добавляем шеврон перед .offer__separator
-  separator.parentElement.insertBefore(chevronImg, separator);
-
-  // Устанавливаем позиционирование
-  chevronImg.style.position = "absolute";
-  chevronImg.style.top = "0"; // Выровнять по верхнему краю
-  chevronImg.style.left = `${separator.offsetLeft}px`; // Выровнять по левому краю separator
+  // Добавляем шеврон в начало оффера
+  offerElement.insertBefore(chevronImg, offerElement.firstChild);
 }

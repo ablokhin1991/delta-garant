@@ -121,11 +121,13 @@
 
 .chevron-overlay {
   position: absolute;
-  top: 0px; /* Регулируй, чтобы сдвинуть вверх */
-  left: 0;
-  width: 120px; /* Подгони под размер */
+  left: -135px; /* Ширина шеврона + отступ */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
   height: auto;
   z-index: 10;
+  pointer-events: none; /* Чтобы не перехватывал клики */
 }
 
 
