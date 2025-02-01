@@ -255,7 +255,6 @@ function sortOffers(offers) {
 }
 
 // Новый скрипт для добавления шевронов без изменения основного кода
-// Новый скрипт для добавления шевронов
 document.addEventListener("DOMContentLoaded", () => {
   fetch("data/banks-data.json")
     .then(response => response.json())
@@ -268,14 +267,14 @@ document.addEventListener("DOMContentLoaded", () => {
 function addChevrons(banksData) {
   const offers = document.querySelectorAll(".offer");
   if (offers.length === 0) return;
-  
-  // Добавляем "Самый выгодный" к первому офферу
+
+  // 🟢 Первый оффер получает "Самый выгодный"
   const firstOffer = offers[0];
   addChevron(firstOffer, "images/icons/samvig.svg", "Самый выгодный");
 
-  // Добавляем "Быстро и удобно" для банков с рейтингом 1
+  // 🟢 Ищем банки с rating: 1 и добавляем "Быстро и удобно"
   offers.forEach(offer => {
-    const bankName = offer.querySelector("strong").textContent.trim();
+    const bankName = offer.querySelector("strong")?.textContent.trim();
     const bankData = banksData.find(bank => bank.name === bankName);
     if (bankData && bankData.rating === 1) {
       addChevron(offer, "images/icons/bistrud.svg", "Быстро и удобно");
@@ -284,14 +283,20 @@ function addChevrons(banksData) {
 }
 
 function addChevron(offerElement, iconPath, altText) {
-  const priceElement = offerElement.querySelector(".offer__rate");
-  if (!priceElement) return;
-  
+  // 🔴 Заменим .offer__rate на правильный элемент цены!
+  const priceElement = offerElement.querySelector(".offer__separator"); // <--- Укажи здесь нужный класс
+  if (!priceElement) {
+    console.warn("⚠️ Не найден элемент с ценой в:", offerElement);
+    return;
+  }
+
+  console.log(`✅ Добавляем шеврон ${altText} в`, priceElement);
+
   const chevronImg = document.createElement("img");
   chevronImg.src = iconPath;
   chevronImg.alt = altText;
   chevronImg.classList.add("chevron");
-  
-  priceElement.appendChild(chevronImg);
+
+  priceElement.parentElement.appendChild(chevronImg); // Добавляем рядом с ценой
 }
 
