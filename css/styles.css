@@ -117,6 +117,13 @@ header .logo img {
     margin-bottom: 20px;
 }
 
+/* Контейнер для контента */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    overflow: visible;
+}
+
 /* Стили калькулятора */
 /* Стиль контента */
 .content {
