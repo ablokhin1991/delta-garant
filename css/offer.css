@@ -132,7 +132,12 @@
 }
 
 
-/*@media (max-width: 975px) and (min-width: 769px) {*/
+@media (max-width: 974px) {
+  .chevron-overlay {
+    display: none !important;
+  }
+}
+
   
 
 
