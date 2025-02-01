@@ -285,17 +285,29 @@ function addChevrons(banksData) {
 }
 
 function addChevron(offerElement, iconPath, altText) {
-  const separator = offerElement.querySelector(".offer__separator");
+  const separator = offerElement.querySelector(".offer__separator"); 
   if (!separator) {
     console.warn("⚠️ Не найден .offer__separator в:", offerElement);
     return;
   }
+
+  console.log(`✅ Добавляем шеврон ${altText} рядом с .offer__separator`);
 
   const chevronImg = document.createElement("img");
   chevronImg.src = iconPath;
   chevronImg.alt = altText;
   chevronImg.classList.add("chevron-overlay");
 
-  // Добавляем шеврон в начало оффера
-  offerElement.insertBefore(chevronImg, offerElement.firstChild);
+  // Добавляем в оффер
+  offerElement.appendChild(chevronImg);
+
+  // Вычисляем смещение separator относительно offer
+  const separatorRect = separator.getBoundingClientRect();
+  const offerRect = offerElement.getBoundingClientRect();
+  const leftOffset = separatorRect.left - offerRect.left; // Смещение separator внутри offer
+
+  // Применяем вычисленное смещение
+  chevronImg.style.position = "absolute";
+  chevronImg.style.top = "0"; // Вровень с верхней границей separator
+  chevronImg.style.left = `${leftOffset}px`;
 }
