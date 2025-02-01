@@ -54,12 +54,32 @@ footer {
 
 /* Нижний текст */
 .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     color: #a7a7a7;
     font-weight: 300;
-    text-align: center;
+    /*text-align: center;*/
     margin-top: 20px;
     width: 100%; /* Чтобы не выходил за пределы контейнера */
 }
+
+.footer-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-bottom img:first-child {
+    margin-left: 0;
+}
+
+.footer-bottom p {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
 
 /* Ссылки */
 footer a {
@@ -88,5 +108,26 @@ footer a:hover {
 
     .footer-right {
         text-align: center; /* Центрируем текст в мобильной версии */
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-img {
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+    }
+
+    .footer-bottom img {
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom p {
+        margin-left: 0;
+        margin-top: 10px;
     }
 }
