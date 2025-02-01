@@ -8,14 +8,14 @@
 
 /* Контейнер для контента */
 .container {
+    background: linear-gradient(to bottom, #152961, #1E3A8A);
     width: 80%;
     margin: 20px auto;
     overflow: visible;
 }
 
 footer {
-    /*background-color: #f4f4f4;*/
-    background-color: #abb2cc;
+    background-color: #f4f4f4;
     color: #333333;
     font-size: 14px; /* Основной текст */
     padding: 10px 0; /* Уменьшаем общий отступ футера */
