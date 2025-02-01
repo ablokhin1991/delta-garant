@@ -320,7 +320,7 @@ function updateChevronPosition(chevronImg, separator, offerElement) {
   // Смещение separator относительно offerElement
   const leftOffset = separatorRect.left - offerRect.left;
   chevronImg.style.position = "absolute";
-  chevronImg.style.top = "-4.17px"; // Прижимаем по верхнему краю offerElement /////////////////////////////////////////
+  chevronImg.style.top = "-5px"; // Прижимаем по верхнему краю offerElement /////////////////////////////////////////
   chevronImg.style.left = `${leftOffset}px`;
   // Смещаем шеврон влево на его полную ширину, чтобы его правая сторона совпала с левым краем separator
   chevronImg.style.transform = "translateX(-100%)";
