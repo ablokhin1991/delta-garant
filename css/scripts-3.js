@@ -266,9 +266,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function addChevrons(banksData) {
-  const offers = document.querySelectorAll(".offer");
+  const offers = document.querySelectorAll("offer");
   if (offers.length === 0) {
-    console.warn("⚠️ Нет элементов с классом .offer");
+    console.warn("⚠️ Нет элементов с классом offer");
     return;
   }
 
@@ -295,7 +295,7 @@ function addChevron(offerElement, iconPath, altText) {
   // 🔍 Попробуем разные элементы для цены
   let priceElement = offerElement.querySelector(".offer__rate") || 
                      offerElement.querySelector(".offer__details") ||
-                     offerElement.querySelector(".offer__separator"); // Проверь правильный класс!
+                     offerElement.querySelector("offer__separator"); // Проверь правильный класс!
 
   if (!priceElement) {
     console.warn("⚠️ Не найден элемент цены в:", offerElement);
