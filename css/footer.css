@@ -1,4 +1,11 @@
 /* Подвал */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 footer {
     background-color: #f4f4f4;
     color: #333333;
