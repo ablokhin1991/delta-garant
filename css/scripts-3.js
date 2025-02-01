@@ -257,7 +257,7 @@ function sortOffers(offers) {
 // Новый скрипт для добавления шевронов без изменения основного кода
 // Новый скрипт для добавления шевронов
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("banks-data.json")
+  fetch("data/banks-data.json")
     .then(response => response.json())
     .then(banksData => {
       addChevrons(banksData);
