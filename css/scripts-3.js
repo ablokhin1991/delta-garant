@@ -293,16 +293,16 @@ function addChevron(offerElement, iconPath, altText) {
 
   console.log(`✅ Добавляем шеврон ${altText} перед .offer__separator`);
 
-  const chevronWrapper = document.createElement("div");
-  chevronWrapper.classList.add("chevron-wrapper");
-
   const chevronImg = document.createElement("img");
   chevronImg.src = iconPath;
   chevronImg.alt = altText;
-  chevronImg.classList.add("chevron");
+  chevronImg.classList.add("chevron-overlay");
 
-  chevronWrapper.appendChild(chevronImg);
+  // Добавляем шеврон перед .offer__separator
+  separator.parentElement.insertBefore(chevronImg, separator);
 
-  // Вставляем обертку перед `.offer__separator`
-  separator.parentElement.insertBefore(chevronWrapper, separator);
+  // Устанавливаем позиционирование
+  chevronImg.style.position = "absolute";
+  chevronImg.style.top = "0"; // Выровнять по верхнему краю
+  chevronImg.style.left = `${separator.offsetLeft}px`; // Выровнять по левому краю separator
 }
