@@ -121,13 +121,11 @@
 
 .chevron-overlay {
   position: absolute;
-  left: -135px; /* Ширина шеврона + отступ */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 120px;
+  top: 0px; /* Регулируй, чтобы сдвинуть вверх */
+  left: 0;
+  width: 120px; /* Подгони под размер */
   height: auto;
   z-index: 10;
-  pointer-events: none; /* Чтобы не перехватывал клики */
   /* Используем drop-shadow для правильного наложения тени */
   filter: drop-shadow(-6px -6px 10px rgba(255, 255, 255, 0.8)) 
           drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.2));
