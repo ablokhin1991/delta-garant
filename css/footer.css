@@ -6,6 +6,13 @@
     box-sizing: border-box;
 }
 
+/* Контейнер для контента */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    overflow: visible;
+}
+
 footer {
     /*background-color: #f4f4f4;*/
     background-color: #abb2cc;

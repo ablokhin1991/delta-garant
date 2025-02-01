@@ -32,13 +32,6 @@ a {
     font-weight: 300; /* Light */
 }
 
-/* Контейнер для контента */
-.container {
-    width: 80%;
-    margin: 20px auto;
-    overflow: visible;
-}
-
 /* Шапка сайта */
 header .container {
     display: flex; /* Выравнивание элементов в одну строку */
