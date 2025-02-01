@@ -253,3 +253,29 @@ function sortOffers(offers) {
     return a.cost - b.cost; // Сравнение по стоимости
   });
 }
+
+// Новый скрипт для добавления шевронов без изменения основного кода
+function addChevrons() {
+  document.querySelectorAll(".offer").forEach(offer => {
+    const priceElement = offer.querySelector(".offer__rate");
+    const bankName = offer.querySelector("strong").textContent.trim();
+    const cost = parseInt(priceElement.textContent.replace(/\D/g, ""), 10);
+    
+    const bestOffer = document.querySelector(".offer:first-child");
+    const isBest = bestOffer && bestOffer.contains(offer);
+    const isFast = bankName.includes("ЛОКО-Банк"); // Замените на реальное условие
+    
+    let labelsHTML = "";
+    if (isBest) labelsHTML += '<img src="images/icons/samvig.svg" alt="Самый выгодный" class="chevron">';
+    if (isFast) labelsHTML += '<img src="images/icons/bistrud.svg" alt="Быстро и удобно" class="chevron">';
+    
+    if (labelsHTML) {
+      const labelsContainer = document.createElement("div");
+      labelsContainer.classList.add("chevron-container");
+      labelsContainer.innerHTML = labelsHTML;
+      priceElement.appendChild(labelsContainer);
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", addChevrons);
