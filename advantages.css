@@ -1,34 +1,27 @@
 /* Стили для внешнего контейнера, аналогичные блоку .content */
 .advantages {
     width: 80%;
-    margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
+    margin: 20px auto 0 auto; /* 20px сверху, авто отступы слева и справа, 0 снизу */
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Чтобы блок контента был под Hero */
+    z-index: 0; /* Это гарантирует, что блок Content будет под Hero */
 }
 
-/* Контейнер для размещения карточек в виде сетки */
 .advantages-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* По умолчанию – одна колонка (мобильная версия) */
-    gap: 20px;
+    grid-template-columns: auto auto auto; /* Задаем 3 столбца */
+    grid-template-rows: auto; /* Один ряд */
+    gap: 20px; /* Отступы между ячейками */
+    align-items: center; /* Центрирование по высоте всех элементов */
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f4f6fd;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимируем только нужные свойства */
 }
 
-/* Для экранов от 768px – 3 карточки в ряд */
-@media (min-width: 768px) {
-    .advantages-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
-/* Стилизация отдельных карточек – выравнивание текста и базовый шрифт */
-.advantage-card {
-    text-align: center;
-    font-size: 16px;
-    color: #333;
-    /* Дополнительный внутренний отступ, если требуется */
-    padding: 10px;
-}
 
   
