@@ -1,55 +1,29 @@
-/* Стили карточек как у content */
-.cards-section {
-    width: 80%;
-    margin: 40px auto 0;
+/* Контейнер для карточек преимуществ */
+.advantages {
+    max-width: 1200px;
+    margin: 40px auto; /* Отступ сверху и центрирование */
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* По умолчанию – 1 колонка (мобильная версия) */
+    gap: 20px;
   }
   
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2%;
-    row-gap: 25px;
-  }
-  
-  .card-item {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    width: 100%;
-    margin-bottom: 0;
-  }
-  
-  .card-item h4 {
-    color: #1E3A8A;
+  /* Стилизация отдельных карточек */
+  .advantage-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
     font-size: 16px;
-    margin-bottom: 10px;
-    font-weight: 700;
-  }
-  
-  .card-item p {
     color: #333;
-    font-size: 14px;
-    line-height: 1.4;
   }
   
-  /* Десктоп: 3 колонки */
-  @media (min-width: 1024px) {
-    .card-item {
-      width: calc(94%/3);
+  /* Десктопная версия: 3 карточки в ряд */
+  @media (min-width: 768px) {
+    .advantages {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
   
-  /* Планшеты: 2 колонки */
-  @media (max-width: 1023px) and (min-width: 768px) {
-    .card-item {
-      width: calc(96%/2);
-    }
-  }
-  
-  /* Мобильные: 1 колонка */
-  @media (max-width: 767px) {
-    .cards-section {
-      width: 90%;
-    }
-  }
