@@ -8,7 +8,7 @@
 
 footer {
     background-color: #f4f4f4;
-    color: #333333;
+    color: #555;
     font-size: 14px; /* Основной текст */
     padding: 10px 0; /* Уменьшаем общий отступ футера */
 }
@@ -84,7 +84,7 @@ footer {
 
 /* Ссылки */
 footer a {
-    color: #333333;
+    color: #555;
     font-size: 14px; /* Основной текст */
     font-weight: 300;
     text-decoration: none;
