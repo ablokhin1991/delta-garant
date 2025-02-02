@@ -603,3 +603,19 @@ header .logo img {
       }
     
   }
+
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 50%; /* Чтобы текст не растягивался на всю ширину */
+}
+
+.hero-image {
+    max-width: 40%; /* Контролируем размер изображения */
+    height: auto;
+    align-self: flex-end; /* Выравниваем изображение по правому краю */
+}
