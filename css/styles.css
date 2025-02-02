@@ -615,7 +615,7 @@ header .logo img {
 }
 
 .hero-image {
-    max-width: 40%; /* Контролируем размер изображения */
+    max-width: 10%; /* Контролируем размер изображения */
     height: auto;
     align-self: flex-end; /* Выравниваем изображение по правому краю */
 }
@@ -630,7 +630,7 @@ header .logo img {
     }
 
     .hero-image {
-        max-width: 80%;
+        max-width: 10%;
         margin-top: 20px;
     }
 }
