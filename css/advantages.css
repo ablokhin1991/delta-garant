@@ -6,11 +6,11 @@
     overflow: visible;
 }
 
-.advantages {
+/*.advantages {
     width: 80%;
     margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
     /*padding: 20px; /* как и в .content */
-}
+/*}*/
 
 /* Контейнер для размещения карточек в виде сетки */
 .advantages-grid {
@@ -28,6 +28,8 @@
 
 /* Стилизация каждой отдельной карточки (плитки) */
 .advantage-card {
+    width: 80%;
+    margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
     background-color: #ffffff;
     padding: 20px;
     padding-top: 20px; /* Отступ сверху 20px */
