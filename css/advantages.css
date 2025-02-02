@@ -1,11 +1,8 @@
-/* Стили для внешнего контейнера, аналогичные блоку .content */
+/* Общий контейнер для блока с карточками (без фоновой подложки) */
 .advantages {
     width: 80%;
     margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 0; /* Отступы сверху и снизу */
 }
 
 /* Контейнер для размещения карточек в виде сетки */
@@ -22,13 +19,13 @@
     }
 }
 
-/* Стилизация отдельных карточек – выравнивание текста и базовый шрифт */
+/* Стилизация каждой отдельной карточки (плитки) */
 .advantage-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-size: 16px;
     color: #333;
-    /* Дополнительный внутренний отступ, если требуется */
-    padding: 10px;
 }
-
-  
