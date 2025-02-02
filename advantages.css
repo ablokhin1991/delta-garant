@@ -1,0 +1,48 @@
+/* Стили для блока преимуществ */
+.advantages-container {
+    width: 80%;
+    margin: 40px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    row-gap: 20px;
+}
+
+.advantage-block {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Десктоп: 3 колонки */
+@media (min-width: 769px) {
+    .advantage-block {
+        width: calc(96%/3 - 20px);
+    }
+}
+
+/* Мобильная версия: 1 колонка */
+@media (max-width: 768px) {
+    .advantages-container {
+        width: 90%;
+    }
+    .advantage-block {
+        width: 100%;
+    }
+}
+
+/* Наследование стилей текста из основного контента */
+.advantage-block h3 {
+    font-size: 16px;
+    color: #1E3A8A;
+    margin-bottom: 10px;
+}
+
+.advantage-block p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+}
