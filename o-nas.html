@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О компании ДЕЛЬТА ГАРАНТ</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/o-nas.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <section class="hero">
+    <div class="container">
+      <h1>О компании ДЕЛЬТА ГАРАНТ</h1>
+      <p>Ваш надежный партнер в оформлении банковских гарантий с 2015 года</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="container about-content">
+      <!-- ... остальное содержимое страницы ... -->
+      
+      <div class="reviews-section">
+        <h2>Отзывы наших клиентов</h2>
+        <div class="reviews-grid">
+          <!-- Пример одного отзыва -->
+          <div class="review-card" onclick="openModal('images/reviews/review1.jpg')">
+            <img src="images/reviews/thumb-review1.jpg" alt="Отзыв клиента" class="review-thumbnail">
+          </div>
+          <!-- ... остальные 8 отзывов ... -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно -->
+  <div id="reviewModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="insert-header-footer.js"></script>
+  <script src="css/o-nas.js"></script>
+</body>
+</html>
