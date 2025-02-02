@@ -1,41 +1,32 @@
-/* Контейнер для карточек преимуществ */
-/*.advantages {
-    width: 80%;
-    /*max-width: 1200px;*/
-    /*margin: 40px auto; /* Отступ сверху и центрирование */
-    /*padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr; /* По умолчанию – 1 колонка (мобильная версия) */
-    /*gap: 20px;
-  }*/
-
+/* Контейнер для карточек преимуществ, повторяющий стили блока .content */
 .advantages {
-  width: 80%;
+    width: 80%;
     margin: 20px auto 0 auto; /* 20px сверху, авто отступы слева и справа, 0 снизу */
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; /* Чтобы блок контента был под Hero */
-    z-index: 0; /* Это гарантирует, что блок Content будет под Hero */
-}
+  }
+  
+  /* Внутренний контейнер для размещения карточек в виде сетки */
+  .advantages-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* По умолчанию – 1 колонка (мобильная версия) */
+    gap: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .advantages-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд на десктопе */
+    }
+  }
   
   /* Стилизация отдельных карточек */
   .advantage-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-size: 16px;
     color: #333;
-  }
-  
-  /* Десктопная версия: 3 карточки в ряд */
-  @media (min-width: 768px) {
-    .advantages {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    /* Если нужно, можно добавить дополнительные стили для карточки,
+       но основной фон, отступы и тень уже заданы контейнеру .advantages */
   }
   
