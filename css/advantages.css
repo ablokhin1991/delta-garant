@@ -33,6 +33,7 @@
 .advantage-card {
     background-color: #ffffff;
     padding: 20px;
+    padding-top: 20px; /* Отступ сверху 20px */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
@@ -42,7 +43,7 @@
     /* Центрирование контента по вертикали и выравнивание текста по левому краю */
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* центрирует содержимое по вертикали */
+    justify-content: flex-start; /* содержимое прижато к верху */
     align-items: flex-start;    /* выравнивание содержимого по левому краю */
     text-align: left;
     
