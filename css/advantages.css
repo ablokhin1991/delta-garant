@@ -36,8 +36,7 @@
 /* Стилизация каждой отдельной карточки (плитки) */
 .advantage-card {
     background-color: #ffffff;
-    padding: 20px;
-    padding-top: 20px; /* Отступ сверху 20px */
+    padding: 40px 20px 40px 20px; /* сверху 40px, справа 20px, снизу 40px, слева 20px */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Центрирование контента по вертикали и выравнивание текста по левому краю */
