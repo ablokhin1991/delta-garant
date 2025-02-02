@@ -6,6 +6,11 @@
     overflow: visible;
 }
 
+.container-2 h2 {
+    font-size: 2em;
+    color: #555;
+}
+
 .advantages {
     width: 80%;
     margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
