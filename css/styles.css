@@ -615,6 +615,7 @@ header .logo img {
 }
 
 .hero-image {
+    width: 15%; /* Контролируем размер изображения */
     max-width: 50%; /* Чтобы картинка занимала свою половину контейнера */
     display: flex;
     justify-content: center; /* Выравнивание по центру */
