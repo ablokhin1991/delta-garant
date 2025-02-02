@@ -615,7 +615,7 @@ header .logo img {
 }
 
 .hero-image {
-    max-width: 10%; /* Контролируем размер изображения */
+    max-width: 30%; /* Контролируем размер изображения */
     height: auto;
     align-self: flex-end; /* Выравниваем изображение по правому краю */
 }
