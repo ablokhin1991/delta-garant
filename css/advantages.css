@@ -9,10 +9,7 @@
 .advantages {
     width: 80%;
     margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
-    padding: 20px; /* как и в .content */
-    /*background-color: #ffffff;*/
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*padding: 20px; /* как и в .content */
 }
 
 /* Контейнер для размещения карточек в виде сетки */
