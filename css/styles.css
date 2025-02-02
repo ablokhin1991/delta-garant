@@ -604,36 +604,4 @@ header .logo img {
     
   }
 
-  .hero-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hero-text {
-    max-width: 50%; /* Чтобы текст не растягивался на всю ширину */
-}
-
-.hero-image {
-    max-width: 50%; /* Чтобы картинка занимала свою половину контейнера */
-    display: flex;
-    justify-content: center; /* Выравнивание по центру */
-    height: 200px; /* Можно задать фиксированную или динамическую высоту */
-}
-@media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text {
-        max-width: 100%;
-    }
-
-    .hero-image {
-        max-width: 100%; /* Чтобы изображение не выходило за границы */
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Центрирование */
-    }
-}
+  
