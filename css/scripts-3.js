@@ -254,8 +254,6 @@ function sortOffers(offers) {
   });
 }
 
-
-ы
 // Новый скрипт для добавления шевронов без изменения основного кода
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("calculate-btn").addEventListener("click", function () {
