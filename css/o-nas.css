@@ -1,23 +1,105 @@
-/* Стили для страницы "О нас" */
-.about-content {
-    padding: 40px 0;
+/* Основные стили карточек */
+.content-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 30px;
+    width: 100%;
+    max-width: 1200px;
+    transition: box-shadow 0.3s ease; /* Добавляем анимацию тени */
+  }
+  
+  .content-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Усиливаем тень при ховере */
+  }
+  
+  .content-card + .content-card {
+    margin-top: 30px;
+  }
+  
+  /* Стили секций внутри карточек */
+  .content-card section {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .intro-section,
+  .values-section,
+  .clients-section,
+  .mission-section {
+    margin: 30px 0; /* Уменьшаем отступ для компактности */
+  }
+  
+  /* Стили списков */
+  .advantages-list li,
+  .values-list li,
+  .clients-list li {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    list-style: none;
+    line-height: 1.5; /* Улучшаем читаемость */
+  }
+  
+  .advantages-list li strong,
+  .clients-list li strong {
+    color: #1E3A8A;
+    display: block;
+    margin-bottom: 8px; /* Увеличиваем отступ */
+    font-size: 1.05em; /* Делаем текст чуть крупнее */
   }
   
   .values-list {
-    margin: 30px 0;
+    margin: 25px 0;
     padding: 20px;
     background: #f8f9fa;
     border-radius: 8px;
-  }
-
-  /* Иконки для списков (опционально) */
-.values-list li::before {
-    content: "✓";
-    color: #1E3A8A;
-    margin-right: 10px;
-    font-weight: bold;
+    border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
   }
   
+  .values-list li::before {
+    content: "✓";
+    color: #1E3A8A;
+    margin-right: 12px;
+    font-weight: 700; /* Делаем галочку заметнее */
+  }
+  
+  /* Стили CTA блока */
+  .cta-block {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 30px 0 0;
+    border: 1px solid #e0e0e0; /* Добавляем границу */
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #1E3A8A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: all 0.3s ease; /* Анимируем все свойства */
+    font-weight: 500; /* Делаем текст кнопки чуть жирнее */
+  }
+  
+  .cta-button:hover {
+    background: #152961;
+    transform: translateY(-2px); /* Добавляем эффект "поднятия" */
+  }
+  
+  .ps-note {
+    color: #666;
+    margin-top: 15px;
+    font-size: 0.95em;
+  }
+  
+  /* Стили отзывов */
   .reviews-section {
     margin-top: 40px;
   }
@@ -33,18 +115,24 @@
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Объединяем transition */
     cursor: pointer;
   }
   
   .review-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавляем тень при ховере */
   }
   
   .review-thumbnail {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: opacity 0.3s ease; /* Анимируем прозрачность */
+  }
+  
+  .review-card:hover .review-thumbnail {
+    opacity: 0.9; /* Эффект при наведении */
   }
   
   /* Модальное окно */
@@ -52,107 +140,38 @@
     display: none;
     position: fixed;
     z-index: 1000;
-    padding-top: 50px;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.9);
+    padding-top: 50px;
   }
   
   .modal-content {
-    margin: auto;
     display: block;
+    margin: auto;
     width: 80%;
     max-width: 700px;
+    border-radius: 4px; /* Добавляем скругление углов */
   }
   
   .close {
     position: absolute;
-    top: 20px;
+    top: 25px;
     right: 35px;
     color: #fff;
     font-size: 40px;
     cursor: pointer;
+    transition: color 0.3s ease;
   }
   
-  /* Дополнительные стили для текста */
-.intro-section,
-.values-section,
-.clients-section,
-.mission-section {
-  margin: 40px 0;
-}
-
-/* Обновленные стили списков */
-.advantages-list li,
-.values-list li,
-.clients-list li {
-  margin: 15px 0;
-  padding: 15px;
-  background: #f4f6fd;
-  border-radius: 6px;
-  list-style: none;
-}
-
-.advantages-list li strong,
-.clients-list li strong {
-  color: #1E3A8A;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.cta-block {
-  text-align: center;
-  padding: 30px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  margin: 30px 0 0;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 12px 30px;
-  background: #1E3A8A;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background: #152961;
-}
-
-.ps-note {
-  color: #666;
-  margin-top: 15px;
-}
-
-/* Стили карточек */
-.content-card {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    padding: 30px;
-    width: 100%;
-    max-width: 1200px;
+  .close:hover {
+    color: #1E3A8A; /* Изменяем цвет при наведении */
   }
   
-  .content-card section {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Отступы между карточками */
-  .content-card + .content-card {
-    margin-top: 30px;
-  }
-
-  /* Адаптивность карточек */
-@media (max-width: 768px) {
+  /* Адаптивность */
+  @media (max-width: 768px) {
     .content-card {
       padding: 20px;
       margin: 15px auto;
@@ -161,10 +180,7 @@
     .content-card + .content-card {
       margin-top: 20px;
     }
-  }
-
-  /* Адаптивность */
-  @media (max-width: 768px) {
+  
     .reviews-grid {
       grid-template-columns: 1fr;
     }
@@ -175,5 +191,27 @@
     
     .review-thumbnail {
       height: 150px;
+    }
+  
+    .values-list li::before {
+      margin-right: 8px; /* Уменьшаем отступ для мобилок */
+    }
+  
+    .cta-button {
+      width: 100%; /* Полная ширина на мобильных */
+      padding: 15px 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal-content {
+      width: 100%;
+      padding: 10px;
+    }
+    
+    .close {
+      top: 15px;
+      right: 25px;
+      font-size: 35px;
     }
   }
