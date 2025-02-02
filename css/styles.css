@@ -619,3 +619,18 @@ header .logo img {
     height: auto;
     align-self: flex-end; /* Выравниваем изображение по правому краю */
 }
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+}
