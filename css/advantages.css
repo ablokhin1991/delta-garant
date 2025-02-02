@@ -25,6 +25,12 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+/* Устанавливаем ширину в 90%, как у content, только на мобильных */
+@media (max-width: 768px) {
+    .advantages {
+        width: 90%; /* Теперь совпадает с .content */
+    }
+}
 
 /* Стилизация каждой отдельной карточки (плитки) */
 .advantage-card {
