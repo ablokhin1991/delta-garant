@@ -37,7 +37,7 @@
   .clients-list li {
     margin: 15px 0;
     padding: 15px;
-    background: #f8f9fa;
+    background: #f4f6fd;
     border-radius: 6px;
     list-style: none;
     line-height: 1.5; /* Улучшаем читаемость */
@@ -54,7 +54,7 @@
   .values-list {
     margin: 25px 0;
     padding: 20px;
-    background: #f8f9fa;
+    background: #f4f6fd;
     border-radius: 8px;
     border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
   }
