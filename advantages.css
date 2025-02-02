@@ -1,55 +1,55 @@
-/* Стили для блока преимуществ */
-.features {
-    padding: 40px 0;
-    background: #f8f9fa;
+/* Стили карточек как у content */
+.cards-section {
+    width: 80%;
+    margin: 40px auto 0;
   }
   
-  .features-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 20px 0;
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    row-gap: 25px;
   }
   
-  .feature-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+  .card-item {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 100%;
+    margin-bottom: 0;
   }
   
-  .feature-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .feature-card h3 {
+  .card-item h4 {
     color: #1E3A8A;
-    font-size: 1.25rem;
-    margin-bottom: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
     font-weight: 700;
   }
   
-  .feature-card p {
-    color: #4a5568;
-    line-height: 1.6;
-    font-size: 1rem;
+  .card-item p {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
   }
   
-  @media (max-width: 1024px) {
-    .features-container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+  /* Десктоп: 3 колонки */
+  @media (min-width: 1024px) {
+    .card-item {
+      width: calc(94%/3);
     }
   }
   
-  @media (max-width: 768px) {
-    .features-container {
-      grid-template-columns: 1fr;
-      gap: 15px;
+  /* Планшеты: 2 колонки */
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .card-item {
+      width: calc(96%/2);
     }
-    
-    .feature-card {
-      padding: 25px;
+  }
+  
+  /* Мобильные: 1 колонка */
+  @media (max-width: 767px) {
+    .cards-section {
+      width: 90%;
     }
   }
