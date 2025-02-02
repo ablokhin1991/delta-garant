@@ -615,10 +615,9 @@ header .logo img {
 }
 
 .hero-image {
-    max-width: 15%; /* Контролируем размер изображения */
-    height: auto;
-    align-self: flex-end; /* Выравниваем изображение по правому краю */
-    align-items: center;
+    max-width: 50%; /* Чтобы картинка занимала свою половину контейнера */
+    display: flex;
+    justify-content: center; /* Выравнивание по центру */
 }
 @media (max-width: 768px) {
     .hero-content {
@@ -631,7 +630,9 @@ header .logo img {
     }
 
     .hero-image {
-        max-width: 10%;
-        margin-top: 20px;
+        max-width: 100%; /* Чтобы изображение не выходило за границы */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Центрирование */
     }
 }
