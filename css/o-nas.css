@@ -9,6 +9,14 @@
     background: #f8f9fa;
     border-radius: 8px;
   }
+
+  /* Иконки для списков (опционально) */
+.values-list li::before {
+    content: "✓";
+    color: #1E3A8A;
+    margin-right: 10px;
+    font-weight: bold;
+  }
   
   .reviews-section {
     margin-top: 40px;
@@ -76,12 +84,22 @@
   margin: 40px 0;
 }
 
+/* Обновленные стили списков */
 .advantages-list li,
+.values-list li,
 .clients-list li {
   margin: 15px 0;
-  padding: 10px;
-  background: #fff;
-  border-left: 4px solid #1E3A8A;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  list-style: none;
+}
+
+.advantages-list li strong,
+.clients-list li strong {
+  color: #1E3A8A;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .cta-block {
@@ -89,7 +107,7 @@
   padding: 30px;
   background: #f8f9fa;
   border-radius: 8px;
-  margin: 30px 0;
+  margin: 30px 0 0;
 }
 
 .cta-button {
@@ -111,6 +129,39 @@
   color: #666;
   margin-top: 15px;
 }
+
+/* Стили карточек */
+.content-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 30px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .content-card section {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Отступы между карточками */
+  .content-card + .content-card {
+    margin-top: 30px;
+  }
+
+  /* Адаптивность карточек */
+@media (max-width: 768px) {
+    .content-card {
+      padding: 20px;
+      margin: 15px auto;
+    }
+    
+    .content-card + .content-card {
+      margin-top: 20px;
+    }
+  }
 
   /* Адаптивность */
   @media (max-width: 768px) {
