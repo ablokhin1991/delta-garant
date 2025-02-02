@@ -1,4 +1,11 @@
 /* Общий контейнер для блока с карточками – стилизуем так же, как блок .content */
+/* Контейнер для заголовка */
+.container-2 {
+    width: 80%;
+    margin: 40px auto 20px auto;
+    overflow: visible;
+}
+
 .advantages {
     width: 80%;
     margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
