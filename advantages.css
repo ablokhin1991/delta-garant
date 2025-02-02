@@ -1,6 +1,7 @@
 /* Контейнер для карточек преимуществ */
 .advantages {
-    max-width: 1200px;
+    width: 80%;
+    /*max-width: 1200px;*/
     margin: 40px auto; /* Отступ сверху и центрирование */
     padding: 0 20px;
     display: grid;
