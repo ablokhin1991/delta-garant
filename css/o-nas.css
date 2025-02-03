@@ -220,3 +220,65 @@
       font-size: 35px;
     }
   }
+
+  /* Стили для секции команды */
+.team-section {
+    padding: 30px 0;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 30px;
+  }
+  
+  .team-member {
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-5px);
+  }
+  
+  .team-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid #1E3A8A;
+  }
+  
+  .team-description h3 {
+    color: #1E3A8A;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  
+  .team-description p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #666;
+  }
+  
+  /* Адаптивность для команды */
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .team-photo {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .team-photo {
+      width: 120px;
+      height: 120px;
+    }
+  }
