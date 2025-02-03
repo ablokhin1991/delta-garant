@@ -236,6 +236,9 @@
   .team-member {
     text-align: center;
     transition: transform 0.3s ease;
+    padding: 15px;
+    background: #f4f6fd;
+    border-radius: 6px;
   }
   
   .team-member:hover {
@@ -249,6 +252,15 @@
     object-fit: cover;
     margin: 0 auto 20px;
     /*border: 3px solid #1E3A8A;*/
+    transition: all 0.5s ease; /* Плавный переход */
+    filter: grayscale(100%); /* Черно-белый фильтр */
+  }
+
+  /* Эффект при наведении */
+.team-member:hover .team-photo {
+    filter: grayscale(0%); /* Возвращаем цвет */
+    transform: scale(1.05); /* Легкое увеличение */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тень для выделения */
   }
   
   .team-description h3 {
