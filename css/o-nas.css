@@ -268,12 +268,14 @@
     color: #1E3A8A;
     margin-bottom: 10px;
     font-size: 1.2em;
+    text-align: left;
   }
   
   .team-description p {
     font-size: 0.95em;
     line-height: 1.5;
     color: #666;
+    text-align: left;
   }
 
   .team-description-bio {
