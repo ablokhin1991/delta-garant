@@ -238,7 +238,8 @@
     transition: transform 0.3s ease;
     padding: 15px;
     background: #f4f6fd;
-    border-radius: 6px;
+    border-radius: 6px; 
+    border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
   }
   
   .team-member:hover {
