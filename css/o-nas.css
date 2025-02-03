@@ -260,7 +260,7 @@
     /*border: 3px solid #1E3A8A;*/
     transition: all 0.5s ease; /* Плавный переход */
     filter: grayscale(100%); /* Черно-белый фильтр */
-    order: 2; /* Фото справа */
+    order: 1; /* Фото справа */
     margin-left: auto; /* Выравнивание по правому краю */
   }
 
@@ -274,7 +274,7 @@
   .team-description {
     flex: 1;
     text-align: left;
-    order: 1; /* Текст слева */
+    order: 2; /* Текст слева */
     min-width: 180px;
   }
   
