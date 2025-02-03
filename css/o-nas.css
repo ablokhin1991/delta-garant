@@ -243,12 +243,12 @@
   }
   
   .team-photo {
-    width: 200px;
-    height: 200px;
+    width: 50px;
+    height: 50px;
     border-radius: 8%;
     object-fit: cover;
     margin: 0 auto 20px;
-    border: 3px solid #1E3A8A;
+    /*border: 3px solid #1E3A8A;*/
   }
   
   .team-description h3 {
