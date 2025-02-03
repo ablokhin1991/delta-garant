@@ -63,6 +63,10 @@
     border-radius: 8px;
     border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
   }
+
+  .services-title {
+    margin-top: 20px; /* Регулируйте по необходимости */
+}
   
   .values-list li::before {
     content: "✓";
