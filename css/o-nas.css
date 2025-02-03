@@ -274,6 +274,14 @@
     line-height: 1.5;
     color: #666;
   }
+
+  .team-description-bio {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: justify;
+    color: #333;
+  }
   
   /* Адаптивность для команды */
   @media (max-width: 768px) {
