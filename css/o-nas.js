@@ -32,16 +32,21 @@ function openModal(imgSrc) {
  document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".advantage-icon, .team-photo");
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("scrolled");
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+        
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const elementCenter = rect.top + rect.height / 2; // Центр элемента
+
+            if (elementCenter > windowHeight * 0.4 && elementCenter < windowHeight * 0.6) {
+                element.classList.add("scrolled");
             } else {
-                entry.target.classList.remove("scrolled");
+                element.classList.remove("scrolled");
             }
         });
-    }, { threshold: 0.3 }); // Срабатывает, когда 30% элемента видно
+    }
 
-    elements.forEach(element => observer.observe(element));
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Проверка при загрузке страницы
 });
-

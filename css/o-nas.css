@@ -417,13 +417,14 @@
 
 @media (max-width: 768px) {
     .advantage-icon, .team-photo {
-        transition: transform 0.4s ease-out, filter 0.4s ease-out; /* Добавляем плавное изменение фильтра */
-        filter: grayscale(100%); /* По умолчанию черно-белый */
+        transition: transform 0.4s ease-out, filter 0.4s ease-out;
+        filter: grayscale(100%);
     }
 
     .scrolled {
         transform: scale(1.1);
-        filter: grayscale(0%); /* При скролле цвет возвращается */
+        filter: grayscale(0%);
     }
 }
+
 
