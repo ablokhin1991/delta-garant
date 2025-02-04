@@ -236,12 +236,6 @@
     gap: 40px;
     margin-top: 30px;
   }
-  .advantages-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-top: 30px;
-  }
   
   .team-member {
     display: flex;
@@ -315,10 +309,6 @@
       grid-template-columns: 1fr;
       gap: 30px;
     }
-    .advantages-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
 
     .team-member {
         flex-direction: column;
