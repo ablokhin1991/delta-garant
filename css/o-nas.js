@@ -29,32 +29,50 @@ function openModal(imgSrc) {
 
 
  // Увеличение картинок при скролле в мобильной версии
- document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".advantage-icon, .team-photo");
-    console.log("Найденные элементы:", elements);
-});
-
-
- document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
     const elements = document.querySelectorAll(".advantage-icon, .team-photo");
 
-    if (!elements.length) {
-        console.error("Элементы .advantage-icon и .team-photo не найдены!");
+    if (elements.length === 0) {
+        console.warn("Элементы .advantage-icon и .team-photo не найдены!");
         return;
     }
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("scrolled");
-            } else {
-                entry.target.classList.remove("scrolled");
-            }
-        });
-    }, { threshold: 0.3 }); // Начнем анимацию, когда 30% элемента видимо
+    console.log("Найденные элементы:", elements);
 
-    elements.forEach(element => observer.observe(element));
-});
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log("Добавляем .scrolled:", entry.target);
+                    entry.target.classList.add("scrolled");
+                } else {
+                    console.log("Удаляем .scrolled:", entry.target);
+                    entry.target.classList.remove("scrolled");
+                }
+            });
+        });
+
+        elements.forEach(element => observer.observe(element));
+    } else {
+        console.warn("IntersectionObserver не поддерживается! Фолбэк на scroll.");
+        
+        function handleScroll() {
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    console.log("Добавляем .scrolled:", element);
+                    element.classList.add("scrolled");
+                } else {
+                    console.log("Удаляем .scrolled:", element);
+                    element.classList.remove("scrolled");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+    }
+};
 
 
 
