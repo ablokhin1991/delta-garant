@@ -29,36 +29,26 @@ function openModal(imgSrc) {
 
 
  // Увеличение картинок при скролле в мобильной версии
- window.onload = function () {
+ document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".advantage-icon, .team-photo");
 
-    if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("scrolled");
-                } else {
-                    entry.target.classList.remove("scrolled");
-                }
-            });
-        });
-
-        elements.forEach(element => observer.observe(element));
-    } else {
-        // Фолбэк для старых браузеров
-        function handleScroll() {
-            elements.forEach(element => {
-                const rect = element.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    element.classList.add("scrolled");
-                } else {
-                    element.classList.remove("scrolled");
-                }
-            });
-        }
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
+    if (!elements.length) {
+        console.error("Элементы .advantage-icon и .team-photo не найдены!");
+        return;
     }
-};
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("scrolled");
+            } else {
+                entry.target.classList.remove("scrolled");
+            }
+        });
+    }, { threshold: 0.3 }); // Начнем анимацию, когда 30% элемента видимо
+
+    elements.forEach(element => observer.observe(element));
+});
+
 
 
