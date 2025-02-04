@@ -29,50 +29,35 @@ function openModal(imgSrc) {
 
 
  // Увеличение картинок при скролле в мобильной версии
-window.onload = function () {
+ document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".advantage-icon, .team-photo");
 
-    if (elements.length === 0) {
-        console.warn("Элементы .advantage-icon и .team-photo не найдены!");
+    if (!elements.length) {
+        console.error("Элементы .advantage-icon и .team-photo не найдены!");
         return;
     }
 
-    console.log("Найденные элементы:", elements);
+    const activeElements = new Set();
 
-    if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    console.log("Добавляем .scrolled:", entry.target);
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!activeElements.has(entry.target)) {
                     entry.target.classList.add("scrolled");
-                } else {
-                    console.log("Удаляем .scrolled:", entry.target);
-                    entry.target.classList.remove("scrolled");
+                    activeElements.add(entry.target);
+                    console.log("Добавляем .scrolled:", entry.target);
                 }
-            });
+            } else {
+                setTimeout(() => {
+                    if (!entry.isIntersecting) {
+                        entry.target.classList.remove("scrolled");
+                        activeElements.delete(entry.target);
+                        console.log("Удаляем .scrolled:", entry.target);
+                    }
+                }, 300); // 300 мс задержки перед удалением
+            }
         });
+    }, { threshold: 0.5 }); // Уменьшили порог до 50% видимости
 
-        elements.forEach(element => observer.observe(element));
-    } else {
-        console.warn("IntersectionObserver не поддерживается! Фолбэк на scroll.");
-        
-        function handleScroll() {
-            elements.forEach(element => {
-                const rect = element.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    console.log("Добавляем .scrolled:", element);
-                    element.classList.add("scrolled");
-                } else {
-                    console.log("Удаляем .scrolled:", element);
-                    element.classList.remove("scrolled");
-                }
-            });
-        }
-
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-    }
-};
-
-
-
+    elements.forEach(element => observer.observe(element));
+});
