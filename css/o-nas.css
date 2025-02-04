@@ -339,14 +339,63 @@
     padding: 0;
 }
 .advantages-list li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     border-left: 4px solid #1E3A8A;
+}
+/* Текст внутри карточки */
+.advantage-text {
+    flex: 1;
+    line-height: 1.5;
 }
 .advantage-item {
     display: flex;
-    list-style: none;
+    align-items: center;
+    justify-content: flex-start;
+    background: #f4f6fd;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #1E3A8A;
+    min-height: 100%; /* Равномерная высота карточек */
 }
+/* Контейнер внутри карточки */
+.advantage-content {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Отступ между иконкой и текстом */
+    width: 100%;
+}
+/* Иконка слева (аналог team-photo) */
+.advantage-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    filter: grayscale(100%);
+    flex-shrink: 0;
+}
+
+/* Эффект при наведении */
+.advantage-item:hover .advantage-icon {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 @media (min-width: 768px) { /* На планшетах и десктопе */
     .advantages-list {
         grid-template-columns: repeat(2, 1fr); /* Две колонки */
+    }
+    .advantage-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (max-width: 480px) {
+    .advantage-icon {
+        width: 50px;
+        height: 50px;
     }
 }
