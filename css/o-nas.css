@@ -322,6 +322,9 @@
       order: 1;
       margin: 0 auto 15px;
     }
+    .scrolled .team-photo {  
+        transform: scale(1.05);  
+    }
   }
   
   @media (max-width: 480px) {
