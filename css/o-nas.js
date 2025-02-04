@@ -38,8 +38,10 @@ function openModal(imgSrc) {
         elements.forEach(element => {
             const rect = element.getBoundingClientRect();
             const elementCenter = rect.top + rect.height / 2; // Центр элемента
+            const activationZoneTop = 100; // Верхний запас
+            const activationZoneBottom = windowHeight - 100; // Нижний запас
 
-            if (elementCenter > windowHeight * 0.4 && elementCenter < windowHeight * 0.6) {
+            if (elementCenter > activationZoneTop && elementCenter < activationZoneBottom) {
                 element.classList.add("scrolled");
             } else {
                 element.classList.remove("scrolled");
@@ -48,5 +50,6 @@ function openModal(imgSrc) {
     }
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Проверка при загрузке страницы
+    handleScroll(); // Запуск проверки при загрузке страницы
 });
+
