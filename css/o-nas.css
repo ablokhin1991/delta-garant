@@ -359,6 +359,13 @@
     border-left: 4px solid #1E3A8A;
     min-height: 100%; /* Равномерная высота карточек */
 }
+/* Убираем border-left у текста */
+.advantage-item li {
+    list-style: none;
+    border-left: none !important;
+    margin: 0;
+    padding: 0;
+}
 /* Контейнер внутри карточки */
 .advantage-content {
     display: flex;
