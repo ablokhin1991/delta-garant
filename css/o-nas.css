@@ -414,3 +414,13 @@
     }
     
 }
+
+@media (max-width: 768px) {
+    .advantage-icon, .team-photo {
+        transition: transform 0.4s ease-out;
+    }
+
+    .scrolled {
+        transform: scale(1.1);
+    }
+}

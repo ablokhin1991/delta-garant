@@ -29,4 +29,19 @@ function openModal(imgSrc) {
 
 
  // Увеличение картинок при скролле в мобильной версии
- 
+ document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".advantage-icon, .team-photo");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("scrolled");
+            } else {
+                entry.target.classList.remove("scrolled");
+            }
+        });
+    }, { threshold: 0.3 }); // Срабатывает, когда 30% элемента видно
+
+    elements.forEach(element => observer.observe(element));
+});
+
