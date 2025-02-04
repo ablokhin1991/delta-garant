@@ -26,3 +26,21 @@ function openModal(imgSrc) {
       //});
    // });//
   //});
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const icons = document.querySelectorAll(".advantage-icon");
+
+    function handleScroll() {
+        icons.forEach(icon => {
+            const rect = icon.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                icon.classList.add("scrolled");
+            } else {
+                icon.classList.remove("scrolled");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+});
