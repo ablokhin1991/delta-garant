@@ -30,6 +30,13 @@
   .mission-section {
     margin: 30px 0; /* Уменьшаем отступ для компактности */
   }
+
+  .advantages-list {
+    display: grid;
+    grid-template-columns: 1fr; /* По умолчанию – одна колонка (мобильная версия) */
+    gap: 20px;
+    align-items: stretch; /* Растягивает все карточки до самой высокой */
+  }
   
   /* Стили списков */
   .advantages-list li,
