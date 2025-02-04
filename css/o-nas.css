@@ -356,7 +356,7 @@
     background: #f4f6fd;
     padding: 20px;
     border-radius: 6px;
-    border-left: 4px solid #1E3A8A;
+    /*border-left: 4px solid #1E3A8A;*/
     min-height: 100%; /* Равномерная высота карточек */
 }
 /* Контейнер внутри карточки */
