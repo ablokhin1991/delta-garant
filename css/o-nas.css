@@ -179,21 +179,11 @@
     color: #1E3A8A; /* Изменяем цвет при наведении */
   }
   
-  .advantages-list {
-    display: grid;
-    grid-template-columns: 1fr; /* По умолчанию одна колонка */
-    gap: 15px; /* Отступ между карточками */
-}
-
   /* Адаптивность */
   @media (max-width: 768px) {
     .content-card {
       padding: 20px;
       margin: 15px auto;
-    }
-
-    .advantages-list {
-        grid-template-columns: repeat(2, 1fr); /* Две колонки */
     }
     
     .content-card + .content-card {
