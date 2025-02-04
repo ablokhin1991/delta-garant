@@ -330,3 +330,23 @@
       height: 50px;
     }
   }
+
+  /**************************************************************************************/
+  .advantages-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка по умолчанию */
+    gap: 15px; /* Отступ между карточками */
+    padding: 0;
+}
+.advantages-list li {
+    border-left: 4px solid #1E3A8A;
+}
+.advantage-item {
+    display: flex;
+    list-style: none;
+}
+@media (min-width: 768px) { /* На планшетах и десктопе */
+    .advantages-list {
+        grid-template-columns: repeat(2, 1fr); /* Две колонки */
+    }
+}
