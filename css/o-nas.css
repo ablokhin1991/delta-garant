@@ -378,19 +378,19 @@
 .advantage-icon {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     object-fit: cover;
     transition: all 0.5s ease;
-    filter: grayscale(100%);
+    /*filter: grayscale(100%);*/
     flex-shrink: 0;
 }
 
 /* Эффект при наведении */
-/*.advantage-item:hover .advantage-icon {
-    filter: grayscale(0%);
+.advantage-item:hover .advantage-icon {
+    /*filter: grayscale(0%);*/
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}*/
+    /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);*/
+}
 
 @media (min-width: 768px) { /* На планшетах и десктопе */
     .advantages-list {
