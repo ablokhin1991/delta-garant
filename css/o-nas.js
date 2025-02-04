@@ -27,16 +27,18 @@ function openModal(imgSrc) {
    // });//
   //});
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const icons = document.querySelectorAll(".advantage-icon");
+
+ // Увеличение картинок при скролле в мобильной версии
+ document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".advantage-icon, .team-photo");
 
     function handleScroll() {
-        icons.forEach(icon => {
-            const rect = icon.getBoundingClientRect();
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
             if (rect.top < window.innerHeight && rect.bottom > 0) {
-                icon.classList.add("scrolled");
+                element.classList.add("scrolled");
             } else {
-                icon.classList.remove("scrolled");
+                element.classList.remove("scrolled");
             }
         });
     }
@@ -44,3 +46,4 @@ function openModal(imgSrc) {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 });
+
