@@ -322,9 +322,7 @@
       order: 1;
       margin: 0 auto 15px;
     }
-    .scrolled .team-photo {  
-        transform: scale(1.05);  
-    }
+  
   }
   
   @media (max-width: 480px) {
@@ -333,9 +331,7 @@
       height: 90px;
       transition: transform 0.3s ease-in-out;
     }
-    .scrolled .team-photo {  
-        transform: scale(1.05);  
-    }
+   
   }
 
   /**************************************************************************************/
@@ -408,9 +404,7 @@
         height: 60px;
         transition: transform 0.3s ease-in-out;
     }
-    .scrolled .advantage-icon {  
-        transform: scale(1.1);  
-    }
+  
 }
 @media (max-width: 480px) {
     .advantage-icon {
@@ -418,11 +412,5 @@
         height: 50px;
         transition: transform 0.3s ease-in-out;
     }
-    .scrolled .advantage-icon {  
-        transform: scale(1.1);  
-    }
-}
-
-.scrolled {
-    outline: 2px solid red !important; /* Временная отладка */
+    
 }

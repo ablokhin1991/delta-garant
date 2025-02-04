@@ -29,35 +29,4 @@ function openModal(imgSrc) {
 
 
  // Увеличение картинок при скролле в мобильной версии
- document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".advantage-icon, .team-photo");
-
-    if (!elements.length) {
-        console.error("Элементы .advantage-icon и .team-photo не найдены!");
-        return;
-    }
-
-    const activeElements = new Set();
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (!activeElements.has(entry.target)) {
-                    entry.target.classList.add("scrolled");
-                    activeElements.add(entry.target);
-                    console.log("Добавляем .scrolled:", entry.target);
-                }
-            } else {
-                setTimeout(() => {
-                    if (!entry.isIntersecting) {
-                        entry.target.classList.remove("scrolled");
-                        activeElements.delete(entry.target);
-                        console.log("Удаляем .scrolled:", entry.target);
-                    }
-                }, 300); // 300 мс задержки перед удалением
-            }
-        });
-    }, { threshold: 0.5 }); // Уменьшили порог до 50% видимости
-
-    elements.forEach(element => observer.observe(element));
-});
+ 
