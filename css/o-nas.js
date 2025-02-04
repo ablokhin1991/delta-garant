@@ -31,6 +31,12 @@ function openModal(imgSrc) {
  // Увеличение картинок при скролле в мобильной версии
  document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".advantage-icon, .team-photo");
+    console.log("Найденные элементы:", elements);
+});
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".advantage-icon, .team-photo");
 
     if (!elements.length) {
         console.error("Элементы .advantage-icon и .team-photo не найдены!");
