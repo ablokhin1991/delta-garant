@@ -64,6 +64,14 @@
     border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
   }
 
+  .clients-list {
+    margin: 25px 0;
+    padding: 20px;
+    background: #f4f6fd;
+    border-radius: 8px;
+    border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+  }
+
   .services-title {
     margin-top: 20px; /* Регулируйте по необходимости */
 }
