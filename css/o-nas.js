@@ -53,3 +53,11 @@ function openModal(imgSrc) {
     handleScroll(); // Запуск проверки при загрузке страницы
 });
 
+function openModal(imgSrc) {
+  document.getElementById('modalImage').src = imgSrc;
+  document.getElementById('reviewModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('reviewModal').style.display = 'none';
+}
