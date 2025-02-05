@@ -128,38 +128,38 @@
   
   .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    gap: 20px; /* Увеличиваем промежуток между элементами */
+    padding: 20px 0;
   }
   
   .review-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Объединяем transition */
-    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f4f6fd;
+    aspect-ratio: 0.707; /* Соотношение сторон А4 (1/√2) */
   }
   
   .review-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавляем тень при ховере */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
   
   .review-thumbnail {
-    height: 150px; /* Фиксированная высота миниатюр */
-    width: auto; /* Автоматическая ширина */
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    transition: all 0.5s ease;
+    filter: grayscale(100%) contrast(90%);
+    padding: 15px;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
+}
   
   .review-card:hover .review-thumbnail {
-    transform: scale(1.05);
+    filter: grayscale(0%) contrast(100%);
+    transform: scale(1.02);
   }
   
   /* Модальное окно */
@@ -167,11 +167,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
   }
   
   .modal-content {
@@ -180,20 +175,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
 }
 
 .modal img {
-  width: auto;
-  height: 90vh;
   max-width: 100%;
-  object-fit: contain;
+    max-height: 80vh;
+    object-fit: contain;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-
-  /*.modal-image {
-    max-width: 100%;
-    max-height: 90vh;
-    display: block;
-  }*/
   
   .close {
     position: absolute;
@@ -222,15 +214,27 @@
   
     .reviews-grid {
       grid-template-columns: 1fr;
+      gap: 15px;
     }
+
+    .review-card {
+      aspect-ratio: unset;
+      height: auto;
+  }
     
     .modal-content {
       width: 95%;
     }
+
+    .modal-content {
+      padding: 10px;
+      max-width: 95%;
+  }
     
     .review-thumbnail {
-      height: 150px;
-    }
+      padding: 10px;
+      filter: grayscale(0%); /* На мобилках сразу цветные */
+   }
   
     .values-list li::before {
       margin-right: 8px; /* Уменьшаем отступ для мобилок */
@@ -243,17 +247,21 @@
   }
   
   @media (max-width: 480px) {
-    .modal-content {
-      width: 100%;
-      padding: 10px;
+    .review-thumbnail {
+        padding: 5px;
     }
     
-    .close {
-      top: 15px;
-      right: 25px;
-      font-size: 35px;
+    .modal img {
+        max-height: 90vh;
     }
+}
+
+/* Гарантируем что последний элемент растягивается на всю ширину в мобильной версии */
+@media (max-width: 768px) {
+  .reviews-grid > .review-card:last-child {
+      grid-column: 1 / -1;
   }
+}
 
   /* Стили для секции команды */
 .team-section {
