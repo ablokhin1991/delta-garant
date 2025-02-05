@@ -82,6 +82,12 @@
     margin-right: 12px;
     font-weight: 700; /* Делаем галочку заметнее */
   }
+  .clients-list li::before {
+    content: "✓";
+    color: #1E3A8A;
+    margin-right: 12px;
+    font-weight: 700; /* Делаем галочку заметнее */
+  }
   
   /* Стили CTA блока */
   .cta-block {
