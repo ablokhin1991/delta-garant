@@ -27,7 +27,8 @@
   .intro-section,
   .values-section,
   .clients-section,
-  .mission-section {
+  .mission-section,
+  .reviews-section {
     margin: 30px 0; /* Уменьшаем отступ для компактности */
   }
   
