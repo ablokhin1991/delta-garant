@@ -30,7 +30,7 @@ function openModal(imgSrc) {
 
  // Увеличение картинок при скролле в мобильной версии
  document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".advantage-icon, .team-photo");
+    const elements = document.querySelectorAll(".advantage-icon, .team-photo, .review-thumbnail");
 
     function handleScroll() {
         const windowHeight = window.innerHeight;

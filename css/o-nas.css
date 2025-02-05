@@ -449,7 +449,7 @@
 }
 
 @media (max-width: 768px) {
-    .advantage-icon, .team-photo {
+    .advantage-icon, .team-photo, .review-thumbnail {
         transition: transform 0.4s ease-out, filter 0.8s ease-out; /* Увеличили плавность фильтра */
         filter: grayscale(100%);
     }
