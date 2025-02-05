@@ -51,8 +51,7 @@
     font-size: 1.05em; /* Делаем текст чуть крупнее */
   }
 
-  .advantages-list li,
-  .clients-list li {
+  .advantages-list li {
     border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
   }
 
