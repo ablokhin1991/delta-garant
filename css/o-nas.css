@@ -158,7 +158,7 @@
 }
   
   .review-card:hover .review-thumbnail {
-    /*filter: grayscale(0%) contrast(100%);*/
+    filter: grayscale(0%) contrast(100%);
     transform: scale(1.02);
   }
   
