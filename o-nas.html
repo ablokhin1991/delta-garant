@@ -208,38 +208,45 @@
     </div>
 
     <!-- Reviews Section Card -->
-    <div class="content-card">
-      <section class="reviews-section">
-        <h2>Отзывы наших клиентов</h2>
-        <div class="reviews-grid">
-          <div class="review-card" onclick="openModal('images/review/Otziv-1.webp')">
-            <img src="images/review/Otziv-1.webp" alt="Отзыв клиента" class="review-thumbnail">
-          </div>
-          <div class="review-card" onclick="openModal('images/review/Otziv-2.webp')">
-            <img src="images/review/Otziv-2.webp" alt="Отзыв клиента" class="review-thumbnail">
-          </div>
-          <div class="review-card" onclick="openModal('images/review/Otziv-3.webp')">
-            <img src="images/review/Otziv-3.webp" alt="Отзыв клиента" class="review-thumbnail">
-          </div>
-          <div class="review-card" onclick="openModal('images/review/Otziv-4.webp')">
-            <img src="images/review/Otziv-4.webp" alt="Отзыв клиента" class="review-thumbnail">
-          </div>
-          <div class="review-card" onclick="openModal('images/review/Otziv-5.webp')">
-            <img src="images/review/Otziv-5.webp" alt="Отзыв клиента" class="review-thumbnail">
-          </div>
-          <div class="review-card" onclick="openModal('images/review/Otziv-6.webp')">
-            <img src="images/review/Otziv-6.webp" alt="Отзыв клиента" class="review-thumbnail">
-          </div>
-          <div class="review-card" onclick="openModal('images/review/Otziv-7.webp')">
-            <img src="images/review/Otziv-7.webp" alt="Отзыв клиента" class="review-thumbnail">
-          </div>
-          <div class="review-card" onclick="openModal('images/review/Otziv-8.webp')">
-            <img src="images/review/Otziv-8.webp" alt="Отзыв клиента" class="review-thumbnail">
-          </div>
-        </div>
-      </section>
+<div class="content-card">
+  <section class="reviews-section">
+    <h2>Отзывы наших клиентов</h2>
+    <div class="reviews-grid">
+      <div class="review-card" onclick="openModal('images/review/Otziv-1.webp')">
+        <img src="images/review/Otziv-1.webp" alt="Отзыв клиента" class="review-thumbnail">
+      </div>
+      <div class="review-card" onclick="openModal('images/review/Otziv-2.webp')">
+        <img src="images/review/Otziv-2.webp" alt="Отзыв клиента" class="review-thumbnail">
+      </div>
+      <div class="review-card" onclick="openModal('images/review/Otziv-3.webp')">
+        <img src="images/review/Otziv-3.webp" alt="Отзыв клиента" class="review-thumbnail">
+      </div>
+      <div class="review-card" onclick="openModal('images/review/Otziv-4.webp')">
+        <img src="images/review/Otziv-4.webp" alt="Отзыв клиента" class="review-thumbnail">
+      </div>
+      <div class="review-card" onclick="openModal('images/review/Otziv-5.webp')">
+        <img src="images/review/Otziv-5.webp" alt="Отзыв клиента" class="review-thumbnail">
+      </div>
+      <div class="review-card" onclick="openModal('images/review/Otziv-6.webp')">
+        <img src="images/review/Otziv-6.webp" alt="Отзыв клиента" class="review-thumbnail">
+      </div>
+      <div class="review-card" onclick="openModal('images/review/Otziv-7.webp')">
+        <img src="images/review/Otziv-7.webp" alt="Отзыв клиента" class="review-thumbnail">
+      </div>
+      <div class="review-card" onclick="openModal('images/review/Otziv-8.webp')">
+        <img src="images/review/Otziv-8.webp" alt="Отзыв клиента" class="review-thumbnail">
+      </div>
     </div>
+  </section>
+</div>
+
+<!-- Модальное окно -->
+<div id="reviewModal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <img id="modalImage" class="modal-image" alt="Отзыв клиента">
+    <span class="close" onclick="closeModal()">&times;</span>
   </div>
+</div>
   
     <!-- Mission Section Card -->
     <div class="content-card">
