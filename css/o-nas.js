@@ -52,3 +52,36 @@ function openModal(imgSrc) {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Запуск проверки при загрузке страницы
 });
+
+// Добавляем этот скрипт для модального окна отзывов
+
+let currentModal = null;
+
+function openModal(imgSrc) {
+    currentModal = document.querySelector('.modal');
+    const modalImg = currentModal.querySelector('.modal-img');
+    modalImg.src = imgSrc;
+    currentModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    if (currentModal) {
+        currentModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Закрытие по клику вне изображения
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        closeModal();
+    }
+});
+
+// Закрытие по ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && currentModal.classList.contains('active')) {
+        closeModal();
+    }
+});

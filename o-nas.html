@@ -249,7 +249,13 @@
     </div>
   </section>
 </div>
-
+<!-- Добавляем модальное окно в конец HTML -->
+<div class="modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <div class="modal-content" onclick="event.stopPropagation()">
+      <img class="modal-img" src="" alt="Увеличенный отзыв">
+  </div>
+</div>
   
     <!-- Mission Section Card -->
     <div class="content-card">
