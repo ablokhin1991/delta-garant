@@ -233,7 +233,8 @@
     
     .review-thumbnail {
       padding: 10px;
-      filter: grayscale(0%); /* На мобилках сразу цветные */
+      transition: all 0.5s ease;
+      /*filter: grayscale(0%); /* На мобилках сразу цветные */
    }
   
     .values-list li::before {
