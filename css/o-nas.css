@@ -369,6 +369,7 @@
         flex-direction: column;
         text-align: center;
         padding: 25px;
+        display: flex; /* Добавлено, чтобы flex не пропадал */
     }
     
     .team-photo {
