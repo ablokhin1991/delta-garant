@@ -287,9 +287,9 @@
   
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Гибкая адаптация */
     gap: 40px;
-    margin-top: 30px;
+    max-width: 100%;
   }
   
   .team-member {
@@ -304,6 +304,8 @@
     background: #f4f6fd;
     border-radius: 6px; 
     border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+    max-width: 100%;
+    overflow: hidden;
   }
   
   .team-member:hover {
