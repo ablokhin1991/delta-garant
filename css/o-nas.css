@@ -382,6 +382,13 @@
     }
   
   }
+
+  /* Как только не помещаются три колонки, сразу переключаемся на одну */
+@media (max-width: 1024px) {
+  .team-grid {
+      grid-template-columns: 1fr; /* Одна колонка */
+  }
+}
   
   @media (max-width: 480px) {
     .team-photo {
