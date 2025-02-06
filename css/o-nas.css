@@ -518,4 +518,46 @@
 }
 
 
+/* Контейнер для текста и картинки */
+.intro-content {
+  display: flex;
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  gap: 20px;
+}
+
+/* Левая часть (текст) */
+.intro-text {
+  flex: 1; /* Текст занимает доступное пространство */
+  max-width: 60%; /* Ограничиваем, чтобы картинка имела место */
+}
+
+/* Правая часть (картинка) */
+.intro-image {
+  flex: 0 0 auto; /* Фиксируем ширину картинки */
+}
+
+.intro-image img {
+  width: auto; /* Автоширина */
+  height: 100%; /* Всегда равна высоте первых двух абзацев */
+  max-height: 100%; /* Подстраховка */
+  object-fit: cover; /* Подгоняет изображение без искажений */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 1024px) {
+  .intro-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .intro-text {
+      max-width: 100%; /* Текст теперь на всю ширину */
+      text-align: center;
+  }
+
+  .intro-image img {
+      width: 80%; /* Уменьшаем изображение для мобильных */
+      height: auto; /* Обычная высота */
+  }
+}
 
