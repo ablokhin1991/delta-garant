@@ -562,13 +562,13 @@
   }
 
   .intro-image {
+    padding-top: 25px;
     order: -1; /* Перемещаем картинку вверх */
     width: 100%; /* Растягиваем на всю ширину */
     max-width: 100%;
   }
 
   .intro-image img {
-    padding-top: 25px;
     width: 100%; /* Растягиваем картинку на всю ширину контейнера */
     height: auto; /* Автоматическая высота */
   }
