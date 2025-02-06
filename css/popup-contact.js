@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const popup = document.querySelector(".popup-contact");
     const closeButton = document.querySelector(".popup-contact__close");
     const body = document.body;
-    const phoneInput = document.querySelector("#popup-contact-phone");
+    const phoneInput = document.querySelector("#popup-contact-phone"); // Исправленный селектор
     const form = document.querySelector(".popup-contact__form");
 
     // Открытие popup
@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
     popupOverlay.addEventListener("click", closePopup);
 
     // ==============================
-    // 📞 Маска для телефона
+    // 📞 Маска для телефона (исправлено!)
     // ==============================
     document.addEventListener("input", (event) => {
-        if (event.target.classList.contains("phone-mask")) {
+        if (event.target.id === "popup-contact-phone") {
             event.target.value = event.target.value.replace(/[^0-9+]/g, "");
         }
     });
@@ -72,9 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let value = this.value.replace(/\D/g, "");
 
         if (countryCode === "ru") {
-            // Убираем код страны 7 из обработки
             value = value.substring(0, 10);
-            
             let formattedValue = "";
             if (value.length > 0) {
                 formattedValue = "(" + value.substring(0, 3);
