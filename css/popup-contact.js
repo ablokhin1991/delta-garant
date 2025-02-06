@@ -72,7 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let value = this.value.replace(/\D/g, "");
 
         if (countryCode === "ru") {
+            // Убираем код страны 7 из обработки
             value = value.substring(0, 10);
+            
             let formattedValue = "";
             if (value.length > 0) {
                 formattedValue = "(" + value.substring(0, 3);
