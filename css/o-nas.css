@@ -551,7 +551,7 @@
 /* Адаптация для мобильных устройств */
 @media (max-width: 1024px) {
   .intro-content {
-      flex-direction: column;
+      flex-direction: column-reverse; /* Перемещаем картинку вверх */
       align-items: center;
   }
 
