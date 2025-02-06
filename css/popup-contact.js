@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const popupOverlay = document.querySelector(".popup-contact__overlay");
     const popup = document.querySelector(".popup-contact");
     const closeButton = document.querySelector(".popup-contact__close");
@@ -141,4 +141,35 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
         }
     });
+
+    // ==============================
+    // 📱 Анимация возврата формы в нормальное состояние
+    // ==============================
+    function resetFormScale() {
+        body.classList.add("reset-scale");
+        setTimeout(() => {
+            body.classList.remove("reset-scale");
+        }, 300);
+    }
+
+    function closeKeyboard() {
+        document.activeElement.blur();
+        resetFormScale();
+    }
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        closeKeyboard();
+    });
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+        body {
+            transition: transform 0.3s ease-in-out;
+        }
+        .reset-scale {
+            transform: scale(1);
+        }
+    `;
+    document.head.appendChild(style);
 });
