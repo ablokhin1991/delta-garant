@@ -231,6 +231,7 @@
 
     .ps-note {
       letter-spacing: normal; /* Стандартное расстояние между буквами */
+      text-align: justify;
     }
     
     .content-card + .content-card {
