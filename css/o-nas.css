@@ -306,6 +306,7 @@
     border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
     max-width: 100%;
     overflow: hidden;
+    flex-wrap: wrap; /* Позволяем элементам переноситься */
   }
   
   .team-member:hover {
@@ -337,6 +338,9 @@
     text-align: left;
     order: 2; /* Текст слева */
     min-width: 180px;
+    max-width: 100%; /* Не позволяем выходить за границы */
+    word-wrap: break-word; /* Принудительный перенос длинных слов */
+    overflow-wrap: break-word;
   }
   
   .team-description h3 {
@@ -359,6 +363,27 @@
     color: #333;
     margin-top: 20px;
   }
+
+  /* Чтобы текст не раздувал блок на узких экранах */
+  .team-description h3, 
+  .team-description p, 
+  .team-description-bio {
+    max-width: 100%; /* Ограничиваем ширину */
+    word-break: break-word; /* Переносим длинные слова */
+    overflow-wrap: break-word;
+}
+
+/* Дополнительно на более узких экранах делаем колонку */
+@media (max-width: 1024px) {
+  .team-member {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .team-description {
+      text-align: center;
+  }
+}
   
   /* Адаптивность для команды */
   @media (max-width: 768px) {
