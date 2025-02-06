@@ -552,7 +552,8 @@
 
   .intro-text {
       max-width: 100%; /* Текст теперь на всю ширину */
-      text-align: center;
+      /*text-align: center;*/
+      text-align: justify;
   }
 
   .intro-image img {
