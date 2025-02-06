@@ -228,6 +228,10 @@
       padding: 20px;
       margin: 15px auto;
     }
+
+    .ps-note {
+      letter-spacing: normal; /* Стандартное расстояние между буквами */
+    }
     
     .content-card + .content-card {
       margin-top: 20px;
