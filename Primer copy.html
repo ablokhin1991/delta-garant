@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuroUS Trade - Поставки оборудования и материалов из ЕС и США</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: #002856;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: #f8f9fa;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            color: #002856;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #E67E22;
+            color: #fff;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #D35400;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #002856;
+            margin-bottom: 50px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .work-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            width: 23%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .step-number {
+            background: #002856;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .contacts {
+            background: #002856;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer {
+            background: #001529;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .work-steps .step {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">EUROUS TRADE</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Поставки оборудования и материалов из ЕС и США в условиях санкций</h1>
+            <p>Легальные поставки любого оборудования, станков, стройматериалов и комплектующих с полным таможенным оформлением</p>
+            <a href="#contacts" class="cta-button">Оставить заявку</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Любое промышленное оборудование</h3>
+                    <p>Поставки станков, производственных линий и спецтехники из Европы и США</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Строительные материалы</h3>
+                    <p>Официальные поставки качественных стройматериалов с сертификатами</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Запчасти и комплектующие</h3>
+                    <p>Оперативная доставка любых запчастей для производства и техники</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="work-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Заявка</h3>
+                    <p>Вы отправляете спецификацию товара</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Оплата</h3>
+                    <p>Заключаем договор на 100% предоплату</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Поставка</h3>
+                    <p>Закупаем и доставляем товар под ключ</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Доставка</h3>
+                    <p>Таможенное оформление и передача вам</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-info">
+                <p>Телефон: +7 (495) 123-45-67</p>
+                <p>Email: order@eurotrade.ru</p>
+                <p>Адрес: Москва, ул. Тверская, 18, офис 305</p>
+                <p>Режим работы: Пн-Пт 9:00-19:00</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 EUROUS TRADE. Все права защищены</p>
+            <p>ИНН 1234567890 ОГРН 1234567890123</p>
+        </div>
+    </footer>
+</body>
+</html>
