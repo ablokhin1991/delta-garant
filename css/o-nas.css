@@ -580,3 +580,27 @@
     height: auto; /* Автоматическая высота */
   }
 }
+/******************************************************************************************************/
+.popup__no-params {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.popup__calculator-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #1E3A8A;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.popup__calculator-button:hover {
+  background-color: #142C66;
+}

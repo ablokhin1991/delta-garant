@@ -16,16 +16,7 @@ function openModal(imgSrc) {
       closeModal();
     }
   }
-  
-  // Плавная прокрутка для якорей
-  //document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-   // anchor.addEventListener('click', function(e) {
-    //  e.preventDefault();
-    //  document.querySelector(this.getAttribute('href')).scrollIntoView({
-     //   behavior: 'smooth'
-      //});
-   // });//
-  //});
+
 
 
  // Увеличение картинок при скролле в мобильной версии
@@ -85,3 +76,49 @@ document.addEventListener('keydown', (e) => {
         closeModal();
     }
 });
+
+
+// popup
+document.addEventListener("DOMContentLoaded", () => {
+  // Функция для открытия popup без параметров (без калькулятора)
+  function openPopupWithoutParams() {
+      const popup = document.querySelector(".popup");
+      const popupOverlay = document.querySelector(".popup__overlay");
+      const body = document.body;
+
+      // Проверяем, существует ли popup
+      if (!popup || !popupOverlay) return;
+
+      // Очищаем параметры и скрываем секцию "Выбранный банк"
+      const parametersContainer = popup.querySelector(".popup__parameters");
+      const bankSection = popup.querySelector(".popup__offer");
+
+      if (parametersContainer) {
+          parametersContainer.innerHTML = `
+              <p class="popup__no-params">
+                  Параметры не выбраны, чтобы выбрать параметры воспользуйтесь калькулятором расчета стоимости гарантии.
+              </p>
+              <a href="/" class="popup__calculator-button">Калькулятор</a>
+          `;
+      }
+
+      // Скрываем "Выбранный банк"
+      if (bankSection) {
+          bankSection.style.display = "none";
+      }
+
+      // Открываем popup
+      popupOverlay.classList.add("popup__overlay--active");
+      popup.classList.add("popup--active");
+      body.style.overflow = "hidden"; // Отключаем скролл фона
+  }
+
+  // Добавляем обработчик на все кнопки "Отправить заявку" и "popup-trigger"
+  document.body.addEventListener("click", (event) => {
+      if (event.target.classList.contains("popup-trigger") || event.target.classList.contains("cta-button")) {
+          event.preventDefault(); // Отменяем стандартное действие ссылки
+          openPopupWithoutParams();
+      }
+  });
+});
+
