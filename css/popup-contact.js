@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const popup = document.querySelector(".popup-contact");
     const closeButton = document.querySelector(".popup-contact__close");
     const body = document.body;
-    const phoneInput = document.querySelector("#popup-contact-phone"); // Исправленный селектор
+    const phoneInput = document.querySelector("#popup-contact-phone"); // Убедимся, что селектор правильный
     const form = document.querySelector(".popup-contact__form");
 
     // Открытие popup
@@ -33,13 +33,23 @@ document.addEventListener("DOMContentLoaded", function () {
     popupOverlay.addEventListener("click", closePopup);
 
     // ==============================
-    // 📞 Маска для телефона (исправлено!)
+    // 📞 Маска для телефона (Окончательная версия!)
     // ==============================
-    document.addEventListener("input", (event) => {
-        if (event.target.id === "popup-contact-phone") {
-            event.target.value = event.target.value.replace(/[^0-9+]/g, "");
+
+    // Функция автоформатирования номера (точно работает!)
+    function formatPhoneNumber(input) {
+        let value = input.value.replace(/\D/g, ""); // Убираем все нецифровые символы
+        if (value.length > 10) value = value.substring(0, 10); // Обрезаем лишние цифры
+
+        let formattedValue = "";
+        if (value.length > 0) {
+            formattedValue = "(" + value.substring(0, 3);
+            if (value.length >= 4) formattedValue += ") " + value.substring(3, 6);
+            if (value.length >= 7) formattedValue += "-" + value.substring(6, 8);
+            if (value.length >= 9) formattedValue += "-" + value.substring(8, 10);
         }
-    });
+        input.value = formattedValue;
+    }
 
     // Инициализация intl-tel-input
     const iti = window.intlTelInput(phoneInput, {
@@ -56,9 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Обработчик смены страны
     phoneInput.addEventListener("countrychange", function() {
         const countryCode = iti.getSelectedCountryData().iso2;
-        phoneInput.placeholder = countryCode === "ru" 
-            ? "(999) 999-99-99" 
-            : "Введите номер телефона";
+        phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
     });
 
     // Блокировка нецифровых символов
@@ -66,28 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!/\d/.test(e.key)) e.preventDefault();
     });
 
-    // Обработчик ввода с маской для России
-    phoneInput.addEventListener("input", function(e) {
+    // 📌 Окончательный фикс: обработка ввода с автоформатом
+    phoneInput.addEventListener("input", function() {
         const countryCode = iti.getSelectedCountryData().iso2;
-        let value = this.value.replace(/\D/g, "");
-
-        if (countryCode === "ru") {
-            value = value.substring(0, 10);
-            let formattedValue = "";
-            if (value.length > 0) {
-                formattedValue = "(" + value.substring(0, 3);
-                if (value.length >= 4) {
-                    formattedValue += ") " + value.substring(3, 6);
-                }
-                if (value.length >= 7) {
-                    formattedValue += "-" + value.substring(6, 8);
-                }
-                if (value.length >= 9) {
-                    formattedValue += "-" + value.substring(8, 10);
-                }
-            }
-            this.value = formattedValue;
-        }
+        if (countryCode === "ru") formatPhoneNumber(phoneInput); // Автоформат только для России
     });
 
     // Валидация при отправке
