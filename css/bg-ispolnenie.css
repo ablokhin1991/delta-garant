@@ -104,7 +104,6 @@ padding-left: 70px;
     display: flex; /* Включаем flex-контейнер */
     align-items: center; /* Выравниваем текст по высоте */
     justify-content: center; /* Центрируем текст */
-    height: 50px; /* Фиксированная высота (по необходимости) */
     padding: 10px 20px; /* Внутренние отступы */
     font-size: 16px; /* Размер шрифта */
     text-align: center;
@@ -112,4 +111,5 @@ padding-left: 70px;
     text-decoration: none;
     margin-top: 0px;
     align-items: stretch; /* Растягиваем кнопки на одинаковую высоту */
+    height: 70px;
 }
