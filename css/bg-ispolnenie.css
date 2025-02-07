@@ -97,6 +97,27 @@ margin-bottom: 40px;
 
 /* СТИЛИ СПИСКОВ конец */
 
+
+/* ТЕКСТ ВНУТРИ КАРТОЧЕК */
+.advantage-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #f4f6fd;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #1E3A8A;
+    min-height: 100%; /* Равномерная высота карточек */
+}
+/* Убираем border-left у текста */
+.advantage-item li {
+    list-style: none;
+    border-left: none !important;
+    margin: 0;
+    padding: 0;
+}
+/* ТЕКСТ ВНУТРИ КАРТОЧЕК конец */
+
 .legislation-cards {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
