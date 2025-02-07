@@ -116,6 +116,13 @@ margin-bottom: 40px;
     margin: 0;
     padding: 0;
 }
+
+/* Текст внутри карточки */
+.advantage-text {
+    flex: 1;
+    line-height: 1.5;
+}
+
 /* ТЕКСТ ВНУТРИ КАРТОЧЕК конец */
 
 
