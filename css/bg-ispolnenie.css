@@ -64,7 +64,8 @@ margin-bottom: 40px;
 .advantages-list {
     margin: 25px 0;
     display: grid;
-    grid-template-columns: 1fr; /* Одна колонка по умолчанию */
+    /*grid-template-columns: 1fr; /* Одна колонка по умолчанию */
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px; /* Отступ между карточками */
     padding: 0;
 }
