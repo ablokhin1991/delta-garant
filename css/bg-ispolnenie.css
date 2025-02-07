@@ -100,16 +100,13 @@ padding-left: 70px;
 
 
 
-.cta-button, .calculator-button {
-    display: flex; /* Включаем flex-контейнер */
-    align-items: center; /* Выравниваем текст по высоте */
-    justify-content: center; /* Центрируем текст */
-    padding: 10px 20px; /* Внутренние отступы */
-    font-size: 16px; /* Размер шрифта */
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 0px;
-    align-items: stretch; /* Растягиваем кнопки на одинаковую высоту */
+.btn_primary, .calculator-button {
+    display: inline-block;
     height: 70px;
+    line-height: 70px; /* Совпадает с высотой */
+    text-align: center;
+    padding: 0 20px; /* Оставляем отступы по бокам */
+    border-radius: 8px;
+    text-decoration: none;
 }
+
