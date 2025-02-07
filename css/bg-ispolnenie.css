@@ -90,6 +90,11 @@ margin-bottom: 40px;
   border-radius: 8px;
   border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
 }
+
+.advantages-list li {
+    border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+}
+
 /* СТИЛИ СПИСКОВ конец */
 
 .legislation-cards {
