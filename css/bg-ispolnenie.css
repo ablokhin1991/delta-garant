@@ -59,8 +59,6 @@ font-weight: 700;
 
 .dual-buttons {
 display: flex;
-align-items: center; /* Выравнивание по вертикали */
-    justify-content: center; /* Выравнивание по горизонтали */
 gap: 20px;
 flex-wrap: wrap;
 margin: 30px 0;
