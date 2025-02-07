@@ -118,6 +118,17 @@ margin-bottom: 40px;
 }
 /* ТЕКСТ ВНУТРИ КАРТОЧЕК конец */
 
+
+/* КОНТЕЙНЕР ВНУТРИ КАРТОЧКИ */
+.advantage-content {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Отступ между иконкой и текстом */
+    width: 100%;
+}
+/* КОНТЕЙНЕР ВНУТРИ КАРТОЧКИ конец */
+
+
 .legislation-cards {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
