@@ -62,6 +62,7 @@ display: flex;
 gap: 20px;
 flex-wrap: wrap;
 margin: 30px 0;
+align-items: stretch; /* Растягиваем кнопки на одинаковую высоту */
 }
 
 .calculator-button {
@@ -88,4 +89,26 @@ padding-left: 70px;
 .dual-buttons {
     flex-direction: column;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+.cta-button, .calculator-button {
+    display: flex; /* Включаем flex-контейнер */
+    align-items: center; /* Выравниваем текст по высоте */
+    justify-content: center; /* Центрируем текст */
+    height: 50px; /* Фиксированная высота (по необходимости) */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
 }
