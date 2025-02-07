@@ -111,4 +111,5 @@ padding-left: 70px;
     border-radius: 5px;
     text-decoration: none;
     margin-top: 0px;
+    align-items: stretch; /* Растягиваем кнопки на одинаковую высоту */
 }
