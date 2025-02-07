@@ -281,22 +281,45 @@ padding-left: 70px;
 }
 
 
-
-
-
-
-
-
-
-
-
-.btn_primary, .calculator-button {
+/*КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ*/
+.btn_isp {
     display: inline-block;
+    padding: 10px 20px;
+    background: #1E3A8A; /* Фон кнопки */
+    position: relative;
+    border-radius: 8px; /* Скруглённые углы */
+    transition: all 0.1s ease-in-out; /* Плавный переход для эффектов */
+    font-weight: bold;
+    color: #FFF; /* Основной цвет текста */
     height: 70px;
-    line-height: 70px; /* Совпадает с высотой */
-    text-align: center;
-    padding: 0 20px; /* Оставляем отступы по бокам */
-    border-radius: 8px;
-    text-decoration: none;
-}
-
+  
+    /* Тени для объёмного эффекта */
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+                6px 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Эффект при наведении */
+  .btn_isp:hover {
+    /*opacity: 0.8; /* Лёгкая прозрачность */
+    background: #284db5; /* Фон кнопки */
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+                6px 6px 10px rgba(0, 0, 0, 0.2);
+    color: #fff; /* Основной цвет текста */
+  }
+  
+  /* Эффект при нажатии */
+  .btn_isp:active {
+    opacity: 1; /* Полная видимость */
+    background: #284db5; /* Фон кнопки */
+    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+                inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Меняем цвет текста при нажатии */
+  }
+  
+  /* Неактивное состояние */
+  .btn_isp.disabled {
+    opacity: 0.5; /* Прозрачность для неактивной кнопки */
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+                6px 6px 10px rgba(0, 0, 0, 0.2);
+    pointer-events: none; /* Отключаем интерактивность */
+  }
