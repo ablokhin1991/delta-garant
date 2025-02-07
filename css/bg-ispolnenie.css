@@ -44,6 +44,63 @@ margin-bottom: 40px;
 /* ОСНОВНЫЕ СТИЛИ КАРТОЧЕК закончены */
 
 
+/* СТИЛИ СЕКЦИЙ ВНУТРИ КАРТОЧЕКк */
+.content-card section {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .intro-section,
+  .values-section,
+  .process-steps,
+  .clients-section,
+  .mission-section {
+    margin: 30px 0; /* Уменьшаем отступ для компактности */
+}
+/* СТИЛИ СЕКЦИЙ ВНУТРИ КАРТОЧЕК конец */
+
+
+/* СТИЛИ СПИСКОВ */
+.advantages-list li,
+.values-list li,
+.clients-list li {
+  margin: 15px 0;
+  padding: 15px;
+  background: #f4f6fd;
+  border-radius: 6px;
+  list-style: none;
+  line-height: 1.5; /* Улучшаем читаемость */
+}
+
+.advantages-list li strong,
+.clients-list li strong {
+  color: #1E3A8A;
+  display: block;
+  margin-bottom: 8px; /* Увеличиваем отступ */
+  font-size: 1.05em; /* Делаем текст чуть крупнее */
+}
+
+.advantages-list li {
+  border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+}
+
+.values-list {
+  margin: 25px 0;
+  padding: 20px;
+  background: #f4f6fd;
+  border-radius: 8px;
+  border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+}
+
+.clients-list {
+  margin: 25px 0;
+  padding: 20px;
+  background: #f4f6fd;
+  border-radius: 8px;
+  border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+}
+/* СТИЛИ СПИСКОВ конец */
+
 .legislation-cards {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
