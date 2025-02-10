@@ -1,3 +1,9 @@
+/*явное сглаживание шрифтов*/
+body {
+  -webkit-font-smoothing: antialiased; /*делает текст более тонким и четким.*/
+  -moz-osx-font-smoothing: grayscale; /*помогает лучше адаптировать шрифт для macOS.*/
+}
+
 /* Основные стили - наследование из o-nas.css с дополнениями */
 /*@import url('o-nas.css');*/
 
