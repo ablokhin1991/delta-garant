@@ -59,45 +59,6 @@ margin-bottom: 40px;
 }
 /* СТИЛИ СЕКЦИЙ ВНУТРИ КАРТОЧЕК конец */
 
-
-/* СТИЛИ СПИСКОВ */
-.advantages-list {
-    margin: 25px 0;
-    display: grid;
-    /*grid-template-columns: 1fr; /* Одна колонка по умолчанию */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px; /* Отступ между карточками */
-    padding: 0;
-}
-.advantages-list li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    /*border-left: 4px solid #1E3A8A;*/
-}
-
-.advantages-list li,
-.values-list li {
-  margin: 15px 0;
-  padding: 15px;
-  background: #f4f6fd;
-  border-radius: 6px;
-  list-style: none;
-  line-height: 1.5; /* Улучшаем читаемость */
-}
-
-.advantages-list li strong,
-.values-list li strong {
-  color: #1E3A8A;
-  display: block;
-  margin-bottom: 8px; /* Увеличиваем отступ */
-  font-size: 1.05em; /* Делаем текст чуть крупнее */
-}
-
-.advantages-list li {
-  border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
-}
-
 .values-list {
   margin: 25px 0;
   padding: 20px;
@@ -106,121 +67,8 @@ margin-bottom: 40px;
   border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
 }
 
-.advantages-list li {
-    border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
-}
-
 /* СТИЛИ СПИСКОВ конец */
 
-
-/* ТЕКСТ ВНУТРИ КАРТОЧЕК */
-.advantage-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background: #f4f6fd;
-    padding: 20px;
-    border-radius: 6px;
-    border-left: 4px solid #1E3A8A;
-    min-height: 100%; /* Равномерная высота карточек */
-}
-/* Убираем border-left у текста */
-.advantage-item li {
-    list-style: none;
-    border-left: none !important;
-    margin: 0;
-    padding: 0;
-}
-
-/* Текст внутри карточки */
-.advantage-text {
-    flex: 1;
-    line-height: 1.5;
-}
-
-/* ТЕКСТ ВНУТРИ КАРТОЧЕК конец */
-
-
-/* КОНТЕЙНЕР ВНУТРИ КАРТОЧКИ */
-.advantage-content {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Отступ между иконкой и текстом */
-    width: 100%;
-}
-/* КОНТЕЙНЕР ВНУТРИ КАРТОЧКИ конец */
-
-/* ИКОНКА СЛЕВА */
-.advantage-icon {
-    width: 80px;
-    height: 80px;
-    /*border-radius: 50%;*/
-    object-fit: cover;
-    transition: all 0.5s ease;
-    /*filter: grayscale(100%);*/
-    flex-shrink: 0;
-}
-
-/* Эффект при наведении */
-.advantage-item:hover .advantage-icon {
-    /*filter: grayscale(0%);*/
-    transform: scale(1.1);
-    /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);*/
-}
-
-@media (min-width: 768px) { /* На планшетах и десктопе */
-    .advantage-icon {
-        width: 60px;
-        height: 60px;
-        transition: transform 0.3s ease-in-out;
-    }
-  
-}
-@media (max-width: 480px) {
-    .advantage-icon {
-        width: 50px;
-        height: 50px;
-        transition: transform 0.3s ease-in-out;
-    }
-    
-}
-
-@media (max-width: 768px) {
-    .advantage-icon {
-        transition: transform 0.4s ease-out, filter 0.8s ease-out; /* Увеличили плавность фильтра */
-        filter: grayscale(100%);
-    }
-
-    .scrolled {
-        transform: scale(1.1);
-        filter: grayscale(0%);
-    }
-}
-
-@media (max-width: 768px) {
-  .advantages-list {
-    grid-template-columns: 1fr !important; /* Одна колонка */
-    gap: 20px; /* Увеличиваем отступ между элементами */
-  }
-  
-  .advantage-item {
-    width: 100%;
-    margin: 0 !important;
-  }
-  
-  .advantage-content {
-    flex-direction: column; /* Иконка над текстом */
-    align-items: flex-start;
-    gap: 15px;
-  }
-  
-  .advantage-icon {
-    width: 50px !important;
-    height: 50px !important;
-  }
-}
-
-/* ИКОНКА СЛЕВА конец*/
 
 .legislation-cards {
 display: grid;
@@ -346,3 +194,141 @@ padding-left: 70px;
                 6px 6px 10px rgba(0, 0, 0, 0.2);
     pointer-events: none; /* Отключаем интерактивность */
   }
+
+  /* Секция преимуществ -•- Секция преимуществ -•- Секция преимуществ -•- Секция преимуществ -•- Секция преимуществ */
+  /* Стили списков */
+  .advantages-list li {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f4f6fd;
+    border-radius: 6px;
+    list-style: none;
+    line-height: 1.5; /* Улучшаем читаемость */
+  }
+  
+  .advantages-list li strong {
+    color: #1E3A8A;
+    display: block;
+    margin-bottom: 8px; /* Увеличиваем отступ */
+    font-size: 1.05em; /* Делаем текст чуть крупнее */
+  }
+
+  .advantages-list li {
+    border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+  }
+
+  .advantages-list {
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка по умолчанию */
+    gap: 15px; /* Отступ между карточками */
+    padding: 0;
+}
+.advantages-list li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /*border-left: 4px solid #1E3A8A;*/
+}
+
+@media (min-width: 768px) { /* На планшетах и десктопе */
+  .advantages-list {
+      grid-template-columns: repeat(2, 1fr); /* Две колонки */
+  }
+}
+@media (max-width: 768px) {
+  .advantages-list {
+      display: flex;
+      flex-direction: column;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .advantages-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.advantage-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #f4f6fd;
+  padding: 20px;
+  border-radius: 6px;
+  border-left: 4px solid #1E3A8A;
+  min-height: 100%; /* Равномерная высота карточек */
+}
+/* Убираем border-left у текста */
+.advantage-item li {
+  list-style: none;
+  border-left: none !important;
+  margin: 0;
+  padding: 0;
+}
+/* Эффект при наведении */
+.advantage-item:hover .advantage-icon {
+  /*filter: grayscale(0%);*/
+  transform: scale(1.1);
+  /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);*/
+}
+@media (max-width: 768px) {
+  .advantage-item {
+      width: 100%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .advantage-item {
+      width: auto;
+  }
+}
+/* Контейнер внутри карточки */
+.advantage-content {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Отступ между иконкой и текстом */
+  width: 100%;
+}
+/* Иконка слева (аналог team-photo) */
+.advantage-icon {
+  width: 80px;
+  height: 80px;
+  /*border-radius: 50%;*/
+  object-fit: cover;
+  transition: all 0.5s ease;
+  /*filter: grayscale(100%);*/
+  flex-shrink: 0;
+}
+@media (min-width: 768px) { /* На планшетах и десктопе */
+  .advantage-icon {
+      width: 60px;
+      height: 60px;
+      transition: transform 0.3s ease-in-out;
+  }
+
+}
+@media (max-width: 480px) {
+  .advantage-icon {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.3s ease-in-out;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .advantage-icon {
+      transition: transform 0.4s ease-out, filter 0.8s ease-out; /* Увеличили плавность фильтра */
+      filter: grayscale(100%);
+  }
+
+  .scrolled {
+      transform: scale(1.1);
+      filter: grayscale(0%);
+  }
+}
+/* Текст внутри карточки */
+.advantage-text {
+  flex: 1;
+  line-height: 1.5;
+}
