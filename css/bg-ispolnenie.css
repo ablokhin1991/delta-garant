@@ -153,56 +153,64 @@ padding-left: 70px;
 
 
 /*КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ-•-КНОПКИ*/
-/* Общие стили для кнопок */
-.btn_isp,
-.calculator-button {
-    display: flex;
-    align-items: center;  /* Центрирование по вертикали */
-    justify-content: center; /* Центрирование по горизонтали */
-    padding: 10px 20px;
-    width: 100%; /* Растяжение кнопок */
-    height: 70px; /* Фиксированная высота */
-    border-radius: 8px; /* Скруглённые углы */
-    font-weight: bold;
-    font-size: 16px; /* Размер текста */
-    text-align: center;
-    transition: all 0.1s ease-in-out;
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-                6px 6px 10px rgba(0, 0, 0, 0.2);
-    text-decoration: none; /* Убираем подчеркивание */
-}
-
-/* Стили для btn_isp */
+/* btn_isp - Центрируем текст, не меняя позиционирование */
 .btn_isp {
-    background: #1E3A8A;
-    color: #FFF;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #1E3A8A; /* Синий фон */
+  border-radius: 8px; /* Скругленные углы */
+  transition: all 0.1s ease-in-out;
+  font-weight: bold;
+  color: #FFF; /* Белый текст */
+  height: 70px; /* Фиксированная высота */
+  line-height: 70px; /* Центрирование по высоте */
+  text-align: center; /* Центрирование по ширине */
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+              6px 6px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none; /* Убираем подчеркивание */
 }
 
+/* Эффект при наведении */
 .btn_isp:hover {
-    background: #284db5;
+  background: #284db5;
 }
 
+/* Эффект при нажатии */
 .btn_isp:active {
-    background: #284db5;
-    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
-                inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  background: #284db5;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для calculator-button (та же кнопка, но серого цвета) */
+/* calculator-button - Делаем такой же дизайн, но серый */
 .calculator-button {
-    background: #b0b0b0; /* Серый фон */
-    color: #fff; /* Белый текст */
+  display: inline-block;
+  padding: 10px 20px;
+  background: #b0b0b0; /* Серый фон */
+  border-radius: 8px;
+  transition: all 0.1s ease-in-out;
+  font-weight: bold;
+  color: #FFF; /* Белый текст */
+  height: 70px; /* Фиксированная высота */
+  line-height: 70px; /* Центрирование по высоте */
+  text-align: center;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+              6px 6px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 }
 
+/* Эффект при наведении */
 .calculator-button:hover {
-    background: #a0a0a0; /* Чуть темнее при наведении */
+  background: #a0a0a0;
 }
 
+/* Эффект при нажатии */
 .calculator-button:active {
-    background: #909090;
-    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
-                inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  background: #909090;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
+
 
 
   /* Секция преимуществ -•- Секция преимуществ -•- Секция преимуществ -•- Секция преимуществ -•- Секция преимуществ */
