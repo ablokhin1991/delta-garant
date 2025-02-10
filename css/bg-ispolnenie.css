@@ -189,11 +189,11 @@ padding-left: 70px;
 .calculator-button {
   display: inline-block;
   padding: 10px 20px;
-  background: #b0b0b0; /* Серый фон */
+  background: #fff; /* Серый фон */
   border-radius: 8px;
   transition: all 0.1s ease-in-out;
   font-weight: bold;
-  color: #FFF; /* Белый текст */
+  color: #1E3A8A; /* Белый текст */
   height: 70px; /* Фиксированная высота */
   width: auto; /* Оставляем ширину как есть */
   text-align: center;
@@ -207,12 +207,12 @@ padding-left: 70px;
 
 /* Эффект при наведении */
 .calculator-button:hover {
-  background: #a0a0a0;
+  background: #ececec;
 }
 
 /* Эффект при нажатии */
 .calculator-button:active {
-  background: #909090;
+  background: #d5d5d5;
   box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
               inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
