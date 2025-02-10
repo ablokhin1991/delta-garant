@@ -394,13 +394,12 @@ padding-left: 70px;
 .article-section {
     margin: 30px 0; /* Уменьшаем отступ для компактности */
 }
+/* Стиль для всех <li>: текст в списках всегда с жирностью 400 */
 .article-section li {
-  font-weight: 400 !important;
+  font-weight: 400; /* Обычный вес для текста в списке */
 }
-.lighter {
-  font-weight: 500; /* Стандартная жирность (обычный текст) */
-}
-/* Применяем жирность 500 только для элементов с классом .lighter внутри <strong> */
-.article-section li .lighter {
-  font-weight: 500;
+
+/* Стиль для всех элементов <strong> с классом .lighter: жирность 500 */
+.article-section li .lighter, .lighter {
+  font-weight: 500; /* Более жирный текст для .lighter */
 }
