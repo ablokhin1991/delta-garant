@@ -202,12 +202,12 @@ padding-left: 70px;
 
 /* Эффект при наведении */
 .calculator-button:hover {
-  background: #ececec;
+  background: #f6f6f6;
 }
 
 /* Эффект при нажатии */
 .calculator-button:active {
-  background: #d5d5d5;
+  background: #ececec;
   box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
               inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
