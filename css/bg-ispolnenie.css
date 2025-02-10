@@ -397,6 +397,7 @@ padding-left: 70px;
 /* Гарантируем, что текст в списках <li> всегда имеет жирность 400 */
 .article-section li {
   font-weight: 400 !important;
+  list-style-position: inside;
 }
 
 /* Обычный текст в <p> также с жирностью 400 */
