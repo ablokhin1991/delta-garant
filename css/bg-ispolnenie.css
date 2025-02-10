@@ -397,3 +397,7 @@ padding-left: 70px;
 .articles-section li {
   font-weight: 300;
 }
+
+.lighter {
+  font-weight: 500; /* Стандартная жирность (обычный текст) */
+}
