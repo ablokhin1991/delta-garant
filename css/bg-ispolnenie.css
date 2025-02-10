@@ -1,3 +1,9 @@
+/* Обычный текст */
+p {
+  font-weight: 400; /* Легкий текст для лучшей читаемости */
+  line-height: 1.6; /* Улучшенная читаемость */
+}
+
 /*явное сглаживание шрифтов*/
 body {
   -webkit-font-smoothing: antialiased; /*делает текст более тонким и четким.*/
@@ -72,11 +78,6 @@ margin-bottom: 40px;
   border-radius: 8px;
   border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
 }
-
-.values-list li {
-    font-weight: 300;
-  }
-
 /* СТИЛИ СПИСКОВ конец */
 
 

@@ -12,6 +12,12 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Обычный текст */
+p {
+    font-weight: 400; /* Легкий текст для лучшей читаемости */
+    line-height: 1.6; /* Улучшенная читаемость */
+}
+
 /* Заголовки */
 h1, h2, h3, h4, h5, h6, p, a {
     font-family: 'Roboto', sans-serif;
