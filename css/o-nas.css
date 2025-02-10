@@ -70,6 +70,10 @@ p {
     border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
   }
 
+  .values-list li {
+    font-weight: 400;
+  }
+
   .clients-list {
     margin: 25px 0;
     padding: 20px;
