@@ -89,6 +89,23 @@ transition: transform 0.3s ease;
 transform: translateY(-5px);
 }
 
+@media (min-width: 1025px) { /* Десктоп */
+  .legislation-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Две колонки */
+      gap: 25px; /* Отступ между карточками */
+  }
+}
+
+@media (max-width: 1024px) { /* Планшеты и мобильные */
+  .legislation-cards {
+      display: flex;
+      flex-direction: column; /* Карточки в колонку */
+      gap: 15px;
+  }
+}
+
+
 .process-steps {
 counter-reset: step;
 margin: 50px 0;
