@@ -403,3 +403,7 @@ padding-left: 70px;
 .lighter {
   font-weight: 500; /* Стандартная жирность (обычный текст) */
 }
+/* Применяем жирность 500 только для элементов с классом .lighter внутри <strong> */
+.article-section li .lighter {
+  font-weight: 500;
+}
