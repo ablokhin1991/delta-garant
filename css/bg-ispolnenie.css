@@ -73,6 +73,10 @@ margin-bottom: 40px;
   border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
 }
 
+.values-list li {
+    font-weight: 300;
+  }
+
 /* СТИЛИ СПИСКОВ конец */
 
 
