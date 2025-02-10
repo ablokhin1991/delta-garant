@@ -395,10 +395,7 @@ padding-left: 70px;
     margin: 30px 0; /* Уменьшаем отступ для компактности */
 }
 .article-section li {
-  font-weight: 400;
-}
-.article li {
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 .lighter {
   font-weight: 500; /* Стандартная жирность (обычный текст) */
