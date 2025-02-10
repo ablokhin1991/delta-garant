@@ -174,6 +174,24 @@ margin-bottom: 40px;
         height: 60px;
         transition: transform 0.3s ease-in-out;
     }
+
+    .advantages-list {
+      grid-template-columns: 1fr !important; /* Одна колонка */
+      gap: 20px; /* Увеличиваем отступ между элементами */
+    }
+
+    .advantage-item {
+      width: 100%;
+      margin: 0 !important;
+    }
+
+    .advantage-content {
+      flex-direction: column; /* Иконка над текстом */
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    
   
 }
 @media (max-width: 480px) {
