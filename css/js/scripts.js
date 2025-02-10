@@ -1,6 +1,6 @@
 // Увеличение картинок при скролле в мобильной версии
 document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".___");
+    const elements = document.querySelectorAll(".advantage-icon");
 
     function handleScroll() {
         const windowHeight = window.innerHeight;
