@@ -61,7 +61,7 @@ margin-bottom: 40px;
 
 .values-list {
   margin: 25px 0;
-  padding: 20px 40px 20px 20px; /* top right bottom left */
+  padding: 20px 20px 20px 40px; /* top right bottom left */
   background: #f4f6fd;
   border-radius: 8px;
   border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
