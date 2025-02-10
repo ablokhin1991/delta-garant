@@ -409,3 +409,10 @@ p {
 .lighter {
   font-weight: 500 !important;
 }
+
+hr {
+  border: none;      /* Убираем стандартную границу */
+  height: 1px;       /* Толщина линии */
+  background-color: #ddd; /* Цвет линии */
+  margin: 20px 0;    /* Отступ сверху и снизу (можно изменить) */
+}
