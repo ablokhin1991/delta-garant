@@ -416,3 +416,49 @@ hr {
   background-color: #ddd; /* Цвет линии */
   margin: 10px 0;    /* Отступ сверху и снизу (можно изменить) */
 }
+
+/* ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•-*/
+/* Стили для таблицы */
+table {
+  width: 100%; /* Растягиваем таблицу на 100% контейнера */
+  border-collapse: collapse; /* Убираем двойные границы */
+  border-radius: 8px; /* Закругляем углы таблицы */
+  overflow: hidden; /* Обрезаем края, чтобы закругления применялись */
+}
+
+/* Стили для всех ячеек */
+th, td {
+  border: 1px solid #ddd; /* Все границы 1px, цвет #ddd */
+  padding: 10px; /* Внутренний отступ */
+  text-align: center; /* Выравнивание текста по центру */
+  vertical-align: middle; /* Центрирование текста по высоте */
+}
+
+/* Стили для заголовков <th> */
+th {
+  background-color: #f5f5f5; /* Светлый фон заголовков */
+  font-weight: 400; /* Основной текст заголовков */
+}
+
+/* Добавляем стиль для <strong class="lighter"> внутри заголовков */
+th strong.lighter {
+  font-weight: 500; /* Жирность 500 для заголовков */
+}
+
+/* Закругление углов (для корректного отображения) */
+table thead tr:first-child th:first-child {
+  border-top-left-radius: 8px;
+}
+
+table thead tr:first-child th:last-child {
+  border-top-right-radius: 8px;
+}
+
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+/* ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•-*/
