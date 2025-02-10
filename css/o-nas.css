@@ -524,6 +524,27 @@
     }
 }
 
+@media (max-width: 768px) {
+  .advantages-list {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .advantage-item {
+      width: 100%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .advantages-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .advantage-item {
+      width: auto;
+  }
+}
+
 
 /* Контейнер для текста и картинки */
 .intro-content {
