@@ -438,6 +438,11 @@ th, td {
 th {
   background-color: #f5f5f5; /* Светлый фон заголовков */
   font-weight: 400; /* Основной текст заголовков */
+}
+/* Стили для текста ячеек <th> */
+th {
+  background-color: #f5f5f5; /* Светлый фон заголовков */
+  font-weight: 400; /* Основной текст заголовков */
   text-align: left;
   align-items: center;
 }
