@@ -429,7 +429,7 @@ table {
 /* Стили для всех ячеек */
 th {
   border: 1px solid #ddd; /* Все границы 1px, цвет #ddd */
-  color: #b7b7b7;
+  color: #515151;
   padding: 10px; /* Внутренний отступ */
   text-align: center; /* Выравнивание текста по центру */
   vertical-align: middle; /* Центрирование текста по высоте */
@@ -437,7 +437,7 @@ th {
 /* Стили для ячеек */
 td {
   border: 1px solid #ddd; /* Все границы 1px, цвет #ddd */
-  color: #b7b7b7;
+  color: #515151;
   padding: 10px; /* Внутренний отступ */
   text-align: left; /* Выравнивание текста по центру */
   vertical-align: middle; /* Центрирование текста по высоте */
