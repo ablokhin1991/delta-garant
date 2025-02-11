@@ -28,11 +28,6 @@ h1 {
     font-weight: 700; /* Bold */
 }
 
-/* Обычный текст */
-p {
-    font-weight: 300; /* Light */
-}
-
 /* Обычный текст и ссылки */
 a {
     font-weight: 300; /* Light */
