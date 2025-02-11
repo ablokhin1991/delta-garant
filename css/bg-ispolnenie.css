@@ -30,7 +30,8 @@ margin-bottom: 40px;
     margin: 20px auto;
     padding: 20px;
     width: 100%;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
+    max-width: none; /* Убираем ограничение */
     transition: box-shadow 0.3s ease; /* Добавляем анимацию тени */
 }
   
