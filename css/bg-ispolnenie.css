@@ -26,9 +26,8 @@ margin-bottom: 40px;
 .content-card {
     background: #ffffff;
     border-radius: 8px;
-    border: 2px solid #E2E8F0;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-    /*margin: 20px auto;*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
     padding: 30px;
     width: 100%;
     max-width: 1200px;
@@ -476,7 +475,7 @@ table tbody tr:last-child td:last-child {
 /* Стили для ссылок внутри таблицы */
 table a {
   color: #515151; /* Цвет текста ссылки */
-  text-decoration: underline; 
+  text-decoration: underline; /* Убираем подчеркивание */
   transition: color 0.3s ease; /* Плавное изменение цвета при наведении */
   font-weight: 400; /* Основной текст заголовков */
 }
