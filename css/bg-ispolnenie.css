@@ -471,4 +471,8 @@ table tbody tr:last-child td:first-child {
 table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 8px;
 }
+
+.table-link {
+  color: #515151;
+}
 /* ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•- ТАБЛИЦА -•-*/
