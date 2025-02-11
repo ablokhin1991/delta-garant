@@ -475,7 +475,7 @@ table tbody tr:last-child td:last-child {
 /* Стили для ссылок внутри таблицы */
 table a {
   color: #515151; /* Цвет текста ссылки */
-  text-decoration: none; /* Убираем подчеркивание */
+  text-decoration: underline; 
   transition: color 0.3s ease; /* Плавное изменение цвета при наведении */
   font-weight: 400; /* Основной текст заголовков */
 }
