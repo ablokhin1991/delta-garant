@@ -26,8 +26,9 @@ margin-bottom: 40px;
 .content-card {
     background: #ffffff;
     border-radius: 8px;
+    border: 2px solid #E2E8F0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    /*margin: 20px auto;*/
     padding: 30px;
     width: 100%;
     max-width: 1200px;
