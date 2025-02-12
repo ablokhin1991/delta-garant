@@ -89,7 +89,7 @@
             <span></span>
         </div>
         
-        <div class="burger-menu-links" id="burgerMenu" style="display: none;">
+        <div class="burger-menu-links" id="burgerMenu" class="hidden">
             <ul class="nav-menu">
                 <li><a href="o-nas.html">О нас</a></li>
                 <li class="dropdown">
@@ -110,14 +110,15 @@
 </header>
 <script>
     // Функция для переключения состояния меню
-    function toggleMenu() {
-        var menu = document.getElementById('burgerMenu');
-        
-        // Переключаем класс для видимости меню
-        menu.classList.toggle('show');
-    }
+function toggleMenu() {
+    var menu = document.getElementById('burgerMenu');
+    menu.classList.toggle('show');  // Включаем / отключаем класс
     
-    
+    // Дополнительная логика для скрытия навигации в мобильной версии
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu.classList.toggle('active');  // Показываем / скрываем меню на мобильных устройствах
+}
+
     </script>
 </body>
 
@@ -219,7 +220,6 @@ header {
 }
 /* Скрываем меню при по умолчанию */
 .burger-menu-links {
-    display: none;
     position: absolute;
     top: 50px;
     right: 0;
@@ -232,6 +232,10 @@ header {
 /* Стили для открытого меню */
 .burger-menu-links.show {
     display: block;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Стиль для ссылок внутри меню */
