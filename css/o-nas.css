@@ -109,24 +109,6 @@ p {
     border: 1px solid #e0e0e0; /* Добавляем границу */
   }
   
-  .cta-button {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #1E3A8A;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: all 0.3s ease; /* Анимируем все свойства */
-    font-weight: 500; /* Делаем текст кнопки чуть жирнее */
-    text-align: center; /* Выровнять текст по центру */
-  }
-  
-  .cta-button:hover {
-    background: #152961;
-    transform: translateY(-2px); /* Добавляем эффект "поднятия" */
-  }
-  
   .ps-note {
     color: #666;
     margin-top: 15px;
