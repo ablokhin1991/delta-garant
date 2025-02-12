@@ -127,19 +127,17 @@ header {
     display: none;
     position: absolute;
     /*right: 0; /* Размещает выпадающее меню слева от "Услуги" */
-    left: 50%; /* Ставим левый край в середину родителя */
+    left: 100%; /* Ставим левый край в середину родителя */
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
     list-style: none;
     padding: 10px;
     min-width: 250px;
-    border-radius: 8%;
+    border-radius: 4%;
     overflow: visible; /* Убираем обрезку содержимого */
 }
 .dropdown-content li {
     margin: 0; /* Добавляет небольшие отступы, чтобы радиус не выглядел обрезанным */
-    border-radius: 8px; /* Переносим радиус на элементы li */
-    padding: 5px 10px; /* Добавляем внутренние отступы для li */
 }
 .dropdown:hover .dropdown-content {
     display: block;
@@ -151,7 +149,7 @@ header {
     text-align: left;
     font-weight: 400 !important;
     text-decoration: none;
-    border-radius: 0 !important; /* Убираем радиус у ссылок */
+    border-radius: 8px !important; /* Убираем радиус у ссылок */
 }
 .dropdown-content li a:hover {
     /*background-color: #f4f6fd;*/
