@@ -156,7 +156,7 @@
   display: flex; /* Выравниваем текст по центру */
   align-items: center; /* Центрируем по высоте */
   justify-content: center; /* Центрируем по ширине */
-  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+  box-shadow: /*-6px -6px 10px rgba(255, 255, 255, 0.8),*/
               6px 6px 10px rgba(0, 0, 0, 0.2);
   text-decoration: none; /* Убираем подчеркивание */
 }
@@ -172,6 +172,9 @@
   box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
               inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
+
+/* кнопка ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ В ХЭДЭРЕ • ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ В ХЭДЭРЕ • ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ В ХЭДЭРЕ •  */
+
 
 /* calculator-button - Делаем такой же дизайн, но серый */
 .calculator-button {
@@ -207,3 +210,4 @@
   box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
               inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
+
