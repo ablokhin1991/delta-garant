@@ -164,11 +164,13 @@
 /* Эффект при наведении */
 .btn_isp:hover {
   background: #284db5;
+  color: #FFF; /* Белый текст */
 }
 
 /* Эффект при нажатии */
 .btn_isp:active {
   background: #284db5;
+  color: #FFF; /* Белый текст */
   box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
               inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
