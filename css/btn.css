@@ -139,3 +139,71 @@
                 6px 6px 10px rgba(0, 0, 0, 0.2);
     pointer-events: none; /* Отключаем интерактивность */
   }
+
+  /* кнопка ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ В ХЭДЭРЕ • ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ В ХЭДЭРЕ • ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ В ХЭДЭРЕ •  */
+  /* btn_isp - Центрируем текст */
+.btn_isp {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #1E3A8A; /* Синий фон */
+  border-radius: 8px; /* Скругленные углы */
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  color: #FFF; /* Белый текст */
+  height: 70px; /* Фиксированная высота */
+  width: auto; /* Оставляем ширину как есть */
+  text-align: center; /* Центрирование текста */
+  display: flex; /* Выравниваем текст по центру */
+  align-items: center; /* Центрируем по высоте */
+  justify-content: center; /* Центрируем по ширине */
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+              6px 6px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none; /* Убираем подчеркивание */
+}
+
+/* Эффект при наведении */
+.btn_isp:hover {
+  background: #284db5;
+}
+
+/* Эффект при нажатии */
+.btn_isp:active {
+  background: #284db5;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* calculator-button - Делаем такой же дизайн, но серый */
+.calculator-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fff; /* Серый фон */
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  color: #1E3A8A; /* Белый текст */
+  height: 70px; /* Фиксированная высота */
+  width: auto; /* Оставляем ширину как есть */
+  text-align: center;
+  display: flex; /* Выравниваем текст по центру */
+  align-items: center; /* Центрируем по высоте */
+  justify-content: center; /* Центрируем по ширине */
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+              6px 6px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  border: 1px solid #f2f2f2;
+}
+
+/* Эффект при наведении */
+.calculator-button:hover {
+  color: #284db5;
+  background: #f6f6f6;
+}
+
+/* Эффект при нажатии */
+.calculator-button:active {
+  color: #284db5;
+  background: #ececec;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+}
