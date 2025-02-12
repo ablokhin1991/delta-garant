@@ -135,7 +135,7 @@ header {
     overflow: hidden; /* Убирает "обрезанный" эффект */
 }
 .dropdown-content li {
-    margin: 3px 0; /* Добавляет небольшие отступы, чтобы радиус не выглядел обрезанным */
+    margin: 0; /* Добавляет небольшие отступы, чтобы радиус не выглядел обрезанным */
 }
 .dropdown:hover .dropdown-content {
     display: block;
@@ -146,12 +146,13 @@ header {
     padding: 10px;
     text-align: left;
     font-weight: 400 !important;
-    border-radius: 4%;
+    text-decoration: none;
 }
 .dropdown-content li a:hover {
     /*background-color: #f4f6fd;*/
     background-color: #284db5;
     color: #fff;
+    border-radius: 10%;
 }
 
 /* Бургер-меню для мобильных */
