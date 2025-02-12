@@ -57,6 +57,16 @@
 
     <!-- Скрипты -->
     <script src="css/fonts.js" defer></script>
+    <script>
+        // Функция для переключения состояния меню
+        function toggleMenu() {
+            var menu = document.getElementById('burgerMenu');
+            menu.classList.toggle('show'); // Показываем или скрываем меню
+    
+            var navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active'); // Для мобильных устройств
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -108,18 +118,6 @@
                 
     </div>
 </header>
-<script>
-    // Функция для переключения состояния меню
-function toggleMenu() {
-    var menu = document.getElementById('burgerMenu');
-    menu.classList.toggle('hidden');  // Включаем / отключаем класс
-    
-    // Дополнительная логика для скрытия навигации в мобильной версии
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('active');  // Показываем / скрываем меню на мобильных устройствах
-}
-
-    </script>
 </body>
 
 
