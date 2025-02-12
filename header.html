@@ -84,19 +84,20 @@
                 <li><a href="#about">Контакты</a></li>
                 <li><a href="#contact-form" class="btn_isp cta-button">Получить консультацию</a></li>
             </ul>
-        </div>        
+        </div>
+                
     </div>
 </header>
 
 <script>
+// Функция для переключения состояния меню
 function toggleMenu() {
     var menu = document.getElementById('burgerMenu');
-    if (menu.style.display === "none" || menu.style.display === "") {
-        menu.style.display = "block";
-    } else {
-        menu.style.display = "none";
-    }
+    
+    // Переключаем класс для видимости меню
+    menu.classList.toggle('show');
 }
+
 
 </script>
 
@@ -184,17 +185,45 @@ header {
 
 /* Бургер-меню для мобильных */
 .burger-menu {
-    display: none;
-    flex-direction: column;
+    display: block;
     cursor: pointer;
+    z-index: 100;
 }
 .burger-menu span {
-    background-color: white;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 6px 0;
+    background-color: #333;
+}
+/* Скрываем меню при по умолчанию */
+.burger-menu-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
 }
 
+/* Стили для открытого меню */
+.burger-menu-links.show {
+    display: block;
+}
+
+/* Стиль для ссылок внутри меню */
+.burger-menu-links a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.burger-menu-links a:hover {
+    background-color: #f0f0f0;
+}
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
