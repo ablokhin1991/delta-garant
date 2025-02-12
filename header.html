@@ -38,7 +38,27 @@
 </body> -->
 
 <!-- Новый хэдэр • Новый хэдэр • Новый хэдэр • Новый хэдэр • Новый хэдэр • -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дельта Гарант</title>
 
+    <!-- Фавиконки -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Скрипты -->
+    <script src="css/fonts.js" defer></script>
+</head>
+<body>
 <header>
     <div class="wrapper">
         <div class="logo">
@@ -88,18 +108,19 @@
                 
     </div>
 </header>
-
 <script>
-// Функция для переключения состояния меню
-function toggleMenu() {
-    var menu = document.getElementById('burgerMenu');
+    // Функция для переключения состояния меню
+    function toggleMenu() {
+        var menu = document.getElementById('burgerMenu');
+        
+        // Переключаем класс для видимости меню
+        menu.classList.toggle('show');
+    }
     
-    // Переключаем класс для видимости меню
-    menu.classList.toggle('show');
-}
+    
+    </script>
+</body>
 
-
-</script>
 
 <style>
 /* Общие стили хедера */
