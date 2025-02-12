@@ -112,7 +112,7 @@
     // Функция для переключения состояния меню
 function toggleMenu() {
     var menu = document.getElementById('burgerMenu');
-    menu.classList.toggle('show');  // Включаем / отключаем класс
+    menu.classList.toggle('hidden');  // Включаем / отключаем класс
     
     // Дополнительная логика для скрытия навигации в мобильной версии
     const navMenu = document.querySelector('.nav-menu');
@@ -173,7 +173,6 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    /*right: 0; /* Размещает выпадающее меню слева от "Услуги" */
     left: -50%; /* Ставим левый край в середину родителя */
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
