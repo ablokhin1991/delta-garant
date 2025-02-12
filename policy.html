@@ -7,6 +7,7 @@
   <!-- <link rel="stylesheet" href="css/styles-calc.css"> -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/btn.css">
 </head>
 <body>
 
@@ -91,6 +92,29 @@
 12.3. В случае невозможности разрешения спора путем переговоров, спор подлежит рассмотрению в суде в соответствии с действующим законодательством Российской Федерации.<br>
 
     </div>
+</div>
+
+<!-- Popup -->
+<div class="popup-contact">
+  <button class="popup-contact__close">✖</button>
+  <h2 class="popup-contact__title">Оставить заявку</h2>
+  <div class="popup-contact__content">
+      <form class="popup-contact__form">
+          <input type="text" placeholder="ФИО" class="popup-contact__input" required>
+          <input type="email" 
+              placeholder="Электронная почта" 
+              class="popup-contact__input" 
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+              title="Введите email в формате: name@email.ru" 
+              required>
+          <input type="tel" id="popup-contact-phone" class="popup-contact__input phone-mask" placeholder="Введите номер" required>
+          <label class="popup-contact__checkbox-label">
+              <input type="checkbox" class="popup-contact__checkbox" checked required>
+              Согласен с <a href="policy.html" target="_blank" class="popup-contact__link">политикой обработки персональных данных</a>
+          </label>
+          <button type="submit" class="popup-contact__submit">Отправить заявку</button>
+      </form>
+  </div>
 </div>
 
     <!-- Место для подвала -->
