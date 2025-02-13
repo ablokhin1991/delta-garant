@@ -157,21 +157,31 @@
       /* Скрываем обычное меню и делаем его вертикальным */
       .nav-menu {
         display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #152961;
-        padding: 10px 0;
-      }
+    flex-direction: column;
+    position: fixed;             /* фиксированное позиционирование */
+    top: 60px;                   /* ниже шапки, можно регулировать */
+    left: 50%;                   /* центрируем по горизонтали */
+    transform: translateX(-50%);
+    width: 90%;                  /* ширина меню, можно подстроить */
+    background-color: white;     /* белая подложка */
+    border-radius: 4%;           /* закругление углов */
+    padding: 10px 0;
+    z-index: 2000;               /* чтобы меню было поверх всех элементов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
       .nav-menu.active {
         display: flex;
       }
       /* Показываем бургер-меню */
       .burger-menu {
         display: flex;
+        position: relative;
+    z-index: 2100;
       }
+       /* Изменяем цвет ссылок для читаемости на белом фоне */
+  .nav-menu a {
+    color: #333;  /* тёмный цвет для ссылок */
+  }
       /* Подменю "Услуги" всегда развёрнуто в мобильной версии */
       .dropdown .dropdown-content {
         display: block;
@@ -183,7 +193,7 @@
       }
       .dropdown .dropdown-content li a {
         padding-left: 30px;
-        color: white;
+        color: #333;
       }
     }
   </style>
