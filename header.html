@@ -138,7 +138,19 @@
       width: 30px;
       height: 4px;
       margin: 4px 0;
-      background-color: #333;
+      background-color: white; /* Изменяем цвет на белый */
+      transition: 0.3s;
+    }
+    .burger-menu.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
     /* Мобильные стили */
     @media (max-width: 768px) {
