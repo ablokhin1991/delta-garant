@@ -31,22 +31,37 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function () {
   const burger = document.querySelector(".burger-menu");
   const menu = document.querySelector(".nav-menu");
-  const overlay = document.createElement("div"); // Создаём оверлей
+  const overlay = document.createElement("div");
   overlay.classList.add("overlay");
-  document.body.appendChild(overlay); // Добавляем в DOM
+  document.body.appendChild(overlay);
 
-  burger.addEventListener("click", function () {
-    menu.classList.toggle("active");
-    overlay.classList.toggle("active");
-    document.body.classList.toggle("noscroll"); // Блокируем скролл
-    burger.classList.toggle("active");
-  });
-
-  // Закрываем меню при клике вне него
-  overlay.addEventListener("click", function () {
+  function closeMenu() {
     menu.classList.remove("active");
     overlay.classList.remove("active");
     document.body.classList.remove("noscroll");
     burger.classList.remove("active");
+  }
+
+  burger.addEventListener("click", function () {
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.classList.toggle("noscroll");
+    burger.classList.toggle("active");
   });
+
+  overlay.addEventListener("click", closeMenu);
+
+  // Закрываем бургер-меню при клике на "Получить консультацию"
+  const consultationBtn = document.querySelector(".btn_isp.cta-button");
+  if (consultationBtn) {
+    consultationBtn.addEventListener("click", function () {
+      closeMenu();
+      // Открываем попап (если у него есть id "popup")
+      const popup = document.getElementById("popup");
+      if (popup) {
+        popup.classList.add("active");
+      }
+    });
+  }
 });
+
