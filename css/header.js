@@ -27,3 +27,26 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }, 500); // проверяем каждые 500 мс
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.querySelector(".burger-menu");
+  const menu = document.querySelector(".nav-menu");
+  const overlay = document.createElement("div"); // Создаём оверлей
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay); // Добавляем в DOM
+
+  burger.addEventListener("click", function () {
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.classList.toggle("noscroll"); // Блокируем скролл
+    burger.classList.toggle("active");
+  });
+
+  // Закрываем меню при клике вне него
+  overlay.addEventListener("click", function () {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.classList.remove("noscroll");
+    burger.classList.remove("active");
+  });
+});

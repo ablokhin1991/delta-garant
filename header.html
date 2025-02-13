@@ -154,24 +154,42 @@
     }
     /* Мобильные стили */
     @media (max-width: 768px) {
+        /* Оверлей для затемнения фона */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный чёрный фон */
+    z-index: 1500; /* Ниже бургер-меню, но выше контента */
+    display: none;
+  }
+  .overlay.active {
+    display: block;
+  }
       /* Скрываем обычное меню и делаем его вертикальным */
       .nav-menu {
         display: none;
     flex-direction: column;
-    position: fixed;             /* фиксированное позиционирование */
-    top: 60px;                   /* ниже шапки, можно регулировать */
-    left: 50%;                   /* центрируем по горизонтали */
+    position: fixed;
+    top: 80px; /* Отступ от бургер-иконки */
+    left: 50%;
     transform: translateX(-50%);
-    width: 90%;                  /* ширина меню, можно подстроить */
-    background-color: white;     /* белая подложка */
-    border-radius: 4%;           /* закругление углов */
-    padding: 10px 0;
-    z-index: 2000;               /* чтобы меню было поверх всех элементов */
+    width: 90%;
+    background-color: white;
+    border-radius: 4%;
+    padding: 15px 0;
+    z-index: 2000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
       .nav-menu.active {
         display: flex;
       }
+      /* Блокируем скролл у body, когда меню открыто */
+  body.noscroll {
+    overflow: hidden;
+  }
       /* Показываем бургер-меню */
       .burger-menu {
         display: flex;
