@@ -85,6 +85,8 @@
     }
     .nav-menu li {
       position: relative;
+      width: 100%;
+      text-align: left;
     }
     .nav-menu a {
       text-decoration: none;
@@ -177,8 +179,8 @@
       flex-direction: column;
       position: fixed;
       top: 80px;
-      left: 0;
-      transform: none; /* Убираем трансформацию */
+      left: 50%;
+      transform: translateX(-50%);
       width: 90%;
       max-height: calc(100vh - 80px);
       overflow-y: auto;
@@ -193,6 +195,10 @@
         opacity: 1;
         transform: translateY(0);
       }
+      /* Улучшенное отображение ссылок */
+    .nav-menu a:hover {
+      background-color: #f0f0f0;
+    }
       /* Блокируем скролл у body, когда меню открыто */
   body.noscroll {
     overflow: hidden;
@@ -206,6 +212,9 @@
        /* Изменяем цвет ссылок для читаемости на белом фоне */
   .nav-menu a {
     color: #333;  /* тёмный цвет для ссылок */
+    display: block;
+    padding: 12px 20px; /* Добавляем отступы */
+    border-radius: 8px; /* Немного скругляем */
   }
       /* Подменю "Услуги" всегда развёрнуто в мобильной версии */
       .dropdown .dropdown-content {
