@@ -79,6 +79,9 @@
       gap: 20px;
       margin: 0;
       padding: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      opacity: 0;
+      transform: translateY(-20px);
     }
     .nav-menu li {
       position: relative;
@@ -185,6 +188,8 @@
   }
       .nav-menu.active {
         display: flex;
+        opacity: 1;
+        transform: translateY(0);
       }
       /* Блокируем скролл у body, когда меню открыто */
   body.noscroll {
