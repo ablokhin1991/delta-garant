@@ -53,10 +53,9 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  
-  <!-- Стили -->
+
   <style>
-    /* Общие стили хедера */
+    /* Стили хедера для всех устройств */
     header {
       background: linear-gradient(to bottom, #0d1c45, #152961);
       color: #F3F4F6;
@@ -65,18 +64,15 @@
     .wrapper {
       width: 80%;
       margin: 20px auto;
-      overflow: visible;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
-      height: 100%;
     }
     .logo img {
       width: 200px;
     }
-    
-    /* Навигация */
+    /* Основное меню */
     .nav-menu {
       list-style: none;
       display: flex;
@@ -92,16 +88,12 @@
       color: white;
       padding: 10px 15px;
       transition: 0.3s;
-      text-align: center;
       display: flex;
       align-items: center;
-      height: 100%;
     }
-    
     .nav-menu a:hover {
       color: #F0473B;
     }
-    
     /* Выпадающее меню для десктопа */
     .dropdown-content {
       display: none;
@@ -113,7 +105,6 @@
       padding: 10px;
       min-width: 250px;
       border-radius: 4%;
-      overflow: visible;
       transition: all 0.3s ease;
     }
     .dropdown-content li {
@@ -124,21 +115,21 @@
     }
     .dropdown-content li a {
       color: #333;
-      display: block;
       padding: 10px;
-      text-align: left;
-      font-weight: 400 !important;
       text-decoration: none;
-      border-radius: 8px !important;
+      display: block;
+      border-radius: 8px;
     }
     .dropdown-content li a:hover {
       background-color: #284db5;
       color: #fff;
     }
-    
-    /* Бургер-меню для мобильных */
+    /* Бургер-меню (мобильная версия) */
     .burger-menu {
       display: none;
+      flex-direction: column; /* располагаем полоски вертикально */
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
       z-index: 100;
     }
@@ -146,12 +137,12 @@
       display: block;
       width: 30px;
       height: 4px;
-      margin: 6px 0;
+      margin: 4px 0; /* отступ между полосками */
       background-color: #333;
     }
-    
     /* Мобильные стили */
     @media (max-width: 768px) {
+      /* Скрываем обычное меню и делаем его вертикальным */
       .nav-menu {
         display: none;
         flex-direction: column;
@@ -165,20 +156,22 @@
       .nav-menu.active {
         display: flex;
       }
-      /* В мобильной версии всегда показываем подпункты "Услуги" */
+      /* Показываем бургер-меню */
+      .burger-menu {
+        display: flex;
+      }
+      /* Подменю "Услуги" всегда развёрнуто в мобильной версии */
       .dropdown .dropdown-content {
         display: block;
         position: static;
+        background: none;
         box-shadow: none;
-        background-color: transparent;
         padding: 0;
+        margin: 0;
       }
       .dropdown .dropdown-content li a {
-        padding-left: 30px;
+        padding-left: 30px; /* отступ для подпунктов */
         color: white;
-      }
-      .burger-menu {
-        display: flex;
       }
     }
   </style>
@@ -188,7 +181,7 @@
     <div class="wrapper">
       <div class="logo">
         <a href="index.html">
-          <img src="images/logo/delta-red.svg" alt="Дельта Гарант" />
+          <img src="images/logo/delta-red.svg" alt="Дельта Гарант">
         </a>
       </div>
       <nav>
@@ -216,11 +209,11 @@
       </div>
     </div>
   </header>
-  
-  <!-- Функция для переключения мобильного меню -->
+
+  <!-- Скрипт для переключения меню -->
   <script>
-    // Функция объявлена в глобальной области, чтобы inline-обработчик onclick её нашёл
-    function toggleMenu() {
+    // Назначаем функцию в глобальную область
+    window.toggleMenu = function() {
       var navMenu = document.querySelector('.nav-menu');
       navMenu.classList.toggle('active');
     }
