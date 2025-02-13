@@ -201,8 +201,8 @@
         </ul>
       </nav>
       
-      <!-- Бургер-меню для мобильных -->
-      <div class="burger-menu" onclick="toggleMenu()">
+      <!-- Бургер-меню для мобильных (без inline onclick) -->
+      <div class="burger-menu">
         <span></span>
         <span></span>
         <span></span>
@@ -210,13 +210,15 @@
     </div>
   </header>
 
-  <!-- Скрипт для переключения меню -->
+  <!-- Скрипт для переключения мобильного меню -->
   <script>
-    // Назначаем функцию в глобальную область
-    window.toggleMenu = function() {
-      var navMenu = document.querySelector('.nav-menu');
-      navMenu.classList.toggle('active');
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+      var burgerMenu = document.querySelector('.burger-menu');
+      burgerMenu.addEventListener("click", function() {
+        var navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
