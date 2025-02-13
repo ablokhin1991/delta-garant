@@ -127,7 +127,7 @@
     /* Бургер-меню (мобильная версия) */
     .burger-menu {
       display: none;
-      flex-direction: column; /* располагаем полоски вертикально */
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       cursor: pointer;
@@ -137,7 +137,7 @@
       display: block;
       width: 30px;
       height: 4px;
-      margin: 4px 0; /* отступ между полосками */
+      margin: 4px 0;
       background-color: #333;
     }
     /* Мобильные стили */
@@ -170,14 +170,15 @@
         margin: 0;
       }
       .dropdown .dropdown-content li a {
-        padding-left: 30px; /* отступ для подпунктов */
+        padding-left: 30px;
         color: white;
       }
     }
   </style>
 
-<script src="css/fonts.js" defer></script>
-<script src="css/js/header.js"></script>
+  <script src="css/fonts.js" defer></script>
+  <!-- Подключаем header.js с defer -->
+  <script src="css/js/header.js" defer></script>
 </head>
 <body>
   <header>
@@ -204,7 +205,7 @@
         </ul>
       </nav>
       
-      <!-- Бургер-меню для мобильных (без inline onclick) -->
+      <!-- Бургер-меню для мобильных -->
       <div class="burger-menu">
         <span></span>
         <span></span>
