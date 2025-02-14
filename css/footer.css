@@ -113,6 +113,7 @@ footer a:hover {
     }
 
     .footer-img {
+        display: none;
         width: auto;
         height: 20px;
         margin: 0 5px;
