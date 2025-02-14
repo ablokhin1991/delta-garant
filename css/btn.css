@@ -143,7 +143,7 @@
   /* кнопка ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ В ХЭДЭРЕ • ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ В ХЭДЭРЕ • ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ В ХЭДЭРЕ •  */
   /* btn_isp - Центрируем текст */
 .btn_isp {
-  display: inline-block;
+  display: inline-flex; /*inline-block;*/
   padding: 10px 20px;
   background: #1E3A8A; /* Синий фон */
   border-radius: 8px; /* Скругленные углы */
@@ -153,10 +153,9 @@
   height: 70px; /* Фиксированная высота */
   width: auto; /* Оставляем ширину как есть */
   text-align: center; /* Центрирование текста */
-  display: flex; /* Выравниваем текст по центру */
   align-items: center; /* Центрируем по высоте */
   justify-content: center; /* Центрируем по ширине */
-  box-shadow: /*-6px -6px 10px rgba(255, 255, 255, 0.8),*/
+  box-shadow:
               6px 6px 10px rgba(0, 0, 0, 0.2);
   text-decoration: none; /* Убираем подчеркивание */
 }
