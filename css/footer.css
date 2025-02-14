@@ -98,6 +98,7 @@ footer a:hover {
 /* Респонсивность - медиазапросы для адаптивности */
 @media (max-width: 768px) {
     .footer-container {
+        width: 90%;
         flex-direction: column;
         padding: 15px; /* Опционально: уменьшаем отступы на мобильных */
     }
