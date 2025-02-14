@@ -46,12 +46,6 @@ header {
     margin: 0px;
 }
 
-header .logo img {
-    width: 200px;
-    display: block; /* Убирает inline отступы */
-    margin: 0; /* Сбрасывает отступы */
-}
-
 .header p {
     color: #1E3A8A;
     font-size: 0.4em;
