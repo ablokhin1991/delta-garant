@@ -99,7 +99,7 @@ header .logo img {
     background: linear-gradient(to bottom, #152961, #1E3A8A);
     color: #FFFFFF;
     text-align: left;
-    padding: 100px 0 140px 0; /* Отступ сверху 100px, снизу 130px */
+    padding: 140px 0 140px 0; /* Отступ сверху 100px, снизу 130px */
     width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
     height: auto;
     margin-bottom: -100px; /* Отрицательный отступ, чтобы блок Hero "наезжал" на следующий */
