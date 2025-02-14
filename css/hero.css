@@ -1,0 +1,57 @@
+/* Главная секция (Hero) */
+.hero {
+    background-color: #1E3A8A ;
+    background: linear-gradient(to bottom, #152961, #1E3A8A);
+    color: #FFFFFF;
+    text-align: left;
+    padding: 50px 0 140px 0; /* Отступ сверху 100px, снизу 130px */
+    width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
+    height: auto;
+    margin-bottom: -100px; /* Отрицательный отступ, чтобы блок Hero "наезжал" на следующий */
+    z-index: 1; /* Для того чтобы блок Hero был поверх блока Content */
+}
+
+.hero h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 300; /* Light */
+    margin-bottom: 20px;
+}
+
+/* Респонсивность - медиазапросы для адаптивности */
+@media (max-width: 768px) {
+
+    /* Секция Hero */
+    .hero {
+        padding-top: 10px; /* Уменьшаем отступ сверху до 30px на мобильных устройствах */
+        margin-bottom: -150px; /* Отрицательный отступ, чтобы блок Hero "наезжал" на следующий */
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+}
+
+/* Контейнер для контента */
+.hero-section {
+    width: 80%;
+    margin: 20px auto;
+    overflow: visible;
+}
+
+/* Респонсивность - медиазапросы для адаптивности */
+@media (max-width: 768px) {
+    /* Контейнер для контента */
+    .hero-section {
+        width: 90%;
+      }
+}
