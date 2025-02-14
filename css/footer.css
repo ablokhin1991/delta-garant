@@ -103,6 +103,7 @@ footer a:hover {
     .footer-column {
         width: 100%;
         text-align: justify; /* Центрируем текст в мобильной версии */
+        padding: 10px 0;
     }
 
     .footer-bottom {
