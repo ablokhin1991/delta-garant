@@ -38,7 +38,6 @@ footer {
 .footer-logo {
     max-width: auto;
     height: 20px;
-    /*margin-bottom: 10px; /* Отступ между логотипом и текстом */
 }
 
 /* Центрирование текста */
@@ -60,7 +59,6 @@ footer {
     flex-wrap: wrap;
     color: #a7a7a7;
     font-weight: 300;
-    /*text-align: center;*/
     margin-top: 20px;
     width: 100%; /* Чтобы не выходил за пределы контейнера */
 }
@@ -86,7 +84,7 @@ footer {
 footer a {
     color: #555;
     font-size: 14px; /* Основной текст */
-    font-weight: 300;
+    font-weight: 400;
     text-decoration: none;
 }
 
@@ -100,7 +98,6 @@ footer a:hover {
     .footer-container {
         width: 90%;
         flex-direction: column;
-        /*padding: 15px; Опционально: уменьшаем отступы на мобильных */
     }
 
     .footer-column {
