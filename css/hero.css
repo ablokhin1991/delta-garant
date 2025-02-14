@@ -1,57 +1,77 @@
 /* Главная секция (Hero) */
 .hero {
-    background-color: #1E3A8A ;
+    background-color: #1E3A8A;
     background: linear-gradient(to bottom, #152961, #1E3A8A);
     color: #FFFFFF;
     text-align: left;
-    padding: 50px 0 140px 0; /* Отступ сверху 100px, снизу 130px */
-    width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
+    padding: 50px 0 140px 0; /* Отступ сверху и снизу */
+    width: 100%;
     height: auto;
-    margin-bottom: -100px; /* Отрицательный отступ, чтобы блок Hero "наезжал" на следующий */
-    z-index: 1; /* Для того чтобы блок Hero был поверх блока Content */
-}
-
-.hero h1 {
+    margin-bottom: -100px;
+    z-index: 1;
+  }
+  
+  .hero h1 {
     font-size: 2em;
     margin-bottom: 20px;
-}
-
-.hero p {
+  }
+  
+  .hero p {
     color: #fff;
     font-size: 1.2em;
-    font-weight: 300; /* Light */
+    font-weight: 300;
     margin-bottom: 20px;
-}
-
-/* Респонсивность - медиазапросы для адаптивности */
-@media (max-width: 768px) {
-
-    /* Секция Hero */
-    .hero {
-        padding-top: 10px; /* Уменьшаем отступ сверху до 30px на мобильных устройствах */
-        margin-bottom: -150px; /* Отрицательный отступ, чтобы блок Hero "наезжал" на следующий */
-    }
-
-    .hero h1 {
-        font-size: 1.5em;
-    }
-
-    .hero p {
-        font-size: 1.1em;
-    }
-}
-
-/* Контейнер для контента */
-.hero-section {
+  }
+  
+  /* Контейнер для контента */
+  .hero-section {
     width: 80%;
     margin: 20px auto;
     overflow: visible;
-}
-
-/* Респонсивность - медиазапросы для адаптивности */
-@media (max-width: 768px) {
-    /* Контейнер для контента */
+    display: flex;
+    align-items: center;       /* Выравнивание по центру по вертикали */
+    justify-content: space-between;
+  }
+  
+  /* Контейнер для текста */
+  .hero-content {
+    flex: 1;
+  }
+  
+  /* Контейнер для изображения */
+  .hero-image img {
+    display: block;
+    width: 200px;   /* Размер можно настроить по необходимости */
+    height: 200px;  /* Квадратное соотношение 1:1 */
+    object-fit: cover;
+  }
+  
+  /* Респонсивность - медиазапросы для адаптивности */
+  @media (max-width: 768px) {
+  
+    /* Секция Hero */
+    .hero {
+      padding-top: 10px;
+      margin-bottom: -150px;
+    }
+  
+    .hero h1 {
+      font-size: 1.5em;
+    }
+  
+    .hero p {
+      font-size: 1.1em;
+    }
+    
+    /* Изменения для контейнера контента на мобильных устройствах */
     .hero-section {
-        width: 90%;
-      }
-}
+      width: 90%;
+      /* При необходимости можно убрать flex или изменить направление */
+    }
+    
+    /* Скрываем изображение на мобильных устройствах */
+    .hero-image {
+      display: none;
+    }
+  }
+  
