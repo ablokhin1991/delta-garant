@@ -1,74 +1,70 @@
-/* Главная секция (Hero) */
+/* Секция Hero */
 .hero {
-    background-color: #1E3A8A;
+    position: relative; /* Создаём контекст для абсолютного позиционирования */
     background: linear-gradient(to bottom, #152961, #1E3A8A);
     color: #FFFFFF;
     text-align: left;
-    padding: 50px 0 140px 0; /* Отступ сверху и снизу */
+    padding: 50px 0 140px 0;
     width: 100%;
-    height: auto;
-    margin-bottom: -100px;
+    margin-bottom: -100px; /* Отрицательный отступ для наложения на следующий блок */
     z-index: 1;
   }
   
-  .hero h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    color: #fff;
-    font-size: 1.2em;
-    font-weight: 300;
-    margin-bottom: 20px;
-  }
-  
-  /* Контейнер для контента */
+  /* Контейнер внутри Hero */
   .hero-section {
     width: 80%;
     margin: 20px auto;
-    overflow: visible;
+    position: relative; /* Необязательно, можно позиционировать относительно .hero */
     display: flex;
-    align-items: center;       /* Выравнивание по центру по вертикали */
+    align-items: center;  /* Вертикальное центрирование текста */
     justify-content: space-between;
   }
   
-  /* Контейнер для текста */
+  /* Текстовый контент */
   .hero-content {
     flex: 1;
+    z-index: 2; /* Текст будет выше изображения внутри секции */
   }
   
-  /* Контейнер для изображения */
+  /* Блок с изображением */
+  .hero-image {
+    position: absolute; /* Изображение не влияет на высоту контейнера */
+    right: 20px;        /* Отступ от правого края (можно настроить) */
+    top: 50%;
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    z-index: 1;         /* Если нужно, чтобы следующий блок (content) был выше,
+                            задайте ему z-index больше, чем 1 */
+  }
+  
   .hero-image img {
-    margin-right: 40px;
-    display: block;
-    width: 400px;   /* Размер можно настроить по необходимости */
+    width: 400px;   /* Размер изображения, можно увеличить */
     height: 400px;  /* Квадратное соотношение 1:1 */
     object-fit: cover;
-    z-index: 1;
   }
   
-  /* Респонсивность - медиазапросы для адаптивности */
-  @media (max-width: 768px) {
+  /* Пример оформления следующего блока (content), чтобы он перекрывал изображение */
+  .content {
+    position: relative;
+    z-index: 3;
+  }
   
-    /* Секция Hero */
+  /* Медиазапрос для мобильных устройств */
+  @media (max-width: 768px) {
     .hero {
       padding-top: 10px;
       margin-bottom: -150px;
     }
-  
+    
     .hero h1 {
       font-size: 1.5em;
     }
-  
+    
     .hero p {
       font-size: 1.1em;
     }
     
-    /* Изменения для контейнера контента на мобильных устройствах */
     .hero-section {
       width: 90%;
-      /* При необходимости можно убрать flex или изменить направление */
     }
     
     /* Скрываем изображение на мобильных устройствах */
