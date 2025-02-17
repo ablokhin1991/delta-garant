@@ -49,6 +49,13 @@
   display: grid;
   grid-template-columns: 50% 50%;
 }
+.hero-content {
+  grid-column: 1; /* Текст в первой колонке */
+}
+
+.hero-image {
+  grid-column: 2; /* Картинка во второй колонке */
+}
 
 /* Респонсивность - медиазапросы для адаптивности */
 @media (max-width: 768px) {
