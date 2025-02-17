@@ -52,9 +52,9 @@
 .hero-content {
   grid-column: 1; /* Текст в первой колонке */
   flex-direction: column; /* Располагаем элементы вертикально */
-  text-align: left;
   display: flex;
-  align-items: center; /* Центрируем по вертикали */
+  justify-content: center; /* Выравниваем по центру по высоте */
+  align-items: flex-start; /* Выравниваем по левому краю */
 }
 
 .hero-image {
