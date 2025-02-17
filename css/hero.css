@@ -51,12 +51,15 @@
 }
 .hero-content {
   grid-column: 1; /* Текст в первой колонке */
+  display: flex;
+  align-items: center; /* Центрируем по вертикали */
 }
 
 .hero-image {
   grid-column: 2; /* Картинка во второй колонке */
   display: flex;
   justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
 }
 /* Картинка должна занять всю правую половину */
 .hero-image img {
