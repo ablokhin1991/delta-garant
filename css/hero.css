@@ -46,6 +46,8 @@
   width: 80%;
   margin: 20px auto;
   overflow: visible;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 /* Респонсивность - медиазапросы для адаптивности */
