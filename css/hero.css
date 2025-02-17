@@ -55,6 +55,8 @@
 
 .hero-image {
   grid-column: 2; /* Картинка во второй колонке */
+  display: flex;
+  justify-content: center; /* Центрируем по горизонтали */
 }
 /* Картинка должна занять всю правую половину */
 .hero-image img {
