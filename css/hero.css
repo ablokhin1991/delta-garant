@@ -52,6 +52,7 @@
 .hero-content {
   grid-column: 1; /* Текст в первой колонке */
   flex-direction: column; /* Располагаем элементы вертикально */
+  text-align: left;
   display: flex;
   align-items: center; /* Центрируем по вертикали */
 }
