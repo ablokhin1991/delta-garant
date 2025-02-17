@@ -1,75 +1,72 @@
-/* Секция Hero */
+/* Общая стилизация секции Hero */
 .hero {
-    position: relative; /* Создаём контекст для абсолютного позиционирования */
-    background: linear-gradient(to bottom, #152961, #1E3A8A);
-    color: #FFFFFF;
-    text-align: left;
-    padding: 50px 0 140px 0;
-    width: 100%;
-    margin-bottom: -100px; /* Отрицательный отступ для наложения на следующий блок */
-    z-index: 1;
+  display: grid;
+  grid-template-columns: 50% 50%;             /* Две колонки по 50% каждая */
+  background: linear-gradient(to bottom, #152961, #1E3A8A);
+  color: #FFFFFF;
+  /* Если нужно, чтобы секция перекрывала следующий блок: */
+  margin-bottom: -100px;                     /* Негативный отступ для "захода" на следующий блок */
+  position: relative;
+  z-index: 1;
+  /* Задайте минимальную высоту, чтобы изображение было видно:
+     либо вручную, либо позвольте контенту определять высоту */
+  min-height: 400px; /* при необходимости подберите нужное значение */
+}
+
+/* Стили для текстовой части */
+.hero-content {
+  /* Весь отступ лучше перенести сюда, чтобы правая часть (картинка) не имела отступов */
+  padding: 50px 40px; /* Настраивайте под себя */
+  /* При желании можно задать дополнительную стилизацию */
+}
+
+.hero-content h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Стили для блока с картинкой */
+.hero-image {
+  /* Без внутренних отступов, картинка будет на всю доступную ширину/высоту */
+  position: relative;
+  overflow: hidden;  /* на случай, если картинка будет выходить за границы */
+}
+
+/* Картинка, занимающая 100% ширины и высоты родителя */
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Сохранение пропорций, обрезая лишнее */
+  display: block;    /* Убираем возможные лишние отступы (зазор) у img */
+}
+
+/* Адаптивность (мобильная версия) */
+@media (max-width: 768px) {
+  /* Переключаем сетку на одну колонку */
+  .hero {
+    grid-template-columns: 1fr;
+    margin-bottom: -150px; /* Можно изменить или убрать при необходимости */
+    min-height: auto;      /* При желании можно убрать фиксированную высоту на мобильных */
   }
-  
-  /* Контейнер внутри Hero */
-  .hero-section {
-    width: 80%;
-    margin: 20px auto;
-    position: relative; /* Необязательно, можно позиционировать относительно .hero */
-    display: flex;
-    align-items: center;  /* Вертикальное центрирование текста */
-    justify-content: space-between;
-  }
-  
-  /* Текстовый контент */
-  .hero-content {
-    flex: 1;
-    z-index: 2; /* Текст будет выше изображения внутри секции */
-  }
-  
-  /* Блок с изображением */
+
+  /* Скрываем картинку */
   .hero-image {
-    position: absolute; /* Изображение не влияет на высоту контейнера */
-    right: 20px;        /* Отступ от правого края (можно настроить) */
-    top: 50%;
-    transform: translateY(-50%); /* Центрирование по вертикали */
-    z-index: 1;         /* Если нужно, чтобы следующий блок (content) был выше,
-                            задайте ему z-index больше, чем 1 */
+    display: none;
   }
-  
-  .hero-image img {
-    width: 400px;   /* Размер изображения, можно увеличить */
-    height: 400px;  /* Квадратное соотношение 1:1 */
-    object-fit: cover;
+
+  /* При желании уменьшить шрифты */
+  .hero-content h1 {
+    font-size: 1.5em;
   }
-  
-  /* Пример оформления следующего блока (content), чтобы он перекрывал изображение */
-  .content {
-    position: relative;
-    z-index: 3;
+
+  .hero-content p {
+    font-size: 1.1em;
   }
-  
-  /* Медиазапрос для мобильных устройств */
-  @media (max-width: 768px) {
-    .hero {
-      padding-top: 10px;
-      margin-bottom: -150px;
-    }
-    
-    .hero h1 {
-      font-size: 1.5em;
-    }
-    
-    .hero p {
-      font-size: 1.1em;
-    }
-    
-    .hero-section {
-      width: 90%;
-    }
-    
-    /* Скрываем изображение на мобильных устройствах */
-    .hero-image {
-      display: none;
-    }
-  }
-  
+}
