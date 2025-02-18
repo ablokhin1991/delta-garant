@@ -51,7 +51,7 @@
 
 /* Размер картинки */
 .hero-image img {
-  width: 200px;
+  width: 500px;
   height: auto;
   object-fit: cover;
   display: block;
