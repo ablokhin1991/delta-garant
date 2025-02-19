@@ -1,0 +1,45 @@
+/* Контейнер для логотипов */
+.partners-container {
+    width: 90%;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Блок с логотипами и анимацией */
+  .partners-logos {
+    display: flex;
+    align-items: center;
+    /* Если логотипов мало и нужен непрерывный эффект, можно дублировать содержимое */
+    animation: scroll-logos 20s linear infinite;
+  }
+  
+  /* Стили для каждого логотипа */
+  .partners-logos img {
+    margin-right: 30px; /* Отступ между логотипами */
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+  
+  /* При наведении фильтр снимается */
+  .partners-logos img:hover {
+    filter: grayscale(0%);
+  }
+  
+  /* Анимация движения справа налево */
+  @keyframes scroll-logos {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Скрываем блок на мобильных устройствах */
+  @media (max-width: 768px) {
+    .partners-container {
+      display: none;
+    }
+  }
+  
