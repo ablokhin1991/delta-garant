@@ -16,7 +16,7 @@
   
   /* Стили для каждого логотипа */
   .partners-logos img {
-    margin-right: 30px; /* Отступ между логотипами */
+    margin-right: 100px; /* Отступ между логотипами */
     width: 40px;
     height: auto;
     filter: grayscale(100%);
