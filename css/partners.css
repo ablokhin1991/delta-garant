@@ -4,19 +4,20 @@
     margin: 20px auto;
     overflow: hidden;
     position: relative;
+    white-space: nowrap;
   }
   
-  /* Блок с логотипами и анимацией */
+  /* Двигающийся блок */
   .partners-logos {
     display: flex;
     align-items: center;
-    /* Если логотипов мало и нужен непрерывный эффект, можно дублировать содержимое */
-    animation: scroll-logos 20s linear infinite;
+    gap: 50px; /* Расстояние между логотипами */
+    animation: scroll-logos 40s linear infinite;
   }
   
-  /* Стили для каждого логотипа */
+  /* Стили для логотипов */
   .partners-logos img {
-    margin-right: 100px; /* Отступ между логотипами */
+    margin-right: 50px; /* Увеличенный отступ между логотипами */
     width: 40px;
     height: auto;
     filter: grayscale(100%);
@@ -28,12 +29,12 @@
     filter: grayscale(0%);
   }
   
-  /* Анимация движения справа налево */
+  /* Анимация бесконечного движения */
   @keyframes scroll-logos {
-    0% {
-      transform: translateX(100%);
+    from {
+      transform: translateX(0);
     }
-    100% {
+    to {
       transform: translateX(-100%);
     }
   }
