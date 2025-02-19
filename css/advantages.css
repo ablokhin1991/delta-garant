@@ -54,7 +54,11 @@
     /* Дополнительно: чтобы заголовки и абзацы внутри карточек имели нужное расстояние */
     gap: 10px;
     border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+    transition: transform 0.3s ease;
 }
+.advantage-card:hover {
+    transform: translateY(-5px);
+    }
 
 /* Опционально можно задать стили для заголовков внутри карточек */
 .advantage-card h2 {
