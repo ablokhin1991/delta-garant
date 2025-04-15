@@ -1190,6 +1190,15 @@
         { "procType": "4", "guarType": "4", "hasAdvance": false, "customForm": true, "minSum": 1000000, "ruleMaxSum": 9999999999, "rate": 0.045, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 5000 },
         { "procType": "4", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 1000000, "ruleMaxSum": 9999999999, "rate": 0.045, "minCost": 2000, "ruleMinDays": 0, "ruleMaxDays": 5000 }
       ]
+    },
+    {
+      "name": "АО «РЕАЛИСТ БАНК»",
+      "logo": "/delta-garant/images/banks-logo/lvb1.svg",
+      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
+      "rating": 3,
+      "conditions": [
+        {"procType": "1-3", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000,"rate": 0.00156, "ruleMinDays": 0, "ruleMaxDays": 365, "minCost": 1500}
+      ]
     }
 
   ]
