@@ -1192,12 +1192,36 @@
       ]
     },
     {
-      "name": "АО «РЕАЛИСТ БАНК»",
+      "name": "АО РЕАЛИСТ БАНК",
       "logo": "/delta-garant/images/banks-logo/realist.svg",
       "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
-      "rating": 3,
+      "rating": 4,
       "conditions": [
-        {"procType": "1-3", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000,"rate": 0.00156, "ruleMinDays": 0, "ruleMaxDays": 365, "minCost": 1500}
+  
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.00156, "minCost": 1500, "ruleMinDays": 0, "ruleMaxDays": 365 },
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.0018, "minCost": 1500, "ruleMinDays": 366, "ruleMaxDays": 730 },
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.0036, "minCost": 1500, "ruleMinDays": 1826, "ruleMaxDays": 2190 },
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.0042, "minCost": 1500, "ruleMinDays": 2191, "ruleMaxDays": 3650 },
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": false, "minSum": 3000001, "ruleMaxSum": 9999999, "rate": 0.0048, "minCost": 2500, "ruleMinDays": 2191, "ruleMaxDays": 3650 },
+
+
+  { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.00276, "minCost": 1500, "ruleMinDays": 0, "ruleMaxDays": 1825 },
+  { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.00414, "minCost": 1500, "ruleMinDays": 1826, "ruleMaxDays": 2190 },
+  { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": false, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.00483, "minCost": 1500, "ruleMinDays": 2191, "ruleMaxDays": 3650 },
+  { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": false, "minSum": 3000001, "ruleMaxSum": 9999999, "rate": 0.00552, "minCost": 2500, "ruleMinDays": 2191, "ruleMaxDays": 3650 },
+
+ 
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.001716, "minCost": 1500, "ruleMinDays": 0, "ruleMaxDays": 365 },
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.00198, "minCost": 1500, "ruleMinDays": 366, "ruleMaxDays": 730 },
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.00396, "minCost": 1500, "ruleMinDays": 1826, "ruleMaxDays": 2190 },
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.00462, "minCost": 1500, "ruleMinDays": 2191, "ruleMaxDays": 3650 },
+  { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": true, "minSum": 3000001, "ruleMaxSum": 9999999, "rate": 0.00528, "minCost": 2500, "ruleMinDays": 2191, "ruleMaxDays": 3650 },
+
+
+  { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.003036, "minCost": 1500, "ruleMinDays": 0, "ruleMaxDays": 1825 },
+  { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.004554, "minCost": 1500, "ruleMinDays": 1826, "ruleMaxDays": 2190 },
+  { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 0, "ruleMaxSum": 3000000, "rate": 0.005313, "minCost": 1500, "ruleMinDays": 2191, "ruleMaxDays": 3650 },
+  { "procType": "1", "guarType": "2", "hasAdvance": true, "customForm": true, "minSum": 3000001, "ruleMaxSum": 9999999, "rate": 0.006072, "minCost": 2500, "ruleMinDays": 2191, "ruleMaxDays": 3650 }
       ]
     }
 
