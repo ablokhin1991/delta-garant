@@ -1317,6 +1317,16 @@
         { "procType": "4", "guarType": "4", "hasAdvance": false, "customForm": false, "minSum": 0, "ruleMaxSum": 45000000, "rate": 0.0546, "minCost": 990, "ruleMinDays": 0, "ruleMaxDays": 36500 }
 
       ]
+    },
+    {
+      "name": "ПАО Банк ВТБ",
+      "logo": "/delta-garant/images/banks-logo/vtb.svg",
+      "data": "Решение за 2-3 дня\nБез поручительства и открытия р/с",
+      "rating": 3,
+      "conditions": [
+        
+
+      ]
     }
 
   ]
