@@ -1194,7 +1194,7 @@
     {
       "name": "АО РЕАЛИСТ БАНК",
       "logo": "/delta-garant/images/banks-logo/realist.svg",
-      "data": "Решение за 1-2 дня\nБез поручительства и открытия р/с",
+      "data": "Решение за 2-3 дня\nБез поручительства и открытия р/с",
       "rating": 4,
       "conditions": [
         { "procType": "1", "guarType": "2", "hasAdvance": false, "customForm": true, "minSum": 0, "ruleMaxSum": 45000000, "rate": 0.022308, "minCost": 990, "ruleMinDays": 0, "ruleMaxDays": 365 },
