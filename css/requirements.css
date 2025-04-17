@@ -25,17 +25,17 @@
 /* Контейнер для размещения карточек в виде сетки */
 .requirements-grid {
     display: grid;
-    /*grid-template-columns: 1fr; По умолчанию – одна колонка (мобильная версия) */
+    grid-template-columns: 1fr; /*По умолчанию – одна колонка (мобильная версия) */
     gap: 20px;
     align-items: stretch; /* Растягивает все карточки до самой высокой */
 }
 
-/* Для экранов от 768px – 3 карточки в ряд */
+/* Для экранов от 768px – 3 карточки в ряд
 @media (min-width: 768px) {
     .requirements-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-}
+}*/
 
 
 
