@@ -74,7 +74,7 @@
     grid-column: 2; /* Вторая ячейка */
     font-weight: 400;
     font-size: 14px;
-    color: #333333;
+    color: #1e3a8a;
     /*white-space: nowrap;*/
     /*overflow: hidden;*/
     width: 300px;
@@ -103,7 +103,7 @@
     grid-column: 5; /* Пятая ячейка */
     display: block; /* Принудительно блочное размещение в столбик */
     text-align: right;
-    color: #333333;
+    color: #1e3a8a;
 }
 
 .offer__title-wrap {
