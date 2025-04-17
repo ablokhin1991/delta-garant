@@ -11,7 +11,6 @@
 }
 .requirements {
     margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
-    /*padding: 20px; /* как и в .content */
 }
 /* Устанавливаем ширину в 90%, как у content, только на мобильных */
 @media (max-width: 768px) {
@@ -26,7 +25,7 @@
 /* Контейнер для размещения карточек в виде сетки */
 .requirements-grid {
     display: grid;
-    grid-template-columns: 1fr; /* По умолчанию – одна колонка (мобильная версия) */
+    /*grid-template-columns: 1fr; По умолчанию – одна колонка (мобильная версия) */
     gap: 20px;
     align-items: stretch; /* Растягивает все карточки до самой высокой */
 }
