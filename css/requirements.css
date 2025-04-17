@@ -1,0 +1,40 @@
+/* Контейнер для заголовка */
+.container-requirements {
+    width: 80%;
+    margin: 80px auto 20px auto;
+    overflow: visible;
+}
+.container-requirements h2 {
+    font-size: 25px;
+    color: #1E3A8A;
+    margin-bottom: 20px;
+}
+.requirements {
+    width: 80%;
+    margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
+    /*padding: 20px; /* как и в .content */
+}
+/* Устанавливаем ширину в 90%, как у content, только на мобильных */
+@media (max-width: 768px) {
+    .requirements {
+        width: 90%; /* Теперь совпадает с .content */
+    }
+}
+
+
+
+
+/* Контейнер для размещения карточек в виде сетки */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* По умолчанию – одна колонка (мобильная версия) */
+    gap: 20px;
+    align-items: stretch; /* Растягивает все карточки до самой высокой */
+}
+
+/* Для экранов от 768px – 3 карточки в ряд */
+@media (min-width: 768px) {
+    .requirements-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
