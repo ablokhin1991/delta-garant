@@ -38,3 +38,44 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+
+
+
+
+
+
+/* Стилизация каждой отдельной карточки (плитки) */
+.requirements-card {
+    background-color: #ffffff;
+    padding: 40px 20px 40px 20px; /* сверху 40px, справа 20px, снизу 40px, слева 20px */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Центрирование контента по вертикали и выравнивание текста по левому краю */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* содержимое прижато к верху */
+    align-items: flex-start;    /* выравнивание содержимого по левому краю */
+    text-align: left;
+    /* Дополнительно: чтобы заголовки и абзацы внутри карточек имели нужное расстояние */
+    gap: 10px;
+    border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+    transition: transform 0.3s ease;
+}
+.requirements-card:hover {
+    transform: translateY(-5px);
+    }
+
+/* Опционально можно задать стили для заголовков внутри карточек */
+.requirements-card h2 {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+/* Опционально можно задать стили для текста внутри карточек */
+.requirements-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
