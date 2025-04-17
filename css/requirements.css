@@ -9,6 +9,12 @@
     color: #1E3A8A;
     margin-bottom: 20px;
 }
+
+@media (max-width: 768px) {
+    .container-requirements {
+        width: 90%;
+    }
+}
 .requirements {
     margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
 }
