@@ -54,3 +54,15 @@
 .requirements-list {
     padding: 20px 20px 20px 40px;
   }
+
+
+
+  .requirements-list {
+    list-style-type: none; /* Отключаем стандартные маркеры */
+    padding-left: 1em; /* Добавляем отступ слева */
+  }
+  
+  .requirements-list li::before {
+    content: "—"; /* Вставляем длинное тире */
+    margin-right: 0.5em; /* Отступ между тире и текстом */
+  }
