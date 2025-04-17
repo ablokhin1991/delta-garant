@@ -10,7 +10,6 @@
     margin-bottom: 20px;
 }
 .requirements {
-    width: 80%;
     margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
     /*padding: 20px; /* как и в .content */
 }
