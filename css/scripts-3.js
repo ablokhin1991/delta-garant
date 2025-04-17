@@ -198,7 +198,7 @@ function displayResults(results) {
                       <span>Сложность оформления:</span>
                       <div class="offer__rating" style="display: flex; gap: 5px; margin-top: 5px;">
                         ${Array(5).fill(0).map((_, i) => 
-                          `<div style="width: 10px; height: 10px; border-radius: 50%; background-color: ${i < rating ? '#1e3a8a' : '#e3e3e3'};"></div>`
+                          `<div style="width: 10px; height: 10px; border-radius: 50%; background-color: ${i < rating ? '#9c9c9c' : '#e3e3e3'};"></div>`
                         ).join('')}
                       </div>
                     </div>
