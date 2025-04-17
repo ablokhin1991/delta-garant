@@ -46,10 +46,8 @@
 /* Стилизация каждой отдельной карточки (плитки) */
 .requirements-card {
     background-color: #ffffff;
-    padding: 0px 20px 0px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Центрирование контента по вертикали и выравнивание текста по левому краю */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* содержимое прижато к верху */
