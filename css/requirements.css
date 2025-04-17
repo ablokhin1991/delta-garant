@@ -1,9 +1,10 @@
-/* Контейнер для заголовка */
+
 .container-requirements {
     width: 80%;
     margin: 80px auto 20px auto;
     overflow: visible;
 }
+
 .container-requirements h2 {
     font-size: 25px;
     color: #1E3A8A;
@@ -16,39 +17,27 @@
     }
 }
 .requirements {
-    margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
+    margin: 20px auto 0 auto; 
 }
 
-
-
-
-/* Контейнер для размещения карточек в виде сетки */
 .requirements-grid {
     display: grid;
-    grid-template-columns: 1fr; /*По умолчанию – одна колонка (мобильная версия) */
+    grid-template-columns: 1fr;
     gap: 20px;
-    align-items: stretch; /* Растягивает все карточки до самой высокой */
+    align-items: stretch;
 }
 
-
-
-
-
-
-
-
-/* Стилизация каждой отдельной карточки (плитки) */
 .requirements-card {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* содержимое прижато к верху */
-    align-items: flex-start;    /* выравнивание содержимого по левому краю */
+    justify-content: flex-start;
+    align-items: flex-start;
     text-align: left;
     gap: 10px;
-    border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
+    border-left: 4px solid #1E3A8A;
     transition: transform 0.3s ease;
 }
 .requirements-card:hover {
@@ -62,5 +51,5 @@
 }
 
 .requirements-list {
-    padding: 20px 20px 20px 40px; /* top right bottom left */
+    padding: 20px 20px 20px 40px;
   }
