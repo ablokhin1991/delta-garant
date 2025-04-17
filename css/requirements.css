@@ -30,12 +30,6 @@
     align-items: stretch; /* Растягивает все карточки до самой высокой */
 }
 
-/* Для экранов от 768px – 3 карточки в ряд
-@media (min-width: 768px) {
-    .requirements-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}*/
 
 
 
@@ -59,40 +53,14 @@
 }
 .requirements-card:hover {
     transform: translateY(-5px);
-    }
-
-/* Опционально можно задать стили для заголовков внутри карточек */
-.requirements-card h2 {
-    font-size: 16px;
-    color: #555;
-    margin: 0;
 }
 
-/* Опционально можно задать стили для текста внутри карточек */
-.requirements-card p {
+.requirements-list li {
     font-size: 14px;
     color: #555;
     margin: 0;
 }
-
-
 
 .requirements-list {
     padding: 20px 20px 20px 40px; /* top right bottom left */
   }
-
-
-
-  /* Опционально можно задать стили для заголовков внутри карточек */
-.requirements-card h2 {
-    font-size: 16px;
-    color: #555;
-    margin: 0;
-}
-
-/* Опционально можно задать стили для текста внутри карточек */
-.requirements-card p {
-    font-size: 14px;
-    color: #555;
-    margin: 0;
-}
