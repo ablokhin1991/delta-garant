@@ -53,7 +53,6 @@
     justify-content: flex-start; /* содержимое прижато к верху */
     align-items: flex-start;    /* выравнивание содержимого по левому краю */
     text-align: left;
-    /* Дополнительно: чтобы заголовки и абзацы внутри карточек имели нужное расстояние */
     gap: 10px;
     border-left: 4px solid #1E3A8A; /* Добавляем акцентную полосу */
     transition: transform 0.3s ease;
