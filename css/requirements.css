@@ -80,3 +80,19 @@
 .requirements-list {
     padding: 20px 20px 20px 40px; /* top right bottom left */
   }
+
+
+
+  /* Опционально можно задать стили для заголовков внутри карточек */
+.requirements-card h2 {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+/* Опционально можно задать стили для текста внутри карточек */
+.requirements-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
