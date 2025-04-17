@@ -18,12 +18,6 @@
 .requirements {
     margin: 20px auto 0 auto; /* 20px сверху, центрирование по горизонтали */
 }
-/* Устанавливаем ширину в 90%, как у content, только на мобильных */
-@media (max-width: 768px) {
-    .requirements {
-        width: 90%; /* Теперь совпадает с .content */
-    }
-}
 
 
 
