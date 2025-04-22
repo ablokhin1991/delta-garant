@@ -133,20 +133,17 @@ header {
     width: 150px;
   }
 
-  .header-top {
-    flex-wrap: wrap;
-  }
-
+  /* Скрываем контактную информацию (email, телефон, кнопку "Заказать звонок") */
   .contact-info {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-  }
-
-  .desktop-nav {
     display: none;
   }
 
+  /* Скрываем нижнюю часть хэддера (меню) */
+  .header-bottom {
+    display: none;
+  }
+
+  /* Убедимся, что бургер-меню отображается */
   .burger {
     display: block;
   }
