@@ -20,6 +20,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+  position: relative; /* Для позиционирования бургер-меню */
 }
 
 .logo img {
@@ -143,23 +144,29 @@ header {
     display: none;
   }
 
-  /* Убедимся, что бургер-меню отображается */
+  /* Позиционируем бургер-меню по правому краю и центрируем по высоте */
+  .header-top {
+    position: relative;
+  }
+
   .burger {
     display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Центрируем по высоте относительно логотипа */
   }
 }
 
-/* Бургер-меню (не трогаем) */
+/* Бургер-меню */
 .burger-checkbox {
   position: absolute;
   visibility: hidden;
 }
 
 .burger {
-  position: relative;
   z-index: 100;
   cursor: pointer;
-  display: none;
   border: none;
   background: transparent;
   width: 40px;
