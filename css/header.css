@@ -108,43 +108,12 @@ header {
 .services-block {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .services-block .services-title {
   color: white;
   padding: 10px 15px;
   font-weight: bold;
-}
-
-.services-block .services-list {
-  list-style: none;
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  padding: 10px;
-  min-width: 200px;
-  border-radius: 4px;
-}
-
-.services-block:hover .services-list {
-  display: block;
-}
-
-.services-block .services-list li a {
-  color: #333;
-  padding: 10px;
-  text-decoration: none;
-  display: block;
-  border-radius: 8px;
-}
-
-.services-block .services-list li a:hover {
-  background-color: #284db5;
-  color: #fff;
 }
 
 /* Стили для десктопа */
