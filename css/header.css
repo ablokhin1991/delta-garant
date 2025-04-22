@@ -171,6 +171,7 @@ header {
   background: transparent;
   width: 40px;
   height: 26px;
+  position: relative;
 }
 
 .burger::before,
@@ -187,7 +188,7 @@ header {
 
 .burger::before {
   top: 0;
-  box-shadow: 0 11px 0 #fff;
+  box-shadow: 0 11px 0 #fff; /* Средняя полоска через box-shadow */
   transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
 }
 
