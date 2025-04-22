@@ -20,7 +20,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  position: relative; /* Для позиционирования бургер-меню */
 }
 
 .logo img {
@@ -122,6 +121,11 @@ header {
   .nav-menu {
     display: flex;
   }
+
+  /* Скрываем бургер-меню на десктопе */
+  .mobile-menu {
+    display: none;
+  }
 }
 
 /* Мобильные стили */
@@ -170,6 +174,7 @@ header {
   width: 40px;
   height: 26px;
   position: relative;
+  display: none; /* Скрыто по умолчанию, показываем только на мобильных */
 }
 
 .burger::before,
