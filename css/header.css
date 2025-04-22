@@ -174,7 +174,6 @@ header {
   width: 40px;
   height: 26px;
   position: relative;
-  display: none; /* Скрыто по умолчанию, показываем только на мобильных */
 }
 
 .burger::before,
