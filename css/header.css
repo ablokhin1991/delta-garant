@@ -27,17 +27,17 @@ header {
 
 .contact-info {
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   gap: 40px;
 }
 
 .contact-info a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
+  /*font-size: 14px;*/
   display: flex;
   align-items: center;
-  gap: 5px;
+  /*gap: 5px;*/
 }
 
 .contact-info a:hover {
@@ -46,12 +46,15 @@ header {
 
 .contact-info .phone {
   flex-direction: column;
-  align-items: flex-start;
+  /*align-items: flex-start;*/
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .contact-info .phone-label {
-  font-size: 12px;
+  font-size: 10px;
   color: #ccc;
+  font-weight: 300;
 }
 
 .contact-info .order-call {
@@ -60,8 +63,10 @@ header {
   padding: 8px 15px;
   border-radius: 4px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 700;
   transition: background 0.3s;
+  justify-content: center;
 }
 
 .contact-info .order-call:hover {
