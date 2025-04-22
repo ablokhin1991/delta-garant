@@ -59,7 +59,7 @@
 
   .requirements-list {
     list-style-type: none; /* Отключаем стандартные маркеры */
-    padding-left: 1em; /* Добавляем отступ слева */
+    padding-left: 1.5em; /* Добавляем отступ слева */
   }
   
   .requirements-list li::before {
