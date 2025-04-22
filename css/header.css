@@ -144,17 +144,15 @@ header {
     display: none;
   }
 
-  /* Позиционируем бургер-меню по правому краю и центрируем по высоте */
-  .header-top {
-    position: relative;
-  }
-
+  /* Позиционируем бургер-меню */
   .burger {
     display: block;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%); /* Центрируем по высоте относительно логотипа */
+  }
+
+  /* Убедимся, что .mobile-menu не ломает выравнивание */
+  .mobile-menu {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -172,6 +170,7 @@ header {
   width: 40px;
   height: 26px;
   position: relative;
+  display: none; /* Скрыто по умолчанию, показываем только на мобильных */
 }
 
 .burger::before,
