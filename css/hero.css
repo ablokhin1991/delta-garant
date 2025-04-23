@@ -1,6 +1,6 @@
 .hero {
   text-align: left;
-  padding: 100px 0px 100px 0;
+  padding: 90px 0px 100px 0;
   width: 100%;
   height: auto;
   margin-bottom: -50px;
@@ -56,7 +56,7 @@
 }
 
 .hero-image img {
-  width: 100%;
+  width: 500px;
   height: auto;
   max-height: 500px; /* Ограничение максимальной высоты изображения */
   object-fit: contain; /* Сохранение пропорций изображения */
@@ -64,7 +64,7 @@
   display: block;
   position: absolute;
   bottom: 0; /* Фиксация по нижнему краю */
-  margin-bottom: -70px;
+  margin-bottom: -90px;
 }
 
 @media (max-width: 768px) {
