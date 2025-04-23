@@ -88,7 +88,7 @@ header {
 
 .contact-info .order-call {
   background: #d62718;
-  color: white;
+  color: #fff;
   padding: 8px 15px;
   border-radius: 8px;
   text-decoration: none;
@@ -100,7 +100,8 @@ header {
 }
 
 .contact-info .order-call:hover {
-  background: #d63b30;
+  background: #bd1e10;
+  color: #fff;
 }
 
 /* Нижняя часть хэддера */
