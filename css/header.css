@@ -47,6 +47,13 @@ header {
   color: #007bff;
 }
 
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .header-top-nav {
+    display: none; /* Скрываем меню в мобильной версии */
+  }
+}
+
 .logo img {
   width: 200px;
   height: auto;
