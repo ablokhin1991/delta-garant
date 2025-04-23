@@ -1,8 +1,10 @@
 /* Стили хедера для всех устройств */
 header {
-  background: linear-gradient(to bottom, #0d1c45, #152961);
+  background: #fff;
   color: #F3F4F6;
   padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
 .header-container {
