@@ -1,12 +1,12 @@
 /* Общий контейнер для блока с карточками – стилизуем так же, как блок .content */
 /* Контейнер для заголовка */
-.container-2 {
+.container-advantages {
     width: 80%;
     margin: 80px auto 20px auto;
     overflow: visible;
 }
 
-.container-2 h2 {
+.container-advantages h2 {
     font-size: 25px;
     color: #1E3A8A;
     margin-bottom: 20px;
