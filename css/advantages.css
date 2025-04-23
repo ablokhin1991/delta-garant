@@ -44,9 +44,8 @@
     justify-content: flex-start; 
     align-items: flex-start;    
     text-align: left;
-    
     gap: 10px;
-    border-left: 4px solid #1E3A8A; 
+    /*border-left: 4px solid #1E3A8A; */
     transition: transform 0.3s ease;
 }
 .advantage-card:hover {
