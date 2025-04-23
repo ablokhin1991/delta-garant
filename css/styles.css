@@ -104,10 +104,10 @@ header .container {
 /* Общие стили для текста */
 .field__label-placeholder {
     position: absolute;
-    top: 5px; /* Отступ от верхнего края */
-    left: 15px; /* Отступ от левого края */
-    font-size: 12px; /* Уменьшаем размер текста */
-    color: #969696;
+    top: 5px; 
+    left: 15px; 
+    font-size: 12px; 
+    color: #a0a4b3;
     pointer-events: none;
     transition: all 0.3s ease;
 }
@@ -126,8 +126,8 @@ header .container {
 
 .field__input {
     width: 100%;
-    color: #333333; /* Задаём цвет текста */
-    padding: 25px 15px 10px; /* Сверху меньше отступ, снизу больше для "текста на дне" */
+    color: #2e2e2e;
+    padding: 25px 15px 10px;
     border: 2px solid #E2E8F0;
     border-radius: 4px;
     font-size: 16px;
@@ -253,14 +253,14 @@ header .container {
 }
 
 .field__input.error {
-    border: 2px solid red;
+    border: 2px solid #dc3545;
 }
 
 .error-message {
     display: flex;
     align-items: center;
     font-size: 9px;
-    color: red;
+    color: #dc3545;
     margin-top: 5px;
 }
 
