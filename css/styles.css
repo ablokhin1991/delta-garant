@@ -139,19 +139,19 @@ header .container {
 }
 
 .field__input:focus {
-    border-color: #1E3A8A;
+    border-color: #0036a7;
     outline: none;
 }
 
 .field__input:hover {
-    border-color: #1E3A8A;
+    border-color: #0036a7;
     outline: none;
 }
 
 /* Раскрывающиеся списки (select) */
 .field__input select {
     width: 100%;
-    color: #1E3A8A; /* Цвет текста в выпадающем списке */
+    color: #2e2e2e; /* Цвет текста в выпадающем списке */
     padding: 0 5px; /* Отступы для текста */
     text-align: left; /* Выравниваем текст */
     background-color: white; /* Приводим фон к стандартному виду */
