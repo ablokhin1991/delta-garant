@@ -5,9 +5,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+.container-footer {
+    max-width: 1400px;
+    width: 80%;
+    margin: 20px auto;
+    overflow: visible;
+}
+@media (max-width: 768px) {
+    .container-footer {
+        width: 90%;
+      }
+}
 
 footer {
-    background-color: #f4f4f4;
     color: #555;
     font-size: 14px; /* Основной текст */
     padding: 10px 0; /* Уменьшаем общий отступ футера */
