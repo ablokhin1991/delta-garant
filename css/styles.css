@@ -14,13 +14,13 @@ body {
 
 /* Обычный текст */
 p {
-    font-weight: 500; /* Легкий текст для лучшей читаемости */
+    font-weight: 400; /* Легкий текст для лучшей читаемости */
     line-height: 1.6; /* Улучшенная читаемость */
     font-size: 16px;
     color: #2e2e2e;
 }
 li {
-    font-weight: 500; /* Легкий текст для лучшей читаемости */
+    font-weight: 400; /* Легкий текст для лучшей читаемости */
     line-height: 1.6; /* Улучшенная читаемость */
     font-size: 16px;
     color: #2e2e2e;
@@ -36,6 +36,12 @@ h1 {
     font-weight: 700; /* Bold */
     font-size: 32px;
 }
+h2 {
+    font-size: 25px;
+    color: #0036a7;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 768px) { 
     h1 {
       font-size: 24px;

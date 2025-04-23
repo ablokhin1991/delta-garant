@@ -6,12 +6,6 @@
     overflow: visible;
 }
 
-.container-requirements h2 {
-    font-size: 25px;
-    color: #0036a7;
-    margin-bottom: 20px;
-}
-
 @media (max-width: 768px) {
     .container-requirements {
         width: 90%;
