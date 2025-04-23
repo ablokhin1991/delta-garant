@@ -1,8 +1,6 @@
 /* Главная секция (Hero) */
 .hero {
-  background-color: #1E3A8A;
-  background: linear-gradient(to bottom, #152961, #1E3A8A);
-  color: #FFFFFF;
+  background: #f8f9fb;
   text-align: left;
   padding: 100px 0 100px 0;
   width: 100%;
