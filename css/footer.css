@@ -20,7 +20,6 @@
 footer {
     background: #0036a7;
     color: #fff;
-    font-size: 14px; 
     padding: 10px 0; 
     margin: 0px auto;
     margin-top: 80px;
@@ -99,7 +98,6 @@ footer {
 /* Ссылки */
 footer a {
     color: #fff;
-    font-size: 14px; /* Основной текст */
     font-weight: 400;
     text-decoration: none;
 }
