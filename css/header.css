@@ -31,10 +31,10 @@ header {
 .header-top-menu {
   list-style: none;
   display: flex;
-  gap: 20px; /* Равный отступ между пунктами */
+  gap: 40px;
   margin: 0;
   padding: 0;
-  white-space: nowrap; /* Запрещает перенос символов */
+  white-space: nowrap;
 }
 
 .header-top-menu li a {
