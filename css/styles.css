@@ -185,11 +185,11 @@ header .container {
   }
 
   .main-block__filters input[type="checkbox"] {
-    accent-color: #1E3A8A; /* Изменяем цвет активного состояния чекбокса */
+    accent-color: #0036a7; /* Изменяем цвет активного состояния чекбокса */
   }
 
   .main-block__filters input[type="checkbox"]:hover {
-    accent-color: #284db5; /* Изменяем цвет активного состояния чекбокса */
+    accent-color: #0049d2; /* Изменяем цвет активного состояния чекбокса */
   }
 
 /* Результаты */
