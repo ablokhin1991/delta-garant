@@ -177,13 +177,11 @@ header .container {
 }
 
 .main-block__filters label {
-    color: #333333; /* Цвет текста чекбоксов */
-    font-size: 14px;
-    font-weight: 300;
-    display: flex; /* Чтобы текст рядом с чекбоксом выровнялся */
+    color: #2e2e2e; 
+    display: flex;
     align-items: center;
-    margin-right: 15px; /* Увеличиваем расстояние между чекбоксами */
-    gap: 8px; /* Добавляем небольшой отступ между чекбоксом и текстом */
+    margin-right: 15px; 
+    gap: 8px;
   }
 
   .main-block__filters input[type="checkbox"] {
