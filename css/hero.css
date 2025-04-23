@@ -14,10 +14,11 @@
 .hero h1 {
   font-size: 2em;
   margin-bottom: 20px;
+  color: #2e2e2e;
 }
 
 .hero p {
-  color: #fff;
+  color: #5a5f73;
   font-size: 1.2em;
   font-weight: 300;
   margin-bottom: 20px;
