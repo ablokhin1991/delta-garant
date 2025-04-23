@@ -69,7 +69,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     color: #a7a7a7;
     font-weight: 300;
     margin-top: 20px;
