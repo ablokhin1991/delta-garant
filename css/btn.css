@@ -101,7 +101,7 @@
 .btn_primary {
     display: inline-block;
     padding: 10px 20px;
-    background: #0036a7;
+    background: #d62718;
     position: relative;
     border-radius: 8px; 
     transition: all 0.1s ease-in-out; 
@@ -112,7 +112,7 @@
                 6px 6px 10px rgba(0, 0, 0, 0.2);
   }
   .btn_primary:hover {
-    background: #0049d2;
+    background: #bd1e10;
     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 6px 6px 10px rgba(0, 0, 0, 0.2);
     color: #fff; 
