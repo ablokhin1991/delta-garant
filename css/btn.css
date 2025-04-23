@@ -104,10 +104,10 @@
     background: #d62718;
     position: relative;
     border-radius: 8px; 
+    transition: background 0.3s; 
     font-weight: bold;
     color: #FFF; 
     height: 50px;
-    transition: background 0.3s;
   }
   .btn_primary:hover {
     background: #bd1e10;
@@ -118,6 +118,8 @@
   .btn_primary:active {
     opacity: 1; /* Полная видимость */
     background: #bd1e10; /* Фон кнопки */
+    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+                inset 8px 8px 16px rgba(0, 0, 0, 0.1);
     color: #fff; /* Меняем цвет текста при нажатии */
   }
   
