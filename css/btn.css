@@ -104,26 +104,20 @@
     background: #d62718;
     position: relative;
     border-radius: 8px; 
-    transition: all 0.1s ease-in-out; 
     font-weight: bold;
     color: #FFF; 
     height: 50px;
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-                6px 6px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
   }
   .btn_primary:hover {
     background: #bd1e10;
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-                6px 6px 10px rgba(0, 0, 0, 0.2);
     color: #fff; 
   }
   
   /* Эффект при нажатии */
   .btn_primary:active {
     opacity: 1; /* Полная видимость */
-    background: #284db5; /* Фон кнопки */
-    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
-                inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+    background: #bd1e10; /* Фон кнопки */
     color: #fff; /* Меняем цвет текста при нажатии */
   }
   
