@@ -39,52 +39,6 @@ header .container {
     justify-content: space-between; /* Разместить элементы по краям */
     align-items: center; /* Вертикальное выравнивание по центру */
 }
-header {
-    background-color: #152961 ;
-    color: #F3F4F6;
-    padding: 10px 0;
-    margin: 0px;
-}
-
-.header p {
-    color: #1E3A8A;
-    font-size: 0.4em;
-    margin-top: 0px; /* Добавим небольшой отступ сверху */
-}
-
-/* Электронная почта */
-.header-email {
-    display: flex;
-    align-items: center; /* Центрируем содержимое по вертикали */
-    justify-content: flex-end; /* Выравнивание по правому краю */
-    gap: 10px; /* Отступ между иконкой и текстом */
-    text-align: right; /* Выравнивание текста справа */
-    width: auto; /* Убираем лишнюю ширину, если она есть */
-}
-
-.email-link {
-    display: flex;
-    align-items: center; /* Центрируем содержимое */
-    text-decoration: none; /* Убираем подчеркивание */
-    font-size: 16px; /* Размер текста */
-    color: #fff; /* Основной цвет текста */
-    transition: color 0.3s ease; /* Плавный переход цвета при наведении */
-}
-
-.email-link:hover {
-    color: #F0473B; /* Цвет текста при наведении */
-}
-
-.email-icon {
-    width: 15px; /* Ширина иконки */
-    height: 15px; /* Высота иконки */
-    transition: transform 0.3s ease; /* Анимация при наведении */
-    margin-right: 10px; /* Отступ между иконкой и текстом */
-}
-
-.email-link:hover .email-icon {
-    transform: scale(1.2); /* Увеличиваем иконку при наведении */
-}
 
 /* Контейнер для контента */
 .container {
@@ -467,19 +421,6 @@ header {
     .result__title-wrap h2 {
         font-size: 14px;
         margin-bottom: 5px;
-    }
-
-    .header-email {
-        margin-top: 10px; /* Отступ сверху для почты */
-    }
-
-    .email-link {
-        font-size: 14px; /* Уменьшаем текст на мобильных */
-    }
-
-    .email-icon {
-        width: 16px; /* Уменьшаем иконку на мобильных */
-        height: 16px;
     }
 
     
