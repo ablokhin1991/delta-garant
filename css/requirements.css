@@ -8,7 +8,7 @@
 
 .container-requirements h2 {
     font-size: 25px;
-    color: #1E3A8A;
+    color: #0036a7;
     margin-bottom: 20px;
 }
 
@@ -31,6 +31,7 @@
 .requirements-card {
     background-color: #ffffff;
     border-radius: 8px;
+    border: 1px solid #e6e8ed;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -38,7 +39,7 @@
     align-items: flex-start;
     text-align: left;
     gap: 10px;
-    border-left: 4px solid #1E3A8A;
+    /*border-left: 4px solid #1E3A8A;*/
     transition: transform 0.3s ease;
 }
 .requirements-card:hover {
