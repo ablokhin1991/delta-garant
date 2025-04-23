@@ -14,9 +14,8 @@
 }
 
 .hero p {
-  color: #5a5f73;
-  font-weight: 300;
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .hero-section {
