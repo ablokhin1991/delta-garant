@@ -227,9 +227,7 @@ header .container {
 
 
 .result__title-wrap h2 {
-    color: #1E3A8A;
-    font-size: 14px;
-    font-weight: bold;
+    color: #0036a7;
     margin-bottom: 20px;
 }
 
@@ -240,8 +238,7 @@ header .container {
   }
   
   .result__count {
-    color: gray;
-    font-size: 14px;
+    color: #5a5f73;
     white-space: nowrap; /* Запрещаем перенос текста на новую строку */
     margin-bottom: 20px;
   }
@@ -449,7 +446,6 @@ header .container {
   }
 
     .result__title-wrap h2 {
-        font-size: 14px;
         margin-bottom: 5px;
     }
 
