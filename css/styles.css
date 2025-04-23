@@ -114,7 +114,7 @@ header .container {
 
 /* Когда родительский контейнер .field получает фокус (focus-within), меняем цвет метки */
 .field:focus-within .field__label-placeholder {
-    color: #1E3A8A;
+    color: #0036a7;
 }
 
 /* Поля ввода */
