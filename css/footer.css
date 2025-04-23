@@ -18,9 +18,13 @@
 }
 
 footer {
+    background: #ece;
     color: #555;
-    font-size: 14px; /* Основной текст */
-    padding: 10px 0; /* Уменьшаем общий отступ футера */
+    font-size: 14px; 
+    padding: 10px 0; 
+    max-width: 1400px;
+    width: 80%;
+    margin: 0px auto;
 }
 
 /* Контейнер для столбиков */
