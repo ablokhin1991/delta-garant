@@ -4,6 +4,11 @@
     margin: 80px auto 20px auto;
     overflow: visible;
 }
+@media (max-width: 768px) {
+    .container-advantages {
+        width: 90%;
+    }
+}
 .advantages {
     margin: 20px auto 0 auto; 
 }
