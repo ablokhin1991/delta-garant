@@ -33,13 +33,19 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 /* Заголовки */
 h1 {
-    font-weight: 700; /* Bold */
+    font-weight: 700;
     font-size: 32px;
+    color: #2e2e2e;
 }
 h2 {
     font-size: 25px;
     color: #0036a7;
     margin-bottom: 20px;
+}
+h3 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #2e2e2e;
 }
 
 @media (max-width: 768px) { 
