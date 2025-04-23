@@ -1,4 +1,4 @@
-/* Главная секция (Hero) */
+
 .hero {
   text-align: left;
   padding: 100px 0 100px 0;
@@ -9,19 +9,16 @@
 }
 
 .hero h1 {
-  font-size: 2em;
   margin-bottom: 20px;
   color: #2e2e2e;
 }
 
 .hero p {
   color: #5a5f73;
-  font-size: 1.2em;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
-/* Контейнер для контента */
 .hero-section {
   max-width: 1400px;
   width: 80%;
@@ -31,7 +28,6 @@
   grid-template-columns: 50% 50%;
 }
 
-/* Левая часть - текст */
 .hero-content {
   grid-column: 1;
   flex-direction: column;
@@ -40,7 +36,6 @@
   align-items: flex-start;
 }
 
-/* Правая часть - картинка */
 .hero-image {
   grid-column: 2;
   display: flex;
@@ -49,7 +44,6 @@
   margin-bottom: 20px;
 }
 
-/* Размер картинки */
 .hero-image img {
   width: 400px;
   height: auto;
@@ -57,31 +51,19 @@
   display: block;
 }
 
-/* 🔹 Мобильная версия */
 @media (max-width: 768px) {
   .hero {
     padding-top: 10px;
     margin-bottom: -100px;
   }
 
-  .hero h1 {
-    font-size: 1.5em;
-  }
-
-  .hero p {
-    font-size: 1.1em;
-  }
-
-  /* ⚡ Изменения для .hero-section */
   .hero-section {
-    width: 90%; /* Уменьшаем ширину */
-    display: flex; /* Убираем grid */
-    flex-direction: column; /* Структура теперь в колонку */
-    justify-content: center; /* Центрируем по высоте */
-    align-items: flex-start; /* Выравниваем по левому краю */
+    width: 90%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
-
-  /* ❌ Скрываем картинку */
   .hero-image {
     display: none;
   }
