@@ -57,6 +57,7 @@ header .container {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
+    border: 1px solid #e6e8ed;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative; /* Чтобы блок контента был под Hero */
     z-index: 0; /* Это гарантирует, что блок Content будет под Hero */
