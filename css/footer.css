@@ -27,7 +27,8 @@ footer {
 
 /* Контейнер для столбиков */
 .footer-container {
-    /*width: 80%;*/
+    max-width: 1400px;
+    width: 80%;
     margin: 20px auto 0 auto; /* Совпадает с .content */
     /*padding: 20px;*/
     display: flex;
@@ -72,7 +73,9 @@ footer {
     color: #a7a7a7;
     font-weight: 300;
     margin-top: 20px;
-    width: 100%; /* Чтобы не выходил за пределы контейнера */
+    max-width: 1400px;
+    width: 80%;
+    margin: 0px auto;
 }
 
 .footer-img {
