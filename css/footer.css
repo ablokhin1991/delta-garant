@@ -94,12 +94,14 @@ footer {
     white-space: nowrap;
 }
 
-
-/* Ссылки */
 footer a {
     color: #fff;
     font-weight: 400;
     text-decoration: none;
+}
+footer p {
+    color: #fff;
+    font-weight: 400;
 }
 
 footer a:hover {
