@@ -63,10 +63,10 @@ header {
 }
 
 .contact-info .order-call {
-  background: #F0473B;
+  background: #d62718;
   color: white;
   padding: 8px 15px;
-  border-radius: 4px;
+  border-radius: 8px;
   text-decoration: none;
   font-size: 16px;
   font-weight: 700;
