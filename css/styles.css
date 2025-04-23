@@ -50,6 +50,7 @@ header .container {
 /* Стили калькулятора */
 /* Стиль контента */
 .content {
+    max-width: 1400px;
     width: 80%;
     margin: 20px auto 0 auto; /* 20px сверху, авто отступы слева и справа, 0 снизу */
     padding: 20px;
