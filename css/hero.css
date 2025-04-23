@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   align-items: flex-end; /* Выравнивание содержимого по нижнему краю */
-  min-height: 400px; /* Минимальная высота секции */
+  /*min-height: 400px; */
 }
 
 .hero-content {
@@ -52,7 +52,7 @@
   width: 100%;
   max-width: 500px; /* Ограничение максимальной ширины изображения */
   height: 100%;
-  position: relative;
+  /*position: relative;*/
 }
 
 .hero-image img {
@@ -64,6 +64,7 @@
   display: block;
   position: absolute;
   bottom: 0; /* Фиксация по нижнему краю */
+  margin-bottom: -70px;
 }
 
 @media (max-width: 768px) {
