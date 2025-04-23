@@ -42,6 +42,7 @@ header .container {
 
 /* Контейнер для контента */
 .container {
+    max-width: 1400px;
     width: 80%;
     margin: 20px auto;
     overflow: visible;
