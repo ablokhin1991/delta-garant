@@ -148,3 +148,117 @@ footer a:hover {
         margin-top: 10px;
     }
 }
+/*************************************************************************************************************************/
+
+
+
+
+
+
+/* Общие стили для футера */
+.custom-footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0 20px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+.custom-footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.custom-footer__col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.custom-footer__title {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.custom-footer__title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #3498db;
+}
+
+.custom-footer__list {
+    list-style: none;
+}
+
+.custom-footer__item {
+    margin-bottom: 10px;
+}
+
+.custom-footer__link {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.custom-footer__link:hover {
+    color: #3498db;
+}
+
+/* Стили для колонки с контактами */
+.custom-footer__col--contacts {
+    flex-basis: 250px;
+}
+
+.custom-footer__contact-list {
+    list-style: none;
+}
+
+.custom-footer__contact-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-footer__icon {
+    margin-right: 10px;
+    color: #3498db;
+    width: 20px;
+    text-align: center;
+}
+
+/* Стили для нижней части футера */
+.custom-footer__bottom {
+    background-color: #1a252f;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.custom-footer__copyright {
+    color: #bdc3c7;
+    font-size: 14px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .custom-footer__col {
+        flex: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .custom-footer__col--contacts {
+        flex-basis: 100%;
+    }
+}
