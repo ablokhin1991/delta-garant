@@ -147,13 +147,14 @@
   
   .footer-block .footer-order-call:hover {
     background: #bd1e10;
-    box-shadow: 0 0 15px #d62718;
+    box-shadow: 0 0 15px #bd1e10;
     color: #fff;
   }
   .footer-block .footer-order-call:active {
     opacity: 1;
     background: #d62718;
     color: #fff;
+    box-shadow: 0 0 15px #d62718;
     box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
                 inset 8px 8px 16px rgba(0, 0, 0, 0.1);
   }
