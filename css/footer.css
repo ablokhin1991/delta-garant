@@ -6,6 +6,11 @@
     font-size: 14px;
 }
 
+.footer-delta-title {
+ font-weight: 700;
+ color: #fff;
+}
+
 .footer-wrapper {
     max-width: 1400px;
     width: 80%;
