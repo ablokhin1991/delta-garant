@@ -141,12 +141,13 @@
     transition: background 0.3s;
     justify-content: center;
     width: 200px;
-    display: flex
-    ;
+    display: flex;
+    box-shadow: 0 0 15px #d62718;
   }
   
   .footer-block .footer-order-call:hover {
     background: #bd1e10;
+    box-shadow: 0 0 15px #d62718;
     color: #fff;
   }
   .footer-block .footer-order-call:active {
