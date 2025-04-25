@@ -90,6 +90,9 @@
 }
 
 @media (max-width: 768px) {
+    .footer-delta-title {
+        margin: 0px 0px 0px 00px;
+    }
     .footer-wrapper {
         flex-direction: column;
         align-items: flex-start;
