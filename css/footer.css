@@ -141,6 +141,8 @@
     transition: background 0.3s;
     justify-content: center;
     width: 200px;
+    display: flex
+    ;
   }
   
   .footer-block .footer-order-call:hover {
