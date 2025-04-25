@@ -130,7 +130,7 @@
 
 
 
-.footer-order-call {
+.footer-block .footer-order-call {
     background: #d62718;
     color: #fff;
     padding: 8px 15px;
@@ -143,11 +143,11 @@
     width: 200px;
   }
   
-  .footer-order-call:hover {
+  .footer-block .footer-order-call:hover {
     background: #bd1e10;
     color: #fff;
   }
-  .footer-order-call:active {
+  .footer-block .footer-order-call:active {
     opacity: 1;
     background: #d62718;
     color: #fff;
