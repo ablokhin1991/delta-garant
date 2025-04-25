@@ -96,11 +96,6 @@ header .container {
     color: #1E3A8A;
 }
 
-.form-row-politika {
-    font-weight: 300;
-    color: #333;
-}
-
 /* Общие стили для текста */
 .field__label-placeholder {
     position: absolute;
