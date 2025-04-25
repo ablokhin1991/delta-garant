@@ -56,7 +56,8 @@ h3 {
 
 /* Обычный текст и ссылки */
 a {
-    font-weight: 300; /* Light */
+    font-weight: 400;
+    line-height: 1.6;
     font-size: 16px;
 }
 
