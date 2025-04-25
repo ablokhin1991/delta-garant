@@ -1,12 +1,12 @@
 
-.tender-footer {
+.footer {
     background-color: #1a1a1a;
     color: #b3b3b3;
     padding: 40px 0;
     font-size: 14px;
 }
 
-.tender-footer-wrapper {
+.footer-wrapper {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -15,48 +15,48 @@
     padding: 0 20px;
 }
 
-.tender-footer-block {
+.footer-block {
     flex: 1;
     min-width: 250px;
     margin: 20px;
 }
 
-.tender-footer-title {
+.footer-title {
     font-size: 16px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 15px;
 }
 
-.tender-footer-contact-title {
+.delta-footer-contact-title {
     margin-top: 30px;
 }
 
-.tender-footer-text {
+.footer-text {
     margin: 8px 0;
     line-height: 1.5;
 }
 
-.tender-footer-list {
+.footer-list {
     list-style: none;
     padding: 0;
 }
 
-.tender-footer-list li {
+.footer-list li {
     margin-bottom: 10px;
 }
 
-.tender-footer-link {
+.footer-link {
     color: #b3b3b3;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.tender-footer-link:hover {
+.footer-link:hover {
     color: #fff;
 }
 
-.tender-footer-copyright {
+.footer-copyright {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -66,31 +66,31 @@
     border-top: 1px solid #333;
 }
 
-.tender-footer-copyright-text {
+.footer-copyright-text {
     margin: 0;
     font-size: 12px;
 }
 
-.tender-footer-right {
+.dev-footer-right {
     text-align: right;
 }
 
 @media (max-width: 768px) {
-    .tender-footer-wrapper {
+    .footer-wrapper {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .tender-footer-block {
+    .footer-block {
         margin: 15px 0;
     }
 
-    .tender-footer-copyright {
+    .footer-copyright {
         flex-direction: column;
         text-align: center;
     }
 
-    .tender-footer-right {
+    .dev-footer-right {
         text-align: center;
         margin-top: 10px;
     }
