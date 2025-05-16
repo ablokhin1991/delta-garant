@@ -1,32 +1,25 @@
-/* кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • кнопка ОФОРМИТЬ • */
-/* Общий сброс */
-/* Контейнер для кнопок */
 
-  
-  /* Основной стиль кнопки */
   .offer__button {
     width: 150px;
     height: 60px;
-    background: #f4f6fd; /* Фон кнопки */
+    background: #f4f6fd;
     position: relative;
-    border-radius: 5px; /* Скруглённые углы */
+    border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.1s ease-in-out; /* Плавный переход для эффектов */
-    font-family: "Roboto", sans-serif; /* Используемый шрифт */
+    transition: all 0.1s ease-in-out;
+    font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-weight: bold;
-    color:#1e3a8a;; /* Основной цвет текста */
+    color:#0036a7;
   
-    /* Тени для объёмного эффекта */
     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 6px 6px 10px rgba(0, 0, 0, 0.2);
   }
   
-  /* Эффект при наведении */
   .offer__button:hover {
-    background: #1E3A8A; /* Фон кнопки */
-    color: #fff; /* Основной цвет текста */
+    background: #0036a7; 
+    color: #fff; 
     /*box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 /*6px 6px 10px rgba(0, 0, 0, 0.2);
     /*color: #fff; /* Основной цвет текста */

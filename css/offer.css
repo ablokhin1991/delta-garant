@@ -102,7 +102,7 @@
     grid-column: 5; /* Пятая ячейка */
     display: block; /* Принудительно блочное размещение в столбик */
     text-align: right;
-    color: #1e3a8a;
+    color: #0036a7;
 }
 
 .offer__title-wrap {
