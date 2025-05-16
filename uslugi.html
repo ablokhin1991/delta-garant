@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Оптимизируйте процесс получения банковских гарантий с нашим калькулятором. Мы предлагаем профессиональную помощь в оформлении банковских гарантий для государственных и муниципальных тендеров, а также коммерческих закупок. Узнайте, как мы поможем вам обеспечить исполнение контрактов без лишних затрат и сложностей.">
+  <title>Калькулятор банковских гарантий</title>
+  <!-- <link rel="stylesheet" href="css/styles-calc.css"> -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/offer.css">
+  <link rel="stylesheet" href="css/btn.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/advantages.css">
+  <link rel="stylesheet" href="css/requirements.css">
+  <link rel="stylesheet" href="css/popup-contact.css">
+  <link rel="stylesheet" href="css/hero.css">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+<section class="hero">
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Калькулятор банковских гарантий</h1>
+      <p>Выберите лучшие условия для вашей гарантии</p>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-wrapper">
+        <img src="images/img/test.webp" alt="Изображение">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <div class="content">
+    <form class="main-block" id="guarantee-calculator">
+      <div class="form-row">
+        <div class="form-column">
+          <div class="field">
+            <label class="field__label-placeholder" for="guarantee-sum">Сумма гарантии (руб)</label>
+            <input
+              class="field__input"
+              type="text"
+              name="summ"
+              id="guarantee-sum"
+              value="1 000 000"
+              required
+            />
+          </div>
+          <div id="error-message" class="error-message" style="display:none;">
+            <span class="error-icon">!</span>
+            <span class="error-text">Поле обязательное к заполнению</span>
+          </div>
+        </div>
+
+        <div class="form-column">
+          <div class="field">
+            <label class="field__label-placeholder" for="guarantee-days">Срок действия (дни)</label>
+            <input
+              class="field__input"
+              type="number"
+              name="validity"
+              id="guarantee-days"
+              value="365"
+              required
+            />
+          </div>
+          <div id="error-period-message" class="error-message" style="display:none;">
+            <span class="error-icon">!</span>
+            <span class="error-text">Поле обязательное к заполнению</span>
+          </div>
+        </div>
+
+        <div class="form-column">
+          <div class="field">
+            <label class="field__label-placeholder" for="procedure-type">Тип процедуры</label>
+            <select class="field__input" name="proc-type" id="procedure-type">
+              <option value="1" selected>44-ФЗ</option>
+              <option value="2">223-ФЗ</option>
+              <option value="3">615-ПП/185-ФЗ</option>
+              <option value="4">Коммерческий тендер</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-column">
+          <div class="field">
+            <label class="field__label-placeholder" for="guarantee-type">Тип гарантии</label>
+            <select class="field__input" name="guar-type" id="guarantee-type">
+              <option value="1">На участие</option>
+              <option value="2" selected>На исполнение контракта</option>
+              <option value="3">На возврат аванса</option>
+              <option value="4">На гарантийный период</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-column main-block__filters">
+          <label>
+            <input type="checkbox" id="has-advance" />
+            Наличие аванса
+          </label>
+          <label>
+            <input type="checkbox" id="custom-form" />
+            Гарантия по форме заказчика
+          </label>
+        </div>
+      </div>
+
+      <div class="main-block__btn-wrap">
+        <button type="button" id="calculate-btn" class="btn_primary">
+          Рассчитать стоимость
+        </button>
+        <button type="button" id="reset-btn" class="btn_secondary">
+          Сбросить
+      </button>
+      </div>
+    </form>
+
+    <div id="loading-spinner" style="display: none; text-align: center; color: #0036a7; font-size: 16px; margin-top: 20px;">
+      <div class="spinner"></div>
+      <p>Ищем лучшие условия банков для вас…</p>
+    </div>
+
+   <div class="result" id="result-output" style="display: none; margin-top: 20px;">
+     <div class="result__title-wrap">
+      <div class="result__header">
+        <h2 class="title_lg">Результаты расчета</h2>
+        <span class="text_light result__count" id="result-count"></span>
+      </div>
+      <span class="text_light" id="result-summary"></span>
+     </div>
+    <div class="result__offers" id="offer-list"></div>
+  </div>
+</div>
+
+
+
+
+   <div class="container-advantages">
+    <h2>Профессиональное оформление<br>банковских гарантий</h2>
+
+<section class="advantages">
+  <div class="advantages-grid">
+    <div class="advantage-card">
+      <h3>Быстрый и точный расчет</h3>
+      <p>Мгновенный расчет стоимости банковской гарантии с учетом всех нюансов.</p>
+    </div>
+    <div class="advantage-card">
+      <h3>Прозрачные условия</h3>
+      <p>Полная прозрачность расчётов без скрытых комиссий и неожиданных платежей.</p>
+    </div>
+    <div class="advantage-card">
+      <h3>Индивидуальный подход</h3>
+      <p>Персональные рекомендации, основанные на конкретных потребностях вашего бизнеса.</p>
+    </div>
+    <div class="advantage-card">
+      <h3>Экономия времени</h3>
+      <p>Минимум бумажной работы и автоматизированный процесс работы с банками.</p>
+    </div>
+    <div class="advantage-card">
+      <h3>Профессиональная поддержка</h3>
+      <p>Консультации экспертов на всех этапах оформления банковской гарантии.</p>
+    </div>
+    <div class="advantage-card">
+      <h3>Надежность и качество</h3>
+      <p>Оптимальные решения, проверенные временем и одобренные ведущими банками.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<div class="container-requirements">
+  <h2>Базовые требования к Вашей компании / ИП</h2>
+
+<section class="requirements">
+<div class="requirements-grid">
+  <div class="requirements-card">
+    <ul class="requirements-list">
+      <li>Юридические лица и ИП с регистрацией не менее 3 месяцев</li>
+      <li>Наличие минимум одной сданной в ФНС бухгалтерской отчетности, или наличие оборотов по расчетному счету за 2 месяца</li>
+      <li>Отсутствие картотеки «Расчетные документы, не оплаченные в срок» по счетам принципала, открытым в банках</li>
+      <li>Отсутствие фактов привлечения к уголовной ответственности владельцев бизнеса, единоличного исполнительного органа принципала/залогодателя</li>
+      <li>Принципал/залогодатель не участвует в судебных разбирательствах, отсутствует неисполненное принципалом/залогодателем решение суда</li>
+  </ul>
+  </div>
+</div>
+</section>
+</div>
+
+<!-- Оверлей -->
+<div class="popup-contact__overlay"></div>
+
+<!-- Popup -->
+<div class="popup-contact">
+  <button class="popup-contact__close">✖</button>
+  <h2 class="popup-contact__title">Оставить заявку</h2>
+  <div class="popup-contact__content">
+      <form class="popup-contact__form">
+          <input type="text" placeholder="ФИО" class="popup-contact__input" required>
+          <input type="email" 
+              placeholder="Электронная почта" 
+              class="popup-contact__input" 
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+              title="Введите email в формате: name@email.ru" 
+              required>
+          <input type="tel" id="popup-contact-phone" class="popup-contact__input phone-mask" placeholder="Введите номер" required>
+          <label class="popup-contact__checkbox-label">
+              <input type="checkbox" class="popup-contact__checkbox" checked required>
+              Согласен с <a href="policy.html" target="_blank" class="popup-contact__link">политикой обработки персональных данных</a>
+          </label>
+          <button type="submit" class="popup-contact__submit">Отправить заявку</button>
+      </form>
+  </div>
+</div>
+   
+
+  <!-- Место для подвала -->
+  <div id="footer-placeholder"></div>
+
+
+
+  <!-- Подключаем скрипт -->
+  <script src="insert-header-footer.js"></script>
+  <script src="css/scripts-3.js"></script>
+  <script src="css/popup.js"></script>
+  <script src="css/lsf.js"></script>
+  <script src="css/rbf.js"></script>
+  <script src="css/fonts.js" defer></script>
+  <script src="css/popup-contact.js"></script>
+  <!-- Подключаем header.js с defer -->
+  <script src="css/header.js" defer></script>
+  <!-- CSS intl-tel-input -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+  <!-- JS intl-tel-input -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+  <div class="offer__overlay"></div> <!-- Затемнение перенесено в конец -->
+</body>
