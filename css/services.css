@@ -30,20 +30,53 @@
 }*/
 .services-card {
     background-color: #ffffff;
-    padding: 40px 20px 40px 20px; 
+    padding: 30px 20px; 
     border-radius: 8px;
     border: 1px solid #e6e8ed;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    align-items: flex-start;    
+    justify-content: space-between;
+    align-items: center;    
     text-align: left;
     gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.services-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+.services-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.services-card h3 {
+  margin: 0;
+  font-size: 18px;
 }
 .services-card h2 {
     margin: 0;
 }
 .services-card p {
-    margin: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+/* Кнопка со стрелкой */
+.services-card-button {
+  background-color: #f2f4f8;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.services-card-button:hover {
+  background-color: #007bff;
+  color: white;
 }
