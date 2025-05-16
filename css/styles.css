@@ -525,6 +525,9 @@ header .container {
     
   }
 
+
+
+  
   @font-face {
   font-family: 'Bree CYR var';
   src: url('../fonts/Bree-CYR-var-Thin.ttf') format('truetype');
@@ -565,15 +568,6 @@ header .container {
   src: url('../fonts/Bree-CYR-var-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
-}
-
-/* Применение */
-body {
-  font-family: 'Bree CYR var', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 2rem;
 }
 
 .thin {
