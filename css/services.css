@@ -40,6 +40,9 @@
     text-align: left;
     gap: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 .services-card:hover {
   transform: translateY(-5px);
@@ -72,11 +75,13 @@
   height: 44px;
   font-size: 20px;
   color: #333;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.services-card-button:hover {
+.services-card:hover .services-card-button {
   background-color: #007bff;
   color: white;
 }
