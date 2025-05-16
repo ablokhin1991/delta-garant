@@ -204,6 +204,7 @@
 
 /* кнопка ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ •  */
 .order-call {
+  display: flex;
   background: #d62718;
   color: #fff;
   padding: 8px 15px;
