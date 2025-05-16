@@ -525,4 +525,61 @@ header .container {
     
   }
 
-  
+  @font-face {
+  font-family: 'Bree CYR var';
+  src: url('../fonts/Bree-CYR-var-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bree CYR var';
+  src: url('../fonts/Bree-CYR-var-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bree CYR var';
+  src: url('../fonts/Bree-CYR-var-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bree CYR var';
+  src: url('../fonts/Bree-CYR-var-Book.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bree CYR var';
+  src: url('../fonts/Bree-CYR-var-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bree CYR var';
+  src: url('../fonts/Bree-CYR-var-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Применение */
+body {
+  font-family: 'Bree CYR var', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 2rem;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.bold {
+  font-weight: 700;
+}
