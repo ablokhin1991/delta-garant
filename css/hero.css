@@ -3,7 +3,7 @@
   padding: 90px 0px 100px 0;
   width: 100%;
   height: auto;
-  margin-bottom: -50px;
+  margin-bottom: -0px;
   z-index: 1;
 }
 
@@ -59,7 +59,7 @@
   display: block;
   position: absolute;
   bottom: 0; /* Фиксация по нижнему краю */
-  margin-bottom: -90px;
+  margin-bottom: -120px;
 }
 
 @media (max-width: 768px) {
