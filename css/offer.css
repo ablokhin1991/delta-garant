@@ -73,7 +73,7 @@
 .offer__details {
     grid-column: 2; /* Вторая ячейка */
     font-weight: 400;
-    color: #1e3a8a;
+    color: #0036a7;
     /*white-space: nowrap;*/
     /*overflow: hidden;*/
     width: 300px;
