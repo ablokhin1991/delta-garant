@@ -202,13 +202,8 @@
 }
 
 
-
-
-
-
-
-
-.contact-info .order-call {
+/* кнопка ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ •  */
+.order-call {
   background: #d62718;
   color: #fff;
   padding: 8px 15px;
@@ -221,14 +216,15 @@
   width: 200px;
 }
 
-.contact-info .order-call:hover {
+.order-call:hover {
   background: #bd1e10;
   color: #fff;
 }
-.contact-info .order-call:active {
+.order-call:active {
   opacity: 1;
   background: #d62718;
   color: #fff;
   box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
               inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
+/* кнопка ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ •  */
