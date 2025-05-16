@@ -96,11 +96,11 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 1rem; /* можно менять для отступа между кнопкой и текстом */
+  gap: 20px; 
 }
 
 .order-hero-text {
-  margin: 0; /* убрать лишние отступы у <p> */
+  margin: 0;
 }
 
 
