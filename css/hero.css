@@ -102,3 +102,9 @@
 .order-hero-text {
   margin: 0; /* убрать лишние отступы у <p> */
 }
+
+
+p.order-hero-text {
+  font-size: 16px;
+
+}
