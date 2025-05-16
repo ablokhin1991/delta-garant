@@ -86,3 +86,19 @@
     display: none; /* Скрываем изображение на мобильных, как на avansa.ru */
   }
 }
+
+
+
+
+
+
+.order-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem; /* можно менять для отступа между кнопкой и текстом */
+}
+
+.order-hero-text {
+  margin: 0; /* убрать лишние отступы у <p> */
+}
