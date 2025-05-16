@@ -35,6 +35,8 @@
     gap: 10px;
 }
 .requirements-list li {
+    display: flex;
+    align-items: flex-start;
     margin: 0;
     line-height: 2.5;
 }
