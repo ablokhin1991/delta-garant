@@ -95,6 +95,8 @@
     align-items: flex-start;
     margin: 0;
     line-height: 2.5;
+    font-size: 14px;
+    color: #555;
 }
 .services-list li::before {
     content: "—"; /* Вставляем длинное тире */
