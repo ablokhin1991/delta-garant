@@ -43,16 +43,47 @@
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+
+    position: relative;
+  overflow: hidden; 
 }
 .services-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
+
+.services-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  background: linear-gradient(
+    to top left, 
+    #d62718 70%, 
+    rgba(214, 39, 24, 0) 100%
+  );
+  opacity: 0.6;
+  transition: width 0.5s ease, height 0.5s ease;
+  pointer-events: none; /* чтобы не мешал клику */
+  z-index: 0; /* под содержимым */
+  border-radius: 8px;
+}
+
+.services-card:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+
 .services-card-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative; 
+  z-index: 1;
 }
 .services-card h3 {
   margin: 0;
@@ -80,6 +111,8 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .services-card:hover .services-card-button {
