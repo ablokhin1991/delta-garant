@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const sliderContainer = document.getElementById('sliderContainer');
   const sliderTrack = document.getElementById('sliderTrack');
-  const baseSpeed = 1.5; // Регулируйте скорость (1px за кадр)
+  const baseSpeed = 1.3; // Регулируйте скорость (1px за кадр)
 
   // Клонирование элементов для бесконечности
   const originalItems = Array.from(sliderTrack.children);
