@@ -1,26 +1,39 @@
-// JS: бесконечный автоскролл вправо→влево
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.slider-container');
-  const track = document.querySelector('.slider-track');
-  const items = document.querySelectorAll('.slider-item');
-  const totalItems = items.length;
-  const visibleWidth = container.clientWidth;
 
-  // скорость в пикселях за кадр
-  const speed = 0.6;
-  let offset = 0;
+  const container = document.getElementById('sliderContainer');
+  const track = document.getElementById('sliderTrack');
 
-  function step() {
-    offset += speed;
-    // когда прокрутили ровно половину трека (оригиналы), сбрасываем
-    if (offset >= track.scrollWidth / 2) {
-      offset = 0;
+  // Клонируем контент для создания бесшовной петли
+  let clonesWidth = 0;
+  let scrollPos = 0;
+  const speed = 1;
+
+  function cloneSlides() {
+    const slides = track.children;
+    const total = slides.length;
+    for (let i = 0; i < total; i++) {
+      const clone = slides[i].cloneNode(true);
+      clone.classList.add('clone');
+      track.appendChild(clone);
     }
-    // перемещаем трек с помощью transform
-    track.style.transform = `translateX(-${offset}px)`;
-    requestAnimationFrame(step);
   }
 
-  // старт
-  requestAnimationFrame(step);
-});
+  function getClonesWidth() {
+    const clones = track.querySelectorAll('.clone');
+    let width = 0;
+    clones.forEach(clone => width += clone.offsetWidth + 30); // gap=30px
+    return width;
+  }
+
+  function scrollLoop() {
+    scrollPos += speed;
+    if (scrollPos >= clonesWidth) {
+      scrollPos = 0;
+    }
+    track.style.transform = `translateX(-${scrollPos}px)`;
+    requestAnimationFrame(scrollLoop);
+  }
+
+  // Инициализация
+  cloneSlides();
+  clonesWidth = getClonesWidth();
+  requestAnimationFrame(scrollLoop);
