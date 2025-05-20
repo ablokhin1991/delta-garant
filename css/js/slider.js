@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // События
-  sliderContainer.addEventListener('mouseenter', stopAnimation);
-  sliderContainer.addEventListener('mouseleave', startAnimation);
+  //sliderContainer.addEventListener('mouseenter', stopAnimation);
+  //sliderContainer.addEventListener('mouseleave', startAnimation);
   
   // Запуск при загрузке
   startAnimation();
