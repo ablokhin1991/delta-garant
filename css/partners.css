@@ -2,32 +2,35 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 20px 0;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .slider-track {
   display: flex;
-  gap: 30px;
-  width: max-content;
+  flex-wrap: nowrap;
+  will-change: transform;
 }
 
 .slider-item {
-  flex: 0 0 150px;
+  flex: 0 0 auto;
+  width: 150px;
   height: 150px;
+  margin-right: 30px;
   background: white;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .slider-item img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  pointer-events: none;
 }
