@@ -2,39 +2,63 @@ window.addEventListener('load', () => {
   const container = document.getElementById('sliderContainer');
   const track = document.getElementById('sliderTrack');
   const speed = 1;
+  let animationFrameId;
+  let originalItems = Array.from(track.children);
+  
+  // 1. Клонируем элементы для бесшовности
+  const cloneItems = () => {
+    // Клонируем все элементы дважды
+    const clonesStart = originalItems.map(item => {
+      const clone = item.cloneNode(true);
+      clone.classList.add('clone');
+      return clone;
+    });
+    
+    const clonesEnd = originalItems.map(item => {
+      const clone = item.cloneNode(true);
+      clone.classList.add('clone');
+      return clone;
+    });
 
-  let originalWidth = 0;
-  let pos = 0;
-
-  // Шаг 1: Получаем оригинальные элементы (до клонирования)
-  const originals = Array.from(track.children);
-  const originalItems = originals.slice(); // копия для клонирования
-
-  // Шаг 2: Клонируем, пока не перекроем 2× ширину контейнера
-  function cloneItemsUntilFilled() {
-    originalWidth = track.scrollWidth;
-
-    while (track.scrollWidth < container.offsetWidth * 2) {
-      originalItems.forEach(item => {
-        const clone = item.cloneNode(true);
-        clone.classList.add('clone');
-        track.appendChild(clone);
-      });
-    }
-
-    originalWidth = originalWidth; // сохранить ширину оригиналов как точку сброса
+    track.prepend(...clonesStart);
+    track.append(...clonesEnd);
   }
 
-  // Шаг 3: Запускаем анимацию
-  function animate() {
-    pos -= speed;
-    if (Math.abs(pos) >= originalWidth) {
-      pos = 0; // Сброс ровно после оригинальных слайдов
+  // 2. Запускаем анимацию
+  const animate = () => {
+    const trackWidth = track.scrollWidth / 2; // Реальная ширина оригинальных элементов
+    const containerWidth = container.offsetWidth;
+    
+    track.style.transform = `translateX(${-trackWidth}px)`;
+    
+    let pos = -trackWidth;
+    
+    const step = () => {
+      pos += speed;
+      
+      // Плавный сброс позиции при достижении границы
+      if (pos >= 0) {
+        pos = -trackWidth;
+      }
+      
+      track.style.transform = `translateX(${pos}px)`;
+      animationFrameId = requestAnimationFrame(step);
     }
-    track.style.transform = `translateX(${pos}px)`;
-    requestAnimationFrame(animate);
+    
+    animationFrameId = requestAnimationFrame(step);
   }
 
-  cloneItemsUntilFilled();
-  requestAnimationFrame(animate);
+  // 3. Инициализация
+  const init = () => {
+    cloneItems();
+    animate();
+  }
+
+  // Запускаем инициализацию
+  init();
+
+  // Очистка при размонтировании
+  window.addEventListener('beforeunload', () => {
+    cancelAnimationFrame(animationFrameId);
+  });
 });
