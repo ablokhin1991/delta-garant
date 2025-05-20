@@ -1,64 +1,65 @@
-window.addEventListener('load', () => {
-  const container = document.getElementById('sliderContainer');
-  const track = document.getElementById('sliderTrack');
-  const speed = 1;
-  let animationFrameId;
-  let originalItems = Array.from(track.children);
-  
-  // 1. Клонируем элементы для бесшовности
+document.addEventListener('DOMContentLoaded', () => {
+  const sliderContainer = document.getElementById('sliderContainer');
+  const sliderTrack = document.getElementById('sliderTrack');
+  const baseSpeed = 1; // Регулируйте скорость (1px за кадр)
+
+  // Клонирование элементов для бесконечности
+  const originalItems = Array.from(sliderTrack.children);
   const cloneItems = () => {
-    // Клонируем все элементы дважды
-    const clonesStart = originalItems.map(item => {
+    originalItems.forEach(item => {
       const clone = item.cloneNode(true);
-      clone.classList.add('clone');
-      return clone;
+      clone.setAttribute('aria-hidden', 'true');
+      sliderTrack.appendChild(clone);
     });
-    
-    const clonesEnd = originalItems.map(item => {
-      const clone = item.cloneNode(true);
-      clone.classList.add('clone');
-      return clone;
-    });
+  };
+  
+  // Создаем 2 копии для плавности
+  cloneItems();
+  cloneItems();
 
-    track.prepend(...clonesStart);
-    track.append(...clonesEnd);
-  }
+  // Настройка анимации
+  let animationFrame;
+  let currentPosition = 0;
+  const itemWidth = originalItems[0].offsetWidth + 
+                   parseInt(window.getComputedStyle(originalItems[0]).marginRight);
 
-  // 2. Запускаем анимацию
   const animate = () => {
-    const trackWidth = track.scrollWidth / 2; // Реальная ширина оригинальных элементов
-    const containerWidth = container.offsetWidth;
+    currentPosition -= baseSpeed;
     
-    track.style.transform = `translateX(${-trackWidth}px)`;
-    
-    let pos = -trackWidth;
-    
-    const step = () => {
-      pos += speed;
-      
-      // Плавный сброс позиции при достижении границы
-      if (pos >= 0) {
-        pos = -trackWidth;
-      }
-      
-      track.style.transform = `translateX(${pos}px)`;
-      animationFrameId = requestAnimationFrame(step);
+    // Плавный сброс позиции
+    if (-currentPosition >= itemWidth * originalItems.length) {
+      currentPosition += itemWidth * originalItems.length;
     }
     
-    animationFrameId = requestAnimationFrame(step);
-  }
+    sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+    animationFrame = requestAnimationFrame(animate);
+  };
 
-  // 3. Инициализация
-  const init = () => {
-    cloneItems();
-    animate();
-  }
+  // Управление анимацией
+  const startAnimation = () => {
+    if (!animationFrame) animate();
+  };
 
-  // Запускаем инициализацию
-  init();
+  const stopAnimation = () => {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = null;
+  };
 
-  // Очистка при размонтировании
-  window.addEventListener('beforeunload', () => {
-    cancelAnimationFrame(animationFrameId);
+  // События
+  sliderContainer.addEventListener('mouseenter', stopAnimation);
+  sliderContainer.addEventListener('mouseleave', startAnimation);
+  
+  // Запуск при загрузке
+  startAnimation();
+
+  // Оптимизация для мобильных
+  window.addEventListener('resize', () => {
+    const newSpeed = window.innerWidth <= 768 ? 0.7 : 1;
+    baseSpeed = newSpeed;
+  });
+
+  // Остановка при скрытии вкладки
+  document.addEventListener('visibilitychange', () => {
+    document.hidden ? stopAnimation() : startAnimation();
   });
 });
