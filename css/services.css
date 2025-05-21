@@ -59,7 +59,6 @@
   grid-template-rows: 1fr 1fr;
   gap: 20px;
   height: 100%;
-  background: linear-gradient(135deg, #e0f7fa, #e1bee7); /* Пример градиента */
   
 }
 
