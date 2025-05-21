@@ -34,11 +34,11 @@ h1, h2, h3, h4, h5, h6, p, a {
 /* Заголовки */
 h1 {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 36px;
     color: #0036a7;
 }
 h2 {
-    font-size: 25px;
+    font-size: 36px;
     color: #0036a7;
     margin-bottom: 20px;
 }
