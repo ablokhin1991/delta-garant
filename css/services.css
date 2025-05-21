@@ -16,79 +16,79 @@
 
 
 
-
-
-@media (min-width: 768px) {
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: stretch;
-    grid-template-areas:
-      "info card1"
-      "info card2"
-      "info card3"
-      "info card4";
-  }
-  .services-info-card {
-    grid-area: info;
-    background-color: #f5f5f5;
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #e6e8ed;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .services-card:nth-child(2) { grid-area: card1; }
-  .services-card:nth-child(3) { grid-area: card2; }
-  .services-card:nth-child(4) { grid-area: card3; }
-  .services-card:nth-child(5) { grid-area: card4; }
-  .services-info-button {
-    display: inline-block;
-    margin-top: 20px;
-    background-color: #c2db31;
-    color: black;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s ease;
-  }
-  .services-info-button:hover {
-    background-color: #b2c722;
-  }
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
 }
 
+.services-info-card {
+  background-color: #f5f5f5;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #e6e8ed;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+.services-info-button {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #c2db31;
+  color: black;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
 
+.services-info-button:hover {
+  background-color: #b2c722;
+}
 
+/* Обёртка для карточек справа */
+.services-cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  height: 100%;
+}
 
-
-
+.services-cards-wrapper .services-card {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
 
 /* Мобильная версия */
 @media (max-width: 767px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
+
+  .services-cards-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .services-cards-wrapper .services-card {
+    height: auto;
+  }
+
   .services-info-card {
     order: -1;
   }
-  .services-info-button {
-    display: inline-block;
-    margin-top: 20px;
-    background-color: #c2db31;
-    color: black;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-  }
 }
+
+
 
 
 
