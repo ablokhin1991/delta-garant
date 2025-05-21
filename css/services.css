@@ -34,7 +34,9 @@
   /*justify-content: center;*/
   align-content: center;
 }
-
+.services-info-text {
+  margin-bottom: 20px;
+}
 .services-info-button {
   display: inline-block;
   margin-top: 20px;
