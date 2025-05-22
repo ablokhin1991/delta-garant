@@ -98,6 +98,8 @@
 
 
 .services-card {
+    position: relative;
+    overflow: hidden;
     background-color: #ffffff;
     padding: 30px 20px; 
     border-radius: 8px;
@@ -118,11 +120,22 @@
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
+.services-card-inner {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
 .services-card-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 2;
+  transition: opacity 0.3s ease, transform 0.4s ease;
 }
 .services-card h3 {
   margin: 0;
@@ -197,15 +210,19 @@
 /* Самая иконка */
 .services-card-icon {
   position: absolute;
+  bottom: -100px;
   left: 50%;
-  bottom: -60%;             /* полностью скрыта внизу */
-  width: 120px;             /* подберите под свой дизайн */
-  height: auto;
   transform: translateX(-50%);
-  transition: transform 0.5s ease;
-  opacity: 0.8;             /* можно чуть притемнить */
-  pointer-events: none;     /* чтобы иконка не мешала клику */
-  z-index: 1;               /* ниже контента */
+  width: 100px;
+  height: auto;
+  opacity: 0;
+  transition: bottom 0.5s ease, opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+.services-card:hover .services-card-content {
+  transform: translateY(-20px);
+  opacity: 0;
 }
 
 /* Подготовка текста к анимации */
@@ -215,9 +232,13 @@
   z-index: 2;
 }
 
+
+
 /* Поднимаем иконку */
 .services-card:hover .services-card-icon {
   transform: translate(-50%, -20%);  /* поднимется чуть выше центра */
+  bottom: 20px;
+  opacity: 1;
 }
 
 /* Убираем/сдвигаем текст */
