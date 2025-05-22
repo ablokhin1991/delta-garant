@@ -130,9 +130,10 @@
   margin-bottom: 15px;
   transition: color 0.3s ease;
 }
-.services-card h3:hover {
+.services-card:hover .services-card h3 {
   color: #0036a7;
 }
+
 .services-card h2 {
     margin: 0;
 }
