@@ -210,7 +210,7 @@
 /* Самая иконка */
 .services-card-icon {
   position: absolute;
-  bottom: -100px;
+  bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
@@ -237,7 +237,7 @@
 /* Поднимаем иконку */
 .services-card:hover .services-card-icon {
   transform: translate(-50%, -20%);  /* поднимется чуть выше центра */
-  bottom: 20px;
+  bottom: 10px;
   opacity: 1;
 }
 
