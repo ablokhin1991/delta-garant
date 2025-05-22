@@ -1,20 +1,19 @@
 .container-services {
-    max-width: 1400px;
-    width: 80%;
-    margin: 80px auto 20px auto;
-    overflow: visible;
+  max-width: 1400px;
+  width: 80%;
+  margin: 80px auto 20px auto;
+  overflow: visible;
 }
+
 @media (max-width: 768px) {
-    .container-services {
-        width: 90%;
-    }
+  .container-services {
+    width: 90%;
+  }
 }
+
 .services {
-    margin: 20px auto 0 auto; 
+  margin: 20px auto 0 auto;
 }
-
-
-
 
 .services-grid {
   display: grid;
@@ -27,16 +26,14 @@
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
-  /*border: 1px solid #e6e8ed;*/
-  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-  /*display: flex;*/
   flex-direction: column;
-  /*justify-content: center;*/
   align-content: center;
 }
+
 .services-info-text {
   margin-bottom: 20px;
 }
+
 .services-info-button {
   display: inline-block;
   margin-top: 20px;
@@ -54,14 +51,13 @@
   background-color: #bd1e10;
 }
 
-/* Обёртка для карточек справа */
+/* Обёртка для карточек */
 .services-cards-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
   height: 100%;
-  
 }
 
 .services-cards-wrapper .services-card {
@@ -92,65 +88,85 @@
   }
 }
 
-
-
-
-
-
+/* Карточка */
 .services-card {
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-    padding: 30px 20px; 
-    border-radius: 8px;
-    /*border: 1px solid #e6e8ed;*/
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;    
-    text-align: left;
-    gap: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
+
 .services-card:hover {
   background: linear-gradient(to top left, #dbe7ff, #ffffff);
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
+
 .services-card-inner {
   flex: 1;
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
 }
-.services-card-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 2;
-  transition: opacity 0.3s ease, transform 0.4s ease;
-}
-.services-card h3 {
-  margin: 0;
+
+/* Заголовок h3: фиксированная высота на 3 строки */
+.services-card-inner h3 {
   font-size: 18px;
-  margin-bottom: 15px;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+  min-height: 4.2em; /* 3 строки по 1.4em */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.services-card h2 {
-    margin: 0;
-}
+/* Текст */
 .services-card p {
   margin: 0;
   font-weight: 400;
-  color: #A9A9A9; 
+  color: #A9A9A9;
   font-size: 12px;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* При ховере — текст уходит вверх и исчезает */
+.services-card:hover p {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* Иконка услуги */
+.services-card-icon {
+  position: absolute;
+  top: calc(4.2em + 15px); /* после h3 + отступ */
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 100px;
+  height: auto;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.services-card:hover .services-card-icon {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
 
 /* Кнопка со стрелкой */
@@ -173,21 +189,22 @@
   color: white;
 }
 
+/* Список услуг (если используется) */
 .services-list {
   list-style-type: none;
 }
 
 .services-list li {
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    line-height: 2.5;
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  line-height: 2.5;
 }
-.services-list li::before {
-    content: "—"; /* Вставляем длинное тире */
-    margin-right: 0.5em; /* Отступ между тире и текстом */
-  }
 
+.services-list li::before {
+  content: "—";
+  margin-right: 0.5em;
+}
 
 
 
