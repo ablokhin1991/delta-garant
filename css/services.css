@@ -104,6 +104,7 @@
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  min-height: 220px; /* Увеличена высота карточки */
 }
 
 .services-card:hover {
@@ -153,9 +154,9 @@
 /* Иконка услуги */
 .services-card-icon {
   position: absolute;
-  top: calc(4.2em + 15px); /* после h3 + отступ */
+  top: calc(4.2em + 20px); /* отступ от заголовка */
   left: 50%;
-  transform: translateX(-50%) translateY(100%);
+  transform: translateX(-50%) translateY(20px); /* при старте — ниже */
   width: 100px;
   height: auto;
   opacity: 0;
