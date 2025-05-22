@@ -174,3 +174,54 @@
     content: "—"; /* Вставляем длинное тире */
     margin-right: 0.5em; /* Отступ между тире и текстом */
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Чтобы иконка могла выходить за границы, и скрывалась overflow */
+.services-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Самая иконка */
+.services-card-icon {
+  position: absolute;
+  left: 50%;
+  bottom: -60%;             /* полностью скрыта внизу */
+  width: 120px;             /* подберите под свой дизайн */
+  height: auto;
+  transform: translateX(-50%);
+  transition: transform 0.5s ease;
+  opacity: 0.8;             /* можно чуть притемнить */
+  pointer-events: none;     /* чтобы иконка не мешала клику */
+  z-index: 1;               /* ниже контента */
+}
+
+/* Подготовка текста к анимации */
+.services-card-content-text {
+  transition: transform 0.5s ease, opacity 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Поднимаем иконку */
+.services-card:hover .services-card-icon {
+  transform: translate(-50%, -20%);  /* поднимется чуть выше центра */
+}
+
+/* Убираем/сдвигаем текст */
+.services-card:hover .services-card-content-text {
+  transform: translateY(-20px);
+  opacity: 0;
+}
