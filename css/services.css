@@ -128,10 +128,6 @@
   margin: 0;
   font-size: 18px;
   margin-bottom: 15px;
-  transition: color 0.3s ease;
-}
-.services-card:hover .services-card h3 {
-  color: #0036a7;
 }
 
 .services-card h2 {
@@ -142,10 +138,6 @@
   font-weight: 400;
   color: #A9A9A9; 
   font-size: 12px;
-  transition: color 0.3s ease;
-}
-.services-card:hover .services-card p {
-  color: #2e2e2e;
 }
 
 /* Кнопка со стрелкой */
