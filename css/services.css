@@ -225,7 +225,7 @@
   }
 }
 
-/* Статичная иконка перехода (стрелка >) */
+
 .services-card-static-icon {
   position: absolute;
   bottom: 20px;
@@ -240,16 +240,14 @@
   align-items: center;
   font-size: 24px;
   font-weight: bold;
-  pointer-events: none; /* чтобы не перехватывала клик */
+  pointer-events: none;
+  transition: background-color 0.3s ease;
 }
-/* Ховер на всю карточку — меняет фон стрелки */
 .services-card:hover .services-card-static-icon {
   background-color: #fff;
 }
-
-/* Сделать .services-card позиционируемой */
 .services-card {
-  position: relative; /* Добавлено для позиционирования стрелки */
+  position: relative;
 }
 
 
