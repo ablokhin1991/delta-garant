@@ -1,6 +1,3 @@
-// Подключение Lottie Web — без использования import
-// Убедись, что lottie.min.js уже подключён в HTML ДО этого скрипта
-
 const services = [
   {
     id: 'lottie1',
@@ -36,7 +33,7 @@ services.forEach(service => {
     path: service.path
   });
 
-  // Показываем первый кадр
+
   anim.addEventListener('DOMLoaded', () => {
     anim.goToAndStop(0, true);
   });
