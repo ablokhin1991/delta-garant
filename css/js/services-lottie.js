@@ -16,7 +16,7 @@ const services = [
   },
   {
     id: 'lottie4',
-    path: 'css/json/animated-icons/wired-flat-966-privacy-policy-hover-swipe.json' 
+    path: 'css/json/animated-icons/Red-and-blue-guarantee.json' 
   }
 ];
 
