@@ -1,19 +1,19 @@
 const services = [
   {
     id: 'lottie1',
-    path: 'css/json/animated-icons/First-Place.json'
+    path: 'css/json/animated-icons/wired-flat-1780-medal-first-place-hover-pinch.json'
   },
   {
     id: 'lottie2',
-    path: 'css/json/animated-icons/Truck.json' 
+    path: 'css/json/animated-icons/wired-flat-497-truck-delivery-hover-pinch.json' 
   },
   {
     id: 'lottie3',
-    path: 'css/json/animated-icons/Advance.json' 
+    path: 'css/json/animated-icons/wired-flat-298-coins-hover-jump.json' 
   },
   {
     id: 'lottie4',
-    path: 'css/json/animated-icons/Warranty-period.json' 
+    path: 'css/json/animated-icons/wired-flat-966-privacy-policy-hover-swipe.json' 
   }
 ];
 
