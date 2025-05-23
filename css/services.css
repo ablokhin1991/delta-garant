@@ -225,6 +225,28 @@
   }
 }
 
+/* Статичная иконка перехода (стрелка >) */
+.services-card-static-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #e6e9f0;
+  color: #0036a7;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  pointer-events: none; /* чтобы не перехватывала клик */
+}
+
+/* Сделать .services-card позиционируемой */
+.services-card {
+  position: relative; /* Добавлено для позиционирования стрелки */
+}
 
 
 
