@@ -10,7 +10,7 @@
     }
 }
 .services {
-    margin: 20px auto 0 auto; 
+    margin: 0px auto 0 auto; 
 }
 
 
@@ -156,3 +156,124 @@
     content: "—"; /* Вставляем длинное тире */
     margin-right: 0.5em; /* Отступ между тире и текстом */
   }
+
+
+
+
+
+
+
+  .hero-uslugi {
+  background: #fff;
+  text-align: left;
+  padding: 120px 0px 120px 0;
+  width: 100%;
+  height: auto;
+  margin-bottom: -50px;
+  z-index: 1;
+}
+
+.hero-uslugi h1 {
+  margin-bottom: 20px;
+}
+
+.hero-uslugi p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.hero-section-uslugi {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: flex-end; /* Выравнивание содержимого по нижнему краю */
+  /*min-height: 400px; */
+}
+
+.hero-content-uslugi {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Текст прижимается к нижней части */
+  align-items: flex-start;
+  padding-bottom: 20px; /* Отступ снизу для гармонии */
+}
+
+.hero-image {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Изображение прижимается к нижнему краю */
+  position: relative;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  max-width: 500px; /* Ограничение максимальной ширины изображения */
+  height: 100%;
+  /*position: relative;*/
+}
+
+.hero-image img {
+  width: 500px;
+  height: auto;
+  max-height: 500px; /* Ограничение максимальной высоты изображения */
+  object-fit: contain; /* Сохранение пропорций изображения */
+  object-position: bottom; /* Привязка к нижнему краю */
+  display: block;
+  position: absolute;
+  bottom: 0; /* Фиксация по нижнему краю */
+  margin-bottom: -90px;
+}
+
+@media (max-width: 768px) {
+  .hero-uslugi {
+    padding: 50px 0;
+    margin-bottom: -50px;
+  }
+
+  .hero-section-uslugi {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .hero-content-uslugi {
+    justify-content: center;
+    padding-bottom: 0;
+  }
+
+  .hero-image {
+    display: none; /* Скрываем изображение на мобильных, как на avansa.ru */
+  }
+}
+
+
+
+
+
+
+.order-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 30px; 
+}
+
+.order-hero-text {
+  margin: 0;
+}
+
+
+p.order-hero-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: #2e2e2e;
+    margin-bottom: 0px;
+
+}
