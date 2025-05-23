@@ -8,7 +8,7 @@ const services = [
   },
   {
     id: 'lottie2',
-    path: 'css/json/animated-icons/example-icon-2.json' // 🔧 Заменить позже
+    path: 'css/json/animated-icons/wired-flat-497-truck-delivery-hover-pinch.json' // 🔧 Заменить позже
   },
   {
     id: 'lottie3',
