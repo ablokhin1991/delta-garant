@@ -242,6 +242,9 @@
   font-weight: bold;
   pointer-events: none; /* чтобы не перехватывала клик */
 }
+.services-card-static-icon:hover {
+  background-color: #FFF;
+}
 
 /* Сделать .services-card позиционируемой */
 .services-card {
