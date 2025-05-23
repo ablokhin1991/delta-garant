@@ -161,6 +161,66 @@
 
 
 
+/* 1. Обёртка для заголовка + правой части */
+.services-header {
+  display: flex;
+  justify-content: space-between;   /* заголовок слева, блок с иконкой+текстом — справа */
+  align-items: center;               /* выравнять всё по вертикали */
+  margin-bottom: 20px;
+}
+/* 2. Блок с иконкой и текстом */
+.services-header-info {
+  display: flex;
+  align-items: center;               /* иконка и текст по центру вертикали */
+}
+/* 3. Сама иконка */
+.services-header-info img {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+/* 4. Текст рядом с иконкой */
+.services-header-text {
+  margin: 0 0 0 20px;                /* отступ слева 20px */
+  font-size: 14px;                   /* задайте нужный размер */
+  color: #333;                       /* цвет по вашему дизайну */
+}
+/* 5. Мобильная версия: под заголовком */
+@media (max-width: 768px) {
+  .services-header {
+    flex-direction: column;          /* H2 сверху, info-блок снизу */
+    align-items: flex-start;         /* выровнять по левому краю */
+  }
+
+  .services-header-info {
+    margin-top: 10px;                /* небольшой отступ под H2 */
+    justify-content: flex-start;     /* иконка+текст слева */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   .hero-uslugi {
