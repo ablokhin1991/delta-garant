@@ -161,40 +161,56 @@
 
 
 
-/* 1. Обёртка для заголовка + правой части */
+/* Обёртка для заголовка и информации */
 .services-header {
   display: flex;
-  justify-content: space-between;   /* заголовок слева, блок с иконкой+текстом — справа */
-  align-items: center;               /* выравнять всё по вертикали */
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+  gap: 20px;
 }
-/* 2. Блок с иконкой и текстом */
+/* Заголовок H2 */
+.services-header-title {
+  margin: 0;
+  padding-right: 20px; /* Отступ справа от заголовка */
+}
+
+/* Блок с иконкой и текстом — фиксированной ширины */
 .services-header-info {
   display: flex;
-  align-items: center;               /* иконка и текст по центру вертикали */
+  align-items: center;
+  max-width: 400px;         /* ограничение по ширине */
+  padding-left: 20px;       /* отступ слева */
+  padding-right: 20px;      /* отступ справа */
+  box-sizing: border-box;
 }
-/* 3. Сама иконка */
-.services-header-info img {
+/* Иконка */
+.services-header-icon {
   width: 25px;
   height: 25px;
   flex-shrink: 0;
+  margin-right: 15px;
 }
-/* 4. Текст рядом с иконкой */
+/* Текст справа от иконки */
 .services-header-text {
-  margin: 0 0 0 20px;                /* отступ слева 20px */
-  font-size: 14px;                   /* задайте нужный размер */
-  color: #333;                       /* цвет по вашему дизайну */
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  word-break: break-word;
 }
-/* 5. Мобильная версия: под заголовком */
+/* Мобильная версия */
 @media (max-width: 768px) {
   .services-header {
-    flex-direction: column;          /* H2 сверху, info-блок снизу */
-    align-items: flex-start;         /* выровнять по левому краю */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .services-header-info {
-    margin-top: 10px;                /* небольшой отступ под H2 */
-    justify-content: flex-start;     /* иконка+текст слева */
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
   }
 }
 
