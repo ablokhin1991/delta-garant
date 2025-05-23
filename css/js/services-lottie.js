@@ -12,7 +12,7 @@ const services = [
   },
   {
     id: 'lottie3',
-    path: 'css/json/animated-icons/wired-flat-298-coins-hover-jump.json' 
+    path: 'css/json/animated-icons/Red-and-blue-pig.json' 
   },
   {
     id: 'lottie4',
