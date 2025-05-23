@@ -137,6 +137,13 @@
   /* Чтобы занимала свой размер и не сжималась */
   flex-shrink: 0;
 }
+/* Новый стиль для Lottie-иконок */
+.services-card-lottie {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  pointer-events: none; /* чтобы клик не перехватывался */
+}
 
 .services-card img.services-card-icon {
   transition: filter 0.3s ease;
