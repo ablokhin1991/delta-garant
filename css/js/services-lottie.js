@@ -1,7 +1,7 @@
 const services = [
   {
     id: 'lottie1',
-    path: 'css/json/animated-icons/Red-and-blue-medal.json'
+    path: 'css/json/animated-icons/First-Place.json'
   },
   {
     id: 'lottie2',
