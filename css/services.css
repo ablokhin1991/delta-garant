@@ -140,8 +140,8 @@
 }
 /* Новый стиль для Lottie-иконок */
 .services-card-lottie {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   flex-shrink: 0;
   pointer-events: none; /* чтобы клик не перехватывался */
 }
