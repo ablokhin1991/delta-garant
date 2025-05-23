@@ -4,7 +4,7 @@
 const services = [
   {
     id: 'lottie1',
-    path: 'css/json/animated-icons/wired-flat-1780-medal-first-place-hover-pinch.json'
+    path: 'css/json/animated-icons/Red-and-blue-medal.json'
   },
   {
     id: 'lottie2',
