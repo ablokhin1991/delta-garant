@@ -8,15 +8,15 @@ const services = [
   },
   {
     id: 'lottie2',
-    path: 'css/json/animated-icons/wired-flat-497-truck-delivery-hover-pinch.json' // 🔧 Заменить позже
+    path: 'css/json/animated-icons/Red-and-blue-truck.json' 
   },
   {
     id: 'lottie3',
-    path: 'css/json/animated-icons/wired-flat-298-coins-hover-jump.json' // 🔧 Заменить позже
+    path: 'css/json/animated-icons/wired-flat-298-coins-hover-jump.json' 
   },
   {
     id: 'lottie4',
-    path: 'css/json/animated-icons/wired-flat-966-privacy-policy-hover-swipe.json' // 🔧 Заменить позже
+    path: 'css/json/animated-icons/wired-flat-966-privacy-policy-hover-swipe.json' 
   }
 ];
 
