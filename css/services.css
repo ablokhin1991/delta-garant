@@ -242,8 +242,9 @@
   font-weight: bold;
   pointer-events: none; /* чтобы не перехватывала клик */
 }
-.services-card-static-icon:hover {
-  background-color: #FFF;
+/* Ховер на всю карточку — меняет фон стрелки */
+.services-card:hover .services-card-static-icon {
+  background-color: #fff;
 }
 
 /* Сделать .services-card позиционируемой */
