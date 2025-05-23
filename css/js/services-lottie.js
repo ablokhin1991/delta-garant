@@ -13,7 +13,7 @@ const services = [
   },
   {
     id: 'lottie4',
-    path: 'css/json/animated-icons/Red-and-blue-guarantee.json' 
+    path: 'css/json/animated-icons/Warranty-period.json' 
   }
 ];
 
