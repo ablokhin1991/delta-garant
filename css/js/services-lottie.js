@@ -1,37 +1,52 @@
-// Подключи lottie-web
-import lottie from 'https://cdn.jsdelivr.net/npm/lottie-web@5.10.2/build/player/lottie.min.js';
+// Подключение Lottie Web — без использования import
+// Убедись, что lottie.min.js уже подключён в HTML ДО этого скрипта
 
 const services = [
-  { id: 'lottie1' },
-  { id: 'lottie2' },
-  { id: 'lottie3' },
-  { id: 'lottie4' }
+  {
+    id: 'lottie1',
+    path: 'css/json/animated-icons/wired-flat-1780-medal-first-place-hover-pinch.json'
+  },
+  {
+    id: 'lottie2',
+    path: 'css/json/animated-icons/example-icon-2.json' // 🔧 Заменить позже
+  },
+  {
+    id: 'lottie3',
+    path: 'css/json/animated-icons/example-icon-3.json' // 🔧 Заменить позже
+  },
+  {
+    id: 'lottie4',
+    path: 'css/json/animated-icons/example-icon-4.json' // 🔧 Заменить позже
+  }
 ];
-
-// Путь к JSON-анимации
-const animationPath = 'css/json/animated-icons/wired-flat-1780-medal-first-place-hover-pinch.json';
 
 services.forEach(service => {
   const container = document.getElementById(service.id);
 
+  if (!container) {
+    console.warn(`Не найден контейнер с id: ${service.id}`);
+    return;
+  }
+
   const anim = lottie.loadAnimation({
-    container,
+    container: container,
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: animationPath
+    path: service.path
   });
 
-  // Храним ссылку на анимацию, чтобы перезапускать
-  service.animation = anim;
-
-  // При загрузке показываем только первый кадр
+  // Показываем первый кадр
   anim.addEventListener('DOMLoaded', () => {
     anim.goToAndStop(0, true);
   });
 
-  // Найдём родительскую карточку
   const card = document.querySelector(`[data-lottie-id="${service.id}"]`);
+
+  if (!card) {
+    console.warn(`Не найдена карточка с data-lottie-id="${service.id}"`);
+    return;
+  }
 
   card.addEventListener('mouseenter', () => {
     anim.goToAndPlay(0, true);
