@@ -44,9 +44,9 @@ h2 {
     margin-top: 80px;
 }
 h3 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #2e2e2e;
+    font-weight: 500;
+    font-size: 24px;
+    color: #0036a7;
 }
 
 @media (max-width: 768px) { 
