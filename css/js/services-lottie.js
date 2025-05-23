@@ -12,11 +12,11 @@ const services = [
   },
   {
     id: 'lottie3',
-    path: 'css/json/animated-icons/example-icon-3.json' // 🔧 Заменить позже
+    path: 'css/json/animated-icons/wired-flat-298-coins-hover-jump.json' // 🔧 Заменить позже
   },
   {
     id: 'lottie4',
-    path: 'css/json/animated-icons/example-icon-4.json' // 🔧 Заменить позже
+    path: 'css/json/animated-icons/wired-flat-966-privacy-policy-hover-swipe.json' // 🔧 Заменить позже
   }
 ];
 
