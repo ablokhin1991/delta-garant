@@ -122,19 +122,20 @@
   font-size: 12px;
 }
 
-/* Кнопка со стрелкой */
+/* Заменяем блок `.services-card-button` на IMG-разметку */
 .services-card-button {
-  background-color: #f2f4f8;
-  border: none;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  font-size: 20px;
-  color: #0036a7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Убираем фон, рамки и переходы */
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transition: none !important;
+
+  /* Задаём размер SVG-иконки */
+  width: 100px;
+  height: 100px;
+
+  /* Чтобы занимала свой размер и не сжималась */
+  flex-shrink: 0;
 }
 
 .services-card:hover .services-card-button {
