@@ -205,6 +205,8 @@
   .services-header {
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   .services-header-info {
