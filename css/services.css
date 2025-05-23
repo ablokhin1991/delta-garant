@@ -138,11 +138,13 @@
   flex-shrink: 0;
 }
 
-.services-card:hover .services-card-button {
-  background-color: #0036a7;
-  color: white;
+.services-card img.services-card-icon {
+  transition: filter 0.3s ease;
 }
 
+.services-card:hover img.services-card-icon {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(91%) saturate(1743%) hue-rotate(209deg) brightness(97%) contrast(102%);
+}
 .services-list {
   list-style-type: none;
 }
