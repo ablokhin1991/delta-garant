@@ -179,7 +179,7 @@
 .services-header-info {
   display: flex;
   align-items: center;
-  max-width: 400px;         /* ограничение по ширине */
+  max-width: 500px;         /* ограничение по ширине */
   padding-left: 20px;       /* отступ слева */
   padding-right: 20px;      /* отступ справа */
   box-sizing: border-box;
