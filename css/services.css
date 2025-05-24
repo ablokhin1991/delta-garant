@@ -72,6 +72,26 @@
   .services-cards-wrapper .services-card {
     height: auto;
   }
+
+
+
+
+
+  
+  .services-card {
+    flex-direction: column; /* карточка — вертикально */
+    align-items: center;    /* элементы по центру */
+    text-align: center;
+  }
+
+  .services-card-lottie {
+    margin-bottom: 20px; /* отступ вниз от анимации */
+  }
+
+  .services-card-content {
+    padding-bottom: 40px; /* уменьшаем отступ */
+    align-items: center;  /* выравниваем текст по центру */
+  }
 }
 
 
