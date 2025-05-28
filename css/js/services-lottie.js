@@ -35,7 +35,7 @@ services.forEach(service => {
 
 
   anim.addEventListener('DOMLoaded', () => {
-    anim.goToAndStop(0, true);
+    anim.goToAndStop(anim.totalFrames - 1, true);
   });
 
   const card = document.querySelector(`[data-lottie-id="${service.id}"]`);
