@@ -33,9 +33,12 @@ services.forEach(service => {
     path: service.path
   });
 
+  let isReady = false;
 
   anim.addEventListener('DOMLoaded', () => {
-    anim.goToAndStop(0, true);
+    // ждем полной загрузки — totalFrames будет доступен
+    isReady = true;
+    anim.goToAndStop(anim.totalFrames - 1, true); // показать последний кадр по умолчанию
   });
 
   const card = document.querySelector(`[data-lottie-id="${service.id}"]`);
@@ -46,10 +49,14 @@ services.forEach(service => {
   }
 
   card.addEventListener('mouseenter', () => {
-    anim.goToAndPlay(0, true);
+    if (isReady) {
+      anim.goToAndPlay(0, true); // проигрываем с начала
+    }
   });
 
   card.addEventListener('mouseleave', () => {
-    anim.goToAndStop(0, true);
+    if (isReady) {
+      anim.goToAndStop(anim.totalFrames - 1, true); // возвращаемся на последний кадр
+    }
   });
 });
