@@ -5,7 +5,7 @@ const services = [
   },
   {
     id: 'lottie2',
-    path: 'css/json/animated-icons/Truck.json' 
+    path: 'css/json/animated-icons/Contract.json' 
   },
   {
     id: 'lottie3',
