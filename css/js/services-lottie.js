@@ -34,9 +34,13 @@ services.forEach(service => {
   });
 
 
-  anim.addEventListener('DOMLoaded', () => {
-    anim.goToAndStop(anim.totalFrames - 1, true);
-  });
+anim.addEventListener('DOMLoaded', () => {
+  anim.goToAndStop(anim.totalFrames - 1, true); // ❗ Показать последний кадр после загрузки
+});
+
+card.addEventListener('mouseleave', () => {
+  anim.goToAndStop(anim.totalFrames - 1, true); // ❗ Остановиться на последнем кадре
+});
 
   const card = document.querySelector(`[data-lottie-id="${service.id}"]`);
 
