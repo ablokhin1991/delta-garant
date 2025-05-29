@@ -107,6 +107,7 @@
     align-items: center;
     text-align: center;
     padding: 20px;
+    align-items: flex-start;;
   }
 }
 .services-card-content {
