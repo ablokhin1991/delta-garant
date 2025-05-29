@@ -106,6 +106,7 @@
     flex-direction: column !important;
     align-items: center;
     text-align: center;
+    padding: 20px;
   }
 }
 .services-card-content {
@@ -266,6 +267,13 @@
 }
 .services-card {
   position: relative;
+}
+
+@media (max-width: 768px) {
+.services-card-static-icon {
+   bottom: 20px;
+   left: 20px;
+  }
 }
 
 
