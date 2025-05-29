@@ -103,9 +103,9 @@
 }
 @media (max-width: 767px) {
   .services-card {
-    flex-direction: column;
-    align-items: center;      /* если надо центрировать Lottie и текст */
-    text-align: center;       /* сделает заголовок/текст по центру */
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
   }
 }
 .services-card-content {
