@@ -157,6 +157,7 @@
 .services-card-lottie {
   width: 90px;
   height: 90px;
+  order: -1;
 }
 }
 .services-card img.services-card-icon {
