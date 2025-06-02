@@ -303,10 +303,10 @@
 /* Стили для каждого <p> */
 .services-card-hover-text {
   margin: 0;                      /* убираем стандартные отступы */
-  color: #d62718;
-  font-size: 12px;
-  text-decoration: underline;     /* подчёркивание всего элемента */
-  white-space: nowrap;            /* чтобы текст не переносился */
+  color: #d62718 !important;
+  font-size: 12px  !important;;
+  text-decoration: underline !important;;     /* подчёркивание всего элемента */
+  white-space: nowrap !important;;            /* чтобы текст не переносился */
 }
 
 /* === 2. Скрываем эти три пункта на мобильных === */
