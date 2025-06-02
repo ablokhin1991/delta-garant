@@ -292,8 +292,6 @@
   justify-content: space-between;
   opacity: 0;                         /* по умолчанию скрыты */
   transition: opacity 0.3s ease;
-  transition-delay: 0.5s;             /* задержка перед появлением */
-  /* Чтобы текст был поверх фона карточки */
   pointer-events: none;
 }
 
