@@ -282,7 +282,41 @@
   }
 }
 
+/* Контейнер, в котором лежат три текста */
+.services-card-hover-texts {
+  position: absolute;
+  bottom: 40px;       /* то же самое смещение, что и .services-card-static-icon */
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;                         /* по умолчанию скрыты */
+  transition: opacity 0.3s ease;
+  transition-delay: 0.5s;             /* задержка перед появлением */
+  /* Чтобы текст был поверх фона карточки */
+  pointer-events: none;
+}
 
+/* На ховер карточки — показать блок с текстом */
+.services-card:hover .services-card-hover-texts {
+  opacity: 1;
+}
+
+/* Стили для каждого <p> */
+.services-card-hover-text {
+  margin: 0;                      /* убираем стандартные отступы */
+  color: #d62718;
+  font-size: 12px;
+  text-decoration: underline;     /* подчёркивание всего элемента */
+  white-space: nowrap;            /* чтобы текст не переносился */
+}
+
+/* === 2. Скрываем эти три пункта на мобильных === */
+@media (max-width: 767px) {
+  .services-card-hover-texts {
+    display: none !important;
+  }
+}
 
 
 
