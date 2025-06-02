@@ -48,7 +48,7 @@
 
 
 /* =========================================
-   Сами карточки услуг (.services-card)
+   Карточка услуги (.services-card)
    ========================================= */
 .services-card {
   text-decoration: none;
@@ -71,27 +71,34 @@
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
+
 /* =========================================
-   Внутри карточки: Grid-контейнер
+   Grid внутри карточки (.services-card-grid)
    ========================================= */
 .services-card-grid {
   display: grid;
 
-  /* Две колонки: 2fr (контент) / 1fr (иконка);
-     Две строки: первая для контента+иконки, вторая — для подпунктов */
+  /*  
+    Строим две колонки:  
+    1) «content» (2fr)  
+    2) «icon» (1fr)  
+
+    И две строки:  
+    1) в неё попадут «content» и «icon»  
+    2) в неё попадут «hover-texts» (объединённая зона)  
+  */
   grid-template-areas:
     "content icon"
     "hover-texts hover-texts";
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto;
 
-  /* Между ячейками отступов нет (gap = 0) */
   gap: 0;
 }
 
 
 /* =========================================
-   Мобильная версия: меняем область Grid на одну колонку
+   Мобильная версия (.services-card-grid ≤ 767px)
    ========================================= */
 @media (max-width: 767px) {
   .services-card-grid {
@@ -103,7 +110,7 @@
     grid-template-rows: auto auto auto;
   }
 
-  /* Уменьшаем отступы карточки, чтобы на мобильном всё смотрелось компактнее */
+  /* Мобильное изменение отступов карточки */
   .services-card {
     padding: 20px;
     text-align: center;
@@ -112,13 +119,15 @@
 
 
 /* =========================================
-   1) Блок с заголовком и основным текстом
+   1) Блок контента (заголовок + текст + стрелка)
    ========================================= */
 .services-card-content {
   grid-area: content;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative; /* чтобы вложенная стрелка позиционировалась относительно этого блока */
+  padding-bottom: 20px; /* добавляем запас снизу, чтобы стрелка не налезала на текст */
 }
 
 .services-card-content h3 {
@@ -136,48 +145,11 @@
   line-height: 1.5;
 }
 
-
-/* =========================================
-   2) Правый блок: фоновая иконка
-   ========================================= */
-.services-card-icon-wrapper {
-  grid-area: icon;
-  justify-self: end; /* прижать картинку вправо */
-  align-self: start;
-}
-
-.services-card-icon-bg {
-  width: 100%;
-  max-width: 120px; /* не больше 120px в ширину */
-  height: 120px;
-  border-radius: 8px;
-  background-color: #e6e9f0;
-  transition: background-color 0.3s ease;
-  object-fit: cover;
-}
-
-/* При ховере меняем фон иконки */
-.services-card:hover .services-card-icon-bg {
-  background-color: #ffffff;
-}
-
-@media (max-width: 768px) {
-  .services-card-icon-bg {
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 10px; /* центрируем блок на мобилке */
-  }
-}
-
-
-/* =========================================
-   3) Статический «стрелочный» элемент
-      (правый нижний угол первой строки Grid)
-   ========================================= */
+/* Стрелка внутри блока .services-card-content */
 .services-card-static-icon {
   position: absolute;
-  bottom: 40px; /* = нижний padding карточки */
-  left: 40px;   /* прижать к левому краю первой строки */
+  bottom: 0; /* «прижата» к нижней границе .services-card-content */
+  left: 0;   /* «прижата» к левой границе .services-card-content */
   width: 40px;
   height: 40px;
   background-color: #e6e9f0;
@@ -196,16 +168,53 @@
   background-color: #ffffff;
 }
 
+/* На мобильном чуть уменьшаем отступ, чтобы стрелка не «торчала» слишком высоко */
 @media (max-width: 768px) {
+  .services-card-content {
+    padding-bottom: 10px;
+  }
   .services-card-static-icon {
-    bottom: 20px; /* снижаем отступ на мобилке */
-    left: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
   }
 }
 
 
 /* =========================================
-   4) Блок с тремя подпунктами (hover-тексты)
+   2) Блок с фоновой иконкой (правый столбец)
+   ========================================= */
+.services-card-icon-wrapper {
+  grid-area: icon;
+  justify-self: end; /* прижать фон-иконку вправо */
+  align-self: start;
+}
+
+.services-card-icon-bg {
+  width: 100%;
+  max-width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  background-color: #e6e9f0;
+  transition: background-color 0.3s ease;
+  object-fit: cover;
+}
+
+.services-card:hover .services-card-icon-bg {
+  background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .services-card-icon-bg {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 10px; /* центрируем по горизонтали */
+  }
+}
+
+
+/* =========================================
+   3) Блок с тремя подпунктами (нижняя строка Grid)
    ========================================= */
 .services-card-hover-texts {
   grid-area: hover-texts;
@@ -213,19 +222,19 @@
   justify-content: space-between;
   gap: 10px;
 
-  /* Изначально «сжимаем» в ноль, чтобы ряд не занимал места */
+  /* Изначально «сжат» до нуля в высоту */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
 
-  /* Плавное раскрытие (max-height и opacity), с задержкой 0.5s */
+  /* Плавное раскрытие (по высоте и прозрачности) с задержкой 0.5c */
   transition: max-height 0.3s ease 0.5s, opacity 0.3s ease 0.5s;
   pointer-events: none;
 }
 
-/* При ховере на .services-card — раскрываем row с текстами */
 .services-card:hover .services-card-hover-texts {
-  max-height: 20px; /* достаточно для одной строки текста ~12px */
+  /* Делаем достаточно места для одной строки текста (~12px) */
+  max-height: 20px;
   opacity: 1;
 }
 
@@ -234,10 +243,10 @@
   color: #d62718;
   font-size: 12px;
   text-decoration: underline;
-  white-space: nowrap; /* чтобы текст не переносился */
+  white-space: nowrap;
 }
 
-/* Полностью скрываем на мобильных */
+/* Скрываем подпункты на мобильных */
 @media (max-width: 767px) {
   .services-card-hover-texts {
     display: none !important;
@@ -246,7 +255,7 @@
 
 
 /* =========================================
-   Стили для заголовка и информации вверху
+   Стили для заголовка и информации вверху страницы
    ========================================= */
 .services-header {
   display: flex;
@@ -301,6 +310,7 @@
     max-width: 100%;
   }
 }
+
 
 
 
