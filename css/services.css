@@ -303,7 +303,7 @@
 /* Стили для каждого <p> */
 .services-card-hover-text {
   margin: 0;                      /* убираем стандартные отступы */
-  color: #d62718 !important;
+  color: #a0a4b3 !important;
   text-decoration: underline !important;;     /* подчёркивание всего элемента */
   white-space: nowrap !important;;            /* чтобы текст не переносился */
 }
