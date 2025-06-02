@@ -152,8 +152,14 @@
   width: 120px;
   height: 120px;
   flex-shrink: 0;
-  /* теперь pointer-events — по умолчанию для img */
+  border-radius: 8px;
+  background-color: #e6e9f0;
+  transition: background-color 0.3s ease;
 }
+.services-card:hover .services-card-icon-bg {
+  background-color: #fff;
+}
+
 @media (max-width: 768px) {
   .services-card-icon-bg {
     width: 90px;
