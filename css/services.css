@@ -1,260 +1,151 @@
+/* === Общие стили для контейнера услуг === */
 .container-services {
-    max-width: 1400px;
-    width: 80%;
-    margin: 0px auto 0px auto;
-    overflow: visible;
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+  overflow: visible;
 }
+
 @media (max-width: 768px) {
-    .container-services {
-        width: 90%;
-    }
+  .container-services {
+    width: 90%;
+  }
 }
+
+/* === Секция «Услуги» === */
 .services {
-    margin: 0px auto 0 auto; 
+  margin: 0 auto;
 }
 
-
-
-
+/* === Сетка для всей области карточек «Услуги» === */
 .services-grid {
   display: grid;
-  /*grid-template-columns: 1fr 1fr;*/
   gap: 20px;
   align-items: stretch;
 }
 
-.services-info-button {
-  display: inline-block;
-  margin-top: 20px;
-  background-color: #d62718;
-  color: black;
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-.services-info-button:hover {
-  background-color: #bd1e10;
-}
-
-/* Обёртка для карточек справа */
+/* === Обёртка для набора карточек — 2×2 в десктопе, 1×4 в мобильной === */
 .services-cards-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
-  height: 100%;
-  
 }
 
-.services-cards-wrapper .services-card {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-}
-
-/* Мобильная версия */
 @media (max-width: 767px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
-
   .services-cards-wrapper {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
-
-  .services-cards-wrapper .services-card {
-    height: auto;
-  }
-  
 }
 
-
-
-
-
-
+/* === Стили для каждой отдельной карточки === */
 .services-card {
-    background-color: #ffffff;
-    padding: 40px; 
-    border-radius: 8px;
-    /*border: 1px solid #e6e8ed;*/
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;    
-    text-align: left;
-    gap: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden; /* чтобы дочерние элементы (например, псевдо-фоны) не выходили за границы */
+
+  /* Переходим на Grid внутри карточки: две колонки и–ли две строки (в зависимости от элементов) */
+  display: grid;
+  grid-template-areas:
+    "content icon"
+    "hover-texts hover-texts";
+  grid-template-columns: 1fr 120px;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  padding: 40px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
 }
+
 .services-card:hover {
   background: linear-gradient(to top left, #dbe7ff, #ffffff);
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
+
+/* === Мобильная версия карточки: меняем сетку и внутренние отступы === */
 @media (max-width: 767px) {
   .services-card {
-    flex-direction: column !important;
-    align-items: center;
-    text-align: center;
+    grid-template-areas:
+      "content"
+      "icon"
+      "hover-texts";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
     padding: 20px;
-    align-items: flex-start;;
+    text-align: center;
   }
 }
+
+/* === Блок с текстом (заголовок + описание) === */
 .services-card-content {
-  flex: 1;
+  grid-area: content;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-bottom: 135px;
-}
-.services-card h3 {
-  font-weight: 400;
-  margin: 0;
-  margin-bottom: 15px;
 }
 
-.services-card h2 {
-    margin: 0;
-}
-.services-card p {
+/* Заголовок <h3> */
+.services-card-content h3 {
   margin: 0;
   font-weight: 400;
-  color: #2e2e2e; 
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+/* Основной текст блока */
+.services-card-content-text {
+  margin: 0;
+  font-weight: 400;
+  color: #2e2e2e;
   font-size: 16px;
+  line-height: 1.5;
 }
 
-/* Заменяем блок `.services-card-button` на IMG-разметку */
-.services-card-button {
-  /* Убираем фон, рамки и переходы */
-  background: none !important;
-  border: none !important;
-  border-radius: 0 !important;
-  transition: none !important;
-
-  /* Задаём размер SVG-иконки */
-  width: 50px;
-  height: 50px;
-
-  /* Чтобы занимала свой размер и не сжималась */
-  flex-shrink: 0;
+/* === Контейнер для фоновой иконки === */
+.services-card-icon-wrapper {
+  grid-area: icon;
+  justify-self: end; /* чтобы картинка всегда прижималась вправо */
+  align-self: start;
 }
+
+/* Большая фоновая иконка */
 .services-card-icon-bg {
   width: 120px;
   height: 120px;
-  flex-shrink: 0;
   border-radius: 8px;
   background-color: #e6e9f0;
   transition: background-color 0.3s ease;
+  object-fit: cover;
 }
+
+/* При ховере меняем фон иконки */
 .services-card:hover .services-card-icon-bg {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 @media (max-width: 768px) {
   .services-card-icon-bg {
     width: 90px;
     height: 90px;
-    order: -1;
+    order: -1; /* на мобильных переносим наверх */
+    margin: 0 auto 10px; /* центрируем картинку и даём небольшой отступ снизу */
   }
 }
-.services-card img.services-card-icon {
-  transition: filter 0.3s ease;
-}
 
-.services-card:hover img.services-card-icon {
-  filter: brightness(0) saturate(100%) invert(17%) sepia(91%) saturate(1743%) hue-rotate(209deg) brightness(97%) contrast(102%);
-}
-.services-list {
-  list-style-type: none;
-}
-
-.services-list li {
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    line-height: 2.5;
-}
-.services-list li::before {
-    content: "—"; /* Вставляем длинное тире */
-    margin-right: 0.5em; /* Отступ между тире и текстом */
-  }
-
-
-
-
-
-/* Обёртка для заголовка и информации */
-.services-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  gap: 20px;
-}
-/* Заголовок H2 */
-.services-header-title {
-  margin: 0;
-  padding-right: 20px; /* Отступ справа от заголовка */
-}
-
-/* Блок с иконкой и текстом — фиксированной ширины */
-.services-header-info {
-  display: flex;
-  align-items: center;
-  max-width: 600px;         /* ограничение по ширине */
-  padding-left: 20px;       /* отступ слева */
-  padding-right: 120px;      /* отступ справа */
-  box-sizing: border-box;
-}
-/* Иконка */
-.services-header-icon {
-  width: 25px;
-  height: 25px;
-  flex-shrink: 0;
-  margin-right: 15px;
-}
-/* Текст справа от иконки */
-.services-header-text {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  word-break: break-word;
-  color: #2e2e2e; ;
-}
-/* Мобильная версия */
-@media (max-width: 768px) {
-  .services-header {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  .services-header-info {
-    margin-top: 10px;
-    padding-left: 0;
-    padding-right: 0;
-    max-width: 100%;
-  }
-  
-}
-
-
+/* === Статическая «стрелка» (белая/синяя) в правом нижнем углу карточки === */
 .services-card-static-icon {
   position: absolute;
-  bottom: 100px;
-  /*right: 20px;*/
+  bottom: 40px;
+  right: 40px;
   width: 40px;
   height: 40px;
   background-color: #e6e9f0;
@@ -268,55 +159,105 @@
   pointer-events: none;
   transition: background-color 0.3s ease;
 }
+
 .services-card:hover .services-card-static-icon {
-  background-color: #fff;
-}
-.services-card {
-  position: relative;
+  background-color: #ffffff;
 }
 
 @media (max-width: 768px) {
-.services-card-static-icon {
-   bottom: 20px;
-   left: 20px;
+  .services-card-static-icon {
+    bottom: 20px;
+    right: 20px;
   }
 }
 
-/* Контейнер, в котором лежат три текста */
+/* === Блок с тремя пунктами, который появляется по ховеру === */
 .services-card-hover-texts {
-  position: absolute;
-  bottom: 40px;       /* то же самое смещение, что и .services-card-static-icon */
-  left: 40px;
-  right: 40px;
+  grid-area: hover-texts;
   display: flex;
   justify-content: space-between;
-  opacity: 0;                         /* по умолчанию скрыты */
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.5s; /* сначала задержка 0.5 с, затем плавное появление 0.3 с */
+  pointer-events: none; /* чтобы этот блок не мешал кликам по карточке */
 }
 
-/* На ховер карточки — показать блок с текстом */
+/* При ховере карточки — показываем блок */
 .services-card:hover .services-card-hover-texts {
   opacity: 1;
 }
 
-/* Стили для каждого <p> */
+/* Стили для каждого <p> внутри hover-texts */
 .services-card-hover-text {
-  margin: 0;                      /* убираем стандартные отступы */
-  color: #a0a4b3 !important;
-  text-decoration: underline !important;;     /* подчёркивание всего элемента */
-  white-space: nowrap !important;;            /* чтобы текст не переносился */
+  margin: 0;
+  color: #d62718;
+  font-size: 12px;
+  text-decoration: underline;
+  white-space: nowrap;
 }
 
-/* === 2. Скрываем эти три пункта на мобильных === */
+/* Скрываем блок с тремя пунктами на мобильных */
 @media (max-width: 767px) {
   .services-card-hover-texts {
     display: none !important;
   }
 }
 
+/* === Стили для заголовка и информации вверху страницы === */
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  gap: 20px;
+}
 
+.services-header-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  padding-right: 20px;
+}
 
+.services-header-info {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  padding-left: 20px;
+  padding-right: 120px;
+  box-sizing: border-box;
+}
+
+.services-header-icon {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.services-header-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2e2e2e;
+}
+
+/* Мобильная версия для header */
+@media (max-width: 768px) {
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .services-header-info {
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+  }
+}
 
 
 
