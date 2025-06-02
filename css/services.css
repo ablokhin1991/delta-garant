@@ -127,7 +127,6 @@
   flex-direction: column;
   gap: 10px;
   position: relative; /* чтобы вложенная стрелка позиционировалась относительно этого блока */
-  padding-bottom: 20px; /* добавляем запас снизу, чтобы стрелка не налезала на текст */
 }
 
 .services-card-content h3 {
@@ -147,9 +146,9 @@
 
 /* Стрелка внутри блока .services-card-content */
 .services-card-static-icon {
-  position: absolute;
-  bottom: 0; /* «прижата» к нижней границе .services-card-content */
-  left: 0;   /* «прижата» к левой границе .services-card-content */
+  /*position: absolute;
+  bottom: 0
+  left: 0;*/
   width: 40px;
   height: 40px;
   background-color: #e6e9f0;
