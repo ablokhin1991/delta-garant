@@ -304,7 +304,6 @@
 .services-card-hover-text {
   margin: 0;                      /* убираем стандартные отступы */
   color: #d62718 !important;
-  font-size: 12px  !important;;
   text-decoration: underline !important;;     /* подчёркивание всего элемента */
   white-space: nowrap !important;;            /* чтобы текст не переносился */
 }
