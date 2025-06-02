@@ -1,4 +1,6 @@
-/* === Общие стили для контейнера услуг === */
+/* =========================================
+   Общие стили контейнера «Услуги»
+   ========================================= */
 .container-services {
   max-width: 1400px;
   width: 80%;
@@ -12,24 +14,26 @@
   }
 }
 
-/* === Секция «Услуги» === */
 .services {
   margin: 0 auto;
 }
 
-/* === Сетка для всей области карточек «Услуги» === */
+
+/* =========================================
+   Сетка для набора карточек «Услуги»
+   ========================================= */
 .services-grid {
   display: grid;
   gap: 20px;
   align-items: stretch;
 }
 
-/* === Обёртка для набора карточек — 2×2 в десктопе, 1×4 в мобильной === */
 .services-cards-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
+  height: 100%;
 }
 
 @media (max-width: 767px) {
@@ -42,7 +46,10 @@
   }
 }
 
-/* === Стили для каждой отдельной карточки === */
+
+/* =========================================
+   Карточка услуги (.services-card)
+   ========================================= */
 .services-card {
   text-decoration: none;
   color: inherit;
@@ -50,19 +57,30 @@
   background-color: #ffffff;
   border-radius: 8px;
   position: relative;
-  overflow: hidden; /* чтобы дочерние элементы (например, псевдо-фоны) не выходили за границы */
+  overflow: hidden;
 
-  /* Переходим на Grid внутри карточки: две колонки и–ли две строки (в зависимости от элементов) */
+  /* === Переводим карточку на CSS Grid === */
   display: grid;
+
+  /*  
+    1) Две колонки: левая – 2fr (контент), правая – 1fr (иконка)  
+    2) Две строки: первая – адаптивная под h3+описание, вторая – для блока с hover-текстами 
+  */
   grid-template-areas:
     "content icon"
     "hover-texts hover-texts";
-  grid-template-columns: 1fr 120px;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto;
-  gap: 10px;
+
+  /* Пространство между ячейками сетки */
+  gap: 0;
+
+  /* Внутренние отступы карточки (весомые для пространства «контента» и «иконки») */
   padding: 40px;
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+  transition: transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.5s ease;
 }
 
 .services-card:hover {
@@ -71,21 +89,32 @@
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* === Мобильная версия карточки: меняем сетку и внутренние отступы === */
+
+/* === Мобильная версия карточки (≤ 767px) === */
 @media (max-width: 767px) {
   .services-card {
+    /*  
+      Перестраиваем сетку карточки в одну колонку:
+      1) content (заголовок+текст) 
+      2) icon (фон-иконка)
+      3) hover-texts (доп. подпункты) 
+    */
     grid-template-areas:
       "content"
       "icon"
       "hover-texts";
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
+
     padding: 20px;
     text-align: center;
   }
 }
 
-/* === Блок с текстом (заголовок + описание) === */
+
+/* =========================================
+   Содержимое карточки: заголовок + основной текст
+   ========================================= */
 .services-card-content {
   grid-area: content;
   display: flex;
@@ -93,7 +122,6 @@
   gap: 10px;
 }
 
-/* Заголовок <h3> */
 .services-card-content h3 {
   margin: 0;
   font-weight: 400;
@@ -101,7 +129,6 @@
   line-height: 1.3;
 }
 
-/* Основной текст блока */
 .services-card-content-text {
   margin: 0;
   font-weight: 400;
@@ -110,16 +137,19 @@
   line-height: 1.5;
 }
 
-/* === Контейнер для фоновой иконки === */
+
+/* =========================================
+   Иконка-фон (правый столбец)
+   ========================================= */
 .services-card-icon-wrapper {
   grid-area: icon;
-  justify-self: end; /* чтобы картинка всегда прижималась вправо */
+  justify-self: end; /* прижимает иконку справа */
   align-self: start;
 }
 
-/* Большая фоновая иконка */
 .services-card-icon-bg {
-  width: 120px;
+  width: 100%;
+  max-width: 120px; /* чтобы не «растягиваться» более, чем 120px */
   height: 120px;
   border-radius: 8px;
   background-color: #e6e9f0;
@@ -127,7 +157,6 @@
   object-fit: cover;
 }
 
-/* При ховере меняем фон иконки */
 .services-card:hover .services-card-icon-bg {
   background-color: #ffffff;
 }
@@ -136,16 +165,18 @@
   .services-card-icon-bg {
     width: 90px;
     height: 90px;
-    order: -1; /* на мобильных переносим наверх */
-    margin: 0 auto 10px; /* центрируем картинку и даём небольшой отступ снизу */
+    margin: 0 auto 10px; /* центрируем в одном столбце */
   }
 }
 
-/* === Статическая «стрелка» (белая/синяя) в правом нижнем углу карточки === */
+
+/* =========================================
+   Статический «стрелочный» элемент (правый нижний угол в первой зоне)
+   ========================================= */
 .services-card-static-icon {
   position: absolute;
-  bottom: 40px;
-  right: 40px;
+  bottom: 40px;  /* отступ от нижнего края карточки = тот же padding */
+  left: 40px;    /* отступ от левого края карточки = padding */
   width: 40px;
   height: 40px;
   background-color: #e6e9f0;
@@ -166,28 +197,31 @@
 
 @media (max-width: 768px) {
   .services-card-static-icon {
-    bottom: 20px;
-    right: 20px;
+    bottom: 20px; /* уменьшаем отступ для мобилки */
+    left: 20px;
   }
 }
 
-/* === Блок с тремя пунктами, который появляется по ховеру === */
+
+/* =========================================
+   Блок с тремя подпунктами, которые появляются по ховеру
+   ========================================= */
 .services-card-hover-texts {
   grid-area: hover-texts;
   display: flex;
   justify-content: space-between;
   gap: 10px;
+
+  /* изначально скрываем (opacity: 0), а потом плавно показываем */
   opacity: 0;
-  transition: opacity 0.3s ease 0.5s; /* сначала задержка 0.5 с, затем плавное появление 0.3 с */
-  pointer-events: none; /* чтобы этот блок не мешал кликам по карточке */
+  transition: opacity 0.3s ease 0.5s; /* задержка 0.5s, затем 0.3s анимация */
+  pointer-events: none; /* чтобы лишний блок не мешал кликам */
 }
 
-/* При ховере карточки — показываем блок */
 .services-card:hover .services-card-hover-texts {
   opacity: 1;
 }
 
-/* Стили для каждого <p> внутри hover-texts */
 .services-card-hover-text {
   margin: 0;
   color: #d62718;
@@ -196,14 +230,17 @@
   white-space: nowrap;
 }
 
-/* Скрываем блок с тремя пунктами на мобильных */
 @media (max-width: 767px) {
+  /* На мобилках этот блок полностью скрыт */
   .services-card-hover-texts {
     display: none !important;
   }
 }
 
-/* === Стили для заголовка и информации вверху страницы === */
+
+/* =========================================
+   Стили для заголовка и информации вверху страницы
+   ========================================= */
 .services-header {
   display: flex;
   justify-content: space-between;
@@ -243,7 +280,6 @@
   color: #2e2e2e;
 }
 
-/* Мобильная версия для header */
 @media (max-width: 768px) {
   .services-header {
     flex-direction: column;
@@ -258,6 +294,7 @@
     max-width: 100%;
   }
 }
+
 
 
 
