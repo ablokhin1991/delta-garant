@@ -227,7 +227,7 @@
   opacity: 0;
 
   /* Плавное раскрытие (по высоте и прозрачности) с задержкой 0.5c */
-  transition: max-height 0.3s ease 0.5s, opacity 0.3s ease 0.5s;
+  transition: max-height 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
   pointer-events: none;
 }
 
