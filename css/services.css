@@ -220,13 +220,10 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-
   /* Изначально «сжат» до нуля в высоту */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-
-  /* Плавное раскрытие (по высоте и прозрачности) с задержкой 0.5c */
   transition: max-height 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
   pointer-events: none;
 }
