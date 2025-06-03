@@ -218,7 +218,7 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   pointer-events: none;
   margin-top: 10px;
 }
