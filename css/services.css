@@ -62,6 +62,7 @@
   transition: transform 0.3s ease,
     box-shadow 0.3s ease,
     background 0.5s ease;
+    align-self: start;
 }
 
 .services-card:hover {
@@ -124,7 +125,7 @@
   grid-area: content;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   position: relative; /* чтобы вложенная стрелка позиционировалась относительно этого блока */
 }
 
