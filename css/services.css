@@ -343,7 +343,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   align-items: flex-end; /* Выравнивание содержимого по нижнему краю */
-  /*min-height: 400px; */
+  min-height: 335px;
 }
 
 .hero-content-uslugi {
