@@ -432,3 +432,101 @@ p.order-hero-text {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.problems-solved {
+  background-color: #f5f7fa;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.problems-solved h2 {
+  margin: 0 0 20px;
+  font-size: 32px;
+  color: #2e2e2e;
+}
+
+.problems-solved__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e2e2e;
+  margin: 0 0 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.problems-solved__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.problems-solved__list li {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+  color: #2e2e2e;
+}
+
+.problems-solved__list li::before {
+  content: "✖";
+  color: #0036a7;
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+}
+
+.problems-solved__subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0036a7;
+  margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .problems-solved {
+    padding: 40px 0;
+  }
+
+  .problems-solved h2 {
+    font-size: 24px;
+  }
+
+  .problems-solved__title {
+    font-size: 20px;
+  }
+
+  .problems-solved__list li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .problems-solved__subtitle {
+    font-size: 16px;
+  }
+}
