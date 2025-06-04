@@ -405,7 +405,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 50% 50%;
-  align-items: center;       /* Выравниваем содержимое по центру по вертикали */
+  /*align-items: center; Выравниваем содержимое по центру по вертикали */
   min-height: 335px;
 }
 
