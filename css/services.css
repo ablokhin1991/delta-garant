@@ -342,7 +342,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 50% 50%;
-  align-items: center;
+  /*align-items: center;*/
   min-height: 335px;
 
 }
@@ -398,16 +398,6 @@
   .hero-uslugi {
     padding: 50px 0;
   }
-
-.hero-section-uslugi {
-  max-width: 1400px;
-  width: 80%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  /*align-items: center; Выравниваем содержимое по центру по вертикали */
-  min-height: 335px;
-}
 
   .hero-content-uslugi {
     justify-content: center;
