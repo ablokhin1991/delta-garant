@@ -53,10 +53,8 @@
 .problems-text-info {
   display: flex;
   align-items: center;
-  max-width: 600px;
-  padding-left: 20px;
-  padding-right: 120px;
   box-sizing: border-box;
+  margin-top: 80px;
 }
 @media (max-width: 768px) {
   .problems-text-info {
