@@ -77,42 +77,16 @@
 @media (max-width: 768px) {
   .stepper-wrapper {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .stepper-item {
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
+    flex-direction: column;
     margin-bottom: 20px;
   }
 
   .stepper-item::before,
   .stepper-item::after {
-    display: none;
-  }
-
-  .step-counter {
-    margin-right: 15px;
-    margin-bottom: 0;
-  }
-
-  .stepper-item p {
-    text-align: left;
-    margin: 0;
-  }
-
-  .stepper-item::after {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 40px;
-    width: 2px;
-    height: 20px;
-    background-color: #e0e0e0;
-  }
-
-  .stepper-item:last-child::after {
     display: none;
   }
 }
