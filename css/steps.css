@@ -1,137 +1,113 @@
-.container-steps {
-  max-width: 1400px;
-  width: 80%;
-  margin: 80px auto 20px auto;
-  overflow: visible;
-}
-
-@media (max-width: 768px) {
-  .container-steps {
-    width: 90%;
-  }
+.steps-section {
+  padding: 60px 20px;
+  background: #f2f4f8;
+  text-align: center;
 }
 
 .steps-title {
-  text-align: center;
   font-size: 28px;
-  font-weight: 700;
+  font-weight: bold;
+  color: #0036a7;
   margin-bottom: 60px;
 }
 
-.steps-diagram {
+.steps-wrapper {
   position: relative;
-  width: 100%;
+  width: 600px;
   height: 600px;
+  margin: 0 auto;
 }
 
 .circle {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #0036a7;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 300px;
-  margin-left: -150px;
-  margin-top: -150px;
-  border: 4px solid #0036a7;
-  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #f2f4f8;
   z-index: 1;
 }
 
+/* Шаги */
 .step {
   position: absolute;
-  width: 200px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
+  width: 160px;
+  font-size: 14px;
   color: #000;
 }
 
 .step-number {
-  display: block;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: bold;
   color: #0036a7;
-  margin-bottom: 10px;
+  display: block;
+  margin-bottom: 8px;
 }
 
-/* Расположение шагов */
-.step-1 {
+.step-top {
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.step-2 {
-  top: 0;
-  right: 0;
-}
-
-.step-3 {
-  bottom: 0;
-  right: 0;
-}
-
-.step-4 {
-  bottom: 0;
-  left: 0;
-}
-
-/* Линии-стрелки к кругу */
-.step::after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  background-color: #0036a7;
+.step-right {
   top: 50%;
+  right: 0;
   transform: translateY(-50%);
+  text-align: left;
+}
+
+.step-bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: right;
+}
+
+/* Линии-стрелки */
+.arrow {
+  position: absolute;
+  background-color: #0036a7;
   z-index: 0;
 }
 
-.step-1::after {
-  left: 100%;
+.arrow-top {
+  width: 3px;
+  height: 100px;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.step-2::after {
-  right: 100%;
+.arrow-bottom {
+  width: 3px;
+  height: 100px;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.step-3::after {
-  right: 100%;
+.arrow-left {
+  width: 100px;
+  height: 3px;
+  left: 150px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.step-4::after {
-  left: 100%;
-}
-
-/* Адаптив */
-@media (max-width: 768px) {
-  .steps-diagram {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .step {
-    position: relative;
-    width: 100%;
-    max-width: 280px;
-    margin-bottom: 40px;
-  }
-
-  .circle {
-    display: none;
-  }
-
-  .step::after {
-    display: none;
-  }
-
-  .step-number {
-    font-size: 22px;
-  }
-
-  .steps-title {
-    font-size: 22px;
-  }
+.arrow-right {
+  width: 100px;
+  height: 3px;
+  right: 150px;
+  top: 50%;
+  transform: translateY(-50%);
 }
