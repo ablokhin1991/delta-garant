@@ -397,6 +397,7 @@
     padding: 50px 0;
   }
   .hero-section-uslugi {
+  width: 90%;
   display: grid;
   grid-template-columns: auto;
 
