@@ -1,113 +1,163 @@
-.steps-section {
-  padding: 60px 20px;
-  background: #f2f4f8;
-  text-align: center;
+/* Base container styles */
+.container-steps {
+  max-width: 1400px;
+  width: 80%;
+  margin: 80px auto 20px auto;
+  overflow: visible;
+  font-family: 'Arial', sans-serif;
 }
 
+/* Title styles */
 .steps-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #0036a7;
-  margin-bottom: 60px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0036a7; /* Branded Blue */
+  text-align: center;
+  margin-bottom: 40px;
 }
 
+/* Wrapper for steps and circle */
 .steps-wrapper {
   position: relative;
-  width: 600px;
-  height: 600px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 400px;
 }
 
+/* Circle styles */
 .circle {
-  width: 200px;
-  height: 200px;
-  border: 3px solid #0036a7;
-  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #f2f4f8;
-  z-index: 1;
+  width: 200px;
+  height: 200px;
+  border: 5px solid #0036a7; /* Branded Blue */
+  border-radius: 50%;
 }
 
-/* Шаги */
+/* Individual step styles */
 .step {
   position: absolute;
-  width: 160px;
-  font-size: 14px;
-  color: #000;
+  text-align: center;
+  width: 200px;
 }
 
+/* Step number */
 .step-number {
-  font-size: 22px;
-  font-weight: bold;
-  color: #0036a7;
-  display: block;
-  margin-bottom: 8px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d62718; /* Branded Red */
+  margin-bottom: 10px;
 }
 
-.step-top {
+/* Step text */
+.step-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Step line (arrow without arrowhead) */
+.step-line {
+  position: absolute;
+  height: 2px;
+  background-color: #0036a7; /* Branded Blue */
+  width: 100px;
+}
+
+/* Positioning for each step */
+.step:nth-child(1) {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.step-right {
+.step:nth-child(1) .step-line {
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step:nth-child(2) {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  text-align: left;
 }
 
-.step-bottom {
+.step:nth-child(2) .step-line {
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.step:nth-child(3) {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.step-left {
+.step:nth-child(3) .step-line {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step:nth-child(4) {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  text-align: right;
 }
 
-/* Линии-стрелки */
-.arrow {
-  position: absolute;
-  background-color: #0036a7;
-  z-index: 0;
-}
-
-.arrow-top {
-  width: 3px;
-  height: 100px;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.arrow-bottom {
-  width: 3px;
-  height: 100px;
-  bottom: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.arrow-left {
-  width: 100px;
-  height: 3px;
-  left: 150px;
+.step:nth-child(4) .step-line {
+  right: -100px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.arrow-right {
-  width: 100px;
-  height: 3px;
-  right: 150px;
-  top: 50%;
-  transform: translateY(-50%);
+/* Mobile version */
+@media (max-width: 768px) {
+  .container-steps {
+    width: 90%;
+  }
+
+  .steps-wrapper {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    position: static;
+    transform: none;
+    margin: 0 auto 20px;
+  }
+
+  .step {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .step-number {
+    font-size: 1.5rem;
+  }
+
+  .step-text {
+    font-size: 0.9rem;
+  }
+
+  .step-line {
+    width: 50px;
+    margin: 10px auto;
+    position: static;
+  }
+
+  .steps-title {
+    font-size: 2rem;
+  }
 }
