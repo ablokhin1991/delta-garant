@@ -47,3 +47,22 @@
 .problems-card p {
     margin: 0;
 }
+
+
+
+.problems-text-info {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  padding-left: 20px;
+  padding-right: 120px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .problems-text-info {
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+  }
+}
