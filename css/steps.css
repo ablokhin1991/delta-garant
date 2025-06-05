@@ -1,163 +1,143 @@
-/* Base container styles */
+/* Контейнер блока */
 .container-steps {
   max-width: 1400px;
   width: 80%;
   margin: 80px auto 20px auto;
   overflow: visible;
-  font-family: 'Arial', sans-serif;
 }
 
-/* Title styles */
-.steps-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #0036a7; /* Branded Blue */
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-/* Wrapper for steps and circle */
-.steps-wrapper {
+/* Общие стили для этапов */
+.steps {
   position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 400px;
+  min-height: 500px;
 }
 
-/* Circle styles */
+.step {
+  position: absolute;
+  max-width: 240px;
+  z-index: 10;
+}
+
+.step-number {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.step-content {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Центральный круг */
 .circle {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  border: 5px solid #0036a7; /* Branded Blue */
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
+  background: conic-gradient(
+    #0036a7 0deg 90deg,
+    #d62718 90deg 180deg,
+    #00ba00 180deg 270deg,
+    #0036a7 270deg 360deg
+  );
 }
 
-/* Individual step styles */
-.step {
+.inner-circle {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Позиционирование этапов для десктопов */
+.step-1 {
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  width: 200px;
 }
 
-/* Step number */
-.step-number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #d62718; /* Branded Red */
-  margin-bottom: 10px;
+.step-2 {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
 }
 
-/* Step text */
-.step-text {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.4;
+.step-3 {
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
-/* Step line (arrow without arrowhead) */
-.step-line {
+.step-4 {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+/* Соединительные линии */
+.step-2::before,
+.step-4::before {
+  content: '';
   position: absolute;
+  background: #0036a7;
+  z-index: -1;
+}
+
+.step-2::before {
+  top: 50%;
+  left: -80px;
+  width: 80px;
   height: 2px;
-  background-color: #0036a7; /* Branded Blue */
-  width: 100px;
 }
 
-/* Positioning for each step */
-.step:nth-child(1) {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.step:nth-child(1) .step-line {
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.step:nth-child(2) {
+.step-4::before {
   top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  right: -80px;
+  width: 80px;
+  height: 2px;
 }
 
-.step:nth-child(2) .step-line {
-  left: -100px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.step:nth-child(3) {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.step:nth-child(3) .step-line {
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.step:nth-child(4) {
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.step:nth-child(4) .step-line {
-  right: -100px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Mobile version */
+/* Мобильная версия */
 @media (max-width: 768px) {
   .container-steps {
     width: 90%;
   }
-
-  .steps-wrapper {
+  
+  .steps {
+    min-height: auto;
+    display: flex;
     flex-direction: column;
-    height: auto;
-    padding: 20px 0;
+    gap: 30px;
   }
-
+  
   .circle {
-    width: 100px;
-    height: 100px;
-    position: static;
-    transform: none;
-    margin: 0 auto 20px;
+    display: none;
   }
-
+  
   .step {
     position: static;
-    transform: none;
-    width: 100%;
-    margin-bottom: 30px;
+    max-width: 100%;
+    transform: none !important;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
   }
-
-  .step-number {
-    font-size: 1.5rem;
+  
+  .step::before {
+    display: none;
   }
-
-  .step-text {
-    font-size: 0.9rem;
-  }
-
-  .step-line {
-    width: 50px;
-    margin: 10px auto;
-    position: static;
-  }
-
-  .steps-title {
-    font-size: 2rem;
+  
+  .step-content {
+    padding-top: 5px;
   }
 }
