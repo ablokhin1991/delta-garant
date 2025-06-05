@@ -396,6 +396,11 @@
   .hero-uslugi {
     padding: 50px 0;
   }
+  .hero-section-uslugi {
+  display: grid;
+  grid-template-columns: auto;
+
+}
 
   .hero-content-uslugi {
     justify-content: center;
