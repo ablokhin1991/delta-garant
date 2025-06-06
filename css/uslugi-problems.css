@@ -67,10 +67,10 @@
 
 .problems-image {
   width: 400px; /* Настраиваемая фиксированная ширина */
-  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .problems-image-wrapper {
