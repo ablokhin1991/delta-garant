@@ -10,7 +10,7 @@
 }
 .container-steps-wrapper {
   background-color: #ffffff; /* Белый фон на всю ширину */
-  padding: 80px 0 20px 0; /* Отступы сверху и снизу */
+  padding: 80px 0 80px 0; /* Отступы сверху и снизу */
 }
  .stepper {
     display: flex;
