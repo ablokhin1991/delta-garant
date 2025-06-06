@@ -122,8 +122,6 @@
   }
 
   .order-container-problems {
-  display: grid;
-  grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 30px; 
+  justify-items: center;
 }
