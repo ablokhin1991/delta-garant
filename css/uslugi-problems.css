@@ -12,32 +12,45 @@
 }
 
 .problems {
-  margin: 20px auto 0 auto;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .problems {
+    grid-template-columns: 1fr;
+  }
 }
 
 .problems-list {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 20px;
+  height: 100%;
 }
 
-/* Одна строка с иконкой и карточкой */
 .problems-row {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Стили иконки */
+@media (max-width: 768px) {
+  .problems-row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
 .problem-icon {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
 }
 
-/* Стили карточки, сохранены как было */
 .problems-card {
   background-color: #ffffff;
   padding: 40px 20px;
@@ -56,20 +69,13 @@
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  .problems-row {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-
 .problems-image {
-  grid-column: 2;
   display: flex;
-  justify-content: center;   /* Картинка центруется по горизонтали в правой колонке */
-  align-items: center;       /* Картинка центруется по вертикали в правой колонке */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+
 @media (max-width: 768px) {
   .problems-image {
     display: none;
@@ -80,14 +86,28 @@
   width: 100%;
   max-width: 500px;
 }
+
 .problems-image img {
-  width: 100%;               /* Картинка занимает всю ширину родителя (до 500px) */
-  height: auto;              /* Автоматически сохраняет пропорции */
-  /* max-height можно задать, если нужно ограничить высоту, напр.: */
+  width: 100%;
+  height: auto;
   max-height: 500px;
-  object-fit: contain;       /* Сохраняет пропорции без обрезки */
-  object-position: center;   /* Центрируем содержимое картинки */
+  object-fit: contain;
+  object-position: center;
   display: block;
-  /* position: absolute; — удалили */
-  /* bottom: 0; margin-bottom: -90px; — удалили */
+}
+
+/* Текст под блоком вне grid */
+.problems-text-info {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .problems-text-info {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
 }
