@@ -111,3 +111,10 @@
     margin-top: 20px;
   }
 }
+.highlight-green {
+  background-color: #00ba00;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
