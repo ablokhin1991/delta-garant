@@ -11,6 +11,7 @@
 .container-steps-wrapper {
   background-color: #ffffff; /* Белый фон на всю ширину */
   padding: 80px 0 80px 0; /* Отступы сверху и снизу */
+  overflow: hidden;
 }
  .stepper {
     display: flex;
