@@ -62,3 +62,21 @@
     align-items: flex-start;
   }
 }
+
+
+.problems-image {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;   /* Картинка центруется по горизонтали в правой колонке */
+  align-items: center;       /* Картинка центруется по вертикали в правой колонке */
+}
+@media (max-width: 768px) {
+  .hero-image {
+    display: none;
+  }
+}
+
+.problems-image-wrapper {
+  width: 100%;
+  max-width: 500px;
+}
