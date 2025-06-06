@@ -80,3 +80,14 @@
   width: 100%;
   max-width: 500px;
 }
+.hero-image img {
+  width: 100%;               /* Картинка занимает всю ширину родителя (до 500px) */
+  height: auto;              /* Автоматически сохраняет пропорции */
+  /* max-height можно задать, если нужно ограничить высоту, напр.: */
+  max-height: 500px;
+  object-fit: contain;       /* Сохраняет пропорции без обрезки */
+  object-position: center;   /* Центрируем содержимое картинки */
+  display: block;
+  /* position: absolute; — удалили */
+  /* bottom: 0; margin-bottom: -90px; — удалили */
+}
