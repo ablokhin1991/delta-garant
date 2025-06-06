@@ -71,7 +71,7 @@
   align-items: center;       /* Картинка центруется по вертикали в правой колонке */
 }
 @media (max-width: 768px) {
-  .hero-image {
+  .problems-image {
     display: none;
   }
 }
@@ -80,7 +80,7 @@
   width: 100%;
   max-width: 500px;
 }
-.hero-image img {
+.problems-image img {
   width: 100%;               /* Картинка занимает всю ширину родителя (до 500px) */
   height: auto;              /* Автоматически сохраняет пропорции */
   /* max-height можно задать, если нужно ограничить высоту, напр.: */
