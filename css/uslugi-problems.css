@@ -21,8 +21,7 @@
 .problems-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  flex: 1; /* Занимает всё доступное место */
+  gap: 20px;
 }
 
 .problems-row {
