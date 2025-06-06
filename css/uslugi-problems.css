@@ -12,24 +12,18 @@
 }
 
 .problems {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;
-  gap: 20px;
-}
-
-@media (max-width: 768px) {
-  .problems {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center; /* Важное изменение для вертикального выравнивания */
+  flex-wrap: wrap;
 }
 
 .problems-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-  height: 100%;
+  gap: 10px;
+  flex: 1; /* Занимает всё доступное место */
 }
 
 .problems-row {
@@ -39,9 +33,13 @@
 }
 
 @media (max-width: 768px) {
-  .problems-row {
-    flex-direction: row;
-    align-items: flex-start;
+  .problems {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .problems-image {
+    display: none;
   }
 }
 
@@ -53,7 +51,7 @@
 
 .problems-card {
   background-color: #ffffff;
-  padding: 20px 20px;
+  padding: 20px;
   border-radius: 8px;
   border: 1px solid #e6e8ed;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -70,21 +68,16 @@
 }
 
 .problems-image {
+  width: 400px; /* Настраиваемая фиксированная ширина */
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-}
-
-@media (max-width: 768px) {
-  .problems-image {
-    display: none;
-  }
 }
 
 .problems-image-wrapper {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 .problems-image img {
@@ -96,7 +89,6 @@
   display: block;
 }
 
-/* Текст под блоком вне grid */
 .problems-text-info {
   display: flex;
   align-items: center;
@@ -111,6 +103,7 @@
     margin-top: 20px;
   }
 }
+
 .highlight-green {
   background-color: #00ba00;
   color: #ffffff;
