@@ -92,6 +92,7 @@
   display: flex;
   align-items: center;
   margin-top: 80px;
+  margin-bottom: 80px;
   gap: 15px;
 }
 
