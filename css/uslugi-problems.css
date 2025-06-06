@@ -12,11 +12,10 @@
 }
 
 .problems {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center; /* Важное изменение для вертикального выравнивания */
-  flex-wrap: wrap;
 }
 
 .problems-list {
@@ -34,8 +33,7 @@
 
 @media (max-width: 768px) {
   .problems {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr;
   }
 
   .problems-image {
