@@ -321,4 +321,15 @@
 }
 
 @media (max-width: 576px) {
-  .workflow-step
+  .workflow-step {
+    flex: 0 0 100%;
+  }
+  
+  .workflow-section-title h2 {
+    font-size: 2.2rem;
+  }
+  
+  .workflow-step-content {
+    padding: 15px;
+  }
+}
