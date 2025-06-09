@@ -292,37 +292,31 @@
 
 .problems-modern-image-wrapper {
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   position: relative;
+  transform: perspective(1000px) rotateY(-5deg) rotateX(3deg);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.problems-modern-image-placeholder {
-  background: linear-gradient(135deg, #f0f5ff 0%, #e6eeff 100%);
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 3px dashed #0036a7;
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
+.problems-modern-image-wrapper:hover {
+  transform: perspective(1000px) rotateY(0) rotateX(0);
+  box-shadow: 0 25px 50px rgba(0, 54, 167, 0.25);
 }
 
-.problems-modern-image-placeholder i {
-  font-size: 80px;
-  color: #0036a7;
-  margin-bottom: 20px;
-  opacity: 0.7;
+.problems-modern-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all 0.5s ease;
+  max-height: 500px;
+  object-fit: cover;
 }
 
-.problems-modern-image-placeholder p {
-  font-size: 1.2rem;
-  color: #0036a7;
-  font-weight: 500;
+.problems-modern-image-wrapper:hover .problems-modern-img {
+  transform: scale(1.03);
 }
 
 .problems-modern-solution {
