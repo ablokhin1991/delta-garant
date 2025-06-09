@@ -147,17 +147,6 @@
   }
 }
 
-.problems-modern-title {
-  text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 60px;
-  background: linear-gradient(90deg, #0036a7, #d62718);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  font-weight: 700;
-}
-
 .problems-modern-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -371,10 +360,6 @@
     display: none;
   }
   
-  .problems-modern-title {
-    font-size: 2.2rem;
-  }
-  
   .problems-modern-card p {
     font-size: 1.1rem;
   }
@@ -404,8 +389,4 @@
     padding: 20px;
   }
   
-  .problems-modern-title {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-  }
 }
