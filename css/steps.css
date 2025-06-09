@@ -164,6 +164,10 @@
   margin-bottom: 80px;
 }
 
+.container-steps h2 {
+  margin-top: 80px !important;
+}
+
 .workflow-section-title h2 {
   font-size: 2.8rem;
   color: #212529;
