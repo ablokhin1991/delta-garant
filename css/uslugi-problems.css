@@ -390,3 +390,10 @@
   }
   
 }
+
+.problems-section-title p {
+  font-size: 16px;
+  color: #6c757d;
+  max-width: 600px;
+  line-height: 1.6;
+}
