@@ -161,8 +161,7 @@
 }
 
 .workflow-section-title {
-  text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .workflow-section-title h2 {
@@ -176,10 +175,9 @@
 }
 
 .workflow-section-title p {
-  font-size: 1.2rem;
+  font-size: 16px;
   color: #6c757d;
   max-width: 600px;
-  margin: 0 auto;
   line-height: 1.6;
 }
 
