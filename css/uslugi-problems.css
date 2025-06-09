@@ -100,6 +100,7 @@
 
 .problems-modern-item:hover .problems-modern-icon {
   transform: scale(1.1);
+  background: #d62718;
   box-shadow: 0 15px 30px rgba(214, 39, 24, 0.3);
 }
 
