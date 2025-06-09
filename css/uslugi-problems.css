@@ -274,7 +274,7 @@
 
 .problems-modern-item:hover .problems-modern-highlight::after {
   transform: scaleX(1);
-  background: #0036a7;
+  background: #d62718;
 }
 
 .problems-modern-image {
