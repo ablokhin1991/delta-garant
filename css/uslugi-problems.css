@@ -230,7 +230,7 @@
 }
 
 .problems-modern-item:hover .problems-modern-card {
-  box-shadow: 0 12px 30px rgba(0, 54, 167, 0.2);
+  box-shadow: 0 15px 30px rgba(214, 39, 24, 0.3);
   transform: translateY(-5px);
 }
 
