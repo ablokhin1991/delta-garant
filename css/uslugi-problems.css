@@ -95,7 +95,7 @@
 .problems-modern-icon i {
   font-size: 28px;
   color: #d62718;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .problems-modern-item:hover .problems-modern-icon {
