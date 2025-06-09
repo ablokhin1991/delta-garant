@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Этапы работы</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        /* Вертикальная линия */
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                var(--primary) 0%, 
+                var(--accent) 100%);
+            z-index: 1;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .step {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 15px;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.2);
+            position: relative;
+            transition: var(--transition);
+            border: 3px solid var(--primary);
+        }
+        
+        .step-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px dashed var(--accent);
+            animation: rotate 20s linear infinite;
+            opacity: 0.7;
+        }
+        
+        .step-icon i {
+            font-size: 32px;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .step-content {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            transform: translateY(20px);
+            opacity: 0.9;
+        }
+        
+        .step:hover .step-content {
+            transform: translateY(0);
+            opacity: 1;
+            box-shadow: 0 15px 35px rgba(67, 97, 238, 0.2);
+        }
+        
+        .step:hover .step-icon {
+            transform: scale(1.1) translateY(-10px);
+            background: var(--primary);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
+        }
+        
+        .step:hover .step-icon i {
+            color: white;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent);
+            color: white;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(76, 201, 240, 0.5);
+        }
+        
+        .step-title {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .step-description {
+            color: #6c757d;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        /* Анимация вращения */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .steps {
+                flex-wrap: wrap;
+            }
+            
+            .step {
+                flex: 0 0 50%;
+                margin-bottom: 50px;
+            }
+            
+            .steps::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .step {
+                flex: 0 0 100%;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .step-content {
+                padding: 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section-title">
+            <h2>Наши Этапы Работы</h2>
+            <p>Процесс создания проекта, который гарантирует качество и удовлетворенность каждого клиента</p>
+        </div>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-comments"></i>
+                    <span class="step-number">1</span>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Консультация</h3>
+                    <p class="step-description">Обсуждение ваших идей, целей и требований к проекту. Определение основных задач и сроков реализации.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <span class="step-number">2</span>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Проектирование</h3>
+                    <p class="step-description">Создание детального плана, дизайн-макетов и прототипов. Утверждение концепции перед разработкой.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-code"></i>
+                    <span class="step-number">3</span>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Разработка</h3>
+                    <p class="step-description">Программирование и реализация всех функций проекта. Создание адаптивного и оптимизированного решения.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-rocket"></i>
+                    <span class="step-number">4</span>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Запуск</h3>
+                    <p class="step-description">Финальное тестирование, оптимизация и размещение проекта на хостинге. Обучение использованию системы.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
