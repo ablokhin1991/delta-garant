@@ -75,7 +75,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
+  box-shadow: 0 15px 30px rgba(214, 39, 24, 0.3);
   position: relative;
   flex-shrink: 0;
   border: 3px solid #d62718;
