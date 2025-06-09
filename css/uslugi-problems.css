@@ -103,6 +103,12 @@
   background: #d62718;
   box-shadow: 0 15px 30px rgba(214, 39, 24, 0.3);
 }
+.problems-modern-item:hover .problems-modern-icon i {
+  color: white;
+}
+
+
+
 
 .problems-modern-card {
   background-color: #ffffff;
