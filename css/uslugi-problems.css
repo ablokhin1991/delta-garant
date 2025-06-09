@@ -251,14 +251,12 @@
 
 .problems-modern-card p {
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: #212529;
+  color: #2e2e2e;
 }
 
 .problems-modern-highlight {
   color: #d62718;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
 }
 
