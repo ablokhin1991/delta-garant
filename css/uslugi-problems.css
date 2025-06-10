@@ -208,6 +208,7 @@
   justify-content: center;
   flex-shrink: 0;
   z-index: 1;
+  order: 1;
 }
 
 .problems-modern-solution-icon i {
@@ -222,6 +223,7 @@
   line-height: 1.6;
   z-index: 1;
   font-weight: 500;
+  order: 2;
 }
 
 .problems-modern-solution-highlight {
