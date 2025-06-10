@@ -298,6 +298,9 @@
   .problems-modern-solution .workflow-order-container {
     width: 100%;
   }
+  .workflow-order-container .order-call {
+    width: 100%; /* растянуть кнопку на всю ширину контейнера */
+  }
 }
 
 .problems-modern-solution .order-call {
