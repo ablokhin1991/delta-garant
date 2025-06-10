@@ -208,11 +208,6 @@
   align-items: center;
   padding: 0 15px;
 }
-@media (min-width: 769px) {
-  .workflow-step {
-    padding: 0 15px;
-  }
-}
 
 .workflow-step-icon {
   width: 80px;
@@ -321,7 +316,6 @@
   .workflow-step {
     flex: 0 0 50%;
     margin-bottom: 50px;
-    padding: 0px;
   }
   
   .workflow-steps::before {
@@ -332,7 +326,6 @@
 @media (max-width: 576px) {
   .workflow-step {
     flex: 0 0 100%;
-    padding: 0px;
   }
   
   .workflow-section-title h2 {
