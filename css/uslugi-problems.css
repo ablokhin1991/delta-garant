@@ -298,10 +298,12 @@
 }
 
 /* 2) Добавляем пульсацию самой кнопке (не подложке) раз в 1 секунду */
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.05); }
+/* Убираем пульсацию и добавляем разовый “блик” (highlight) каждые 1 сек */
+@keyframes shine {
+  0%, 100% { box-shadow: none; }
+  50%      { box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); }
 }
+
 .problems-modern-solution .order-call {
-  animation: pulse 1s ease-in-out infinite;
+  animation: shine 1s ease-in-out infinite;
 }
