@@ -209,6 +209,17 @@
   flex-shrink: 0;
   z-index: 1;
 }
+.problems-modern-solution-order {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
 
 .problems-modern-solution-icon i {
   font-size: 28px;
