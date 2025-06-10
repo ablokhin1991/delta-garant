@@ -256,6 +256,12 @@
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(20px);
   opacity: 0.9;
+
+
+  flex: 1;                    /* заполняем всю доступную высоту .workflow-step */
+  display: flex;             /* превращаем в flex-контейнер */
+  flex-direction: column;    /* с вертикальным расположением заголовка и текста */
+  justify-content: flex-start; /* фиксируем контент у верхнего края */
 }
 
 .workflow-step:hover .workflow-step-content {
