@@ -234,7 +234,12 @@
 
 
 /* Текст с галочкой и кнопкой  */
-
+.workflow-order-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  position: relative;
+}
 .order-container-problems {
   align-items: center;
   justify-items: center;
