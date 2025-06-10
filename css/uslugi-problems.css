@@ -288,22 +288,20 @@
 
 
 
-/* 1) Добавили белую подложку и скругление контейнеру кнопки, чтобы визуально совпадало с иконкой */
+/* 1) Белая подложка для контейнера кнопки, как у иконки, с отступами и скруглением */
 .problems-modern-solution .workflow-order-container {
-  background: white;          /* белый фон как у иконки */
-  border-radius: 50px;        /* скругление для «капсулы» */
-  padding: 8px;               /* отступы вокруг кнопки */
-  flex-shrink: 0;             /* не ужиматься внутри flex */
-  display: flex;              /* центрируем кнопку */
-  align-items: center;
-  justify-content: center;
-  z-index: 1;                 /* над фоновым псевдоэлементом */
-  
-  /* 2) Пульсация самой кнопки (.order-call), не фоновой «капсулы» */
-  animation: pulse-btn 1s ease-in-out infinite;
+  background: white;        /* белый фон */
+  padding: 10px;            /* небольшие внутренние отступы */
+  border-radius: 15px;      /* совпадает со скруглением родителя */
+  flex-shrink: 0;           /* не даём сжиматься при малых ширинах */
+  z-index: 1;               /* ставим над анимированным фоном */
 }
-/* 3) Ключевые кадры для плавной пульсации */
-@keyframes pulse-btn {
+
+/* 2) Добавляем пульсацию самой кнопке (не подложке) раз в 1 секунду */
+@keyframes pulse {
   0%, 100% { transform: scale(1); }
   50%      { transform: scale(1.05); }
+}
+.problems-modern-solution .order-call {
+  animation: pulse 1s ease-in-out infinite;
 }
