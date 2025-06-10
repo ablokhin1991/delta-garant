@@ -327,7 +327,7 @@
   flex-shrink: 0;
   z-index: 1;
   order: 3;
-  width: 100%; /* Добавляем ширину 100% для контейнера кнопки */
+  /*width: 100%; Добавляем ширину 100% для контейнера кнопки */
   box-sizing: border-box; /* Учитываем padding в ширине */
 }
 
@@ -335,8 +335,16 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  width: 100%; /* Гарантируем 100% ширину кнопки */
+  /*width: 100%;  Гарантируем 100% ширину кнопки */
   box-sizing: border-box; /* Учитываем padding в ширине */
+}
+@media (max-width: 768px) {
+  .cb1-wrapper .cb1-btn-wrap {
+    width: 100%;
+  }
+  .cb1-wrapper .cb1-btn {
+    width: 100%;
+  }
 }
 
 .cb1-wrapper .cb1-btn::after {
