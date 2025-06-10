@@ -297,13 +297,19 @@
   z-index: 1;               /* ставим над анимированным фоном */
 }
 
-/* 2) Добавляем пульсацию самой кнопке (не подложке) раз в 1 секунду */
-/* Убираем пульсацию и добавляем разовый “блик” (highlight) каждые 1 сек */
+/* Убираем предыдущую анимацию и добавляем ‘блик’ через изменение яркости */
 @keyframes shine {
-  0%, 100% { box-shadow: none; }
-  50%      { box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); }
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
 }
 
 .problems-modern-solution .order-call {
+  /* отключаем box-shadow-анимацию, включаем shine */
   animation: shine 1s ease-in-out infinite;
+  /* чтобы фильтр применялся корректно */
+  will-change: filter;
 }
