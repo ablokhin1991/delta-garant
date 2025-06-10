@@ -189,6 +189,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  align-items: stretch;
 }
 
 .workflow-steps::before {
@@ -334,4 +335,19 @@
   .workflow-step-content {
     padding: 15px;
   }
+}
+
+
+
+
+
+
+
+.workflow-order-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 30px; 
+  position: relative;
+  z-index: 3;
 }
