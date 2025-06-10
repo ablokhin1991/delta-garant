@@ -229,3 +229,126 @@
               inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
 /* кнопка ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ •  */
+
+
+
+
+/* Текст с галочкой и кнопкой  */
+
+.problems-modern-solution {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 80px;
+  padding: 25px;
+  background: linear-gradient(to right, #0036a7, #002a7a);
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 54, 167, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+.problems-modern-solution::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  transform: rotate(30deg);
+}
+.problems-modern-solution-icon {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  order: 1;
+}
+.problems-modern-solution-icon i {
+  font-size: 28px;
+  color: #00ba00;
+}
+.problems-modern-solution-text {
+  margin: 0;
+  font-size: 1.3rem;
+  color: white;
+  line-height: 1.6;
+  z-index: 1;
+  font-weight: 500;
+  order: 2;
+}
+.problems-modern-solution-highlight {
+  background-color: #00ba00;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  
+  .problems-modern-solution {
+    margin-top: 50px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .problems-modern-solution-text {
+    font-size: 1.1rem;
+  }
+}
+
+.problems-modern-solution .workflow-order-container {
+  background: white;        /* белый фон */
+  padding: 10px;            /* небольшие внутренние отступы */
+  border-radius: 15px;      /* совпадает со скруглением родителя */
+  flex-shrink: 0;           /* не даём сжиматься при малых ширинах */
+  z-index: 1;               /* ставим над анимированным фоном */
+  order: 3;
+}
+@media (max-width: 768px) {
+  .problems-modern-solution .workflow-order-container {
+    width: 100%;
+  }
+  .workflow-order-container .order-call {
+    width: 100%; /* растянуть кнопку на всю ширину контейнера */
+  }
+}
+
+.problems-modern-solution .order-call {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.problems-modern-solution .order-call::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.8) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0%   { left: -120%; opacity: 0; }
+  30%  { opacity: 1; }
+  50%  { left: 100%; opacity: 0.8; }
+  80%  { opacity: 0; }
+  100% { left: 150%; opacity: 0; } /* уводим блик далеко за пределы кнопки */
+}
+
