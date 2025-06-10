@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Почему выбирают нас</title>
+    <title>Преимущества</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-blue: #0036a7;
-            --dark-blue: #001a50;
-            --accent-blue: #4cc9f0;
-            --accent-red: #d62718;
-            --text-dark: #212529;
-            --text-gray: #6c757d;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --primary: #4361ee;
+            --secondary: #7209b7;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --transition: all 0.3s ease;
         }
         
         * {
@@ -24,282 +23,196 @@
         
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: #f8f9fa;
+            background-color: #f0f2f5;
+            padding: 2rem;
             line-height: 1.6;
         }
         
-        .why-us-wrapper {
-            background: #fff;
-            padding: 80px 0;
-            overflow: hidden;
-        }
-        
-        .container-why-us {
-            max-width: 1400px;
-            width: 80%;
+        .why-us {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 4rem 2rem;
         }
         
-        @media (max-width: 768px) {
-            .container-why-us {
-                width: 90%;
-            }
-        }
-        
-        .why-us-section-title {
-            margin-bottom: 80px;
+        .section-header {
             text-align: center;
+            margin-bottom: 3.5rem;
         }
         
-        .why-us-section-title h2 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--dark-blue));
+        .section-header h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            font-weight: 800;
         }
         
-        .why-us-section-title p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--dark);
             max-width: 700px;
             margin: 0 auto;
-            line-height: 1.6;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            counter-reset: feature-counter;
         }
         
         .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
             position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            padding-top: 90px;
+            overflow: hidden;
+            counter-increment: feature-counter;
         }
         
-        .feature-icon-wrapper {
-            width: 90px;
-            height: 90px;
-            background: white;
+        .feature-card::before {
+            content: counter(feature-counter);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 5rem;
+            font-weight: 800;
+            color: rgba(67, 97, 238, 0.05);
+            line-height: 1;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
+        }
+        
+        .feature-card:hover .icon-wrapper {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+        }
+        
+        .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--accent), var(--primary));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
-            border: 3px solid var(--primary-blue);
-            z-index: 2;
+            margin-bottom: 1.8rem;
             transition: var(--transition);
-        }
-        
-        .feature-icon-wrapper::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 2px dashed var(--accent-blue);
-            animation: feature-rotate 20s linear infinite;
-            opacity: 0.7;
         }
         
         .feature-icon {
-            font-size: 32px;
-            color: var(--primary-blue);
-            transition: var(--transition);
-        }
-        
-        .feature-content {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 30px 25px;
-            text-align: center;
-            transition: var(--transition);
-            transform: translateY(20px);
-            opacity: 0.9;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .feature-number {
-            position: absolute;
-            top: -10px;
-            right: 30px;
-            background: var(--accent-red);
+            font-size: 1.8rem;
             color: white;
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(76, 201, 240, 0.5);
-            z-index: 3;
-            font-size: 1rem;
         }
         
         .feature-card h3 {
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
         }
         
         .feature-card p {
-            color: var(--text-gray);
-            line-height: 1.6;
-            font-size: 1rem;
+            color: #6c757d;
+            font-size: 1.05rem;
         }
         
-        /* Hover Effects */
-        .feature-card:hover .feature-icon-wrapper {
-            transform: translateX(-50%) scale(1.1) translateY(-10px);
-            background: var(--primary-blue);
-            box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
-        }
-        
-        .feature-card:hover .feature-icon {
-            color: white;
-        }
-        
-        .feature-card:hover .feature-content {
-            transform: translateY(0);
-            opacity: 1;
-            box-shadow: 0 15px 35px rgba(0, 54, 167, 0.2);
-        }
-        
-        /* Animation */
-        @keyframes feature-rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .features-grid {
-                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
-            .why-us-section-title h2 {
-                font-size: 2.2rem;
+            .feature-card {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .why-us {
+                padding: 2rem 1rem;
             }
             
-            .feature-content {
-                padding: 25px 20px;
+            .section-header h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <section class="why-us-wrapper">
-        <div class="container-why-us">
-            <div class="why-us-section-title">
-                <h2>Почему выбирают нас</h2>
-                <p>7 ключевых преимуществ, которые делают наш сервис лучшим выбором</p>
+    <section class="why-us">
+        <div class="section-header">
+            <h2>Почему выбирают нас</h2>
+            <p>7 ключевых преимуществ, которые делают наш сервис лучшим выбором</p>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Преимущество 1 -->
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="feature-icon fas fa-rocket"></i>
+                </div>
+                <h3>Инновационные технологии</h3>
+                <p>Используем передовые разработки для максимальной эффективности вашего бизнеса</p>
             </div>
             
-            <div class="features-grid">
-                <!-- Преимущество 1 -->
-                <div class="feature-card">
-                    <div class="feature-number">1</div>
-                    <div class="feature-icon-wrapper">
-                        <i class="feature-icon fas fa-rocket"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Инновационные технологии</h3>
-                        <p>Используем передовые разработки для максимальной эффективности вашего бизнеса</p>
-                    </div>
+            <!-- Преимущество 2 -->
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="feature-icon fas fa-users"></i>
                 </div>
-                
-                <!-- Преимущество 2 -->
-                <div class="feature-card">
-                    <div class="feature-number">2</div>
-                    <div class="feature-icon-wrapper">
-                        <i class="feature-icon fas fa-users"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Профессиональная команда</h3>
-                        <p>Эксперты с опытом работы в ведущих международных компаниях</p>
-                    </div>
+                <h3>Профессиональная команда</h3>
+                <p>Эксперты с опытом работы в ведущих международных компаниях</p>
+            </div>
+            
+            <!-- Преимущество 3 -->
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="feature-icon fas fa-medal"></i>
                 </div>
-                
-                <!-- Преимущество 3 -->
-                <div class="feature-card">
-                    <div class="feature-number">3</div>
-                    <div class="feature-icon-wrapper">
-                        <i class="feature-icon fas fa-medal"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Гарантия качества</h3>
-                        <p>Строгий контроль на всех этапах работы согласно международным стандартам</p>
-                    </div>
+                <h3>Гарантия качества</h3>
+                <p>Строгий контроль на всех этапах работы согласно международным стандартам</p>
+            </div>
+            
+            <!-- Преимущество 4 -->
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="feature-icon fas fa-lightbulb"></i>
                 </div>
-                
-                <!-- Преимущество 4 -->
-                <div class="feature-card">
-                    <div class="feature-number">4</div>
-                    <div class="feature-icon-wrapper">
-                        <i class="feature-icon fas fa-lightbulb"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Индивидуальный подход</h3>
-                        <p>Персонализированные решения для уникальных задач каждого клиента</p>
-                    </div>
+                <h3>Индивидуальный подход</h3>
+                <p>Персонализированные решения для уникальных задач каждого клиента</p>
+            </div>
+            
+            <!-- Преимущество 5 -->
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="feature-icon fas fa-chart-line"></i>
                 </div>
-                
-                <!-- Преимущество 5 -->
-                <div class="feature-card">
-                    <div class="feature-number">5</div>
-                    <div class="feature-icon-wrapper">
-                        <i class="feature-icon fas fa-chart-line"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Доказанная эффективность</h3>
-                        <p>90% клиентов отмечают значительный рост ключевых показателей</p>
-                    </div>
+                <h3>Доказанная эффективность</h3>
+                <p>90% клиентов отмечают значительный рост ключевых показателей</p>
+            </div>
+            
+            <!-- Преимущество 6 -->
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="feature-icon fas fa-shield-alt"></i>
                 </div>
-                
-                <!-- Преимущество 6 -->
-                <div class="feature-card">
-                    <div class="feature-number">6</div>
-                    <div class="feature-icon-wrapper">
-                        <i class="feature-icon fas fa-shield-alt"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Безопасность данных</h3>
-                        <p>Многоуровневая защита информации по стандартам ISO 27001</p>
-                    </div>
+                <h3>Безопасность данных</h3>
+                <p>Многоуровневая защита информации по стандартам ISO 27001</p>
+            </div>
+            
+            <!-- Преимущество 7 -->
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="feature-icon fas fa-headset"></i>
                 </div>
-                
-                <!-- Преимущество 7 -->
-                <div class="feature-card">
-                    <div class="feature-number">7</div>
-                    <div class="feature-icon-wrapper">
-                        <i class="feature-icon fas fa-headset"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Поддержка 24/7</h3>
-                        <p>Круглосуточная помощь специалистов по всем вопросам</p>
-                    </div>
-                </div>
+                <h3>Поддержка 24/7</h3>
+                <p>Круглосуточная помощь специалистов по всем вопросам</p>
             </div>
         </div>
     </section>
