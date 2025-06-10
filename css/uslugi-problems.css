@@ -302,6 +302,7 @@
 .problems-modern-solution .order-call {
   position: relative;    /* для абсолютного ::after */
   overflow: hidden;      /* обрезаем блик за пределами кнопки */
+  z-index: 1;
 }
 
 .problems-modern-solution .order-call::after {
@@ -319,11 +320,12 @@
   );
   transform: skewX(-20deg);
   /* запускаем анимацию бегущего блика */
-  animation: shine 1s ease-in-out infinite;
+  animation: shine 2s ease-in-out infinite;
+  pointer-events: none;
 }
 
 @keyframes shine {
-  0%   { left: -100%; }
-  50%  { left: 100%; }
+  0%   { left: -150%; }
+  60%  { left: 100%; }
   100% { left: 100%; }
 }
