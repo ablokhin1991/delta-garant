@@ -349,6 +349,4 @@
   align-items: center;
   gap: 30px; 
   position: relative;
-  z-index: 3;
-  transform: translateY(50px);
 }
