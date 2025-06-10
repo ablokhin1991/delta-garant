@@ -286,11 +286,6 @@
   line-height: 1.6;
 }
 
-
-
-
-
-/* 1) Белая подложка для контейнера кнопки, как у иконки, с отступами и скруглением */
 .problems-modern-solution .workflow-order-container {
   background: white;        /* белый фон */
   padding: 10px;            /* небольшие внутренние отступы */
@@ -299,7 +294,11 @@
   z-index: 1;               /* ставим над анимированным фоном */
   order: 3;
 }
-
+@media (max-width: 768px) {
+  .problems-modern-solution .workflow-order-container {
+    width: 100%;
+  }
+}
 
 .problems-modern-solution .order-call {
   position: relative;
