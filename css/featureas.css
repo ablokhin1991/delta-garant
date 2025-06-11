@@ -75,7 +75,8 @@
             right: 1.5rem;
             font-size: 5rem;
             font-weight: 800;
-            color: rgba(67, 97, 238, 0.05);
+            /*color: rgba(67, 97, 238, 0.05);*/
+            color: #e6e9f0;
             line-height: 1;
         }
         
