@@ -86,10 +86,13 @@
         }
         
         .feature-card:hover .icon-wrapper {
-            transform: scale(1.1);
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            transform: scale(1.1) translateY(-10px);
+            background: #0036a7;
+            box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
         }
-        
+        .wfeature-card:hover .feature-icon i {
+            color: white;
+        }
         .icon-wrapper {
             width: 80px;
             height: 80px;
