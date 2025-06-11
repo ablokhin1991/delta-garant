@@ -300,7 +300,7 @@
 .workflow-step-description {
   color: #6c757d;
   line-height: 1.6;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 @keyframes workflow-rotate {
