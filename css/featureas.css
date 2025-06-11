@@ -7,10 +7,21 @@
             --transition: all 0.3s ease;
         }
         
-        .why-us {
+        .why-us-wrapper {
+            /*background: #fff;*/
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .container-why-us {
             max-width: 1400px;
             margin: 0 auto;
             width: 80%;
+        }
+        @media (max-width: 768px) {
+        .container-why-us {
+            width: 90%;
+          }
         }
         
         .section-header {
