@@ -90,7 +90,7 @@
             background: #0036a7;
             box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
         }
-        .wfeature-card:hover .feature-icon i {
+        .feature-card:hover .feature-icon i {
             color: white;
         }
         .icon-wrapper {
