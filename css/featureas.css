@@ -4,7 +4,6 @@
             --accent: #4cc9f0;
             --light: #f8f9fa;
             --dark: #212529;
-            --transition: all 0.3s ease;
         }
         
         .why-us-wrapper {
@@ -62,7 +61,7 @@
             border-radius: 16px;
             padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
             counter-increment: feature-counter;
@@ -103,7 +102,7 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1.8rem;
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
             border: 3px solid #0036a7;
         }
