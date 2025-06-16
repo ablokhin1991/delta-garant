@@ -1,189 +1,81 @@
-/* CSS для встройки */
+/* wrapper & container */
 .comparison-wrapper {
-  background-color: #ffffff;
+  background: #ffffff;
   padding: 80px 0;
-  overflow: hidden;
 }
-
-.container-comparison {
+.container-compare {
   max-width: 1400px;
   width: 80%;
   margin: 0 auto;
 }
-
 @media (max-width: 768px) {
-  .container-comparison {
+  .container-compare {
     width: 90%;
   }
 }
 
-.comparison-section-title {
-  margin-bottom: 80px;
+/* заголовок */
+.compare-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 40px;
+}
+
+/* таблица */
+.compare-table-wrap {
+  overflow-x: auto;
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.compare-table th,
+.compare-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+.compare-table thead th {
+  font-weight: 700;
+  color: #0036a7;
+  text-align: center;
+}
+.compare-table .criteria-col {
+  text-align: left;
+  width: 40%;
+}
+.compare-table th:not(.criteria-col) {
+  text-align: center;
+  width: 30%;
+}
+.compare-table tbody td {
+  color: #212529;
+  font-size: 1rem;
   text-align: center;
 }
 
-.comparison-section-title h2 {
-  font-size: 2.8rem;
-  color: #212529;
-  margin-bottom: 15px;
-  background: linear-gradient(90deg, #0036a7, #001a50);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.comparison-section-title p {
-  font-size: 16px;
-  color: #6c757d;
-  max-width: 600px;
-  line-height: 1.6;
-  margin: 0 auto;
-}
-
-.comparison-grid {
-  display: table;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.comparison-row {
-  display: table-row;
-}
-
-.comparison-row:first-child .comparison-criterion,
-.comparison-row:first-child .comparison-our,
-.comparison-row:first-child .comparison-others {
-  background: linear-gradient(90deg, #0036a7 0%, #4cc9f0 100%);
-  color: white;
-  font-weight: 700;
+/* иконки */
+.compare-table .icon-cell i {
   font-size: 1.2rem;
 }
-
-.comparison-row:not(:first-child) .comparison-criterion,
-.comparison-row:not(:first-child) .comparison-our,
-.comparison-row:not(:first-child) .comparison-others {
-  background: white;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.compare-table .icon-cell .fa-check {
+  color: #00ba00;
 }
-
-.comparison-criterion,
-.comparison-our,
-.comparison-others {
-  display: table-cell;
-  padding: 25px 30px;
-  vertical-align: middle;
-  border-bottom: 1px solid #f0f5ff;
-}
-
-.comparison-row:last-child .comparison-criterion,
-.comparison-row:last-child .comparison-our,
-.comparison-row:last-child .comparison-others {
-  border-bottom: none;
-}
-
-.comparison-criterion {
-  font-weight: 600;
-  color: #212529;
-  text-align: left;
-  width: 50%;
-}
-
-.comparison-our,
-.comparison-others {
-  text-align: center;
-  width: 25%;
-  border-left: 1px solid #f0f5ff;
-}
-
-.comparison-our i {
-  color: #28a745;
-  font-size: 1.5rem;
-}
-
-.comparison-others i {
+.compare-table .icon-cell .fa-times {
   color: #d62718;
-  font-size: 1.5rem;
 }
 
-.comparison-row:hover .comparison-criterion,
-.comparison-row:hover .comparison-our,
-.comparison-row:hover .comparison-others {
-  background-color: #f8fbff;
-}
-
-/* Мобильная адаптация */
-@media (max-width: 992px) {
-  .comparison-grid {
-    display: block;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  }
-  
-  .comparison-row {
-    display: block;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  }
-  
-  .comparison-row:first-child {
-    display: none;
-  }
-  
-  .comparison-criterion,
-  .comparison-our,
-  .comparison-others {
-    display: block;
-    width: 100%;
-    padding: 20px 25px;
-    border: none;
-    text-align: center;
-  }
-  
-  .comparison-criterion {
-    background-color: #f8fbff;
-    font-weight: 700;
-    padding-bottom: 15px;
-  }
-  
-  .comparison-our,
-  .comparison-others {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: left;
-  }
-  
-  .comparison-our::before,
-  .comparison-others::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: #0036a7;
-    font-size: 1rem;
-  }
-  
-  .comparison-our {
-    border-top: 1px solid #f0f5ff;
-  }
-}
-
+/* адаптив */
 @media (max-width: 576px) {
-  .comparison-section-title h2 {
+  .compare-title {
     font-size: 2.2rem;
+    margin-bottom: 24px;
   }
-  
-  .comparison-section-title p {
-    font-size: 16px;
-  }
-  
-  .comparison-criterion,
-  .comparison-our,
-  .comparison-others {
-    padding: 18px 20px;
+  .compare-table th,
+  .compare-table td {
+    padding: 12px 8px;
+    font-size: 0.9rem;
   }
 }
