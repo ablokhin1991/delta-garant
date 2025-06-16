@@ -1,6 +1,6 @@
 /* CSS для встройки */
 .comparison-wrapper {
-  background: #fff;
+  background-color: #ffffff;
   padding: 80px 0;
   overflow: hidden;
 }
@@ -33,117 +33,130 @@
 }
 
 .comparison-section-title p {
-  font-size: 1.1rem;
+  font-size: 16px;
   color: #6c757d;
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 600px;
   line-height: 1.6;
+  margin: 0 auto;
 }
 
 .comparison-grid {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 15px 50px rgba(0, 54, 167, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.comparison-header {
-  padding: 25px 30px;
+.comparison-row {
+  display: table-row;
+}
+
+.comparison-row:first-child .comparison-criterion,
+.comparison-row:first-child .comparison-our,
+.comparison-row:first-child .comparison-others {
   background: linear-gradient(90deg, #0036a7 0%, #4cc9f0 100%);
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.comparison-header.criterion {
-  background: #001a50;
-  text-align: left;
-  justify-content: flex-start;
-}
-
-.comparison-row {
-  display: contents;
+.comparison-row:not(:first-child) .comparison-criterion,
+.comparison-row:not(:first-child) .comparison-our,
+.comparison-row:not(:first-child) .comparison-others {
+  background: white;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .comparison-criterion,
 .comparison-our,
 .comparison-others {
+  display: table-cell;
   padding: 25px 30px;
-  background: white;
-  display: flex;
-  align-items: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  vertical-align: middle;
+  border-bottom: 1px solid #f0f5ff;
+}
+
+.comparison-row:last-child .comparison-criterion,
+.comparison-row:last-child .comparison-our,
+.comparison-row:last-child .comparison-others {
+  border-bottom: none;
 }
 
 .comparison-criterion {
   font-weight: 600;
   color: #212529;
-  border-bottom: 1px solid #f0f5ff;
+  text-align: left;
+  width: 50%;
 }
 
 .comparison-our,
 .comparison-others {
-  justify-content: center;
   text-align: center;
-  font-size: 1.5rem;
-  border-bottom: 1px solid #f0f5ff;
+  width: 25%;
   border-left: 1px solid #f0f5ff;
 }
 
 .comparison-our i {
   color: #28a745;
+  font-size: 1.5rem;
 }
 
 .comparison-others i {
   color: #d62718;
+  font-size: 1.5rem;
 }
 
-.comparison-grid > div:nth-child(3n+1):hover,
-.comparison-grid > div:nth-child(3n+2):hover,
-.comparison-grid > div:nth-child(3n+3):hover {
+.comparison-row:hover .comparison-criterion,
+.comparison-row:hover .comparison-our,
+.comparison-row:hover .comparison-others {
   background-color: #f8fbff;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(76, 201, 240, 0.1);
-  z-index: 2;
 }
 
 /* Мобильная адаптация */
 @media (max-width: 992px) {
   .comparison-grid {
-    grid-template-columns: 1fr;
+    display: block;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
   
-  .comparison-header {
+  .comparison-row {
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .comparison-row:first-child {
     display: none;
   }
   
   .comparison-criterion,
   .comparison-our,
   .comparison-others {
+    display: block;
+    width: 100%;
     padding: 20px 25px;
-    border-bottom: none;
-    border-left: none;
-    border-top: 1px solid #f0f5ff;
-    justify-content: flex-start;
+    border: none;
+    text-align: center;
   }
   
   .comparison-criterion {
     background-color: #f8fbff;
     font-weight: 700;
-    border-top: none;
-    padding-top: 25px;
+    padding-bottom: 15px;
   }
   
   .comparison-our,
   .comparison-others {
-    padding-left: 45px;
+    display: flex;
     justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
   }
   
   .comparison-our::before,
@@ -155,14 +168,7 @@
   }
   
   .comparison-our {
-    border-top: none;
-  }
-  
-  .comparison-grid > div:nth-child(3n+1):hover,
-  .comparison-grid > div:nth-child(3n+2):hover,
-  .comparison-grid > div:nth-child(3n+3):hover {
-    transform: none;
-    box-shadow: none;
+    border-top: 1px solid #f0f5ff;
   }
 }
 
@@ -172,17 +178,12 @@
   }
   
   .comparison-section-title p {
-    font-size: 1rem;
+    font-size: 16px;
   }
   
   .comparison-criterion,
   .comparison-our,
   .comparison-others {
     padding: 18px 20px;
-  }
-  
-  .comparison-our,
-  .comparison-others {
-    padding-left: 35px;
   }
 }
