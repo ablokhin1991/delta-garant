@@ -54,12 +54,13 @@
   width: 40%;
   font-weight: 500;
   font-size: 26px;
-  padding: 40px 0px 20px 40px;
+  padding: 40px;
 }
 .compare-table th:not(.criteria-col) {
   width: 30%;
   font-weight: 500;
   font-size: 26px;
+  padding: 40px;
 }
 
 /* строки тела */
