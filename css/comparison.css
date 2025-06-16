@@ -1,0 +1,188 @@
+/* CSS для встройки */
+.comparison-wrapper {
+  background: #fff;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.container-comparison {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container-comparison {
+    width: 90%;
+  }
+}
+
+.comparison-section-title {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.comparison-section-title h2 {
+  font-size: 2.8rem;
+  color: #212529;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #0036a7, #001a50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.comparison-section-title p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 54, 167, 0.1);
+}
+
+.comparison-header {
+  padding: 25px 30px;
+  background: linear-gradient(90deg, #0036a7 0%, #4cc9f0 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparison-header.criterion {
+  background: #001a50;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.comparison-row {
+  display: contents;
+}
+
+.comparison-criterion,
+.comparison-our,
+.comparison-others {
+  padding: 25px 30px;
+  background: white;
+  display: flex;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.comparison-criterion {
+  font-weight: 600;
+  color: #212529;
+  border-bottom: 1px solid #f0f5ff;
+}
+
+.comparison-our,
+.comparison-others {
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #f0f5ff;
+  border-left: 1px solid #f0f5ff;
+}
+
+.comparison-our i {
+  color: #28a745;
+}
+
+.comparison-others i {
+  color: #d62718;
+}
+
+.comparison-grid > div:nth-child(3n+1):hover,
+.comparison-grid > div:nth-child(3n+2):hover,
+.comparison-grid > div:nth-child(3n+3):hover {
+  background-color: #f8fbff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(76, 201, 240, 0.1);
+  z-index: 2;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 992px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+  
+  .comparison-header {
+    display: none;
+  }
+  
+  .comparison-criterion,
+  .comparison-our,
+  .comparison-others {
+    padding: 20px 25px;
+    border-bottom: none;
+    border-left: none;
+    border-top: 1px solid #f0f5ff;
+    justify-content: flex-start;
+  }
+  
+  .comparison-criterion {
+    background-color: #f8fbff;
+    font-weight: 700;
+    border-top: none;
+    padding-top: 25px;
+  }
+  
+  .comparison-our,
+  .comparison-others {
+    padding-left: 45px;
+    justify-content: space-between;
+  }
+  
+  .comparison-our::before,
+  .comparison-others::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #0036a7;
+    font-size: 1rem;
+  }
+  
+  .comparison-our {
+    border-top: none;
+  }
+  
+  .comparison-grid > div:nth-child(3n+1):hover,
+  .comparison-grid > div:nth-child(3n+2):hover,
+  .comparison-grid > div:nth-child(3n+3):hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .comparison-section-title h2 {
+    font-size: 2.2rem;
+  }
+  
+  .comparison-section-title p {
+    font-size: 1rem;
+  }
+  
+  .comparison-criterion,
+  .comparison-our,
+  .comparison-others {
+    padding: 18px 20px;
+  }
+  
+  .comparison-our,
+  .comparison-others {
+    padding-left: 35px;
+  }
+}
