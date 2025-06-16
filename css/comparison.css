@@ -58,6 +58,8 @@
 }
 .compare-table th:not(.criteria-col) {
   width: 30%;
+  font-weight: 500;
+  font-size: 26px;
 }
 
 /* строки тела */
