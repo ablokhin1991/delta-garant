@@ -224,7 +224,7 @@
   border: 3px solid #0036a7;
 }
 
-.workflow-step-icon::before {
+/*.workflow-step-icon::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -233,7 +233,7 @@
   border: 2px dashed #fff;
   animation: workflow-rotate 20s linear infinite;
   opacity: 0.7;
-}
+}*/
 
 .workflow-step-icon i {
   font-size: 32px;
