@@ -102,7 +102,10 @@
   background: #d62718;
   font-size: 16px;
 }
+.text-banks-limited {
+   text-align: center;
 
+}
 /* адаптив */
 @media (max-width: 576px) {
   .compare-title {
