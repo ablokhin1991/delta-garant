@@ -81,6 +81,7 @@
 }
 .compare-table td:not(.icon-cell) {
   text-align: left;
+  padding-left: 40px;
 }
 
 /* иконки в кружках */
