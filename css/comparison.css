@@ -103,7 +103,7 @@
   font-size: 16px;
 }
 .text-banks-limited {
-   text-align: center;
+   text-align: center !important;
 
 }
 /* адаптив */
