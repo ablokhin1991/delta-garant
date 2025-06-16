@@ -95,6 +95,7 @@ header .container {
 .content h2 {
     font-size: 16px;
     color: #1E3A8A;
+    margin-top: 0px;
 }
 
 /* Общие стили для текста */
