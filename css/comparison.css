@@ -44,7 +44,7 @@
   padding: 20px 16px;
   color: #fff;
   font-weight: 700;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-size: 0.95rem;
   text-align: center;
   vertical-align: middle;
@@ -52,6 +52,8 @@
 .compare-table .criteria-col {
   text-align: left;
   width: 40%;
+  font-weight: 500;
+  font-size: 26px;
 }
 .compare-table th:not(.criteria-col) {
   width: 30%;
@@ -73,7 +75,7 @@
   padding: 20px 16px;
   vertical-align: middle;
   color: #333;
-  font-size: 1rem;
+  font-size: 16px;
   text-align: center;
   word-break: break-word;
 }
@@ -84,8 +86,8 @@
 /* иконки в кружках */
 .icon-cell .icon-bg {
   display: inline-flex;
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
@@ -94,9 +96,11 @@
 }
 .icon-bg.success {
   background: #00ba00;
+  font-size: 16px;
 }
 .icon-bg.danger {
   background: #d62718;
+  font-size: 16px;
 }
 
 /* адаптив */
