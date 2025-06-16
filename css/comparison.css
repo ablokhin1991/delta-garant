@@ -168,7 +168,7 @@
 
 
 .logo-th-wrapper {
-  padding: 0; /* убираем отступы, если мешают */
+  padding: 0; 
 }
 
 .logo-th-container {
@@ -176,11 +176,11 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  min-height: 60px; /* нужная минимальная высота, можно изменить */
+  min-height: 60px; 
 }
 
 .logo-th {
-  max-height: 40px; /* ограничиваем логотип по высоте */
+  max-height: 30px; 
   width: auto;
 }
 
