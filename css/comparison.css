@@ -41,11 +41,11 @@
   table-layout: fixed;
 }
 .compare-table thead {
-  background: #0036a7;
+  background: #e6f0ff;
 }
 .compare-table thead th {
   padding: 20px 16px;
-  color: #fff;
+  color: #0036a7;
   font-weight: 700;
   /*text-transform: uppercase;*/
   font-size: 0.95rem;
