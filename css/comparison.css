@@ -157,8 +157,8 @@
 
   /* Поворот заголовков */
   .compare-table thead th:not(.criteria-col) {
-    height: 140px;
-    vertical-align: bottom;
+    height: 220px;
+    /*vertical-align: bottom;*/
     padding: 0 !important;
     position: relative;
   }
