@@ -195,6 +195,9 @@
   .compare-table tbody tr:nth-child(even) {
     background: #f9fbfc;
   }
+  .compare-table td:not(.icon-cell) {
+    padding-left: 0px;
+  }
 }
 /* КОНЕЦ: Новые стили мобильной адаптации */
 
