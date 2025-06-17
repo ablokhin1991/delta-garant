@@ -144,15 +144,19 @@
     border-radius: 0;
   }
   .compare-table thead {
-    display: none;
+    display: table-header-group;
   }
   .compare-table,
   .compare-table tbody,
   .compare-table tr,
   .compare-table td {
-    display: block;
+    /*display: block;*****************************изменил*/  
     width: 100%;
   }
+  .compare-table {
+  /*border-collapse: collapse;*/
+  table-layout: auto;
+}
   .compare-table tr {
     margin-bottom: 16px;
   }
@@ -173,6 +177,13 @@
   }
   .icon-cell {
     text-align: right;
+  }
+  .logo-th {
+    max-height: 15px;
+    width: auto;
+  }
+  .compare-table th:not(.criteria-col) {
+    font-size: 16px;
   }
 }
 
