@@ -157,7 +157,7 @@
 
   /* Поворот заголовков */
   .compare-table thead th:not(.criteria-col) {
-    height: 240px;
+    height: 220px;
     /*vertical-align: bottom;*/
     padding: 0 !important;
     position: relative;
@@ -204,7 +204,7 @@
     font-size: 14px;
   }
   .logo-th {
-  max-height: 10px; 
+  max-height: 20px !important; 
   width: auto;
 }
 }
