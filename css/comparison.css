@@ -161,7 +161,7 @@
     margin-bottom: 16px;
   }
   .compare-table td {
-    text-align: right;
+    /*text-align: right;************************изменил*/
     padding: 12px;
     position: relative;
     font-size: 0.95rem;
