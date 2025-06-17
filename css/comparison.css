@@ -47,6 +47,9 @@
 .compare-table-body tr:last-child td {
   padding-bottom: 40px;
 }
+.highlight-important {
+    color: #0036a7;
+}
 .compare-table thead {
   background: #e6f0ff;
 }
