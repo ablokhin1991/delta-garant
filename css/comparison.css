@@ -144,24 +144,20 @@
     border-radius: 0;
   }
   .compare-table thead {
-    display: table-header-group;
+    display: none;
   }
   .compare-table,
   .compare-table tbody,
   .compare-table tr,
   .compare-table td {
-    /*display: block;*****************************изменил*/  
+    display: block;
     width: 100%;
   }
-  .compare-table {
-  /*border-collapse: collapse;*/
-  table-layout: auto;
-}
   .compare-table tr {
     margin-bottom: 16px;
   }
   .compare-table td {
-    /*text-align: right;************************изменил*/
+    text-align: right;
     padding: 12px;
     position: relative;
     font-size: 0.95rem;
@@ -177,13 +173,6 @@
   }
   .icon-cell {
     text-align: right;
-  }
-  .logo-th {
-    max-height: 15px !important;
-    width: auto !important;
-  }
-  .compare-table th:not(.criteria-col) {
-    font-size: 16px;
   }
 }
 
