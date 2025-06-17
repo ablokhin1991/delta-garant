@@ -179,8 +179,8 @@
     text-align: right;
   }
   .logo-th {
-    max-height: 15px;
-    width: auto;
+    max-height: 15px !important;
+    width: auto !important;
   }
   .compare-table th:not(.criteria-col) {
     font-size: 16px;
