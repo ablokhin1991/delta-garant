@@ -197,7 +197,7 @@
     background: #f9fbfc;
   }
   .compare-table td:not(.icon-cell) {
-    padding-left: 0px;
+    padding-left: 20px;
   }
   .compare-table td {
     padding: 20px 10px 10px 20px; 
