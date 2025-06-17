@@ -202,6 +202,10 @@
   .compare-table td {
     padding: 20px 10px 10px 20px; 
   }
+  .logo-th {
+  max-height: 20px; 
+  width: auto;
+}
 }
 /* КОНЕЦ: Новые стили мобильной адаптации */
 
