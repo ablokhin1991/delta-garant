@@ -44,6 +44,13 @@
   margin-bottom: 20px;
   margin-top: 20px;
 }
+.compare-table-body tr:first-child td {
+  padding-top: 32px; /* отступ сверху */
+}
+
+.compare-table-body tr:last-child td {
+  padding-bottom: 32px; /* отступ снизу */
+}
 .compare-table thead {
   background: #e6f0ff;
 }
