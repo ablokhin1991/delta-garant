@@ -101,8 +101,8 @@
 /* иконки в кружках */
 .icon-cell .icon-bg {
   display: inline-flex;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
@@ -111,11 +111,11 @@
 }
 .icon-bg.success {
   background: #00ba00;
-  font-size: 16px;
+  font-size: 13px;
 }
 .icon-bg.danger {
   background: #d62718;
-  font-size: 16px;
+  font-size: 13px;
 }
 .text-banks-limited {
    text-align: center !important;
