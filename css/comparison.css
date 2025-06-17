@@ -40,6 +40,10 @@
   border-collapse: collapse;
   table-layout: fixed;
 }
+.compare-table-body {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 .compare-table thead {
   background: #e6f0ff;
 }
