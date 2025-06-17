@@ -40,16 +40,12 @@
   border-collapse: collapse;
   table-layout: fixed;
 }
-.compare-table-body {
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
 .compare-table-body tr:first-child td {
-  padding-top: 32px; /* отступ сверху */
+  padding-top: 40px; 
 }
 
 .compare-table-body tr:last-child td {
-  padding-bottom: 32px; /* отступ снизу */
+  padding-bottom: 40px;
 }
 .compare-table thead {
   background: #e6f0ff;
