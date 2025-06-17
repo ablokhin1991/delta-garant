@@ -133,49 +133,70 @@
   max-width: 600px;
   line-height: 1.6;
 }
-/* адаптив */
-@media (max-width: 576px) {
-  .compare-title {
-    font-size: 2.2rem;
-    margin-bottom: 24px;
+
+/* УДАЛЕНО: Старые стили мобильной адаптации (для 576px) */
+/* НАЧАЛО: Новые стили мобильной адаптации (767px) */
+@media (max-width: 767px) {
+  .compare-table {
+    width: 90% !important; /* Требование 6 */
+    margin: 0 auto;
   }
-  .compare-card {
-    box-shadow: none;
-    border-radius: 0;
+
+  /* Распределение ширины колонок */
+  .compare-table .criteria-col {
+    width: 70% !important; /* Требование 8 */
+    text-align: right !important; /* Требование 10 */
+    padding-right: 20px !important;
+    word-wrap: break-word; /* Требование 10 */
   }
-  .compare-table thead {
-    display: none;
+  
+  .compare-table th:not(.criteria-col),
+  .compare-table td:not(:first-child) {
+    width: 15% !important; /* Требование 8 */
   }
-  .compare-table,
-  .compare-table tbody,
-  .compare-table tr,
-  .compare-table td {
-    display: block;
-    width: 100%;
-  }
-  .compare-table tr {
-    margin-bottom: 16px;
-  }
-  .compare-table td {
-    text-align: right;
-    padding: 12px;
+
+  /* Поворот заголовков */
+  .compare-table thead th:not(.criteria-col) {
+    height: 140px;
+    vertical-align: bottom;
+    padding: 0 !important;
     position: relative;
-    font-size: 0.95rem;
   }
-  .compare-table td::before {
-    content: attr(data-label);
+  
+  .compare-table thead th:not(.criteria-col) > div {
     position: absolute;
-    left: 16px;
-    font-weight: 600;
-    color: #0036a7;
-    text-transform: uppercase;
-    font-size: 0.85rem;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    transform-origin: center center;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    white-space: nowrap;
   }
-  .icon-cell {
-    text-align: right;
+
+  /* Уменьшение галочек */
+  .icon-cell .icon-bg {
+    width: 18px;
+    height: 18px;
+    font-size: 10px !important;
+  }
+
+  /* Сохранение стилей для мобильной версии */
+  .compare-card {
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .compare-table thead {
+    background: #e6f0ff;
+  }
+  
+  .compare-table tbody tr:nth-child(even) {
+    background: #f9fbfc;
   }
 }
-
+/* КОНЕЦ: Новые стили мобильной адаптации */
 
 .logo-th-wrapper {
   padding: 0; 
@@ -193,4 +214,3 @@
   max-height: 30px; 
   width: auto;
 }
-
