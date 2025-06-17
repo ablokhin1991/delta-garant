@@ -138,7 +138,7 @@
 /* НАЧАЛО: Новые стили мобильной адаптации (767px) */
 @media (max-width: 767px) {
   .compare-table {
-    width: 90% !important; /* Требование 6 */
+    /*width: 90% !important; Требование 6 */
     margin: 0 auto;
   }
 
