@@ -209,7 +209,7 @@
     width: auto;
   }
   .logo-th-container {
-    justify-content: left; 
+    justify-content: right !important; 
   }
 }
 /* КОНЕЦ: Новые стили мобильной адаптации */
