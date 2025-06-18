@@ -205,12 +205,12 @@
     font-size: 14px;
   }
   .logo-th {
-  max-height: 25px !important; 
-  width: auto;
+    max-height: 25px !important; 
+    width: auto;
   }
   .logo-th-container {
-  justify-content: right; 
-}
+    justify-content: right; 
+  }
 }
 /* КОНЕЦ: Новые стили мобильной адаптации */
 
