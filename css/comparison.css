@@ -164,15 +164,15 @@
   }
   
   .compare-table thead th:not(.criteria-col) > div {
-    position: relative;
-    /*bottom: 30px;*/
+    /*position: relative;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%) rotate(-90deg);
     transform-origin: center center;
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    /*white-space: nowrap;*/
+    white-space: nowrap;*/
     line-height: 1;
     font-size: 22px;
   }
