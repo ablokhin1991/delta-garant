@@ -210,6 +210,7 @@
   }
   .logo-th-container {
     justify-content: right !important; 
+    margin-right: 20px;
   }
 }
 /* КОНЕЦ: Новые стили мобильной адаптации */
