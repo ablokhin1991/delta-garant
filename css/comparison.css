@@ -210,7 +210,9 @@
   }
   .logo-th-container {
     justify-content: right !important; 
-    margin-right: 20px;
+  }
+  .compare-table th:not(.criteria-col) {
+    padding: 20px 20px 20px 0px;
   }
 }
 /* КОНЕЦ: Новые стили мобильной адаптации */
