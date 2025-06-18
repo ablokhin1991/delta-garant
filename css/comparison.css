@@ -136,6 +136,15 @@
 
 /* НАЧАЛО: Стили мобильной адаптации (767px) */
 @media (max-width: 767px) {
+  .icon-cell {
+    padding: 12px 0 !important;
+    text-align: center !important;
+  }
+   .icon-cell .icon-bg {
+    width: 18px;
+    height: 18px;
+    font-size: 10px !important;
+  }
   .compare-table thead .criteria-col {
     display: none;
   }
@@ -160,19 +169,27 @@
   /* Поворот заголовков */
   .compare-table thead th:not(.criteria-col) {
     height: auto !important;
-    padding: 15px 5px !important;
+    padding: 10px 5px !important;
+    vertical-align: middle !important;
   }
   
   .compare-table thead th:not(.criteria-col) > div {
     position: static !important;
     transform: none !important;
     width: 100% !important;
-    left: auto !important;
-    bottom: auto !important;
     padding: 0 !important;
     white-space: normal !important;
     line-height: normal !important;
-    font-size: 14px;
+  }
+    .compare-table tbody td:first-child {
+    width: 70% !important;
+    text-align: left !important;
+    padding-left: 20px !important;
+    padding-right: 10px !important;
+  }
+    .compare-table td:not(:first-child),
+  .compare-table thead th:not(.criteria-col) {
+    width: 15% !important;
   }
   
    .compare-table thead .logo-th-wrapper > div {
@@ -207,7 +224,7 @@
     padding-left: 20px;
   }
   .compare-table td {
-    padding: 20px 10px 10px 20px; 
+    padding: 12px 5px !important; 
     font-size: 14px;
   }
   .logo-th {
@@ -221,6 +238,10 @@
     flex: 1;
     text-align: right;
   }
+    .logo-th-wrapper .logo-th-container {
+    justify-content: flex-end;
+    padding-right: 10px;
+  }
   .compare-table thead tr {
     display: flex;
     align-items: center;
@@ -228,6 +249,10 @@
   .banks-col {
     flex: 0 0 15%;
     text-align: center;
+  }
+  .banks-col > div {
+    text-align: center;
+    padding: 0 5px;
   }
 }
 /* КОНЕЦ: Новые стили мобильной адаптации */
