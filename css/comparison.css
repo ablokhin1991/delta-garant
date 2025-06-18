@@ -207,6 +207,9 @@
   .logo-th {
   max-height: 25px !important; 
   width: auto;
+  }
+  .logo-th-container {
+  justify-content: right; 
 }
 }
 /* КОНЕЦ: Новые стили мобильной адаптации */
