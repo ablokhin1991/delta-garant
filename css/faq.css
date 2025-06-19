@@ -153,10 +153,6 @@
     padding: 60px 0;
   }
   
-  .section-header h2 {
-    font-size: 2rem;
-  }
-  
   .faq-question {
     padding: 1.2rem;
     align-items: flex-start;
@@ -169,4 +165,18 @@
   .faq-answer p {
     font-size: 14px;
   }
+}
+
+
+.faq-section-title {
+  margin-bottom: 80px;
+}
+.faq-section-title p {
+  font-size: 16px;
+  color: #6c757d;
+  max-width: 600px;
+  line-height: 1.6;
+}
+.container-faq h2 {
+  margin-top: 0px !important;
 }
