@@ -159,7 +159,7 @@
   .compare-table thead th:not(.criteria-col) {
     height: 100px;
     /*vertical-align: bottom;*/
-    padding: 0 !important;
+    padding: 0;
     position: relative;
   }
   
@@ -212,7 +212,7 @@
     justify-content: right !important; 
   }
   .compare-table th:not(.criteria-col) {
-    padding: 20px 20px 20px 0px;
+    padding: 20px 20px 20px 0px !important;
   }
 }
 /* КОНЕЦ: Новые стили мобильной адаптации */
