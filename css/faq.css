@@ -84,16 +84,28 @@
   color: white;
 }
 
+/* Плавное раскрытие без перестроения текста */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  background: #f9fafc;
+  transition: max-height 0.4s ease;
+}
+
+.answer-content {
+  padding: 0 2rem 0 7.5rem;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.4s ease;
 }
 
 .faq-item:hover .faq-answer {
   max-height: 500px;
-  padding: 0 2rem 2rem;
+}
+
+.faq-item:hover .answer-content {
+  transform: translateY(0);
+  opacity: 1;
+  padding-bottom: 2rem;
 }
 
 .faq-answer p {
@@ -101,7 +113,11 @@
   line-height: 1.7;
   font-size: 16px;
   margin: 0;
-  padding-left: 7.5rem;
+}
+
+/* Анимация стрелки */
+.faq-item:hover .faq-question .fa-chevron-down {
+  transform: rotate(180deg);
 }
 
 /* Responsive Adjustments */
@@ -124,9 +140,12 @@
     font-size: 1.1rem;
   }
   
-  .faq-answer p {
-    padding-left: 0;
-    padding-top: 1rem;
+  .answer-content {
+    padding: 0 1.5rem 0;
+  }
+  
+  .faq-item:hover .answer-content {
+    padding-bottom: 1.5rem;
   }
 }
 
@@ -141,6 +160,7 @@
   
   .faq-question {
     padding: 1.2rem;
+    align-items: flex-start;
   }
   
   .faq-question h3 {
