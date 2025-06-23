@@ -49,6 +49,10 @@
   box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
   border: 3px solid #0036a7;
   flex-shrink: 0;
+  /* Центрируем иконку по вертикали */
+  position: relative;
+  top: 0;
+  transform: none;
 }
 
 .faq-question .icon-wrapper i {
@@ -61,6 +65,10 @@
   margin: 0;
   flex-grow: 1;
   text-align: left;
+  /* Правильное выравнивание текста */
+  display: flex;
+  align-items: center;
+  min-height: 60px; /* Высота иконки */
 }
 
 .faq-question .fa-chevron-down {
@@ -68,6 +76,8 @@
   color: var(--primary);
   transition: transform 0.4s ease;
   margin-left: 1rem;
+  /* Центрируем стрелку */
+  align-self: center;
 }
 
 .faq-item:hover .faq-question .icon-wrapper {
@@ -131,9 +141,12 @@
     height: 50px;
     margin-right: 1rem;
   }
+  .faq-question h3 {
+    min-height: 50px; /* Новая высота иконки */
+  }
   
   .answer-content {
-    padding: 0 1.5rem 0;
+    padding: 0 1.5rem 0 6.5rem; /* Уменьшаем отступ */
   }
   
   .faq-item:hover .answer-content {
@@ -148,11 +161,17 @@
   
   .faq-question {
     padding: 1.2rem;
-    align-items: flex-start;
+    align-items: center; /* Исправлено: центрируем по вертикали */
   }
   
   .faq-answer p {
     font-size: 14px;
+  }
+  .faq-question h3 {
+    min-height: auto; /* Убираем фиксированную высоту */
+  }
+  .answer-content {
+    padding: 0 1.2rem !important; /* Важно: убираем левый отступ */
   }
 }
 
