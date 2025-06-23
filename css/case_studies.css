@@ -1,11 +1,11 @@
-/* Trust Cases Section Styles */
-.trust-cases-wrapper {
+/* Cases Section Styles */
+.cases-wrapper {
   background: #fff;
   padding: 80px 0;
   overflow: hidden;
 }
 
-.container-trust {
+.container-cases {
   max-width: 1400px;
   margin: 0 auto;
   width: 80%;
@@ -33,21 +33,22 @@
   margin: 0 auto;
 }
 
-.cases-grid {
+.case-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  margin-bottom: 4rem;
 }
 
 .case-card {
   background: white;
   border-radius: 16px;
-  padding: 2.5rem;
+  padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .case-card:hover {
@@ -55,185 +56,132 @@
   box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
 }
 
+.case-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
 .case-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.8rem;
+  margin-right: 1.5rem;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
   border: 3px solid #0036a7;
+  flex-shrink: 0;
 }
 
 .case-card:hover .case-icon {
-  transform: scale(1.1) translateY(-10px);
+  transform: scale(1.1) translateY(-5px);
   background: #0036a7;
   box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
+}
+
+.case-icon i {
+  font-size: 24px;
+  color: #0036a7;
+  transition: color 0.3s ease;
 }
 
 .case-card:hover .case-icon i {
   color: white;
 }
 
-.case-icon i {
-  font-size: 32px;
-  color: #0036a7;
-  transition: color 0.3s ease;
+.case-title {
+  flex: 1;
 }
 
-.case-card h3 {
+.case-title h3 {
   font-size: 1.5rem;
   color: var(--dark);
-  margin-bottom: 1rem;
+  margin: 0 0 0.5rem;
   font-weight: 700;
 }
 
-.case-card p {
-  color: #6c757d;
-  line-height: 1.6;
-  font-size: 16px;
-  margin: 0;
-}
-
-.partners-section, .reviews-section {
-  margin-bottom: 4rem;
-  text-align: center;
-}
-
-.partners-section h3, .reviews-section h3 {
-  font-size: 1.8rem;
-  color: var(--dark);
-  margin-bottom: 2rem;
-  font-weight: 700;
-}
-
-.partners-logos {
+.case-meta {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  margin: 0 auto;
-}
-
-.logo-item {
-  flex: 0 0 auto;
-  max-width: 180px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.logo-item:hover {
-  opacity: 1;
-}
-
-.logo-item img {
-  max-width: 100%;
-  height: auto;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.logo-item:hover img {
-  filter: grayscale(0%);
-}
-
-.reviews-carousel {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0 auto;
-}
-
-.review-item {
-  flex: 0 0 calc(33.333% - 2rem);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.review-item:hover {
-  transform: translateY(-5px);
-}
-
-.review-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* CTA Block */
-.cb1-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   gap: 1.5rem;
-  margin-top: 3rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 16px;
 }
 
-.cb1-btn-wrap {
-  flex: 0 0 auto;
-}
-
-.cb1-btn {
-  display: inline-block;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
-  color: white;
-  padding: 15px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-}
-
-.cb1-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
-}
-
-.cb1-icon {
-  flex: 0 0 auto;
-  color: #00ba00;
-  font-size: 2.5rem;
-}
-
-.cb1-text {
-  flex: 1 1 300px;
-  font-size: 1.1rem;
-  color: var(--dark);
-  margin: 0;
-  text-align: center;
-}
-
-.cb1-highlight {
-  color: var(--primary);
+.case-amount {
+  font-size: 1.2rem;
   font-weight: 700;
+  color: #0036a7;
+}
+
+.case-period {
+  font-size: 1rem;
+  color: #6c757d;
+  background: #f0f8ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.case-content {
+  flex: 1;
+}
+
+.case-field {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field-label {
+  font-weight: 600;
+  color: var(--dark);
+  min-width: 130px;
+  margin-right: 0.5rem;
+}
+
+.field-value {
+  color: #495057;
+  flex: 1;
+}
+
+.case-problems {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.case-problems h4 {
+  font-size: 1.2rem;
+  color: var(--dark);
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.case-problems ul {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.case-problems li {
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
-  .cases-grid {
+  .case-items {
     grid-template-columns: 1fr;
-  }
-  
-  .review-item {
-    flex: 0 0 calc(50% - 2rem);
+    max-width: 800px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .container-trust {
+  .container-cases {
     width: 90%;
   }
   
@@ -241,47 +189,44 @@
     font-size: 2rem;
   }
   
-  .partners-logos {
-    gap: 2rem;
-  }
-  
-  .logo-item {
-    max-width: 140px;
-  }
-  
-  .review-item {
-    flex: 0 0 100%;
-    max-width: 400px;
-  }
-  
-  .cb1-wrapper {
+  .case-header {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+  }
+  
+  .case-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .case-meta {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .trust-cases-wrapper {
+  .cases-wrapper {
     padding: 60px 0;
   }
   
   .case-card {
-    padding: 2rem;
+    padding: 1.5rem;
   }
   
   .section-header p {
     font-size: 1rem;
   }
   
-  .partners-logos {
-    gap: 1.5rem;
+  .case-title h3 {
+    font-size: 1.3rem;
   }
   
-  .logo-item {
-    max-width: 100px;
+  .case-field {
+    flex-direction: column;
   }
   
-  .cb1-text {
-    font-size: 1rem;
+  .field-label {
+    margin-bottom: 0.25rem;
   }
 }
