@@ -53,6 +53,9 @@
   position: relative;
   top: 0;
   transform: none;
+
+  align-self: center; /* Добавляем это свойство */
+  margin: 0 1.5rem 0 0; /* Явно сбрасываем все отступы, кроме правого */
 }
 
 .faq-question .icon-wrapper i {
@@ -166,9 +169,6 @@
   
   .faq-answer p {
     font-size: 14px;
-  }
-  .faq-question h3 {
-    min-height: auto; /* Убираем фиксированную высоту */
   }
   .answer-content {
     padding: 0 1.2rem !important; /* Важно: убираем левый отступ */
