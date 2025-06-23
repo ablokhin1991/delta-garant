@@ -192,3 +192,7 @@
 .container-faq h2 {
   margin-top: 0px !important;
 }
+
+.highlight-important-faq {
+    color: #0036a7;
+}
