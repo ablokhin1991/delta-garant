@@ -37,8 +37,8 @@
 }
 
 .faq-question .icon-wrapper {
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   background: white;
   border-radius: 50%;
   display: flex;
@@ -59,7 +59,7 @@
 }
 
 .faq-question .icon-wrapper i {
-  font-size: 24px;
+  font-size: 14px;
   color: #0036a7;
   transition: color 0.3s ease;
 }
@@ -72,6 +72,10 @@
   display: flex;
   align-items: center;
   min-height: 60px; /* Высота иконки */
+
+  font-size: 16px;
+  font-weight: 500;
+  color: #0036a7;
 }
 
 .faq-question .fa-chevron-down {
