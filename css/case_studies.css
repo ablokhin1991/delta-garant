@@ -16,23 +16,6 @@
   margin-bottom: 3.5rem;
 }
 
-.section-header h2 {
-  font-size: 2.5rem;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 1rem;
-  font-weight: 800;
-}
-
-.section-header p {
-  font-size: 1.2rem;
-  color: var(--dark);
-  max-width: 700px;
-  margin: 0 auto;
-}
-
 .case-items {
   display: grid;
   grid-template-columns: 1fr;
@@ -185,10 +168,6 @@
     width: 90%;
   }
   
-  .section-header h2 {
-    font-size: 2rem;
-  }
-  
   .case-header {
     flex-direction: column;
     align-items: flex-start;
@@ -212,10 +191,6 @@
   
   .case-card {
     padding: 1.5rem;
-  }
-  
-  .section-header p {
-    font-size: 1rem;
   }
   
   .case-title h3 {
