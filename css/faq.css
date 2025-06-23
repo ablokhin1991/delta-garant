@@ -159,6 +159,11 @@
   .faq-item:hover .answer-content {
     padding-bottom: 1.5rem;
   }
+  .faq-question .icon-wrapper i {
+  font-size: 20px;
+  color: #0036a7;
+  transition: color 0.3s ease;
+}
 }
 
 @media (max-width: 480px) {
