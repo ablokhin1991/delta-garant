@@ -230,3 +230,19 @@
     margin-bottom: 0.25rem;
   }
 }
+
+
+
+
+.cases-section-title {
+  margin-bottom: 80px;
+}
+.cases-section-title p {
+  font-size: 16px;
+  color: #6c757d;
+  max-width: 600px;
+  line-height: 1.6;
+}
+.container-cases h2 {
+  margin-top: 0px !important;
+}
