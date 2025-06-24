@@ -141,7 +141,7 @@
   }
   
   .faq-question {
-    padding: 1.5rem;
+    padding: 2rem;
   }
   
   .faq-question .icon-wrapper {
@@ -173,7 +173,7 @@
   }
   
   .faq-question {
-    padding: 1.2rem;
+    padding: 2rem;
     align-items: center; /* Исправлено: центрируем по вертикали */
   }
   
