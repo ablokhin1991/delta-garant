@@ -100,10 +100,24 @@
 .case-amount {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #0036a7;
+  color: #0036a7 !important;
 
+  /* Отменяем любые автосгенерированные подчеркивания и ссылочные стили */
+  text-decoration: none !important;
+  /* Делаем элемент некликабельным */
+  pointer-events: none;
+  cursor: default;
+  /* Запрещаем iOS-контекстное меню вызова номера */
+  -webkit-touch-callout: none;
+  /* Разрешаем обычный выбор текста (чтобы пользователь мог скопировать сумму) */
+  -webkit-user-select: text;
 }
-
+.case-amount a {
+  text-decoration: none !important;
+  color: inherit !important;
+  pointer-events: none;
+  cursor: default;
+}
 
 .case-period {
   font-size: 1rem;
