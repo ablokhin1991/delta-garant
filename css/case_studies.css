@@ -243,3 +243,21 @@
 .container-cases h2 {
   margin-top: 0px !important;
 }
+
+
+/* Стили для иконки успешного завершения */
+.case-success-icon {
+  font-size: 28px;
+  color: #00ba00;
+  margin-right: 15px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Для адаптации на мобильных */
+@media (max-width: 480px) {
+  .case-success-icon {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+}
