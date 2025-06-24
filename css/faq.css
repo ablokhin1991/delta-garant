@@ -181,7 +181,8 @@
     font-size: 14px;
   }
   .answer-content {
-    padding: 0 1.2rem !important; /* Важно: убираем левый отступ */
+    /*padding: 0 1.2rem !important; Важно: убираем левый отступ */
+    padding: 2rem;
   }
 }
 
