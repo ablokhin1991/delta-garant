@@ -245,7 +245,7 @@
 }
 
 
-/* Стили для иконки успешного завершения */
+/* Общие стили для иконки успеха */
 .case-success-icon {
   font-size: 28px;
   color: #00ba00;
@@ -254,10 +254,33 @@
   flex-shrink: 0;
 }
 
-/* Для адаптации на мобильных */
+/* Обертка для информации о банке */
+.bank-info {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Стили для мобильной версии */
 @media (max-width: 480px) {
+  .case-field {
+    display: flex;
+    align-items: flex-start; /* Выравниваем по верхнему краю */
+  }
+  
   .case-success-icon {
     font-size: 24px;
     margin-right: 10px;
+    margin-top: 4px; /* Для вертикального выравнивания с текстом */
+  }
+  
+  .bank-info {
+    display: block;
+    flex: 1;
+  }
+  
+  .field-label,
+  .field-value {
+    display: block;
+    width: 100%;
   }
 }
