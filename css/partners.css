@@ -136,3 +136,18 @@
     max-width: 100%;
   }
 }
+
+
+
+.partners-section-title {
+  margin-bottom: 80px;
+}
+.partners-section-title p {
+  font-size: 16px;
+  color: #2e2e2e;
+  max-width: 600px;
+  line-height: 1.6;
+}
+.container-partners h2 {
+  margin-top: 0px !important;
+}
