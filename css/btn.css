@@ -313,7 +313,8 @@
     margin-top: 40px;
     flex-direction: column;
     text-align: center;
-    gap: 15px; /* Уменьшаем промежуток для мобильной версии */
+    gap: 15px;
+    padding: 2rem;
   }
   .cb1-text {
     font-size: 1.1rem;
