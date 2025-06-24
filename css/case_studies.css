@@ -219,9 +219,9 @@
     font-size: 1.3rem;
   }
   
-  .case-field {
+  /*.case-field {
     flex-direction: column;
-  }
+  }*/
   
   .field-label {
     margin-bottom: 0.25rem;
