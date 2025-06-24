@@ -101,6 +101,24 @@
   font-size: 1.2rem;
   font-weight: 700;
   color: #0036a7;
+
+  /* Добавляем это свойство для отключения автоопределения телефонных номеров */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    
+    /* Явно указываем, что это не ссылка */
+    pointer-events: none;
+    text-decoration: none !important;
+    cursor: default;
+}
+/* Отключаем выделение как ссылку в различных состояниях */
+.case-amount:active,
+.case-amount:focus,
+.case-amount:hover {
+    color: #0036a7 !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
 }
 
 .case-period {
