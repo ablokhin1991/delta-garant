@@ -101,36 +101,9 @@
   font-size: 1.2rem;
   font-weight: 700;
   color: #0036a7;
-}
-/* Отключаем преобразование сумм в ссылки */
-.amount-value {
-  unicode-bidi: bidi-override;
-  direction: ltr;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #0036a7;
-  pointer-events: none;
-  text-decoration: none !important;
+
 }
 
-/* Для iOS Safari */
-@supports (-webkit-overflow-scrolling: touch) {
-  [class*="amount-value"] {
-    color: #0036a7 !important;
-    text-decoration: none !important;
-  }
-  a[href*="tel"] { 
-    color: #0036a7 !important;
-    text-decoration: none !important;
-  }
-}
-
-/* Для Android Chrome */
-.amount-value:not(a) {
-  text-decoration: none !important;
-  color: #0036a7 !important;
-  cursor: default;
-}
 
 .case-period {
   font-size: 1rem;
