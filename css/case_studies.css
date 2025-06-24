@@ -196,8 +196,11 @@
   .case-header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 2rem;
   }
-  
+  .case-content {
+    padding: 2rem;
+  }
   .case-icon {
     margin-right: 0;
     margin-bottom: 1rem;
