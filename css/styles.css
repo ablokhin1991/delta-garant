@@ -360,7 +360,7 @@ header .container {
 @media (max-width: 768px) {
     /* Основные стили */
     body {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     /* Кнопка */
