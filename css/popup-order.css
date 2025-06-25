@@ -295,3 +295,10 @@
 .popup-order__column input::placeholder {
     color: #5a5f73;
 }
+
+.popup-order__column input,
+.popup-order__column select,
+.popup-order__column textarea {
+    color: #2e2e2e;
+    font-size: 16px;
+}
