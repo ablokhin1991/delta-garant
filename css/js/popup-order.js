@@ -39,9 +39,32 @@ document.addEventListener("DOMContentLoaded", function () {
         event.stopPropagation();
     });
 
-    // ==============================
-    // 📞 Маска для телефона
-    // ==============================
+   // ==============================
+// 📞 Маска и валидация телефона (по образцу)
+// ==============================
+if (phoneInput) {
+    const iti = window.intlTelInput(phoneInput, {
+        initialCountry: "ru",
+        preferredCountries: ["ru", "by", "kz"],
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        autoPlaceholder: "off"
+    });
+
+    // Установка плейсхолдера по стране
+    phoneInput.placeholder = "(999) 999-99-99";
+
+    phoneInput.addEventListener("countrychange", function () {
+        const countryCode = iti.getSelectedCountryData().iso2;
+        phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
+    });
+
+    // Блокируем нецифровые символы
+    phoneInput.addEventListener("keypress", function (e) {
+        if (!/\d/.test(e.key)) e.preventDefault();
+    });
+
+    // Маска для России
     function formatPhoneNumber(input) {
         let value = input.value.replace(/\D/g, "");
         if (value.length > 10) value = value.substring(0, 10);
@@ -56,32 +79,35 @@ document.addEventListener("DOMContentLoaded", function () {
         input.value = formattedValue;
     }
 
-    // Инициализация intl-tel-input
-    if (phoneInput) {
-        const iti = window.intlTelInput(phoneInput, {
-            initialCountry: "ru",
-            preferredCountries: ["ru", "by", "kz"],
-            separateDialCode: true,
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            autoPlaceholder: "off"
-        });
+    phoneInput.addEventListener("input", function () {
+        const countryCode = iti.getSelectedCountryData().iso2;
+        if (countryCode === "ru") formatPhoneNumber(phoneInput);
+    });
 
-        phoneInput.placeholder = "(999) 999-99-99";
-
-        phoneInput.addEventListener("countrychange", function() {
+    // Валидация при отправке
+    if (form) {
+        form.addEventListener("submit", function (e) {
             const countryCode = iti.getSelectedCountryData().iso2;
-            phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
-        });
+            const cleanNumber = phoneInput.value.replace(/\D/g, "");
+            const isValid = iti.isValidNumber();
 
-        phoneInput.addEventListener("keypress", function(e) {
-            if (!/\d/.test(e.key)) e.preventDefault();
-        });
-
-        phoneInput.addEventListener("input", function() {
-            const countryCode = iti.getSelectedCountryData().iso2;
-            if (countryCode === "ru") formatPhoneNumber(phoneInput);
+            if (countryCode === "ru") {
+                if (cleanNumber.length !== 10 || !isValid) {
+                    alert("Для России требуется 10 цифр после +7");
+                    e.preventDefault();
+                    return;
+                }
+            } else {
+                if (!isValid) {
+                    alert("Введите корректный номер для выбранной страны");
+                    e.preventDefault();
+                    return;
+                }
+            }
         });
     }
+}
+
 
     // ==============================
     // 💰 Автоформат суммы гарантии
