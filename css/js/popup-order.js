@@ -39,24 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
         event.stopPropagation();
     });
 
+        // ==============================
+    // 📞 Маска и валидация для телефона с intl-tel-input
     // ==============================
-    // 📞 Маска для телефона
-    // ==============================
-    function formatPhoneNumber(input) {
-        let value = input.value.replace(/\D/g, "");
-        if (value.length > 10) value = value.substring(0, 10);
-
-        let formattedValue = "";
-        if (value.length > 0) {
-            formattedValue = "(" + value.substring(0, 3);
-            if (value.length >= 4) formattedValue += ") " + value.substring(3, 6);
-            if (value.length >= 7) formattedValue += "-" + value.substring(6, 8);
-            if (value.length >= 9) formattedValue += "-" + value.substring(8, 10);
-        }
-        input.value = formattedValue;
-    }
-
-    // Инициализация intl-tel-input
     if (phoneInput) {
         const iti = window.intlTelInput(phoneInput, {
             initialCountry: "ru",
@@ -66,22 +51,62 @@ document.addEventListener("DOMContentLoaded", function () {
             autoPlaceholder: "off"
         });
 
+        // Установка плейсхолдера
         phoneInput.placeholder = "(999) 999-99-99";
 
-        phoneInput.addEventListener("countrychange", function() {
-            const countryCode = iti.getSelectedCountryData().iso2;
-            phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
-        });
-
-        phoneInput.addEventListener("keypress", function(e) {
+        // Блокировка ввода нецифровых символов
+        phoneInput.addEventListener("keypress", function (e) {
             if (!/\d/.test(e.key)) e.preventDefault();
         });
 
-        phoneInput.addEventListener("input", function() {
+        // Маска только для RU номеров
+        phoneInput.addEventListener("input", function () {
             const countryCode = iti.getSelectedCountryData().iso2;
-            if (countryCode === "ru") formatPhoneNumber(phoneInput);
+            let value = this.value.replace(/\D/g, "");
+
+            if (countryCode === "ru") {
+                value = value.substring(0, 10); // max 10 цифр после +7
+                let formattedValue = "";
+                if (value.length > 0) {
+                    formattedValue = "(" + value.substring(0, 3);
+                    if (value.length >= 4) formattedValue += ") " + value.substring(3, 6);
+                    if (value.length >= 7) formattedValue += "-" + value.substring(6, 8);
+                    if (value.length >= 9) formattedValue += "-" + value.substring(8, 10);
+                }
+                this.value = formattedValue;
+            }
         });
+
+        // Обновление placeholder при смене страны
+        phoneInput.addEventListener("countrychange", function () {
+            const countryCode = iti.getSelectedCountryData().iso2;
+            phoneInput.placeholder = countryCode === "ru"
+                ? "(999) 999-99-99"
+                : "Введите номер телефона";
+        });
+
+        // Валидация при отправке формы
+        if (form) {
+            form.addEventListener("submit", function (e) {
+                const countryCode = iti.getSelectedCountryData().iso2;
+                const cleanNumber = phoneInput.value.replace(/\D/g, "");
+                const isValid = iti.isValidNumber();
+
+                if (countryCode === "ru") {
+                    if (cleanNumber.length !== 10 || !isValid) {
+                        alert("Для России необходимо ввести 10 цифр после +7.");
+                        e.preventDefault();
+                    }
+                } else {
+                    if (!isValid) {
+                        alert("Введите корректный номер телефона для выбранной страны.");
+                        e.preventDefault();
+                    }
+                }
+            });
+        }
     }
+
 
     // ==============================
     // 💰 Автоформат суммы гарантии
