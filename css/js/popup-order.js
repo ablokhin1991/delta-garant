@@ -39,91 +39,86 @@ document.addEventListener("DOMContentLoaded", function () {
         event.stopPropagation();
     });
 
-   // ==============================
-// 📞 Маска и валидация телефона (по образцу)
-// ==============================
-if (phoneInput) {
-    const iti = window.intlTelInput(phoneInput, {
-        initialCountry: "ru",
-        preferredCountries: ["ru", "by", "kz"],
-        separateDialCode: true,
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        autoPlaceholder: "off"
-    });
-
-    // Установка плейсхолдера по стране
-    phoneInput.placeholder = "(999) 999-99-99";
-
-    phoneInput.addEventListener("countrychange", function () {
-        const countryCode = iti.getSelectedCountryData().iso2;
-        phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
-    });
-
-    // Блокируем нецифровые символы
-    phoneInput.addEventListener("keypress", function (e) {
-        if (!/\d/.test(e.key)) e.preventDefault();
-    });
-
-    // Маска для России
-    function formatPhoneNumber(input) {
-        let value = input.value.replace(/\D/g, "");
-        if (value.length > 10) value = value.substring(0, 10);
-
-        let formattedValue = "";
-        if (value.length > 0) {
-            formattedValue = "(" + value.substring(0, 3);
-            if (value.length >= 4) formattedValue += ") " + value.substring(3, 6);
-            if (value.length >= 7) formattedValue += "-" + value.substring(6, 8);
-            if (value.length >= 9) formattedValue += "-" + value.substring(8, 10);
-        }
-        input.value = formattedValue;
-    }
-
-    phoneInput.addEventListener("input", function () {
-        const countryCode = iti.getSelectedCountryData().iso2;
-        if (countryCode === "ru") formatPhoneNumber(phoneInput);
-    });
-
-    // Валидация при отправке
-    if (form) {
-        form.addEventListener("submit", function (e) {
-            const countryCode = iti.getSelectedCountryData().iso2;
-            const cleanNumber = phoneInput.value.replace(/\D/g, "");
-            const isValid = iti.isValidNumber();
-
-            if (countryCode === "ru") {
-                if (cleanNumber.length !== 10 || !isValid) {
-                    alert("Для России требуется 10 цифр после +7");
-                    e.preventDefault();
-                    return;
-                }
-            } else {
-                if (!isValid) {
-                    alert("Введите корректный номер для выбранной страны");
-                    e.preventDefault();
-                    return;
-                }
-            }
+    // ==============================
+    // 📞 Маска и валидация телефона (по образцу)
+    // ==============================
+    if (phoneInput) {
+        const iti = window.intlTelInput(phoneInput, {
+            initialCountry: "ru",
+            preferredCountries: ["ru", "by", "kz"],
+            separateDialCode: true,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            autoPlaceholder: "off"
         });
-    }
-}
 
+        // Установка плейсхолдера по стране
+        phoneInput.placeholder = "(999) 999-99-99";
+
+        phoneInput.addEventListener("countrychange", function () {
+            const countryCode = iti.getSelectedCountryData().iso2;
+            phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
+        });
+
+        // Блокируем нецифровые символы
+        phoneInput.addEventListener("keypress", function (e) {
+            if (!/\d/.test(e.key)) e.preventDefault();
+        });
+
+        // Маска для России
+        function formatPhoneNumber(input) {
+            let value = input.value.replace(/\D/g, "");
+            if (value.length > 10) value = value.substring(0, 10);
+
+            let formattedValue = "";
+            if (value.length > 0) {
+                formattedValue = "(" + value.substring(0, 3);
+                if (value.length >= 4) formattedValue += ") " + value.substring(3, 6);
+                if (value.length >= 7) formattedValue += "-" + value.substring(6, 8);
+                if (value.length >= 9) formattedValue += "-" + value.substring(8, 10);
+            }
+            input.value = formattedValue;
+        }
+
+        phoneInput.addEventListener("input", function () {
+            const countryCode = iti.getSelectedCountryData().iso2;
+            if (countryCode === "ru") formatPhoneNumber(phoneInput);
+        });
+
+        // Валидация при отправке
+        if (form) {
+            form.addEventListener("submit", function (e) {
+                const countryCode = iti.getSelectedCountryData().iso2;
+                const cleanNumber = phoneInput.value.replace(/\D/g, "");
+                const isValid = iti.isValidNumber();
+
+                if (countryCode === "ru") {
+                    if (cleanNumber.length !== 10 || !isValid) {
+                        alert("Для России требуется 10 цифр после +7");
+                        e.preventDefault();
+                        return;
+                    }
+                } else {
+                    if (!isValid) {
+                        alert("Введите корректный номер для выбранной страны");
+                        e.preventDefault();
+                        return;
+                    }
+                }
+            });
+        }
+    }
 
     // ==============================
     // 💰 Автоформат суммы гарантии
     // ==============================
     const amountInput = document.getElementById("guarantee-amount");
-    
+
     if (amountInput) {
-        amountInput.addEventListener("input", function(e) {
-            // Удаляем все нецифровые символы и пробелы
+        amountInput.addEventListener("input", function (e) {
             let value = this.value.replace(/[^\d]/g, "");
-            
-            // Форматируем с пробелами каждые 3 цифры
             if (value.length > 0) {
                 value = parseInt(value, 10).toLocaleString("ru-RU");
             }
-            
             this.value = value;
         });
     }
@@ -133,15 +128,15 @@ if (phoneInput) {
     // ==============================
     const procedureSelect = document.getElementById("procedure-type");
     const guaranteeSelect = document.getElementById("guarantee-type");
-    
+
     if (procedureSelect && guaranteeSelect) {
         const advanceOption = guaranteeSelect.querySelector('option[value="advance"]');
-        
-        procedureSelect.addEventListener("change", function() {
+
+        procedureSelect.addEventListener("change", function () {
             if (this.value === "44-fz") {
                 advanceOption.disabled = true;
                 advanceOption.selected = false;
-                
+
                 if (guaranteeSelect.value === "advance") {
                     guaranteeSelect.value = "";
                 }
@@ -155,18 +150,16 @@ if (phoneInput) {
     // 📤 Отправка формы на сервер
     // ==============================
     if (form) {
-        form.addEventListener("submit", function(e) {
+        form.addEventListener("submit", function (e) {
             e.preventDefault();
-            
-            // Собираем данные формы
+
             const formData = new FormData(this);
             const data = {};
-            
+
             for (const [key, value] of formData.entries()) {
                 data[key] = value;
             }
-            
-            // Отправка данных на сервер
+
             fetch('form-handler.php', {
                 method: 'POST',
                 headers: {
@@ -174,27 +167,22 @@ if (phoneInput) {
                 },
                 body: JSON.stringify(data)
             })
-            .then(response => response.json())
-            .then(result => {
-                if (result.success) {
-                    // Показываем сообщение об успехе
-                    showSuccessMessage();
-                    
-                    // Сброс формы
-                    form.reset();
-                    
-                    // Закрытие popup через 3 секунды
-                    setTimeout(() => {
-                        closePopup();
-                    }, 3000);
-                } else {
-                    alert("Ошибка отправки: " + (result.message || "Попробуйте позже"));
-                }
-            })
-            .catch(error => {
-                console.error('Ошибка:', error);
-                alert("Ошибка сети. Попробуйте еще раз.");
-            });
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        showSuccessMessage();
+                        form.reset();
+                        setTimeout(() => {
+                            closePopup();
+                        }, 3000);
+                    } else {
+                        alert("Ошибка отправки: " + (result.message || "Попробуйте позже"));
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    alert("Ошибка сети. Попробуйте еще раз.");
+                });
         });
     }
 
@@ -209,7 +197,7 @@ if (phoneInput) {
                 </p>
             </div>
         `;
-        
+
         form.style.display = 'none';
         document.querySelector('.popup-order__content').insertAdjacentHTML('beforeend', successHTML);
     }
