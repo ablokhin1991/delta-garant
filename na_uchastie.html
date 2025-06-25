@@ -105,7 +105,7 @@
 
     <div class="cb1-wrapper">
       <div class="cb1-btn-wrap">
-        <a href="#order" class="cb1-btn cta-button">Оставить заявку</a>
+        <a href="#order" class="cb1-btn order-button">Оставить заявку</a>
       </div>
       <div class="cb1-icon">
         <i class="fas fa-check-circle"></i>
@@ -575,53 +575,53 @@
 </section>
 
 
-<!-- Оверлей -->
-<div class="popup-contact__overlay"></div>
+<!-- Оверлей для новой формы -->
+<div class="popup-order__overlay"></div>
 
-<!-- Popup -->
-<div class="popup-contact">
-    <button class="popup-contact__close">✖</button>
-    <h2 class="popup-contact__title">Оставить заявку</h2>
-    <div class="popup-contact__content">
-        <form class="popup-contact__form" id="contact-form">
+<!-- Popup для новой формы -->
+<div class="popup-order">
+    <button class="popup-order__close">✖</button>
+    <h2 class="popup-order__title">Оставить заявку</h2>
+    <div class="popup-order__content">
+        <form class="popup-order__form" id="order-form">
             <!-- Обязательные поля -->
-            <input type="text" placeholder="ФИО *" class="popup-contact__input" name="fullname" required>
-            <input type="tel" id="popup-contact-phone" class="popup-contact__input phone-mask" placeholder="Телефон *" required>
+            <input type="text" placeholder="ФИО *" class="popup-order__input" name="fullname" required>
+            <input type="tel" id="popup-order-phone" class="popup-order__input phone-mask" placeholder="Телефон *" required>
             <input type="email" 
                 placeholder="Электронная почта *" 
-                class="popup-contact__input" 
+                class="popup-order__input" 
                 name="email"
                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
                 title="Введите email в формате: name@email.ru" 
                 required>
             
             <!-- Необязательные поля -->
-            <input type="text" placeholder="Название компании" class="popup-contact__input" name="company">
-            <input type="text" placeholder="ИНН компании / ИП" class="popup-contact__input" name="inn">
-            <input type="url" placeholder="Ссылка на конкурс / аукцион" class="popup-contact__input" name="auction_link">
+            <input type="text" placeholder="Название компании" class="popup-order__input" name="company">
+            <input type="text" placeholder="ИНН компании / ИП" class="popup-order__input" name="inn">
+            <input type="url" placeholder="Ссылка на конкурс / аукцион" class="popup-order__input" name="auction_link">
             
             <!-- Сумма и срок гарантии -->
-            <div class="popup-contact__row">
-                <div class="popup-contact__half">
+            <div class="popup-order__row">
+                <div class="popup-order__half">
                     <input type="text" 
                         placeholder="Сумма гарантии (руб.)" 
-                        class="popup-contact__input" 
+                        class="popup-order__input" 
                         name="guarantee_amount"
                         id="guarantee-amount">
                 </div>
-                <div class="popup-contact__half">
+                <div class="popup-order__half">
                     <input type="number" 
                         placeholder="Срок гарантии (дни)" 
-                        class="popup-contact__input" 
+                        class="popup-order__input" 
                         name="guarantee_days"
                         min="1">
                 </div>
             </div>
             
             <!-- Выпадающие списки -->
-            <div class="popup-contact__row">
-                <div class="popup-contact__half">
-                    <select class="popup-contact__input popup-contact__select" name="procedure_type" id="procedure-type">
+            <div class="popup-order__row">
+                <div class="popup-order__half">
+                    <select class="popup-order__input popup-order__select" name="procedure_type" id="procedure-type">
                         <option value="">Тип процедуры</option>
                         <option value="44-fz">44-ФЗ</option>
                         <option value="223-fz">223-ФЗ</option>
@@ -629,8 +629,8 @@
                         <option value="commercial">Коммерческий тендер</option>
                     </select>
                 </div>
-                <div class="popup-contact__half">
-                    <select class="popup-contact__input popup-contact__select" name="guarantee_type" id="guarantee-type">
+                <div class="popup-order__half">
+                    <select class="popup-order__input popup-order__select" name="guarantee_type" id="guarantee-type">
                         <option value="">Тип гарантии</option>
                         <option value="participation">На участие</option>
                         <option value="execution">На исполнение контракта</option>
@@ -641,13 +641,13 @@
             </div>
             
             <!-- Чекбокс -->
-            <label class="popup-contact__checkbox-label">
-                <input type="checkbox" class="popup-contact__checkbox" required>
-                Согласен с <a href="policy.html" target="_blank" class="popup-contact__link">политикой обработки персональных данных</a> *
+            <label class="popup-order__checkbox-label">
+                <input type="checkbox" class="popup-order__checkbox" required>
+                Согласен с <a href="policy.html" target="_blank" class="popup-order__link">политикой обработки персональных данных</a> *
             </label>
             
             <!-- Кнопка отправки -->
-            <button type="submit" class="popup-contact__submit">Отправить заявку</button>
+            <button type="submit" class="popup-order__submit">Отправить заявку</button>
         </form>
     </div>
 </div>
