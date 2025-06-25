@@ -82,7 +82,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 15px;
+    gap: 0px !important;
 }
 
 /* Поля формы */
@@ -107,6 +107,7 @@
     align-items: flex-start;
     text-align: left;
     gap: 10px;
+    margin-top: 15px;
 }
 
 .popup-order__checkbox {
@@ -127,7 +128,7 @@
     font-size: 16px;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .popup-order__submit:hover {
