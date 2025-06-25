@@ -60,10 +60,10 @@
 /* Заголовок */
 .popup-order__title {
     text-align: center;
-    font-size: 24px;
+    /*font-size: 24px;
     margin-bottom: 25px;
     color: #0036a7;
-    font-weight: 700;
+    font-weight: 700;*/
     margin-top: 0px !important;
 }
 
