@@ -106,8 +106,6 @@
     align-items: flex-start;
     text-align: left;
     gap: 10px;
-    font-size: 14px;
-    margin-top: 10px;
 }
 
 .popup-order__checkbox {
