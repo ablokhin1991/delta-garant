@@ -203,6 +203,10 @@
     .popup-order__title {
         font-size: 20px;
     }
+    /* Чекбокс */
+    .popup-order__checkbox-label {
+        display: block;
+    }
 }
 
 @media (max-width: 480px) {
@@ -218,5 +222,8 @@
     .popup-order__submit {
         padding: 15px;
         font-size: 15px;
+    }
+    .popup-order__checkbox-label {
+        display: block;
     }
 }
