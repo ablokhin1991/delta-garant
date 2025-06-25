@@ -1,130 +1,94 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Элементы новой popup-формы
     const popupOverlay = document.querySelector(".popup-order__overlay");
     const popup = document.querySelector(".popup-order");
     const closeButton = document.querySelector(".popup-order__close");
     const body = document.body;
-    const phoneInput = document.querySelector("#popup-order-phone");
     const form = document.querySelector("#order-form");
-    const successMessage = document.querySelector(".popup-order__success");
+    const phoneInput = document.querySelector("#popup-order-phone");
+    const emailInput = form.querySelector('input[name="email"]');
 
-    // Открытие popup
-    function openPopup() {
-        popupOverlay.classList.add("popup-order__overlay--active");
-        popup.classList.add("popup-order--active");
-        body.style.overflow = "hidden";
-    }
+    // Open popup
+    document.body.addEventListener("click", (e) => {
+        if (e.target.classList.contains("order-button")) {
+            e.preventDefault();
+            popupOverlay.classList.add("popup-order__overlay--active");
+            popup.classList.add("popup-order--active");
+            body.style.overflow = "hidden";
+        }
+    });
 
-    // Закрытие popup
+    // Close popup
+    closeButton.addEventListener("click", closePopup);
+    popupOverlay.addEventListener("click", closePopup);
+    popup.addEventListener("click", e => e.stopPropagation());
+
     function closePopup() {
         popupOverlay.classList.remove("popup-order__overlay--active");
         popup.classList.remove("popup-order--active");
         body.style.overflow = "";
-    }
-
-    // Открываем popup по клику на кнопку "Оставить заявку"
-    document.body.addEventListener("click", (event) => {
-        if (event.target.classList.contains("order-button")) {
-            event.preventDefault();
-            openPopup();
-        }
-    });
-
-    // Закрываем popup по клику на крестик или overlay
-    closeButton.addEventListener("click", closePopup);
-    popupOverlay.addEventListener("click", closePopup);
-
-    // Предотвращаем закрытие при клике внутри popup
-    popup.addEventListener("click", (event) => {
-        event.stopPropagation();
-    });
-
-    // ==============================
-    // 📞 Маска и валидация телефона (по образцу)
-    // ==============================
-    if (phoneInput) {
-        const iti = window.intlTelInput(phoneInput, {
-            initialCountry: "ru",
-            preferredCountries: ["ru", "by", "kz"],
-            separateDialCode: true,
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            autoPlaceholder: "off"
-        });
-
-        // Установка плейсхолдера по стране
-        phoneInput.placeholder = "(999) 999-99-99";
-
-        phoneInput.addEventListener("countrychange", function () {
-            const countryCode = iti.getSelectedCountryData().iso2;
-            phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
-        });
-
-        // Блокируем нецифровые символы
-        phoneInput.addEventListener("keypress", function (e) {
-            if (!/\d/.test(e.key)) e.preventDefault();
-        });
-
-        // Маска для России
-        function formatPhoneNumber(input) {
-            let value = input.value.replace(/\D/g, "");
-            if (value.length > 10) value = value.substring(0, 10);
-
-            let formattedValue = "";
-            if (value.length > 0) {
-                formattedValue = "(" + value.substring(0, 3);
-                if (value.length >= 4) formattedValue += ") " + value.substring(3, 6);
-                if (value.length >= 7) formattedValue += "-" + value.substring(6, 8);
-                if (value.length >= 9) formattedValue += "-" + value.substring(8, 10);
-            }
-            input.value = formattedValue;
-        }
-
-        phoneInput.addEventListener("input", function () {
-            const countryCode = iti.getSelectedCountryData().iso2;
-            if (countryCode === "ru") formatPhoneNumber(phoneInput);
-        });
-
-        // Валидация при отправке
-        if (form) {
-            form.addEventListener("submit", function (e) {
-                const countryCode = iti.getSelectedCountryData().iso2;
-                const cleanNumber = phoneInput.value.replace(/\D/g, "");
-                const isValid = iti.isValidNumber();
-
-                if (countryCode === "ru") {
-                    if (cleanNumber.length !== 10 || !isValid) {
-                        alert("Для России требуется 10 цифр после +7");
-                        e.preventDefault();
-                        return;
-                    }
-                } else {
-                    if (!isValid) {
-                        alert("Введите корректный номер для выбранной страны");
-                        e.preventDefault();
-                        return;
-                    }
-                }
-            });
-        }
+        form.style.display = "block";
+        const success = popup.querySelector(".popup-order__success");
+        if (success) success.remove();
     }
 
     // ==============================
-    // 💰 Автоформат суммы гарантии
+    // Телефон: маска + валидация
+    // ==============================
+    const iti = window.intlTelInput(phoneInput, {
+        initialCountry: "ru",
+        preferredCountries: ["ru", "by", "kz"],
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        autoPlaceholder: "off"
+    });
+
+    phoneInput.placeholder = "(999) 999-99-99";
+
+    phoneInput.addEventListener("countrychange", function () {
+        const iso = iti.getSelectedCountryData().iso2;
+        phoneInput.placeholder = iso === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
+    });
+
+    phoneInput.addEventListener("keypress", e => {
+        if (!/\d/.test(e.key)) e.preventDefault();
+    });
+
+    phoneInput.addEventListener("input", function () {
+        if (iti.getSelectedCountryData().iso2 === "ru") {
+            let val = this.value.replace(/\D/g, "").slice(0, 10);
+            let res = "";
+            if (val.length > 0) res += "(" + val.slice(0, 3);
+            if (val.length >= 4) res += ") " + val.slice(3, 6);
+            if (val.length >= 7) res += "-" + val.slice(6, 8);
+            if (val.length >= 9) res += "-" + val.slice(8, 10);
+            this.value = res;
+        }
+    });
+
+    // ==============================
+    // Email: HTML5 pattern + доп. JS-проверка
+    // ==============================
+    function isValidEmail(email) {
+        const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return pattern.test(email);
+    }
+
+    // ==============================
+    // Сумма гарантии: формат
     // ==============================
     const amountInput = document.getElementById("guarantee-amount");
-
     if (amountInput) {
-        amountInput.addEventListener("input", function (e) {
-            let value = this.value.replace(/[^\d]/g, "");
+        amountInput.addEventListener("input", function () {
+            let value = this.value.replace(/\D/g, "");
             if (value.length > 0) {
-                value = parseInt(value, 10).toLocaleString("ru-RU");
+                value = parseInt(value).toLocaleString("ru-RU");
             }
             this.value = value;
         });
     }
 
     // ==============================
-    // 🔄 Логика выпадающих списков
+    // Выпадающие списки
     // ==============================
     const procedureSelect = document.getElementById("procedure-type");
     const guaranteeSelect = document.getElementById("guarantee-type");
@@ -135,11 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         procedureSelect.addEventListener("change", function () {
             if (this.value === "44-fz") {
                 advanceOption.disabled = true;
-                advanceOption.selected = false;
-
-                if (guaranteeSelect.value === "advance") {
-                    guaranteeSelect.value = "";
-                }
+                if (guaranteeSelect.value === "advance") guaranteeSelect.value = "";
             } else {
                 advanceOption.disabled = false;
             }
@@ -147,58 +107,67 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ==============================
-    // 📤 Отправка формы на сервер
+    // Отправка формы
     // ==============================
-    if (form) {
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-            const formData = new FormData(this);
-            const data = {};
+        const phoneNumber = phoneInput.value.replace(/\D/g, "");
+        const country = iti.getSelectedCountryData().iso2;
+        const validPhone = iti.isValidNumber();
+        const validEmail = isValidEmail(emailInput.value.trim());
 
-            for (const [key, value] of formData.entries()) {
-                data[key] = value;
-            }
+        if (country === "ru" && phoneNumber.length !== 10) {
+            alert("Введите 10 цифр телефона для России");
+            return;
+        }
+        if (!validPhone) {
+            alert("Введите корректный номер телефона");
+            return;
+        }
+        if (!validEmail) {
+            alert("Введите корректный email");
+            emailInput.focus();
+            return;
+        }
 
-            fetch('form-handler.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
+        // Отправка данных
+        const data = Object.fromEntries(new FormData(form).entries());
+
+        fetch("form-handler.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.success) {
+                    showSuccessMessage();
+                    form.reset();
+                    setTimeout(closePopup, 3000);
+                } else {
+                    alert("Ошибка отправки: " + (result.message || "Попробуйте позже"));
+                }
             })
-                .then(response => response.json())
-                .then(result => {
-                    if (result.success) {
-                        showSuccessMessage();
-                        form.reset();
-                        setTimeout(() => {
-                            closePopup();
-                        }, 3000);
-                    } else {
-                        alert("Ошибка отправки: " + (result.message || "Попробуйте позже"));
-                    }
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                    alert("Ошибка сети. Попробуйте еще раз.");
-                });
-        });
-    }
+            .catch(() => {
+                alert("Ошибка соединения. Попробуйте позже.");
+            });
+    });
 
-    // Показать сообщение об успешной отправке
     function showSuccessMessage() {
-        const successHTML = `
-            <div class="popup-order__success">
-                <div class="popup-order__success-icon">✓</div>
-                <p class="popup-order__success-message">
-                    Ваша заявка успешно отправлена!<br>
-                    Мы свяжемся с вами в ближайшее время.
-                </p>
-            </div>
+        const content = document.querySelector(".popup-order__content");
+        form.style.display = "none";
+        const msg = document.createElement("div");
+        msg.className = "popup-order__success";
+        msg.innerHTML = `
+            <div class="popup-order__success-icon">✓</div>
+            <p class="popup-order__success-message">
+                Ваша заявка успешно отправлена!<br>
+                Мы свяжемся с вами в ближайшее время.
+            </p>
         `;
-
-        form.style.display = 'none';
-        document.querySelector('.popup-order__content').insertAdjacentHTML('beforeend', successHTML);
+        content.appendChild(msg);
     }
 });
