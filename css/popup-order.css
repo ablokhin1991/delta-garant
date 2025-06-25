@@ -117,7 +117,8 @@
 
 /* Кнопка отправки */
 .popup-order__submit {
-    background: linear-gradient(45deg, #4361ee, #7209b7);
+    /*background: linear-gradient(45deg, #4361ee, #7209b7);*/
+    background: #0036a7;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -165,7 +166,7 @@
 
 /* Стили ссылок */
 .popup-order__link {
-    color: #4361ee;
+    color: #0036a7;
     text-decoration: none;
     font-weight: 500;
 }
