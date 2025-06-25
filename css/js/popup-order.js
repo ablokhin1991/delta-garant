@@ -42,9 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==============================
     // 📞 Маска для телефона
     // ==============================
+    // Функция автоформатирования номера (точно работает!)
+  // Функция автоформатирования номера (точно работает!)
     function formatPhoneNumber(input) {
-        let value = input.value.replace(/\D/g, "");
-        if (value.length > 10) value = value.substring(0, 10);
+        let value = input.value.replace(/\D/g, ""); // Убираем все нецифровые символы
+        if (value.length > 10) value = value.substring(0, 10); // Обрезаем лишние цифры
 
         let formattedValue = "";
         if (value.length > 0) {
@@ -57,31 +59,52 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Инициализация intl-tel-input
-    if (phoneInput) {
-        const iti = window.intlTelInput(phoneInput, {
-            initialCountry: "ru",
-            preferredCountries: ["ru", "by", "kz"],
-            separateDialCode: true,
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            autoPlaceholder: "off"
-        });
+    const iti = window.intlTelInput(phoneInput, {
+        initialCountry: "ru",
+        preferredCountries: ["ru", "by", "kz"],
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        autoPlaceholder: "off"
+    });
 
-        phoneInput.placeholder = "(999) 999-99-99";
+       // Установка начального плейсхолдера
+    phoneInput.placeholder = "(999) 999-99-99";
 
-        phoneInput.addEventListener("countrychange", function() {
-            const countryCode = iti.getSelectedCountryData().iso2;
-            phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
-        });
+        // Обработчик смены страны
+    phoneInput.addEventListener("countrychange", function() {
+        const countryCode = iti.getSelectedCountryData().iso2;
+        phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
+    });
 
-        phoneInput.addEventListener("keypress", function(e) {
-            if (!/\d/.test(e.key)) e.preventDefault();
-        });
+        // Блокировка нецифровых символов
+    phoneInput.addEventListener("keypress", function(e) {
+        if (!/\d/.test(e.key)) e.preventDefault();
+    });
 
-        phoneInput.addEventListener("input", function() {
-            const countryCode = iti.getSelectedCountryData().iso2;
-            if (countryCode === "ru") formatPhoneNumber(phoneInput);
-        });
-    }
+        // 📌 Окончательный фикс: обработка ввода с автоформатом
+    phoneInput.addEventListener("input", function() {
+        const countryCode = iti.getSelectedCountryData().iso2;
+        if (countryCode === "ru") formatPhoneNumber(phoneInput); // Автоформат только для России
+    });
+    
+    // Валидация при отправке
+    form.addEventListener("submit", function(e) {
+        const countryCode = iti.getSelectedCountryData().iso2;
+        const cleanNumber = phoneInput.value.replace(/\D/g, "");
+        const isValid = iti.isValidNumber();
+
+        if (countryCode === "ru") {
+            if (cleanNumber.length !== 10 || !isValid) {
+                alert("Для России требуется 10 цифр после +7");
+                e.preventDefault();
+            }
+        } else {
+            if (!isValid) {
+                alert("Введите корректный номер для выбранной страны");
+                e.preventDefault();
+            }
+        }
+    });
 
     // ==============================
     // 💰 Автоформат суммы гарантии
