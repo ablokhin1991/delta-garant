@@ -94,6 +94,7 @@
     border: 2px solid #E2E8F0;
     border-radius: 8px;
     transition: border-color 0.3s, box-shadow 0.3s;
+    color: #5a5f73;
 }
 
 .popup-order__input:focus {
@@ -288,5 +289,5 @@
 }
 
 .popup-order__column input::placeholder {
-    color: #2e2e2e;
+    color: #5a5f73;
 }
