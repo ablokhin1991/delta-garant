@@ -188,7 +188,7 @@
 
 .popup-order__success-message {
     font-size: 18px;
-    color: #333;
+    color: #2e2e2e;
 }
 
 /* Адаптивность */
@@ -262,9 +262,7 @@
 
 /* Текст под формой */
 .popup-order__text-below-form {
-    text-align: center;
-    font-size: 14px;
-    color: #333;
+    color: #2e2e2e;
     margin-top: 15px;
 }
 
