@@ -82,6 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const countryCode = iti.getSelectedCountryData().iso2;
             if (countryCode === "ru") formatPhoneNumber(phoneInput);
         });
+// тест * тест * * тест * * тест * * тест * * тест * * тест * * тест * * тест * * тест * 
+        phoneInput.addEventListener("input", () => console.log(
+  "📞 input fired, value=", phoneInput.value,
+  "country=", iti.getSelectedCountryData().iso2
+));
+// тест * тест * * тест * * тест * * тест * * тест * * тест * * тест * * тест * * тест * 
     }
 
     // Валидация при отправке
