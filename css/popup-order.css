@@ -305,6 +305,7 @@
     color: #d62718;
     text-decoration: none;
     font-weight: 500;
+    display: block;
 }
 
 .popup-order__text-below-form a:hover {
