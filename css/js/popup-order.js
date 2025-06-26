@@ -66,22 +66,42 @@ document.addEventListener("DOMContentLoaded", function () {
             autoPlaceholder: "off"
         });
 
+        // Установка начального плейсхолдера
         phoneInput.placeholder = "(999) 999-99-99";
-
+        // Обработчик смены страны
         phoneInput.addEventListener("countrychange", function() {
             const countryCode = iti.getSelectedCountryData().iso2;
             phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
         });
-
+        // Блокировка нецифровых символов
         phoneInput.addEventListener("keypress", function(e) {
             if (!/\d/.test(e.key)) e.preventDefault();
         });
-
+        // 📌 Окончательный фикс: обработка ввода с автоформатом
         phoneInput.addEventListener("input", function() {
             const countryCode = iti.getSelectedCountryData().iso2;
             if (countryCode === "ru") formatPhoneNumber(phoneInput);
         });
     }
+
+    // Валидация при отправке
+    form.addEventListener("submit", function(e) {
+        const countryCode = iti.getSelectedCountryData().iso2;
+        const cleanNumber = phoneInput.value.replace(/\D/g, "");
+        const isValid = iti.isValidNumber();
+
+        if (countryCode === "ru") {
+            if (cleanNumber.length !== 10 || !isValid) {
+                alert("Для России требуется 10 цифр после +7");
+                e.preventDefault();
+            }
+        } else {
+            if (!isValid) {
+                alert("Введите корректный номер для выбранной страны");
+                e.preventDefault();
+            }
+        }
+    });
 
     // ==============================
     // 💰 Автоформат суммы гарантии
