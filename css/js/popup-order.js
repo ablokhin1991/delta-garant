@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
             phoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
         });
         // Блокировка нецифровых символов
-        //phoneInput.addEventListener("keypress", function(e) {
-         //   if (!/\d/.test(e.key)) e.preventDefault();
-        //});
+        phoneInput.addEventListener("keypress", function(e) {
+           if (!/\d/.test(e.key)) e.preventDefault();
+        });
         // 📌 Окончательный фикс: обработка ввода с автоформатом
         phoneInput.addEventListener("input", function() {
             const countryCode = iti.getSelectedCountryData().iso2;
