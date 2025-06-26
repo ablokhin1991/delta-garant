@@ -191,46 +191,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-        // ==============================
-    // 🚀 Автозаполнение «Компания / ИНН» через Dadata
     // ==============================
-    (function() {
-        const DADATA_TOKEN = "2f5c5383769c2db48f7ff0728ef6ab28f0d88e63";
-        const innInput      = document.querySelector('input[name="inn"]');
-        const companyInput  = document.querySelector('input[name="company"]');
+// 🚀 Автозаполнение «Компания / ИНН» через Dadata с debounce на input
+// ==============================
+(function() {
+    const DADATA_TOKEN = "2f5c5383769c2db48f7ff0728ef6ab28f0d88e63";
+    const innInput     = document.querySelector('input[name="inn"]');
+    const companyInput = document.querySelector('input[name="company"]');
 
-        if (!innInput || !companyInput) return;
+    if (!innInput || !companyInput) return;
 
-        // Когда пользователь закончил ввод (потеря фокуса) — ищем по ИНН
-        innInput.addEventListener('blur', () => {
-            const query = innInput.value.trim();
-            if (!/^\d{10,12}$/.test(query)) return;  // ИНН должен быть 10 или 12 цифр
+    // Функция debounce
+    function debounce(fn, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => fn.apply(this, args), wait);
+        };
+    }
 
-            fetch("https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party", {
-                method: "POST",
-                headers: {
-                    "Content-Type":  "application/json",
-                    "Accept":        "application/json",
-                    "Authorization": "Token " + DADATA_TOKEN
-                },
-                body: JSON.stringify({ query: query })
-            })
-            .then(res => res.ok ? res.json() : Promise.reject(res.statusText))
-            .then(data => {
-                if (data.suggestions && data.suggestions.length) {
-                    const party = data.suggestions[0].data;
-                    companyInput.value = party.name.short_with_opf || party.name.value;
-                    innInput.value     = party.inn;  // на всякий случай «подтягиваем» формат
-                }
-            })
-            .catch(err => console.warn("Dadata autocomplete error:", err));
-        });
+    // Основная функция запроса и заполнения
+    function fetchCompanyByINN() {
+        const query = innInput.value.replace(/\D/g, '').trim();
+        if (!/^\d{10,12}$/.test(query)) {
+            // Можно очистить companyInput, если ИНН уже невалиден:
+            // companyInput.value = '';
+            return;
+        }
 
-        // (опционально) если хотите подтягивать уже при вводе, а не на blur:
-        // innInput.addEventListener('input', debounce(function() { ... }, 300));
-        // где debounce — ваша функция-заглушка.
-    })();
+        fetch("https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party", {
+            method: "POST",
+            headers: {
+                "Content-Type":  "application/json",
+                "Accept":        "application/json",
+                "Authorization": "Token " + DADATA_TOKEN
+            },
+            body: JSON.stringify({ query: query })
+        })
+        .then(res => res.ok ? res.json() : Promise.reject(res.statusText))
+        .then(data => {
+            if (data.suggestions && data.suggestions.length) {
+                const party = data.suggestions[0].data;
+                companyInput.value = party.name.short_with_opf || party.name.value;
+                innInput.value     = party.inn;
+            }
+        })
+        .catch(err => console.warn("Dadata autocomplete error:", err));
+    }
 
+    // Вешаем debounce-обработчик на каждое изменение ввода
+    innInput.addEventListener('input', debounce(fetchCompanyByINN, 300));
+})();
 
 
 
