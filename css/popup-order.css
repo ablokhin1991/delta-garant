@@ -285,6 +285,9 @@
     .popup-order__column {
         width: 100%;
     }
+    .popup-order__text-below-form a {
+    display: block;
+    }
 }
 
 
@@ -305,7 +308,6 @@
     color: #d62718;
     text-decoration: none;
     font-weight: 500;
-    display: block;
 }
 
 .popup-order__text-below-form a:hover {
