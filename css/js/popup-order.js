@@ -191,56 +191,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // ==============================
-// 🚀 Автозаполнение «Компания / ИНН» через Dadata с debounce на input
+   // ==============================
+// 🚀 Подсказки по ИНН через Dadata + datalist
 // ==============================
 (function() {
-    const DADATA_TOKEN = "2f5c5383769c2db48f7ff0728ef6ab28f0d88e63";
-    const innInput     = document.querySelector('input[name="inn"]');
+    const TOKEN = "2f5c5383769c2db48f7ff0728ef6ab28f0d88e63";
+    const innInput = document.getElementById("inn-input");
+    const dataList = document.getElementById("inn-suggestions");
     const companyInput = document.querySelector('input[name="company"]');
 
-    if (!innInput || !companyInput) return;
+    if (!innInput || !dataList || !companyInput) return;
 
-    // Функция debounce
-    function debounce(fn, wait) {
-        let timeout;
-        return function(...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => fn.apply(this, args), wait);
+    function debounce(fn, ms) {
+        let t;
+        return (...args) => {
+            clearTimeout(t);
+            t = setTimeout(() => fn.apply(this, args), ms);
         };
     }
 
-    // Основная функция запроса и заполнения
-    function fetchCompanyByINN() {
-        const query = innInput.value.replace(/\D/g, '').trim();
-        if (!/^\d{10,12}$/.test(query)) {
-            // Можно очистить companyInput, если ИНН уже невалиден:
-            // companyInput.value = '';
+    function fetchSuggestions() {
+        const q = innInput.value.replace(/\D/g, "");
+        if (q.length < 3) {
+            dataList.innerHTML = "";  // не заполняем, если мало цифр
             return;
         }
 
-        fetch("https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party", {
+        fetch("https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party", {
             method: "POST",
             headers: {
-                "Content-Type":  "application/json",
-                "Accept":        "application/json",
-                "Authorization": "Token " + DADATA_TOKEN
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Token " + TOKEN
             },
-            body: JSON.stringify({ query: query })
+            body: JSON.stringify({ query: q, count: 5 })
         })
-        .then(res => res.ok ? res.json() : Promise.reject(res.statusText))
-        .then(data => {
-            if (data.suggestions && data.suggestions.length) {
-                const party = data.suggestions[0].data;
-                companyInput.value = party.name.short_with_opf || party.name.value;
-                innInput.value     = party.inn;
-            }
+        .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
+        .then(json => {
+            dataList.innerHTML = "";  // очистили прошлые варианты
+            json.suggestions.forEach(item => {
+                const opt = document.createElement("option");
+                // option.value будет вставлено в innInput при выборе
+                opt.value = item.data.inn;  
+                // show name + ИНН во всплывающем списке
+                opt.label = `${item.value} — ИНН ${item.data.inn}`; 
+                dataList.appendChild(opt);
+            });
         })
-        .catch(err => console.warn("Dadata autocomplete error:", err));
+        .catch(err => console.warn("Dadata suggest error:", err));
     }
 
-    // Вешаем debounce-обработчик на каждое изменение ввода
-    innInput.addEventListener('input', debounce(fetchCompanyByINN, 300));
+    // При выборе варианта из datalist формируется событие input + change
+    innInput.addEventListener("change", () => {
+        // когда пользователь выбрал ИНН из списка, заполняем company:
+        const chosenInn = innInput.value.trim();
+        const opt = [...dataList.options].find(o => o.value === chosenInn);
+        if (opt) {
+            // разбиваем label на название и ИНН
+            const [namePart] = opt.label.split(" — ИНН");
+            companyInput.value = namePart;
+        }
+    });
+
+    innInput.addEventListener("input", debounce(fetchSuggestions, 300));
 })();
 
 
