@@ -596,6 +596,7 @@
     <div class="popup-order__columns">
         <!-- Левая колонка -->
         <div class="popup-order__column">
+          <div class="popup-order__column__required">
             <input type="text" placeholder="ФИО *" class="popup-order__input" name="fullname" required>
             <input type="tel" id="popup-order-phone" class="popup-order__input phone-mask iti iti--allow-dropdown iti--separate-dial-code" placeholder="Телефон *" required>
             <input type="email" 
@@ -605,6 +606,7 @@
                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
                 title="Введите email в формате: name@email.ru" 
                 required>
+          </div>
             <input type="text"
                 placeholder="ИНН компании / ИП" 
                 class="popup-order__input" 
