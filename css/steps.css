@@ -249,18 +249,14 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(20px);
-  opacity: 0.9;
-
-
-  flex: 1;                    /* заполняем всю доступную высоту .workflow-step */
-  display: flex;             /* превращаем в flex-контейнер */
-  flex-direction: column;    /* с вертикальным расположением заголовка и текста */
-  justify-content: flex-start; /* фиксируем контент у верхнего края */
+  flex: 1;  
+  display: flex;           
+  flex-direction: column;   
+  justify-content: flex-start; 
 }
 
 .workflow-step:hover .workflow-step-content {
   transform: translateY(0);
-  opacity: 1;
   box-shadow: 0 15px 35px rgba(0, 54, 167, 0.2);
 }
 
