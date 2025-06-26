@@ -422,7 +422,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 30px; 
+  gap: 40px; 
 }
 
 .order-hero-text {
@@ -432,8 +432,8 @@
 
 p.order-hero-text {
     font-size: 14px;
-    font-weight: 300;
-    color: #2e2e2e;
+    font-weight: 400;
+    color: #6c757d;
     margin-bottom: 0px;
 
 }
