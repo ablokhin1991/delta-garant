@@ -223,6 +223,8 @@
     .popup-order {
         width: 95%;
         padding: 20px;
+        max-height: 90vh;
+        overflow-y: auto;
     }
     
     .popup-order__title {
