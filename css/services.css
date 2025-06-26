@@ -1,3 +1,13 @@
+/* Основные переменные цветов */
+:root {
+    --services-primary: #4361ee;
+    --services-secondary: #7209b7;
+    --services-accent: #4cc9f0;
+    --services-light: #f8f9fa;
+    --services-dark: #212529;
+    --services-blue: #0036a7;
+}
+
 /* Секция услуг */
 .services-section {
     padding: 80px 0;
