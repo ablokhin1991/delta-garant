@@ -322,3 +322,37 @@
     color: #2e2e2e;
     font-size: 16px;
 }
+
+
+
+/* Чтобы управлять прокруткой самого popup */
+
+.popup-order__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: auto; /* позволяет прокручивать popup */
+    padding: 40px 20px; /* добавляет отступы сверху/снизу */
+    box-sizing: border-box;
+
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease-in-out,
+      visibility 0s linear 0.3s;
+}
+
+.popup-order__wrapper--active {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 0.3s ease-in-out,
+      visibility 0s linear 0s;
+}
