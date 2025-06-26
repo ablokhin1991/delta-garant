@@ -29,12 +29,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
-    /*max-width: 600px;*/
     background: #fff;
     padding: 2.5rem;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    max-height: 90vh;
+    overflow-y: auto;
 
     /* стартовые состояния */
     opacity: 0;
@@ -223,7 +224,13 @@
     .popup-order {
         width: 95%;
         padding: 20px;
-        
+        /* ✅ Вместо центрирования по Y задаём отступы сверху/снизу */
+        top: 20px;                      /* отступ сверху */
+        bottom: 20px;                   /* отступ снизу */
+        transform: translateX(-50%);    /* остаётся только по X */
+
+        /* ✅ Подтягиваем высоту под отступы */
+        max-height: calc(100vh - 40px); /* 100% высоты минус 2×20px */
     }
     
     .popup-order__title {
