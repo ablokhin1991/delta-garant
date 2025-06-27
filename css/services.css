@@ -81,6 +81,10 @@
     align-items: center;
     gap: 2.5rem;
     grid-row: 1;
+
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
 }
 
 /* Обертка для иконки */
