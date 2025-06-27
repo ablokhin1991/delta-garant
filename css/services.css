@@ -55,7 +55,7 @@
     margin-top: 3.5rem;
 }
 
-/* Карточка услуги */
+/* Карточка услуги - теперь с фиксированными строками */
 .service-card {
     background: white;
     border-radius: 16px;
@@ -63,7 +63,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: grid;
-    grid-template-rows: auto 1fr auto; /* 3 строки: иконка, контент, стрелка */
+    grid-template-rows: 100px auto 1fr 50px; /* Фиксированные строки: иконка, заголовок, описание, стрелка */
     gap: 1.5rem;
     height: 100%;
     border: 1px solid rgba(0, 54, 167, 0.1);
@@ -77,7 +77,7 @@
     border-color: rgba(0, 54, 167, 0.2);
 }
 
-/* Обертка для иконки */
+/* Фиксированная строка для иконки */
 .service-icon-wrapper {
     width: 80px;
     height: 80px;
@@ -109,42 +109,36 @@
     color: white;
 }
 
-/* Контент услуги (заголовок + описание) */
-.service-content {
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* Заголовок услуги */
+/* Фиксированная строка для заголовка */
 .service-title {
     font-size: 1.5rem;
-    margin: 0 0 1rem 0;
+    margin: 0;
     color: var(--services-dark);
     font-weight: 700;
+    grid-row: 2;
     min-height: 3.5rem; /* Фиксированная высота для 2 строк */
     display: flex;
     align-items: center;
 }
 
-/* Описание услуги */
+/* Фиксированная строка для описания */
 .service-description {
     color: #2e2e2e;
     line-height: 1.6;
     font-size: 16px;
     margin: 0;
-    flex-grow: 1;
+    grid-row: 3;
+    min-height: 4.8rem; /* Фиксированная высота для 2-3 строк */
     display: flex;
     align-items: flex-start;
-    min-height: 4.8rem; /* Фиксированная высота для 2-3 строк */
 }
 
-/* Обертка для стрелки */
+/* Фиксированная строка для стрелки */
 .service-arrow-wrapper {
-    grid-row: 3;
+    grid-row: 4;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 /* Стрелка для перехода */
@@ -181,6 +175,7 @@
     
     .service-card {
         padding: 2rem;
+        grid-template-rows: 90px auto 1fr 45px; /* Уменьшаем фиксированные высоты */
     }
 }
 
@@ -190,6 +185,14 @@
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
+    }
+    
+    .service-title {
+        min-height: 3rem;
+    }
+    
+    .service-description {
+        min-height: 4.2rem;
     }
 }
 
@@ -206,23 +209,9 @@
         font-size: 1.1rem;
     }
     
-    .service-title {
-        font-size: 1.4rem;
-        min-height: 3rem;
-    }
-    
-    .service-description {
-        min-height: 4.2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .services-section {
-        padding: 60px 0;
-    }
-    
     .service-card {
         padding: 1.8rem;
+        grid-template-rows: 80px auto 1fr 40px;
         gap: 1.2rem;
     }
     
@@ -235,31 +224,36 @@
         font-size: 28px;
     }
     
+    .service-title {
+        font-size: 1.4rem;
+        min-height: 2.8rem;
+    }
+    
+    .service-description {
+        min-height: 3.8rem;
+        font-size: 15px;
+    }
+    
     .service-arrow {
         width: 36px;
         height: 36px;
     }
-    
-    .service-title {
-        min-height: 2.8rem;
-        font-size: 1.3rem;
-    }
-    
-    .service-description {
-        min-height: 4rem;
-        font-size: 15px;
-    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+    .services-section {
+        padding: 60px 0;
+    }
+    
     .service-card {
         padding: 1.5rem;
+        grid-template-rows: 70px auto 1fr 36px;
         gap: 1rem;
     }
     
     .service-title {
-        font-size: 1.25rem;
         min-height: 2.5rem;
+        font-size: 1.3rem;
     }
     
     .service-description {
@@ -268,6 +262,20 @@
     }
 }
 
+@media (max-width: 480px) {
+    .service-card {
+        padding: 1.2rem;
+    }
+    
+    .service-title {
+        font-size: 1.25rem;
+        min-height: 2.2rem;
+    }
+    
+    .service-description {
+        min-height: 3rem;
+    }
+}
 
 
 
