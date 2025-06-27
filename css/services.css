@@ -123,6 +123,17 @@
     white-space: normal;
 }
 
+.service-subtitle {
+    color: #2e2e2e;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+    grid-row: 3;
+    min-height: 4.8rem; /* Фиксированная высота для 2-3 строк */
+    display: flex;
+    align-items: flex-start;
+}
+
 /* Фиксированная строка для описания */
 .service-description {
     color: #2e2e2e;
