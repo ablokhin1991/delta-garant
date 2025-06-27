@@ -118,9 +118,6 @@
 /* Заголовок услуги */
 .service-title {
     margin: 0;
-    font-size: 1.5rem;
-    color: var(--services-dark);
-    font-weight: 700;
     min-height: calc(2 * 1.2em);
     line-height: 1.2em;
     white-space: normal;
