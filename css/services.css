@@ -116,9 +116,12 @@
     color: var(--services-dark);
     font-weight: 700;
     grid-row: 2;
-    min-height: 3.5rem; /* Фиксированная высота для 2 строк */
+    /*min-height: 3.5rem; Фиксированная высота для 2 строк */
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
+    min-height: calc(2 * 1.2em);
+    line-height: 1.2em;
+    white-space: normal;
 }
 
 /* Фиксированная строка для описания */
