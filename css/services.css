@@ -54,7 +54,7 @@
     margin-top: 3.5rem;
 }
 
-/* Карточка услуги - теперь с фиксированными строками */
+/* Карточка услуги */
 .service-card {
     background: white;
     border-radius: 16px;
@@ -62,7 +62,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: grid;
-    grid-template-rows: 100px auto 1fr 50px; /* Фиксированные строки: иконка, заголовок, описание, стрелка */
+    grid-template-rows: auto auto 1fr 50px; /* Обновленные строки */
     gap: 1.5rem;
     height: 100%;
     border: 1px solid rgba(0, 54, 167, 0.1);
@@ -75,8 +75,17 @@
     box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
 }
 
-/* Фиксированная строка для иконки */
+/* Строка с иконкой и заголовком */
+.service-header-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    grid-row: 1;
+}
+
+/* Обертка для иконки */
 .service-icon-wrapper {
+    flex-shrink: 0;
     width: 80px;
     height: 80px;
     background: white;
@@ -87,7 +96,6 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
     border: 3px solid var(--services-blue);
-    grid-row: 1;
 }
 
 .service-card:hover .service-icon-wrapper {
@@ -107,47 +115,44 @@
     color: white;
 }
 
-/* Фиксированная строка для заголовка */
+/* Заголовок услуги */
 .service-title {
-    /*font-size: 1.5rem;*/
     margin: 0;
-    /*color: var(--services-dark);*/
-    /*font-weight: 700;*/
-    grid-row: 2;
-    /*min-height: 3.5rem; Фиксированная высота для 2 строк */
-    display: flex;
-    /*align-items: center;*/
+    font-size: 1.5rem;
+    color: var(--services-dark);
+    font-weight: 700;
     min-height: calc(2 * 1.2em);
     line-height: 1.2em;
     white-space: normal;
 }
 
+/* Подзаголовок услуги */
 .service-subtitle {
     color: #a0a4b3;
     line-height: 1.6;
     font-size: 16px;
     margin: 0;
-    grid-row: 3;
+    grid-row: 2;
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
 }
 
-/* Фиксированная строка для описания */
+/* Описание услуги */
 .service-description {
     color: #2e2e2e;
     line-height: 1.6;
     font-size: 16px;
     margin: 0;
-    grid-row: 4;
-    min-height: 4.8rem; /* Фиксированная высота для 2-3 строк */
+    grid-row: 3;
+    min-height: 4.8rem;
     display: flex;
     align-items: flex-start;
 }
 
-/* Фиксированная строка для стрелки */
+/* Обертка для стрелки */
 .service-arrow-wrapper {
-    grid-row: 5;
+    grid-row: 4;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -158,7 +163,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background:  #d62718;
+    background: #d62718;
     color: white;
     display: flex;
     align-items: center;
@@ -176,7 +181,7 @@
 }
 
 .service-card:hover .service-arrow i {
-    transform: scale(1.2); /* Увеличение стрелки на 20% */
+    transform: scale(1.2);
 }
 
 /* Адаптивность */
@@ -187,7 +192,23 @@
     
     .service-card {
         padding: 2rem;
-        grid-template-rows: 90px auto 1fr 45px; /* Уменьшаем фиксированные высоты */
+    }
+    
+    .service-header-row {
+        gap: 1.2rem;
+    }
+    
+    .service-icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .service-icon {
+        font-size: 28px;
+    }
+    
+    .service-title {
+        font-size: 1.4rem;
     }
 }
 
@@ -223,21 +244,20 @@
     
     .service-card {
         padding: 1.8rem;
-        grid-template-rows: 80px auto 1fr 40px;
         gap: 1.2rem;
     }
     
     .service-icon-wrapper {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
     
     .service-icon {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .service-title {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         min-height: 2.8rem;
     }
     
@@ -259,18 +279,26 @@
     
     .service-card {
         padding: 1.5rem;
-        grid-template-rows: 70px auto 1fr 36px;
+        gap: 1rem;
+    }
+    
+    .service-header-row {
         gap: 1rem;
     }
     
     .service-title {
         min-height: 2.5rem;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .service-description {
         min-height: 3.5rem;
         font-size: 14px;
+    }
+    
+    .service-icon-wrapper {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -280,7 +308,7 @@
     }
     
     .service-title {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         min-height: 2.2rem;
     }
     
