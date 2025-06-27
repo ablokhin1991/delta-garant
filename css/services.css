@@ -138,18 +138,6 @@
     align-items: flex-start;
 }
 
-/* Описание услуги */
-.service-description {
-    color: #2e2e2e;
-    line-height: 1.6;
-    font-size: 16px;
-    margin: 0;
-    grid-row: 3;
-    min-height: 4.8rem;
-    display: flex;
-    align-items: flex-start;
-}
-
 /* Обертка для стрелки */
 .service-arrow-wrapper {
     grid-row: 4;
@@ -224,9 +212,7 @@
         min-height: 3rem;
     }
     
-    .service-description {
-        min-height: 4.2rem;
-    }
+
 }
 
 @media (max-width: 768px) {
@@ -261,10 +247,6 @@
         min-height: 2.8rem;
     }
     
-    .service-description {
-        min-height: 3.8rem;
-        font-size: 15px;
-    }
     
     .service-arrow {
         width: 36px;
@@ -291,10 +273,6 @@
         font-size: 1.2rem;
     }
     
-    .service-description {
-        min-height: 3.5rem;
-        font-size: 14px;
-    }
     
     .service-icon-wrapper {
         width: 50px;
@@ -312,9 +290,7 @@
         min-height: 2.2rem;
     }
     
-    .service-description {
-        min-height: 3rem;
-    }
+
 }
 
 
