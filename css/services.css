@@ -124,14 +124,15 @@
 }
 
 .service-subtitle {
-    color: #2e2e2e;
+    color: #a0a4b3;
     line-height: 1.6;
     font-size: 16px;
     margin: 0;
     grid-row: 3;
-    min-height: 4.8rem; /* Фиксированная высота для 2-3 строк */
+    min-height: 4.8rem; 
     display: flex;
     align-items: flex-start;
+    margin-bottom: 15px;
 }
 
 /* Фиксированная строка для описания */
