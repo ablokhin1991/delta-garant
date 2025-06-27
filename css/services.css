@@ -141,7 +141,7 @@
     line-height: 1.6;
     font-size: 16px;
     margin: 0;
-    grid-row: 3;
+    grid-row: 4;
     min-height: 4.8rem; /* Фиксированная высота для 2-3 строк */
     display: flex;
     align-items: flex-start;
@@ -149,7 +149,7 @@
 
 /* Фиксированная строка для стрелки */
 .service-arrow-wrapper {
-    grid-row: 4;
+    grid-row: 5;
     display: flex;
     justify-content: flex-end;
     align-items: center;
