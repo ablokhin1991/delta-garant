@@ -149,7 +149,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--services-primary);
+    background:  #d62718;
     color: white;
     display: flex;
     align-items: center;
@@ -163,7 +163,7 @@
 }
 
 .service-card:hover .service-arrow {
-    background: var(--services-secondary);
+    background: #bd1e10;
 }
 
 .service-card:hover .service-arrow i {
