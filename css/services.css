@@ -154,7 +154,7 @@
 .service-arrow-wrapper {
     grid-row: 4;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 }
 
