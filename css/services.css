@@ -167,7 +167,7 @@
 }
 
 .service-card:hover .service-arrow i {
-    transform: translateX(5px);
+    transform: scale(1.2); /* Увеличение стрелки на 20% */
 }
 
 /* Адаптивность */
