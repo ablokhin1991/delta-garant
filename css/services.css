@@ -73,7 +73,6 @@
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
-    border-color: rgba(0, 54, 167, 0.2);
 }
 
 /* Фиксированная строка для иконки */
