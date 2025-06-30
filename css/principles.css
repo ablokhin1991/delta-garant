@@ -100,7 +100,7 @@
 
 .principles-modern-item:hover .principles-modern-icon {
   transform: scale(1.1);
-  background: #d62718;
+  background: #0036a7;
   box-shadow: 0 15px 30px rgba(214, 39, 24, 0.3);
 }
 .principles-modern-item:hover .principles-modern-icon i {
@@ -122,7 +122,7 @@
 }
 
 .principles-modern-item:hover .principles-modern-card {
-  box-shadow: 0 15px 30px rgba(214, 39, 24, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 54, 167, 0.2);
   transform: translateY(-5px);
 }
 
