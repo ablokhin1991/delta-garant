@@ -24,30 +24,6 @@
     width: 80%;
 }
 
-/* Заголовок секции */
-.services-main-title {
-    margin-top: 0 !important;
-    text-align: center;
-    font-size: 2.5rem;
-    background: linear-gradient(45deg, var(--services-primary), var(--services-secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 1rem;
-    font-weight: 800;
-}
-
-/* Подзаголовок секции */
-.services-subtitle p {
-    font-size: 1.2rem;
-    color: var(--services-dark);
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 1.6;
-    padding: 0 15px;
-}
-
 /* Сетка услуг */
 .services-grid {
     display: grid;
