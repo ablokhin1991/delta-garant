@@ -6,6 +6,8 @@
     --services-light: #f8f9fa;
     --services-dark: #212529;
     --services-blue: #0036a7;
+    --services-red: #d62718;
+    --services-red-hover: #bd1e10;
 }
 
 /* Секция услуг */
@@ -62,7 +64,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: grid;
-    grid-template-rows: auto auto 1fr 50px; /* Обновленные строки */
+    grid-template-rows: auto auto 1fr auto; /* Автоматические строки */
     gap: 1.5rem;
     height: 100%;
     border: 1px solid rgba(0, 54, 167, 0.1);
@@ -81,10 +83,8 @@
     align-items: center;
     gap: 2.5rem;
     grid-row: 1;
-
     flex-direction: row-reverse;
     justify-content: space-between;
-
 }
 
 /* Обертка для иконки */
@@ -125,6 +125,9 @@
     min-height: calc(2 * 1.2em);
     line-height: 1.2em;
     white-space: normal;
+    font-size: 1.5rem;
+    color: var(--services-dark);
+    font-weight: 700;
 }
 
 /* Подзаголовок услуги */
@@ -138,37 +141,41 @@
     align-items: flex-start;
 }
 
-/* Обертка для стрелки */
-.service-arrow-wrapper {
+/* Кнопка "Подробнее" */
+.service-button {
     grid-row: 4;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-}
-
-/* Стрелка для перехода */
-.service-arrow {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #d62718;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.service-arrow i {
+    background: var(--services-red);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
     font-size: 16px;
+    font-weight: 700;
+    transition: background 0.3s;
+    justify-content: center;
+    width: 200px;
+    gap: 8px;
+}
+
+.service-card:hover .service-button {
+    background: var(--services-red-hover);
+}
+
+.service-card:active .service-button {
+    opacity: 1;
+    background: var(--services-red);
+    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+                inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.button-icon {
+    font-size: 14px;
     transition: transform 0.3s ease;
 }
 
-.service-card:hover .service-arrow {
-    background: #bd1e10;
-}
-
-.service-card:hover .service-arrow i {
+.service-card:hover .button-icon {
     transform: scale(1.2);
 }
 
@@ -207,12 +214,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-    
-    .service-title {
-        min-height: 3rem;
-    }
-    
-
 }
 
 @media (max-width: 768px) {
@@ -244,13 +245,12 @@
     
     .service-title {
         font-size: 1.3rem;
-        min-height: 2.8rem;
     }
     
-    
-    .service-arrow {
-        width: 36px;
-        height: 36px;
+    .service-button {
+        font-size: 14px;
+        width: 180px;
+        padding: 7px 12px;
     }
 }
 
@@ -269,14 +269,18 @@
     }
     
     .service-title {
-        min-height: 2.5rem;
         font-size: 1.2rem;
     }
-    
     
     .service-icon-wrapper {
         width: 50px;
         height: 50px;
+    }
+    
+    .service-button {
+        width: 160px;
+        padding: 6px 10px;
+        font-size: 13px;
     }
 }
 
@@ -287,10 +291,11 @@
     
     .service-title {
         font-size: 1.15rem;
-        min-height: 2.2rem;
     }
     
-
+    .service-button {
+        width: 150px;
+    }
 }
 
 
