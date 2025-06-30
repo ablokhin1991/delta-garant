@@ -26,10 +26,10 @@
   margin-bottom: 50px;
 }
 
-/* Сетка контента */
+/* Сетка контента - добавлена вторая колонка */
 .principles-content {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
 }
@@ -38,9 +38,35 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  max-width: 700px;
-  margin: 0 auto;
+}
+
+/* Стили для блока с изображением */
+.principles-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principles-image-wrapper {
   width: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.principles-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 500px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.principles-image:hover .principles-img {
+  transform: scale(1.03);
 }
 
 /* Элементы списка */
@@ -133,6 +159,16 @@
 }
 
 /* Адаптивность */
+@media (max-width: 992px) {
+  .principles-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .principles-image {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .container-principles {
     width: 90%;
