@@ -76,10 +76,6 @@ header {
   /*gap: 5px;*/
 }
 
-.contact-info a:hover {
-  color: #d62718;
-}
-
 .contact-info .phone {
   flex-direction: column;
   font-size: 18px;
