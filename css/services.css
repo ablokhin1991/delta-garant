@@ -322,7 +322,16 @@
   transform: rotate(30deg);
 }
 
+.service-button-wrap {
 
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    flex-shrink: 0;
+    z-index: 1;
+    order: 3;
+    box-sizing: border-box;
+}
 
 
 
