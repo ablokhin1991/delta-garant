@@ -6,8 +6,6 @@
     --services-light: #f8f9fa;
     --services-dark: #212529;
     --services-blue: #0036a7;
-    --services-red: #d62718;
-    --services-red-hover: #bd1e10;
 }
 
 /* Секция услуг */
@@ -64,7 +62,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: grid;
-    grid-template-rows: auto auto 1fr 60px; /* Увеличили высоту строки для кнопки */
+    grid-template-rows: auto auto 1fr 50px; /* Обновленные строки */
     gap: 1.5rem;
     height: 100%;
     border: 1px solid rgba(0, 54, 167, 0.1);
@@ -83,8 +81,10 @@
     align-items: center;
     gap: 2.5rem;
     grid-row: 1;
+
     flex-direction: row-reverse;
     justify-content: space-between;
+
 }
 
 /* Обертка для иконки */
@@ -125,9 +125,6 @@
     min-height: calc(2 * 1.2em);
     line-height: 1.2em;
     white-space: normal;
-    font-size: 1.5rem;
-    color: var(--services-dark);
-    font-weight: 700;
 }
 
 /* Подзаголовок услуги */
@@ -141,40 +138,21 @@
     align-items: flex-start;
 }
 
-/* Обертка для кнопки "Подробнее" */
-.service-button-wrapper {
+/* Обертка для стрелки */
+.service-arrow-wrapper {
     grid-row: 4;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-/* Стили для кнопки "Подробнее" */
-.service-button-wrapper {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--services-red);
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    gap: 10px;
-}
-
-.service-button-wrapper:hover {
-    background-color: var(--services-red-hover);
-}
-
-.button-text {
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-}
-
+/* Стрелка для перехода */
 .service-arrow {
-    width: 26px;
-    height: 26px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: white;
+    background: #d62718;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,12 +160,15 @@
 }
 
 .service-arrow i {
-    color: var(--services-red);
-    font-size: 12px;
+    font-size: 16px;
     transition: transform 0.3s ease;
 }
 
-.service-button-wrapper:hover .service-arrow i {
+.service-card:hover .service-arrow {
+    background: #bd1e10;
+}
+
+.service-card:hover .service-arrow i {
     transform: scale(1.2);
 }
 
@@ -217,10 +198,6 @@
     .service-title {
         font-size: 1.4rem;
     }
-    
-    .service-button-wrapper {
-        padding: 8px 16px;
-    }
 }
 
 @media (max-width: 992px) {
@@ -230,6 +207,12 @@
         margin-left: auto;
         margin-right: auto;
     }
+    
+    .service-title {
+        min-height: 3rem;
+    }
+    
+
 }
 
 @media (max-width: 768px) {
@@ -248,7 +231,6 @@
     .service-card {
         padding: 1.8rem;
         gap: 1.2rem;
-        grid-template-rows: auto auto 1fr 50px;
     }
     
     .service-icon-wrapper {
@@ -262,19 +244,13 @@
     
     .service-title {
         font-size: 1.3rem;
+        min-height: 2.8rem;
     }
     
-    .service-button-wrapper {
-        padding: 7px 14px;
-    }
-    
-    .button-text {
-        font-size: 14px;
-    }
     
     .service-arrow {
-        width: 22px;
-        height: 22px;
+        width: 36px;
+        height: 36px;
     }
 }
 
@@ -286,7 +262,6 @@
     .service-card {
         padding: 1.5rem;
         gap: 1rem;
-        grid-template-rows: auto auto 1fr 45px;
     }
     
     .service-header-row {
@@ -294,45 +269,28 @@
     }
     
     .service-title {
+        min-height: 2.5rem;
         font-size: 1.2rem;
     }
+    
     
     .service-icon-wrapper {
         width: 50px;
         height: 50px;
-    }
-    
-    .service-button-wrapper {
-        padding: 6px 12px;
-    }
-    
-    .button-text {
-        font-size: 13px;
-    }
-    
-    .service-arrow {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .service-arrow i {
-        font-size: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .service-card {
         padding: 1.2rem;
-        grid-template-rows: auto auto 1fr 40px;
     }
     
     .service-title {
         font-size: 1.15rem;
+        min-height: 2.2rem;
     }
     
-    .service-button-wrapper {
-        padding: 5px 10px;
-    }
+
 }
 
 
