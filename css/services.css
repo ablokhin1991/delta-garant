@@ -64,7 +64,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: grid;
-    grid-template-rows: auto auto 1fr auto; /* Автоматические строки */
+    /*grid-template-rows: auto auto 1fr auto;  Автоматические строки */
     gap: 1.5rem;
     height: 100%;
     border: 1px solid rgba(0, 54, 167, 0.1);
