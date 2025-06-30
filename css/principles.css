@@ -1,0 +1,163 @@
+/* Общие стили обертки */
+.principles-wrapper {
+  background-color: #f2f4f7;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.container-principles {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Заголовки */
+.principles-wrapper h2 {
+  margin-top: 0 !important;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.principles-section-title p {
+  font-size: 16px;
+  color: #2e2e2e;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+/* Сетка контента */
+.principles-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.principles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Элементы списка */
+.principles-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.principles-item:hover {
+  transform: translateX(10px);
+}
+
+/* Иконки */
+.principles-icon {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 30px rgb(237 136 128 / 30%);
+  position: relative;
+  flex-shrink: 0;
+  border: 3px solid #d62718;
+  transition: all 0.4s ease;
+}
+
+.principles-icon i {
+  font-size: 28px;
+  color: #d62718;
+  transition: all 0.4s ease;
+}
+
+.principles-item:hover .principles-icon {
+  transform: scale(1.1);
+  background: #d62718;
+  box-shadow: 0 15px 30px rgba(214, 39, 24, 0.3);
+}
+
+.principles-item:hover .principles-icon i {
+  color: white;
+}
+
+/* Карточки */
+.principles-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  flex: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.principles-item:hover .principles-card {
+  box-shadow: 0 15px 30px rgba(214, 39, 24, 0.3);
+  transform: translateY(-5px);
+}
+
+.principles-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  transition: all 0.4s ease;
+}
+
+.principles-item:hover .principles-card::before {
+  width: 8px;
+  background: #d62718;
+}
+
+.principles-card p {
+  margin: 0;
+  color: #2e2e2e;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.principles-highlight {
+  color: #d62718;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container-principles {
+    width: 90%;
+  }
+  
+  .principles-section-title p {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .principles-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .principles-icon i {
+    font-size: 24px;
+  }
+  
+  .principles-card {
+    padding: 20px;
+  }
+  
+  .principles-card p {
+    font-size: 16px;
+  }
+}
