@@ -75,10 +75,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 15px 30px rgb(237 136 128 / 30%);
+  box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
   position: relative;
   flex-shrink: 0;
-  border: 3px solid #d62718;
+  border: 3px solid #0036a7;
 }
 
 /*.principles-modern-icon::before {
