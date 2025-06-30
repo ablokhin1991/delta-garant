@@ -119,7 +119,7 @@
     color: white;
 }
 
-/* Заголовок услуги */
+/* Заголовок услуги
 .service-title {
     margin: 0;
     min-height: calc(2 * 1.2em);
@@ -128,7 +128,7 @@
     font-size: 1.5rem;
     color: var(--services-dark);
     font-weight: 700;
-}
+}*/
 
 /* Подзаголовок услуги */
 .service-subtitle {
