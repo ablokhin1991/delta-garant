@@ -76,7 +76,6 @@
 
 .team-card:hover .team-photo {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(214, 39, 24, 0.25);
 }
 
 .team-photo img {
