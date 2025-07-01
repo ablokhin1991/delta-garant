@@ -36,12 +36,12 @@
   text-align: center;
 }
 
-/* Сетка команды */
+/* Сетка команды - 4 карточки в ряд */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-bottom: 60px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
 /* Карточка сотрудника */
@@ -57,7 +57,6 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 70px; /* Для эффекта выхода фото */
 }
 
 .team-card:hover {
@@ -65,7 +64,7 @@
   box-shadow: 0 15px 40px rgba(214, 39, 24, 0.15);
 }
 
-/* Фото сотрудника */
+/* Фото сотрудника с эффектом выхода за границы */
 .team-photo {
   width: 180px;
   height: 180px;
@@ -97,24 +96,60 @@
 }
 
 .team-info h3 {
-  font-size: 22px;
+  font-size: 20px;
   color: #0036a7;
   margin-bottom: 10px;
   font-weight: 700;
+  line-height: 1.3;
 }
 
 .team-info p {
-  font-size: 16px;
-  color: #d62718;
-  font-weight: 500;
+  font-size: 15px;
+  color: #2e2e2e;
+  font-weight: 400;
   margin: 0;
   line-height: 1.5;
 }
 
+/* Кнопка "Показать еще" */
+.show-more-container {
+  text-align: center;
+  margin-top: 20px;
+  display: none; /* По умолчанию скрыта */
+}
+
+.show-more-button {
+  display: inline-block;
+  background: #d62718;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(214, 39, 24, 0.3);
+}
+
+.show-more-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(214, 39, 24, 0.4);
+  background: #b52115;
+}
+
 /* Адаптивность */
+@media (max-width: 1200px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 992px) {
   .team-grid {
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
   }
   
   .team-card {
@@ -122,9 +157,13 @@
   }
   
   .team-photo {
-    width: 150px;
-    height: 150px;
-    top: -75px;
+    width: 160px;
+    height: 160px;
+    top: -80px;
+  }
+  
+  .team-info {
+    margin-top: 90px;
   }
 }
 
@@ -138,10 +177,18 @@
   }
   
   .team-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 60px 20px;
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto 40px;
   }
   
+  .hidden-on-mobile {
+    display: none !important;
+  }
+  
+  .show-more-container {
+    display: block;
+  }
 }
 
 @media (max-width: 576px) {
@@ -163,10 +210,14 @@
   }
   
   .team-info {
-    margin-top: 90px;
+    margin-top: 85px;
   }
   
   .team-info h3 {
-    font-size: 20px;
+    font-size: 18px;
+  }
+  
+  .team-info p {
+    font-size: 14px;
   }
 }
