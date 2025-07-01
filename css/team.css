@@ -111,57 +111,6 @@
   line-height: 1.5;
 }
 
-/* Стили для призыва к действию (из образца) */
-.cb1-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
-}
-
-.cb1-btn-wrap {
-  margin-bottom: 20px;
-}
-
-.cb1-btn {
-  display: inline-block;
-  background: linear-gradient(45deg, #0036a7, #d62718);
-  color: white;
-  padding: 16px 40px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 18px;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(214, 39, 24, 0.3);
-  transition: all 0.3s ease;
-}
-
-.cb1-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(214, 39, 24, 0.4);
-}
-
-.cb1-icon {
-  font-size: 36px;
-  color: #d62718;
-  margin-bottom: 15px;
-}
-
-.cb1-text {
-  font-size: 18px;
-  color: #2e2e2e;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.cb1-highlight {
-  color: #d62718;
-  font-weight: 600;
-  position: relative;
-}
-
 /* Адаптивность */
 @media (max-width: 992px) {
   .team-grid {
@@ -193,9 +142,6 @@
     gap: 60px 20px;
   }
   
-  .cb1-text {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 576px) {
@@ -222,10 +168,5 @@
   
   .team-info h3 {
     font-size: 20px;
-  }
-  
-  .cb1-btn {
-    padding: 14px 35px;
-    font-size: 16px;
   }
 }
