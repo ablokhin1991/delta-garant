@@ -316,17 +316,15 @@
     const hiddenCards = document.querySelectorAll('.team-card.hidden-on-mobile');
     
     hiddenCards.forEach(card => {
-      card.style.display = 'block';
+      card.style.display = 'flex';
       card.style.opacity = '0';
       card.style.transition = 'opacity 0.5s ease';
       
-      // Анимация появления
       setTimeout(() => {
         card.style.opacity = '1';
       }, 10);
     });
     
-    // Скрываем кнопку после нажатия
     this.style.display = 'none';
   });
 </script>
