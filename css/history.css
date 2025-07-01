@@ -54,7 +54,7 @@
     width: 50%;
   }
   
-  .history-counter {
+  .step-counter {
     width: 40px;
     height: 40px;
     margin: 0 auto;
@@ -199,7 +199,7 @@
   box-shadow: 0 5px 15px rgba(0, 54, 167, 0.3);
 }
 
-.workflow-history {
+.workflow-historys {
   position: relative;
   z-index: 2;
   flex: 1;
@@ -209,7 +209,7 @@
   padding: 0 15px;
 }
 
-.workflow-history-icon {
+.workflow-historys-icon {
   width: 80px;
   height: 80px;
   background: white;
@@ -224,7 +224,7 @@
   border: 3px solid #0036a7;
 }
 
-/*.workflow-step-icon::before {
+/*.workflow-historys-icon::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -235,13 +235,13 @@
   opacity: 0.7;
 }*/
 
-.workflow-history-icon i {
+.workflow-historys-icon i {
   font-size: 32px;
   color: #0036a7;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.workflow-history-content {
+.workflow-historys-content {
   text-align: center;
   padding: 20px;
   background: white;
@@ -255,22 +255,22 @@
   justify-content: flex-start; 
 }
 
-.workflow-history:hover .workflow-history-content {
+.workflow-historys:hover .workflow-historys-content {
   transform: translateY(0);
   box-shadow: 0 15px 35px rgba(0, 54, 167, 0.2);
 }
 
-.workflow-history:hover .workflow-history-icon {
+.workflow-historys:hover .workflow-historys-icon {
   transform: scale(1.1) translateY(-10px);
   background: #0036a7;
   box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
 }
 
-.workflow-history:hover .workflow-history-icon i {
+.workflow-historys:hover .workflow-historys-icon i {
   color: white;
 }
 
-.workflow-history-number {
+.workflow-historys-number {
   position: absolute;
   top: -10px;
   right: -10px;
@@ -286,14 +286,14 @@
   box-shadow: 0 5px 15px rgba(76, 201, 240, 0.5);
 }
 
-/*.workflow-step-title {
+/*.workflow-historys-title {
   font-size: 1.4rem;
   color: #212529;
   margin-bottom: 12px;
   font-weight: 700;
 }*/
 
-.workflow-history-description {
+.workflow-historys-description {
   color: #2e2e2e;
 }
 
@@ -307,7 +307,7 @@
     flex-wrap: wrap;
   }
   
-  .workflow-history {
+  .workflow-historys {
     flex: 0 0 50%;
     margin-bottom: 50px;
   }
@@ -318,7 +318,7 @@
 }
 
 @media (max-width: 576px) {
-  .workflow-history {
+  .workflow-historys {
     flex: 0 0 100%;
   }
   
@@ -326,7 +326,7 @@
     font-size: 2.2rem;
   }
   
-  .workflow-history-content {
+  .workflow-historys-content {
     padding: 15px;
   }
 }
