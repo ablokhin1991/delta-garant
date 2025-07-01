@@ -1,73 +1,215 @@
-/* Общие стили обертки */
-.history-wrapper {
-  background-color: #ffffff;
+.container-history {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .container-history {
+    width: 90%;
+  }
+}
+.container-history-wrapper {
+  background-color: #ffffff; /* Белый фон на всю ширину */
+  padding: 80px 0 80px 0; /* Отступы сверху и снизу */
+  overflow: hidden;
+}
+ .stepper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+  }
+  
+  .stepper-item {
+    position: relative;
+    flex: 1;
+    padding-top: 60px; /* Увеличено для центрирования линии */
+    text-align: center;
+  }
+  
+  .stepper-item:first-child {
+    padding-left: 0;
+  }
+  
+  .stepper-item:last-child {
+    padding-right: 0;
+  }
+  
+  .stepper-item::before {
+    content: '';
+    position: absolute;
+    top: 30px; /* Центрировано относительно счетчика */
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+    z-index: 0;
+  }
+  
+  .stepper-item:first-child::before {
+    width: 50%;
+    left: 50%;
+  }
+  
+  .stepper-item:last-child::before {
+    width: 50%;
+  }
+  
+  .history-counter {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background: #0036a7;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .stepper-item p {
+    margin-top: 8px;
+  }
+  
+  /* Мобильная версия */
+  @media (max-width: 767px) {
+    .stepper {
+      flex-direction: column;
+    }
+    
+    .stepper-item {
+      display: flex;
+      align-items: center;
+      padding-top: 0;
+      text-align: left;
+      width: 100%;
+      padding-left: 0;
+    }
+    
+    .stepper-item:not(:last-child) {
+      margin-bottom: 24px;
+    }
+    
+    .stepper-item::before {
+      display: none;
+    }
+    
+    .stepper-item::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 1px;
+      height: calc(100% + 24px);
+      background-color: #e0e0e0;
+      z-index: 0;
+    }
+    
+    .stepper-item:last-child::after {
+      display: none;
+    }
+    
+    .step-counter {
+      margin: 0 16px 0 0;
+      flex-shrink: 0;
+    }
+    
+    .stepper-item p {
+      margin-top: 0;
+      flex: 1;
+      text-align: left;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.workflow-history-wrapper {
+  background: #fff;
   padding: 80px 0;
   overflow: hidden;
-  position: relative;
 }
 
 .container-history {
   max-width: 1400px;
   width: 80%;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
 }
 
-/* Заголовки */
-.history-wrapper h2 {
-  margin-top: 0 !important;
-  font-size: 2.5rem;
+@media (max-width: 768px) {
+  .container-history {
+    width: 90%;
+  }
+}
+
+.workflow-section-title {
+  margin-bottom: 80px;
+}
+
+.container-history h2 {
+  margin-top: 0px !important;
+}
+
+.workflow-section-title h2 {
+  font-size: 2.8rem;
+  color: #212529;
   margin-bottom: 15px;
-  text-align: center;
+  background: linear-gradient(90deg, #0036a7, #001a50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
-.history-section-title p {
-  font-size: 18px;
+.workflow-section-title p {
+  font-size: 16px;
   color: #2e2e2e;
   max-width: 600px;
   line-height: 1.6;
-  margin: 0 auto 60px;
-  text-align: center;
 }
 
-/* Горизонтальный таймлайн (десктоп) */
-.timeline-horizontal {
+.workflow-history {
   display: flex;
   justify-content: space-between;
   position: relative;
-  padding: 80px 0 40px;
+  align-items: stretch;
 }
 
-/* Линия таймлайна (горизонтальная) */
-.timeline-horizontal::before {
+.workflow-history::before {
   content: '';
   position: absolute;
-  top: 100px;
+  top: 40px;
   left: 0;
   right: 0;
-  height: 4px;
-  background: #d62718;
+  height: 3px;
+  background: linear-gradient(90deg, #0036a7 0%, #4cc9f0 100%);
+  z-index: 1;
   border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 54, 167, 0.3);
 }
 
-/* Элементы таймлайна */
-.timeline-item-horizontal {
+.workflow-history {
+  position: relative;
+  z-index: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  width: 20%;
-  z-index: 2;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 0 15px;
 }
 
-.timeline-item-horizontal:hover {
-  transform: translateY(-10px);
-}
-
-/* Иконки */
-.timeline-icon-horizontal {
+.workflow-history-icon {
   width: 80px;
   height: 80px;
   background: white;
@@ -75,162 +217,117 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 15px 30px rgb(237 136 128 / 30%);
-  position: relative;
-  border: 3px solid #d62718;
-  transition: all 0.4s ease;
   margin-bottom: 25px;
-  z-index: 3;
+  box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 3px solid #0036a7;
 }
 
-.timeline-icon-horizontal i {
+/*.workflow-step-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px dashed #fff;
+  animation: workflow-rotate 20s linear infinite;
+  opacity: 0.7;
+}*/
+
+.workflow-history-icon i {
   font-size: 32px;
-  color: #d62718;
-  transition: all 0.4s ease;
+  color: #0036a7;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.timeline-item-horizontal:hover .timeline-icon-horizontal {
-  transform: scale(1.15);
-  background: #d62718;
-  box-shadow: 0 15px 30px rgba(214, 39, 24, 0.3);
+.workflow-history-content {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(20px);
+  flex: 1;  
+  display: flex;           
+  flex-direction: column;   
+  justify-content: flex-start; 
 }
 
-.timeline-item-horizontal:hover .timeline-icon-horizontal i {
+.workflow-history:hover .workflow-history-content {
+  transform: translateY(0);
+  box-shadow: 0 15px 35px rgba(0, 54, 167, 0.2);
+}
+
+.workflow-history:hover .workflow-history-icon {
+  transform: scale(1.1) translateY(-10px);
+  background: #0036a7;
+  box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
+}
+
+.workflow-history:hover .workflow-history-icon i {
   color: white;
 }
 
-/* Контент таймлайна */
-.timeline-content-horizontal {
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-align: center;
-  width: 100%;
-}
-
-.timeline-item-horizontal:hover .timeline-content-horizontal {
-  box-shadow: 0 15px 30px rgba(214, 39, 24, 0.2);
-}
-
-/* Точки на линии */
-.timeline-item-horizontal::after {
-  content: '';
+.workflow-history-number {
   position: absolute;
-  top: 100px;
-  width: 20px;
-  height: 20px;
+  top: -10px;
+  right: -10px;
   background: #d62718;
+  color: white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  border: 4px solid white;
-  z-index: 2;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(76, 201, 240, 0.5);
 }
 
-.timeline-year-horizontal {
-  font-size: 24px;
+/*.workflow-step-title {
+  font-size: 1.4rem;
+  color: #212529;
+  margin-bottom: 12px;
   font-weight: 700;
-  color: #d62718;
-  margin-bottom: 10px;
-}
+}*/
 
-.timeline-text-horizontal {
-  font-size: 18px;
+.workflow-history-description {
   color: #2e2e2e;
-  line-height: 1.5;
 }
 
-/* Вертикальный таймлайн (мобильный) */
+@keyframes workflow-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @media (max-width: 992px) {
-  .timeline-horizontal {
-    flex-direction: column;
-    padding: 40px 0;
+  .workflow-history {
+    flex-wrap: wrap;
   }
   
-  .timeline-horizontal::before {
-    top: 0;
-    bottom: 0;
-    left: 40px;
-    right: auto;
-    width: 4px;
-    height: 100%;
+  .workflow-history {
+    flex: 0 0 50%;
+    margin-bottom: 50px;
   }
   
-  .timeline-item-horizontal {
-    flex-direction: row;
-    width: 100%;
-    margin-bottom: 40px;
-    align-items: flex-start;
-    text-align: left;
-  }
-  
-  .timeline-icon-horizontal {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 0;
-    margin-right: 20px;
-    flex-shrink: 0;
-  }
-  
-  .timeline-content-horizontal {
-    text-align: left;
-  }
-  
-  .timeline-item-horizontal::after {
-    top: 35px;
-    left: 40px;
-  }
-  
-  .timeline-item-horizontal:hover {
-    transform: translateX(10px);
-  }
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .container-history {
-    width: 90%;
-  }
-  
-  .history-section-title p {
-    margin-bottom: 40px;
-  }
-  
-  .timeline-icon-horizontal {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .timeline-icon-horizontal i {
-    font-size: 24px;
-  }
-  
-  .timeline-content-horizontal {
-    padding: 20px;
-  }
-  
-  .timeline-year-horizontal {
-    font-size: 20px;
-  }
-  
-  .timeline-text-horizontal {
-    font-size: 16px;
+  .workflow-history::before {
+    display: none;
   }
 }
 
 @media (max-width: 576px) {
-  .timeline-horizontal::before {
-    left: 30px;
+  .workflow-history {
+    flex: 0 0 100%;
   }
   
-  .timeline-item-horizontal::after {
-    left: 30px;
+  .workflow-section-title h2 {
+    font-size: 2.2rem;
   }
   
-  .timeline-icon-horizontal {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
+  .workflow-history-content {
+    padding: 15px;
   }
 }
+
