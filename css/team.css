@@ -1,0 +1,231 @@
+/* Общие стили обертки */
+.team-wrapper {
+  background-color: #ffffff;
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.container-team {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Заголовки */
+.team-wrapper h2 {
+  margin-top: 0 !important;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  background: linear-gradient(45deg, #0036a7, #d62718);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+.team-section-title p {
+  font-size: 18px;
+  color: #2e2e2e;
+  max-width: 700px;
+  line-height: 1.6;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+/* Сетка команды */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Карточка сотрудника */
+.team-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 25px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 70px; /* Для эффекта выхода фото */
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(214, 39, 24, 0.15);
+}
+
+/* Фото сотрудника */
+.team-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: -90px;
+  border: 5px solid white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.team-card:hover .team-photo {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(214, 39, 24, 0.25);
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Информация о сотруднике */
+.team-info {
+  margin-top: 100px; /* Компенсируем место для фото */
+  padding: 0 15px;
+}
+
+.team-info h3 {
+  font-size: 22px;
+  color: #0036a7;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.team-info p {
+  font-size: 16px;
+  color: #d62718;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Стили для призыва к действию (из образца) */
+.cb1-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.cb1-btn-wrap {
+  margin-bottom: 20px;
+}
+
+.cb1-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #0036a7, #d62718);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(214, 39, 24, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cb1-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(214, 39, 24, 0.4);
+}
+
+.cb1-icon {
+  font-size: 36px;
+  color: #d62718;
+  margin-bottom: 15px;
+}
+
+.cb1-text {
+  font-size: 18px;
+  color: #2e2e2e;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.cb1-highlight {
+  color: #d62718;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .team-grid {
+    gap: 30px;
+  }
+  
+  .team-card {
+    margin-top: 60px;
+  }
+  
+  .team-photo {
+    width: 150px;
+    height: 150px;
+    top: -75px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-team {
+    width: 90%;
+  }
+  
+  .team-section-title p {
+    margin-bottom: 40px;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px 20px;
+  }
+  
+  .cb1-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-wrapper {
+    padding: 80px 0;
+  }
+  
+  .team-wrapper h2 {
+    font-size: 2rem;
+  }
+  
+  .team-section-title p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .team-card {
+    padding: 25px 20px 20px;
+  }
+  
+  .team-info {
+    margin-top: 90px;
+  }
+  
+  .team-info h3 {
+    font-size: 20px;
+  }
+  
+  .cb1-btn {
+    padding: 14px 35px;
+    font-size: 16px;
+  }
+}
