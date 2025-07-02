@@ -1,0 +1,198 @@
+/* Общие стили обертки */
+.reviews-wrapper {
+  background-color: #f8f9fa;
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.container-reviews {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Заголовки */
+.reviews-wrapper h2 {
+  margin-top: 0 !important;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  background: linear-gradient(45deg, #0036a7, #d62718);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+.reviews-section-title p {
+  font-size: 18px;
+  color: #2e2e2e;
+  max-width: 700px;
+  line-height: 1.6;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+/* Сетка отзывов - 4 в ряд */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* Карточка отзыва */
+.review-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 300px; /* Фиксированная высота */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(214, 39, 24, 0.15);
+}
+
+.review-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.review-card:hover .review-thumbnail {
+  transform: scale(1.05);
+}
+
+/* Стили модального окна */
+.review-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.review-modal-content {
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  max-height: 90vh;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+  from { transform: translateY(-50%) scale(0.9); opacity: 0; }
+  to { transform: translateY(-50%) scale(1); opacity: 1; }
+}
+
+.review-modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.review-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.review-modal-close:hover,
+.review-modal-close:focus {
+  color: #d62718;
+  text-decoration: none;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .review-card {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-reviews {
+    width: 90%;
+  }
+  
+  .reviews-section-title p {
+    margin-bottom: 40px;
+  }
+  
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .review-card {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .reviews-wrapper {
+    padding: 80px 0;
+  }
+  
+  .reviews-wrapper h2 {
+    font-size: 2rem;
+  }
+  
+  .reviews-section-title p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .review-card {
+    height: 300px;
+  }
+  
+  .review-modal-content {
+    width: 95%;
+  }
+}

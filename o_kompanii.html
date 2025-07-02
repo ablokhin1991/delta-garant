@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/history.css">
   <link rel="stylesheet" href="css/team.css">
   <link rel="stylesheet" href="css/partners.css">
+  <link rel="stylesheet" href="css/reviews.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/featureas.css">
   <link rel="stylesheet" href="css/comparison.css">
@@ -370,6 +371,110 @@
 
 </div>
 </section>
+<!-- reviews -->
+<section class="reviews-wrapper">
+  <div class="container-reviews">
+    <h2>Отзывы наших клиентов</h2>
+    <div class="reviews-section-title">
+      <p>Мы благодарны каждому клиенту за оказанное доверие и ежедневно стремимся оправдать его!</p>
+    </div>
+
+    <div class="reviews-grid">
+      <!-- Отзыв 1 -->
+      <div class="review-card">
+        <img src="images/review/Otziv-1.webp" alt="Отзыв клиента 1" class="review-thumbnail">
+      </div>
+      
+      <!-- Отзыв 2 -->
+      <div class="review-card">
+        <img src="images/review/Otziv-2.webp" alt="Отзыв клиента 2" class="review-thumbnail">
+      </div>
+      
+      <!-- Отзыв 3 -->
+      <div class="review-card">
+        <img src="images/review/Otziv-3.webp" alt="Отзыв клиента 3" class="review-thumbnail">
+      </div>
+      
+      <!-- Отзыв 4 -->
+      <div class="review-card">
+        <img src="images/review/Otziv-4.webp" alt="Отзыв клиента 4" class="review-thumbnail">
+      </div>
+      
+      <!-- Отзыв 5 -->
+      <div class="review-card">
+        <img src="images/review/Otziv-5.webp" alt="Отзыв клиента 5" class="review-thumbnail">
+      </div>
+      
+      <!-- Отзыв 6 -->
+      <div class="review-card">
+        <img src="images/review/Otziv-6.webp" alt="Отзыв клиента 6" class="review-thumbnail">
+      </div>
+      
+      <!-- Отзыв 7 -->
+      <div class="review-card">
+        <img src="images/review/Otziv-7.webp" alt="Отзыв клиента 7" class="review-thumbnail">
+      </div>
+      
+      <!-- Отзыв 8 -->
+      <div class="review-card">
+        <img src="images/review/Otziv-8.webp" alt="Отзыв клиента 8" class="review-thumbnail">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="review-modal" id="reviewModal">
+  <span class="review-modal-close">&times;</span>
+  <div class="review-modal-content">
+    <img class="review-modal-img" id="modalReviewImg" src="" alt="Увеличенный отзыв">
+  </div>
+</div>
+<script>
+  // Функция для открытия модального окна
+  function openReviewModal(imgSrc) {
+    const modal = document.getElementById('reviewModal');
+    const modalImg = document.getElementById('modalReviewImg');
+    
+    modalImg.src = imgSrc;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+  }
+
+  // Функция для закрытия модального окна
+  function closeReviewModal() {
+    document.getElementById('reviewModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Восстанавливаем скролл страницы
+  }
+
+  // Закрытие при клике вне изображения
+  window.onclick = function(event) {
+    const modal = document.getElementById('reviewModal');
+    if (event.target === modal) {
+      closeReviewModal();
+    }
+  }
+
+  // Назначаем обработчики событий после загрузки страницы
+  document.addEventListener('DOMContentLoaded', function() {
+    // Назначение обработчиков для карточек отзывов
+    const reviewCards = document.querySelectorAll('.review-card');
+    reviewCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const imgSrc = this.querySelector('img').src;
+        openReviewModal(imgSrc);
+      });
+    });
+
+    // Назначение обработчика для кнопки закрытия
+    document.querySelector('.review-modal-close').addEventListener('click', closeReviewModal);
+    
+    // Закрытие по ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeReviewModal();
+      }
+    });
+  });
+</script>
 <!-- featureas -->
 <section class="why-us-wrapper">
   <div class="container-why-us"> 
