@@ -52,7 +52,6 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  height: 300px; /* Фиксированная высота */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,13 +65,13 @@
 .review-thumbnail {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.4s ease;
 }
 
-.review-card:hover .review-thumbnail {
+/*.review-card:hover .review-thumbnail {
   transform: scale(1.05);
-}
+}*/
 
 /* Стили модального окна */
 .review-modal {
