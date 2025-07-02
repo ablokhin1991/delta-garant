@@ -1,22 +1,19 @@
 /* Основные стили */
-.why-us-wrapper {
+.partners-wrapper {
 /*background: #fff;*/
   padding: 80px 0;
   overflow: hidden;
 }
-
 .container-partners {
   max-width: 1400px;
   width: 80%;
   margin: 80px auto 80px auto;
 }
-
 .partners {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
-
 .slider-container {
   overflow: hidden;
   position: relative;
@@ -37,7 +34,6 @@
     transparent 100%
   );
 }
-
 .slider-track {
   display: flex;
   width: max-content;
@@ -55,49 +51,23 @@
   align-items: center;
   justify-content: center;
 }
-
 .slider-item img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   pointer-events: none;
 }
-
 /* Адаптивность */
 @media (max-width: 768px) {
   .container-partners {
     width: 90%;
   }
-  
   .slider-item {
     width: 120px;
     height: 120px;
     margin-right: 20px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .partners-header {
   display: flex;
   justify-content: space-between;
@@ -128,7 +98,6 @@
   font-size: 16px;
   color: #2e2e2e;
 }
-
 @media (max-width: 768px) {
   .partners-header {
     flex-direction: column;
@@ -143,9 +112,6 @@
     max-width: 100%;
   }
 }
-
-
-
 .partners-section-title {
   margin-bottom: 80px;
 }
