@@ -59,7 +59,7 @@
 
 .review-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(214, 39, 24, 0.15);
+  box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
 }
 
 .review-thumbnail {
