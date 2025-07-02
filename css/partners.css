@@ -1,4 +1,10 @@
 /* Основные стили */
+.why-us-wrapper {
+/*background: #fff;*/
+  padding: 80px 0;
+  overflow: hidden;
+}
+
 .container-partners {
   max-width: 1400px;
   width: 80%;
