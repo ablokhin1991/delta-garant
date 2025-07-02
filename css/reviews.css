@@ -20,12 +20,10 @@
 }
 
 .reviews-section-title p {
-  font-size: 18px;
+  font-size: 16px;
   color: #2e2e2e;
-  max-width: 700px;
+  max-width: 600px;
   line-height: 1.6;
-  margin: 0 auto 60px;
-  text-align: center;
 }
 
 /* Сетка отзывов - 4 в ряд */
