@@ -305,11 +305,11 @@
 }
 
 .contacts-link {
-    color: #0036a7;
+    color: #2e2e2e;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contacts-link:hover {
-    color: #0049d2;
+    color: #0036a7;
 }
