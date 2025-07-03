@@ -312,5 +312,5 @@
 
 .contacts-link:hover {
     color: #0036a7;
-    font-weight: 500;
+    text-decoration: underline;
 }
