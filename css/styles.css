@@ -12,6 +12,10 @@ body {
     background-color: #f2f4f7 ;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Обычный текст */
 p {
     font-weight: 400; /* Легкий текст для лучшей читаемости */
