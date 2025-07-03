@@ -222,13 +222,8 @@
   }
   
   .contact-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .contact-icon {
-    margin-right: 0;
-    margin-bottom: 20px;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
