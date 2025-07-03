@@ -303,3 +303,13 @@
 .contacts-faq {
     background: #fff;
 }
+
+.contacts-link {
+    color: #0036a7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacts-link:hover {
+    color: #0049d2;
+}
