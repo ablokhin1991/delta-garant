@@ -14,32 +14,48 @@
   z-index: 2;
 }
 
+/* Общий заголовок блока */
+.contacts-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contacts-header h2 {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #0036a7, #d62718);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.contacts-header p {
+  font-size: 18px;
+  color: #2e2e2e;
+  max-width: 700px;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
 /* Сетка контента */
 .contacts-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  align-items: flex-start;
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  align-items: stretch; /* Для одинаковой высоты колонок */
 }
 
 /* Левая часть: Контактная информация */
 .contacts-info {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.contacts-info h2 {
-  font-size: 2rem;
-  color: #0036a7;
-  margin-bottom: 15px;
-}
-
-.contacts-info p {
-  font-size: 18px;
-  color: #2e2e2e;
-  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .contact-item {
@@ -105,22 +121,23 @@
 
 /* Правая часть: Форма */
 .contacts-form {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  height: 100%;
 }
 
-.contacts-form h2 {
-  font-size: 2rem;
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-header h3 {
+  font-size: 1.8rem;
   color: #d62718;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.contacts-form p {
+.form-header p {
   font-size: 18px;
   color: #2e2e2e;
-  margin-bottom: 30px;
+  margin: 0;
 }
 
 .form-group {
@@ -194,20 +211,46 @@
 }
 
 /* Адаптивность */
+@media (max-width: 1200px) {
+  .contacts-content {
+    gap: 30px;
+    padding: 40px;
+  }
+}
+
 @media (max-width: 992px) {
   .contacts-content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   
-  .contacts-info, .contacts-form {
-    padding: 30px;
+  .contacts-info {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+  }
+  
+  .contact-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
   }
 }
 
 @media (max-width: 768px) {
   .container-contacts {
     width: 90%;
+  }
+  
+  .contacts-header h2 {
+    font-size: 2rem;
+  }
+  
+  .contacts-header p {
+    font-size: 16px;
+  }
+  
+  .contacts-content {
+    padding: 30px;
   }
   
   .contact-item {
@@ -226,12 +269,16 @@
     padding: 80px 0;
   }
   
-  .contacts-info h2, .contacts-form h2 {
-    font-size: 1.8rem;
+  .contacts-content {
+    padding: 25px;
   }
   
-  .contacts-info p, .contacts-form p {
-    font-size: 16px;
+  .form-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-details h3 {
+    font-size: 18px;
   }
   
   .contact-details p {
