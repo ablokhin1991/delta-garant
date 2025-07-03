@@ -297,3 +297,9 @@
     margin-top: 3px;
     accent-color: #0036a7;
 }
+
+.checkbox-group__link {
+    color: #0036a7;
+    text-decoration: none;
+    font-weight: 500;
+}
