@@ -2,7 +2,6 @@
 .contacts-wrapper {
   padding: 80px 0;
   overflow: hidden;
-  background: #fff;
 }
 
 .container-contacts {
@@ -21,7 +20,7 @@
   background: white;
   border-radius: 20px;
   padding: 50px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   align-items: stretch;
 }
 
