@@ -27,15 +27,15 @@
 .contacts-info {
   display: flex;
   flex-direction: column;
-  /*justify-content: space-between;*/
+  justify-content: space-between;
   height: 100%;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
-  /*padding-bottom: 30px;
+  /*margin-bottom: 30px;
+  padding-bottom: 30px;
   border-bottom: 1px solid #eee;*/
 }
 
