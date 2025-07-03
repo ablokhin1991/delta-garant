@@ -307,9 +307,10 @@
 .contacts-link {
     color: #2e2e2e;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .contacts-link:hover {
     color: #0036a7;
+    font-weight: 500;
 }
