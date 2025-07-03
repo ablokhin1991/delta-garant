@@ -169,23 +169,22 @@
 .submit-btn {
   display: block;
   width: 100%;
-  background: linear-gradient(45deg, #0036a7, #d62718);
+  background: #0036a7;
   color: white;
-  padding: 16px;
-  border-radius: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(214, 39, 24, 0.3);
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .submit-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(214, 39, 24, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
 }
 
 /* Адаптивность */
