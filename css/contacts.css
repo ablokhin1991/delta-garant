@@ -14,30 +14,6 @@
   z-index: 2;
 }
 
-/* Общий заголовок блока */
-.contacts-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.contacts-header h2 {
-  font-size: 2.5rem;
-  background: linear-gradient(45deg, #0036a7, #d62718);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 800;
-  margin-bottom: 15px;
-}
-
-.contacts-header p {
-  font-size: 18px;
-  color: #2e2e2e;
-  max-width: 700px;
-  line-height: 1.6;
-  margin: 0 auto;
-}
-
 /* Сетка контента */
 .contacts-content {
   display: grid;
@@ -241,14 +217,6 @@
     width: 90%;
   }
   
-  .contacts-header h2 {
-    font-size: 2rem;
-  }
-  
-  .contacts-header p {
-    font-size: 16px;
-  }
-  
   .contacts-content {
     padding: 30px;
   }
@@ -303,4 +271,19 @@
     padding: 14px;
     font-size: 16px;
   }
+}
+
+
+
+.contacts-section-title {
+  margin-bottom: 80px;
+}
+.contacts-section-title p {
+  font-size: 16px;
+  color: #2e2e2e;
+  max-width: 600px;
+  line-height: 1.6;
+}
+.container-contacts h2 {
+  margin-top: 0px !important;
 }
