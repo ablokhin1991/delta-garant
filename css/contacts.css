@@ -16,10 +16,10 @@
 .contacts-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 2.5rem;
   background: white;
   border-radius: 20px;
-  padding: 50px;
+  padding: 2.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   align-items: stretch;
 }
