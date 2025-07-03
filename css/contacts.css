@@ -1,0 +1,259 @@
+/* Общие стили обертки */
+.contacts-wrapper {
+  background-color: #f8f9fa;
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.container-contacts {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Сетка контента */
+.contacts-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* Левая часть: Контактная информация */
+.contacts-info {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contacts-info h2 {
+  font-size: 2rem;
+  color: #0036a7;
+  margin-bottom: 15px;
+}
+
+.contacts-info p {
+  font-size: 18px;
+  color: #2e2e2e;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Иконки контактов */
+.contact-icon {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
+  position: relative;
+  flex-shrink: 0;
+  border: 3px solid #0036a7;
+  margin-right: 25px;
+  transition: all 0.4s ease;
+}
+
+.contact-icon i {
+  font-size: 28px;
+  color: #0036a7;
+  transition: all 0.4s ease;
+}
+
+.contact-item:hover .contact-icon {
+  transform: scale(1.1);
+  background: #0036a7;
+  box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
+}
+
+.contact-item:hover .contact-icon i {
+  color: white;
+}
+
+.contact-details h3 {
+  font-size: 20px;
+  color: #0036a7;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-details p {
+  font-size: 18px;
+  color: #2e2e2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Правая часть: Форма */
+.contacts-form {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contacts-form h2 {
+  font-size: 2rem;
+  color: #d62718;
+  margin-bottom: 15px;
+}
+
+.contacts-form p {
+  font-size: 18px;
+  color: #2e2e2e;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+}
+
+.form-group input:focus {
+  border-color: #0036a7;
+  box-shadow: 0 0 0 3px rgba(0, 54, 167, 0.1);
+  outline: none;
+  background: white;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.checkbox-group input {
+  width: auto;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.checkbox-group a {
+  color: #d62718;
+  text-decoration: none;
+}
+
+.checkbox-group a:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(45deg, #0036a7, #d62718);
+  color: white;
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(214, 39, 24, 0.3);
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(214, 39, 24, 0.4);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .contacts-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contacts-info, .contacts-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-contacts {
+    width: 90%;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contacts-wrapper {
+    padding: 80px 0;
+  }
+  
+  .contacts-info h2, .contacts-form h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contacts-info p, .contacts-form p {
+    font-size: 16px;
+  }
+  
+  .contact-details p {
+    font-size: 16px;
+  }
+  
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .contact-icon i {
+    font-size: 24px;
+  }
+  
+  .form-group input {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .submit-btn {
+    padding: 14px;
+    font-size: 16px;
+  }
+}

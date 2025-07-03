@@ -22,22 +22,73 @@
 
 <div id="header-placeholder"></div>
 
-<!-- hero -->
-<section class="hero-uslugi">
-  <div class="hero-section-uslugi">
-    <div class="hero-content-uslugi">
-      <h1>Банковская гарантия на участие<br>44-ФЗ, 223-ФЗ, 615-ПП/185-ФЗ<br>и по коммерции. </h1>
-      <p>Гарантируйте участие в государственных и коммерческих закупках банковской гарантией с одобрением до 98%</p>
-      
-      <div class="order-container">
-        <a href="#order" class="order-call order-button">Оставить заявку</a>
-        <p class="order-hero-text">Оставьте заявку — наш эксперт свяжется с вами в ближайшее время</p>
+<!-- contacts -->
+<section class="contacts-wrapper">
+  <div class="container-contacts">
+    <div class="contacts-content">
+      <!-- Левая часть: Контактная информация -->
+      <div class="contacts-info">
+        <h2>Наши контакты</h2>
+        <p>Свяжитесь с нами удобным для вас способом</p>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="contact-details">
+            <h3>Телефон</h3>
+            <p>+7 (495) 123-45-67</p>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-details">
+            <h3>Электронная почта</h3>
+            <p>info@delta-garant.ru</p>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-details">
+            <h3>Адрес</h3>
+            <p>г. Москва, ул. Тверская, д. 10, офис 305</p>
+          </div>
+        </div>
       </div>
-
-    </div>
-    <div class="hero-image">
-      <div class="hero-image-wrapper">
-        <img src="images/img/na_uchastie.webp" alt="Изображение">
+      
+      <!-- Правая часть: Форма заявки -->
+      <div class="contacts-form">
+        <h2>Оставить заявку</h2>
+        <p>Заполните форму и мы свяжемся с вами в течение 15 минут</p>
+        
+        <form id="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="ФИО" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Электронная почта" required>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="agreement" name="agreement" required>
+            <label for="agreement">
+              Согласен с <a href="/privacy-policy" target="_blank">политикой обработки персональных данных</a> *
+            </label>
+          </div>
+          
+          <button type="submit" class="submit-btn">Отправить</button>
+        </form>
       </div>
     </div>
   </div>
