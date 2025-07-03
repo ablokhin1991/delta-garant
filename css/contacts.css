@@ -80,13 +80,11 @@
 
 .contact-details h3 {
   font-size: 20px;
-  color: #0036a7;
   margin-bottom: 8px;
   font-weight: 600;
 }
 
 .contact-details p {
-  font-size: 18px;
   color: #2e2e2e;
   margin: 0;
   line-height: 1.5;
@@ -156,8 +154,9 @@
 }
 
 .checkbox-group a {
-  color: #d62718;
-  text-decoration: none;
+    color: #0036a7;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .checkbox-group a:hover {
@@ -296,10 +295,4 @@
 .checkbox-group {
     margin-top: 3px;
     accent-color: #0036a7;
-}
-
-.checkbox-group__link {
-    color: #0036a7;
-    text-decoration: none;
-    font-weight: 500;
 }
