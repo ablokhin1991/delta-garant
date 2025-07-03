@@ -95,6 +95,9 @@
 /* Правая часть: Форма */
 .contacts-form {
   height: 100%;
+  background: #e6f0ff;
+  padding: 40px;
+  border-radius: 16px;
 }
 
 .form-header {
