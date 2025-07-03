@@ -129,7 +129,7 @@
 
 .form-group input:focus {
   border-color: #0036a7;
-  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2)
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
   outline: none;
   background: white;
 }
