@@ -341,13 +341,3 @@
   font-size: 16px;
   line-height: 1.5;
 }
-
-/* Стили для изолированного телефонного ввода */
-.contact-intl-tel-input {
-  width: 100%;
-}
-
-.contact-intl-tel-input .iti__tel-input {
-  padding-left: 90px !important;
-  width: 100%;
-}
