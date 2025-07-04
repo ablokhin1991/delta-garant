@@ -147,7 +147,7 @@
   .faq-question .icon-wrapper {
     width: 40px;
     height: 40px;
-    margin-right: 1rem;
+    /*margin-right: 1rem;*/
   }
   .faq-question h3 {
     min-height: 50px; /* Новая высота иконки */
