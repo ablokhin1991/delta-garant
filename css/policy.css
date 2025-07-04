@@ -1,0 +1,18 @@
+/* Общие стили обертки */
+.policy-wrapper {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.container-policy {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  .container-policy {
+    width: 90%;
+  }
+}
