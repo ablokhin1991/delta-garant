@@ -1,3 +1,5 @@
+  // Скрипт для формы на странице контакты
+
 document.addEventListener("DOMContentLoaded", function() {
   // Находим форму контактов
   const contactForm = document.getElementById('contact-form-contacts');
@@ -8,8 +10,47 @@ document.addEventListener("DOMContentLoaded", function() {
   const contactSubmitBtn = contactForm.querySelector('.submit-btn');
   
   // ==============================
-  // 📞 Маска для телефона (контакты)
+  // 📞 Инициализация intl-tel-input для контактной формы
   // ==============================
+  let contactIti = null; // Экземпляр для изоляции
+  
+  function initContactPhoneInput() {
+    if (!contactPhoneInput) return;
+    
+    // Инициализация intl-tel-input с уникальным именем
+    contactIti = window.intlTelInput(contactPhoneInput, {
+      initialCountry: "ru",
+      preferredCountries: ["ru", "by", "kz"],
+      separateDialCode: true,
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      autoPlaceholder: "off",
+      customContainer: "contact-intl-tel-input" // Уникальный класс контейнера
+    });
+    
+    // Установка начального плейсхолдера
+    contactPhoneInput.placeholder = "(999) 999-99-99";
+    
+    // Обработчик смены страны
+    contactPhoneInput.addEventListener("countrychange", function() {
+      const countryCode = contactIti.getSelectedCountryData().iso2;
+      contactPhoneInput.placeholder = countryCode === "ru" ? "(999) 999-99-99" : "Введите номер телефона";
+    });
+    
+    // Блокировка нецифровых символов
+    contactPhoneInput.addEventListener("keypress", function(e) {
+      if (!/\d/.test(e.key)) e.preventDefault();
+    });
+    
+    // Форматирование номера для России
+    contactPhoneInput.addEventListener("input", function() {
+      const countryCode = contactIti.getSelectedCountryData().iso2;
+      if (countryCode === "ru") {
+        formatContactPhone(contactPhoneInput);
+      }
+    });
+  }
+  
+  // Форматирование российского номера
   function formatContactPhone(input) {
     let value = input.value.replace(/\D/g, "");
     if (value.length > 10) value = value.substring(0, 10);
@@ -24,20 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
     input.value = formattedValue;
   }
 
-  // Инициализация маски для телефона
-  if (contactPhoneInput) {
-    contactPhoneInput.placeholder = "(999) 999-99-99";
-    
-    contactPhoneInput.addEventListener("input", function() {
-      formatContactPhone(contactPhoneInput);
-    });
-    
-    // Блокировка нецифровых символов
-    contactPhoneInput.addEventListener("keypress", function(e) {
-      if (!/\d/.test(e.key)) e.preventDefault();
-    });
-  }
-
   // ==============================
   // 📤 Отправка формы контактов
   // ==============================
@@ -45,12 +72,23 @@ document.addEventListener("DOMContentLoaded", function() {
     e.preventDefault();
     
     // Валидация телефона
-    if (contactPhoneInput) {
-      const phoneDigits = contactPhoneInput.value.replace(/\D/g, "");
-      if (phoneDigits.length !== 10) {
-        alert("Пожалуйста, введите корректный номер телефона (10 цифр)");
-        contactPhoneInput.focus();
-        return;
+    if (contactPhoneInput && contactIti) {
+      const countryCode = contactIti.getSelectedCountryData().iso2;
+      const cleanNumber = contactPhoneInput.value.replace(/\D/g, "");
+      const isValid = contactIti.isValidNumber();
+
+      if (countryCode === "ru") {
+        if (cleanNumber.length !== 10 || !isValid) {
+          alert("Для России требуется 10 цифр после кода страны");
+          contactPhoneInput.focus();
+          return;
+        }
+      } else {
+        if (!isValid) {
+          alert("Введите корректный номер для выбранной страны");
+          contactPhoneInput.focus();
+          return;
+        }
       }
     }
     
@@ -65,8 +103,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const formData = new FormData(contactForm);
     const data = {};
     
+    // Добавляем номер в международном формате
+    if (contactIti) {
+      data.phone = contactIti.getNumber();
+    }
+    
     for (const [key, value] of formData.entries()) {
-      data[key] = value;
+      // Пропускаем телефон, так как уже обработали
+      if (key !== "phone") {
+        data[key] = value;
+      }
     }
     
     // Добавляем идентификатор формы
@@ -93,6 +139,11 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Сброс формы
         contactForm.reset();
+        
+        // Сброс телефона
+        if (contactIti) {
+          contactIti.setNumber("");
+        }
       } else {
         alert("Ошибка отправки: " + (result.message || "Попробуйте позже"));
       }
@@ -132,4 +183,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }, 5000);
   }
+  
+  // Инициализируем телефонный ввод
+  initContactPhoneInput();
 });
