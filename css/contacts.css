@@ -209,7 +209,9 @@
   .contacts-content {
     padding: 2rem;
   }
-  
+  .contacts-form {
+    padding: 2rem;
+  }
   .contact-item {
     flex-direction: row;
     align-items: center;
