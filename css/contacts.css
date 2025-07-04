@@ -347,16 +347,6 @@
   width: 100%;
 }
 
-.contact-intl-tel-input .iti__flag-container {
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.contact-intl-tel-input .iti__selected-dial-code {
-  margin-left: 40px;
-}
-
 .contact-intl-tel-input .iti__tel-input {
   padding-left: 90px !important;
   width: 100%;
