@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #e6f0ff;
+  background-color: rgba(230, 240, 255, 0.1);
   color: #fff;
   padding: 2rem;
   box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
