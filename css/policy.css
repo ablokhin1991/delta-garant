@@ -68,15 +68,6 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     padding: 2rem;
   }
-  .policy-card a {
-    color: #0036a7 !important;
-    text-decoration: underline !important;
-    transition: all 0.3s ease;
-  }
-
-  .policy-card a:hover {
-    color: #d62718;
-  }
 }
 
 .container-policy h1 {
@@ -84,8 +75,8 @@
 }
 
 .policy-card a {
-    color: #2e2e2e;
-    text-decoration: none;
+    color: #0036a7;
+    text-decoration: underline;
     transition: all 0.3s ease;
 }
 
