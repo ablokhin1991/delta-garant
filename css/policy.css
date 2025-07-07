@@ -69,8 +69,8 @@
     padding: 2rem;
   }
   .policy-card a {
-    color: #0036a7;
-    text-decoration: underline;
+    color: #0036a7 !important;
+    text-decoration: underline !important;
     transition: all 0.3s ease;
   }
 
