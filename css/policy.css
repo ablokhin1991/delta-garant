@@ -38,9 +38,26 @@
 .policy-card nav {
   margin-bottom: 20px;
 }
-.policy-card section#section1 {
+.policy-card section#section1,
+.policy-card section#section2,
+.policy-card section#section3,
+.policy-card section#section4,
+.policy-card section#section5,
+.policy-card section#section6,
+.policy-card section#section7,
+.policy-card section#section8,
+.policy-card section#section9,
+.policy-card section#section10,
+.policy-card section#section11,
+.policy-card section#section12,
+.policy-card section#section13,
+.policy-card section#section14,
+.policy-card section#section15,
+.policy-card section#section16 {
   margin-bottom: 20px;
 }
+
+
 @media (max-width: 767px) {
   .policy-card {
     border-radius: 16px;
