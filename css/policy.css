@@ -89,3 +89,22 @@
   max-width: 600px;
   line-height: 1.6;
 }
+
+.policy-card section#section1 ul,
+.policy-card section#section2 ul,
+.policy-card section#section3 ul,
+.policy-card section#section4 ul,
+.policy-card section#section5 ul,
+.policy-card section#section6 ul,
+.policy-card section#section7 ul,
+.policy-card section#section8 ul,
+.policy-card section#section9 ul,
+.policy-card section#section10 ul,
+.policy-card section#section11 ul,
+.policy-card section#section12 ul,
+.policy-card section#section13 ul,
+.policy-card section#section14 ul,
+.policy-card section#section15 ul,
+.policy-card section#section16 ul {
+  list-style-position: inside;
+}
