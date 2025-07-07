@@ -37,6 +37,7 @@
 }
 .policy-card nav {
   margin-bottom: 20px;
+  list-style-position: inside;
 }
 .policy-card section#section1,
 .policy-card section#section2,
