@@ -28,6 +28,9 @@
 .policy-card p {
   text-align: justify;
 }
+.policy-card li {
+  text-align: justify;
+}
 
 @media (max-width: 767px) {
   .policy-card {
