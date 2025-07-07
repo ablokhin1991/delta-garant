@@ -32,6 +32,10 @@
   text-align: justify;
 }
 
+.policy-card h3 {
+  margin-bottom: 20px;
+}
+
 @media (max-width: 767px) {
   .policy-card {
     border-radius: 16px;
