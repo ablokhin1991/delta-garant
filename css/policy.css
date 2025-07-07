@@ -122,3 +122,28 @@
 .policy-card section#section17 ul {
   list-style-position: inside;
 }
+
+
+
+.policy-card ol {
+  list-style: none;
+  counter-reset: section;
+  padding: 0;
+  margin: 0;
+}
+
+.policy-card li {
+  counter-increment: section;
+  position: relative;
+  padding-left: 2.5em; /* место под номер */
+  text-align: justify;
+  text-align-last: left;
+}
+
+.policy-card li::before {
+  content: counter(section) ".";
+  position: absolute;
+  left: 0;
+  width: 2em;
+  text-align: right;
+}
