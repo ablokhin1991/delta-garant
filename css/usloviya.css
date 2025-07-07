@@ -1,0 +1,140 @@
+/* Общие стили обертки */
+.usloviya-wrapper {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.container-usloviya {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  .container-usloviya {
+    width: 90%;
+  }
+}
+
+.usloviya-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 2.5rem;
+}
+
+.usloviya-card p {
+  text-align: justify;
+}
+.usloviya-card li {
+  text-align: justify;
+}
+.usloviya-card li a {
+  text-align: justify;
+}
+
+.usloviya-card h3 {
+  margin-bottom: 20px;
+}
+.usloviya-card nav {
+  margin-bottom: 20px;
+  list-style-position: inside;
+}
+.usloviya-card section#section1,
+.usloviya-card section#section2,
+.usloviya-card section#section3,
+.usloviya-card section#section4,
+.usloviya-card section#section5,
+.usloviya-card section#section6,
+.usloviya-card section#section7,
+.usloviya-card section#section8,
+.usloviya-card section#section9,
+.usloviya-card section#section10,
+.usloviya-card section#section11,
+.usloviya-card section#section12,
+.usloviya-card section#section13,
+.usloviya-card section#section14,
+.usloviya-card section#section15,
+.usloviya-card section#section16 {
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 767px) {
+  .usloviya-card {
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+}
+
+.container-usloviya h1 {
+    margin-bottom: 40px;
+}
+
+.usloviya-card a {
+    color: #0036a7;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.usloviya-card a:hover {
+    color: #d62718;
+}
+
+.usloviya-section-title {
+  margin-bottom: 80px;
+}
+.usloviya-section-title p {
+  font-size: 16px;
+  color: #2e2e2e;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.usloviya-card section#section1 ul,
+.usloviya-card section#section2 ul,
+.usloviya-card section#section3 ul,
+.usloviya-card section#section4 ul,
+.usloviya-card section#section5 ul,
+.usloviya-card section#section6 ul,
+.usloviya-card section#section7 ul,
+.usloviya-card section#section8 ul,
+.usloviya-card section#section9 ul,
+.usloviya-card section#section10 ul,
+.usloviya-card section#section11 ul,
+.usloviya-card section#section12 ul,
+.usloviya-card section#section13 ul,
+.usloviya-card section#section14 ul,
+.usloviya-card section#section15 ul,
+.usloviya-card section#section16 ul,
+.usloviya-card section#section17 ul {
+  list-style-position: inside;
+}
+
+
+
+.usloviya-card ol {
+  list-style: none;
+  counter-reset: section;
+  padding: 0;
+  margin: 0;
+}
+
+.usloviya-card li {
+  counter-increment: section;
+  position: relative;
+  padding-left: 2.5em; /* место под номер */
+  text-align: justify;
+  text-align-last: left;
+}
+
+.usloviya-card li::before {
+  content: counter(section) ".";
+  position: absolute;
+  left: 0;
+  width: 2em;
+  text-align: right;
+}
