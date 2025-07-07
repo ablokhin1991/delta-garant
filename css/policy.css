@@ -42,3 +42,13 @@
 .container-policy h1 {
     margin-bottom: 40px;
 }
+
+.policy-card a {
+    color: #2e2e2e;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.policy-card a:hover {
+    color: #d62718;
+}
