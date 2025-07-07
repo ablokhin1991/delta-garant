@@ -38,7 +38,7 @@
 .policy-card nav {
   margin-bottom: 20px;
 }
-.policy-card section1 {
+.policy-card section#section1 {
   margin-bottom: 20px;
 }
 @media (max-width: 767px) {
