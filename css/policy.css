@@ -118,4 +118,9 @@
 .policy-card section#section16 ul,
 .policy-card section#section17 ul {
   list-style-position: inside;
+  text-align: justify;
+  /* последнюю строку (и на узких экранах строки-«одиночки») оставляем выровненной по левому краю */
+  -webkit-text-align-last: left;
+     -moz-text-align-last: left;
+          text-align-last: left;
 }
