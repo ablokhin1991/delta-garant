@@ -105,6 +105,7 @@
 .policy-card section#section13 ul,
 .policy-card section#section14 ul,
 .policy-card section#section15 ul,
-.policy-card section#section16 ul {
+.policy-card section#section16 ul,
+.policy-card section#section17 ul {
   list-style-position: inside;
 }
