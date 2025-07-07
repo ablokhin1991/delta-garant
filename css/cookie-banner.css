@@ -42,6 +42,7 @@
   cursor: pointer;
   border-radius: 4px;
   flex: 0 0 auto;
+  transition: background 0.3s;
 }
 
 .cookie-banner__button:hover {
