@@ -33,7 +33,7 @@
 }
 
 .cookie-banner__button {
-  background-color: #4CAF50;
+  background-color: #0036a7;
   border: none;
   color: white;
   padding: 8px 16px;
@@ -45,7 +45,7 @@
 }
 
 .cookie-banner__button:hover {
-  background-color: #45a049;
+  background-color: #002a7a;
 }
 
 @media (max-width: 600px) {
