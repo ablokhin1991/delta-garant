@@ -27,14 +27,13 @@
     border-radius: 8px;
     background-color: #f4f6fd;
     position: relative;
-    /*transition: all 0.3s ease;*/
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимируем только нужные свойства */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 2; /* Начальный слой */
 }
 
 .offer:hover {
-    /*transform: scale(1.01); /* Увеличение на 20% */
-    transform: translate(0, -5px); /* Легкий сдвиг вместо масштабирования */
+   /* transform: translate(0, -5px);  Легкий сдвиг вместо масштабирования */
+    transform: translateY(-10px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
 }
 
