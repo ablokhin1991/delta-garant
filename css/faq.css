@@ -38,8 +38,8 @@
 }
 
 .faq-question .icon-wrapper {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   background: white;
   border-radius: 50%;
   display: flex;
@@ -60,7 +60,7 @@
 }
 
 .faq-question .icon-wrapper i {
-  font-size: 25px;
+  font-size: 32px;
   color: #0036a7;
   transition: color 0.3s ease;
 }
@@ -145,8 +145,8 @@
   }
   
   .faq-question .icon-wrapper {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     /*margin-right: 1rem;*/
   }
   .faq-question h3 {
@@ -161,7 +161,7 @@
     padding-bottom: 1.5rem;
   }
   .faq-question .icon-wrapper i {
-  font-size: 20px;
+  font-size: 32px;
   color: #0036a7;
   transition: color 0.3s ease;
 }
@@ -174,7 +174,8 @@
   
   .faq-question {
     padding: 2rem;
-    align-items: center; /* Исправлено: центрируем по вертикали */
+    align-items: center;
+    display: block;
   }
   .answer-content {
     /*padding: 0 1.2rem !important; Важно: убираем левый отступ */
