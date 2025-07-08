@@ -34,7 +34,8 @@
 .offer:hover {
    /* transform: translate(0, -5px);  Легкий сдвиг вместо масштабирования */
     transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  Лёгкая тень */
+    box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
 }
 
 .offer-mobile {
