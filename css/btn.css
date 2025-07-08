@@ -2,7 +2,7 @@
   .offer__button {
     width: 150px;
     height: 60px;
-    background: #f4f6fd;
+    background: #d62718;
     position: relative;
     border-radius: 5px;
     text-align: center;
@@ -11,14 +11,14 @@
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-weight: bold;
-    color:#0036a7;
+    color:#fff;
   
     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 6px 6px 10px rgba(0, 0, 0, 0.2);
   }
   
   .offer__button:hover {
-    background: #d62718; 
+    background: #bd1e10; 
     color: #fff; 
     /*box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 /*6px 6px 10px rgba(0, 0, 0, 0.2);
