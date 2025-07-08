@@ -50,8 +50,8 @@
 }
 
 .case-icon {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background: white;
   border-radius: 50%;
   display: flex;
@@ -71,7 +71,7 @@
 }
 
 .case-icon i {
-  font-size: 24px;
+  font-size: 32px;
   color: #0036a7;
   transition: color 0.3s ease;
 }
