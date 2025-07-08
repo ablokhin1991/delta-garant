@@ -331,6 +331,9 @@
   .workflow-historys-title {
    text-align: left;
   }
+  .workflow-historys-description {
+    text-align: left;
+  }
   
   .workflow-historys-content {
     padding: 15px;
