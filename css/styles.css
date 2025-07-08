@@ -446,7 +446,7 @@ header .container {
 
     /* Результаты */
     .result {
-        margin-top: 20px;
+        margin-top: 40px !important;
         padding: 0rem !important;
         background-color: #fff;
     }
