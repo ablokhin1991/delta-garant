@@ -65,8 +65,8 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
-    box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.15), 
-            6px -6px 10px rgba(255, 255, 255, 0.8);
+    /*box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.15), 
+            6px -6px 10px rgba(255, 255, 255, 0.8);*/
 
 
 }
