@@ -206,7 +206,7 @@ function displayResults(results) {
                 : ''
             }
           </div>
-          <div class="offer__separator" style="flex-shrink: 0; width: 1px; height: 50px; background: #ddd; margin: 0 15px; ${result.isStopFactor ? 'display: none;' : ''}"></div>
+          <div class="offer__separator" style="flex-shrink: 0; width: 2px; height: 100px; background: #E2E8F0; margin: 0 15px; ${result.isStopFactor ? 'display: none;' : ''}"></div>
           ${
             !result.isStopFactor
               ?  
