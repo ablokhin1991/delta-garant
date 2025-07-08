@@ -334,6 +334,10 @@
   .workflow-historys-description {
     text-align: left;
   }
+
+  .workflow-historys-icon {
+    margin-bottom: 0px !important;
+  }
   
   .workflow-historys-content {
     padding: 15px;
