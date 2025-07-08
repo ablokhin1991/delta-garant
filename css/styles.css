@@ -421,6 +421,7 @@ header .container {
 
     .content {
         width: 90%;
+        padding: 2rem;
     }
 
     /* Контейнер для контента */
