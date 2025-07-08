@@ -243,14 +243,12 @@ header .container {
 }
 
 .result__header {
-    display: flex;
-    align-items: center; /* Выравниваем элементы по центру по вертикали */
-    gap: 10px; /* Расстояние между заголовком и текстом */
+    gap: 10px;
     margin-bottom: 2rem;
   }
   
   .result__count {
-    color: #5a5f73;
+    color: #2e2e2e;
     white-space: nowrap; 
     /*margin-bottom: 20px;*/
   }
@@ -449,6 +447,8 @@ header .container {
     /* Результаты */
     .result {
         margin-top: 20px;
+        padding: 0rem !important;
+        background-color: #fff;
     }
 
     /* Медиазапрос для мобильных устройств (максимальная ширина 768px) */
