@@ -143,7 +143,7 @@
 
 @media (max-width: 975px)/*768px)*/ {
     .result__offers {
-      gap: 12px; /* Немного уменьшить отступы между карточками */
+      gap: 30px;
     }
   
     .offer {
@@ -151,6 +151,7 @@
       align-items: stretch !important;
       padding: 2rem !important;
       gap: 12px !important;
+      background-color: #e6f0ff;
     }
   
     .offer__logo {
