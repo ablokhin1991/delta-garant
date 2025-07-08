@@ -147,10 +147,12 @@
   .faq-question .icon-wrapper {
     width: 80px;
     height: 80px;
+    margin-bottom: 2rem;
     /*margin-right: 1rem;*/
   }
   .faq-question h3 {
     min-height: 50px; /* Новая высота иконки */
+    margin-bottom: 2rem;
   }
   
   .answer-content {
