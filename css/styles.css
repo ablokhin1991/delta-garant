@@ -93,10 +93,11 @@ header .container {
     width: 80%;
     margin: 20px auto 0 auto; /* 20px сверху, авто отступы слева и справа, 0 снизу */
     padding: 20px;
+    padding: 2.5rem;
     background-color: #ffffff;
-    border-radius: 8px;
+    border-radius: 16px;
     border: 1px solid #e6e8ed;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     position: relative; /* Чтобы блок контента был под Hero */
     z-index: 0; /* Это гарантирует, что блок Content будет под Hero */
 }
