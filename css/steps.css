@@ -329,6 +329,9 @@
   .workflow-step-description {
     text-align: left;
   }
+  .workflow-step-icon {
+    margin-bottom: 0px !important;
+  }
   
   .workflow-step-content {
     padding: 15px;
