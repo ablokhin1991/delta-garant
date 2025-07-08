@@ -302,6 +302,7 @@
 @media (max-width: 992px) {
   .workflow-steps {
     flex-wrap: wrap;
+    gap: 40px;
   }
   
   .workflow-step {
@@ -317,6 +318,7 @@
 @media (max-width: 576px) {
   .workflow-step {
     flex: 0 0 100%;
+    align-items: flex-start;
   }
   
   .workflow-section-title h2 {
