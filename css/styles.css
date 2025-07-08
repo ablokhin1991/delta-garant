@@ -246,6 +246,7 @@ header .container {
     display: flex;
     align-items: center; /* Выравниваем элементы по центру по вертикали */
     gap: 10px; /* Расстояние между заголовком и текстом */
+    margin-bottom: 2rem;
   }
   
   .result__count {
