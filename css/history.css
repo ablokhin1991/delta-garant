@@ -304,8 +304,7 @@
 
 @media (max-width: 992px) {
   .workflow-history {
-    flex-wrap: wrap;
-    gap: 40px;
+    flex-wrap: wrap; gap: 40px;
   }
   
   .workflow-historys {
