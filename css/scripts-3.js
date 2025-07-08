@@ -192,13 +192,13 @@ function displayResults(results) {
             <strong>${result.name}</strong>
             ${
               result.data 
-                ? `<div class="offer__personal-data" style="font-size: 16px; color: #5a5f73;">
+                ? `<div class="offer__personal-data" style="font-size: 16px; color: #2e2e2e;">
                     ${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}
                     <div style="margin-top: 0px;">
                       <span>Сложность оформления:</span>
                       <div class="offer__rating" style="display: flex; gap: 5px; margin-top: 5px;">
                         ${Array(5).fill(0).map((_, i) => 
-                          `<div style="width: 15px; height: 15px; border-radius: 50%; background-color: ${i < rating ? '#9c9c9c' : '#e3e3e3'};"></div>`
+                          `<div style="width: 15px; height: 15px; border-radius: 50%; background-color: ${i < rating ? '#5a5f73' : '#e6e9f0'};"></div>`
                         ).join('')}
                       </div>
                     </div>
@@ -212,7 +212,7 @@ function displayResults(results) {
               ?  
                 `<div class="offer__rate" style="text-align: right;">
                   <div style="font-size: 26px; font-weight: 500;">${result.cost.toLocaleString()} руб.</div>
-                  <div style="font-size: 16px; color: #5a5f73;">${result.rate}% годовых</div>
+                  <div style="font-size: 16px; color: #2e2e2e;">${result.rate}% годовых</div>
                 </div>
                 <div class="offer__buttons" style="margin-left: 15px; margin-right: 20px;">
                   <button class="offer__button" data-index="${index}" style="padding: 5px 10px;">
@@ -220,7 +220,7 @@ function displayResults(results) {
                   </button>
                 </div>`
               :  
-                `<div class="offer__rate" style="font-size: 14px; font-weight: 300; text-align: right; color: #555; margin-right: 20px;">
+                `<div class="offer__rate" style="font-size: 16px; font-weight: 300; text-align: right; color: #2e2e2e; margin-right: 20px;">
                   Стоп-факторы: <br>${result.rate}
                 </div>`
           }
