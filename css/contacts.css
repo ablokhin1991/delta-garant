@@ -49,8 +49,8 @@
 
 /* Иконки контактов */
 .contact-icon {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   background: white;
   border-radius: 50%;
   display: flex;
@@ -65,7 +65,7 @@
 }
 
 .contact-icon i {
-  font-size: 25px;
+  font-size: 32px;
   color: #0036a7;
   transition: all 0.4s ease;
 }
@@ -229,16 +229,6 @@
   
   .contact-details h3 {
     font-size: 18px;
-  }
-
-  
-  .contact-icon {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .contact-icon i {
-    font-size: 20px;
   }
   
   .form-group input {
