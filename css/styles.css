@@ -238,6 +238,8 @@ header .container {
     font-size: 26px;
     color: #0036a7;
     /*margin-bottom: 20px;*/
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 .result__header {
@@ -248,7 +250,7 @@ header .container {
   
   .result__count {
     color: #5a5f73;
-    white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+    white-space: nowrap; 
     /*margin-bottom: 20px;*/
   }
 
