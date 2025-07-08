@@ -320,9 +320,14 @@
     flex: 0 0 100%;
     align-items: flex-start;
   }
-  
+  .workflow-step-title {
+  text-align: left;
+  }
   .workflow-section-title h2 {
     font-size: 2.2rem;
+  }
+  .workflow-step-description {
+    text-align: left;
   }
   
   .workflow-step-content {
