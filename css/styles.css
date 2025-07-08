@@ -235,8 +235,9 @@ header .container {
 
 
 .result__title-wrap h2 {
+    font-size: 26px;
     color: #0036a7;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 
 .result__header {
@@ -248,7 +249,7 @@ header .container {
   .result__count {
     color: #5a5f73;
     white-space: nowrap; /* Запрещаем перенос текста на новую строку */
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
   }
 
 /* Стили для ошибок заполнения */
