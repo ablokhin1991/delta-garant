@@ -320,6 +320,8 @@
 @media (max-width: 576px) {
   .workflow-historys {
     flex: 0 0 100%;
+    align-items: flex-start;
+    padding: 0px !important;
   }
   
   .workflow-section-title h2 {
