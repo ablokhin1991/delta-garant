@@ -286,9 +286,9 @@
   box-shadow: 0 5px 15px rgba(76, 201, 240, 0.5);
 }
 
-.workflow-step-title {
+/*.workflow-step-title {
   margin-bottom: 2.5rem;
-}
+}*/
 
 .workflow-step-description {
   color: #2e2e2e;
