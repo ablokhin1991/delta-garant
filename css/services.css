@@ -197,7 +197,7 @@
     }
     
     .service-card {
-        padding: 1.8rem;
+        padding: 2rem;
         gap: 1.2rem;
     }
     
@@ -218,7 +218,7 @@
     }
     
     .service-card {
-        padding: 1.5rem;
+        padding: 2rem;
         gap: 1rem;
     }
     
@@ -239,7 +239,7 @@
 
 @media (max-width: 480px) {
     .service-card {
-        padding: 1.2rem;
+        padding: 2rem;
     }
     
     .service-title {
