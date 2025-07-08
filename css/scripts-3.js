@@ -187,7 +187,7 @@ function displayResults(results) {
       const rating = Number(result.rating) || 0;
       return `
         <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 2.5rem; border-bottom: 1px solid #ddd;">
-          <div class="offer__logo" style="width: 50px; height: 50px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-left: 20px;"></div>
+          <div class="offer__logo" style="width: 70px; height: 70px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-left: 20px;"></div>
           <div class="offer__details" style="flex: 1; padding: 0 15px;">
             <strong>${result.name}</strong>
             ${
