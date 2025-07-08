@@ -2,7 +2,7 @@
   .offer__button {
     width: 150px;
     height: 60px;
-    background: #d62718;
+    background: #0036a7;
     position: relative;
     border-radius: 5px;
     text-align: center;
@@ -18,7 +18,7 @@
   }
   
   .offer__button:hover {
-    background: #bd1e10; 
+    background: #0049d2; 
     color: #fff; 
     /*box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
                 /*6px 6px 10px rgba(0, 0, 0, 0.2);
@@ -27,7 +27,7 @@
   
   /* Эффект при нажатии */
   .offer__button:active {
-    background: #284db5; /* Фон кнопки */
+    background: #0036a7; /* Фон кнопки */
     color: #fff; /* Основной цвет текста */
     opacity: 1; /* Полная видимость */
     box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
