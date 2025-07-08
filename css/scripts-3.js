@@ -192,13 +192,13 @@ function displayResults(results) {
             <strong>${result.name}</strong>
             ${
               result.data 
-                ? `<div class="offer__personal-data" style="font-size: 12px; font-weight: 300; color: #555;">
+                ? `<div class="offer__personal-data" style="font-size: 14px; color: #5a5f73;">
                     ${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}
                     <div style="margin-top: 0px;">
                       <span>Сложность оформления:</span>
                       <div class="offer__rating" style="display: flex; gap: 5px; margin-top: 5px;">
                         ${Array(5).fill(0).map((_, i) => 
-                          `<div style="width: 10px; height: 10px; border-radius: 50%; background-color: ${i < rating ? '#9c9c9c' : '#e3e3e3'};"></div>`
+                          `<div style="width: 15px; height: 15px; border-radius: 50%; background-color: ${i < rating ? '#9c9c9c' : '#e3e3e3'};"></div>`
                         ).join('')}
                       </div>
                     </div>
