@@ -188,11 +188,11 @@ function displayResults(results) {
       return `
         <div class="offer" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 2.5rem; border-bottom: 1px solid #ddd;">
           <div class="offer__logo" style="width: 70px; height: 70px; background-image: url('${result.logo}'); background-size: cover; background-position: center; margin-left: 20px;"></div>
-          <div class="offer__details" style="flex: 1; padding: 0 15px;">
+          <div class="offer__details" style="flex: 1; padding: 0 15px; font-size: 26px; font-weight: 500;">
             <strong>${result.name}</strong>
             ${
               result.data 
-                ? `<div class="offer__personal-data" style="font-size: 14px; color: #5a5f73;">
+                ? `<div class="offer__personal-data" style="font-size: 16px; color: #5a5f73;">
                     ${result.data.split('\n').map(line => `<div>${line}</div>`).join('')}
                     <div style="margin-top: 0px;">
                       <span>Сложность оформления:</span>
@@ -211,8 +211,8 @@ function displayResults(results) {
             !result.isStopFactor
               ?  
                 `<div class="offer__rate" style="text-align: right;">
-                  <div style="font-size: 16px; font-weight: bold;">${result.cost.toLocaleString()} руб.</div>
-                  <div style="font-size: 14px; color: #5a5f73;">${result.rate}% годовых</div>
+                  <div style="font-size: 26px; font-weight: 500;">${result.cost.toLocaleString()} руб.</div>
+                  <div style="font-size: 16px; color: #5a5f73;">${result.rate}% годовых</div>
                 </div>
                 <div class="offer__buttons" style="margin-left: 15px; margin-right: 20px;">
                   <button class="offer__button" data-index="${index}" style="padding: 5px 10px;">
