@@ -3,7 +3,7 @@
     position: relative; /* Для контекста позиционирования */
     display: flex;
     flex-direction: column; /* Расположить предложения по вертикали */
-    gap: 16px; /* Отступ между блоками */
+    gap: 20px; /* Отступ между блоками */
   }
 
   .offer__separator {
