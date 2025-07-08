@@ -205,10 +205,10 @@ header .container {
 /* Результаты */
 .result {
     margin-top: 30px;
-    /*padding: 20px;
-    border: 1px solid #f4f4f4;
-    border: 2px solid #E2E8F0;
-    background-color: #e6f0ff;*/
+    padding: 20px;
+    /*border: 1px solid #f4f4f4;
+    border: 2px solid #E2E8F0;*/
+    background-color: #e6f0ff;
     border-radius: 8px;
 }
 
