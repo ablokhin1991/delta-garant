@@ -327,6 +327,10 @@
   .workflow-section-title h2 {
     font-size: 2.2rem;
   }
+
+  .workflow-historys-title {
+   text-align: left;
+  }
   
   .workflow-historys-content {
     padding: 15px;
