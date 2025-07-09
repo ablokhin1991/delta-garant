@@ -16,6 +16,15 @@
 .container-definition h2 {
   margin-top: 0px !important;
 }
+
+.definition-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+
 /* Стили для блока определения */
 .guarantee-definition {
   max-width: 1400px;
