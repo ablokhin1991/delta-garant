@@ -89,7 +89,11 @@
   justify-content: center;
   height: 100%;
   gap: 2rem;
-  
+  max-width: 1400px;
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .definition-item {
