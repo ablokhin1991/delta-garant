@@ -81,17 +81,17 @@
   overflow: hidden;
   counter-increment: feature-counter;
 }
-.definition-card::before {
+/*.definition-card::before {
   content: counter(feature-counter);
   position: absolute;
   top: 1rem;
   right: 1.5rem;
   font-size: 5rem;
   font-weight: 800;
-  /*color: rgba(67, 97, 238, 0.05);*/
+  /*color: rgba(67, 97, 238, 0.05);
   color: #e6e9f0;
   line-height: 1;
-}       
+}       */
 .definition-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
