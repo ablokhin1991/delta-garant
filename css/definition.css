@@ -23,6 +23,12 @@
     gap: 2.5rem;
     align-items: stretch;
 }
+@media (max-width: 768px) {
+ .definition-section {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
 
 
 /* Стили для блока определения */
