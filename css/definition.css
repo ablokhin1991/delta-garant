@@ -19,15 +19,13 @@
 /* Стили для блока определения */
 .guarantee-definition {
   max-width: 1400px;
-  width: 80%;
+  /*width: 80%;*/
 }
 
 .definition {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: var(--dark);
+  font-size: 16px;
+  color: #2e2e2e;
   margin-bottom: 1.5rem;
-  text-align: center;
 }
 
 /* Адаптивные стили */
