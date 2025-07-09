@@ -103,3 +103,21 @@
     padding: 2rem;
   }
 }
+.definition-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  /*background: linear-gradient(45deg, var(--accent), var(--primary));*/
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
+  border: 3px solid #0036a7;
+}
+.definition-icon {
+  font-size: 32px;
+  color: #0036a7;
+}
