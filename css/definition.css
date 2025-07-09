@@ -60,61 +60,6 @@
     margin-bottom: 2rem;
   }
 }
-.definition-grid {
-  display: grid;
-  /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
-  gap: 2rem;
-  counter-reset: feature-counter;
-}
-@media (max-width: 768px) {
-  .definition-grid {
-    gap: 1.5rem;
-  }
-}
-.definition-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-  counter-increment: feature-counter;
-}
-/*.definition-card::before {
-  content: counter(feature-counter);
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-size: 5rem;
-  font-weight: 800;
-  /*color: rgba(67, 97, 238, 0.05);
-  color: #e6e9f0;
-  line-height: 1;
-}       */
-.definition-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
-}
-        
-.definition-card:hover .definition-icon-wrapper {
-  transform: scale(1.1) translateY(-10px);
-  background: #0036a7;
-  box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
-}
-.definition-card:hover .definition-icon-wrapper i {
-  color: white;
-}
-.definition-card p {
-  color: #2e2e2e;
-  line-height: 1.6;
-  font-size: 16px;
-}
-@media (max-width: 768px) {    
-  .definition-card {
-    padding: 2rem;
-  }
-}
 .definition-icon-wrapper {
   width: 80px;
   height: 80px;
@@ -132,4 +77,102 @@
 .definition-icon {
   font-size: 32px;
   color: #0036a7;
+}
+
+
+
+
+
+.definition-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 2rem;
+  
+}
+
+.definition-item {
+  display: flex;
+  align-items: center;
+  /*margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;*/
+}
+
+.definition-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.definition-item:hover .contact-icon {
+  transform: scale(1.1);
+  background: #0036a7;
+  box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
+}
+
+.definition-item:hover .contact-icon i {
+  color: white;
+}
+@media (max-width: 768px) {
+  .definition-item {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Иконки контактов */
+.definition-icon {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
+  position: relative;
+  flex-shrink: 0;
+  border: 3px solid #0036a7;
+  margin-right: 25px;
+  transition: all 0.4s ease;
+}
+
+.definition-icon i {
+  font-size: 32px;
+  color: #0036a7;
+  transition: all 0.4s ease;
+}
+
+.definition-item:hover .definition-icon {
+  transform: scale(1.1);
+  background: #0036a7;
+  box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
+}
+
+.definition-item:hover .definition-icon i {
+  color: white;
+}
+
+.definition-details h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.definition-details p {
+  color: #2e2e2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.definition-link {
+    color: #2e2e2e;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.definition-link:hover {
+    color: #d62718;
 }
