@@ -1,0 +1,105 @@
+.definition-wrapper {
+  /*background: #fff;*/
+  padding: 80px 0;
+  overflow: hidden;
+}
+.container-definition {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 80%;
+}
+@media (max-width: 768px) {
+ .container-definition {
+    width: 90%;
+  }
+}
+.container-definition h2 {
+  margin-top: 0px !important;
+}
+/* Стили для блока определения */
+.guarantee-definition {
+  max-width: 900px;
+  margin: 0 auto 3.5rem;
+  padding: 0 20px;
+}
+
+.definition {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .definition {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .definition {
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .guarantee-definition {
+    margin-bottom: 2rem;
+  }
+}
+.definition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  counter-reset: feature-counter;
+}
+@media (max-width: 768px) {
+  .definition-grid {
+    gap: 1.5rem;
+  }
+}
+.definition-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  counter-increment: feature-counter;
+}
+.definition-card::before {
+  content: counter(feature-counter);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 5rem;
+  font-weight: 800;
+  /*color: rgba(67, 97, 238, 0.05);*/
+  color: #e6e9f0;
+  line-height: 1;
+}       
+.definition-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
+}
+        
+.definition-card:hover .icon-wrapper {
+  transform: scale(1.1) translateY(-10px);
+  background: #0036a7;
+  box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
+}
+.definition-card:hover .icon-wrapper i {
+  color: white;
+}
+.definition-card p {
+  color: #2e2e2e;
+  line-height: 1.6;
+  font-size: 16px;
+}
+@media (max-width: 768px) {    
+  .definition-card {
+    padding: 2rem;
+  }
+}
