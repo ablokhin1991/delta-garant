@@ -18,9 +18,8 @@
 }
 /* Стили для блока определения */
 .guarantee-definition {
-  max-width: 900px;
-  margin: 0 auto 3.5rem;
-  padding: 0 20px;
+  max-width: 1400px;
+  width: 80%;
 }
 
 .definition {
