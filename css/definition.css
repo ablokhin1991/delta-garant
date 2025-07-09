@@ -88,12 +88,12 @@
   box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
 }
         
-.definition-card:hover .icon-wrapper {
+.definition-card:hover .definition-icon-wrapper {
   transform: scale(1.1) translateY(-10px);
   background: #0036a7;
   box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
 }
-.definition-card:hover .icon-wrapper i {
+.definition-card:hover .definition-icon-wrapper i {
   color: white;
 }
 .definition-card p {
