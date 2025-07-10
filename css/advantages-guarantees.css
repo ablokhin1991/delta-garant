@@ -28,14 +28,11 @@
 }
 
 .advantages-guarantees-header p {
-    font-size: 1.2rem;
-    color: var(--dark);
     max-width: 700px;
     margin: 0 auto;
 }
 
 .intro-text {
-    color: var(--dark);
     margin: 0 auto 2.5rem;
     position: relative;
 }
@@ -149,8 +146,6 @@
 }
 
 .advantages-guarantees-card p {
-    color: var(--dark);
-    line-height: 1.6;
     margin-bottom: 0;
     flex-grow: 1; /* Растягиваем текст для заполнения пространства */
 }
