@@ -24,6 +24,7 @@
 .intro-text {
     margin: 0 auto 2.5rem;
     position: relative;
+    margin: 0 auto 80px;
     /*padding: 2.5rem 3rem;
     background: #e6f0ff;
     border-left: 4px solid var(--accent);
