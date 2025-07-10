@@ -74,13 +74,44 @@
     font-size: 1.4rem;
 }
 
+/* Основные изменения: плитка 2x2 и одинаковая высота */
 .advantages-guarantees-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Фиксированные 2 колонки */
+    grid-template-rows: repeat(2, 1fr); /* Фиксированные 2 строки */
     gap: 2rem;
     counter-reset: advantages-counter;
 }
 
+/* Обеспечиваем одинаковую высоту карточек */
+.advantages-guarantees-grid {
+    grid-auto-rows: 1fr;
+}
+
+.advantages-guarantees-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Важно для одинаковой высоты */
+}
+
+@media (max-width: 768px) {
+    .advantages-guarantees-grid {
+        grid-template-columns: 1fr; /* 1 колонка на мобильных */
+        grid-template-rows: auto; /* Автоматические строки */
+        gap: 1.5rem;
+    }
+    
+    .advantages-guarantees-card {
+        padding: 2rem;
+    }
+    
+    .intro-text {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Остальные стили карточки */
 .advantages-guarantees-card {
     background: white;
     border-radius: 16px;
@@ -138,29 +169,16 @@
     color: #0036a7;
 }
 
+.advantages-guarantees-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
 .advantages-guarantees-card p {
     color: #2e2e2e;
     line-height: 1.6;
-}
-@media (max-width: 1200px) {
-    .advantages-guarantees-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 768px) {
-    .advantages-guarantees-grid {
-        gap: 1.5rem;
-        grid-template-columns: 1fr; 
-    }
-    
-    .advantages-guarantees-card {
-        padding: 2rem;
-    }
-    
-    .intro-text {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+    margin-bottom: 0;
+    flex-grow: 1; /* Растягиваем текст для заполнения пространства */
 }
 
 @media (max-width: 480px) {
