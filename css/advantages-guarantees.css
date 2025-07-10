@@ -33,7 +33,7 @@
     padding: 2.5rem 3rem;
     background: #e6f0ff;
     border-left: 4px solid var(--primary);
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 16px 16px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid rgb(221 227 237);
 }
