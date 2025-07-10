@@ -24,11 +24,11 @@
 .intro-text {
     margin: 0 auto 2.5rem;
     position: relative;
-    padding: 2.5rem 3rem;
+    /*padding: 2.5rem 3rem;
     background: #e6f0ff;
     border-left: 4px solid var(--accent);
     border-radius: 0 16px 16px 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);*/
 }
 
 /*.highlighted-text {
