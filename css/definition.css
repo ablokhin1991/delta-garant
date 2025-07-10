@@ -29,7 +29,12 @@
     grid-template-columns: 1fr;
   }
 }
-
+@media (max-width: 992px) {
+ .definition-section {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Стили для блока определения */
 .guarantee-definition {
