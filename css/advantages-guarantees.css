@@ -1,7 +1,7 @@
 :root {
     --primary: #0036a7;
     --secondary: #7209b7;
-    --accent: #4cc9f0;
+    --accent: #0036a7;
     --light: #f8f9fa;
     --dark: #2e2e2e;
 }
@@ -51,7 +51,7 @@
     padding: 1rem 1.5rem;
     background-color: white;
     border-radius: 8px;
-    color: var(--primary);
+    color: var(--accent);
     font-weight: 600;
     border: 1px solid rgba(67, 97, 238, 0.15);
 }
