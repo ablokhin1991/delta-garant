@@ -75,6 +75,7 @@
   min-height: 60px; /* Высота иконки */
   font-weight: 400;
   color: #2e2e2e;
+  font-size: 18px;
 }
 
 .faq-question .fa-chevron-down {
