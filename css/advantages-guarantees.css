@@ -31,7 +31,7 @@
     margin: 0 auto 2.5rem;
     position: relative;
     padding: 2.5rem 3rem;
-    background: linear-gradient(135deg, rgba(67, 97, 238, 0.03) 0%, rgba(114, 9, 183, 0.03) 100%);
+    background: #e6f0ff;
     border-left: 4px solid var(--primary);
     border-radius: 0 12px 12px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
