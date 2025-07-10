@@ -1,5 +1,5 @@
 .definition-wrapper {
-  /*background: #fff;*/
+  background: #fff;
   padding: 80px 0;
   overflow: hidden;
 }
@@ -42,7 +42,7 @@
   background: white;
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
@@ -107,7 +107,7 @@
   background: white;
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .definition-item {
