@@ -115,7 +115,6 @@
         .feature-card p {
             color: #2e2e2e;
             line-height: 1.6;
-            font-size: 16px;
         }
         
         @media (max-width: 768px) {
@@ -145,7 +144,6 @@
   margin-bottom: 80px;
 }
 .why-us-section-title p {
-  font-size: 16px;
   color: #2e2e2e;
   max-width: 600px;
   line-height: 1.6;

@@ -120,7 +120,6 @@
 }
 
 .case-period {
-  font-size: 16px;
   color: #6c757d;
   background: #f5faff;
   padding: 0.25rem 0.75rem;
@@ -235,7 +234,6 @@
   margin-bottom: 80px;
 }
 .cases-section-title p {
-  font-size: 16px;
   color: #2e2e2e;
   max-width: 600px;
   line-height: 1.6;

@@ -73,8 +73,6 @@
   display: flex;
   align-items: center;
   min-height: 60px; /* Высота иконки */
-
-  font-size: 16px;
   font-weight: 400;
   color: #2e2e2e;
 }
@@ -124,8 +122,6 @@
 
 .faq-answer p {
   color: #6c757d;
-  line-height: 1.7;
-  font-size: 16px;
   margin: 0;
 }
 
@@ -190,10 +186,8 @@
   margin-bottom: 80px;
 }
 .faq-section-title p {
-  font-size: 16px;
   color: #2e2e2e;
   max-width: 600px;
-  line-height: 1.6;
 }
 .container-faq h2 {
   margin-top: 0px !important;
