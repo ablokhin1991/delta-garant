@@ -52,7 +52,6 @@
     border-radius: 8px;
     color: var(--primary);
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.1);
     border: 1px solid rgba(67, 97, 238, 0.15);
 }
 
