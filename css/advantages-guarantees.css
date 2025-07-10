@@ -1,10 +1,4 @@
-:root {
-    --primary: #0036a7;
-    --secondary: #7209b7;
-    --accent: #0036a7;
-    --light: #f8f9fa;
-    --dark: #2e2e2e;
-}
+
 
 .advantages-guarantees-wrapper {
     padding: 80px 0;
@@ -32,13 +26,13 @@
     position: relative;
     padding: 2.5rem 3rem;
     background: #e6f0ff;
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid var(--accent);
     border-radius: 0 16px 16px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 /*.highlighted-text {
-    color: var(--primary);
+    color: var(--accent);
     font-weight: 600;
     display: inline-flex;
     align-items: center;
