@@ -1,14 +1,4 @@
 /* Основные переменные цветов */
-:root {
-    --services-primary: #4361ee;
-    --services-secondary: #7209b7;
-    --services-accent: #4cc9f0;
-    --services-light: #f8f9fa;
-    --services-dark: #212529;
-    --services-blue: #0036a7;
-    --services-red: #d62718;
-    --services-red-hover: #bd1e10;
-}
 
 /* Секция услуг */
 .services-section {
@@ -75,19 +65,19 @@
     justify-content: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 10px 25px rgba(0, 54, 167, 0.2);
-    border: 3px solid var(--services-blue);
+    border: 3px solid var(--accent);
 }
 
 .service-card:hover .service-icon-wrapper {
     transform: scale(1.1) translateY(-10px);
-    background: var(--services-blue);
+    background: var(--accent);
     box-shadow: 0 15px 30px rgba(0, 54, 167, 0.4);
 }
 
 /* Иконка услуги */
 .service-icon {
     font-size: 32px;
-    color: var(--services-blue);
+    color: var(--accent);
     transition: color 0.3s ease;
 }
 
@@ -122,7 +112,7 @@
     grid-row: 3;
     display: flex;
     align-items: center;
-    background: var(--services-red);
+    background: var(--red);
     color: #fff;
     padding: 8px 15px;
     border-radius: 8px;
@@ -136,12 +126,12 @@
 }
 
 .service-card:hover .service-button {
-    background: var(--services-red-hover);
+    background: var(--red-hover);
 }
 
 .service-card:active .service-button {
     opacity: 1;
-    background: var(--services-red);
+    background: var(--red);
     box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
                 inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
