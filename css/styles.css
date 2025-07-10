@@ -25,13 +25,13 @@ html {
 p {
     font-weight: 400; /* Легкий текст для лучшей читаемости */
     line-height: 1.6; /* Улучшенная читаемость */
-    font-size: 16px;
+    font-size: 18px;
     color: #2e2e2e;
 }
 li {
     font-weight: 400; /* Легкий текст для лучшей читаемости */
     line-height: 1.6; /* Улучшенная читаемость */
-    font-size: 16px;
+    font-size: 18px;
     color: #2e2e2e;
 }
 
@@ -68,7 +68,7 @@ h3 {
 a {
     font-weight: 400;
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /* Шапка сайта */
