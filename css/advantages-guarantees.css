@@ -149,7 +149,7 @@
 }
 
 .advantages-guarantees-card p {
-    color: #2e2e2e;
+    color: var(--dark);
     line-height: 1.6;
     margin-bottom: 0;
     flex-grow: 1; /* Растягиваем текст для заполнения пространства */
