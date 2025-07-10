@@ -32,16 +32,6 @@
     margin-bottom: 2rem;
 }
 
-.advantages-guarantees-header h2 {
-    font-size: 2.5rem;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 1rem;
-    font-weight: 800;
-}
-
 .advantages-guarantees-header p {
     font-size: 1.2rem;
     color: var(--dark);
@@ -186,9 +176,6 @@
         padding: 2rem 1rem;
     }
     
-    .advantages-guarantees-header h2 {
-        font-size: 2rem;
-    }
     
     .intro-text {
         margin-bottom: 2rem;
