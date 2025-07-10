@@ -37,17 +37,6 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.intro-text::before {
-    content: """;
-    position: absolute;
-    top: 1rem;
-    left: 1.5rem;
-    font-family: serif;
-    font-size: 5rem;
-    color: rgba(67, 97, 238, 0.1);
-    line-height: 1;
-}
-
 /*.highlighted-text {
     color: var(--primary);
     font-weight: 600;
