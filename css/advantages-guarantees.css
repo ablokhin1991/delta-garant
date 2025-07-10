@@ -27,10 +27,6 @@
     margin-top: 0px !important;
 }
 
-.advantages-guarantees-header p {
-    max-width: 600px;
-}
-
 .intro-text {
     margin: 0 auto 2.5rem;
     position: relative;
@@ -158,4 +154,12 @@
     .intro-text {
         margin-bottom: 2rem;
     }
+}
+
+.advantages-guarantees-section-title {
+  margin-bottom: 80px;
+}
+.advantages-guarantees-section-title p {
+  max-width: 600px;
+  line-height: 1.6;
 }
