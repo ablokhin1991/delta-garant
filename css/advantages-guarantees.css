@@ -31,21 +31,9 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);*/
 }
 
-/*.highlighted-text {
-    color: var(--accent);
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}*/
 .highlighted-text {
     display: block;
     margin-top: 1.5rem;
-    padding: 1rem 1.5rem;
-    background-color: white;
-    border-radius: 8px;
-    color: var(--accent);
-    border: 1px solid rgba(67, 97, 238, 0.15);
 }
 
 .highlighted-text i {
