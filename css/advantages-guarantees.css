@@ -39,6 +39,7 @@
 .highlighted-text i {
     color: var(--accent);
     font-size: 1.4rem;
+    margin-right: 1rem;
 }
 
 /* Основные изменения: плитка 2x2 и одинаковая высота */
