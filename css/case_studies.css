@@ -161,7 +161,7 @@
 }
 
 .case-problems h4 {
-  font-size: 1.2rem;
+  font-size: 18px;
   color: var(--dark);
   margin: 0 0 1rem;
   font-weight: 600;
@@ -177,7 +177,6 @@
 .case-problems li {
   color: #6c757d;
   margin-bottom: 0.5rem;
-  line-height: 1.5;
 }
 
 /* Responsive Adjustments */
