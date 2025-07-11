@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://delta-garant.ru/</loc>
-    <lastmod>2023-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <!-- Добавьте другие важные страницы -->
+    <!-- Главная страница (максимальный приоритет) -->
+    <url>
+        <loc>https://delta-garant.ru/index.html</loc>
+        <lastmod>2023-12-20</lastmod>  <!-- Дата последнего изменения -->
+        <changefreq>daily</changefreq> <!-- Частота обновления -->
+        <priority>1.0</priority>       <!-- Максимальная важность -->
+    </url>
+
+    <!-- Услуги (высокий приоритет) -->
+    <url>
+        <loc>https://delta-garant.ru/na_uchastie.html</loc>
+        <lastmod>2023-12-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://delta-garant.ru/na-ispolnenie.html</loc>
+        <lastmod>2023-12-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://delta-garant.ru/na-vozvrat-avansa.html</loc>
+        <lastmod>2023-12-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://delta-garant.ru/na-garantiynyy-period.html</loc>
+        <lastmod>2023-12-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- О компании -->
+    <url>
+        <loc>https://delta-garant.ru/o_kompanii.html</loc>
+        <lastmod>2023-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Каталог услуг -->
+    <url>
+        <loc>https://delta-garant.ru/uslugi.html</loc>
+        <lastmod>2023-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Контакты -->
+    <url>
+        <loc>https://delta-garant.ru/kontakty.html</loc>
+        <lastmod>2023-12-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>

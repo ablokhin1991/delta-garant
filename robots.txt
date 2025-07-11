@@ -1,6 +1,18 @@
 User-agent: *
-Allow: /
+Allow: / 
+Disallow: /policy.html          # Политика конфиденциальности (не для индекса)
+Disallow: /usloviya-ispolzovaniya-kalkulyatora.html  # Условия использования калькулятора
+Disallow: /footer.html          # Футер (служебный файл)
+Disallow: /header.html          # Хедер (служебный файл)
+Disallow: /css/scripts-3.js     # Скрипт калькулятора (защита от копирования)
+
+# Указание зеркал (чтобы избежать дублей)
+Host: https://delta-garant.ru
+
+# Для Яндекса (учитываем Метрику)
+User-agent: Yandex
+Clean-param: utm_source&utm_medium&utm_campaign  # Игнорировать UTM-метки
+Allow: / 
+
+# Указание sitemap
 Sitemap: https://delta-garant.ru/sitemap.xml
-Disallow: /admin/
-Disallow: /tmp/
-Disallow: /private/
