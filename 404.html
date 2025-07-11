@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница не найдена | Delta-Garant</title>
+    <meta name="robots" content="noindex"> <!-- Чтобы Google не индексировал 404 -->
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px;
+        }
+        h1 { color: #0036a7; font-size: 50px; }
+        a { color: #0036a7; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>404</h1>
+    <p>Страница не найдена. Возможно, она была перемещена или удалена.</p>
+    <p><a href="/">Вернуться на главную</a></p>
+    
+    <!-- Автоматический редирект через 5 секунд -->
+    <script>
+        setTimeout(function(){
+            window.location.href = "/";
+        }, 5000);
+    </script>
+</body>
+</html>

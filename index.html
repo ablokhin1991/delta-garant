@@ -51,6 +51,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin>
 </noscript>
 
+<script>
+    // Редирект с www на без www
+    if (window.location.hostname.startsWith('www.')) {
+        window.location.href = 'https://delta-garant.ru' + window.location.pathname;
+    }
+    
+    // Редирект с HTTP на HTTPS
+    if (window.location.protocol === 'http:') {
+        window.location.href = 'https://delta-garant.ru' + window.location.pathname;
+    }
+</script>
+
 </head>
 <body>
 
