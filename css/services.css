@@ -288,8 +288,16 @@
   z-index: 1;
 }
 
-.hero-uslugi h1 {
+/*.hero-uslugi h1 {
   margin-bottom: 20px;
+}*/
+
+.hero-uslugi h2 {
+  font-size: 36px;
+  color: #0036a7;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+
 }
 
 .hero-uslugi p {
