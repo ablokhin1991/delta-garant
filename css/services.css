@@ -384,7 +384,13 @@
     display: none; /* Скрываем изображение на мобильных, как на avansa.ru */
   }
 }
-
+.herp-highlight {
+  background-color: #00ba00;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
 
 
 
