@@ -384,7 +384,7 @@
     display: none; /* Скрываем изображение на мобильных, как на avansa.ru */
   }
 }
-.herp-highlight {
+.hero-highlight {
   background-color: #00ba00;
   color: white;
   padding: 4px 8px;
