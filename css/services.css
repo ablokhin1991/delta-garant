@@ -391,10 +391,11 @@
   }
 }
 .hero-highlight {
-  background-color: #c7ccd8;
+  background-color: #e6f0ff;
   color: #5a5f73;
   padding: 4px 8px;
   border-radius: 4px;
+  font-weight: 400;
 }
 .hero-icon-fas-fa {
   color: #00ba00;
