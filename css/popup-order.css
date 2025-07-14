@@ -144,7 +144,7 @@
 /* Кнопка отправки */
 .popup-order__submit {
     /*background: linear-gradient(45deg, #4361ee, #7209b7);*/
-    background: #0036a7;
+    background: #00ba00;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -160,6 +160,14 @@
 .popup-order__submit:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+    background: #01a601;
+}
+.popup-order__submit:active {
+  opacity: 1;
+  background: #00ba00;
+  color: #fff;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Дополнительные стили для формы */
