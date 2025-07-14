@@ -306,6 +306,13 @@
   font-size: 18px;
   color: #5a5f73;
 }
+.hero-cta {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+}
+
+
 
 .hero-section-uslugi {
   max-width: 1400px;
@@ -391,6 +398,7 @@
 }
 .hero-icon-fas-fa {
   color: #00ba00;
+  margin-right: 10px;
 }
 
 
