@@ -230,7 +230,33 @@
 }
 /* кнопка ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ • ЗАКАЗАТЬ ЗВОНОК В ХЭДЭРЕ •  */
 
+/* кнопка ОСТАВИТЬ ЗАЯВКУ В HERO • ОСТАВИТЬ ЗАЯВКУ В HERO • ОСТАВИТЬ ЗАЯВКУ В HERO •  */
+.order-call-hero {
+  display: flex;
+  background: #00ba00;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background 0.3s;
+  justify-content: center;
+  width: 200px;
+}
 
+.order-call-hero:hover {
+  background: #01a601;
+  color: #fff;
+}
+.order-call-hero:active {
+  opacity: 1;
+  background: #00ba00;
+  color: #fff;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+}
+/* кнопка ОСТАВИТЬ ЗАЯВКУ В HERO • ОСТАВИТЬ ЗАЯВКУ В HERO • ОСТАВИТЬ ЗАЯВКУ В HERO •  */
 
 
 
