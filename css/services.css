@@ -404,7 +404,7 @@
 .hero-uslugi h2.hero-uslugi-title {
   line-height: 1.2;
   margin-top: 0px !important;
-  margin-bottom: 40px !important;
+  margin-bottom: 0px !important;
   font-size: 36px;
   color: var(--accent);
 }
