@@ -26,7 +26,7 @@
   width: 90%;
   max-width: 1000px; /* Ограничиваем слишком большие экраны */
   background: #fff;
-  padding: 20px;
+  padding: 2.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -58,19 +58,25 @@
 /* Кнопка закрытия */
 .popup__close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
+  color: #6c757d;
+  transition: color 0.3s;
 }
+.popup__close:hover {
+    color: #d62718;
+}
+
 
 /* Заголовок */
 .popup__title {
   text-align: center;
-  font-size: 20px;
   margin-bottom: 25px;
+      margin-top: 0px !important;
 }
 
 /* Контейнер с контентом оффера и формы */
