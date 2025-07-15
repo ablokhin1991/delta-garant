@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   popup.innerHTML = `
   <button class="popup__close">✖</button>
-  <h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
+  <h2 class="popup__title">Возьмем на себя всю рутину:</h2>
   <p class="popup__text-below-title">
-    Возьмем на себя всю рутину: подготовим документы, подадим заявку, договоримся с банками.
+    Подготовим документы, подадим заявку, договоримся с банками.
   </p>
 
   <!-- Контейнер с двумя колонками -->

@@ -51,9 +51,9 @@
 /* Текст под заголовком */
 .popup__text-below-title {
     color: #2e2e2e;
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 2.5rem;
 }
 
 
@@ -76,7 +76,7 @@
 
 /* Заголовок */
 .popup__title {
-  text-align: center;
+  text-align: left;
   margin-bottom: 0px !important;
       margin-top: 0px !important;
 }
