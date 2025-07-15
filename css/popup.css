@@ -273,8 +273,8 @@
   }
 
   .popup__rate {
-    text-align: right;
-    font-size: 14px;
+    display: block;
+    text-align: center;
   }
 
 
