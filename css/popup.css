@@ -54,6 +54,14 @@
   margin-bottom: 10px;
 }
 
+/* Текст под заголовком */
+.popup__text-below-title {
+    color: #2e2e2e;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 
 /* Кнопка закрытия */
 .popup__close {
