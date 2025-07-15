@@ -336,3 +336,10 @@
 }
 
 
+/* Исправляем dropdown стран */
+.popup-order .iti__country-list {
+  max-height: 200px !important;
+  overflow-y: auto;
+  position: absolute !important;
+  z-index: 10001; /* больше, чем у popup и overlay */
+}
