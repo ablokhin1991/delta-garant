@@ -321,7 +321,7 @@
 /* Текст под заголовком */
 .popup-order__text-below-title {
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 2.5rem;
 }
 
 .popup-order__column input::placeholder {
