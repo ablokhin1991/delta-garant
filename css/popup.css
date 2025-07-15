@@ -341,4 +341,5 @@
 .popup__parameters__offer {
   background: #e6f0ff;
   padding: 2rem;
+  border-radius: 8px;
 }
