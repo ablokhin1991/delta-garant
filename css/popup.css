@@ -46,7 +46,6 @@
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 100%;
 }
 
 .popup__offer-title,
@@ -109,11 +108,11 @@
     text-align: left;
     padding: 0.5rem 1rem 0.5rem 1rem;
     width: 100%;
-    min-width: 0; /* Позволяет уменьшаться, не ломая макет */
-    max-width: 100%; /* Запрещает выход за границы */
-    overflow: hidden; /* Предотвращает выход элементов за пределы */
-    word-break: break-word; /* Перенос длинных слов */
-    box-sizing: border-box; /* Учитывает padding в общей ширине */
+    min-width: 0; 
+    max-width: 100%; 
+    overflow: hidden; 
+    word-break: break-word; 
+    box-sizing: border-box; 
     border-radius: 5px;
     background-color: #fff;
 }
