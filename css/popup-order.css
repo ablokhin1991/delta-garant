@@ -229,9 +229,10 @@
 
 /* Адаптивность */
 @media (max-width: 768px) {
+    
     .popup-order {
         width: 95%;
-        padding: 20px;
+        padding: 80px 20px;
         /* ✅ Вместо центрирования по Y задаём отступы сверху/снизу */
         top: 20px;                      /* отступ сверху */
         bottom: 20px;                   /* отступ снизу */
@@ -242,7 +243,7 @@
     }
     
     .popup-order__title {
-        font-size: 20px;
+        margin-bottom: 20px !important;
     }
     /* Чекбокс */
     .popup-order__checkbox-label {
