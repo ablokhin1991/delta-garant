@@ -1,120 +1,362 @@
-/* styles.css */
-/* Overlay */
-.popup-new__overlay {
-  position: fixed; top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
+/* Затемнение фона */
+.popup__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  opacity: 0; visibility: hidden;
-  transition: opacity .3s;
-}
-.popup-new__overlay--active {
-  opacity: 1; visibility: visible;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
 }
 
-/* Popup */
-.popup-new {
+.popup__overlay--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Основной popup */
+.popup {
   position: fixed;
-  top: 20px; bottom: 20px;
-  left: 50%; transform: translateX(-50%);
-  width: 95%; max-width: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
   background: #fff;
-  padding: 2.5rem; border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  opacity: 0; visibility: hidden;
-  transition: opacity .3s, transform .3s;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  max-height: 90vh;
   overflow-y: auto;
 }
-.popup-new--active {
-  opacity: 1; visibility: visible;
+
+.popup--active {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Close */
-.popup-new__close {
-  position: absolute; top: 15px; right: 15px;
-  background: none; border: none; font-size: 24px;
-  cursor: pointer; color: #6c757d;
-  transition: color .3s;
-}
-.popup-new__close:hover { color: #d62718; }
-
-/* Header */
-.popup-new__title {
-  margin: 0 0 1rem; text-align: left;
-}
-.popup-new__text {
-  margin-bottom: 2rem; text-align: left;
+.popup__section {
+  flex: 1;  
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
-/* Layout */
-.popup-new__content { display: flex; flex-direction: column; gap: 20px; }
-.popup-new__columns { display: flex; gap: 20px; flex-wrap: wrap; }
-.popup-new__column { flex: 1; display: flex; flex-direction: column; gap: 15px; }
-
-/* Inputs */
-.popup-new__input {
-  width: 100%; padding: 12px 15px;
-  font-size: 16px; border: 2px solid #E2E8F0; border-radius: 8px;
-  transition: border-color .3s, box-shadow .3s;
+/* Текст под заголовком */
+.popup__text-below-title {
+    text-align: left;
+    margin-bottom: 2.5rem;
 }
-.popup-new__input:focus { border-color: #0036a7; box-shadow: 0 0 0 3px rgba(67,97,238,.2); outline: none; }
-.popup-new__input:hover { border-color: #0036a7; }
 
-/* Offer block */
-.popup-new__offer {
+
+/* Кнопка закрытия */
+.popup__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6c757d;
+  transition: color 0.3s;
+}
+.popup__close:hover {
+    color: #d62718;
+}
+
+
+/* Заголовок */
+.popup__title {
+  text-align: left;
+  margin-bottom: 0px !important;
+      margin-top: 0px !important;
+}
+
+/* Контейнер с контентом оффера и формы */
+.popup__content {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  /*align-items: flex-start;*/
+  align-items: stretch;
+}
+
+/* Левая колонка с данными оффера */
+.popup__offer {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  align-items: center; gap: 10px;
-  padding: .5rem 1rem; background: #f9f9f9;
-  border-radius: 5px; box-sizing: border-box;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    width: 100%;
+    min-width: 0; 
+    max-width: 100%; 
+    overflow: hidden; 
+    word-break: break-word; 
+    box-sizing: border-box; 
+    border-radius: 5px;
+    background-color: #fff;
 }
-.popup-new__logo {
-  grid-column: 1; width: 50px; height: 50px;
-  background-size: contain; background-repeat: no-repeat;
+
+/* Логотип */
+.popup__logo {
+  grid-column: 1; /* Первая ячейка */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
   border-radius: 5px;
-}
-.popup-new__details {
-  grid-column: 2; font-size: 16px;
-  overflow: hidden; white-space: nowrap; text-align: left;
-}
-.popup-new__separator {
-  grid-column: 3; width:1px; height: 60%;
-  background: #ccc;
-}
-.popup-new__rate {
-  grid-column: 4; text-align: right;
-  display: flex; flex-direction: column;
+  box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.15), 
+            6px -6px 10px rgba(255, 255, 255, 0.8);
+  /*margin: 0; /* Убираем любые отступы */
 }
 
-/* Checkbox & links */
-.popup-new__checkbox-label {
-  display: flex; align-items: center; gap: 10px; margin-top: 15px;
-}
-.popup-new__link { color: #0036a7; text-decoration: none; transition: all .3s; }
-.popup-new__link:hover { text-decoration: underline; }
-
-/* Submit */
-.popup-new__submit {
-  margin-top: 15px; padding: 12px 20px;
-  background: #00ba00; color: #fff; border: none; border-radius: 8px;
-  font-size: 16px; font-weight: 600; cursor: pointer;
-  transition: transform .3s, box-shadow .3s;
-}
-.popup-new__submit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(67,97,238,.4);
+.popup__details {
+  grid-column: 2; /* вторая ячейка */
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+  overflow: hidden; /* Предотвращаем переполнение */
+  white-space: nowrap; /* Запрещаем перенос текста */
+  text-align: left;
+  font-size: 16px;
+  /*margin: 0; /* Убираем отступы */
 }
 
-/* Note */
-.popup-new__note {
-  margin-top: 15px; font-size: 14px; text-align: center;
+.popup__separator {
+  grid-column: 3; /* Третья ячейка */
+  background-color: #ccc;
+  height: 1px;
+  height: 90%; /* Заполняет высоту строки */
+  /*margin: 0; /* Убираем отступы */
 }
-.popup-new__phone-link { color: #d62718; text-decoration: none; }
-.popup-new__phone-link:hover { text-decoration: underline; }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .popup-new__columns { flex-direction: column; }
-  .popup-new { width: 95%; padding: 20px; top:10px; bottom:10px; }
+.popup__rate {
+  grid-column: 4; /* Чеьвертая ячейка */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Прижимает текст вправо */
+  text-align: right;
+  white-space: nowrap; /* Запрещаем перенос текста */
+  /*margin: 0; /* Убираем отступы */
+}
+
+/* Форма */
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 15px;
+  background: #e6f0ff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  justify-content: center;
+}
+
+/* Поля формы */
+.popup__input {
+  font-size: 16px;
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #E2E8F0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+  color: var(--dark);
+}
+.popup__input:focus {
+  border-color: #0036a7;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+  outline: none;
+  background: white;
+}
+
+.popup__input:hover {
+    border-color: #0036a7;
+    outline: none;
+}
+
+/* Чекбокс */
+.popup__checkbox-label {
+  /*display: flex;*/
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.popup__checkbox {
+  accent-color: #1E3A8A; /* Изменяем цвет активного состояния чекбокса */
+}
+
+.popup__checkbox {
+  accent-color: #284db5; /* Изменяем цвет активного состояния чекбокса */
+}
+
+/* Кнопка отправки */
+.popup__submit {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+}
+
+.popup__submit:hover {
+  background: #0056b3;
+}
+
+/* 📱 Адаптивность -(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-*/
+@media (max-width: 768px) {
+  .popup {
+    width: 90%;
+    max-width: 100%;
+    padding: 80px 20px;
+  }
+  /* Заголовок */
+  .popup__title {
+    margin-bottom: 20px !important;
+  }
+  .popup__parameters__offer {
+    padding: 20px !important;
+  }
+  .popup__form {
+    padding: 20px !important;
+}
+
+  .popup__text-below-title {
+    margin-bottom: 2rem;
+  }
+
+  .popup__section {
+    width: 100%;
+  }
+
+  .popup__content {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .popup__offer {
+    /*grid-template-columns: auto 1fr;
+    width: 100%;*/
+
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .popup__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .popup__details {
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .popup__separator {
+    display: none;
+  }
+
+  .popup__rate {
+    display: block;
+    text-align: center;
+  }
+
+
+  .popup__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  
+}
+
+
+/* Улучшенные стили поля телефона */
+.iti {
+  width: 100%;
+}
+
+/* Стили для выбранных параметров -(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-(•)-*/
+.popup__parameters {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 1.2rem;
+  color: var(--dark);
+}
+
+.popup__parameter-label {
+  font-weight: 300;
+  flex: 1;
+  text-align: left;
+}
+
+.popup__parameter-value {
+  font-weight: 300;
+  flex: 1;
+  text-align: right;
+  padding-left: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .popup__parameter {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .popup__parameter-value {
+    text-align: left;
+    padding-left: 0;
+  }
+  
+  .popup__section .popup__offer-title:first-child {
+    margin-top: 0;
+  }
+}
+
+.popup__parameters__offer {
+  background: #e6f0ff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  height: 100%;
+  justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup__link {
+    color: #0036a7;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.popup__link:hover {
+  text-decoration: underline;
 }
