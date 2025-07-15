@@ -230,10 +230,10 @@
     padding: 5rem 2rem;
   }
   .popup__parameters__offer {
-    padding: 2rem;
+    padding: 2rem !important;
   }
   .popup__form {
-    padding: 2rem;
+    padding: 2rem !important;
 }
 
   .popup__text-below-title {
