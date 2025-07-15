@@ -337,24 +337,11 @@
 }
 
 .popup__link {
-    position: relative;
-    display: inline-block;
     color: #0036a7;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: all 0.3s;
 }
 
-.popup__link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 1px;
-    width: 0;
-    background-color: #0036a7;
-    transition: width 0.3s ease;
-}
-
-.popup__link:hover::after {
-    width: 100%;
+.popup__link:hover {
+  text-decoration: underline;
 }
