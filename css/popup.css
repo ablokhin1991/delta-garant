@@ -48,7 +48,6 @@
   width: 50%;
 }
 
-.popup__offer-title,
 .popup__form-title {
   color: var(--dark);
   font-size: 18px;
