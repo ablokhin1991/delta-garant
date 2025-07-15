@@ -288,7 +288,7 @@
   .popup__content {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 20px;
   }
 
   
