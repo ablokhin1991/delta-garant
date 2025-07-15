@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="popup__section popup__section--form">
       <h2 class="popup__form-title">Заполните данные</h2>
       <form class="popup__form">
+      <h2 class="popup__form-title">Заполните данные</h2>
         <input type="text" placeholder="ФИО" class="popup__input" required>
         <input type="email"
                placeholder="Электронная почта"
