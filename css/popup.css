@@ -336,3 +336,8 @@
     margin-top: 0;
   }
 }
+
+.popup__parameters__offer {
+  background: #d62718;
+  padding: 2rem;
+}
