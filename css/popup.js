@@ -19,10 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="popup__content">
     <!-- Левая колонка: параметры -->
     <div class="popup__section popup__section--params">
-      <h2 class="popup__offer-title">Выбранные параметры</h2>
       
       <div class="popup__parameters__offer">
-      <h2 class="popup__offer-title">Выбранный банк</h2>
+      <h2 class="popup__offer-title">Выбранные условия</h2>
   <div class="popup__offer">
     <div class="popup__logo"></div>
     <div class="popup__details"></div>
