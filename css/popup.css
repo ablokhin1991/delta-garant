@@ -93,7 +93,7 @@
 .popup__content {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 2.5rem;
   /*align-items: flex-start;*/
   align-items: stretch;
 }
