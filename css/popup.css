@@ -343,4 +343,8 @@
   padding: 2.5rem;
   border-radius: 16px;
   height: 100%;
+  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
