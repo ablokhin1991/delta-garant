@@ -50,7 +50,6 @@
 
 /* Текст под заголовком */
 .popup__text-below-title {
-    color: #2e2e2e;
     text-align: left;
     margin-bottom: 2.5rem;
 }
