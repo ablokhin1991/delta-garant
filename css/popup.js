@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <input type="tel" id="phone" class="popup__input" placeholder="Введите номер" required>
         <label class="popup__checkbox-label">
           <input type="checkbox" class="popup__checkbox" checked required>
-          Согласен с <a href="policy.html" target="_blank" class="popup__link">политикой обработки персональных данных</a>
+          Согласен с <a href="policy.html" target="_blank" class="popup__link">политикой обработки персональных данных</a> *
         </label>
         <button type="submit" class="popup__submit">Отправить заявку</button>
       </form>
