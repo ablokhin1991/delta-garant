@@ -9,46 +9,49 @@ document.addEventListener("DOMContentLoaded", () => {
   popup.classList.add("popup");
 
   popup.innerHTML = `
- <button class="popup__close">✖</button>
-<h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
-<p class="popup__text-below-title">
-      Возьмем на себя всю рутину: подготовим документы, подадим заявку, договоримся с банками.</a>
-    </p>
-<div class="popup__content">
+  <button class="popup__close">✖</button>
+  <h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
+  <p class="popup__text-below-title">
+    Возьмем на себя всю рутину: подготовим документы, подадим заявку, договоримся с банками.
+  </p>
 
-  <div class="popup__section">
-  <!-- Добавляем параметры ВНУТРИ существующей секции -->
-    <h2 class="popup__offer-title">Выбранные параметры</h2>
-    <div class="popup__parameters"></div>
-    <h2 class="popup__offer-title">Выбранный банк</h2>
-    <div class="popup__offer">
-      <div class="popup__logo"></div>
-      <div class="popup__details"></div>
-      <div class="popup__separator"></div>
-      <div class="popup__rate"></div>
+  <!-- Выбранный банк на всю ширину -->
+  <h2 class="popup__offer-title">Выбранный банк</h2>
+  <div class="popup__offer">
+    <div class="popup__logo"></div>
+    <div class="popup__details"></div>
+    <div class="popup__separator"></div>
+    <div class="popup__rate"></div>
+  </div>
+
+  <!-- Контейнер с двумя колонками -->
+  <div class="popup__content">
+    <!-- Левая колонка: параметры -->
+    <div class="popup__section popup__section--params">
+      <h2 class="popup__offer-title">Выбранные параметры</h2>
+      <div class="popup__parameters"></div>
+    </div>
+    <!-- Правая колонка: форма -->
+    <div class="popup__section popup__section--form">
+      <h2 class="popup__form-title">Заполните данные</h2>
+      <form class="popup__form">
+        <input type="text" placeholder="ФИО" class="popup__input" required>
+        <input type="email"
+               placeholder="Электронная почта"
+               class="popup__input"
+               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+               title="Введите email в формате: name@email.ru"
+               required>
+        <input type="tel" id="phone" class="popup__input" placeholder="Введите номер" required>
+        <label class="popup__checkbox-label">
+          <input type="checkbox" class="popup__checkbox" checked required>
+          Согласен с <a href="policy.html" target="_blank" class="popup__link">политикой обработки персональных данных</a>
+        </label>
+        <button type="submit" class="popup__submit">Отправить заявку</button>
+      </form>
     </div>
   </div>
 
-  <div class="popup__section">
-    <h2 class="popup__form-title">Заполните данные</h2>
-    <form class="popup__form">
-      <input type="text" placeholder="ФИО" class="popup__input" required>
-      <input type="email" 
-        placeholder="Электронная почта" 
-        class="popup__input" 
-        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
-        title="Введите email в формате: name@email.ru" 
-        required>
-      <input type="tel" id="phone" class="popup__input" placeholder="Введите номер" required>
-      <label class="popup__checkbox-label">
-        <input type="checkbox" class="popup__checkbox" checked required>
-        Согласен с <a href="policy.html" target="_blank" class="popup__link">политикой обработки персональных данных</a>
-      </label>
-      <button type="submit" class="popup__submit">Отправить заявку</button>
-    </form>
-  </div>
-
-</div>
 
 
 
