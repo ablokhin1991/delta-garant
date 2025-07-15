@@ -258,6 +258,57 @@
     flex-direction: column;
   }
 
+
+
+
+
+
+
+
+
+
+  .popup__logo,
+  .popup__details {
+    width: 100%;
+  }
+
+  /* Группа: popup__logo будет обёрткой для строки */
+  .popup__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Перемещаем popup__details внутрь popup__logo визуально */
+  .popup__details {
+    margin-left: 12px; /* расстояние между логотипом и деталями */
+  }
+
+  /* Чтобы элементы не улетали на новую строку */
+  .popup__details,
+  .popup__logo {
+    flex-shrink: 0;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
   .popup__logo {
     width: 40px;
     height: 40px;
