@@ -262,8 +262,8 @@
   }
 
   .popup__details {
-    text-align: left;
-    font-size: 12px;
+    display: block;
+    text-align: center;
     white-space: nowrap;
     overflow: hidden;
   }
