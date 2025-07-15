@@ -10,27 +10,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
   popup.innerHTML = `
   <button class="popup__close">✖</button>
+
+  <!-- 1. Заголовок -->
   <h2 class="popup__title">Заявка на оформление банковской гарантии</h2>
+
+  <!-- 2. Подзаголовок -->
   <p class="popup__text-below-title">
     Возьмем на себя всю рутину: подготовим документы, подадим заявку, договоримся с банками.
   </p>
 
-  <!-- Выбранный банк на всю ширину -->
-  <h2 class="popup__offer-title">Выбранный банк</h2>
-  <div class="popup__offer">
-    <div class="popup__logo"></div>
-    <div class="popup__details"></div>
-    <div class="popup__separator"></div>
-    <div class="popup__rate"></div>
-  </div>
-
-  <!-- Контейнер с двумя колонками -->
+  <!-- 3. Контейнер с двумя колонками -->
   <div class="popup__content">
+    
     <!-- Левая колонка: параметры -->
     <div class="popup__section popup__section--params">
-      <h2 class="popup__offer-title">Выбранные параметры</h2>
-      <div class="popup__parameters"></div>
+      
+      <!-- общий заголовок параметров -->
+      <h2 class="popup__offer-title">Выбранный банк</h2>
+
+      <!-- карточка банка -->
+      <div class="popup__offer">
+        <div class="popup__logo"></div>
+        <div class="popup__details"></div>
+        <div class="popup__separator"></div>
+        <div class="popup__rate"></div>
+      </div>
+
+      <!-- список параметров -->
+      <div class="popup__parameters">
+        <div class="popup__parameter">
+          <span class="popup__parameter-label">Сумма гарантии:</span>
+          <span class="popup__parameter-value" id="param-sum"></span>
+        </div>
+        <div class="popup__parameter">
+          <span class="popup__parameter-label">Срок действия:</span>
+          <span class="popup__parameter-value" id="param-days"></span>
+        </div>
+        <div class="popup__parameter">
+          <span class="popup__parameter-label">Тип процедуры:</span>
+          <span class="popup__parameter-value" id="param-proc"></span>
+        </div>
+        <div class="popup__parameter">
+          <span class="popup__parameter-label">Тип гарантии:</span>
+          <span class="popup__parameter-value" id="param-guar"></span>
+        </div>
+        <div class="popup__parameter">
+          <span class="popup__parameter-label">Наличие аванса:</span>
+          <span class="popup__parameter-value" id="param-adv"></span>
+        </div>
+        <div class="popup__parameter">
+          <span class="popup__parameter-label">Гарантия по форме заказчика:</span>
+          <span class="popup__parameter-value" id="param-cust"></span>
+        </div>
+      </div>
     </div>
+
     <!-- Правая колонка: форма -->
     <div class="popup__section popup__section--form">
       <h2 class="popup__form-title">Заполните данные</h2>
@@ -39,18 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
         <input type="email"
                placeholder="Электронная почта"
                class="popup__input"
-               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-               title="Введите email в формате: name@email.ru"
                required>
         <input type="tel" id="phone" class="popup__input" placeholder="Введите номер" required>
         <label class="popup__checkbox-label">
           <input type="checkbox" class="popup__checkbox" checked required>
-          Согласен с <a href="policy.html" target="_blank" class="popup__link">политикой обработки персональных данных</a>
+          Согласен с <a href="policy.html" class="popup__link" target="_blank">политикой обработки персональных данных</a>
         </label>
         <button type="submit" class="popup__submit">Отправить заявку</button>
       </form>
     </div>
+
   </div>
+
+
 
 
 
