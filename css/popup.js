@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- Правая колонка: форма -->
     <div class="popup__section popup__section--form">
       <form class="popup__form">
-      <h2 class="popup__form-title">Оставить заявку</h2>
+      <h3 class="popup__form-title">Оставить заявку</h3>
         <input type="text" placeholder="ФИО" class="popup__input" required>
         <input type="email"
                placeholder="Электронная почта"
