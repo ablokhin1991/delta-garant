@@ -227,6 +227,15 @@
   .popup {
     width: 90%;
     max-width: 100%;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+  .popup__parameters__offer {
+    padding: 2rem
+  }
+
+  .popup__text-below-title {
+    margin-bottom: 2rem;
   }
 
   .popup__section {
@@ -240,9 +249,111 @@
   }
 
   .popup__offer {
-    grid-template-columns: auto 1fr;
+    /*grid-template-columns: auto 1fr;
+    width: 100%;*/
+
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .popup__logo,
+  .popup__details {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+  }
+
+  .popup__logo,
+  .popup__details {
+    display: flex;
+  }
+
+  /* Объединяем логотип и детали в строку через flex */
+  .popup__logo {
+    order: 0;
+  }
+
+  .popup__details {
+    order: 1;
+  }
+
+  .popup__separator {
+    order: 2;
+  }
+
+  .popup__rate {
+    order: 3;
+  }
+
+  /* Объединяем logo + details в один flex контейнер */
+  .popup__offer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popup__logo,
+  .popup__details {
     width: 100%;
   }
+
+  .popup__logo::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+  }
+
+  /* Используем flex-обёртку с вложенным стилем */
+  .popup__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .popup__details {
+    margin-left: 12px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
 
   .popup__logo {
     width: 40px;
@@ -257,10 +368,7 @@
   }
 
   .popup__separator {
-    width: 100%;
-    height: 1px;
-    background-color: #ccc;
-    margin: 10px 0;
+    display: none;
   }
 
   .popup__rate {
