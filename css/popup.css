@@ -228,11 +228,13 @@
     width: 90%;
     max-width: 100%;
     padding: 5rem 2rem;
-    margin-top: 1rem;
   }
   .popup__parameters__offer {
-    padding: 2rem
+    padding: 2rem;
   }
+  .popup__form {
+    padding: 2rem;
+}
 
   .popup__text-below-title {
     margin-bottom: 2rem;
