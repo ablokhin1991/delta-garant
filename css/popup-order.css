@@ -320,9 +320,7 @@
 
 /* Текст под заголовком */
 .popup-order__text-below-title {
-    color: #2e2e2e;
-    text-align: center;
-    margin-top: 20px;
+    text-align: left;
     margin-bottom: 20px;
 }
 
