@@ -15,15 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     Возьмем на себя всю рутину: подготовим документы, подадим заявку, договоримся с банками.
   </p>
 
-  <!-- Выбранный банк на всю ширину -->
-  <h2 class="popup__offer-title">Выбранный банк</h2>
-  <div class="popup__offer">
-    <div class="popup__logo"></div>
-    <div class="popup__details"></div>
-    <div class="popup__separator"></div>
-    <div class="popup__rate"></div>
-  </div>
-
   <!-- Контейнер с двумя колонками -->
   <div class="popup__content">
     <!-- Левая колонка: параметры -->
