@@ -1,306 +1,198 @@
+// popup.js
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
-  // Создаём popup и overlay
-  const popupOverlay = document.createElement("div");
-  popupOverlay.classList.add("popup__overlay");
-
+  // Создаём overlay и popup-контейнер
+  const overlay = document.createElement("div");
+  overlay.classList.add("popup-new__overlay");
   const popup = document.createElement("div");
-  popup.classList.add("popup");
+  popup.classList.add("popup-new");
 
+  // Внедряем HTML структуры из popup-order, но меняем правую колонку
   popup.innerHTML = `
-  <button class="popup__close">✖</button>
-  <h2 class="popup__title">Возьмем на себя всю рутину:</h2>
-  <p class="popup__text-below-title">
-    Подготовим документы, подадим заявку, договоримся с банками.
-  </p>
+    <button class="popup-new__close">✖</button>
+    <h2 class="popup-new__title">Возьмем на себя всю рутину:</h2>
+    <p class="popup-new__text">Подготовим документы, подадим заявку, договоримся с банками.</p>
 
-  <!-- Контейнер с двумя колонками -->
-  <div class="popup__content">
-    <!-- Левая колонка: параметры -->
-    <div class="popup__section popup__section--params">
-      
-      <div class="popup__parameters__offer">
-  <div class="popup__offer">
-    <div class="popup__logo"></div>
-    <div class="popup__details"></div>
-    <div class="popup__separator"></div>
-    <div class="popup__rate"></div>
-  </div>
+    <div class="popup-new__content">
+      <!-- Левая колонка остаётся как есть -->
+      <form class="popup-new__form" id="order-form">
+        <div class="popup-new__columns">
+          <div class="popup-new__column">
+            <input type="text" placeholder="ФИО *" class="popup-new__input" name="fullname" required>
+            <input type="tel" id="popup-new-phone" class="popup-new__input" placeholder="Телефон *" required>
+            <input type="email" placeholder="Электронная почта *"
+                   class="popup-new__input" name="email" required>
+            <input type="text" placeholder="ИНН компании / ИП"
+                   class="popup-new__input" name="inn" id="inn-input" list="inn-list">
+            <datalist id="inn-list"></datalist>
+            <input type="text" placeholder="Название компании"
+                   class="popup-new__input" name="company">
+          </div>
 
-      <div class="popup__parameters"></div>
-      </div>
+          <!-- ПРАВАЯ колонка: вставляем .popup-new__offer -->
+          <div class="popup-new__column">
+            <div class="popup-new__offer">
+              <div class="popup-new__logo"></div>
+              <div class="popup-new__details"></div>
+              <div class="popup-new__separator"></div>
+              <div class="popup-new__rate"></div>
+            </div>
+          </div>
+        </div>
 
-    </div>
-    <!-- Правая колонка: форма -->
-    <div class="popup__section popup__section--form">
-      <form class="popup__form">
-      <h3 class="popup__form-title">Оставить заявку</h3>
-        <input type="text" placeholder="ФИО *" class="popup__input" required>
-        <input type="email"
-               placeholder="Электронная почта *"
-               class="popup__input"
-               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-               title="Введите email в формате: name@email.ru"
-               required>
-        <input type="tel" id="phone" class="popup__input" placeholder="Введите номер" required>
-        <label class="popup__checkbox-label">
-          <input type="checkbox" class="popup__checkbox" checked required>
-          Согласен с <a href="policy.html" target="_blank" class="popup__link">политикой обработки персональных данных</a> *
+        <label class="popup-new__checkbox-label">
+          <input type="checkbox" class="popup-new__checkbox" required>
+          Согласен с <a href="policy.html" class="popup-new__link">политикой обработки персональных данных</a> *
         </label>
-        <button type="submit" class="popup__submit">Отправить заявку</button>
+        <button type="submit" class="popup-new__submit">Отправить заявку</button>
+        <p class="popup-new__note">
+          Или получите консультацию по тел. <a href="tel:+74950712020" class="popup-new__phone-link">+7 (495) 071‑20‑20</a>
+        </p>
       </form>
     </div>
-  </div>
-
-
-
-
   `;
 
-  body.appendChild(popupOverlay);
+  body.appendChild(overlay);
   body.appendChild(popup);
 
-  // Функция открытия popup с передачей данных
-  function openPopup(offerElement) {
-
-    // Получаем значения параметров
-  const getSelectedText = (id) => {
-    const select = document.getElementById(id);
-    return select.options[select.selectedIndex].text;
-  };
-
-  const parameters = {
-    "Сумма гарантии": document.getElementById("guarantee-sum").value,
-    "Срок действия": document.getElementById("guarantee-days").value + " дн.",
-    "Тип процедуры": getSelectedText("procedure-type"),
-    "Тип гарантии": getSelectedText("guarantee-type"),
-    "Наличие аванса": document.getElementById("has-advance").checked ? "Да" : "Нет",
-    "Индивидуальные условия": document.getElementById("custom-form").checked ? "Да" : "Нет"
-  };
-
-  // Формируем HTML для параметров
-  const parametersHTML = `
-    <div class="popup__parameter"><span>Сумма гарантии:</span> ${document.getElementById("guarantee-sum").value} руб.</div>
-    <div class="popup__parameter"><span>Срок действия:</span> ${document.getElementById("guarantee-days").value} дн.</div>
-    <div class="popup__parameter"><span>Тип процедуры:</span> ${getSelectedText("procedure-type")}</div>
-    <div class="popup__parameter"><span>Тип гарантии:</span> ${getSelectedText("guarantee-type")}</div>
-    <div class="popup__parameter"><span>Наличие аванса:</span> ${document.getElementById("has-advance").checked ? "Да" : "Нет"}</div>
-    <div class="popup__parameter"><span>Гарантия по форме заказчика:</span> ${document.getElementById("custom-form").checked ? "Да" : "Нет"}</div>
-  `;
-
-  popup.querySelector(".popup__parameters").innerHTML = parametersHTML;
-
-    const logo = offerElement.querySelector(".offer__logo").style.backgroundImage;
-    const details = offerElement.querySelector(".offer__details").innerHTML;
-    const rate = offerElement.querySelector(".offer__rate").innerHTML;
-
-    // Очищаем details от лишних элементов
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = details;
-    tempDiv.querySelector('.offer__personal-data')?.remove(); // Удаляем лишний элемент
-    
-    popup.querySelector(".popup__logo").style.backgroundImage = logo;
-    popup.querySelector(".popup__details").innerHTML = tempDiv.innerHTML; // Очищенные details
-    popup.querySelector(".popup__rate").innerHTML = rate;
-
-    popupOverlay.classList.add("popup__overlay--active");
-    popup.classList.add("popup--active");
-    body.style.overflow = "hidden"; // Отключаем скролл фона
+  // Функции открытия/закрытия
+  function openPopup() {
+    overlay.classList.add("popup-new__overlay--active");
+    popup.classList.add("popup-new--active");
+    body.style.overflow = "hidden";
   }
-
-  // Функция закрытия popup
   function closePopup() {
-    popupOverlay.classList.remove("popup__overlay--active");
-    popup.classList.remove("popup--active");
-    body.style.overflow = ""; // Включаем скролл фона обратно
+    overlay.classList.remove("popup-new__overlay--active");
+    popup.classList.remove("popup-new--active");
+    body.style.overflow = "";
   }
 
-  // Слушаем клик по кнопке "Оформить" в офферах
-  document.body.addEventListener("click", (event) => {
-    if (event.target.classList.contains("offer__button")) {
-      const offerElement = event.target.closest(".offer");
-      if (offerElement) {
-        openPopup(offerElement);
+  // Наполнение .popup-new__offer из выбранного .offer
+  function fillOffer(offerEl) {
+    const logoUrl = offerEl.querySelector(".offer__logo").style.backgroundImage;
+    const detailsHTML = offerEl.querySelector(".offer__details").innerHTML;
+    const rateHTML = offerEl.querySelector(".offer__rate").innerHTML;
+
+    // Удаляем лишние узлы
+    const tmp = document.createElement("div");
+    tmp.innerHTML = detailsHTML;
+    tmp.querySelector(".offer__personal-data")?.remove();
+
+    popup.querySelector(".popup-new__logo").style.backgroundImage = logoUrl;
+    popup.querySelector(".popup-new__details").innerHTML = tmp.innerHTML;
+    popup.querySelector(".popup-new__rate").innerHTML = rateHTML;
+  }
+
+  // Обработчики
+  document.body.addEventListener("click", e => {
+    if (e.target.classList.contains("order-button")) {
+      e.preventDefault();
+      const offer = e.target.closest(".offer");
+      if (offer) {
+        fillOffer(offer);
+        openPopup();
       }
     }
-  });
-
-  // Закрытие popup по клику на крестик или overlay
-  document.body.addEventListener("click", (event) => {
-    if (event.target.classList.contains("popup__close") || event.target.classList.contains("popup__overlay")) {
+    if (e.target.classList.contains("popup-new__close") ||
+        e.target === overlay) {
       closePopup();
     }
   });
 
-  // Маска для телефона (автоформат)
-  document.addEventListener("input", (event) => {
-    if (event.target.classList.contains("phone-mask")) {
-      event.target.value = event.target.value.replace(/[^0-9+]/g, "");
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const phoneInput = document.querySelector("#phone");
-    const form = document.querySelector(".popup__form");
-
-    // Инициализация intl-tel-input
+  // Маска и intl-tel-input (как в popup-order.js)
+  const phoneInput = document.querySelector("#popup-new-phone");
+  if (phoneInput) {
     const iti = window.intlTelInput(phoneInput, {
-        initialCountry: "ru",
-        preferredCountries: ["ru", "by", "kz"],
-        separateDialCode: true,
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        autoPlaceholder: "off"
+      initialCountry: "ru",
+      preferredCountries: ["ru","by","kz"],
+      separateDialCode: true,
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
     });
-
-    // Установка начального плейсхолдера
     phoneInput.placeholder = "(999) 999-99-99";
-
-    // Обработчик смены страны
-    phoneInput.addEventListener("countrychange", function() {
-        const countryCode = iti.getSelectedCountryData().iso2;
-        phoneInput.placeholder = countryCode === "ru" 
-            ? "(999) 999-99-99" 
-            : "Введите номер телефона";
+    phoneInput.addEventListener("countrychange", () => {
+      const iso = iti.getSelectedCountryData().iso2;
+      phoneInput.placeholder = iso==="ru" ? "(999) 999-99-99" : "Введите номер телефона";
     });
-
-    // Блокировка нецифровых символов
-    phoneInput.addEventListener("keypress", function(e) {
-        if (!/\d/.test(e.key)) e.preventDefault();
-    });
-
-    // Обработчик ввода с маской для России
-    phoneInput.addEventListener("input", function(e) {
-        const countryCode = iti.getSelectedCountryData().iso2;
-        let value = this.value.replace(/\D/g, "");
-        
-        if (countryCode === "ru") {
-            // Убираем код страны 7 из обработки
-            value = value.substring(0, 10);
-            
-            let formattedValue = "";
-            if (value.length > 0) {
-                formattedValue = "(" + value.substring(0, 3);
-                if (value.length >= 4) {
-                    formattedValue += ") " + value.substring(3, 6);
-                }
-                if (value.length >= 7) {
-                    formattedValue += "-" + value.substring(6, 8);
-                }
-                if (value.length >= 9) {
-                    formattedValue += "-" + value.substring(8, 10);
-                }
-            }
-            this.value = formattedValue;
+    phoneInput.addEventListener("keypress", e => { if (!/\d/.test(e.key)) e.preventDefault(); });
+    phoneInput.addEventListener("input", () => {
+      if (iti.getSelectedCountryData().iso2==="ru") {
+        let v = phoneInput.value.replace(/\D/g,"").slice(0,10),
+            f="";
+        if(v.length>0){ f="("+v.slice(0,3);
+          if(v.length>=4) f+=") "+v.slice(3,6);
+          if(v.length>=7) f+="-"+v.slice(6,8);
+          if(v.length>=9) f+="-"+v.slice(8,10);
         }
+        phoneInput.value=f;
+      }
     });
-
-    // Валидация при отправке
-    form.addEventListener("submit", function(e) {
-        const countryCode = iti.getSelectedCountryData().iso2;
-        const cleanNumber = phoneInput.value.replace(/\D/g, "");
-        const isValid = iti.isValidNumber();
-        
-        if (countryCode === "ru") {
-            if (cleanNumber.length !== 10 || !isValid) {
-                alert("Для России требуется 10 цифр после +7");
-                e.preventDefault();
-            }
-        } else {
-            if (!isValid) {
-                alert("Введите корректный номер для выбранной страны");
-                e.preventDefault();
-            }
-        }
-    });
-});
-
-// Обработчик формы Email:
-document.addEventListener("DOMContentLoaded", function () {
-    // ... предыдущий код для телефона ...
-
-    // Добавляем валидацию для email
-    const emailInput = document.querySelector('input[type="email"]');
-    
-    // Маска при вводе
-    emailInput.addEventListener('input', function(e) {
-        let value = this.value.toLowerCase();
-        
-        // Автозамена доменных зон
-        value = value.replace(/@([a-z]+)\.(com|ru|net)$/, (match, domain, zone) => {
-            return `@${domain}.${zone}`;
-        });
-        
-        this.value = value;
-    });
-
-    // Кастомная валидация
-    emailInput.addEventListener('blur', function() {
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailPattern.test(this.value)) {
-            this.setCustomValidity('Введите email в формате: name@email.ru');
-        } else {
-            this.setCustomValidity('');
-        }
-    });
-
-    // В обработчике отправки формы добавляем проверку:
-    form.addEventListener("submit", function(e) {
-        // ... предыдущие проверки телефона ...
-        
-        // Проверка email
-        const emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value);
-        if (!emailValid) {
-            alert('Введите корректный email в формате: name@email.ru');
-            e.preventDefault();
-        }
-    });
-});
-
-//***************************************************************************************/
-document.addEventListener("DOMContentLoaded", function () {
-  const body = document.body;
-  const form = document.querySelector(".popup__form");
-
-  // Функция для плавного возврата в исходное состояние
-  function resetFormScale() {
-      // Для плавности анимации добавляем класс
-      body.classList.add("reset-scale");
-      
-      // Убираем класс через время, чтобы анимация успела закончиться
-      setTimeout(() => {
-          body.classList.remove("reset-scale");
-      }, 300);  // Время должно соответствовать длительности анимации
   }
 
-  // Функция для скрытия клавиатуры и возврата формы в нормальное состояние
-  function closeKeyboard() {
-      document.activeElement.blur(); // Снимаем фокус с поля ввода, тем самым скрывая клавиатуру
-      resetFormScale(); // Плавно возвращаем экран в исходное состояние
+  // Автоформат суммы (если нужно перенести логику из popup-order.js)
+  const amt = document.getElementById("guarantee-amount");
+  if (amt) {
+    amt.addEventListener("input", function(){
+      let num = this.value.replace(/\D/g,"");
+      if(num) this.value = parseInt(num,10).toLocaleString("ru-RU");
+    });
   }
 
-  // Обработчик для кнопки "Готово" (или по отправке формы)
-  form.addEventListener("submit", function (e) {
-      e.preventDefault();  // Предотвращаем отправку формы для демонстрации
+  // Dadata по ИНН
+  (function(){
+    const TOKEN="2f5c5383769c2db48f7ff0728ef6ab28f0d88e63",
+          innIn = document.getElementById("inn-input"),
+          dl = document.getElementById("inn-list"),
+          compIn = document.querySelector('input[name="company"]');
+    if(!innIn||!dl||!compIn) return;
+    function fetchSug(){ 
+      const q=innIn.value.replace(/\D/g,"");
+      if(q.length<3){ dl.innerHTML=""; return; }
+      fetch("https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party", {
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          "Accept":"application/json",
+          "Authorization":"Token "+TOKEN
+        },
+        body:JSON.stringify({query:q,count:5})
+      }).then(r=>r.ok?r.json():Promise.reject(r.statusText))
+        .then(json=>{
+          dl.innerHTML="";
+          json.suggestions.forEach(i=>{
+            const opt=document.createElement("option");
+            opt.value=i.data.inn;
+            opt.label=`${i.value} — ИНН ${i.data.inn}`;
+            dl.appendChild(opt);
+          });
+        }).catch(()=>{});
+    }
+    innIn.addEventListener("input", (()=>{ let t; return ()=>{ clearTimeout(t); t=setTimeout(fetchSug,300); }; })() );
+    innIn.addEventListener("change",()=>{
+      const v=innIn.value.trim();
+      const found=[...dl.options].find(o=>o.value===v);
+      if(found) compIn.value=found.label.split(" — ИНН")[0];
+    });
+  })();
 
-      // Плавно скрываем клавиатуру и возвращаем экран в исходное состояние
-      closeKeyboard();
-
-      // Здесь можно добавить дальнейшую обработку отправки данных
-      // Например, отправку формы через AJAX или обычное действие
-  });
-
-  // CSS для плавного возвращения масштаба
-  const style = document.createElement("style");
-  style.innerHTML = `
-      body {
-          transition: transform 0.3s ease-in-out; /* плавный переход */
+  // Валидация формы (email/телефон)
+  const form = document.getElementById("order-form");
+  if(form && phoneInput){
+    form.addEventListener("submit", e => {
+      const cleanNum = phoneInput.value.replace(/\D/g,""),
+            validPhone = window.intlTelInputGlobals.getInstance(phoneInput).isValidNumber(),
+            iso = window.intlTelInputGlobals.getInstance(phoneInput).getSelectedCountryData().iso2;
+      if((iso==="ru" && cleanNum.length!==10) || !validPhone){
+        alert("Введите корректный телефон");
+        e.preventDefault();
+        return;
       }
-
-      .reset-scale {
-          transform: scale(1); /* возвращаем в нормальный размер */
+      const mail = form.querySelector('input[type="email"]');
+      if(mail){
+        const ok = /^[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}$/.test(mail.value);
+        if(!ok){ alert("Введите корректный email"); e.preventDefault(); }
       }
-  `;
-  document.head.appendChild(style);
+    });
+  }
+
 });
