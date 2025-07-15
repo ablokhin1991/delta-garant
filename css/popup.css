@@ -51,7 +51,7 @@
 .popup__offer-title,
 .popup__form-title {
   color: var(--dark);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   margin-top: 2.5rem !important;
@@ -171,14 +171,14 @@
   flex-direction: column;
   flex: 1;
   gap: 10px;
-  background: #f4f6fd;
+  background: #e6f0ff;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 /* Поля формы */
 .popup__input {
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -187,11 +187,11 @@
 
 /* Чекбокс */
 .popup__checkbox-label {
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   text-align: left;
   gap: 10px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .popup__checkbox {
@@ -211,6 +211,7 @@
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
+  font-size: 18px;
 }
 
 .popup__submit:hover {
@@ -307,8 +308,8 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  font-size: 14px;
-  color: #333333;
+  font-size: 18px;
+  color: var(--dark);
 }
 
 .popup__parameter-label {
