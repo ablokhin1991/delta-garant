@@ -227,13 +227,13 @@
   .popup {
     width: 90%;
     max-width: 100%;
-    padding: 5rem 2rem;
+    padding: 80px 20px;
   }
   .popup__parameters__offer {
-    padding: 2rem !important;
+    padding: 20px !important;
   }
   .popup__form {
-    padding: 2rem !important;
+    padding: 20px !important;
 }
 
   .popup__text-below-title {
