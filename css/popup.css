@@ -229,6 +229,10 @@
     max-width: 100%;
     padding: 80px 20px;
   }
+  /* Заголовок */
+  .popup__title {
+    margin-bottom: 20px !important;
+  }
   .popup__parameters__offer {
     padding: 20px !important;
   }
