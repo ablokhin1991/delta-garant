@@ -197,7 +197,7 @@
   align-items: center;
   text-align: left;
   gap: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .popup__checkbox {
@@ -340,6 +340,7 @@
     color: #0036a7;
     text-decoration: none;
     transition: all 0.3s;
+    font-size: 14px;
 }
 
 .popup__link:hover {
