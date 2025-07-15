@@ -227,7 +227,7 @@
   .popup {
     width: 90%;
     max-width: 100%;
-    padding: 2rem;
+    padding: 5rem 2rem;
     margin-top: 1rem;
   }
   .popup__parameters__offer {
