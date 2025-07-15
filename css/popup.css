@@ -169,10 +169,11 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 10px;
+  gap: 15px;
   background: #e6f0ff;
   padding: 2.5rem;
   border-radius: 16px;
+  justify-content: center;
 }
 
 /* Поля формы */
