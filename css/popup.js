@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="popup__section popup__section--form">
       <form class="popup__form">
       <h3 class="popup__form-title">Оставить заявку</h3>
-        <input type="text" placeholder="ФИО" class="popup__input" required>
+        <input type="text" placeholder="ФИО *" class="popup__input" required>
         <input type="email"
-               placeholder="Электронная почта"
+               placeholder="Электронная почта *"
                class="popup__input"
                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                title="Введите email в формате: name@email.ru"
