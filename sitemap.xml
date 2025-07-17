@@ -10,25 +10,25 @@
 
     <!-- Услуги (высокий приоритет) -->
     <url>
-        <loc>https://delta-garant.ru/na_uchastie.html</loc>
+        <loc>https://delta-garant.ru/bankovskaya-garantiya-na-uchastie.html</loc>
         <lastmod>2023-12-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://delta-garant.ru/na-ispolnenie.html</loc>
+        <loc>https://delta-garant.ru/bankovskaya-garantiya-na-ispolnenie.html</loc>
         <lastmod>2023-12-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://delta-garant.ru/na-vozvrat-avansa.html</loc>
+        <loc>https://delta-garant.ru/bankovskaya-garantiya-na-vozvrat-avansa.html</loc>
         <lastmod>2023-12-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://delta-garant.ru/na-garantiynyy-period.html</loc>
+        <loc>https://delta-garant.ru/bankovskaya-garantiya-na-garantiynyy-period.html</loc>
         <lastmod>2023-12-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
